@@ -76,16 +76,23 @@ const MODALITY_OPTIONS = [
   "Trauma-Informed Care",
 ];
 
+function safe(val: string | undefined | null): string {
+  return val || "";
+}
+
 function scoreMatch(p: Practitioner, filters: Filters): number {
   const kw = filters.keyword.trim().toLowerCase();
   let score = 0;
 
   if (kw) {
-    const searchText = [p.name, p.presentations, p.modalities, p.title, p.therapist_type, p.languages, p.religions_groups].join(" ").toLowerCase();
+    const searchText = [p.name, p.presentations, p.modalities, p.title, p.therapist_type, p.languages, p.religions_groups]
+      .map(v => safe(v))
+      .join(" ")
+      .toLowerCase();
     const words = kw.split(/\s+/);
     const matches = words.filter(w => searchText.includes(w)).length;
     if (matches === 0) return -1;
-    const presMatches = words.filter(w => p.presentations.toLowerCase().includes(w)).length;
+    const presMatches = words.filter(w => safe(p.presentations).toLowerCase().includes(w)).length;
     score += matches + presMatches * 2;
   }
 
@@ -98,11 +105,11 @@ function scoreMatch(p: Practitioner, filters: Filters): number {
     return -1;
   }
 
-  if (filters.clientType && p.client_types && !p.client_types.toLowerCase().includes(filters.clientType.toLowerCase())) {
+  if (filters.clientType && p.client_types && !safe(p.client_types).toLowerCase().includes(filters.clientType.toLowerCase())) {
     return -1;
   }
 
-  if (filters.therapistType && p.therapist_type && !p.therapist_type.toLowerCase().includes(filters.therapistType.toLowerCase())) {
+  if (filters.therapistType && p.therapist_type && !safe(p.therapist_type).toLowerCase().includes(filters.therapistType.toLowerCase())) {
     return -1;
   }
 
@@ -116,13 +123,13 @@ function scoreMatch(p: Practitioner, filters: Filters): number {
   }
 
   if (filters.presentations.length > 0) {
-    const presText = p.presentations.toLowerCase();
+    const presText = safe(p.presentations).toLowerCase();
     const allMatch = filters.presentations.every(pres => presText.includes(pres.toLowerCase()));
     if (!allMatch) return -1;
   }
 
   if (filters.modalities.length > 0) {
-    const modText = p.modalities.toLowerCase();
+    const modText = safe(p.modalities).toLowerCase();
     const allMatch = filters.modalities.every(mod => {
       const key = mod.toLowerCase().replace(/^emdr.*/, "eye movement").replace(/^humanistic.*/, "humanistic").replace(/^trauma-informed.*/, "trauma");
       return modText.includes(key) || modText.includes(mod.toLowerCase().substring(0, 10));
