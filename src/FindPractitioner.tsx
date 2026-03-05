@@ -90,7 +90,7 @@ function scoreMatch(p: Practitioner, filters: Filters): number {
   }
 
   if (filters.location) {
-    const hasLoc = p.locations.some(l => l.location.toLowerCase().includes(filters.location.toLowerCase()));
+    const hasLoc = p.locations.some(l => l.location && l.location.toLowerCase().includes(filters.location.toLowerCase()));
     if (!hasLoc) return -1;
   }
 
@@ -99,10 +99,6 @@ function scoreMatch(p: Practitioner, filters: Filters): number {
   }
 
   if (filters.clientType && p.client_types && !p.client_types.toLowerCase().includes(filters.clientType.toLowerCase())) {
-    return -1;
-  }
-
-  if (false) { // couples filter removed
     return -1;
   }
 
@@ -127,7 +123,6 @@ function scoreMatch(p: Practitioner, filters: Filters): number {
 
   if (filters.modalities.length > 0) {
     const modText = p.modalities.toLowerCase();
-    // For EMDR, also check for "Eye Movement"
     const allMatch = filters.modalities.every(mod => {
       const key = mod.toLowerCase().replace(/^emdr.*/, "eye movement").replace(/^humanistic.*/, "humanistic").replace(/^trauma-informed.*/, "trauma");
       return modText.includes(key) || modText.includes(mod.toLowerCase().substring(0, 10));
@@ -198,7 +193,7 @@ const PractitionerCard: React.FC<CardProps> = ({ p, locationFilter, isSelected, 
   const [copied, setCopied] = useState(false);
 
   const displayLocs = (locationFilter
-    ? p.locations.filter(l => l.location.toLowerCase().includes(locationFilter.toLowerCase()))
+    ? p.locations.filter(l => l.location && l.location.toLowerCase().includes(locationFilter.toLowerCase()))
     : p.locations
   ).map(l => ({ ...l, availability: l.availability ? filterOutMonthly(l.availability) : "" }));
 
@@ -304,7 +299,6 @@ const PractitionerCard: React.FC<CardProps> = ({ p, locationFilter, isSelected, 
                     <div className="text-sm text-base-content/40 italic">No availability listed</div>
                   ) : (
                     <div className="grid grid-cols-2 gap-2">
-                      {/* Weekly column */}
                       <div className="bg-success/10 rounded-lg p-2">
                         <div className="text-xs font-bold text-success mb-1">🟢 Weekly</div>
                         {weekly.length > 0 ? (
@@ -324,7 +318,6 @@ const PractitionerCard: React.FC<CardProps> = ({ p, locationFilter, isSelected, 
                           <div className="text-xs text-base-content/30 italic">—</div>
                         )}
                       </div>
-                      {/* Fortnightly column */}
                       <div className="bg-info/10 rounded-lg p-2">
                         <div className="text-xs font-bold text-info mb-1">🔵 Fortnightly</div>
                         {fortnightly.length > 0 ? (
@@ -567,7 +560,6 @@ export default function FindPractitioner({ practitioners }: Props) {
               <input type="checkbox" className="checkbox checkbox-sm checkbox-accent" checked={afterHours} onChange={e => setAfterHours(e.target.checked)} />
               <span className="text-sm font-medium">After hours</span>
             </label>
-
             {hasFilters && (
               <button onClick={clearFilters} className="btn btn-ghost btn-xs ml-auto">Clear filters</button>
             )}
@@ -616,7 +608,6 @@ export default function FindPractitioner({ practitioners }: Props) {
         </div>
       )}
 
-      {/* Floating Send Bar */}
       {selectedNames.size > 0 && (
         <div className="fixed bottom-0 left-0 right-0 z-50 p-4 bg-base-100 border-t border-base-300 shadow-lg">
           <div className="max-w-4xl mx-auto flex items-center justify-between gap-4">
