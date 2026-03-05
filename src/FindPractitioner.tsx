@@ -76,95 +76,123 @@ const MODALITY_OPTIONS = [
   "Trauma-Informed Care",
 ];
 
-function safe(val: string | undefined | null): string {
-  return val || "";
+/** Safely convert any value to a lowercase string for searching */
+function safe(val: unknown): string {
+  if (val === null || val === undefined) return "";
+  if (typeof val === "string") return val;
+  return "";
 }
 
 function scoreMatch(p: Practitioner, filters: Filters): number {
-  const kw = filters.keyword.trim().toLowerCase();
-  let score = 0;
+  try {
+    const locations = Array.isArray(p.locations) ? p.locations.filter(Boolean) : [];
+    const kw = filters.keyword.trim().toLowerCase();
+    let score = 0;
 
-  if (kw) {
-    const searchText = [p.name, p.presentations, p.modalities, p.title, p.therapist_type, p.languages, p.religions_groups]
-      .map(v => safe(v))
-      .join(" ")
-      .toLowerCase();
-    const words = kw.split(/\s+/);
-    const matches = words.filter(w => searchText.includes(w)).length;
-    if (matches === 0) return -1;
-    const presMatches = words.filter(w => safe(p.presentations).toLowerCase().includes(w)).length;
-    score += matches + presMatches * 2;
-  }
+    if (kw) {
+      const searchText = [p.name, p.presentations, p.modalities, p.title, p.therapist_type, p.languages, p.religions_groups]
+        .map(v => safe(v))
+        .join(" ")
+        .toLowerCase();
+      const words = kw.split(/\s+/);
+      const matches = words.filter(w => searchText.includes(w)).length;
+      if (matches === 0) return -1;
+      const presMatches = words.filter(w => safe(p.presentations).toLowerCase().includes(w)).length;
+      score += matches + presMatches * 2;
+    }
 
-  if (filters.location) {
-    const hasLoc = p.locations.some(l => l.location && l.location.toLowerCase().includes(filters.location.toLowerCase()));
-    if (!hasLoc) return -1;
-  }
+    if (filters.location) {
+      const filterLoc = filters.location.toLowerCase();
+      const hasLoc = locations.some(l => {
+        const loc = safe(l.location);
+        return loc !== "" && loc.toLowerCase().includes(filterLoc);
+      });
+      if (!hasLoc) return -1;
+    }
 
-  if (filters.gender && (!p.gender || p.gender.toLowerCase() !== filters.gender.toLowerCase())) {
-    return -1;
-  }
+    if (filters.gender) {
+      const g = safe(p.gender);
+      if (!g || g.toLowerCase() !== filters.gender.toLowerCase()) return -1;
+    }
 
-  if (filters.clientType && p.client_types && !safe(p.client_types).toLowerCase().includes(filters.clientType.toLowerCase())) {
-    return -1;
-  }
+    if (filters.clientType) {
+      const ct = safe(p.client_types);
+      if (!ct || !ct.toLowerCase().includes(filters.clientType.toLowerCase())) return -1;
+    }
 
-  if (filters.therapistType && p.therapist_type && !safe(p.therapist_type).toLowerCase().includes(filters.therapistType.toLowerCase())) {
-    return -1;
-  }
+    if (filters.therapistType) {
+      const tt = safe(p.therapist_type);
+      if (!tt || !tt.toLowerCase().includes(filters.therapistType.toLowerCase())) return -1;
+    }
 
-  if (filters.afterHours && !hasAfterHoursAvailability(p.locations.map(l => ({ availability: l.availability })))) {
-    return -1;
-  }
+    if (filters.afterHours && !hasAfterHoursAvailability(locations.map(l => ({ availability: safe(l.availability) })))) {
+      return -1;
+    }
 
-  if (filters.hasAvailability) {
-    const hasAvail = p.locations.some(l => l.availability && l.availability.trim().length > 0);
-    if (!hasAvail) return -1;
-  }
+    if (filters.hasAvailability) {
+      const hasAvail = locations.some(l => safe(l.availability).trim().length > 0);
+      if (!hasAvail) return -1;
+    }
 
-  if (filters.presentations.length > 0) {
-    const presText = safe(p.presentations).toLowerCase();
-    const allMatch = filters.presentations.every(pres => presText.includes(pres.toLowerCase()));
-    if (!allMatch) return -1;
-  }
+    if (filters.presentations.length > 0) {
+      const presText = safe(p.presentations).toLowerCase();
+      const allMatch = filters.presentations.every(pres => {
+        const s = safe(pres);
+        return s !== "" && presText.includes(s.toLowerCase());
+      });
+      if (!allMatch) return -1;
+    }
 
-  if (filters.modalities.length > 0) {
-    const modText = safe(p.modalities).toLowerCase();
-    const allMatch = filters.modalities.every(mod => {
-      const key = mod.toLowerCase().replace(/^emdr.*/, "eye movement").replace(/^humanistic.*/, "humanistic").replace(/^trauma-informed.*/, "trauma");
-      return modText.includes(key) || modText.includes(mod.toLowerCase().substring(0, 10));
-    });
-    if (!allMatch) return -1;
-  }
+    if (filters.modalities.length > 0) {
+      const modText = safe(p.modalities).toLowerCase();
+      const allMatch = filters.modalities.every(mod => {
+        const s = safe(mod);
+        if (!s) return false;
+        const sl = s.toLowerCase();
+        const key = sl.replace(/^emdr.*/, "eye movement").replace(/^humanistic.*/, "humanistic").replace(/^trauma-informed.*/, "trauma");
+        return modText.includes(key) || modText.includes(sl.substring(0, 10));
+      });
+      if (!allMatch) return -1;
+    }
 
-  if (filters.clientAge.trim()) {
-    const age = parseInt(filters.clientAge.trim(), 10);
-    if (!isNaN(age) && p.age_range) {
-      const nums = p.age_range.match(/\d+/g);
-      if (nums && nums.length > 0) {
-        const minAge = Math.min(...nums.map(Number));
-        if (age < minAge) return -1;
+    if (filters.clientAge.trim()) {
+      const age = parseInt(filters.clientAge.trim(), 10);
+      if (!isNaN(age) && p.age_range) {
+        const nums = safe(p.age_range).match(/\d+/g);
+        if (nums && nums.length > 0) {
+          const minAge = Math.min(...nums.map(Number));
+          if (age < minAge) return -1;
+        }
       }
     }
-  }
 
-  if (filters.practitionerNames.length > 0) {
-    if (!filters.practitionerNames.includes(p.name)) return -1;
-  }
+    if (filters.practitionerNames.length > 0) {
+      if (!filters.practitionerNames.includes(p.name)) return -1;
+    }
 
-  if (filters.availabilityTypes.length > 0) {
-    const allAvail = p.locations.map(l => l.availability || "").join(" ").toLowerCase();
-    const hasType = filters.availabilityTypes.some(t => allAvail.includes(t.toLowerCase()));
-    if (!hasType) return -1;
-  }
+    if (filters.availabilityTypes.length > 0) {
+      const allAvail = locations.map(l => safe(l.availability)).join(" ").toLowerCase();
+      const hasType = filters.availabilityTypes.some(t => {
+        const s = safe(t);
+        return s !== "" && allAvail.includes(s.toLowerCase());
+      });
+      if (!hasType) return -1;
+    }
 
-  if (filters.days.length > 0) {
-    const allAvail = p.locations.map(l => l.availability || "").join(" ").toLowerCase();
-    const hasDay = filters.days.some(day => allAvail.includes(day.toLowerCase()));
-    if (!hasDay) return -1;
-  }
+    if (filters.days.length > 0) {
+      const allAvail = locations.map(l => safe(l.availability)).join(" ").toLowerCase();
+      const hasDay = filters.days.some(day => {
+        const s = safe(day);
+        return s !== "" && allAvail.includes(s.toLowerCase());
+      });
+      if (!hasDay) return -1;
+    }
 
-  return score;
+    return score;
+  } catch (e) {
+    console.error("scoreMatch error for", p?.name, e);
+    return 0;
+  }
 }
 
 interface CardProps {
@@ -199,9 +227,14 @@ const PractitionerCard: React.FC<CardProps> = ({ p, locationFilter, isSelected, 
   const [expanded, setExpanded] = useState(false);
   const [copied, setCopied] = useState(false);
 
+  const locs = Array.isArray(p.locations) ? p.locations.filter(Boolean) : [];
+
   const displayLocs = (locationFilter
-    ? p.locations.filter(l => l.location && l.location.toLowerCase().includes(locationFilter.toLowerCase()))
-    : p.locations
+    ? locs.filter(l => {
+        const loc = safe(l.location);
+        return loc !== "" && loc.toLowerCase().includes(locationFilter.toLowerCase());
+      })
+    : locs
   ).map(l => ({ ...l, availability: l.availability ? filterOutMonthly(l.availability) : "" }));
 
   const hasAvail = displayLocs.some(l => l.availability && l.availability.trim());
@@ -240,7 +273,7 @@ const PractitionerCard: React.FC<CardProps> = ({ p, locationFilter, isSelected, 
                 </h3>
                 {p.pronouns && <span className="text-xs text-base-content/50">({p.pronouns})</span>}
                 {p.pap_clinician === "Yes" && <span className="badge badge-secondary badge-sm">PAP</span>}
-                {hasAfterHoursAvailability(p.locations.map(l => ({ availability: l.availability }))) && <span className="badge badge-accent badge-sm">After Hours</span>}
+                {hasAfterHoursAvailability(locs.map(l => ({ availability: safe(l.availability) }))) && <span className="badge badge-accent badge-sm">After Hours</span>}
                 {p.accepts_couples && <span className="badge badge-info badge-sm">Couples</span>}
               </div>
               <p className="text-sm text-base-content/70 font-medium">{p.title}</p>
@@ -277,8 +310,8 @@ const PractitionerCard: React.FC<CardProps> = ({ p, locationFilter, isSelected, 
         </div>
 
         <div className="mt-2 flex items-center gap-1 flex-wrap">
-          {p.locations.map((loc, i) => (
-            <span key={i} className="badge badge-outline badge-sm">{"📍"} {loc.location}</span>
+          {locs.map((loc, i) => (
+            <span key={i} className="badge badge-outline badge-sm">{"📍"} {safe(loc.location) || "(unknown)"}</span>
           ))}
         </div>
 
@@ -300,7 +333,7 @@ const PractitionerCard: React.FC<CardProps> = ({ p, locationFilter, isSelected, 
               return (
                 <div key={i} className={displayLocs.length > 1 ? "mb-3" : ""}>
                   {displayLocs.length > 1 && (
-                    <div className="text-xs font-semibold text-base-content/50 uppercase tracking-wide mb-2">📍 {loc.location}</div>
+                    <div className="text-xs font-semibold text-base-content/50 uppercase tracking-wide mb-2">📍 {safe(loc.location)}</div>
                   )}
                   {!hasLocAvail ? (
                     <div className="text-sm text-base-content/40 italic">No availability listed</div>
@@ -407,7 +440,7 @@ export default function FindPractitioner({ practitioners }: Props) {
   const [showSendModal, setShowSendModal] = useState(false);
   const [sentSuccess, setSentSuccess] = useState(false);
 
-  const allPractitionerNames = useMemo(() => practitioners.map(p => p.name).sort(), [practitioners]);
+  const allPractitionerNames = useMemo(() => practitioners.map(p => p.name).filter(Boolean).sort(), [practitioners]);
 
   const filters: Filters = { keyword, location, gender, clientType, therapistType, afterHours, hasAvailability, presentations: selectedPresentations, modalities: selectedModalities, clientAge, practitionerNames: selectedPractitionerNames, availabilityTypes: selectedAvailabilityTypes, days: selectedDays };
 
