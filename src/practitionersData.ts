@@ -30,7 +30,7 @@ const practitionersData = [
       },
       {
         "location": "Wattletree Road, Malvern",
-        "availability": "* Mondays at 2:30pm (Fortnightly: Starting 6th Apr)"
+        "availability": ""
       },
       {
         "location": "Online/ Telehealth Only",
@@ -68,7 +68,7 @@ const practitionersData = [
     "locations": [
       {
         "location": "Wattletree Road, Malvern",
-        "availability": "* Saturdays at 9am (Fortnightly: Starting 21st Mar)\n* Saturdays at 10am (Fortnightly: Starting 21st Mar)\n* Mondays at 10am (Fortnightly: Starting 23rd Mar)\n* Mondays at 1pm (Fortnightly: Starting 23rd Mar)\n* Mondays at 3pm (Fortnightly: Starting 23rd Mar)\n* Saturdays at 1pm (Fortnightly: Starting 28th Mar)"
+        "availability": ""
       }
     ],
     "last_updated": "2026-03-06",
@@ -106,7 +106,7 @@ const practitionersData = [
       },
       {
         "location": "Greville St, Prahran",
-        "availability": "* Wednesdays at 10am (Fortnightly: Starting 18th Mar)"
+        "availability": ""
       }
     ],
     "last_updated": "2026-03-06",
@@ -140,7 +140,7 @@ const practitionersData = [
     "locations": [
       {
         "location": "Greville St, Prahran",
-        "availability": "* Fridays at 11am (Weekly: Starting 13th Mar)\n* Fridays at 1pm (Fortnightly: Starting 13th Mar)\n* Mondays at 9am (Weekly: Starting 16th Mar)\n* Fridays at 10am (Fortnightly: Starting 20th Mar)\n* Fridays at 2pm (Fortnightly: Starting 20th Mar)\n* Mondays at 10am (Fortnightly: Starting 23rd Mar)\n* Mondays at 11:30am (Fortnightly: Starting 23rd Mar)"
+        "availability": ""
       }
     ],
     "last_updated": "2026-03-06",
@@ -174,7 +174,7 @@ const practitionersData = [
     "locations": [
       {
         "location": "Wattletree Road, Malvern",
-        "availability": "* Tuesdays at 8am (Fortnightly: Starting 10th Mar)\n* Tuesdays at 9am (Fortnightly: Starting 10th Mar)"
+        "availability": ""
       }
     ],
     "last_updated": "2026-03-06",
@@ -208,15 +208,15 @@ const practitionersData = [
     "locations": [
       {
         "location": "Greville St, Prahran",
-        "availability": "* Thursdays at 8am (Weekly: Starting 12th Mar)\n* Thursdays at 9am (Weekly: Starting 12th Mar)\n* Thursdays at 12pm (Fortnightly: Starting 12th Mar)\n* Thursdays at 10am (Fortnightly: Starting 19th Mar)\n* Thursdays at 11am (Fortnightly: Starting 19th Mar)"
+        "availability": ""
       },
       {
         "location": "Wattletree Road, Malvern",
-        "availability": "* Fridays at 10am (Fortnightly: Starting 20th Mar)"
+        "availability": ""
       },
       {
         "location": "Online/ Telehealth Only",
-        "availability": "* Mondays at 8am (Fortnightly: Starting 16th Mar)\n* Mondays at 10am (Weekly: Starting 16th Mar)\n* Mondays at 11am (Weekly: Starting 16th Mar)\n* Mondays at 1pm (Fortnightly: Starting 16th Mar)"
+        "availability": ""
       }
     ],
     "last_updated": "2026-03-06",
@@ -250,7 +250,7 @@ const practitionersData = [
     "locations": [
       {
         "location": "Wattletree Road, Malvern",
-        "availability": "* Wednesdays at 9am (Fortnightly: Starting 8th Apr)\n* Thursdays at 10am (Fortnightly: Starting 16th Apr)"
+        "availability": ""
       },
       {
         "location": "SUPERVISION: \nOnline/ Telehealth Only",
@@ -360,11 +360,11 @@ const practitionersData = [
     "locations": [
       {
         "location": "Online/ Telehealth Only",
-        "availability": "* Tuesdays at 10am (Fortnightly: Starting 17th Mar)"
+        "availability": ""
       },
       {
         "location": "Wattletree Road, Malvern",
-        "availability": "* Thursdays at 8am (Weekly: Starting 12th Mar)\n* Thursdays at 9am (Fortnightly: Starting 12th Mar)\n* Mondays at 8am (Fortnightly: Starting 16th Mar)\n* Mondays at 9am (Weekly: Starting 16th Mar)\n* Thursdays at 1:30pm (Fortnightly: Starting 19th Mar)"
+        "availability": ""
       }
     ],
     "last_updated": "2026-03-06",
@@ -398,7 +398,7 @@ const practitionersData = [
     "locations": [
       {
         "location": "Wattletree Road, Malvern",
-        "availability": "* Mondays at 8am (Weekly: Starting 9th Mar)\n* Mondays at 10am (Fortnightly: Starting 9th Mar)\n* Tuesdays at 8am (Weekly: Starting 10th Mar)\n* Tuesdays at 9am (Weekly: Starting 10th Mar)\n* Wednesdays at 5:30pm (Fortnightly: Starting 18th Mar)\n* Wednesdays at 7:30pm (Fortnightly: Starting 18th Mar)\n* Fridays at 4:30pm (Fortnightly: Starting 20th Mar)"
+        "availability": ""
       }
     ],
     "last_updated": "2026-03-06",
@@ -432,7 +432,7 @@ const practitionersData = [
     "locations": [
       {
         "location": "Greville St, Prahran",
-        "availability": "* Tuesdays at 12pm (Fortnightly: Starting 17th Mar)"
+        "availability": ""
       }
     ],
     "last_updated": "2026-03-06",
@@ -466,7 +466,7 @@ const practitionersData = [
     "locations": [
       {
         "location": "Wattletree Road, Malvern",
-        "availability": "* Tuesdays at 1pm (Weekly: Starting 10th Mar)\n* Thursdays at 10am (Fortnightly: Starting 12th Mar)\n* Tuesdays at 9am (Fortnightly: Starting 17th Mar)\n* Thursdays at 9am (Weekly: Starting 19th Mar)\n* Thursdays at 12pm (Fortnightly: Starting 2nd Apr)"
+        "availability": ""
       }
     ],
     "last_updated": "2026-03-06",
@@ -568,7 +568,7 @@ const practitionersData = [
     "locations": [
       {
         "location": "Wattletree Road, Malvern",
-        "availability": "* Tuesdays at 6:30pm (Fortnightly: Starting 24th Mar)\n* Tuesdays at 4:30pm (Fortnightly: Starting 7th Apr)"
+        "availability": ""
       }
     ],
     "last_updated": "2026-03-06",
@@ -602,7 +602,7 @@ const practitionersData = [
     "locations": [
       {
         "location": "Greville St, Prahran",
-        "availability": "* Tuesdays at 10am (Weekly: Starting 17th Mar)\n* Tuesdays at 3:30pm (Weekly: Starting 17th Mar)\n* Tuesdays at 1pm (Fortnightly: Starting 24th Mar)\n* Tuesdays at 12pm (Weekly: Starting 31st Mar)"
+        "availability": ""
       }
     ],
     "last_updated": "2026-03-06",
@@ -636,7 +636,7 @@ const practitionersData = [
     "locations": [
       {
         "location": "Wattletree Road, Malvern",
-        "availability": "* Saturdays at 2pm (Weekly: Starting 21st Mar)\n* Saturdays at 10am (Fortnightly: Starting 28th Mar)"
+        "availability": ""
       }
     ],
     "last_updated": "2026-03-06",
@@ -670,15 +670,15 @@ const practitionersData = [
     "locations": [
       {
         "location": "Wattletree Road, Malvern",
-        "availability": "* Wednesdays at 12pm (Weekly: Starting 11th Mar)\n* Wednesdays at 1pm (Fortnightly: Starting 11th Mar)\n* Fridays at 2pm (Weekly: Starting 20th Mar)"
+        "availability": ""
       },
       {
         "location": "Greville St, Prahran",
-        "availability": "* Tuesdays at 11am (Fortnightly: Starting 10th Mar)"
+        "availability": ""
       },
       {
         "location": "Online/ Telehealth Only",
-        "availability": "* Tuesdays at 1pm (Fortnightly: Starting 17th Mar)"
+        "availability": ""
       }
     ],
     "last_updated": "2026-03-06",
@@ -712,15 +712,15 @@ const practitionersData = [
     "locations": [
       {
         "location": "Wattletree Road, Malvern",
-        "availability": "* Saturdays at 11:30am (Fortnightly: Starting 28th Mar)"
+        "availability": ""
       },
       {
         "location": "Greville St, Prahran",
-        "availability": "* Mondays at 2:30pm (Fortnightly: Starting 16th Mar)"
+        "availability": ""
       },
       {
         "location": "Online/ Telehealth Only",
-        "availability": "* Mondays at 3:30pm (Fortnightly: Starting 16th Mar)\n* Mondays at 5pm (Fortnightly: Starting 16th Mar)"
+        "availability": ""
       }
     ],
     "last_updated": "2026-03-06",
@@ -796,7 +796,7 @@ const practitionersData = [
       },
       {
         "location": "St Kilda",
-        "availability": "* Thursdays at 10:15am (Weekly: Starting 12th Mar)\n* Thursdays at 12:45pm (Weekly: Starting 12th Mar)\n* Thursdays at 2pm (Fortnightly: Starting 12th Mar)\n* Thursdays at 3:15pm (Weekly: Starting 2nd Apr)"
+        "availability": ""
       }
     ],
     "last_updated": "2026-03-06",
@@ -830,7 +830,7 @@ const practitionersData = [
     "locations": [
       {
         "location": "Greville St, Prahran",
-        "availability": "* Mondays at 12pm (Weekly: Starting 16th Mar)\n* Mondays at 1pm (Fortnightly: Starting 16th Mar)\n* Thursdays at 10am (Weekly: Starting 19th Mar)\n* Thursdays at 11am (Fortnightly: Starting 26th Mar)\n* Thursdays at 1pm (Fortnightly: Starting 26th Mar)"
+        "availability": ""
       }
     ],
     "last_updated": "2026-03-06",
@@ -864,7 +864,7 @@ const practitionersData = [
     "locations": [
       {
         "location": "Greville St, Prahran",
-        "availability": "* Tuesdays at 2:30pm (Fortnightly: Starting 10th Mar)\n* Mondays at 9am (Fortnightly: Starting 16th Mar)\n* Mondays at 10am (Fortnightly: Starting 16th Mar)\n* Wednesdays at 2:30pm (Fortnightly: Starting 18th Mar)\n* Mondays at 11am (Fortnightly: Starting 23rd Mar)"
+        "availability": ""
       }
     ],
     "last_updated": "2026-03-06",
@@ -890,7 +890,7 @@ const practitionersData = [
       },
       {
         "location": "Greville St, Prahran",
-        "availability": "* Thursdays at 9am (Weekly: Starting 2nd Apr)\n* Thursdays at 10am (Weekly: Starting 2nd Apr)"
+        "availability": ""
       }
     ],
     "telehealth": "Yes",
@@ -943,7 +943,7 @@ const practitionersData = [
     "locations": [
       {
         "location": "Greville St, Prahran",
-        "availability": "* Tuesdays at 9am (Fortnightly: Starting 17th Mar)\n* Tuesdays at 10am (Fortnightly: Starting 17th Mar)\n* Wednesdays at 9am (Fortnightly: Starting 18th Mar)"
+        "availability": ""
       },
       {
         "location": "Online/ Telehealth Only",
@@ -981,7 +981,7 @@ const practitionersData = [
     "locations": [
       {
         "location": "Wattletree Road, Malvern",
-        "availability": "* Mondays at 2:30pm (Fortnightly: Starting 23rd Mar)"
+        "availability": ""
       }
     ],
     "last_updated": "2026-03-06",
@@ -1053,7 +1053,7 @@ const practitionersData = [
     "locations": [
       {
         "location": "Greville St, Prahran",
-        "availability": "* Mondays at 3:30pm (Weekly: Starting 9th Mar)\n* Wednesdays at 1pm (Fortnightly: Starting 18th Mar)\n* Thursdays at 8am (Fortnightly: Starting 19th Mar)\n* Fridays at 9am (Fortnightly: Starting 20th Mar)\n* Fridays at 11am (Fortnightly: Starting 20th Mar)"
+        "availability": ""
       }
     ],
     "last_updated": "2026-03-06",
@@ -1087,7 +1087,7 @@ const practitionersData = [
     "locations": [
       {
         "location": "Greville St, Prahran",
-        "availability": "* Wednesdays at 2pm (Weekly: Starting 11th Mar)\n* Wednesdays at 5:30pm (Weekly: Starting 11th Mar)\n* Thursdays at 9am (Fortnightly: Starting 9th Apr)"
+        "availability": ""
       }
     ],
     "last_updated": "2026-03-06",
