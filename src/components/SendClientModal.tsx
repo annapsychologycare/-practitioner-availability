@@ -31,11 +31,13 @@ function nl2br(text: string) {
   return text.replace(/\n/g, "<br>");
 }
 
-function parseAvailability(text: string): { weekly: string[]; fortnightly: string[] } {
+function parseAvailability(text: string | string[]): { weekly: string[]; fortnightly: string[] } {
   const weekly: string[] = [];
   const fortnightly: string[] = [];
   if (!text) return { weekly, fortnightly };
-  const lines = text.split("\n").map(l => l.replace(/^\*\s*/, "").trim()).filter(Boolean);
+  const lines = Array.isArray(text)
+    ? text.map(l => l.replace(/^\*\s*/, "").trim()).filter(Boolean)
+    : text.split("\n").map(l => l.replace(/^\*\s*/, "").trim()).filter(Boolean);
   for (const line of lines) {
     if (/\(Monthly:/i.test(line)) continue;
     const cleaned = line
@@ -47,7 +49,7 @@ function parseAvailability(text: string): { weekly: string[]; fortnightly: strin
   return { weekly, fortnightly };
 }
 
-function buildAvailabilityHtml(locations: Array<{ location: string; availability: string }>): string {
+function buildAvailabilityHtml(locations: Array<{ location: string; availability: string | string[] }>): string {
   const activeLocs = locations.filter(l => {
     const { weekly, fortnightly } = parseAvailability(l.availability || "");
     return weekly.length > 0 || fortnightly.length > 0;
@@ -80,7 +82,7 @@ function buildEmailHtml(
   note: string,
   practitioners: Array<{
     name: string; title: string; therapist_type: string; fees: string;
-    medicare_rebate: string; availabilityLocations: Array<{ location: string; availability: string }>; link_to_bio: string;
+    medicare_rebate: string; availabilityLocations: Array<{ location: string; availability: string | string[] }>; link_to_bio: string;
     after_hours: boolean; accepts_couples: boolean; alert?: string; short_bio?: string;
   }>
 ): string {
