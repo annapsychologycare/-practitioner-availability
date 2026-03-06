@@ -1,4 +1,4 @@
-const practitionersData = [
+export const PRACTITIONERS_DATA = [
   {
     "id": 1,
     "name": "Alex Barry",
@@ -1095,5 +1095,3 @@ const practitionersData = [
     "short_bio": "Karen is a psychodynamic clinical psychologist integrating EMDR to support trauma, identity, grief and life transitions with culturally attuned, exploratory therapy."
   }
 ];
-
-export default practitionersData;
