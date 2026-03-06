@@ -117,19 +117,19 @@ function scoreMatch(p: Practitioner, filters: Filters): number {
   }
 
   if (filters.hasAvailability) {
-    const hasAvail = p.locations.some(l => l.availability && l.availability.trim().length > 0);
+    const hasAvail = p.locations.some(l => l.availability && (Array.isArray(l.availability) ? l.availability.length > 0 : (l.availability as string).trim().length > 0));
     if (!hasAvail) return -1;
   }
 
   if (filters.presentations.length > 0) {
-    const presVal = p.presentations;
+    const presVal: any = p.presentations;
     const presText = (presVal == null ? "" : typeof presVal === "string" ? presVal : Array.isArray(presVal) ? presVal.join(" ") : String(presVal)).toLowerCase();
     const allMatch = filters.presentations.every(pres => presText.includes(pres.toLowerCase()));
     if (!allMatch) return -1;
   }
 
   if (filters.modalities.length > 0) {
-    const modVal = p.modalities;
+    const modVal: any = p.modalities;
     const modText = (modVal == null ? "" : typeof modVal === "string" ? modVal : Array.isArray(modVal) ? modVal.join(" ") : String(modVal)).toLowerCase();
     // For EMDR, also check for "Eye Movement"
     const allMatch = filters.modalities.every(mod => {
@@ -155,13 +155,13 @@ function scoreMatch(p: Practitioner, filters: Filters): number {
   }
 
   if (filters.availabilityTypes.length > 0) {
-    const allAvail = p.locations.map(l => l.availability || "").join(" ").toLowerCase();
+    const allAvail = p.locations.map(l => Array.isArray(l.availability) ? l.availability.join(" ") : (l.availability || "")).join(" ").toLowerCase();
     const hasType = filters.availabilityTypes.some(t => allAvail.includes(t.toLowerCase()));
     if (!hasType) return -1;
   }
 
   if (filters.days.length > 0) {
-    const allAvail = p.locations.map(l => l.availability || "").join(" ").toLowerCase();
+    const allAvail = p.locations.map(l => Array.isArray(l.availability) ? l.availability.join(" ") : (l.availability || "")).join(" ").toLowerCase();
     const hasDay = filters.days.some(day => allAvail.includes(day.toLowerCase()));
     if (!hasDay) return -1;
   }
@@ -176,19 +176,19 @@ interface CardProps {
   onToggleSelect: (name: string) => void;
 }
 
-function filterOutMonthly(text: string): string {
-  return text
-    .split("\n")
+function filterOutMonthly(text: string | string[]): string {
+  const lines = Array.isArray(text) ? text : text.split("\n");
+  return lines
     .filter(line => !/\(Monthly:/i.test(line))
     .join("\n")
     .trim();
 }
 
-function parseAvailabilityColumns(text: string): { weekly: string[]; fortnightly: string[] } {
+function parseAvailabilityColumns(text: string | string[]): { weekly: string[]; fortnightly: string[] } {
   const weekly: string[] = [];
   const fortnightly: string[] = [];
   if (!text) return { weekly, fortnightly };
-  const lines = text.split("\n").map(l => l.replace(/^\*\s*/, "").trim()).filter(Boolean);
+  const lines = (Array.isArray(text) ? text : text.split("\n")).map(l => l.replace(/^\*\s*/, "").trim()).filter(Boolean);
   for (const line of lines) {
     if (/\(Monthly:/i.test(line)) continue;
     if (/\(Weekly:/i.test(line)) weekly.push(line);
@@ -206,14 +206,14 @@ const PractitionerCard: React.FC<CardProps> = ({ p, locationFilter, isSelected, 
     : p.locations
   ).map(l => ({ ...l, availability: l.availability ? filterOutMonthly(l.availability) : "" }));
 
-  const hasAvail = displayLocs.some(l => l.availability && l.availability.trim());
+  const hasAvail = displayLocs.some(l => l.availability && (l.availability as string).trim());
 
   const copyAvailability = () => {
     const lines: string[] = [p.name + " -- " + p.title];
     for (const loc of displayLocs) {
-      if (loc.availability && loc.availability.trim()) {
+      if (loc.availability && (loc.availability as string).trim()) {
         lines.push("\n" + loc.location + ":");
-        lines.push(loc.availability.trim());
+        lines.push((loc.availability as string).trim());
       }
     }
     navigator.clipboard.writeText(lines.join("\n"));
