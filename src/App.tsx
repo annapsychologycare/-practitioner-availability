@@ -7,7 +7,7 @@ import AvailabilitySnapshot from "./AvailabilitySnapshot";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 
-const STORAGE_KEY = "pc_practitioners_v4";
+const STORAGE_KEY = "pc_practitioners_v5";
 
 function loadPractitioners(): Practitioner[] {
   try {
