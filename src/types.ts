@@ -1,6 +1,6 @@
 export type Location = {
   location: string;
-  availability: string;
+  availability: string | string[];
 };
 
 export type Practitioner = {

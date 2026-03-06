@@ -7,10 +7,10 @@ interface Props {
 
 type FilterType = "all" | "weekly" | "fortnightly";
 
-function getAvailabilityLines(text: string, type: FilterType): string[] {
+function getAvailabilityLines(text: string | string[], type: FilterType): string[] {
   if (!text) return [];
-  return text
-    .split("\n")
+  const lines = Array.isArray(text) ? text : text.split("\n");
+  return lines
     .map(l => l.replace(/^\*\s*/, "").trim())
     .filter(l => {
       if (!l) return false;

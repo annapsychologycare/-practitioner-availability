@@ -43,13 +43,13 @@ function slotIsAfterHours(slot: string): boolean {
 interface LocationGroup {
   weekly?: string[];
   fortnightly?: string[];
-  availability?: string; // raw string format from practitioner locations
+  availability?: string | string[]; // raw string or array format from practitioner locations
 }
 
 /**
  * Returns true if the practitioner has any after-hours slots.
  * Accepts either availabilityGroups (array of {weekly, fortnightly}) 
- * or locations (array of {availability: string}).
+ * or locations (array of {availability: string | string[]}).
  */
 export function hasAfterHoursAvailability(groups: LocationGroup[]): boolean {
   for (const group of groups) {
@@ -64,9 +64,11 @@ export function hasAfterHoursAvailability(groups: LocationGroup[]): boolean {
         if (slotIsAfterHours(slot)) return true;
       }
     }
-    // Raw string format (e.g. "Mondays 5pm (Weekly: from 17 Mar)\nTuesdays 9am ...")
+    // Raw string or array format
     if (group.availability) {
-      const lines = group.availability.split('\n').filter(Boolean);
+      const lines = Array.isArray(group.availability)
+        ? group.availability
+        : group.availability.split('\n').filter(Boolean);
       for (const line of lines) {
         // Skip Monthly slots - we only track Weekly and Fortnightly
         if (/\(Monthly:/i.test(line)) continue;
