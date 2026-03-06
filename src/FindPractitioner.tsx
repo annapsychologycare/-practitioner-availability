@@ -107,8 +107,9 @@ function scoreMatch(p: Practitioner, filters: Filters): number {
     return -1;
   }
 
-  if (filters.therapistType && p.therapist_type && !p.therapist_type.toLowerCase().includes(filters.therapistType.toLowerCase())) {
-    return -1;
+  if (filters.therapistType) {
+    const typeToCheck = (p.therapist_type || p.title || "").toLowerCase();
+    if (!typeToCheck.includes(filters.therapistType.toLowerCase())) return -1;
   }
 
   if (filters.afterHours && !hasAfterHoursAvailability(p.locations.map(l => ({ availability: l.availability })))) {
