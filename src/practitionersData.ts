@@ -1,6 +1,3 @@
-// Auto-generated from practitioners_data.json
-// DO NOT EDIT MANUALLY
-
 export const PRACTITIONERS_DATA = [
   {
     "id": 1,
@@ -1309,34 +1306,6 @@ export const PRACTITIONERS_DATA = [
             "from": "26 Mar"
           }
         ]
-      },
-      {
-        "location": "Victoria St, St Kilda",
-        "availability": [],
-        "weekly_availability": [
-          {
-            "day": "Thursday",
-            "time": "10:15am",
-            "from": "2 Apr"
-          },
-          {
-            "day": "Thursday",
-            "time": "12:45pm",
-            "from": "19 Mar"
-          },
-          {
-            "day": "Thursday",
-            "time": "3:15pm",
-            "from": "9 Apr"
-          }
-        ],
-        "fortnightly_availability": [
-          {
-            "day": "Thursday",
-            "time": "2pm",
-            "from": "26 Mar"
-          }
-        ]
       }
     ],
     "last_updated": "2026-03-06",
@@ -1500,27 +1469,6 @@ export const PRACTITIONERS_DATA = [
           "Thursdays at 9am (Weekly: Starting 2nd Apr)",
           "Thursdays at 10am (Weekly: Starting 2nd Apr)"
         ],
-        "weekly_availability": [
-          {
-            "day": "Thursday",
-            "time": "10am",
-            "from": "2 Apr"
-          },
-          {
-            "day": "Thursday",
-            "time": "9am",
-            "from": "2 Apr"
-          }
-        ],
-        "fortnightly_availability": []
-      },
-      {
-        "location": "Wattletree Rd, Malvern",
-        "availability": []
-      },
-      {
-        "location": "Greville St, Prahran",
-        "availability": [],
         "weekly_availability": [
           {
             "day": "Thursday",
