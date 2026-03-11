@@ -413,9 +413,8 @@ export default function FindPractitioner({ practitioners }: Props) {
 
   const allPractitionerNames = useMemo(() => practitioners.map(p => p.name).sort(), [practitioners]);
 
-  const filters: Filters = { keyword, location, gender, clientType, therapistType, afterHours, hasAvailability, presentations: selectedPresentations, modalities: selectedModalities, clientAge, practitionerNames: selectedPractitionerNames, availabilityTypes: selectedAvailabilityTypes, days: selectedDays };
-
   const results = useMemo(() => {
+    const filters: Filters = { keyword, location, gender, clientType, therapistType, afterHours, hasAvailability, presentations: selectedPresentations, modalities: selectedModalities, clientAge, practitionerNames: selectedPractitionerNames, availabilityTypes: selectedAvailabilityTypes, days: selectedDays };
     return practitioners
       .map(p => ({ p, score: scoreMatch(p, filters) }))
       .filter(item => item.score >= 0)
