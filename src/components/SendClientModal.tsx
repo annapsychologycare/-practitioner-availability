@@ -64,7 +64,7 @@ function buildAvailabilitySection(
   let html = "";
   for (const loc of activeLocs) {
     const { weekly, fortnightly } = parseAvailability(loc.availability);
-    const locLabel = activeLocs.length > 1 ? ` — ${loc.location}` : "";
+    const locLabel = ` — ${loc.location}`;
     const slots = [
       ...weekly.map((s) => renderSlotLine(s, "weekly")),
       ...fortnightly.map((s) => renderSlotLine(s, "fortnightly")),
@@ -136,9 +136,10 @@ function buildEmailHtml(
         </div>
         ${availHtml}
         ${feesInline || medicareInline ? `
-        <div style="padding:16px 22px;display:flex;gap:32px;flex-wrap:wrap;">
-          ${feesInline ? `<div><div style="font-size:11px;font-weight:700;color:#8D5273;text-transform:uppercase;letter-spacing:0.07em;margin-bottom:4px;">Fees</div><div style="font-size:14px;color:#333;">${feesInline}</div></div>` : ""}
-          ${medicareInline ? `<div><div style="font-size:11px;font-weight:700;color:#8D5273;text-transform:uppercase;letter-spacing:0.07em;margin-bottom:4px;">Medicare Rebate</div><div style="font-size:14px;color:#333;">${medicareInline}</div></div>` : ""}
+        <div style="padding:14px 22px 16px;font-size:13px;color:#444;line-height:1.9;border-top:1px solid #e8e4f0;">
+          ${feesInline ? `<span><span style="font-weight:700;color:#2C244C;">Fees:</span> ${feesInline}</span>` : ""}
+          ${feesInline && medicareInline ? `<span style="color:#bbb;margin:0 10px;">|</span>` : ""}
+          ${medicareInline ? `<span><span style="font-weight:700;color:#2C244C;">Medicare Rebate:</span> ${medicareInline}</span>` : ""}
         </div>` : ""}
         ${profileLink}
       </div>`;
