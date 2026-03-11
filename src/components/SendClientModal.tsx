@@ -145,7 +145,7 @@ function buildEmailHtml(
   }
 
   const goodToKnow = `
-    <div style="background:#f4f1f9;padding:24px 28px;border-top:1px solid #ede9f5;">
+    <div style="background:#ffffff;padding:24px 28px;border-top:1px solid #ede9f5;">
       <div style="font-size:13px;font-weight:700;color:#2C244C;margin-bottom:16px;text-transform:uppercase;letter-spacing:0.06em;">Good to Know</div>
       <div style="margin-bottom:16px;">
         <div style="font-size:13px;font-weight:700;color:#2C244C;margin-bottom:4px;">Medicare Rebates</div>
@@ -184,7 +184,7 @@ function buildEmailHtml(
     </div>`;
 
   return `
-    <div style="font-family:Arial,Helvetica,sans-serif;background:#f4f1f9;padding:28px 0;">
+    <div style="font-family:Arial,Helvetica,sans-serif;background:#ffffff;padding:28px 0;">
       <div style="max-width:600px;margin:0 auto;background:#fff;border-radius:6px;overflow:hidden;box-shadow:0 2px 12px rgba(44,36,76,0.10);">
         <div style="height:4px;background:linear-gradient(90deg,#2C244C 0%,#8D5273 60%,#CDA8BA 100%);"></div>
         <div style="padding:32px 28px;">
