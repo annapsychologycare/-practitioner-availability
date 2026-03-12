@@ -4,6 +4,7 @@ import { Practitioner } from "./types";
 import FindPractitioner from "./FindPractitioner";
 import Directory from "./Directory";
 import AvailabilitySnapshot from "./AvailabilitySnapshot";
+import IntakeTab from "./components/IntakeTab";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 
@@ -49,7 +50,7 @@ class ErrorBoundary extends Component<{ children: ReactNode }, { error: Error | 
   }
 }
 
-type Tab = "find" | "directory" | "snapshot";
+type Tab = "find" | "directory" | "snapshot" | "intake";
 
 export default function App() {
   const [tab, setTab] = useState<Tab>("find");
@@ -87,6 +88,12 @@ export default function App() {
             >
               📋 Availability Snapshot
             </button>
+            <button
+              className={`tab tab-lg font-medium ${tab === "intake" ? "tab-active" : ""}`}
+              onClick={() => setTab("intake")}
+            >
+              📝 Intake
+            </button>
           </div>
         </div>
       </div>
@@ -97,6 +104,7 @@ export default function App() {
           {tab === "find" && <FindPractitioner practitioners={practitioners} />}
           {tab === "directory" && <Directory practitioners={practitioners} />}
           {tab === "snapshot" && <AvailabilitySnapshot practitioners={practitioners} />}
+          {tab === "intake" && <IntakeTab />}
         </ErrorBoundary>
       </div>
     </div>
