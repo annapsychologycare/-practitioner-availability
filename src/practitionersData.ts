@@ -26,12 +26,33 @@ export const PRACTITIONERS_DATA = [
     "locations": [
       {
         "location": "Greville St, Prahran",
-        "availability": []
+        "availability": [],
+        "weekly_availability": [],
+        "fortnightly_availability": [
+          {
+            "day": "Wednesday",
+            "time": "5:30pm",
+            "from": "25 Mar"
+          }
+        ]
       },
       {
         "location": "Wattletree Rd, Malvern",
         "availability": [
           "Mondays at 2:30pm (Fortnightly: Starting 6th Apr)"
+        ],
+        "weekly_availability": [],
+        "fortnightly_availability": [
+          {
+            "day": "Friday",
+            "time": "12pm",
+            "from": "20 Mar"
+          },
+          {
+            "day": "Friday",
+            "time": "9am",
+            "from": "27 Mar"
+          }
         ]
       },
       {
@@ -206,17 +227,22 @@ export const PRACTITIONERS_DATA = [
         ],
         "weekly_availability": [
           {
-            "day": "Monday",
-            "time": "9am",
-            "from": "16 Mar"
-          },
-          {
             "day": "Friday",
             "time": "11am",
             "from": "20 Mar"
+          },
+          {
+            "day": "Monday",
+            "time": "9am",
+            "from": "23 Mar"
           }
         ],
         "fortnightly_availability": [
+          {
+            "day": "Friday",
+            "time": "2pm",
+            "from": "20 Mar"
+          },
           {
             "day": "Monday",
             "time": "10am",
@@ -226,11 +252,6 @@ export const PRACTITIONERS_DATA = [
             "day": "Monday",
             "time": "11:30am",
             "from": "23 Mar"
-          },
-          {
-            "day": "Friday",
-            "time": "2pm",
-            "from": "20 Mar"
           }
         ]
       }
@@ -272,11 +293,6 @@ export const PRACTITIONERS_DATA = [
         ],
         "weekly_availability": [],
         "fortnightly_availability": [
-          {
-            "day": "Tuesday",
-            "time": "8am",
-            "from": "24 Mar"
-          },
           {
             "day": "Tuesday",
             "time": "9am",
@@ -324,6 +340,11 @@ export const PRACTITIONERS_DATA = [
           "Thursdays at 11am (Fortnightly: Starting 19th Mar)"
         ],
         "weekly_availability": [
+          {
+            "day": "Thursday",
+            "time": "1pm",
+            "from": "19 Mar"
+          },
           {
             "day": "Thursday",
             "time": "8am",
@@ -374,24 +395,19 @@ export const PRACTITIONERS_DATA = [
           {
             "day": "Monday",
             "time": "10am",
-            "from": "16 Mar"
+            "from": "23 Mar"
           },
           {
             "day": "Monday",
             "time": "11am",
-            "from": "16 Mar"
+            "from": "23 Mar"
           }
         ],
         "fortnightly_availability": [
           {
             "day": "Monday",
-            "time": "1pm",
-            "from": "16 Mar"
-          },
-          {
-            "day": "Monday",
             "time": "8am",
-            "from": "16 Mar"
+            "from": "30 Mar"
           }
         ]
       }
@@ -434,16 +450,6 @@ export const PRACTITIONERS_DATA = [
         "weekly_availability": [],
         "fortnightly_availability": [
           {
-            "day": "Tuesday",
-            "time": "2:30pm",
-            "from": "17 Mar"
-          },
-          {
-            "day": "Wednesday",
-            "time": "9am",
-            "from": "8 Apr"
-          },
-          {
             "day": "Thursday",
             "time": "10am",
             "from": "16 Apr"
@@ -454,9 +460,14 @@ export const PRACTITIONERS_DATA = [
             "from": "19 Mar"
           },
           {
-            "day": "Thursday",
-            "time": "1pm",
-            "from": "19 Mar"
+            "day": "Tuesday",
+            "time": "2:30pm",
+            "from": "31 Mar"
+          },
+          {
+            "day": "Wednesday",
+            "time": "9am",
+            "from": "22 Apr"
           }
         ]
       },
@@ -600,17 +611,12 @@ export const PRACTITIONERS_DATA = [
           {
             "day": "Monday",
             "time": "8am",
-            "from": "16 Mar"
+            "from": "13 Apr"
           },
           {
             "day": "Monday",
             "time": "9am",
-            "from": "16 Mar"
-          },
-          {
-            "day": "Thursday",
-            "time": "1:30pm",
-            "from": "19 Mar"
+            "from": "13 Apr"
           },
           {
             "day": "Thursday",
@@ -662,19 +668,14 @@ export const PRACTITIONERS_DATA = [
         ],
         "weekly_availability": [
           {
-            "day": "Monday",
-            "time": "8am",
-            "from": "16 Mar"
-          },
-          {
-            "day": "Tuesday",
-            "time": "8am",
-            "from": "17 Mar"
-          },
-          {
             "day": "Tuesday",
             "time": "9am",
             "from": "17 Mar"
+          },
+          {
+            "day": "Wednesday",
+            "time": "7:30pm",
+            "from": "18 Mar"
           }
         ],
         "fortnightly_availability": [
@@ -682,16 +683,6 @@ export const PRACTITIONERS_DATA = [
             "day": "Wednesday",
             "time": "5:30pm",
             "from": "18 Mar"
-          },
-          {
-            "day": "Wednesday",
-            "time": "7:30pm",
-            "from": "18 Mar"
-          },
-          {
-            "day": "Friday",
-            "time": "4:30pm",
-            "from": "20 Mar"
           }
         ]
       }
@@ -735,7 +726,7 @@ export const PRACTITIONERS_DATA = [
           {
             "day": "Tuesday",
             "time": "12pm",
-            "from": "17 Mar"
+            "from": "31 Mar"
           },
           {
             "day": "Tuesday",
@@ -785,22 +776,12 @@ export const PRACTITIONERS_DATA = [
         ],
         "weekly_availability": [
           {
-            "day": "Tuesday",
-            "time": "1pm",
-            "from": "17 Mar"
-          },
-          {
             "day": "Thursday",
             "time": "9am",
             "from": "19 Mar"
           }
         ],
         "fortnightly_availability": [
-          {
-            "day": "Tuesday",
-            "time": "9am",
-            "from": "17 Mar"
-          },
           {
             "day": "Thursday",
             "time": "10am",
@@ -810,6 +791,11 @@ export const PRACTITIONERS_DATA = [
             "day": "Thursday",
             "time": "12pm",
             "from": "2 Apr"
+          },
+          {
+            "day": "Tuesday",
+            "time": "9am",
+            "from": "31 Mar"
           }
         ]
       }
@@ -917,14 +903,13 @@ export const PRACTITIONERS_DATA = [
           "Tuesdays at 6:30pm (Fortnightly: Starting 24th Mar)",
           "Tuesdays at 4:30pm (Fortnightly: Starting 7th Apr)"
         ],
-        "weekly_availability": [
+        "weekly_availability": [],
+        "fortnightly_availability": [
           {
             "day": "Tuesday",
             "time": "5:30pm",
-            "from": "17 Mar"
-          }
-        ],
-        "fortnightly_availability": [
+            "from": "21 Apr"
+          },
           {
             "day": "Tuesday",
             "time": "6:30pm",
@@ -1031,13 +1016,7 @@ export const PRACTITIONERS_DATA = [
           "Saturdays at 2pm (Weekly: Starting 21st Mar)",
           "Saturdays at 10am (Fortnightly: Starting 28th Mar)"
         ],
-        "weekly_availability": [
-          {
-            "day": "Saturday",
-            "time": "2pm",
-            "from": "21 Mar"
-          }
-        ],
+        "weekly_availability": [],
         "fortnightly_availability": [
           {
             "day": "Saturday",
@@ -1092,14 +1071,14 @@ export const PRACTITIONERS_DATA = [
         ],
         "fortnightly_availability": [
           {
+            "day": "Friday",
+            "time": "2pm",
+            "from": "10 Apr"
+          },
+          {
             "day": "Wednesday",
             "time": "1pm",
             "from": "25 Mar"
-          },
-          {
-            "day": "Friday",
-            "time": "2pm",
-            "from": "27 Mar"
           }
         ]
       },
@@ -1127,7 +1106,7 @@ export const PRACTITIONERS_DATA = [
           {
             "day": "Tuesday",
             "time": "1pm",
-            "from": "17 Mar"
+            "from": "31 Mar"
           }
         ]
       }
@@ -1185,17 +1164,17 @@ export const PRACTITIONERS_DATA = [
           {
             "day": "Monday",
             "time": "2:30pm",
-            "from": "16 Mar"
+            "from": "30 Mar"
           },
           {
             "day": "Monday",
             "time": "3:30pm",
-            "from": "16 Mar"
+            "from": "30 Mar"
           },
           {
             "day": "Monday",
             "time": "5pm",
-            "from": "16 Mar"
+            "from": "30 Mar"
           }
         ]
       },
@@ -1350,7 +1329,7 @@ export const PRACTITIONERS_DATA = [
           {
             "day": "Monday",
             "time": "12pm",
-            "from": "16 Mar"
+            "from": "23 Mar"
           },
           {
             "day": "Thursday",
@@ -1367,7 +1346,7 @@ export const PRACTITIONERS_DATA = [
           {
             "day": "Monday",
             "time": "1pm",
-            "from": "16 Mar"
+            "from": "13 Apr"
           },
           {
             "day": "Thursday",
@@ -1420,22 +1399,17 @@ export const PRACTITIONERS_DATA = [
           {
             "day": "Monday",
             "time": "10am",
-            "from": "16 Mar"
-          },
-          {
-            "day": "Monday",
-            "time": "11am",
-            "from": "23 Mar"
+            "from": "30 Mar"
           },
           {
             "day": "Monday",
             "time": "2pm",
-            "from": "16 Mar"
+            "from": "30 Mar"
           },
           {
             "day": "Monday",
             "time": "9am",
-            "from": "16 Mar"
+            "from": "30 Mar"
           },
           {
             "day": "Tuesday",
@@ -1485,27 +1459,15 @@ export const PRACTITIONERS_DATA = [
       }
     ],
     "telehealth": "Yes",
-    "presentations": [
-      "Anxiety",
-      "Depression",
-      "Relationship Concerns",
-      "Grief & Loss",
-      "Self-Esteem & Confidence",
-      "Life Transitions",
-      "Work Stress",
-      "Trauma and Post-Traumatic Stress Disorder (PTSD)"
-    ],
-    "modalities": [
-      "Psychodynamic Therapy",
-      "Internal Family Systems Therapy (IFS)",
-      "Emotion Focused Therapy (EFT)"
-    ],
+    "presentations": "Anxiety; Depression; Relationship Concerns; Grief & Loss; Self-Esteem & Confidence; Life Transitions; Work Stress; Trauma and Post-Traumatic Stress Disorder (PTSD)",
+    "modalities": "Psychodynamic Therapy / Internal Family Systems Therapy (IFS) / Emotion Focused Therapy (EFT)",
     "availability": [],
     "bio": "When I was young, I wanted to be a marine biologist. I was in awe of the mysteries of the ocean and marvelled at the variety of creatures living within it. As I grew older and began to see the world through more adult eyes, I realised that the depth and breadth of human emotion and behaviour was far vaster and more complex than any ocean could ever be. And so, my path was set.\n\nAfter many years of study and work, I am now a Senior Clinical Psychologist having worked in the UK, New Zealand and finally Australia. I have many years of experience working in the public sector with severe and enduring mental health issues, and also with mild to moderate mental health issues that most of us experience at some point in our lifetime.\n\nI am an integrative Doctor of Clinical Psychology and as such, I draw upon a wide variety of models of therapy such as Intensive Short Term Dynamic Psychotherapy (ISTDP) and Cognitive Behavioural Therapy (CBT), as well as others. This enables me to tailor treatments to the unique needs of each individual I see.\n\nHowever, as research has proven over and over again, the most important ingredient to effective treatment in psychological therapy is the therapeutic relationship itself. As such, I strive to form an authentic relationship with every client I see, and with an empathic understanding at its core. The sharing of vulnerability opens the door to intimacy, and it is my role to provide a safe and validating space that allows this process to occur.\n\nI have developed many areas of interest throughout my career, I have been invited to speak and keynote speak at a number of national and international conferences, and have worked on the Clinical Psychology Program at the University of Melbourne for the past 8 years. Finally, I am fortunate to be a supervisor and mentor to many psychologists, whether they be seasoned professionals or just starting out on their journey as a psychologist.\n\nMy passion remains in individual psychological therapy, especially using ISTDP, as well as research into the promising new arena of psychedelic sciences, and how this can be applied to the psychotherapeutic space once legalised.",
     "qualifications": "BSc (Hons) ClinPsyD",
     "pronouns": "He/him",
     "short_bio": "David is a senior clinical psychologist and supervisor using integrative ISTDP, exploring psychedelic science while prioritising authentic, empathic therapeutic relationships.",
-    "last_updated": "2026-03-06"
+    "last_updated": "2026-03-06",
+    "client_types": "Individual"
   },
   {
     "id": 23,
@@ -1543,13 +1505,8 @@ export const PRACTITIONERS_DATA = [
         "fortnightly_availability": [
           {
             "day": "Tuesday",
-            "time": "10am",
-            "from": "17 Mar"
-          },
-          {
-            "day": "Wednesday",
-            "time": "9am",
-            "from": "18 Mar"
+            "time": "11am",
+            "from": "31 Mar"
           }
         ]
       },
@@ -1682,19 +1639,19 @@ export const PRACTITIONERS_DATA = [
           {
             "day": "Monday",
             "time": "2:30pm",
-            "from": "16 Mar"
+            "from": "23 Mar"
           },
           {
             "day": "Monday",
             "time": "3:30pm",
-            "from": "16 Mar"
+            "from": "23 Mar"
           }
         ],
         "fortnightly_availability": [
           {
-            "day": "Wednesday",
-            "time": "1pm",
-            "from": "1 Apr"
+            "day": "Thursday",
+            "time": "10am",
+            "from": "19 Mar"
           },
           {
             "day": "Thursday",
@@ -1702,9 +1659,9 @@ export const PRACTITIONERS_DATA = [
             "from": "19 Mar"
           },
           {
-            "day": "Friday",
-            "time": "9am",
-            "from": "20 Mar"
+            "day": "Wednesday",
+            "time": "1pm",
+            "from": "1 Apr"
           }
         ]
       }
@@ -1764,11 +1721,6 @@ export const PRACTITIONERS_DATA = [
         ],
         "fortnightly_availability": [
           {
-            "day": "Wednesday",
-            "time": "3:30pm",
-            "from": "18 Mar"
-          },
-          {
             "day": "Thursday",
             "time": "10:30am",
             "from": "2 Apr"
@@ -1777,6 +1729,11 @@ export const PRACTITIONERS_DATA = [
             "day": "Thursday",
             "time": "9am",
             "from": "9 Apr"
+          },
+          {
+            "day": "Wednesday",
+            "time": "3:30pm",
+            "from": "18 Mar"
           }
         ]
       }
