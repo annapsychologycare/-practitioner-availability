@@ -26,7 +26,9 @@ export const PRACTITIONERS_DATA = [
     "locations": [
       {
         "location": "Greville St, Prahran",
-        "availability": [],
+        "availability": [
+          "Wednesdays at 5:30pm (Fortnightly: Starting 25th Mar)"
+        ],
         "weekly_availability": [],
         "fortnightly_availability": [
           {
@@ -39,7 +41,8 @@ export const PRACTITIONERS_DATA = [
       {
         "location": "Wattletree Rd, Malvern",
         "availability": [
-          "Mondays at 2:30pm (Fortnightly: Starting 6th Apr)"
+          "Fridays at 12pm (Fortnightly: Starting 20th Mar)",
+          "Fridays at 9am (Fortnightly: Starting 27th Mar)"
         ],
         "weekly_availability": [],
         "fortnightly_availability": [
@@ -56,8 +59,10 @@ export const PRACTITIONERS_DATA = [
         ]
       },
       {
-        "location": "Online/ Telehealth Only",
-        "availability": [],
+        "location": "Telehealth",
+        "availability": [
+          "Wednesdays at 1:30pm (Fortnightly: Starting 18th Mar)"
+        ],
         "weekly_availability": [],
         "fortnightly_availability": [
           {
@@ -103,8 +108,7 @@ export const PRACTITIONERS_DATA = [
           "Mondays at 10am (Fortnightly: Starting 23rd Mar)",
           "Mondays at 1pm (Fortnightly: Starting 23rd Mar)",
           "Mondays at 3pm (Fortnightly: Starting 23rd Mar)",
-          "Saturdays at 9am (Fortnightly: Starting 21st Mar)",
-          "Saturdays at 10am (Fortnightly: Starting 21st Mar)",
+          "Saturdays at 10am (Fortnightly: Starting 4th Apr)",
           "Saturdays at 1pm (Fortnightly: Starting 28th Mar)"
         ],
         "weekly_availability": [],
@@ -168,7 +172,9 @@ export const PRACTITIONERS_DATA = [
     "locations": [
       {
         "location": "Wattletree Rd, Malvern",
-        "availability": []
+        "availability": [],
+        "weekly_availability": [],
+        "fortnightly_availability": []
       },
       {
         "location": "Greville St, Prahran",
@@ -217,13 +223,11 @@ export const PRACTITIONERS_DATA = [
       {
         "location": "Greville St, Prahran",
         "availability": [
-          "Mondays at 9am (Weekly: Starting 16th Mar)",
+          "Fridays at 11am (Weekly: Starting 20th Mar)",
+          "Mondays at 9am (Weekly: Starting 23rd Mar)",
+          "Fridays at 2pm (Fortnightly: Starting 20th Mar)",
           "Mondays at 10am (Fortnightly: Starting 23rd Mar)",
-          "Mondays at 11:30am (Fortnightly: Starting 23rd Mar)",
-          "Fridays at 11am (Weekly: Starting 13th Mar)",
-          "Fridays at 1pm (Fortnightly: Starting 13th Mar)",
-          "Fridays at 10am (Fortnightly: Starting 20th Mar)",
-          "Fridays at 2pm (Fortnightly: Starting 20th Mar)"
+          "Mondays at 11:30am (Fortnightly: Starting 23rd Mar)"
         ],
         "weekly_availability": [
           {
@@ -288,8 +292,7 @@ export const PRACTITIONERS_DATA = [
       {
         "location": "Wattletree Rd, Malvern",
         "availability": [
-          "Tuesdays at 8am (Fortnightly: Starting 10th Mar)",
-          "Tuesdays at 9am (Fortnightly: Starting 10th Mar)"
+          "Tuesdays at 9am (Fortnightly: Starting 24th Mar)"
         ],
         "weekly_availability": [],
         "fortnightly_availability": [
@@ -333,11 +336,11 @@ export const PRACTITIONERS_DATA = [
       {
         "location": "Greville St, Prahran",
         "availability": [
-          "Thursdays at 8am (Weekly: Starting 12th Mar)",
-          "Thursdays at 9am (Weekly: Starting 12th Mar)",
-          "Thursdays at 12pm (Fortnightly: Starting 12th Mar)",
+          "Thursdays at 1pm (Weekly: Starting 19th Mar)",
+          "Thursdays at 8am (Weekly: Starting 19th Mar)",
+          "Thursdays at 9am (Weekly: Starting 19th Mar)",
           "Thursdays at 10am (Fortnightly: Starting 19th Mar)",
-          "Thursdays at 11am (Fortnightly: Starting 19th Mar)"
+          "Thursdays at 12pm (Fortnightly: Starting 26th Mar)"
         ],
         "weekly_availability": [
           {
@@ -384,12 +387,11 @@ export const PRACTITIONERS_DATA = [
         ]
       },
       {
-        "location": "Online/ Telehealth Only",
+        "location": "Telehealth",
         "availability": [
-          "Mondays at 8am (Fortnightly: Starting 16th Mar)",
-          "Mondays at 10am (Weekly: Starting 16th Mar)",
-          "Mondays at 11am (Weekly: Starting 16th Mar)",
-          "Mondays at 1pm (Fortnightly: Starting 16th Mar)"
+          "Mondays at 10am (Weekly: Starting 23rd Mar)",
+          "Mondays at 11am (Weekly: Starting 23rd Mar)",
+          "Mondays at 8am (Fortnightly: Starting 30th Mar)"
         ],
         "weekly_availability": [
           {
@@ -444,8 +446,10 @@ export const PRACTITIONERS_DATA = [
       {
         "location": "Wattletree Rd, Malvern",
         "availability": [
-          "Wednesdays at 9am (Fortnightly: Starting 8th Apr)",
-          "Thursdays at 10am (Fortnightly: Starting 16th Apr)"
+          "Thursdays at 10am (Fortnightly: Starting 16th Apr)",
+          "Thursdays at 12pm (Fortnightly: Starting 19th Mar)",
+          "Tuesdays at 2:30pm (Fortnightly: Starting 31st Mar)",
+          "Wednesdays at 9am (Fortnightly: Starting 22nd Apr)"
         ],
         "weekly_availability": [],
         "fortnightly_availability": [
@@ -473,7 +477,9 @@ export const PRACTITIONERS_DATA = [
       },
       {
         "location": "SUPERVISION: \nOnline/ Telehealth Only",
-        "availability": []
+        "availability": [],
+        "weekly_availability": [],
+        "fortnightly_availability": []
       }
     ],
     "last_updated": "2026-03-06",
@@ -579,26 +585,17 @@ export const PRACTITIONERS_DATA = [
     "locations": [
       {
         "location": "Online/ Telehealth Only",
-        "availability": [
-          "Tuesdays at 10am (Fortnightly: Starting 17th Mar)"
-        ],
+        "availability": [],
         "weekly_availability": [],
-        "fortnightly_availability": [
-          {
-            "day": "Tuesday",
-            "time": "10am",
-            "from": "17 Mar"
-          }
-        ]
+        "fortnightly_availability": []
       },
       {
         "location": "Wattletree Rd, Malvern",
         "availability": [
-          "Mondays at 8am (Fortnightly: Starting 16th Mar)",
-          "Mondays at 9am (Weekly: Starting 16th Mar)",
-          "Thursdays at 8am (Weekly: Starting 12th Mar)",
-          "Thursdays at 9am (Fortnightly: Starting 12th Mar)",
-          "Thursdays at 1:30pm (Fortnightly: Starting 19th Mar)"
+          "Thursdays at 8am (Weekly: Starting 19th Mar)",
+          "Mondays at 8am (Fortnightly: Starting 13th Apr)",
+          "Mondays at 9am (Fortnightly: Starting 13th Apr)",
+          "Thursdays at 9am (Fortnightly: Starting 26th Mar)"
         ],
         "weekly_availability": [
           {
@@ -658,13 +655,9 @@ export const PRACTITIONERS_DATA = [
       {
         "location": "Wattletree Rd, Malvern",
         "availability": [
-          "Mondays at 8am (Weekly: Starting 9th Mar)",
-          "Mondays at 10am (Fortnightly: Starting 9th Mar)",
-          "Tuesdays at 8am (Weekly: Starting 10th Mar)",
-          "Tuesdays at 9am (Weekly: Starting 10th Mar)",
-          "Wednesdays at 5:30pm (Fortnightly: Starting 18th Mar)",
-          "Wednesdays at 7:30pm (Fortnightly: Starting 18th Mar)",
-          "Fridays at 4:30pm (Fortnightly: Starting 20th Mar)"
+          "Tuesdays at 9am (Weekly: Starting 17th Mar)",
+          "Wednesdays at 7:30pm (Weekly: Starting 18th Mar)",
+          "Wednesdays at 5:30pm (Fortnightly: Starting 18th Mar)"
         ],
         "weekly_availability": [
           {
@@ -719,7 +712,8 @@ export const PRACTITIONERS_DATA = [
       {
         "location": "Greville St, Prahran",
         "availability": [
-          "Tuesdays at 12pm (Fortnightly: Starting 17th Mar)"
+          "Tuesdays at 12pm (Fortnightly: Starting 31st Mar)",
+          "Tuesdays at 1pm (Fortnightly: Starting 24th Mar)"
         ],
         "weekly_availability": [],
         "fortnightly_availability": [
@@ -768,11 +762,10 @@ export const PRACTITIONERS_DATA = [
       {
         "location": "Wattletree Rd, Malvern",
         "availability": [
-          "Tuesdays at 1pm (Weekly: Starting 10th Mar)",
-          "Tuesdays at 9am (Fortnightly: Starting 17th Mar)",
-          "Thursdays at 10am (Fortnightly: Starting 12th Mar)",
           "Thursdays at 9am (Weekly: Starting 19th Mar)",
-          "Thursdays at 12pm (Fortnightly: Starting 2nd Apr)"
+          "Thursdays at 10am (Fortnightly: Starting 26th Mar)",
+          "Thursdays at 12pm (Fortnightly: Starting 2nd Apr)",
+          "Tuesdays at 9am (Fortnightly: Starting 31st Mar)"
         ],
         "weekly_availability": [
           {
@@ -900,8 +893,8 @@ export const PRACTITIONERS_DATA = [
       {
         "location": "Wattletree Rd, Malvern",
         "availability": [
-          "Tuesdays at 6:30pm (Fortnightly: Starting 24th Mar)",
-          "Tuesdays at 4:30pm (Fortnightly: Starting 7th Apr)"
+          "Tuesdays at 5:30pm (Fortnightly: Starting 21st Apr)",
+          "Tuesdays at 6:30pm (Fortnightly: Starting 21st Apr)"
         ],
         "weekly_availability": [],
         "fortnightly_availability": [
@@ -951,9 +944,9 @@ export const PRACTITIONERS_DATA = [
         "location": "Greville St, Prahran",
         "availability": [
           "Tuesdays at 10am (Weekly: Starting 17th Mar)",
-          "Tuesdays at 3:30pm (Weekly: Starting 17th Mar)",
-          "Tuesdays at 1pm (Fortnightly: Starting 24th Mar)",
-          "Tuesdays at 12pm (Weekly: Starting 31st Mar)"
+          "Tuesdays at 12pm (Weekly: Starting 31st Mar)",
+          "Tuesdays at 3:30pm (Weekly: Starting 31st Mar)",
+          "Tuesdays at 1pm (Fortnightly: Starting 24th Mar)"
         ],
         "weekly_availability": [
           {
@@ -1013,8 +1006,7 @@ export const PRACTITIONERS_DATA = [
       {
         "location": "Wattletree Rd, Malvern",
         "availability": [
-          "Saturdays at 2pm (Weekly: Starting 21st Mar)",
-          "Saturdays at 10am (Fortnightly: Starting 28th Mar)"
+          "Saturdays at 10am (Fortnightly: Starting 21st Mar)"
         ],
         "weekly_availability": [],
         "fortnightly_availability": [
@@ -1058,9 +1050,9 @@ export const PRACTITIONERS_DATA = [
       {
         "location": "Wattletree Rd, Malvern",
         "availability": [
-          "Wednesdays at 12pm (Weekly: Starting 11th Mar)",
-          "Wednesdays at 1pm (Fortnightly: Starting 11th Mar)",
-          "Fridays at 2pm (Weekly: Starting 20th Mar)"
+          "Wednesdays at 12pm (Weekly: Starting 18th Mar)",
+          "Fridays at 2pm (Fortnightly: Starting 10th Apr)",
+          "Wednesdays at 1pm (Fortnightly: Starting 25th Mar)"
         ],
         "weekly_availability": [
           {
@@ -1085,7 +1077,7 @@ export const PRACTITIONERS_DATA = [
       {
         "location": "Greville St, Prahran",
         "availability": [
-          "Tuesdays at 11am (Fortnightly: Starting 10th Mar)"
+          "Tuesdays at 3pm (Fortnightly: Starting 24th Mar)"
         ],
         "weekly_availability": [],
         "fortnightly_availability": [
@@ -1097,9 +1089,9 @@ export const PRACTITIONERS_DATA = [
         ]
       },
       {
-        "location": "Online/ Telehealth Only",
+        "location": "Telehealth",
         "availability": [
-          "Tuesdays at 1pm (Fortnightly: Starting 17th Mar)"
+          "Tuesdays at 1pm (Fortnightly: Starting 31st Mar)"
         ],
         "weekly_availability": [],
         "fortnightly_availability": [
@@ -1157,7 +1149,9 @@ export const PRACTITIONERS_DATA = [
       {
         "location": "Greville St, Prahran",
         "availability": [
-          "Mondays at 2:30pm (Fortnightly: Starting 16th Mar)"
+          "Mondays at 2:30pm (Fortnightly: Starting 30th Mar)",
+          "Mondays at 3:30pm (Fortnightly: Starting 30th Mar)",
+          "Mondays at 5pm (Fortnightly: Starting 30th Mar)"
         ],
         "weekly_availability": [],
         "fortnightly_availability": [
@@ -1180,10 +1174,9 @@ export const PRACTITIONERS_DATA = [
       },
       {
         "location": "Online/ Telehealth Only",
-        "availability": [
-          "Mondays at 3:30pm (Fortnightly: Starting 16th Mar)",
-          "Mondays at 5pm (Fortnightly: Starting 16th Mar)"
-        ]
+        "availability": [],
+        "weekly_availability": [],
+        "fortnightly_availability": []
       }
     ],
     "last_updated": "2026-03-06",
@@ -1256,10 +1249,10 @@ export const PRACTITIONERS_DATA = [
       {
         "location": "Victoria St, St Kilda",
         "availability": [
-          "Thursdays at 10:15am (Weekly: Starting 12th Mar)",
-          "Thursdays at 12:45pm (Weekly: Starting 12th Mar)",
-          "Thursdays at 2pm (Fortnightly: Starting 12th Mar)",
-          "Thursdays at 3:15pm (Weekly: Starting 2nd Apr)"
+          "Thursdays at 10:15am (Weekly: Starting 2nd Apr)",
+          "Thursdays at 12:45pm (Weekly: Starting 19th Mar)",
+          "Thursdays at 3:15pm (Weekly: Starting 9th Apr)",
+          "Thursdays at 2pm (Fortnightly: Starting 26th Mar)"
         ],
         "weekly_availability": [
           {
@@ -1319,10 +1312,10 @@ export const PRACTITIONERS_DATA = [
       {
         "location": "Greville St, Prahran",
         "availability": [
-          "Mondays at 12pm (Weekly: Starting 16th Mar)",
-          "Mondays at 1pm (Fortnightly: Starting 16th Mar)",
+          "Mondays at 12pm (Weekly: Starting 23rd Mar)",
           "Thursdays at 10am (Weekly: Starting 19th Mar)",
-          "Thursdays at 11am (Fortnightly: Starting 26th Mar)",
+          "Thursdays at 11am (Weekly: Starting 19th Mar)",
+          "Mondays at 1pm (Fortnightly: Starting 13th Apr)",
           "Thursdays at 1pm (Fortnightly: Starting 26th Mar)"
         ],
         "weekly_availability": [
@@ -1388,10 +1381,10 @@ export const PRACTITIONERS_DATA = [
       {
         "location": "Greville St, Prahran",
         "availability": [
-          "Mondays at 9am (Fortnightly: Starting 16th Mar)",
-          "Mondays at 10am (Fortnightly: Starting 16th Mar)",
-          "Mondays at 11am (Fortnightly: Starting 23rd Mar)",
-          "Tuesdays at 2:30pm (Fortnightly: Starting 10th Mar)",
+          "Mondays at 10am (Fortnightly: Starting 30th Mar)",
+          "Mondays at 2pm (Fortnightly: Starting 30th Mar)",
+          "Mondays at 9am (Fortnightly: Starting 30th Mar)",
+          "Tuesdays at 2:30pm (Fortnightly: Starting 24th Mar)",
           "Wednesdays at 2:30pm (Fortnightly: Starting 18th Mar)"
         ],
         "weekly_availability": [],
@@ -1440,8 +1433,8 @@ export const PRACTITIONERS_DATA = [
       {
         "location": "Greville St, Prahran",
         "availability": [
-          "Thursdays at 9am (Weekly: Starting 2nd Apr)",
-          "Thursdays at 10am (Weekly: Starting 2nd Apr)"
+          "Thursdays at 10am (Weekly: Starting 2nd Apr)",
+          "Thursdays at 9am (Weekly: Starting 2nd Apr)"
         ],
         "weekly_availability": [
           {
@@ -1497,9 +1490,7 @@ export const PRACTITIONERS_DATA = [
       {
         "location": "Greville St, Prahran",
         "availability": [
-          "Tuesdays at 9am (Fortnightly: Starting 17th Mar)",
-          "Tuesdays at 10am (Fortnightly: Starting 17th Mar)",
-          "Wednesdays at 9am (Fortnightly: Starting 18th Mar)"
+          "Tuesdays at 11am (Fortnightly: Starting 31st Mar)"
         ],
         "weekly_availability": [],
         "fortnightly_availability": [
@@ -1512,7 +1503,9 @@ export const PRACTITIONERS_DATA = [
       },
       {
         "location": "Online/ Telehealth Only",
-        "availability": []
+        "availability": [],
+        "weekly_availability": [],
+        "fortnightly_availability": []
       }
     ],
     "last_updated": "2026-03-06",
@@ -1629,11 +1622,11 @@ export const PRACTITIONERS_DATA = [
       {
         "location": "Greville St, Prahran",
         "availability": [
-          "Mondays at 3:30pm (Weekly: Starting 9th Mar)",
-          "Wednesdays at 1pm (Fortnightly: Starting 18th Mar)",
+          "Mondays at 2:30pm (Weekly: Starting 23rd Mar)",
+          "Mondays at 3:30pm (Weekly: Starting 23rd Mar)",
+          "Thursdays at 10am (Fortnightly: Starting 19th Mar)",
           "Thursdays at 8am (Fortnightly: Starting 19th Mar)",
-          "Fridays at 9am (Fortnightly: Starting 20th Mar)",
-          "Fridays at 11am (Fortnightly: Starting 20th Mar)"
+          "Wednesdays at 1pm (Fortnightly: Starting 1st Apr)"
         ],
         "weekly_availability": [
           {
@@ -1698,9 +1691,12 @@ export const PRACTITIONERS_DATA = [
       {
         "location": "Greville St, Prahran",
         "availability": [
-          "Wednesdays at 2pm (Weekly: Starting 11th Mar)",
-          "Wednesdays at 5:30pm (Weekly: Starting 11th Mar)",
-          "Thursdays at 9am (Fortnightly: Starting 9th Apr)"
+          "Wednesdays at 1pm (Weekly: Starting 18th Mar)",
+          "Wednesdays at 2pm (Weekly: Starting 18th Mar)",
+          "Wednesdays at 5:30pm (Weekly: Starting 18th Mar)",
+          "Thursdays at 10:30am (Fortnightly: Starting 2nd Apr)",
+          "Thursdays at 9am (Fortnightly: Starting 9th Apr)",
+          "Wednesdays at 3:30pm (Fortnightly: Starting 18th Mar)"
         ],
         "weekly_availability": [
           {
