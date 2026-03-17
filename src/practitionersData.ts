@@ -1,5 +1,5 @@
 // Auto-generated 2026-03-17 23:28:59
-export const practitioners: any[] = [
+export const PRACTITIONERS_DATA: any[] = [
   {
     "id": 1,
     "name": "Alex Barry",
