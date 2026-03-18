@@ -8,7 +8,7 @@ import IntakeTab from "./components/IntakeTab";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 
-const STORAGE_KEY = "pc_practitioners_v6";
+const STORAGE_KEY = "pc_practitioners_v8";
 
 function loadPractitioners(): Practitioner[] {
   try {

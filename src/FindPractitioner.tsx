@@ -117,7 +117,12 @@ function scoreMatch(p: Practitioner, filters: Filters): number {
   }
 
   if (filters.hasAvailability) {
-    const hasAvail = p.locations.some(l => l.availability && (Array.isArray(l.availability) ? l.availability.length > 0 : (l.availability as string).trim().length > 0));
+    const hasAvail = p.locations.some(l => {
+      const avail = l.availability;
+      if (!avail) return false;
+      if (Array.isArray(avail)) return avail.length > 0;
+      return (avail as string).trim().length > 0;
+    });
     if (!hasAvail) return -1;
   }
 
@@ -155,13 +160,21 @@ function scoreMatch(p: Practitioner, filters: Filters): number {
   }
 
   if (filters.availabilityTypes.length > 0) {
-    const allAvail = p.locations.map(l => Array.isArray(l.availability) ? l.availability.join(" ") : (l.availability || "")).join(" ").toLowerCase();
+    const allAvail = p.locations.map(l => {
+      const a = l.availability;
+      if (!a) return "";
+      return Array.isArray(a) ? a.join(" ") : a;
+    }).join(" ").toLowerCase();
     const hasType = filters.availabilityTypes.some(t => allAvail.includes(t.toLowerCase()));
     if (!hasType) return -1;
   }
 
   if (filters.days.length > 0) {
-    const allAvail = p.locations.map(l => Array.isArray(l.availability) ? l.availability.join(" ") : (l.availability || "")).join(" ").toLowerCase();
+    const allAvail = p.locations.map(l => {
+      const a = l.availability;
+      if (!a) return "";
+      return Array.isArray(a) ? a.join(" ") : a;
+    }).join(" ").toLowerCase();
     const hasDay = filters.days.some(day => allAvail.includes(day.toLowerCase()));
     if (!hasDay) return -1;
   }
@@ -187,7 +200,7 @@ function filterOutMonthly(text: string | string[]): string {
 function parseAvailabilityColumns(text: string | string[]): { weekly: string[]; fortnightly: string[] } {
   const weekly: string[] = [];
   const fortnightly: string[] = [];
-  if (!text) return { weekly, fortnightly };
+  if (!text || (Array.isArray(text) && text.length === 0)) return { weekly, fortnightly };
   const lines = (Array.isArray(text) ? text : text.split("\n")).map(l => l.replace(/^\*\s*/, "").trim()).filter(Boolean);
   for (const line of lines) {
     if (/\(Monthly:/i.test(line)) continue;
@@ -206,14 +219,14 @@ const PractitionerCard: React.FC<CardProps> = ({ p, locationFilter, isSelected, 
     : p.locations
   ).map(l => ({ ...l, availability: l.availability ? filterOutMonthly(l.availability) : "" }));
 
-  const hasAvail = displayLocs.some(l => l.availability && (l.availability as string).trim());
+  const hasAvail = displayLocs.some(l => l.availability && l.availability.trim());
 
   const copyAvailability = () => {
     const lines: string[] = [p.name + " -- " + p.title];
     for (const loc of displayLocs) {
-      if (loc.availability && (loc.availability as string).trim()) {
+      if (loc.availability && loc.availability.trim()) {
         lines.push("\n" + loc.location + ":");
-        lines.push((loc.availability as string).trim());
+        lines.push(loc.availability.trim());
       }
     }
     navigator.clipboard.writeText(lines.join("\n"));
@@ -222,7 +235,7 @@ const PractitionerCard: React.FC<CardProps> = ({ p, locationFilter, isSelected, 
   };
 
   return (
-    <div className={`card bg-base-100 shadow-sm border mb-4 transition-all ${isSelected ? "border-primary ring-1 ring-primary" : "border-base-300"}`}>
+    <div className="card bg-white shadow-sm border mb-4 transition-all" style={{ borderColor: isSelected ? "#8D5273" : "#CDA8BA", boxShadow: isSelected ? "0 0 0 1px #8D5273" : undefined }}>
       <div className="card-body p-4">
         <div className="flex flex-wrap gap-2 items-start justify-between">
           <div className="flex items-start gap-3 flex-1 min-w-0">
@@ -235,15 +248,15 @@ const PractitionerCard: React.FC<CardProps> = ({ p, locationFilter, isSelected, 
             />
             <div className="flex-1 min-w-0">
               <div className="flex items-center gap-2 flex-wrap">
-                <h3 className="text-lg font-bold text-primary">
+                <h3 className="text-lg font-bold" style={{ color: "#2C244C" }}>
                   {p.link_to_bio ? (
                     <a href={p.link_to_bio} target="_blank" rel="noopener noreferrer" className="hover:underline">{p.name}</a>
                   ) : p.name}
                 </h3>
                 {p.pronouns && <span className="text-xs text-base-content/50">({p.pronouns})</span>}
-                {p.pap_clinician === "Yes" && <span className="badge badge-secondary badge-sm">PAP</span>}
-                {hasAfterHoursAvailability(p.locations.map(l => ({ availability: l.availability }))) && <span className="badge badge-accent badge-sm">After Hours</span>}
-                {p.accepts_couples && <span className="badge badge-info badge-sm">Couples</span>}
+                {p.pap_clinician === "Yes" && <span className="badge badge-sm text-white" style={{ backgroundColor: "#8D5273" }}>PAP</span>}
+                {hasAfterHoursAvailability(p.locations.map(l => ({ availability: l.availability }))) && <span className="badge badge-sm text-white" style={{ backgroundColor: "#52A3BA" }}>After Hours</span>}
+                {p.accepts_couples && <span className="badge badge-sm text-white" style={{ backgroundColor: "#366188" }}>Couples</span>}
               </div>
               <p className="text-sm text-base-content/70 font-medium">{p.title}</p>
             </div>
@@ -259,7 +272,7 @@ const PractitionerCard: React.FC<CardProps> = ({ p, locationFilter, isSelected, 
         </div>
 
         {p.alert && (
-          <div className="alert alert-warning py-2 px-3 text-sm mt-2">
+          <div className="py-2 px-3 text-sm mt-2 rounded-lg border-l-4" style={{ backgroundColor: "#F0EEF7", borderLeftColor: "#8D5273", color: "#2C244C" }}>
             <span>{"⚠"} {p.alert}</span>
           </div>
         )}
@@ -284,7 +297,7 @@ const PractitionerCard: React.FC<CardProps> = ({ p, locationFilter, isSelected, 
           ))}
         </div>
 
-        <div className="mt-3 bg-base-200 rounded-lg p-3">
+        <div className="mt-3 rounded-lg p-3" style={{ backgroundColor: "#F0EEF7" }}>
           <div className="flex items-center justify-between mb-2">
             <span className="font-semibold text-sm">Availability</span>
             {hasAvail && (
@@ -309,8 +322,8 @@ const PractitionerCard: React.FC<CardProps> = ({ p, locationFilter, isSelected, 
                   ) : (
                     <div className="grid grid-cols-2 gap-2">
                       {/* Weekly column */}
-                      <div className="bg-success/10 rounded-lg p-2">
-                        <div className="text-xs font-bold text-success mb-1">🟢 Weekly</div>
+                      <div className="rounded-lg p-2" style={{ backgroundColor: "rgba(54,97,136,0.08)" }}>
+                        <div className="text-xs font-bold mb-1" style={{ color: "#366188" }}>● Weekly</div>
                         {weekly.length > 0 ? (
                           <ul className="space-y-1">
                             {weekly.map((line, j) => {
@@ -329,8 +342,8 @@ const PractitionerCard: React.FC<CardProps> = ({ p, locationFilter, isSelected, 
                         )}
                       </div>
                       {/* Fortnightly column */}
-                      <div className="bg-info/10 rounded-lg p-2">
-                        <div className="text-xs font-bold text-info mb-1">🔵 Fortnightly</div>
+                      <div className="rounded-lg p-2" style={{ backgroundColor: "rgba(82,163,186,0.08)" }}>
+                        <div className="text-xs font-bold mb-1" style={{ color: "#52A3BA" }}>● Fortnightly</div>
                         {fortnightly.length > 0 ? (
                           <ul className="space-y-1">
                             {fortnightly.map((line, j) => {
@@ -399,7 +412,7 @@ export default function FindPractitioner({ practitioners }: Props) {
   const [clientType, setClientType] = useState("");
   const [therapistType, setTherapistType] = useState("");
   const [afterHours, setAfterHours] = useState(false);
-  const [hasAvailability, setHasAvailability] = useState(false);
+  const [hasAvailability, setHasAvailability] = useState(true);
 
   const [selectedPresentations, setSelectedPresentations] = useState<string[]>([]);
   const [selectedModalities, setSelectedModalities] = useState<string[]>([]);
@@ -418,7 +431,7 @@ export default function FindPractitioner({ practitioners }: Props) {
     return practitioners
       .map(p => ({ p, score: scoreMatch(p, filters) }))
       .filter(item => item.score >= 0)
-      .sort((a, b) => b.score - a.score);
+      .sort((a, b) => b.score - a.score || a.p.name.localeCompare(b.p.name));
   }, [practitioners, keyword, location, gender, clientType, therapistType, afterHours, hasAvailability, selectedPresentations, selectedModalities, clientAge, selectedPractitionerNames, selectedAvailabilityTypes, selectedDays]);
 
   const clearFilters = () => {
@@ -456,7 +469,7 @@ export default function FindPractitioner({ practitioners }: Props) {
         </div>
       )}
 
-      <div className="card bg-base-100 shadow-sm border border-base-300 mb-6">
+      <div className="card bg-white shadow-sm border mb-6" style={{ borderColor: "#CDA8BA" }}>
         <div className="card-body p-4">
           <h2 className="font-bold text-lg mb-3">Search and Filter</h2>
           <div className="mb-3">
@@ -597,11 +610,11 @@ export default function FindPractitioner({ practitioners }: Props) {
       </div>
 
       {results.length === 0 ? (
-        <div className="card bg-base-100 shadow-sm border border-base-300">
+        <div className="card bg-white shadow-sm border" style={{ borderColor: "#CDA8BA" }}>
           <div className="card-body text-center py-12">
-            <p className="text-base-content/50 text-lg">No practitioners match your search</p>
-            <p className="text-base-content/40 text-sm">Try removing some filters</p>
-            <button onClick={clearFilters} className="btn btn-primary btn-sm mt-4 mx-auto">Clear Filters</button>
+            <p className="text-lg" style={{ color: "#36454F" }}>No practitioners match your search</p>
+            <p className="text-sm" style={{ color: "#CDA8BA" }}>Try removing some filters</p>
+            <button onClick={clearFilters} className="btn btn-sm mt-4 mx-auto text-white" style={{ backgroundColor: "#2C244C" }}>Clear Filters</button>
           </div>
         </div>
       ) : (
@@ -621,22 +634,31 @@ export default function FindPractitioner({ practitioners }: Props) {
 
       {/* Floating Send Bar */}
       {selectedNames.size > 0 && (
-        <div className="fixed bottom-0 left-0 right-0 z-50 p-4 bg-base-100 border-t border-base-300 shadow-lg">
+        <div className="fixed bottom-0 left-0 right-0 z-50 p-4 bg-white shadow-lg" style={{ borderTop: "2px solid #CDA8BA" }}>
           <div className="max-w-4xl mx-auto flex items-center justify-between gap-4">
             <div className="flex items-center gap-2">
-              <CheckSquare size={18} className="text-primary" />
+              <CheckSquare size={18} style={{ color: "#8D5273" }} />
               <span className="font-semibold">{selectedNames.size} practitioner{selectedNames.size !== 1 ? "s" : ""} selected</span>
               <span className="text-base-content/50 text-sm hidden sm:inline">
                 — {selectedPractitioners.map(p => p.name.split(" ")[0]).join(", ")}
               </span>
             </div>
-            <button
-              onClick={() => setShowSendModal(true)}
-              className="btn btn-primary gap-2"
-            >
-              <Send size={16} />
-              Send to Client
-            </button>
+            <div className="flex items-center gap-2">
+              <button
+                onClick={() => setSelectedNames(new Set())}
+                className="btn btn-ghost btn-sm gap-1"
+                style={{ color: "#8D5273" }}
+              >
+                ✕ Clear All
+              </button>
+              <button
+                onClick={() => setShowSendModal(true)}
+                className="btn gap-2 text-white" style={{ backgroundColor: "#2C244C" }}
+              >
+                <Send size={16} />
+                Send to Client
+              </button>
+            </div>
           </div>
         </div>
       )}
