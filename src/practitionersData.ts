@@ -1,4 +1,4 @@
-// Auto-generated 2026-03-17 23:28:59
+// Auto-generated 2026-03-18 00:13:06
 export const PRACTITIONERS_DATA: any[] = [
   {
     "id": 1,
@@ -28,15 +28,13 @@ export const PRACTITIONERS_DATA: any[] = [
       {
         "location": "Greville St, Prahran",
         "availability": [
-          "Wednesdays at 5:30pm, 5:30pm & 5:30pm (Fortnightly: Starting 25 Mar) \u2014 Greville St, Prahran"
+          "Wednesdays at 5:30pm (Fortnightly: Starting 25 Mar) \u2014 Greville St, Prahran"
         ],
         "weekly_availability": [],
         "fortnightly_availability": [
           {
             "day": "Wednesday",
             "times": [
-              "5:30pm",
-              "5:30pm",
               "5:30pm"
             ],
             "from_date": "25 Mar"
@@ -46,7 +44,7 @@ export const PRACTITIONERS_DATA: any[] = [
       {
         "location": "Wattletree Rd, Malvern",
         "availability": [
-          "Tuesdays at 2:30pm, 2:30pm & 2:30pm (Fortnightly: Starting 31 Mar) \u2014 Wattletree Rd, Malvern",
+          "Tuesdays at 2:30pm (Fortnightly: Starting 31 Mar) \u2014 Wattletree Rd, Malvern",
           "Fridays at 12pm (Fortnightly: Starting 17 Apr) \u2014 Wattletree Rd, Malvern"
         ],
         "weekly_availability": [],
@@ -54,8 +52,6 @@ export const PRACTITIONERS_DATA: any[] = [
           {
             "day": "Tuesday",
             "times": [
-              "2:30pm",
-              "2:30pm",
               "2:30pm"
             ],
             "from_date": "31 Mar"
@@ -72,15 +68,13 @@ export const PRACTITIONERS_DATA: any[] = [
       {
         "location": "Telehealth",
         "availability": [
-          "Wednesdays at 1:30pm, 1:30pm & 1:30pm (Fortnightly: Starting 1 Apr) \u2014 Telehealth"
+          "Wednesdays at 1:30pm (Fortnightly: Starting 1 Apr) \u2014 Telehealth"
         ],
         "weekly_availability": [],
         "fortnightly_availability": [
           {
             "day": "Wednesday",
             "times": [
-              "1:30pm",
-              "1:30pm",
               "1:30pm"
             ],
             "from_date": "1 Apr"
@@ -90,39 +84,35 @@ export const PRACTITIONERS_DATA: any[] = [
     ],
     "last_updated": "2026-03-06",
     "availability": [
-      "Wednesdays at 5:30pm, 5:30pm & 5:30pm (Fortnightly: Starting 25 Mar) \u2014 Greville St, Prahran",
-      "Wednesdays at 1:30pm, 1:30pm & 1:30pm (Fortnightly: Starting 1 Apr) \u2014 Telehealth",
-      "Tuesdays at 2:30pm, 2:30pm & 2:30pm (Fortnightly: Starting 31 Mar) \u2014 Wattletree Rd, Malvern",
+      "Wednesdays at 5:30pm (Fortnightly: Starting 25 Mar) \u2014 Greville St, Prahran",
+      "Wednesdays at 1:30pm (Fortnightly: Starting 1 Apr) \u2014 Telehealth",
+      "Tuesdays at 2:30pm (Fortnightly: Starting 31 Mar) \u2014 Wattletree Rd, Malvern",
       "Fridays at 12pm (Fortnightly: Starting 17 Apr) \u2014 Wattletree Rd, Malvern"
     ],
     "short_bio": "Alex is a trauma-informed psychologist supporting adults across sectors with integrative EMDR, CBT, schema, and somatic therapies in neuroaffirming, sex-positive, LGBTQIA+ inclusive practice.",
     "weekly_availability": [],
     "fortnightly_availability": [
       {
-        "location": "Greville St, Prahran",
-        "days": [
-          {
-            "day": "Wednesday",
-            "times": [
-              "5:30pm",
-              "5:30pm",
-              "5:30pm"
-            ],
-            "from_date": "25 Mar"
-          }
-        ]
-      },
-      {
         "location": "Telehealth",
         "days": [
           {
             "day": "Wednesday",
             "times": [
-              "1:30pm",
-              "1:30pm",
               "1:30pm"
             ],
             "from_date": "1 Apr"
+          }
+        ]
+      },
+      {
+        "location": "Greville St, Prahran",
+        "days": [
+          {
+            "day": "Wednesday",
+            "times": [
+              "5:30pm"
+            ],
+            "from_date": "25 Mar"
           }
         ]
       },
@@ -132,8 +122,6 @@ export const PRACTITIONERS_DATA: any[] = [
           {
             "day": "Tuesday",
             "times": [
-              "2:30pm",
-              "2:30pm",
               "2:30pm"
             ],
             "from_date": "31 Mar"
@@ -302,17 +290,14 @@ export const PRACTITIONERS_DATA: any[] = [
       {
         "location": "Greville St, Prahran",
         "availability": [
-          "Fridays at 11am, 11am, 11am & 11am (Weekly: from 20 Mar) \u2014 Greville St, Prahran",
+          "Fridays at 11am (Weekly: from 20 Mar) \u2014 Greville St, Prahran",
           "Mondays at 9am, 10am & 11:30am (Fortnightly: Starting 20 Apr) \u2014 Greville St, Prahran",
-          "Fridays at 2pm & 2pm (Fortnightly: Starting 20 Mar) \u2014 Greville St, Prahran"
+          "Fridays at 2pm (Fortnightly: Starting 20 Mar) \u2014 Greville St, Prahran"
         ],
         "weekly_availability": [
           {
             "day": "Friday",
             "times": [
-              "11am",
-              "11am",
-              "11am",
               "11am"
             ],
             "from_date": "20 Mar"
@@ -331,7 +316,6 @@ export const PRACTITIONERS_DATA: any[] = [
           {
             "day": "Friday",
             "times": [
-              "2pm",
               "2pm"
             ],
             "from_date": "20 Mar"
@@ -341,9 +325,9 @@ export const PRACTITIONERS_DATA: any[] = [
     ],
     "last_updated": "2026-03-06",
     "availability": [
-      "Fridays at 11am, 11am, 11am & 11am (Weekly: from 20 Mar) \u2014 Greville St, Prahran",
+      "Fridays at 11am (Weekly: from 20 Mar) \u2014 Greville St, Prahran",
       "Mondays at 9am, 10am & 11:30am (Fortnightly: Starting 20 Apr) \u2014 Greville St, Prahran",
-      "Fridays at 2pm & 2pm (Fortnightly: Starting 20 Mar) \u2014 Greville St, Prahran"
+      "Fridays at 2pm (Fortnightly: Starting 20 Mar) \u2014 Greville St, Prahran"
     ],
     "short_bio": "Amy is a warm, LGBTQIAP+ friendly clinical psychologist supporting clients 16+ with mood, relationship and eating difficulties using flexible, evidence-based therapies.",
     "weekly_availability": [
@@ -353,9 +337,6 @@ export const PRACTITIONERS_DATA: any[] = [
           {
             "day": "Friday",
             "times": [
-              "11am",
-              "11am",
-              "11am",
               "11am"
             ],
             "from_date": "20 Mar"
@@ -379,7 +360,6 @@ export const PRACTITIONERS_DATA: any[] = [
           {
             "day": "Friday",
             "times": [
-              "2pm",
               "2pm"
             ],
             "from_date": "20 Mar"
@@ -416,15 +396,13 @@ export const PRACTITIONERS_DATA: any[] = [
       {
         "location": "Wattletree Rd, Malvern",
         "availability": [
-          "Tuesdays at 9am, 9am & 9am (Fortnightly: Starting 24 Mar) \u2014 Wattletree Rd, Malvern"
+          "Tuesdays at 9am (Fortnightly: Starting 24 Mar) \u2014 Wattletree Rd, Malvern"
         ],
         "weekly_availability": [],
         "fortnightly_availability": [
           {
             "day": "Tuesday",
             "times": [
-              "9am",
-              "9am",
               "9am"
             ],
             "from_date": "24 Mar"
@@ -434,7 +412,7 @@ export const PRACTITIONERS_DATA: any[] = [
     ],
     "last_updated": "2026-03-06",
     "availability": [
-      "Tuesdays at 9am, 9am & 9am (Fortnightly: Starting 24 Mar) \u2014 Wattletree Rd, Malvern"
+      "Tuesdays at 9am (Fortnightly: Starting 24 Mar) \u2014 Wattletree Rd, Malvern"
     ],
     "short_bio": "Ruby is a warm clinical psychology registrar integrating IFS, CBT, ACT, schema and mindfulness to support adults toward self-understanding, compassion and emotionally grounded change.",
     "weekly_availability": [],
@@ -445,8 +423,6 @@ export const PRACTITIONERS_DATA: any[] = [
           {
             "day": "Tuesday",
             "times": [
-              "9am",
-              "9am",
               "9am"
             ],
             "from_date": "24 Mar"
@@ -483,31 +459,13 @@ export const PRACTITIONERS_DATA: any[] = [
       {
         "location": "Greville St, Prahran",
         "availability": [
-          "Thursdays at 8am, 9am, 1pm, 8am, 9am, 1pm, 8am, 9am, 1pm, 8am, 9am, 1pm, 8am, 9am, 1pm, 8am, 9am, 1pm, 8am, 9am & 1pm (Weekly: from 19 Mar) \u2014 Greville St, Prahran",
-          "Thursdays at 12pm, 12pm & 12pm (Fortnightly: Starting 26 Mar) \u2014 Greville St, Prahran"
+          "Thursdays at 8am, 9am & 1pm (Weekly: from 19 Mar) \u2014 Greville St, Prahran",
+          "Thursdays at 12pm (Fortnightly: Starting 26 Mar) \u2014 Greville St, Prahran"
         ],
         "weekly_availability": [
           {
             "day": "Thursday",
             "times": [
-              "8am",
-              "9am",
-              "1pm",
-              "8am",
-              "9am",
-              "1pm",
-              "8am",
-              "9am",
-              "1pm",
-              "8am",
-              "9am",
-              "1pm",
-              "8am",
-              "9am",
-              "1pm",
-              "8am",
-              "9am",
-              "1pm",
               "8am",
               "9am",
               "1pm"
@@ -519,8 +477,6 @@ export const PRACTITIONERS_DATA: any[] = [
           {
             "day": "Thursday",
             "times": [
-              "12pm",
-              "12pm",
               "12pm"
             ],
             "from_date": "26 Mar"
@@ -530,15 +486,13 @@ export const PRACTITIONERS_DATA: any[] = [
       {
         "location": "Wattletree Rd, Malvern",
         "availability": [
-          "Fridays at 10am, 10am & 10am (Fortnightly: Starting 20 Mar) \u2014 Wattletree Rd, Malvern"
+          "Fridays at 10am (Fortnightly: Starting 20 Mar) \u2014 Wattletree Rd, Malvern"
         ],
         "weekly_availability": [],
         "fortnightly_availability": [
           {
             "day": "Friday",
             "times": [
-              "10am",
-              "10am",
               "10am"
             ],
             "from_date": "20 Mar"
@@ -547,30 +501,14 @@ export const PRACTITIONERS_DATA: any[] = [
       },
       {
         "location": "Telehealth",
-        "availability": [],
-        "weekly_availability": [],
-        "fortnightly_availability": []
-      },
-      {
-        "location": "ONLINE CONSULTATION",
         "availability": [
-          "Mondays at 10am, 11am, 10am, 11am, 10am, 11am, 10am, 11am, 10am, 11am, 10am & 11am (Weekly: from 23 Mar) \u2014 ONLINE CONSULTATION",
-          "Mondays at 8am, 8am & 8am (Fortnightly: Starting 30 Mar) \u2014 ONLINE CONSULTATION"
+          "Mondays at 10am & 11am (Weekly: from 23 Mar) \u2014 Telehealth",
+          "Mondays at 8am (Fortnightly: Starting 30 Mar) \u2014 Telehealth"
         ],
         "weekly_availability": [
           {
             "day": "Monday",
             "times": [
-              "10am",
-              "11am",
-              "10am",
-              "11am",
-              "10am",
-              "11am",
-              "10am",
-              "11am",
-              "10am",
-              "11am",
               "10am",
               "11am"
             ],
@@ -581,49 +519,48 @@ export const PRACTITIONERS_DATA: any[] = [
           {
             "day": "Monday",
             "times": [
-              "8am",
-              "8am",
               "8am"
             ],
             "from_date": "30 Mar"
           }
         ]
+      },
+      {
+        "location": "ONLINE CONSULTATION",
+        "availability": [],
+        "weekly_availability": [],
+        "fortnightly_availability": []
       }
     ],
     "last_updated": "2026-03-06",
     "availability": [
-      "Thursdays at 8am, 9am, 1pm, 8am, 9am, 1pm, 8am, 9am, 1pm, 8am, 9am, 1pm, 8am, 9am, 1pm, 8am, 9am, 1pm, 8am, 9am & 1pm (Weekly: from 19 Mar) \u2014 Greville St, Prahran",
-      "Thursdays at 12pm, 12pm & 12pm (Fortnightly: Starting 26 Mar) \u2014 Greville St, Prahran",
-      "Mondays at 10am, 11am, 10am, 11am, 10am, 11am, 10am, 11am, 10am, 11am, 10am & 11am (Weekly: from 23 Mar) \u2014 ONLINE CONSULTATION",
-      "Mondays at 8am, 8am & 8am (Fortnightly: Starting 30 Mar) \u2014 ONLINE CONSULTATION",
-      "Fridays at 10am, 10am & 10am (Fortnightly: Starting 20 Mar) \u2014 Wattletree Rd, Malvern"
+      "Thursdays at 8am, 9am & 1pm (Weekly: from 19 Mar) \u2014 Greville St, Prahran",
+      "Thursdays at 12pm (Fortnightly: Starting 26 Mar) \u2014 Greville St, Prahran",
+      "Mondays at 10am & 11am (Weekly: from 23 Mar) \u2014 Telehealth",
+      "Mondays at 8am (Fortnightly: Starting 30 Mar) \u2014 Telehealth",
+      "Fridays at 10am (Fortnightly: Starting 20 Mar) \u2014 Wattletree Rd, Malvern"
     ],
     "short_bio": "Maddie is a psychologist trained in both clinical and forensic psychology, lecturer, and researcher supporting adults with anxiety, depression, trauma, grief, addiction and women's mental health",
     "weekly_availability": [
+      {
+        "location": "Telehealth",
+        "days": [
+          {
+            "day": "Monday",
+            "times": [
+              "10am",
+              "11am"
+            ],
+            "from_date": "23 Mar"
+          }
+        ]
+      },
       {
         "location": "Greville St, Prahran",
         "days": [
           {
             "day": "Thursday",
             "times": [
-              "8am",
-              "9am",
-              "1pm",
-              "8am",
-              "9am",
-              "1pm",
-              "8am",
-              "9am",
-              "1pm",
-              "8am",
-              "9am",
-              "1pm",
-              "8am",
-              "9am",
-              "1pm",
-              "8am",
-              "9am",
-              "1pm",
               "8am",
               "9am",
               "1pm"
@@ -631,57 +568,30 @@ export const PRACTITIONERS_DATA: any[] = [
             "from_date": "19 Mar"
           }
         ]
-      },
+      }
+    ],
+    "fortnightly_availability": [
       {
-        "location": "ONLINE CONSULTATION",
+        "location": "Telehealth",
         "days": [
           {
             "day": "Monday",
             "times": [
-              "10am",
-              "11am",
-              "10am",
-              "11am",
-              "10am",
-              "11am",
-              "10am",
-              "11am",
-              "10am",
-              "11am",
-              "10am",
-              "11am"
+              "8am"
             ],
-            "from_date": "23 Mar"
+            "from_date": "30 Mar"
           }
         ]
-      }
-    ],
-    "fortnightly_availability": [
+      },
       {
         "location": "Greville St, Prahran",
         "days": [
           {
             "day": "Thursday",
             "times": [
-              "12pm",
-              "12pm",
               "12pm"
             ],
             "from_date": "26 Mar"
-          }
-        ]
-      },
-      {
-        "location": "ONLINE CONSULTATION",
-        "days": [
-          {
-            "day": "Monday",
-            "times": [
-              "8am",
-              "8am",
-              "8am"
-            ],
-            "from_date": "30 Mar"
           }
         ]
       },
@@ -691,8 +601,6 @@ export const PRACTITIONERS_DATA: any[] = [
           {
             "day": "Friday",
             "times": [
-              "10am",
-              "10am",
               "10am"
             ],
             "from_date": "20 Mar"
@@ -729,16 +637,14 @@ export const PRACTITIONERS_DATA: any[] = [
       {
         "location": "Wattletree Rd, Malvern",
         "availability": [
-          "Tuesdays at 2:30pm, 2:30pm & 2:30pm (Fortnightly: Starting 31 Mar) \u2014 Wattletree Rd, Malvern",
-          "Thursdays at 10am & 10am (Fortnightly: Starting 16 Apr) \u2014 Wattletree Rd, Malvern"
+          "Tuesdays at 2:30pm (Fortnightly: Starting 31 Mar) \u2014 Wattletree Rd, Malvern",
+          "Thursdays at 10am (Fortnightly: Starting 16 Apr) \u2014 Wattletree Rd, Malvern"
         ],
         "weekly_availability": [],
         "fortnightly_availability": [
           {
             "day": "Tuesday",
             "times": [
-              "2:30pm",
-              "2:30pm",
               "2:30pm"
             ],
             "from_date": "31 Mar"
@@ -746,7 +652,6 @@ export const PRACTITIONERS_DATA: any[] = [
           {
             "day": "Thursday",
             "times": [
-              "10am",
               "10am"
             ],
             "from_date": "16 Apr"
@@ -762,8 +667,8 @@ export const PRACTITIONERS_DATA: any[] = [
     ],
     "last_updated": "2026-03-06",
     "availability": [
-      "Tuesdays at 2:30pm, 2:30pm & 2:30pm (Fortnightly: Starting 31 Mar) \u2014 Wattletree Rd, Malvern",
-      "Thursdays at 10am & 10am (Fortnightly: Starting 16 Apr) \u2014 Wattletree Rd, Malvern"
+      "Tuesdays at 2:30pm (Fortnightly: Starting 31 Mar) \u2014 Wattletree Rd, Malvern",
+      "Thursdays at 10am (Fortnightly: Starting 16 Apr) \u2014 Wattletree Rd, Malvern"
     ],
     "short_bio": "Nick is an integrative ISTDP, CBT and IFS therapist helping clients face painful feelings, heal relational wounds and integrate difficult psychedelic experiences.",
     "weekly_availability": [],
@@ -774,8 +679,6 @@ export const PRACTITIONERS_DATA: any[] = [
           {
             "day": "Tuesday",
             "times": [
-              "2:30pm",
-              "2:30pm",
               "2:30pm"
             ],
             "from_date": "31 Mar"
@@ -783,7 +686,6 @@ export const PRACTITIONERS_DATA: any[] = [
           {
             "day": "Thursday",
             "times": [
-              "10am",
               "10am"
             ],
             "from_date": "16 Apr"
@@ -908,20 +810,14 @@ export const PRACTITIONERS_DATA: any[] = [
       {
         "location": "Wattletree Rd, Malvern",
         "availability": [
-          "Thursdays at 8am, 8am, 8am, 8am, 8am, 8am & 8am (Weekly: from 19 Mar) \u2014 Wattletree Rd, Malvern",
-          "Mondays at 8am, 9am, 8am & 9am (Fortnightly: Starting 13 Apr) \u2014 Wattletree Rd, Malvern",
-          "Thursdays at 9am, 9am & 9am (Fortnightly: Starting 26 Mar) \u2014 Wattletree Rd, Malvern"
+          "Thursdays at 8am (Weekly: from 19 Mar) \u2014 Wattletree Rd, Malvern",
+          "Mondays at 8am & 9am (Fortnightly: Starting 13 Apr) \u2014 Wattletree Rd, Malvern",
+          "Thursdays at 9am (Fortnightly: Starting 26 Mar) \u2014 Wattletree Rd, Malvern"
         ],
         "weekly_availability": [
           {
             "day": "Thursday",
             "times": [
-              "8am",
-              "8am",
-              "8am",
-              "8am",
-              "8am",
-              "8am",
               "8am"
             ],
             "from_date": "19 Mar"
@@ -932,8 +828,6 @@ export const PRACTITIONERS_DATA: any[] = [
             "day": "Monday",
             "times": [
               "8am",
-              "9am",
-              "8am",
               "9am"
             ],
             "from_date": "13 Apr"
@@ -941,8 +835,6 @@ export const PRACTITIONERS_DATA: any[] = [
           {
             "day": "Thursday",
             "times": [
-              "9am",
-              "9am",
               "9am"
             ],
             "from_date": "26 Mar"
@@ -952,9 +844,9 @@ export const PRACTITIONERS_DATA: any[] = [
     ],
     "last_updated": "2026-03-06",
     "availability": [
-      "Thursdays at 8am, 8am, 8am, 8am, 8am, 8am & 8am (Weekly: from 19 Mar) \u2014 Wattletree Rd, Malvern",
-      "Mondays at 8am, 9am, 8am & 9am (Fortnightly: Starting 13 Apr) \u2014 Wattletree Rd, Malvern",
-      "Thursdays at 9am, 9am & 9am (Fortnightly: Starting 26 Mar) \u2014 Wattletree Rd, Malvern"
+      "Thursdays at 8am (Weekly: from 19 Mar) \u2014 Wattletree Rd, Malvern",
+      "Mondays at 8am & 9am (Fortnightly: Starting 13 Apr) \u2014 Wattletree Rd, Malvern",
+      "Thursdays at 9am (Fortnightly: Starting 26 Mar) \u2014 Wattletree Rd, Malvern"
     ],
     "short_bio": "Niloo is a trauma-informed clinical psychologist and social worker integrating IFS, ACT, DBT, CBT and mindfulness to support healing from trauma, intense emotions and life transitions.",
     "weekly_availability": [
@@ -964,12 +856,6 @@ export const PRACTITIONERS_DATA: any[] = [
           {
             "day": "Thursday",
             "times": [
-              "8am",
-              "8am",
-              "8am",
-              "8am",
-              "8am",
-              "8am",
               "8am"
             ],
             "from_date": "19 Mar"
@@ -985,8 +871,6 @@ export const PRACTITIONERS_DATA: any[] = [
             "day": "Monday",
             "times": [
               "8am",
-              "9am",
-              "8am",
               "9am"
             ],
             "from_date": "13 Apr"
@@ -994,8 +878,6 @@ export const PRACTITIONERS_DATA: any[] = [
           {
             "day": "Thursday",
             "times": [
-              "9am",
-              "9am",
               "9am"
             ],
             "from_date": "26 Mar"
@@ -1032,19 +914,15 @@ export const PRACTITIONERS_DATA: any[] = [
       {
         "location": "Wattletree Rd, Malvern",
         "availability": [
-          "Tuesdays at 9am, 9am, 9am, 9am & 9am (Weekly: from 31 Mar) \u2014 Wattletree Rd, Malvern",
-          "Wednesdays at 5:30pm, 5:30pm & 5:30pm (Fortnightly: Starting 1 Apr) \u2014 Wattletree Rd, Malvern",
-          "Fridays at 7:30pm & 7:30pm (Fortnightly: Starting 10 Apr) \u2014 Wattletree Rd, Malvern",
-          "Saturdays at 3pm, 3pm & 3pm (Fortnightly: Starting 21 Mar) \u2014 Wattletree Rd, Malvern"
+          "Tuesdays at 9am (Weekly: from 31 Mar) \u2014 Wattletree Rd, Malvern",
+          "Wednesdays at 5:30pm (Fortnightly: Starting 1 Apr) \u2014 Wattletree Rd, Malvern",
+          "Fridays at 7:30pm (Fortnightly: Starting 10 Apr) \u2014 Wattletree Rd, Malvern",
+          "Saturdays at 3pm (Fortnightly: Starting 21 Mar) \u2014 Wattletree Rd, Malvern"
         ],
         "weekly_availability": [
           {
             "day": "Tuesday",
             "times": [
-              "9am",
-              "9am",
-              "9am",
-              "9am",
               "9am"
             ],
             "from_date": "31 Mar"
@@ -1054,8 +932,6 @@ export const PRACTITIONERS_DATA: any[] = [
           {
             "day": "Wednesday",
             "times": [
-              "5:30pm",
-              "5:30pm",
               "5:30pm"
             ],
             "from_date": "1 Apr"
@@ -1063,7 +939,6 @@ export const PRACTITIONERS_DATA: any[] = [
           {
             "day": "Friday",
             "times": [
-              "7:30pm",
               "7:30pm"
             ],
             "from_date": "10 Apr"
@@ -1071,8 +946,6 @@ export const PRACTITIONERS_DATA: any[] = [
           {
             "day": "Saturday",
             "times": [
-              "3pm",
-              "3pm",
               "3pm"
             ],
             "from_date": "21 Mar"
@@ -1082,10 +955,10 @@ export const PRACTITIONERS_DATA: any[] = [
     ],
     "last_updated": "2026-03-06",
     "availability": [
-      "Tuesdays at 9am, 9am, 9am, 9am & 9am (Weekly: from 31 Mar) \u2014 Wattletree Rd, Malvern",
-      "Wednesdays at 5:30pm, 5:30pm & 5:30pm (Fortnightly: Starting 1 Apr) \u2014 Wattletree Rd, Malvern",
-      "Fridays at 7:30pm & 7:30pm (Fortnightly: Starting 10 Apr) \u2014 Wattletree Rd, Malvern",
-      "Saturdays at 3pm, 3pm & 3pm (Fortnightly: Starting 21 Mar) \u2014 Wattletree Rd, Malvern"
+      "Tuesdays at 9am (Weekly: from 31 Mar) \u2014 Wattletree Rd, Malvern",
+      "Wednesdays at 5:30pm (Fortnightly: Starting 1 Apr) \u2014 Wattletree Rd, Malvern",
+      "Fridays at 7:30pm (Fortnightly: Starting 10 Apr) \u2014 Wattletree Rd, Malvern",
+      "Saturdays at 3pm (Fortnightly: Starting 21 Mar) \u2014 Wattletree Rd, Malvern"
     ],
     "short_bio": "Christine is a trauma specialist psychotherapist and psychoanalyst offering EMDR and depth therapy to help survivors reclaim and live with their stories.",
     "weekly_availability": [
@@ -1095,10 +968,6 @@ export const PRACTITIONERS_DATA: any[] = [
           {
             "day": "Tuesday",
             "times": [
-              "9am",
-              "9am",
-              "9am",
-              "9am",
               "9am"
             ],
             "from_date": "31 Mar"
@@ -1113,8 +982,6 @@ export const PRACTITIONERS_DATA: any[] = [
           {
             "day": "Wednesday",
             "times": [
-              "5:30pm",
-              "5:30pm",
               "5:30pm"
             ],
             "from_date": "1 Apr"
@@ -1122,7 +989,6 @@ export const PRACTITIONERS_DATA: any[] = [
           {
             "day": "Friday",
             "times": [
-              "7:30pm",
               "7:30pm"
             ],
             "from_date": "10 Apr"
@@ -1130,8 +996,6 @@ export const PRACTITIONERS_DATA: any[] = [
           {
             "day": "Saturday",
             "times": [
-              "3pm",
-              "3pm",
               "3pm"
             ],
             "from_date": "21 Mar"
@@ -1168,17 +1032,13 @@ export const PRACTITIONERS_DATA: any[] = [
       {
         "location": "Greville St, Prahran",
         "availability": [
-          "Tuesdays at 10am, 12pm, 10am, 12pm, 10am & 12pm (Fortnightly: Starting 24 Mar) \u2014 Greville St, Prahran"
+          "Tuesdays at 10am & 12pm (Fortnightly: Starting 24 Mar) \u2014 Greville St, Prahran"
         ],
         "weekly_availability": [],
         "fortnightly_availability": [
           {
             "day": "Tuesday",
             "times": [
-              "10am",
-              "12pm",
-              "10am",
-              "12pm",
               "10am",
               "12pm"
             ],
@@ -1189,7 +1049,7 @@ export const PRACTITIONERS_DATA: any[] = [
     ],
     "last_updated": "2026-03-06",
     "availability": [
-      "Tuesdays at 10am, 12pm, 10am, 12pm, 10am & 12pm (Fortnightly: Starting 24 Mar) \u2014 Greville St, Prahran"
+      "Tuesdays at 10am & 12pm (Fortnightly: Starting 24 Mar) \u2014 Greville St, Prahran"
     ],
     "short_bio": "Oliver is a compassionate clinical psychologist using IFS, EMDR, CBT and ACT to provide trauma-informed, inclusive care for adolescents and adults",
     "weekly_availability": [],
@@ -1200,10 +1060,6 @@ export const PRACTITIONERS_DATA: any[] = [
           {
             "day": "Tuesday",
             "times": [
-              "10am",
-              "12pm",
-              "10am",
-              "12pm",
               "10am",
               "12pm"
             ],
@@ -1241,20 +1097,14 @@ export const PRACTITIONERS_DATA: any[] = [
       {
         "location": "Wattletree Rd, Malvern",
         "availability": [
-          "Thursdays at 9am, 9am, 9am, 9am, 9am, 9am & 9am (Weekly: from 19 Mar) \u2014 Wattletree Rd, Malvern",
-          "Tuesdays at 9am, 9am & 9am (Fortnightly: Starting 31 Mar) \u2014 Wattletree Rd, Malvern",
-          "Thursdays at 10am, 12pm, 10am, 12pm, 10am & 12pm (Fortnightly: Starting 26 Mar) \u2014 Wattletree Rd, Malvern"
+          "Thursdays at 9am (Weekly: from 19 Mar) \u2014 Wattletree Rd, Malvern",
+          "Tuesdays at 9am (Fortnightly: Starting 31 Mar) \u2014 Wattletree Rd, Malvern",
+          "Thursdays at 10am & 12pm (Fortnightly: Starting 26 Mar) \u2014 Wattletree Rd, Malvern"
         ],
         "weekly_availability": [
           {
             "day": "Thursday",
             "times": [
-              "9am",
-              "9am",
-              "9am",
-              "9am",
-              "9am",
-              "9am",
               "9am"
             ],
             "from_date": "19 Mar"
@@ -1264,8 +1114,6 @@ export const PRACTITIONERS_DATA: any[] = [
           {
             "day": "Tuesday",
             "times": [
-              "9am",
-              "9am",
               "9am"
             ],
             "from_date": "31 Mar"
@@ -1273,10 +1121,6 @@ export const PRACTITIONERS_DATA: any[] = [
           {
             "day": "Thursday",
             "times": [
-              "10am",
-              "12pm",
-              "10am",
-              "12pm",
               "10am",
               "12pm"
             ],
@@ -1287,9 +1131,9 @@ export const PRACTITIONERS_DATA: any[] = [
     ],
     "last_updated": "2026-03-06",
     "availability": [
-      "Thursdays at 9am, 9am, 9am, 9am, 9am, 9am & 9am (Weekly: from 19 Mar) \u2014 Wattletree Rd, Malvern",
-      "Tuesdays at 9am, 9am & 9am (Fortnightly: Starting 31 Mar) \u2014 Wattletree Rd, Malvern",
-      "Thursdays at 10am, 12pm, 10am, 12pm, 10am & 12pm (Fortnightly: Starting 26 Mar) \u2014 Wattletree Rd, Malvern"
+      "Thursdays at 9am (Weekly: from 19 Mar) \u2014 Wattletree Rd, Malvern",
+      "Tuesdays at 9am (Fortnightly: Starting 31 Mar) \u2014 Wattletree Rd, Malvern",
+      "Thursdays at 10am & 12pm (Fortnightly: Starting 26 Mar) \u2014 Wattletree Rd, Malvern"
     ],
     "short_bio": "Meg is a warm, person-centred psychologist using integrative cognitive, behavioural and psychodynamic therapies to support stress, anxiety, depression, trauma and life changes.",
     "weekly_availability": [
@@ -1299,12 +1143,6 @@ export const PRACTITIONERS_DATA: any[] = [
           {
             "day": "Thursday",
             "times": [
-              "9am",
-              "9am",
-              "9am",
-              "9am",
-              "9am",
-              "9am",
               "9am"
             ],
             "from_date": "19 Mar"
@@ -1319,8 +1157,6 @@ export const PRACTITIONERS_DATA: any[] = [
           {
             "day": "Tuesday",
             "times": [
-              "9am",
-              "9am",
               "9am"
             ],
             "from_date": "31 Mar"
@@ -1328,10 +1164,6 @@ export const PRACTITIONERS_DATA: any[] = [
           {
             "day": "Thursday",
             "times": [
-              "10am",
-              "12pm",
-              "10am",
-              "12pm",
               "10am",
               "12pm"
             ],
@@ -1510,28 +1342,13 @@ export const PRACTITIONERS_DATA: any[] = [
       {
         "location": "Greville St, Prahran",
         "availability": [
-          "Tuesdays at 10am, 12pm, 3:30pm, 10am, 12pm, 3:30pm, 10am, 12pm, 3:30pm, 10am, 12pm, 3:30pm, 10am, 12pm, 3:30pm, 10am, 12pm & 3:30pm (Weekly: from 24 Mar) \u2014 Greville St, Prahran",
-          "Tuesdays at 9am, 9am & 9am (Fortnightly: Starting 31 Mar) \u2014 Greville St, Prahran"
+          "Tuesdays at 10am, 12pm & 3:30pm (Weekly: from 24 Mar) \u2014 Greville St, Prahran",
+          "Tuesdays at 9am (Fortnightly: Starting 31 Mar) \u2014 Greville St, Prahran"
         ],
         "weekly_availability": [
           {
             "day": "Tuesday",
             "times": [
-              "10am",
-              "12pm",
-              "3:30pm",
-              "10am",
-              "12pm",
-              "3:30pm",
-              "10am",
-              "12pm",
-              "3:30pm",
-              "10am",
-              "12pm",
-              "3:30pm",
-              "10am",
-              "12pm",
-              "3:30pm",
               "10am",
               "12pm",
               "3:30pm"
@@ -1543,8 +1360,6 @@ export const PRACTITIONERS_DATA: any[] = [
           {
             "day": "Tuesday",
             "times": [
-              "9am",
-              "9am",
               "9am"
             ],
             "from_date": "31 Mar"
@@ -1554,8 +1369,8 @@ export const PRACTITIONERS_DATA: any[] = [
     ],
     "last_updated": "2026-03-06",
     "availability": [
-      "Tuesdays at 10am, 12pm, 3:30pm, 10am, 12pm, 3:30pm, 10am, 12pm, 3:30pm, 10am, 12pm, 3:30pm, 10am, 12pm, 3:30pm, 10am, 12pm & 3:30pm (Weekly: from 24 Mar) \u2014 Greville St, Prahran",
-      "Tuesdays at 9am, 9am & 9am (Fortnightly: Starting 31 Mar) \u2014 Greville St, Prahran"
+      "Tuesdays at 10am, 12pm & 3:30pm (Weekly: from 24 Mar) \u2014 Greville St, Prahran",
+      "Tuesdays at 9am (Fortnightly: Starting 31 Mar) \u2014 Greville St, Prahran"
     ],
     "short_bio": "Cristina is a compassionate, Spanish-speaking holistic counsellor and dance movement therapist supporting adults with trauma, emotional challenges and self-exploration through somatic, LGBTIQ+ inclusive care.",
     "weekly_availability": [
@@ -1565,21 +1380,6 @@ export const PRACTITIONERS_DATA: any[] = [
           {
             "day": "Tuesday",
             "times": [
-              "10am",
-              "12pm",
-              "3:30pm",
-              "10am",
-              "12pm",
-              "3:30pm",
-              "10am",
-              "12pm",
-              "3:30pm",
-              "10am",
-              "12pm",
-              "3:30pm",
-              "10am",
-              "12pm",
-              "3:30pm",
               "10am",
               "12pm",
               "3:30pm"
@@ -1596,8 +1396,6 @@ export const PRACTITIONERS_DATA: any[] = [
           {
             "day": "Tuesday",
             "times": [
-              "9am",
-              "9am",
               "9am"
             ],
             "from_date": "31 Mar"
@@ -1634,15 +1432,13 @@ export const PRACTITIONERS_DATA: any[] = [
       {
         "location": "Wattletree Rd, Malvern",
         "availability": [
-          "Saturdays at 10am, 10am & 10am (Fortnightly: Starting 21 Mar) \u2014 Wattletree Rd, Malvern"
+          "Saturdays at 10am (Fortnightly: Starting 21 Mar) \u2014 Wattletree Rd, Malvern"
         ],
         "weekly_availability": [],
         "fortnightly_availability": [
           {
             "day": "Saturday",
             "times": [
-              "10am",
-              "10am",
               "10am"
             ],
             "from_date": "21 Mar"
@@ -1652,7 +1448,7 @@ export const PRACTITIONERS_DATA: any[] = [
     ],
     "last_updated": "2026-03-06",
     "availability": [
-      "Saturdays at 10am, 10am & 10am (Fortnightly: Starting 21 Mar) \u2014 Wattletree Rd, Malvern"
+      "Saturdays at 10am (Fortnightly: Starting 21 Mar) \u2014 Wattletree Rd, Malvern"
     ],
     "short_bio": "Chiara is a neurodivergent, neuro-affirming clinical psychologist supporting adults with autism, ADHD and diverse needs using collaborative, family-inclusive, evidence-based therapies.",
     "weekly_availability": [],
@@ -1663,8 +1459,6 @@ export const PRACTITIONERS_DATA: any[] = [
           {
             "day": "Saturday",
             "times": [
-              "10am",
-              "10am",
               "10am"
             ],
             "from_date": "21 Mar"
@@ -1701,18 +1495,13 @@ export const PRACTITIONERS_DATA: any[] = [
       {
         "location": "Wattletree Rd, Malvern",
         "availability": [
-          "Wednesdays at 12pm, 12pm, 12pm, 12pm, 12pm & 12pm (Weekly: from 25 Mar) \u2014 Wattletree Rd, Malvern",
-          "Fridays at 2pm & 2pm (Fortnightly: Starting 10 Apr) \u2014 Wattletree Rd, Malvern"
+          "Wednesdays at 12pm (Weekly: from 25 Mar) \u2014 Wattletree Rd, Malvern",
+          "Fridays at 2pm (Fortnightly: Starting 10 Apr) \u2014 Wattletree Rd, Malvern"
         ],
         "weekly_availability": [
           {
             "day": "Wednesday",
             "times": [
-              "12pm",
-              "12pm",
-              "12pm",
-              "12pm",
-              "12pm",
               "12pm"
             ],
             "from_date": "25 Mar"
@@ -1722,7 +1511,6 @@ export const PRACTITIONERS_DATA: any[] = [
           {
             "day": "Friday",
             "times": [
-              "2pm",
               "2pm"
             ],
             "from_date": "10 Apr"
@@ -1732,15 +1520,13 @@ export const PRACTITIONERS_DATA: any[] = [
       {
         "location": "Greville St, Prahran",
         "availability": [
-          "Tuesdays at 3pm, 3pm & 3pm (Fortnightly: Starting 24 Mar) \u2014 Greville St, Prahran"
+          "Tuesdays at 3pm (Fortnightly: Starting 24 Mar) \u2014 Greville St, Prahran"
         ],
         "weekly_availability": [],
         "fortnightly_availability": [
           {
             "day": "Tuesday",
             "times": [
-              "3pm",
-              "3pm",
               "3pm"
             ],
             "from_date": "24 Mar"
@@ -1750,15 +1536,13 @@ export const PRACTITIONERS_DATA: any[] = [
       {
         "location": "Telehealth",
         "availability": [
-          "Tuesdays at 1pm, 1pm & 1pm (Fortnightly: Starting 31 Mar) \u2014 Telehealth"
+          "Tuesdays at 1pm (Fortnightly: Starting 31 Mar) \u2014 Telehealth"
         ],
         "weekly_availability": [],
         "fortnightly_availability": [
           {
             "day": "Tuesday",
             "times": [
-              "1pm",
-              "1pm",
               "1pm"
             ],
             "from_date": "31 Mar"
@@ -1768,10 +1552,10 @@ export const PRACTITIONERS_DATA: any[] = [
     ],
     "last_updated": "2026-03-06",
     "availability": [
-      "Tuesdays at 3pm, 3pm & 3pm (Fortnightly: Starting 24 Mar) \u2014 Greville St, Prahran",
-      "Tuesdays at 1pm, 1pm & 1pm (Fortnightly: Starting 31 Mar) \u2014 Telehealth",
-      "Wednesdays at 12pm, 12pm, 12pm, 12pm, 12pm & 12pm (Weekly: from 25 Mar) \u2014 Wattletree Rd, Malvern",
-      "Fridays at 2pm & 2pm (Fortnightly: Starting 10 Apr) \u2014 Wattletree Rd, Malvern"
+      "Tuesdays at 3pm (Fortnightly: Starting 24 Mar) \u2014 Greville St, Prahran",
+      "Tuesdays at 1pm (Fortnightly: Starting 31 Mar) \u2014 Telehealth",
+      "Wednesdays at 12pm (Weekly: from 25 Mar) \u2014 Wattletree Rd, Malvern",
+      "Fridays at 2pm (Fortnightly: Starting 10 Apr) \u2014 Wattletree Rd, Malvern"
     ],
     "short_bio": "Nick is a warm, trauma-informed clinical psychologist using ACT, mindfulness, CBT and SFT to support diverse adults and adolescents, including neurodivergent clients.",
     "weekly_availability": [
@@ -1781,11 +1565,6 @@ export const PRACTITIONERS_DATA: any[] = [
           {
             "day": "Wednesday",
             "times": [
-              "12pm",
-              "12pm",
-              "12pm",
-              "12pm",
-              "12pm",
               "12pm"
             ],
             "from_date": "25 Mar"
@@ -1795,27 +1574,11 @@ export const PRACTITIONERS_DATA: any[] = [
     ],
     "fortnightly_availability": [
       {
-        "location": "Greville St, Prahran",
-        "days": [
-          {
-            "day": "Tuesday",
-            "times": [
-              "3pm",
-              "3pm",
-              "3pm"
-            ],
-            "from_date": "24 Mar"
-          }
-        ]
-      },
-      {
         "location": "Telehealth",
         "days": [
           {
             "day": "Tuesday",
             "times": [
-              "1pm",
-              "1pm",
               "1pm"
             ],
             "from_date": "31 Mar"
@@ -1828,10 +1591,21 @@ export const PRACTITIONERS_DATA: any[] = [
           {
             "day": "Friday",
             "times": [
-              "2pm",
               "2pm"
             ],
             "from_date": "10 Apr"
+          }
+        ]
+      },
+      {
+        "location": "Greville St, Prahran",
+        "days": [
+          {
+            "day": "Tuesday",
+            "times": [
+              "3pm"
+            ],
+            "from_date": "24 Mar"
           }
         ]
       }
@@ -1988,22 +1762,13 @@ export const PRACTITIONERS_DATA: any[] = [
       {
         "location": "Victoria St, St Kilda",
         "availability": [
-          "Thursdays at 12:45pm, 12:45pm, 12:45pm, 12:45pm, 3:15pm, 12:45pm, 3:15pm, 12:45pm, 3:15pm, 12:45pm & 3:15pm (Weekly: from 19 Mar) \u2014 Victoria St, St Kilda",
-          "Thursdays at 2pm, 10:15am, 2pm, 10:15am, 2pm & 10:15am (Fortnightly: Starting 26 Mar) \u2014 Victoria St, St Kilda"
+          "Thursdays at 12:45pm & 3:15pm (Weekly: from 19 Mar) \u2014 Victoria St, St Kilda",
+          "Thursdays at 2pm & 10:15am (Fortnightly: Starting 26 Mar) \u2014 Victoria St, St Kilda"
         ],
         "weekly_availability": [
           {
             "day": "Thursday",
             "times": [
-              "12:45pm",
-              "12:45pm",
-              "12:45pm",
-              "12:45pm",
-              "3:15pm",
-              "12:45pm",
-              "3:15pm",
-              "12:45pm",
-              "3:15pm",
               "12:45pm",
               "3:15pm"
             ],
@@ -2015,10 +1780,6 @@ export const PRACTITIONERS_DATA: any[] = [
             "day": "Thursday",
             "times": [
               "2pm",
-              "10:15am",
-              "2pm",
-              "10:15am",
-              "2pm",
               "10:15am"
             ],
             "from_date": "26 Mar"
@@ -2028,8 +1789,8 @@ export const PRACTITIONERS_DATA: any[] = [
     ],
     "last_updated": "2026-03-06",
     "availability": [
-      "Thursdays at 12:45pm, 12:45pm, 12:45pm, 12:45pm, 3:15pm, 12:45pm, 3:15pm, 12:45pm, 3:15pm, 12:45pm & 3:15pm (Weekly: from 19 Mar) \u2014 Victoria St, St Kilda",
-      "Thursdays at 2pm, 10:15am, 2pm, 10:15am, 2pm & 10:15am (Fortnightly: Starting 26 Mar) \u2014 Victoria St, St Kilda"
+      "Thursdays at 12:45pm & 3:15pm (Weekly: from 19 Mar) \u2014 Victoria St, St Kilda",
+      "Thursdays at 2pm & 10:15am (Fortnightly: Starting 26 Mar) \u2014 Victoria St, St Kilda"
     ],
     "short_bio": "Therese is a reflective, attachment-focused psychologist drawing on Circle of Security to support teens, adults, new parents and diverse couples toward meaningful change.",
     "weekly_availability": [
@@ -2039,15 +1800,6 @@ export const PRACTITIONERS_DATA: any[] = [
           {
             "day": "Thursday",
             "times": [
-              "12:45pm",
-              "12:45pm",
-              "12:45pm",
-              "12:45pm",
-              "3:15pm",
-              "12:45pm",
-              "3:15pm",
-              "12:45pm",
-              "3:15pm",
               "12:45pm",
               "3:15pm"
             ],
@@ -2063,10 +1815,6 @@ export const PRACTITIONERS_DATA: any[] = [
           {
             "day": "Thursday",
             "times": [
-              "2pm",
-              "10:15am",
-              "2pm",
-              "10:15am",
               "2pm",
               "10:15am"
             ],
@@ -2104,20 +1852,14 @@ export const PRACTITIONERS_DATA: any[] = [
       {
         "location": "Greville St, Prahran",
         "availability": [
-          "Mondays at 12pm, 12pm, 12pm, 1pm, 12pm, 1pm, 12pm & 1pm (Weekly: from 23 Mar) \u2014 Greville St, Prahran",
-          "Thursdays at 11am, 11am, 11am, 11am & 11am (Weekly: from 2 Apr) \u2014 Greville St, Prahran",
-          "Thursdays at 10am, 1pm, 10am, 1pm, 10am & 1pm (Fortnightly: Starting 26 Mar) \u2014 Greville St, Prahran"
+          "Mondays at 12pm & 1pm (Weekly: from 23 Mar) \u2014 Greville St, Prahran",
+          "Thursdays at 11am (Weekly: from 2 Apr) \u2014 Greville St, Prahran",
+          "Thursdays at 10am & 1pm (Fortnightly: Starting 26 Mar) \u2014 Greville St, Prahran"
         ],
         "weekly_availability": [
           {
             "day": "Monday",
             "times": [
-              "12pm",
-              "12pm",
-              "12pm",
-              "1pm",
-              "12pm",
-              "1pm",
               "12pm",
               "1pm"
             ],
@@ -2126,10 +1868,6 @@ export const PRACTITIONERS_DATA: any[] = [
           {
             "day": "Thursday",
             "times": [
-              "11am",
-              "11am",
-              "11am",
-              "11am",
               "11am"
             ],
             "from_date": "2 Apr"
@@ -2140,10 +1878,6 @@ export const PRACTITIONERS_DATA: any[] = [
             "day": "Thursday",
             "times": [
               "10am",
-              "1pm",
-              "10am",
-              "1pm",
-              "10am",
               "1pm"
             ],
             "from_date": "26 Mar"
@@ -2153,9 +1887,9 @@ export const PRACTITIONERS_DATA: any[] = [
     ],
     "last_updated": "2026-03-06",
     "availability": [
-      "Mondays at 12pm, 12pm, 12pm, 1pm, 12pm, 1pm, 12pm & 1pm (Weekly: from 23 Mar) \u2014 Greville St, Prahran",
-      "Thursdays at 11am, 11am, 11am, 11am & 11am (Weekly: from 2 Apr) \u2014 Greville St, Prahran",
-      "Thursdays at 10am, 1pm, 10am, 1pm, 10am & 1pm (Fortnightly: Starting 26 Mar) \u2014 Greville St, Prahran"
+      "Mondays at 12pm & 1pm (Weekly: from 23 Mar) \u2014 Greville St, Prahran",
+      "Thursdays at 11am (Weekly: from 2 Apr) \u2014 Greville St, Prahran",
+      "Thursdays at 10am & 1pm (Fortnightly: Starting 26 Mar) \u2014 Greville St, Prahran"
     ],
     "short_bio": "Belinda is a collaborative clinical psychologist and supervisor using relational, emotion-focused ISTDP to foster deep self-understanding, emotional resilience and lasting change.",
     "weekly_availability": [
@@ -2166,12 +1900,6 @@ export const PRACTITIONERS_DATA: any[] = [
             "day": "Monday",
             "times": [
               "12pm",
-              "12pm",
-              "12pm",
-              "1pm",
-              "12pm",
-              "1pm",
-              "12pm",
               "1pm"
             ],
             "from_date": "23 Mar"
@@ -2179,10 +1907,6 @@ export const PRACTITIONERS_DATA: any[] = [
           {
             "day": "Thursday",
             "times": [
-              "11am",
-              "11am",
-              "11am",
-              "11am",
               "11am"
             ],
             "from_date": "2 Apr"
@@ -2197,10 +1921,6 @@ export const PRACTITIONERS_DATA: any[] = [
           {
             "day": "Thursday",
             "times": [
-              "10am",
-              "1pm",
-              "10am",
-              "1pm",
               "10am",
               "1pm"
             ],
@@ -2238,21 +1958,15 @@ export const PRACTITIONERS_DATA: any[] = [
       {
         "location": "Greville St, Prahran",
         "availability": [
-          "Mondays at 9am, 10am, 2pm, 9am, 10am, 2pm, 9am, 10am & 2pm (Fortnightly: Starting 30 Mar) \u2014 Greville St, Prahran",
-          "Tuesdays at 2:30pm, 2:30pm & 2:30pm (Fortnightly: Starting 24 Mar) \u2014 Greville St, Prahran",
-          "Wednesdays at 2:30pm, 2:30pm & 2:30pm (Fortnightly: Starting 1 Apr) \u2014 Greville St, Prahran"
+          "Mondays at 9am, 10am & 2pm (Fortnightly: Starting 30 Mar) \u2014 Greville St, Prahran",
+          "Tuesdays at 2:30pm (Fortnightly: Starting 24 Mar) \u2014 Greville St, Prahran",
+          "Wednesdays at 2:30pm (Fortnightly: Starting 1 Apr) \u2014 Greville St, Prahran"
         ],
         "weekly_availability": [],
         "fortnightly_availability": [
           {
             "day": "Monday",
             "times": [
-              "9am",
-              "10am",
-              "2pm",
-              "9am",
-              "10am",
-              "2pm",
               "9am",
               "10am",
               "2pm"
@@ -2262,8 +1976,6 @@ export const PRACTITIONERS_DATA: any[] = [
           {
             "day": "Tuesday",
             "times": [
-              "2:30pm",
-              "2:30pm",
               "2:30pm"
             ],
             "from_date": "24 Mar"
@@ -2271,8 +1983,6 @@ export const PRACTITIONERS_DATA: any[] = [
           {
             "day": "Wednesday",
             "times": [
-              "2:30pm",
-              "2:30pm",
               "2:30pm"
             ],
             "from_date": "1 Apr"
@@ -2282,9 +1992,9 @@ export const PRACTITIONERS_DATA: any[] = [
     ],
     "last_updated": "2026-03-06",
     "availability": [
-      "Mondays at 9am, 10am, 2pm, 9am, 10am, 2pm, 9am, 10am & 2pm (Fortnightly: Starting 30 Mar) \u2014 Greville St, Prahran",
-      "Tuesdays at 2:30pm, 2:30pm & 2:30pm (Fortnightly: Starting 24 Mar) \u2014 Greville St, Prahran",
-      "Wednesdays at 2:30pm, 2:30pm & 2:30pm (Fortnightly: Starting 1 Apr) \u2014 Greville St, Prahran"
+      "Mondays at 9am, 10am & 2pm (Fortnightly: Starting 30 Mar) \u2014 Greville St, Prahran",
+      "Tuesdays at 2:30pm (Fortnightly: Starting 24 Mar) \u2014 Greville St, Prahran",
+      "Wednesdays at 2:30pm (Fortnightly: Starting 1 Apr) \u2014 Greville St, Prahran"
     ],
     "short_bio": "Poorna is a warm, culturally attuned clinical psychologist using CBT, schema and psychodynamic therapy to support trauma, identity, adjustment and cross-cultural challenges",
     "weekly_availability": [],
@@ -2297,12 +2007,6 @@ export const PRACTITIONERS_DATA: any[] = [
             "times": [
               "9am",
               "10am",
-              "2pm",
-              "9am",
-              "10am",
-              "2pm",
-              "9am",
-              "10am",
               "2pm"
             ],
             "from_date": "30 Mar"
@@ -2310,8 +2014,6 @@ export const PRACTITIONERS_DATA: any[] = [
           {
             "day": "Tuesday",
             "times": [
-              "2:30pm",
-              "2:30pm",
               "2:30pm"
             ],
             "from_date": "24 Mar"
@@ -2319,8 +2021,6 @@ export const PRACTITIONERS_DATA: any[] = [
           {
             "day": "Wednesday",
             "times": [
-              "2:30pm",
-              "2:30pm",
               "2:30pm"
             ],
             "from_date": "1 Apr"
@@ -2341,20 +2041,12 @@ export const PRACTITIONERS_DATA: any[] = [
       {
         "location": "Greville St, Prahran",
         "availability": [
-          "Thursdays at 9am, 10am, 9am, 10am, 9am, 10am, 9am, 10am, 9am & 10am (Weekly: from 2 Apr) \u2014 Greville St, Prahran"
+          "Thursdays at 9am & 10am (Weekly: from 2 Apr) \u2014 Greville St, Prahran"
         ],
         "weekly_availability": [
           {
             "day": "Thursday",
             "times": [
-              "9am",
-              "10am",
-              "9am",
-              "10am",
-              "9am",
-              "10am",
-              "9am",
-              "10am",
               "9am",
               "10am"
             ],
@@ -2368,7 +2060,7 @@ export const PRACTITIONERS_DATA: any[] = [
     "presentations": "Anxiety; Depression; Relationship Concerns; Grief & Loss; Self-Esteem & Confidence; Life Transitions; Work Stress; Trauma and Post-Traumatic Stress Disorder (PTSD)",
     "modalities": "Psychodynamic Therapy / Internal Family Systems Therapy (IFS) / Emotion Focused Therapy (EFT)",
     "availability": [
-      "Thursdays at 9am, 10am, 9am, 10am, 9am, 10am, 9am, 10am, 9am & 10am (Weekly: from 2 Apr) \u2014 Greville St, Prahran"
+      "Thursdays at 9am & 10am (Weekly: from 2 Apr) \u2014 Greville St, Prahran"
     ],
     "bio": "When I was young, I wanted to be a marine biologist. I was in awe of the mysteries of the ocean and marvelled at the variety of creatures living within it. As I grew older and began to see the world through more adult eyes, I realised that the depth and breadth of human emotion and behaviour was far vaster and more complex than any ocean could ever be. And so, my path was set.\n\nAfter many years of study and work, I am now a Senior Clinical Psychologist having worked in the UK, New Zealand and finally Australia. I have many years of experience working in the public sector with severe and enduring mental health issues, and also with mild to moderate mental health issues that most of us experience at some point in our lifetime.\n\nI am an integrative Doctor of Clinical Psychology and as such, I draw upon a wide variety of models of therapy such as Intensive Short Term Dynamic Psychotherapy (ISTDP) and Cognitive Behavioural Therapy (CBT), as well as others. This enables me to tailor treatments to the unique needs of each individual I see.\n\nHowever, as research has proven over and over again, the most important ingredient to effective treatment in psychological therapy is the therapeutic relationship itself. As such, I strive to form an authentic relationship with every client I see, and with an empathic understanding at its core. The sharing of vulnerability opens the door to intimacy, and it is my role to provide a safe and validating space that allows this process to occur.\n\nI have developed many areas of interest throughout my career, I have been invited to speak and keynote speak at a number of national and international conferences, and have worked on the Clinical Psychology Program at the University of Melbourne for the past 8 years. Finally, I am fortunate to be a supervisor and mentor to many psychologists, whether they be seasoned professionals or just starting out on their journey as a psychologist.\n\nMy passion remains in individual psychological therapy, especially using ISTDP, as well as research into the promising new arena of psychedelic sciences, and how this can be applied to the psychotherapeutic space once legalised.",
     "qualifications": "BSc (Hons) ClinPsyD",
@@ -2383,14 +2075,6 @@ export const PRACTITIONERS_DATA: any[] = [
           {
             "day": "Thursday",
             "times": [
-              "9am",
-              "10am",
-              "9am",
-              "10am",
-              "9am",
-              "10am",
-              "9am",
-              "10am",
               "9am",
               "10am"
             ],
@@ -2429,15 +2113,13 @@ export const PRACTITIONERS_DATA: any[] = [
       {
         "location": "Greville St, Prahran",
         "availability": [
-          "Tuesdays at 11am, 11am & 11am (Fortnightly: Starting 31 Mar) \u2014 Greville St, Prahran"
+          "Tuesdays at 11am (Fortnightly: Starting 31 Mar) \u2014 Greville St, Prahran"
         ],
         "weekly_availability": [],
         "fortnightly_availability": [
           {
             "day": "Tuesday",
             "times": [
-              "11am",
-              "11am",
               "11am"
             ],
             "from_date": "31 Mar"
@@ -2453,7 +2135,7 @@ export const PRACTITIONERS_DATA: any[] = [
     ],
     "last_updated": "2026-03-06",
     "availability": [
-      "Tuesdays at 11am, 11am & 11am (Fortnightly: Starting 31 Mar) \u2014 Greville St, Prahran"
+      "Tuesdays at 11am (Fortnightly: Starting 31 Mar) \u2014 Greville St, Prahran"
     ],
     "short_bio": "Pete is a warm, trauma-informed clinical psychologist using CBT and ACT to support diverse adults and adolescents, including LGBTIQ+ and CALD communities.",
     "weekly_availability": [],
@@ -2464,8 +2146,6 @@ export const PRACTITIONERS_DATA: any[] = [
           {
             "day": "Tuesday",
             "times": [
-              "11am",
-              "11am",
               "11am"
             ],
             "from_date": "31 Mar"
@@ -2609,20 +2289,14 @@ export const PRACTITIONERS_DATA: any[] = [
       {
         "location": "Greville St, Prahran",
         "availability": [
-          "Mondays at 2:30pm, 3:30pm, 2:30pm, 3:30pm, 2:30pm, 3:30pm, 2:30pm & 3:30pm (Weekly: from 23 Mar) \u2014 Greville St, Prahran",
-          "Wednesdays at 1pm, 1pm & 1pm (Fortnightly: Starting 1 Apr) \u2014 Greville St, Prahran",
-          "Thursdays at 8am, 10am, 8am, 10am, 8am, 10am, 8am & 10am (Fortnightly: Starting 19 Mar) \u2014 Greville St, Prahran"
+          "Mondays at 2:30pm & 3:30pm (Weekly: from 23 Mar) \u2014 Greville St, Prahran",
+          "Wednesdays at 1pm (Fortnightly: Starting 1 Apr) \u2014 Greville St, Prahran",
+          "Thursdays at 8am & 10am (Fortnightly: Starting 19 Mar) \u2014 Greville St, Prahran"
         ],
         "weekly_availability": [
           {
             "day": "Monday",
             "times": [
-              "2:30pm",
-              "3:30pm",
-              "2:30pm",
-              "3:30pm",
-              "2:30pm",
-              "3:30pm",
               "2:30pm",
               "3:30pm"
             ],
@@ -2633,8 +2307,6 @@ export const PRACTITIONERS_DATA: any[] = [
           {
             "day": "Wednesday",
             "times": [
-              "1pm",
-              "1pm",
               "1pm"
             ],
             "from_date": "1 Apr"
@@ -2642,12 +2314,6 @@ export const PRACTITIONERS_DATA: any[] = [
           {
             "day": "Thursday",
             "times": [
-              "8am",
-              "10am",
-              "8am",
-              "10am",
-              "8am",
-              "10am",
               "8am",
               "10am"
             ],
@@ -2658,9 +2324,9 @@ export const PRACTITIONERS_DATA: any[] = [
     ],
     "last_updated": "2026-03-16",
     "availability": [
-      "Mondays at 2:30pm, 3:30pm, 2:30pm, 3:30pm, 2:30pm, 3:30pm, 2:30pm & 3:30pm (Weekly: from 23 Mar) \u2014 Greville St, Prahran",
-      "Wednesdays at 1pm, 1pm & 1pm (Fortnightly: Starting 1 Apr) \u2014 Greville St, Prahran",
-      "Thursdays at 8am, 10am, 8am, 10am, 8am, 10am, 8am & 10am (Fortnightly: Starting 19 Mar) \u2014 Greville St, Prahran"
+      "Mondays at 2:30pm & 3:30pm (Weekly: from 23 Mar) \u2014 Greville St, Prahran",
+      "Wednesdays at 1pm (Fortnightly: Starting 1 Apr) \u2014 Greville St, Prahran",
+      "Thursdays at 8am & 10am (Fortnightly: Starting 19 Mar) \u2014 Greville St, Prahran"
     ],
     "short_bio": "Elizabeth is a mature-age clinical psychologist using ISTDP, Conversational Model, ACT and CBT to support adults through chronic depression, stress-related symptoms and life transitions.",
     "weekly_availability": [
@@ -2670,12 +2336,6 @@ export const PRACTITIONERS_DATA: any[] = [
           {
             "day": "Monday",
             "times": [
-              "2:30pm",
-              "3:30pm",
-              "2:30pm",
-              "3:30pm",
-              "2:30pm",
-              "3:30pm",
               "2:30pm",
               "3:30pm"
             ],
@@ -2691,8 +2351,6 @@ export const PRACTITIONERS_DATA: any[] = [
           {
             "day": "Wednesday",
             "times": [
-              "1pm",
-              "1pm",
               "1pm"
             ],
             "from_date": "1 Apr"
@@ -2700,12 +2358,6 @@ export const PRACTITIONERS_DATA: any[] = [
           {
             "day": "Thursday",
             "times": [
-              "8am",
-              "10am",
-              "8am",
-              "10am",
-              "8am",
-              "10am",
               "8am",
               "10am"
             ],
@@ -2743,23 +2395,13 @@ export const PRACTITIONERS_DATA: any[] = [
       {
         "location": "Greville St, Prahran",
         "availability": [
-          "Wednesdays at 1pm, 2pm, 1pm, 2pm, 1pm, 2pm, 1pm, 2pm, 1pm, 2pm, 1pm & 2pm (Weekly: from 25 Mar) \u2014 Greville St, Prahran",
-          "Thursdays at 10:30am, 9am, 10:30am, 9am & 10:30am (Fortnightly: Starting 2 Apr) \u2014 Greville St, Prahran"
+          "Wednesdays at 1pm & 2pm (Weekly: from 25 Mar) \u2014 Greville St, Prahran",
+          "Thursdays at 10:30am & 9am (Fortnightly: Starting 2 Apr) \u2014 Greville St, Prahran"
         ],
         "weekly_availability": [
           {
             "day": "Wednesday",
             "times": [
-              "1pm",
-              "2pm",
-              "1pm",
-              "2pm",
-              "1pm",
-              "2pm",
-              "1pm",
-              "2pm",
-              "1pm",
-              "2pm",
               "1pm",
               "2pm"
             ],
@@ -2771,10 +2413,7 @@ export const PRACTITIONERS_DATA: any[] = [
             "day": "Thursday",
             "times": [
               "10:30am",
-              "9am",
-              "10:30am",
-              "9am",
-              "10:30am"
+              "9am"
             ],
             "from_date": "2 Apr"
           }
@@ -2783,8 +2422,8 @@ export const PRACTITIONERS_DATA: any[] = [
     ],
     "last_updated": "2026-03-06",
     "availability": [
-      "Wednesdays at 1pm, 2pm, 1pm, 2pm, 1pm, 2pm, 1pm, 2pm, 1pm, 2pm, 1pm & 2pm (Weekly: from 25 Mar) \u2014 Greville St, Prahran",
-      "Thursdays at 10:30am, 9am, 10:30am, 9am & 10:30am (Fortnightly: Starting 2 Apr) \u2014 Greville St, Prahran"
+      "Wednesdays at 1pm & 2pm (Weekly: from 25 Mar) \u2014 Greville St, Prahran",
+      "Thursdays at 10:30am & 9am (Fortnightly: Starting 2 Apr) \u2014 Greville St, Prahran"
     ],
     "short_bio": "Karen is a psychodynamic clinical psychologist integrating EMDR to support trauma, identity, grief and life transitions with culturally attuned, exploratory therapy.",
     "weekly_availability": [
@@ -2794,16 +2433,6 @@ export const PRACTITIONERS_DATA: any[] = [
           {
             "day": "Wednesday",
             "times": [
-              "1pm",
-              "2pm",
-              "1pm",
-              "2pm",
-              "1pm",
-              "2pm",
-              "1pm",
-              "2pm",
-              "1pm",
-              "2pm",
               "1pm",
               "2pm"
             ],
@@ -2820,10 +2449,7 @@ export const PRACTITIONERS_DATA: any[] = [
             "day": "Thursday",
             "times": [
               "10:30am",
-              "9am",
-              "10:30am",
-              "9am",
-              "10:30am"
+              "9am"
             ],
             "from_date": "2 Apr"
           }
