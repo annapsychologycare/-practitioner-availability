@@ -30,7 +30,7 @@ export const PRACTITIONERS_DATA = [
         ],
         "weekly_availability": [],
         "fortnightly_availability": [],
-        "name": "Greville St, Prahran"
+        "location": "Greville St, Prahran"
       },
       {
         "availability": [
@@ -39,7 +39,7 @@ export const PRACTITIONERS_DATA = [
         ],
         "weekly_availability": [],
         "fortnightly_availability": [],
-        "name": "Wattletree Rd, Malvern"
+        "location": "Wattletree Rd, Malvern"
       },
       {
         "availability": [
@@ -47,7 +47,7 @@ export const PRACTITIONERS_DATA = [
         ],
         "weekly_availability": [],
         "fortnightly_availability": [],
-        "name": "Telehealth"
+        "location": "Telehealth"
       }
     ],
     "last_updated": "2026-03-06",
@@ -138,7 +138,7 @@ export const PRACTITIONERS_DATA = [
         ],
         "weekly_availability": [],
         "fortnightly_availability": [],
-        "name": "Wattletree Rd, Malvern"
+        "location": "Wattletree Rd, Malvern"
       }
     ],
     "last_updated": "2026-03-06",
@@ -200,13 +200,13 @@ export const PRACTITIONERS_DATA = [
         "availability": [],
         "weekly_availability": [],
         "fortnightly_availability": [],
-        "name": "Wattletree Rd, Malvern"
+        "location": "Wattletree Rd, Malvern"
       },
       {
         "availability": [],
         "weekly_availability": [],
         "fortnightly_availability": [],
-        "name": "Greville St, Prahran"
+        "location": "Greville St, Prahran"
       }
     ],
     "last_updated": "2026-03-06",
@@ -250,7 +250,7 @@ export const PRACTITIONERS_DATA = [
         ],
         "weekly_availability": [],
         "fortnightly_availability": [],
-        "name": "Greville St, Prahran"
+        "location": "Greville St, Prahran"
       }
     ],
     "last_updated": "2026-03-06",
@@ -329,7 +329,7 @@ export const PRACTITIONERS_DATA = [
         ],
         "weekly_availability": [],
         "fortnightly_availability": [],
-        "name": "Wattletree Rd, Malvern"
+        "location": "Wattletree Rd, Malvern"
       }
     ],
     "last_updated": "2026-03-06",
@@ -387,7 +387,7 @@ export const PRACTITIONERS_DATA = [
         ],
         "weekly_availability": [],
         "fortnightly_availability": [],
-        "name": "Greville St, Prahran"
+        "location": "Greville St, Prahran"
       },
       {
         "availability": [
@@ -395,7 +395,7 @@ export const PRACTITIONERS_DATA = [
         ],
         "weekly_availability": [],
         "fortnightly_availability": [],
-        "name": "Wattletree Rd, Malvern"
+        "location": "Wattletree Rd, Malvern"
       },
       {
         "availability": [
@@ -405,7 +405,7 @@ export const PRACTITIONERS_DATA = [
         ],
         "weekly_availability": [],
         "fortnightly_availability": [],
-        "name": "Telehealth"
+        "location": "Telehealth"
       }
     ],
     "last_updated": "2026-03-06",
@@ -517,13 +517,13 @@ export const PRACTITIONERS_DATA = [
         ],
         "weekly_availability": [],
         "fortnightly_availability": [],
-        "name": "Wattletree Rd, Malvern"
+        "location": "Wattletree Rd, Malvern"
       },
       {
         "availability": [],
         "weekly_availability": [],
         "fortnightly_availability": [],
-        "name": "Telehealth"
+        "location": "Telehealth"
       }
     ],
     "last_updated": "2026-03-18",
@@ -584,13 +584,13 @@ export const PRACTITIONERS_DATA = [
         "availability": [],
         "weekly_availability": [],
         "fortnightly_availability": [],
-        "name": "Wattletree Rd, Malvern"
+        "location": "Wattletree Rd, Malvern"
       },
       {
         "availability": [],
         "weekly_availability": [],
         "fortnightly_availability": [],
-        "name": "Telehealth"
+        "location": "Telehealth"
       }
     ],
     "last_updated": "2026-03-06",
@@ -628,7 +628,7 @@ export const PRACTITIONERS_DATA = [
         "availability": [],
         "weekly_availability": [],
         "fortnightly_availability": [],
-        "name": "Greville St, Prahran"
+        "location": "Greville St, Prahran"
       }
     ],
     "last_updated": "2026-03-06",
@@ -666,7 +666,7 @@ export const PRACTITIONERS_DATA = [
         "availability": [],
         "weekly_availability": [],
         "fortnightly_availability": [],
-        "name": "Telehealth"
+        "location": "Telehealth"
       },
       {
         "availability": [
@@ -677,7 +677,7 @@ export const PRACTITIONERS_DATA = [
         ],
         "weekly_availability": [],
         "fortnightly_availability": [],
-        "name": "Wattletree Rd, Malvern"
+        "location": "Wattletree Rd, Malvern"
       }
     ],
     "last_updated": "2026-03-06",
@@ -758,7 +758,7 @@ export const PRACTITIONERS_DATA = [
         ],
         "weekly_availability": [],
         "fortnightly_availability": [],
-        "name": "Wattletree Rd, Malvern"
+        "location": "Wattletree Rd, Malvern"
       }
     ],
     "last_updated": "2026-03-06",
@@ -844,7 +844,7 @@ export const PRACTITIONERS_DATA = [
         ],
         "weekly_availability": [],
         "fortnightly_availability": [],
-        "name": "Greville St, Prahran"
+        "location": "Greville St, Prahran"
       }
     ],
     "last_updated": "2026-03-18",
@@ -903,7 +903,7 @@ export const PRACTITIONERS_DATA = [
         ],
         "weekly_availability": [],
         "fortnightly_availability": [],
-        "name": "Wattletree Rd, Malvern"
+        "location": "Wattletree Rd, Malvern"
       }
     ],
     "last_updated": "2026-03-06",
@@ -979,7 +979,7 @@ export const PRACTITIONERS_DATA = [
         "availability": [],
         "weekly_availability": [],
         "fortnightly_availability": [],
-        "name": "Telehealth"
+        "location": "Telehealth"
       }
     ],
     "last_updated": "2026-03-06",
@@ -1017,7 +1017,7 @@ export const PRACTITIONERS_DATA = [
         "availability": [],
         "weekly_availability": [],
         "fortnightly_availability": [],
-        "name": "Wattletree Rd, Malvern"
+        "location": "Wattletree Rd, Malvern"
       }
     ],
     "last_updated": "2026-03-06",
@@ -1058,7 +1058,7 @@ export const PRACTITIONERS_DATA = [
         ],
         "weekly_availability": [],
         "fortnightly_availability": [],
-        "name": "Wattletree Rd, Malvern"
+        "location": "Wattletree Rd, Malvern"
       }
     ],
     "last_updated": "2026-03-18",
@@ -1117,7 +1117,7 @@ export const PRACTITIONERS_DATA = [
         ],
         "weekly_availability": [],
         "fortnightly_availability": [],
-        "name": "Greville St, Prahran"
+        "location": "Greville St, Prahran"
       }
     ],
     "last_updated": "2026-03-18",
@@ -1188,7 +1188,7 @@ export const PRACTITIONERS_DATA = [
         ],
         "weekly_availability": [],
         "fortnightly_availability": [],
-        "name": "Wattletree Rd, Malvern"
+        "location": "Wattletree Rd, Malvern"
       }
     ],
     "last_updated": "2026-03-06",
@@ -1244,7 +1244,7 @@ export const PRACTITIONERS_DATA = [
         ],
         "weekly_availability": [],
         "fortnightly_availability": [],
-        "name": "Wattletree Rd, Malvern"
+        "location": "Wattletree Rd, Malvern"
       },
       {
         "availability": [
@@ -1252,7 +1252,7 @@ export const PRACTITIONERS_DATA = [
         ],
         "weekly_availability": [],
         "fortnightly_availability": [],
-        "name": "Greville St, Prahran"
+        "location": "Greville St, Prahran"
       },
       {
         "availability": [
@@ -1260,7 +1260,7 @@ export const PRACTITIONERS_DATA = [
         ],
         "weekly_availability": [],
         "fortnightly_availability": [],
-        "name": "Telehealth"
+        "location": "Telehealth"
       }
     ],
     "last_updated": "2026-03-06",
@@ -1353,7 +1353,7 @@ export const PRACTITIONERS_DATA = [
         "availability": [],
         "weekly_availability": [],
         "fortnightly_availability": [],
-        "name": "Wattletree Rd, Malvern"
+        "location": "Wattletree Rd, Malvern"
       },
       {
         "availability": [
@@ -1363,13 +1363,13 @@ export const PRACTITIONERS_DATA = [
         ],
         "weekly_availability": [],
         "fortnightly_availability": [],
-        "name": "Greville St, Prahran"
+        "location": "Greville St, Prahran"
       },
       {
         "availability": [],
         "weekly_availability": [],
         "fortnightly_availability": [],
-        "name": "Telehealth"
+        "location": "Telehealth"
       }
     ],
     "last_updated": "2026-03-06",
@@ -1424,13 +1424,13 @@ export const PRACTITIONERS_DATA = [
         "availability": [],
         "weekly_availability": [],
         "fortnightly_availability": [],
-        "name": "Wattletree Rd, Malvern"
+        "location": "Wattletree Rd, Malvern"
       },
       {
         "availability": [],
         "weekly_availability": [],
         "fortnightly_availability": [],
-        "name": "Greville St, Prahran"
+        "location": "Greville St, Prahran"
       }
     ],
     "last_updated": "2026-03-16",
@@ -1473,7 +1473,7 @@ export const PRACTITIONERS_DATA = [
         ],
         "weekly_availability": [],
         "fortnightly_availability": [],
-        "name": "Victoria St, St Kilda"
+        "location": "Victoria St, St Kilda"
       }
     ],
     "last_updated": "2026-03-06",
@@ -1548,7 +1548,7 @@ export const PRACTITIONERS_DATA = [
         ],
         "weekly_availability": [],
         "fortnightly_availability": [],
-        "name": "Greville St, Prahran"
+        "location": "Greville St, Prahran"
       }
     ],
     "last_updated": "2026-03-06",
@@ -1631,7 +1631,7 @@ export const PRACTITIONERS_DATA = [
         ],
         "weekly_availability": [],
         "fortnightly_availability": [],
-        "name": "Greville St, Prahran"
+        "location": "Greville St, Prahran"
       }
     ],
     "last_updated": "2026-03-06",
@@ -1689,7 +1689,7 @@ export const PRACTITIONERS_DATA = [
         ],
         "weekly_availability": [],
         "fortnightly_availability": [],
-        "name": "Greville St, Prahran"
+        "location": "Greville St, Prahran"
       }
     ],
     "telehealth": "Yes",
@@ -1752,13 +1752,13 @@ export const PRACTITIONERS_DATA = [
         ],
         "weekly_availability": [],
         "fortnightly_availability": [],
-        "name": "Greville St, Prahran"
+        "location": "Greville St, Prahran"
       },
       {
         "availability": [],
         "weekly_availability": [],
         "fortnightly_availability": [],
-        "name": "Telehealth"
+        "location": "Telehealth"
       }
     ],
     "last_updated": "2026-03-06",
@@ -1813,7 +1813,7 @@ export const PRACTITIONERS_DATA = [
         ],
         "weekly_availability": [],
         "fortnightly_availability": [],
-        "name": "Wattletree Rd, Malvern"
+        "location": "Wattletree Rd, Malvern"
       }
     ],
     "last_updated": "2026-03-06",
@@ -1866,13 +1866,13 @@ export const PRACTITIONERS_DATA = [
         "availability": [],
         "weekly_availability": [],
         "fortnightly_availability": [],
-        "name": "Greville St, Prahran"
+        "location": "Greville St, Prahran"
       },
       {
         "availability": [],
         "weekly_availability": [],
         "fortnightly_availability": [],
-        "name": "Telehealth"
+        "location": "Telehealth"
       }
     ],
     "last_updated": "2026-03-06",
@@ -1916,7 +1916,7 @@ export const PRACTITIONERS_DATA = [
         ],
         "weekly_availability": [],
         "fortnightly_availability": [],
-        "name": "Greville St, Prahran"
+        "location": "Greville St, Prahran"
       }
     ],
     "last_updated": "2026-03-18",
@@ -1998,7 +1998,7 @@ export const PRACTITIONERS_DATA = [
         ],
         "weekly_availability": [],
         "fortnightly_availability": [],
-        "name": "Greville St, Prahran"
+        "location": "Greville St, Prahran"
       }
     ],
     "last_updated": "2026-03-06",
