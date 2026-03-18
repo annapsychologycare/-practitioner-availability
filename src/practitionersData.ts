@@ -25,29 +25,29 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/alex-barry/",
     "locations": [
       {
-        "location": "Greville St, Prahran",
         "availability": [
           "Wednesdays at 5:30pm (Fortnightly: Starting 25th Mar)"
         ],
         "weekly_availability": [],
-        "fortnightly_availability": []
+        "fortnightly_availability": [],
+        "name": "Greville St, Prahran"
       },
       {
-        "location": "Wattletree Rd, Malvern",
         "availability": [
           "Fridays at 12pm (Fortnightly: Starting 17th Apr)",
           "Tuesdays at 2:30pm (Fortnightly: Starting 31st Mar)"
         ],
         "weekly_availability": [],
-        "fortnightly_availability": []
+        "fortnightly_availability": [],
+        "name": "Wattletree Rd, Malvern"
       },
       {
-        "location": "Telehealth",
         "availability": [
           "Wednesdays at 1:30pm (Fortnightly: Starting 1st Apr)"
         ],
         "weekly_availability": [],
-        "fortnightly_availability": []
+        "fortnightly_availability": [],
+        "name": "Telehealth"
       }
     ],
     "last_updated": "2026-03-06",
@@ -131,14 +131,14 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/rebekah-barson/",
     "locations": [
       {
-        "location": "Wattletree Rd, Malvern",
         "availability": [
           "Mondays at 1pm (Fortnightly: Starting 20th Apr)",
           "Mondays at 3pm (Fortnightly: Starting 20th Apr)",
           "Saturdays at 10am (Fortnightly: Starting 18th Apr)"
         ],
         "weekly_availability": [],
-        "fortnightly_availability": []
+        "fortnightly_availability": [],
+        "name": "Wattletree Rd, Malvern"
       }
     ],
     "last_updated": "2026-03-06",
@@ -197,16 +197,16 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/brigid-blanckenberg-clinical-psychologist/",
     "locations": [
       {
-        "location": "Wattletree Rd, Malvern",
         "availability": [],
         "weekly_availability": [],
-        "fortnightly_availability": []
+        "fortnightly_availability": [],
+        "name": "Wattletree Rd, Malvern"
       },
       {
-        "location": "Greville St, Prahran",
         "availability": [],
         "weekly_availability": [],
-        "fortnightly_availability": []
+        "fortnightly_availability": [],
+        "name": "Greville St, Prahran"
       }
     ],
     "last_updated": "2026-03-06",
@@ -241,7 +241,6 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/amy-bortz/",
     "locations": [
       {
-        "location": "Greville St, Prahran",
         "availability": [
           "Fridays at 11am (Weekly: Starting 20th Mar)",
           "Fridays at 2pm (Fortnightly: Starting 20th Mar)",
@@ -250,7 +249,8 @@ export const PRACTITIONERS_DATA = [
           "Mondays at 11:30am (Fortnightly: Starting 20th Apr)"
         ],
         "weekly_availability": [],
-        "fortnightly_availability": []
+        "fortnightly_availability": [],
+        "name": "Greville St, Prahran"
       }
     ],
     "last_updated": "2026-03-06",
@@ -324,12 +324,12 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/ruby-bouhadana/",
     "locations": [
       {
-        "location": "Wattletree Rd, Malvern",
         "availability": [
           "Tuesdays at 9am (Fortnightly: Starting 24th Mar)"
         ],
         "weekly_availability": [],
-        "fortnightly_availability": []
+        "fortnightly_availability": [],
+        "name": "Wattletree Rd, Malvern"
       }
     ],
     "last_updated": "2026-03-06",
@@ -379,7 +379,6 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/dr-maddie-brygel-psychologist/",
     "locations": [
       {
-        "location": "Greville St, Prahran",
         "availability": [
           "Thursdays at 8am (Weekly: Starting 19th Mar)",
           "Thursdays at 9am (Weekly: Starting 19th Mar)",
@@ -387,31 +386,26 @@ export const PRACTITIONERS_DATA = [
           "Thursdays at 12pm (Fortnightly: Starting 26th Mar)"
         ],
         "weekly_availability": [],
-        "fortnightly_availability": []
+        "fortnightly_availability": [],
+        "name": "Greville St, Prahran"
       },
       {
-        "location": "Wattletree Rd, Malvern",
         "availability": [
           "Fridays at 10am (Fortnightly: Starting 20th Mar)"
         ],
         "weekly_availability": [],
-        "fortnightly_availability": []
+        "fortnightly_availability": [],
+        "name": "Wattletree Rd, Malvern"
       },
       {
-        "location": "Telehealth",
         "availability": [
           "Mondays at 10am (Weekly: Starting 23rd Mar)",
           "Mondays at 11am (Weekly: Starting 23rd Mar)",
           "Mondays at 8am (Fortnightly: Starting 30th Mar)"
         ],
         "weekly_availability": [],
-        "fortnightly_availability": []
-      },
-      {
-        "location": "ONLINE CONSULTATION",
-        "availability": [],
-        "weekly_availability": [],
-        "fortnightly_availability": []
+        "fortnightly_availability": [],
+        "name": "Telehealth"
       }
     ],
     "last_updated": "2026-03-06",
@@ -517,19 +511,19 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/nick-burden/",
     "locations": [
       {
-        "location": "Wattletree Rd, Malvern",
         "availability": [
           "Thursdays at 10am (Fortnightly: Starting 16th Apr)",
           "Tuesdays at 2:30pm (Fortnightly: Starting 31st Mar)"
         ],
         "weekly_availability": [],
-        "fortnightly_availability": []
+        "fortnightly_availability": [],
+        "name": "Wattletree Rd, Malvern"
       },
       {
-        "location": "SUPERVISION: \nOnline/ Telehealth Only",
         "availability": [],
         "weekly_availability": [],
-        "fortnightly_availability": []
+        "fortnightly_availability": [],
+        "name": "Telehealth"
       }
     ],
     "last_updated": "2026-03-18",
@@ -587,16 +581,16 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/krista-de-castella/",
     "locations": [
       {
-        "location": "Wattletree Rd, Malvern",
         "availability": [],
         "weekly_availability": [],
-        "fortnightly_availability": []
+        "fortnightly_availability": [],
+        "name": "Wattletree Rd, Malvern"
       },
       {
-        "location": "Online/ Telehealth Only",
         "availability": [],
         "weekly_availability": [],
-        "fortnightly_availability": []
+        "fortnightly_availability": [],
+        "name": "Telehealth"
       }
     ],
     "last_updated": "2026-03-06",
@@ -631,10 +625,10 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/allison-conyer/",
     "locations": [
       {
-        "location": "Greville St, Prahran",
         "availability": [],
         "weekly_availability": [],
-        "fortnightly_availability": []
+        "fortnightly_availability": [],
+        "name": "Greville St, Prahran"
       }
     ],
     "last_updated": "2026-03-06",
@@ -669,13 +663,12 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/niloofar-danaei/",
     "locations": [
       {
-        "location": "Online/ Telehealth Only",
         "availability": [],
         "weekly_availability": [],
-        "fortnightly_availability": []
+        "fortnightly_availability": [],
+        "name": "Telehealth"
       },
       {
-        "location": "Wattletree Rd, Malvern",
         "availability": [
           "Thursdays at 8am (Weekly: Starting 19th Mar)",
           "Mondays at 8am (Fortnightly: Starting 13th Apr)",
@@ -683,7 +676,8 @@ export const PRACTITIONERS_DATA = [
           "Thursdays at 9am (Fortnightly: Starting 26th Mar)"
         ],
         "weekly_availability": [],
-        "fortnightly_availability": []
+        "fortnightly_availability": [],
+        "name": "Wattletree Rd, Malvern"
       }
     ],
     "last_updated": "2026-03-06",
@@ -756,7 +750,6 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/christine-deftereos/",
     "locations": [
       {
-        "location": "Wattletree Rd, Malvern",
         "availability": [
           "Tuesdays at 9am (Weekly: Starting 31st Mar)",
           "Fridays at 7:30pm (Fortnightly: Starting 10th Apr)",
@@ -764,7 +757,8 @@ export const PRACTITIONERS_DATA = [
           "Wednesdays at 5:30pm (Fortnightly: Starting 1st Apr)"
         ],
         "weekly_availability": [],
-        "fortnightly_availability": []
+        "fortnightly_availability": [],
+        "name": "Wattletree Rd, Malvern"
       }
     ],
     "last_updated": "2026-03-06",
@@ -844,13 +838,13 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/oliver-eastwood/",
     "locations": [
       {
-        "location": "Greville St, Prahran",
         "availability": [
           "Tuesdays at 10am (Fortnightly: Starting 24th Mar)",
           "Tuesdays at 12pm (Fortnightly: Starting 31st Mar)"
         ],
         "weekly_availability": [],
-        "fortnightly_availability": []
+        "fortnightly_availability": [],
+        "name": "Greville St, Prahran"
       }
     ],
     "last_updated": "2026-03-18",
@@ -901,7 +895,6 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/megan-edelman/",
     "locations": [
       {
-        "location": "Wattletree Rd, Malvern",
         "availability": [
           "Thursdays at 9am (Weekly: Starting 19th Mar)",
           "Thursdays at 10am (Fortnightly: Starting 26th Mar)",
@@ -909,7 +902,8 @@ export const PRACTITIONERS_DATA = [
           "Tuesdays at 9am (Fortnightly: Starting 31st Mar)"
         ],
         "weekly_availability": [],
-        "fortnightly_availability": []
+        "fortnightly_availability": [],
+        "name": "Wattletree Rd, Malvern"
       }
     ],
     "last_updated": "2026-03-06",
@@ -982,10 +976,10 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/kiira-gavralas/",
     "locations": [
       {
-        "location": "Online/ Telehealth Only",
         "availability": [],
         "weekly_availability": [],
-        "fortnightly_availability": []
+        "fortnightly_availability": [],
+        "name": "Telehealth"
       }
     ],
     "last_updated": "2026-03-06",
@@ -1020,10 +1014,10 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/jillian-giannios/",
     "locations": [
       {
-        "location": "Wattletree Rd, Malvern",
         "availability": [],
         "weekly_availability": [],
-        "fortnightly_availability": []
+        "fortnightly_availability": [],
+        "name": "Wattletree Rd, Malvern"
       }
     ],
     "last_updated": "2026-03-06",
@@ -1058,13 +1052,13 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/ella-graj/",
     "locations": [
       {
-        "location": "Wattletree Rd, Malvern",
         "availability": [
           "Tuesdays at 5:30pm (Fortnightly: Starting 21st Apr)",
           "Tuesdays at 6:30pm (Fortnightly: Starting 21st Apr)"
         ],
         "weekly_availability": [],
-        "fortnightly_availability": []
+        "fortnightly_availability": [],
+        "name": "Wattletree Rd, Malvern"
       }
     ],
     "last_updated": "2026-03-18",
@@ -1115,7 +1109,6 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/cristina-jimenez/",
     "locations": [
       {
-        "location": "Greville St, Prahran",
         "availability": [
           "Tuesdays at 10am (Weekly: Starting 24th Mar)",
           "Tuesdays at 12pm (Weekly: Starting 24th Mar)",
@@ -1123,7 +1116,8 @@ export const PRACTITIONERS_DATA = [
           "Tuesdays at 9am (Fortnightly: Starting 31st Mar)"
         ],
         "weekly_availability": [],
-        "fortnightly_availability": []
+        "fortnightly_availability": [],
+        "name": "Greville St, Prahran"
       }
     ],
     "last_updated": "2026-03-18",
@@ -1189,12 +1183,12 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/chiara-killey/",
     "locations": [
       {
-        "location": "Wattletree Rd, Malvern",
         "availability": [
           "Saturdays at 10am (Fortnightly: Starting 21st Mar)"
         ],
         "weekly_availability": [],
-        "fortnightly_availability": []
+        "fortnightly_availability": [],
+        "name": "Wattletree Rd, Malvern"
       }
     ],
     "last_updated": "2026-03-06",
@@ -1244,29 +1238,29 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/nicholas-kleeman/",
     "locations": [
       {
-        "location": "Wattletree Rd, Malvern",
         "availability": [
           "Wednesdays at 12pm (Weekly: Starting 25th Mar)",
           "Fridays at 2pm (Fortnightly: Starting 10th Apr)"
         ],
         "weekly_availability": [],
-        "fortnightly_availability": []
+        "fortnightly_availability": [],
+        "name": "Wattletree Rd, Malvern"
       },
       {
-        "location": "Greville St, Prahran",
         "availability": [
           "Tuesdays at 3pm (Fortnightly: Starting 24th Mar)"
         ],
         "weekly_availability": [],
-        "fortnightly_availability": []
+        "fortnightly_availability": [],
+        "name": "Greville St, Prahran"
       },
       {
-        "location": "Telehealth",
         "availability": [
           "Tuesdays at 1pm (Fortnightly: Starting 31st Mar)"
         ],
         "weekly_availability": [],
-        "fortnightly_availability": []
+        "fortnightly_availability": [],
+        "name": "Telehealth"
       }
     ],
     "last_updated": "2026-03-06",
@@ -1356,26 +1350,26 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/ricki-knoetze/",
     "locations": [
       {
-        "location": "Wattletree Rd, Malvern",
         "availability": [],
         "weekly_availability": [],
-        "fortnightly_availability": []
+        "fortnightly_availability": [],
+        "name": "Wattletree Rd, Malvern"
       },
       {
-        "location": "Greville St, Prahran",
         "availability": [
           "Mondays at 2:30pm (Fortnightly: Starting 27th Apr)",
           "Mondays at 3:30pm (Fortnightly: Starting 27th Apr)",
           "Mondays at 5pm (Fortnightly: Starting 27th Apr)"
         ],
         "weekly_availability": [],
-        "fortnightly_availability": []
+        "fortnightly_availability": [],
+        "name": "Greville St, Prahran"
       },
       {
-        "location": "Online/ Telehealth Only",
         "availability": [],
         "weekly_availability": [],
-        "fortnightly_availability": []
+        "fortnightly_availability": [],
+        "name": "Telehealth"
       }
     ],
     "last_updated": "2026-03-06",
@@ -1427,16 +1421,16 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/josh-Kugel/",
     "locations": [
       {
-        "location": "Wattletree Rd, Malvern",
         "availability": [],
         "weekly_availability": [],
-        "fortnightly_availability": []
+        "fortnightly_availability": [],
+        "name": "Wattletree Rd, Malvern"
       },
       {
-        "location": "Greville St, Prahran",
         "availability": [],
         "weekly_availability": [],
-        "fortnightly_availability": []
+        "fortnightly_availability": [],
+        "name": "Greville St, Prahran"
       }
     ],
     "last_updated": "2026-03-16",
@@ -1471,7 +1465,6 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/therese-van-maanen/",
     "locations": [
       {
-        "location": "Victoria St, St Kilda",
         "availability": [
           "Thursdays at 12:45pm (Weekly: Starting 19th Mar)",
           "Thursdays at 3:15pm (Weekly: Starting 9th Apr)",
@@ -1479,7 +1472,8 @@ export const PRACTITIONERS_DATA = [
           "Thursdays at 10:15am (Fortnightly: Starting 2nd Apr)"
         ],
         "weekly_availability": [],
-        "fortnightly_availability": []
+        "fortnightly_availability": [],
+        "name": "Victoria St, St Kilda"
       }
     ],
     "last_updated": "2026-03-06",
@@ -1545,7 +1539,6 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/belinda-pacella/",
     "locations": [
       {
-        "location": "Greville St, Prahran",
         "availability": [
           "Mondays at 12pm (Weekly: Starting 23rd Mar)",
           "Mondays at 1pm (Weekly: Starting 13th Apr)",
@@ -1554,7 +1547,8 @@ export const PRACTITIONERS_DATA = [
           "Thursdays at 1pm (Fortnightly: Starting 26th Mar)"
         ],
         "weekly_availability": [],
-        "fortnightly_availability": []
+        "fortnightly_availability": [],
+        "name": "Greville St, Prahran"
       }
     ],
     "last_updated": "2026-03-06",
@@ -1628,7 +1622,6 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/poorna-selvaraja/",
     "locations": [
       {
-        "location": "Greville St, Prahran",
         "availability": [
           "Mondays at 9am (Fortnightly: Starting 30th Mar)",
           "Mondays at 10am (Fortnightly: Starting 30th Mar)",
@@ -1637,7 +1630,8 @@ export const PRACTITIONERS_DATA = [
           "Wednesdays at 2:30pm (Fortnightly: Starting 1st Apr)"
         ],
         "weekly_availability": [],
-        "fortnightly_availability": []
+        "fortnightly_availability": [],
+        "name": "Greville St, Prahran"
       }
     ],
     "last_updated": "2026-03-06",
@@ -1689,13 +1683,13 @@ export const PRACTITIONERS_DATA = [
     "medicareRebate": 145.25,
     "locations": [
       {
-        "location": "Greville St, Prahran",
         "availability": [
           "Thursdays at 9am (Weekly: Starting 2nd Apr)",
           "Thursdays at 10am (Weekly: Starting 2nd Apr)"
         ],
         "weekly_availability": [],
-        "fortnightly_availability": []
+        "fortnightly_availability": [],
+        "name": "Greville St, Prahran"
       }
     ],
     "telehealth": "Yes",
@@ -1753,18 +1747,18 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/pete-steele/",
     "locations": [
       {
-        "location": "Greville St, Prahran",
         "availability": [
           "Tuesdays at 11am (Fortnightly: Starting 31st Mar)"
         ],
         "weekly_availability": [],
-        "fortnightly_availability": []
+        "fortnightly_availability": [],
+        "name": "Greville St, Prahran"
       },
       {
-        "location": "Online/ Telehealth Only",
         "availability": [],
         "weekly_availability": [],
-        "fortnightly_availability": []
+        "fortnightly_availability": [],
+        "name": "Telehealth"
       }
     ],
     "last_updated": "2026-03-06",
@@ -1814,12 +1808,12 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/stephanie-stewart/",
     "locations": [
       {
-        "location": "Wattletree Rd, Malvern",
         "availability": [
           "Mondays at 2:30pm (Fortnightly: Starting 20th Apr)"
         ],
         "weekly_availability": [],
-        "fortnightly_availability": []
+        "fortnightly_availability": [],
+        "name": "Wattletree Rd, Malvern"
       }
     ],
     "last_updated": "2026-03-06",
@@ -1869,16 +1863,16 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/clare-tuttleby/",
     "locations": [
       {
-        "location": "Greville St, Prahran",
         "availability": [],
         "weekly_availability": [],
-        "fortnightly_availability": []
+        "fortnightly_availability": [],
+        "name": "Greville St, Prahran"
       },
       {
-        "location": "Online/ Telehealth Only",
         "availability": [],
         "weekly_availability": [],
-        "fortnightly_availability": []
+        "fortnightly_availability": [],
+        "name": "Telehealth"
       }
     ],
     "last_updated": "2026-03-06",
@@ -1913,7 +1907,6 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/elizabeth-white/",
     "locations": [
       {
-        "location": "Greville St, Prahran",
         "availability": [
           "Mondays at 2:30pm (Weekly: Starting 23rd Mar)",
           "Mondays at 3:30pm (Weekly: Starting 23rd Mar)",
@@ -1922,7 +1915,8 @@ export const PRACTITIONERS_DATA = [
           "Wednesdays at 1pm (Fortnightly: Starting 1st Apr)"
         ],
         "weekly_availability": [],
-        "fortnightly_availability": []
+        "fortnightly_availability": [],
+        "name": "Greville St, Prahran"
       }
     ],
     "last_updated": "2026-03-18",
@@ -1996,7 +1990,6 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/karen-pereira-york/",
     "locations": [
       {
-        "location": "Greville St, Prahran",
         "availability": [
           "Wednesdays at 1pm (Weekly: Starting 25th Mar)",
           "Wednesdays at 2pm (Weekly: Starting 25th Mar)",
@@ -2004,7 +1997,8 @@ export const PRACTITIONERS_DATA = [
           "Thursdays at 9am (Fortnightly: Starting 9th Apr)"
         ],
         "weekly_availability": [],
-        "fortnightly_availability": []
+        "fortnightly_availability": [],
+        "name": "Greville St, Prahran"
       }
     ],
     "last_updated": "2026-03-06",
