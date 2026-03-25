@@ -21,6 +21,7 @@ interface Filters {
   presentations: string[];
   modalities: string[];
   styles: string[];
+  billingTypes: string[];
   clientAge: string;
   practitionerNames: string[];
   availabilityTypes: string[];
@@ -62,6 +63,15 @@ const STYLE_OPTIONS = [
   "Humorous", "Introvert", "Like a coach", "Male", "Non Judgemental",
   "Openness", "Outgoing", "Sensitive and Gentle", "Solution Oriented",
   "Spiritual", "Talkative", "Teach new Skills", "Warm",
+];
+
+const BILLING_OPTIONS = [
+  "Medicare Rebate",
+  "NDIS",
+  "WorkSafe",
+  "EAP",
+  "Self Funded",
+  "Third Party",
 ];
 
 const MODALITY_OPTIONS = [
@@ -148,6 +158,24 @@ function scoreMatch(p: Practitioner, filters: Filters): number {
     const styleVal: any = (p as any).style;
     const styleText = (styleVal == null ? "" : typeof styleVal === "string" ? styleVal : Array.isArray(styleVal) ? styleVal.join(" ") : String(styleVal)).toLowerCase();
     const allMatch = filters.styles.every(s => styleText.includes(s.toLowerCase()));
+    if (!allMatch) return -1;
+  }
+
+  if (filters.billingTypes.length > 0) {
+    const billingText = ((p.billing_types || "") as string).toLowerCase();
+    // Map simplified labels to keywords in the billing string
+    const billingKeyMap: Record<string, string> = {
+      "medicare rebate": "medicare",
+      "ndis": "ndis",
+      "worksafe": "worksafe",
+      "eap": "employer funded",
+      "self funded": "self funded",
+      "third party": "third party",
+    };
+    const allMatch = filters.billingTypes.every(bt => {
+      const key = billingKeyMap[bt.toLowerCase()] || bt.toLowerCase();
+      return billingText.includes(key);
+    });
     if (!allMatch) return -1;
   }
 
@@ -449,6 +477,7 @@ export default function FindPractitioner({ practitioners }: Props) {
   const [selectedPractitionerNames, setSelectedPractitionerNames] = useState<string[]>([]);
   const [selectedAvailabilityTypes, setSelectedAvailabilityTypes] = useState<string[]>([]);
   const [selectedDays, setSelectedDays] = useState<string[]>([]);
+  const [selectedBillingTypes, setSelectedBillingTypes] = useState<string[]>([]);
   const [selectedNames, setSelectedNames] = useState<Set<string>>(new Set());
   const [showSendModal, setShowSendModal] = useState(false);
   const [sentSuccess, setSentSuccess] = useState(false);
@@ -456,21 +485,21 @@ export default function FindPractitioner({ practitioners }: Props) {
   const allPractitionerNames = useMemo(() => practitioners.map(p => p.name).sort(), [practitioners]);
 
   const results = useMemo(() => {
-    const filters: Filters = { keyword, location, gender, clientType, therapistType, afterHours, hasAvailability, presentations: selectedPresentations, modalities: selectedModalities, styles: selectedStyles, clientAge, practitionerNames: selectedPractitionerNames, availabilityTypes: selectedAvailabilityTypes, days: selectedDays };
+    const filters: Filters = { keyword, location, gender, clientType, therapistType, afterHours, hasAvailability, presentations: selectedPresentations, modalities: selectedModalities, styles: selectedStyles, billingTypes: selectedBillingTypes, clientAge, practitionerNames: selectedPractitionerNames, availabilityTypes: selectedAvailabilityTypes, days: selectedDays };
     return practitioners
       .map(p => ({ p, score: scoreMatch(p, filters) }))
       .filter(item => item.score >= 0)
       .sort((a, b) => b.score - a.score || a.p.name.localeCompare(b.p.name));
-  }, [practitioners, keyword, location, gender, clientType, therapistType, afterHours, hasAvailability, selectedPresentations, selectedModalities, selectedStyles, clientAge, selectedPractitionerNames, selectedAvailabilityTypes, selectedDays]);
+  }, [practitioners, keyword, location, gender, clientType, therapistType, afterHours, hasAvailability, selectedPresentations, selectedModalities, selectedStyles, selectedBillingTypes, clientAge, selectedPractitionerNames, selectedAvailabilityTypes, selectedDays]);
 
   const clearFilters = () => {
     setKeyword(""); setLocation(""); setGender(""); setClientType("");
     setTherapistType(""); setAfterHours(false); setHasAvailability(false);
-    setSelectedPresentations([]); setSelectedModalities([]); setSelectedStyles([]);
+    setSelectedPresentations([]); setSelectedModalities([]); setSelectedStyles([]); setSelectedBillingTypes([]);
     setClientAge(""); setSelectedPractitionerNames([]); setSelectedAvailabilityTypes([]); setSelectedDays([]);
   };
 
-  const hasFilters = !!(keyword || location || gender || clientType || therapistType || afterHours || hasAvailability || selectedPresentations.length || selectedModalities.length || selectedStyles.length || clientAge || selectedPractitionerNames.length || selectedAvailabilityTypes.length || selectedDays.length);
+  const hasFilters = !!(keyword || location || gender || clientType || therapistType || afterHours || hasAvailability || selectedPresentations.length || selectedModalities.length || selectedStyles.length || selectedBillingTypes.length || clientAge || selectedPractitionerNames.length || selectedAvailabilityTypes.length || selectedDays.length);
 
   const toggleSelect = (name: string) => {
     setSelectedNames(prev => {
@@ -572,6 +601,13 @@ export default function FindPractitioner({ practitioners }: Props) {
               selected={selectedStyles}
               onChange={setSelectedStyles}
               placeholder="Any style"
+            />
+            <MultiSelectDropdown
+              label="Billing / Funding"
+              options={BILLING_OPTIONS}
+              selected={selectedBillingTypes}
+              onChange={setSelectedBillingTypes}
+              placeholder="Any billing type"
             />
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-3">
