@@ -1,6 +1,5 @@
-// AUTO-GENERATED from practitioners_data.json — do not edit directly
-export const PRACTITIONERS_DATA = 
-[
+// Auto-generated from practitioners_data.json
+export const PRACTITIONERS_DATA = [
   {
     "id": 1,
     "name": "Alex Barry",
@@ -580,7 +579,7 @@ export const PRACTITIONERS_DATA =
         ]
       }
     ],
-    "style": "Active Listener, Animal Lover, Calm, Compassionate, Direct, Empathetic, Extravert, Gentle, Good at tough Love, Guides to set Goals, Humerous, Humorous, Non Judgemental, Outgoing, Sensitive and Gentle, Warm"
+    "style": "Active Listener, Animal Lover, Calm, Compassionate, Direct, Empathetic, Extravert, Gentle, Good at tough Love, Guides to set Goals, Humorous, Humorous, Non Judgemental, Outgoing, Sensitive and Gentle, Warm"
   },
   {
     "id": 27,
@@ -962,7 +961,7 @@ export const PRACTITIONERS_DATA =
         ]
       }
     ],
-    "style": "Active Listener, Artistic, Calm, Compassionate, Conscientiousness, Creative, Direct, Empathetic, Existential, Extravert, Gentle, Good at tough Love, Humerous, Humorous, Non Judgemental, Openness, Outgoing, Sensitive and Gentle, Solution Oriented, Talkative, Teach new Skills, Warm"
+    "style": "Active Listener, Artistic, Calm, Compassionate, Conscientiousness, Creative, Direct, Empathetic, Existential, Extravert, Gentle, Good at tough Love, Humorous, Humorous, Non Judgemental, Openness, Outgoing, Sensitive and Gentle, Solution Oriented, Talkative, Teach new Skills, Warm"
   },
   {
     "id": 19,
@@ -1143,7 +1142,7 @@ export const PRACTITIONERS_DATA =
     "availability": [],
     "weekly_availability": [],
     "fortnightly_availability": [],
-    "style": "A parent, Active Listener, Calm, Conscientiousness, Extravert, Female, Humerous, Humorous, Openness, Outgoing, Sensitive and Gentle, Spiritual, Talkative"
+    "style": "A parent, Active Listener, Calm, Conscientiousness, Extravert, Female, Humorous, Humorous, Openness, Outgoing, Sensitive and Gentle, Spiritual, Talkative"
   },
   {
     "id": 2,
@@ -1633,7 +1632,7 @@ export const PRACTITIONERS_DATA =
         ]
       }
     ],
-    "style": "A parent, Artistic, Conscientiousness, Creative, Extinensial, Female, Good at tough Love, Humorous, Introvert, Sensitive and Gentle, Spiritual, Talkative"
+    "style": "A parent, Artistic, Conscientiousness, Creative, Existential, Female, Good at tough Love, Humorous, Introvert, Sensitive and Gentle, Spiritual, Talkative"
   },
   {
     "id": 22,
@@ -1977,7 +1976,7 @@ export const PRACTITIONERS_DATA =
     "short_bio": "Jill is a schema, EMDR and couples-focused psychologist helping individuals and partners heal long-standing patterns and trauma through relational, goal-oriented therapy.",
     "weekly_availability": [],
     "fortnightly_availability": [],
-    "style": "A parent, Active Listener, Calm, Compassionate, Empathetic, Existential, Female, Humerous, Humorous, Non Judgemental, Openness, Outgoing, Warm"
+    "style": "A parent, Active Listener, Calm, Compassionate, Empathetic, Existential, Female, Humorous, Humorous, Non Judgemental, Openness, Outgoing, Warm"
   },
   {
     "id": 11,
@@ -2310,7 +2309,7 @@ export const PRACTITIONERS_DATA =
         ]
       }
     ],
-    "style": "A parent, Active Listener, Animal Lover, Artistic, Assigns Homework/ Worksheets, Calm, Compassionate, Conscientiousness, Creative, Direct, Empathetic, Existential, Extinensial, Extravert, Gentle, Female, Good at tough Love, Guides to set Goals, Humerous, Humorous, Introvert, Like a coach, Non Judgemental, Openness, Outgoing, Sensitive and Gentle, Solution Oriented, Spiritual, Talkative, Teach new Skills, Warm"
+    "style": "A parent, Active Listener, Animal Lover, Artistic, Assigns Homework/ Worksheets, Calm, Compassionate, Conscientiousness, Creative, Direct, Empathetic, Existential, Existential, Extravert, Gentle, Female, Good at tough Love, Guides to set Goals, Humorous, Humorous, Introvert, Like a coach, Non Judgemental, Openness, Outgoing, Sensitive and Gentle, Solution Oriented, Spiritual, Talkative, Teach new Skills, Warm"
   },
   {
     "id": 6,
@@ -3892,5 +3891,4 @@ export const PRACTITIONERS_DATA =
     ],
     "style": "A parent, Calm, Creative, Female, Good at tough Love, Spiritual"
   }
-]
-;
+];

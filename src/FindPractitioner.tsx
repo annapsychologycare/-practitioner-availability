@@ -20,6 +20,7 @@ interface Filters {
 
   presentations: string[];
   modalities: string[];
+  styles: string[];
   clientAge: string;
   practitionerNames: string[];
   availabilityTypes: string[];
@@ -53,6 +54,16 @@ const PRESENTATION_OPTIONS = [
   "Stress", "Substance Misuse", "Suicidal Ideation", "Trauma", "Workplace stress",
 ];
 
+const STYLE_OPTIONS = [
+  "A parent", "Active Listener", "Animal Lover", "Artistic",
+  "Assigns Homework/ Worksheets", "Calm", "Compassionate", "Conscientiousness",
+  "Creative", "Direct", "Empathetic", "Existential", "Extravert",
+  "Female", "Gentle", "Good at tough Love", "Guides to set Goals",
+  "Humorous", "Introvert", "Like a coach", "Male", "Non Judgemental",
+  "Openness", "Outgoing", "Sensitive and Gentle", "Solution Oriented",
+  "Spiritual", "Talkative", "Teach new Skills", "Warm",
+];
+
 const MODALITY_OPTIONS = [
   "Acceptance and Commitment Therapy (ACT)", "Attachment Based Therapy",
   "Behavioural Activation (BA)", "Circle of Security (COS)",
@@ -82,7 +93,7 @@ function scoreMatch(p: Practitioner, filters: Filters): number {
 
   if (kw) {
     const safeStr = (v: any): string => (v == null ? "" : typeof v === "string" ? v : Array.isArray(v) ? v.join(" ") : String(v));
-    const searchText = [p.name, p.presentations, p.modalities, p.title, p.therapist_type, p.languages, p.religions_groups].map(safeStr).join(" ").toLowerCase();
+    const searchText = [p.name, p.presentations, p.modalities, p.title, p.therapist_type, p.languages, p.religions_groups, (p as any).style].map(safeStr).join(" ").toLowerCase();
     const words = kw.split(/\s+/);
     const matches = words.filter(w => searchText.includes(w)).length;
     if (matches === 0) return -1;
@@ -130,6 +141,13 @@ function scoreMatch(p: Practitioner, filters: Filters): number {
     const presVal: any = p.presentations;
     const presText = (presVal == null ? "" : typeof presVal === "string" ? presVal : Array.isArray(presVal) ? presVal.join(" ") : String(presVal)).toLowerCase();
     const allMatch = filters.presentations.every(pres => presText.includes(pres.toLowerCase()));
+    if (!allMatch) return -1;
+  }
+
+  if (filters.styles.length > 0) {
+    const styleVal: any = (p as any).style;
+    const styleText = (styleVal == null ? "" : typeof styleVal === "string" ? styleVal : Array.isArray(styleVal) ? styleVal.join(" ") : String(styleVal)).toLowerCase();
+    const allMatch = filters.styles.every(s => styleText.includes(s.toLowerCase()));
     if (!allMatch) return -1;
   }
 
@@ -371,6 +389,16 @@ const PractitionerCard: React.FC<CardProps> = ({ p, locationFilter, isSelected, 
 
         {expanded && (
           <div className="mt-3 space-y-3 border-t border-base-300 pt-3">
+            {(p as any).style && (
+              <div>
+                <div className="text-xs font-bold text-base-content/50 uppercase tracking-wide mb-1">Therapist Style</div>
+                <div className="flex flex-wrap gap-1">
+                  {((p as any).style as string).split(",").map((s: string, i: number) => (
+                    <span key={i} className="badge badge-sm badge-outline" style={{ borderColor: "#8D5273", color: "#8D5273" }}>{s.trim()}</span>
+                  ))}
+                </div>
+              </div>
+            )}
             {p.presentations && (
               <div>
                 <div className="text-xs font-bold text-base-content/50 uppercase tracking-wide mb-1">Presentations</div>
@@ -416,6 +444,7 @@ export default function FindPractitioner({ practitioners }: Props) {
 
   const [selectedPresentations, setSelectedPresentations] = useState<string[]>([]);
   const [selectedModalities, setSelectedModalities] = useState<string[]>([]);
+  const [selectedStyles, setSelectedStyles] = useState<string[]>([]);
   const [clientAge, setClientAge] = useState("");
   const [selectedPractitionerNames, setSelectedPractitionerNames] = useState<string[]>([]);
   const [selectedAvailabilityTypes, setSelectedAvailabilityTypes] = useState<string[]>([]);
@@ -427,21 +456,21 @@ export default function FindPractitioner({ practitioners }: Props) {
   const allPractitionerNames = useMemo(() => practitioners.map(p => p.name).sort(), [practitioners]);
 
   const results = useMemo(() => {
-    const filters: Filters = { keyword, location, gender, clientType, therapistType, afterHours, hasAvailability, presentations: selectedPresentations, modalities: selectedModalities, clientAge, practitionerNames: selectedPractitionerNames, availabilityTypes: selectedAvailabilityTypes, days: selectedDays };
+    const filters: Filters = { keyword, location, gender, clientType, therapistType, afterHours, hasAvailability, presentations: selectedPresentations, modalities: selectedModalities, styles: selectedStyles, clientAge, practitionerNames: selectedPractitionerNames, availabilityTypes: selectedAvailabilityTypes, days: selectedDays };
     return practitioners
       .map(p => ({ p, score: scoreMatch(p, filters) }))
       .filter(item => item.score >= 0)
       .sort((a, b) => b.score - a.score || a.p.name.localeCompare(b.p.name));
-  }, [practitioners, keyword, location, gender, clientType, therapistType, afterHours, hasAvailability, selectedPresentations, selectedModalities, clientAge, selectedPractitionerNames, selectedAvailabilityTypes, selectedDays]);
+  }, [practitioners, keyword, location, gender, clientType, therapistType, afterHours, hasAvailability, selectedPresentations, selectedModalities, selectedStyles, clientAge, selectedPractitionerNames, selectedAvailabilityTypes, selectedDays]);
 
   const clearFilters = () => {
     setKeyword(""); setLocation(""); setGender(""); setClientType("");
     setTherapistType(""); setAfterHours(false); setHasAvailability(false);
-    setSelectedPresentations([]); setSelectedModalities([]);
+    setSelectedPresentations([]); setSelectedModalities([]); setSelectedStyles([]);
     setClientAge(""); setSelectedPractitionerNames([]); setSelectedAvailabilityTypes([]); setSelectedDays([]);
   };
 
-  const hasFilters = !!(keyword || location || gender || clientType || therapistType || afterHours || hasAvailability || selectedPresentations.length || selectedModalities.length || clientAge || selectedPractitionerNames.length || selectedAvailabilityTypes.length || selectedDays.length);
+  const hasFilters = !!(keyword || location || gender || clientType || therapistType || afterHours || hasAvailability || selectedPresentations.length || selectedModalities.length || selectedStyles.length || clientAge || selectedPractitionerNames.length || selectedAvailabilityTypes.length || selectedDays.length);
 
   const toggleSelect = (name: string) => {
     setSelectedNames(prev => {
@@ -536,6 +565,13 @@ export default function FindPractitioner({ practitioners }: Props) {
               selected={selectedModalities}
               onChange={setSelectedModalities}
               placeholder="Any modality"
+            />
+            <MultiSelectDropdown
+              label="Therapist Style"
+              options={STYLE_OPTIONS}
+              selected={selectedStyles}
+              onChange={setSelectedStyles}
+              placeholder="Any style"
             />
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-3">
