@@ -41,7 +41,7 @@ const PRESENTATION_OPTIONS = [
   "Codependency or people-pleasing", "Communication and boundary issues",
   "Compassion fatigue / vicarious trauma", "Complex Trauma", "Confidence",
   "Couples and Marriage Difficulties", "Depression", "Depersonalization Disorder",
-  "Domestic Violence", "Eating Disorders", "Existential concerns / loss of meaning",
+  "Domestic Violence", "Eating Disorders", "Eating Disorders (Current/Active)", "Eating Disorders (Not Current/Not Active)", "Existential concerns / loss of meaning",
   "Family Conflict", "Fear of Failure", "Gambling", "Gender Dysphoria",
   "Generalized Anxiety Disorder (GAD)", "Grief & Loss", "Health Anxiety",
   "Imposter Syndrome", "Insomnia Disorder", "Intergenerational Trauma",
@@ -52,7 +52,9 @@ const PRESENTATION_OPTIONS = [
   "Psychosis", "Relationship breakdown", "Schizophrenia", "Self-harm",
   "Separation anxiety disorder", "Sex and intimacy", "Sexual Abuse / Assault",
   "Sexuality and Gender", "Social anxiety disorder / Social Phobia",
-  "Stress", "Substance Misuse", "Suicidal Ideation", "Trauma", "Workplace stress",
+  "Stress", "Substance Misuse", "Suicidal Ideation", "Suicidal Ideation (Current/Active)", "Suicidal Ideation (Not Current/Not Active)",
+  "Addictions (Current/Active)", "Addictions (Not Current/Not Active)",
+  "Trauma", "Workplace stress",
 ];
 
 const STYLE_OPTIONS = [
