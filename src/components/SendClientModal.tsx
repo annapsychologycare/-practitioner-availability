@@ -59,7 +59,7 @@ function buildAvailabilitySection(
     return weekly.length > 0 || fortnightly.length > 0;
   });
   if (activeLocs.length === 0) {
-    return `<div style="padding:18px 22px 0;"><div style="font-size:11px;font-weight:700;color:#8D5273;text-transform:uppercase;letter-spacing:0.07em;margin-bottom:10px;">Availability</div><div style="font-size:14px;color:#999;font-style:italic;">Please contact us for availability</div></div>`;
+    return `<div style="padding:18px 22px 0;"><div style="font-size:11px;font-weight:700;color:#8D5273;text-transform:uppercase;letter-spacing:0.07em;margin-bottom:10px;">Availability</div><div style="font-size:14px;color:#555;font-style:italic;line-height:1.6;">Currently fully booked — waitlist availability only.<br><span style="font-style:normal;color:#666;">We can add you to the waitlist for your preferred days and times.</span></div></div>`;
   }
   let html = "";
   for (const loc of activeLocs) {
@@ -116,6 +116,7 @@ function buildEmailHtml(
     availabilityLocations: Array<{ location: string; availability: string | string[] }>;
     link_to_bio: string;
     short_bio?: string;
+    working_hours?: string;
   }>
 ): string {
   let cards = "";
@@ -128,18 +129,18 @@ function buildEmailHtml(
       : "";
 
     cards += `
-      <div style="border:1px solid #ede9f5;border-radius:10px;margin-bottom:24px;overflow:hidden;">
+      <div style="border:1px solid #c4bbd8;border-radius:10px;margin-bottom:24px;overflow:hidden;">
         <div style="padding:20px 22px;border-bottom:1px solid #ede9f5;">
           <div style="font-size:17px;font-weight:700;color:#2C244C;">${p.name}</div>
           <div style="font-size:13px;color:#8D5273;margin-top:3px;">${p.title}</div>
           ${p.short_bio ? `<div style="font-size:13px;color:#666;font-style:italic;margin-top:10px;line-height:1.7;">${p.short_bio}</div>` : ""}
+          ${p.working_hours ? `<div style="font-size:12px;color:#8D5273;margin-top:8px;line-height:1.6;">🕐 ${p.working_hours}</div>` : ""}
         </div>
         ${availHtml}
         ${feesInline || medicareInline ? `
         <div style="padding:14px 22px 16px;font-size:13px;color:#444;line-height:1.9;border-top:1px solid #e8e4f0;">
-          ${feesInline ? `<span><span style="font-weight:700;color:#2C244C;">Fees:</span> ${feesInline}</span>` : ""}
-          ${feesInline && medicareInline ? `<span style="color:#bbb;margin:0 10px;">|</span>` : ""}
-          ${medicareInline ? `<span><span style="font-weight:700;color:#2C244C;">Medicare Rebate:</span> ${medicareInline}</span>` : ""}
+          ${feesInline ? `<div><span style="font-weight:700;color:#2C244C;">Fees:</span> ${feesInline}</div>` : ""}
+          ${medicareInline ? `<div style="margin-top:4px;"><span style="font-weight:700;color:#2C244C;">Medicare Rebate:</span> ${medicareInline}</div>` : ""}
         </div>` : ""}
         ${profileLink}
       </div>`;
@@ -243,6 +244,7 @@ const SendClientModal: React.FC<Props> = ({ selected, locationFilter, onClose, o
           accepts_couples: p.accepts_couples,
           alert: p.alert,
           short_bio: p.short_bio,
+          working_hours: (p as any).working_hours,
         };
       }),
     [selected, locationFilter]
@@ -255,9 +257,6 @@ const SendClientModal: React.FC<Props> = ({ selected, locationFilter, onClose, o
 
   const handlePreview = () => {
     if (!clientName.trim()) { setError("Please enter the client's name."); return; }
-    if (!clientEmail.trim() || !clientEmail.includes("@")) {
-      setError("Please enter a valid email address."); return;
-    }
     setError("");
     setStep("preview");
   };
@@ -278,12 +277,7 @@ const SendClientModal: React.FC<Props> = ({ selected, locationFilter, onClose, o
         senderName,
         emailHtml: previewHtml,
       };
-      const response = await fetch("/.netlify/functions/send-email", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
-      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      await window.tasklet.sendMessageToAgent(JSON.stringify(payload));
       onSent();
     } catch (e) {
       console.error("Failed to send:", e);
@@ -365,7 +359,8 @@ const SendClientModal: React.FC<Props> = ({ selected, locationFilter, onClose, o
               {/* Client Email */}
               <div>
                 <label className="label label-text font-semibold pb-1">
-                  Client Email <span className="text-error">*</span>
+                  Client Email{" "}
+                  <span className="text-base-content/40 font-normal">(optional)</span>
                 </label>
                 <input
                   type="email"
@@ -425,7 +420,7 @@ const SendClientModal: React.FC<Props> = ({ selected, locationFilter, onClose, o
         ) : (
           <>
             <div className="text-sm text-base-content/60 mb-3 flex-shrink-0 space-y-0.5">
-              <div>To: <strong>{clientEmail}</strong></div>
+              {clientEmail.trim() && <div>To: <strong>{clientEmail}</strong></div>}
               {ccDisplay && <div>CC: <strong>{ccDisplay}</strong></div>}
               <div>From: <strong>{senderName}</strong></div>
             </div>
