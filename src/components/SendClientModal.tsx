@@ -64,12 +64,18 @@ function buildAvailabilitySection(
   let html = "";
   for (const loc of activeLocs) {
     const { weekly, fortnightly } = parseAvailability(loc.availability);
-    const locLabel = ` — ${loc.location}`;
+    const isMalvern = loc.location.toLowerCase().includes("malvern");
+    const locLabel = isMalvern
+      ? ` — Wattletree Rd, Malvern / Burke Rd, Camberwell (from 9 June 2026)`
+      : ` — ${loc.location}`;
+    const malvernNote = isMalvern
+      ? `<div style="font-size:12px;color:#8D5273;font-style:italic;margin-bottom:10px;line-height:1.6;">📍 We're excited to be moving to a larger, purpose-built clinic at Burke Road, Camberwell from 9 June 2026. Appointments from that date will be held at the new location.</div>`
+      : "";
     const slots = [
       ...weekly.map((s) => renderSlotLine(s, "weekly")),
       ...fortnightly.map((s) => renderSlotLine(s, "fortnightly")),
     ];
-    html += `<div style="padding:18px 22px 0;"><div style="font-size:11px;font-weight:700;color:#8D5273;text-transform:uppercase;letter-spacing:0.07em;margin-bottom:10px;">Availability${locLabel}</div><div style="font-size:14px;color:#333;line-height:2;">${slots.join("<br>")}</div></div>`;
+    html += `<div style="padding:18px 22px 0;"><div style="font-size:11px;font-weight:700;color:#8D5273;text-transform:uppercase;letter-spacing:0.07em;margin-bottom:10px;">Availability${locLabel}</div>${malvernNote}<div style="font-size:14px;color:#333;line-height:2;">${slots.join("<br>")}</div></div>`;
   }
   return html;
 }
@@ -172,7 +178,8 @@ function buildEmailHtml(
         PH: 03 9088 1122 &nbsp;&nbsp; Fax: 03 9972 2606<br>
         Email: <a href="mailto:info@psychologycare.com.au" style="color:#8D5273;text-decoration:none;">info@psychologycare.com.au</a> &nbsp;&nbsp;
         Web: <a href="https://www.psychologycare.com.au" style="color:#8D5273;text-decoration:none;">www.psychologycare.com.au</a><br>
-        167 Wattletree Road, MALVERN 3144 &nbsp;|&nbsp; 183A Greville Street, PRAHRAN 3181 &nbsp;|&nbsp; 185A Greville Street, PRAHRAN 3181
+        167 Wattletree Road, MALVERN 3144 &nbsp;|&nbsp; 183A Greville Street, PRAHRAN 3181 &nbsp;|&nbsp; 185A Greville Street, PRAHRAN 3181<br>
+        <span style="font-size:11px;color:#8D5273;font-style:italic;">📍 Malvern clinic relocating to 673 Burke Road, CAMBERWELL 3124 from 9 June 2026</span>
       </div>
     </div>`;
 
