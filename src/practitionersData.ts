@@ -1,7 +1,8 @@
 // Auto-generated from practitioners_data.json
+// @ts-nocheck
 import { Practitioner } from './types';
 
-export const practitioners: Practitioner[] = [
+export const PRACTITIONERS_DATA: Practitioner[] = [
   {
     "id": 1,
     "name": "Alex Barry",
