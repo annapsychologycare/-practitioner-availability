@@ -1,4 +1,7 @@
-export const PRACTITIONERS_DATA = [
+// Auto-generated from practitioners_data.json
+import { Practitioner } from './types';
+
+export const practitioners: Practitioner[] = [
   {
     "id": 1,
     "name": "Alex Barry",
@@ -25,30 +28,25 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/alex-barry/",
     "locations": [
       {
-        "availability": [],
+        "availability": "",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
       },
       {
-        "availability": [
-          "Fridays at 12pm (Fortnightly: Starting 17th Apr)",
-          "Tuesdays at 3:30pm (Fortnightly: Starting 14th Apr)"
-        ],
+        "availability": "",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Wattletree Rd, Malvern"
       },
       {
-        "availability": [
-          "Wednesdays at 1:30pm (Fortnightly: Starting 15th Apr)"
-        ],
+        "availability": "Wednesdays at 1:30pm (Fortnightly: Starting 13th May)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Telehealth"
       }
     ],
-    "last_updated": "2026-03-25",
+    "last_updated": "2026-04-15",
     "availability": [
       "Wednesdays at 5:30pm (Fortnightly: Starting 25 Mar) \u2014 Greville St, Prahran",
       "Wednesdays at 1:30pm (Fortnightly: Starting 1 Apr) \u2014 Telehealth",
@@ -102,7 +100,11 @@ export const PRACTITIONERS_DATA = [
         ]
       }
     ],
-    "style": ""
+    "style": "",
+    "working_hours": "Working days: Monday afternoons (Malvern), Tuesday afternoons (Malvern), Wednesday afternoons (Prahran), Thursday afternoons (Malvern), Friday Mornings (Malvern)",
+    "location_notes": {
+      "Wattletree Rd, Malvern": "Please Note: As of 9th June 2026 Alex will be moving from our Malvern Clinic to our new Clinic on Burke Road, Camberwell."
+    }
   },
   {
     "id": 25,
@@ -112,90 +114,8 @@ export const PRACTITIONERS_DATA = [
     "medicare_rebate": "96.65\n\nNo rebate for couples",
     "gender": "Female",
     "alert": "",
-    "presentations": [
-      "Anxiety; Fear of Failure; General Adaptation Disorder (Adjustment Disorder); Generalized Anxiety Disorder (GAD); Perfectionism; Social anxiety disorder / Social Phobia; Stress; Adjustment Disorder; Bereavement; Burnout; Confidence; Depression; Grief & Loss; Loss; Pregnancy and Postnatal Depression; Self esteem; Bullying / workplace conflict; Career dissatisfaction or change adjustment; Career transition; Compassion fatigue / vicarious trauma; Professional identity and role strain; Work-life balance challenges; Workplace stress; Codependency or people-pleasing; Communication and boundary issues; Couples and Marriage Difficulties; Family Conflict/ belnded family stress; Friendship difficulties / social isolation; Interpersonal trauma or betrayal; Intimacy and trust difficulties; Non-Monogomy/ Polyamory; Relationship breakdown; Separation / divorce adjustment; Sex and intimacy; Low self esteem; Perfectionism or Imposter Syndrome; Identity exploration (gender / sexual orientation / cultural / spiritual); Life transitions (career change / relocation / retirement / ageing); Existential concerns / loss of meaning; Midlife crisis or stuck feelings; Personal growth and self-development goals; Sexuality and Gender; Queer; Alcohol Dependence (Not Current); Drug Dependence (Not Current); Cannabis Dependence ( Not Current); Hypersexuality (Sex Addiction); Perinatal Anxiety and Depression; Fertility / IVF stress; Pregnancy loss or birth trauma; Menopause adjustment; Balancing multiple roles (career / parenting / caregiving); Relationship or parenting stress; Adjusting to fatherhood or retirement; Erectile Dysfunction; Identity or career pressures; Personality Disorder; Psychosomatic symptoms; LGBTQIA+ affirmative therapy",
-      "Anxiety",
-      "Fear of Failure",
-      "General Adaptation Disorder (Adjustment Disorder)",
-      "Generalized Anxiety Disorder (GAD)",
-      "Perfectionism",
-      "Social anxiety disorder / Social Phobia",
-      "Stress",
-      "Adjustment Disorder",
-      "Bereavement",
-      "Burnout",
-      "Confidence",
-      "Depression",
-      "Grief & Loss",
-      "Loss",
-      "Pregnancy and Postnatal Depression",
-      "Self esteem",
-      "Bullying / workplace conflict",
-      "Career dissatisfaction or change adjustment",
-      "Career transition",
-      "Compassion fatigue / vicarious trauma",
-      "Professional identity and role strain",
-      "Work-life balance challenges",
-      "Workplace stress",
-      "Codependency or people-pleasing",
-      "Communication and boundary issues",
-      "Couples and Marriage Difficulties",
-      "Family Conflict/ belnded family stress",
-      "Friendship difficulties / social isolation",
-      "Interpersonal trauma or betrayal",
-      "Intimacy and trust difficulties",
-      "Non-Monogomy/ Polyamory",
-      "Relationship breakdown",
-      "Separation / divorce adjustment",
-      "Sex and intimacy",
-      "Low self esteem",
-      "Perfectionism or Imposter Syndrome",
-      "Identity exploration (gender",
-      "sexual orientation",
-      "cultural",
-      "spiritual)",
-      "Life transitions (career change",
-      "relocation",
-      "retirement",
-      "ageing)",
-      "Existential concerns / loss of meaning",
-      "Midlife crisis or \u201cstuck\u201d feelings",
-      "Personal growth and self-development goals",
-      "Sexuality and Gender",
-      "Queer",
-      "Alcohol Dependence (Not Current)",
-      "Drug Dependence (Not Current)",
-      "Cannabis Dependence ( Not Current)",
-      "Hypersexuality (Sex Addiction)",
-      "Perinatal Anxiety and Depression",
-      "Fertility / IVF stress",
-      "Pregnancy loss or birth trauma",
-      "Menopause adjustment",
-      "Balancing multiple roles (career",
-      "parenting",
-      "caregiving)",
-      "Relationship or parenting stress",
-      "Adjusting to fatherhood or retirement",
-      "Erectile Dysfunction",
-      "Identity or career pressures",
-      "Personality Disorder",
-      "Psychosomatic symptoms",
-      "LGBTQIA+ affirmative therapy",
-      "Addictions",
-      "Substance Misuse"
-    ],
-    "modalities": [
-      "Psychodynamic Therapy; Psychoanalytic Psychotherapy; Interpersonal Therapy (IPT); Humanistic / Person-Centred Therapy; Internal Family Systems (IFS) / Parts Work - Informed; Trauma-Informed Care; Psychoeducation and Skills Training; Polyvagal-Informed Therapy; Transpersonal Psychology",
-      "Psychodynamic Therapy",
-      "Psychoanalytic Psychotherapy",
-      "Interpersonal Therapy (IPT)",
-      "Humanistic / Person-Centred Therapy",
-      "Internal Family Systems (IFS) / Parts Work - Informed",
-      "Trauma-Informed Care",
-      "Psychoeducation and Skills Training",
-      "Polyvagal-Informed Therapy",
-      "Transpersonal Psychology"
-    ],
+    "presentations": "Anxiety; Fear of Failure; General Adaptation Disorder (Adjustment Disorder); Generalized Anxiety Disorder (GAD); Perfectionism; Social anxiety disorder / Social Phobia; Stress; Adjustment Disorder; Bereavement; Burnout; Confidence; Depression; Grief & Loss; Loss; Pregnancy and Postnatal Depression; Self esteem; Bullying / workplace conflict; Career dissatisfaction or change adjustment; Career transition; Compassion fatigue / vicarious trauma; Professional identity and role strain; Work-life balance challenges; Workplace stress; Codependency or people-pleasing; Communication and boundary issues; Couples and Marriage Difficulties; Family Conflict/ belnded family stress; Friendship difficulties / social isolation; Interpersonal trauma or betrayal; Intimacy and trust difficulties; Non-Monogomy/ Polyamory; Relationship breakdown; Separation / divorce adjustment; Sex and intimacy; Low self esteem; Perfectionism or Imposter Syndrome; Identity exploration (gender / sexual orientation / cultural / spiritual); Life transitions (career change / relocation / retirement / ageing); Existential concerns / loss of meaning; Midlife crisis or stuck feelings; Personal growth and self-development goals; Sexuality and Gender; Queer; Alcohol Dependence (Not Current); Drug Dependence (Not Current); Cannabis Dependence ( Not Current); Hypersexuality (Sex Addiction); Perinatal Anxiety and Depression; Fertility / IVF stress; Pregnancy loss or birth trauma; Menopause adjustment; Balancing multiple roles (career / parenting / caregiving); Relationship or parenting stress; Adjusting to fatherhood or retirement; Erectile Dysfunction; Identity or career pressures; Personality Disorder; Psychosomatic symptoms; LGBTQIA+ affirmative therapy; Anxiety; Fear of Failure; General Adaptation Disorder (Adjustment Disorder); Generalized Anxiety Disorder (GAD); Perfectionism; Social anxiety disorder / Social Phobia; Stress; Adjustment Disorder; Bereavement; Burnout; Confidence; Depression; Grief & Loss; Loss; Pregnancy and Postnatal Depression; Self esteem; Bullying / workplace conflict; Career dissatisfaction or change adjustment; Career transition; Compassion fatigue / vicarious trauma; Professional identity and role strain; Work-life balance challenges; Workplace stress; Codependency or people-pleasing; Communication and boundary issues; Couples and Marriage Difficulties; Family Conflict/ belnded family stress; Friendship difficulties / social isolation; Interpersonal trauma or betrayal; Intimacy and trust difficulties; Non-Monogomy/ Polyamory; Relationship breakdown; Separation / divorce adjustment; Sex and intimacy; Low self esteem; Perfectionism or Imposter Syndrome; Identity exploration (gender; sexual orientation; cultural; spiritual); Life transitions (career change; relocation; retirement; ageing); Existential concerns / loss of meaning; Midlife crisis or \u201cstuck\u201d feelings; Personal growth and self-development goals; Sexuality and Gender; Queer; Alcohol Dependence (Not Current); Drug Dependence (Not Current); Cannabis Dependence ( Not Current); Hypersexuality (Sex Addiction); Perinatal Anxiety and Depression; Fertility / IVF stress; Pregnancy loss or birth trauma; Menopause adjustment; Balancing multiple roles (career; parenting; caregiving); Relationship or parenting stress; Adjusting to fatherhood or retirement; Erectile Dysfunction; Identity or career pressures; Personality Disorder; Psychosomatic symptoms; LGBTQIA+ affirmative therapy; Addictions; Substance Misuse",
+    "modalities": "Psychodynamic Therapy; Psychoanalytic Psychotherapy; Interpersonal Therapy (IPT); Humanistic / Person-Centred Therapy; Internal Family Systems (IFS) / Parts Work - Informed; Trauma-Informed Care; Psychoeducation and Skills Training; Polyvagal-Informed Therapy; Transpersonal Psychology; Psychodynamic Therapy; Psychoanalytic Psychotherapy; Interpersonal Therapy (IPT); Humanistic / Person-Centred Therapy; Internal Family Systems (IFS) / Parts Work - Informed; Trauma-Informed Care; Psychoeducation and Skills Training; Polyvagal-Informed Therapy; Transpersonal Psychology",
     "client_types": "Individual;  Couples",
     "age_range": "18 Yrs +",
     "therapist_type": "Mental Health Social Worker",
@@ -212,18 +132,13 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/rebekah-barson/",
     "locations": [
       {
-        "availability": [
-          "Mondays at 10am (Weekly: Starting 27th Apr)",
-          "Mondays at 1pm (Fortnightly: Starting 4th May)",
-          "Saturdays at 10am (Fortnightly: Starting 18th Apr)",
-          "Saturdays at 1pm (Fortnightly: Starting 9th May)"
-        ],
+        "availability": "Mondays at 10am (Weekly: Starting 4th May)\nSaturdays at 9am (Fortnightly: Starting 2nd May)\nSaturdays at 1pm (Fortnightly: Starting 23rd May)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Wattletree Rd, Malvern"
       }
     ],
-    "last_updated": "2026-03-06",
+    "last_updated": "2026-04-15",
     "availability": [
       "Mondays at 1pm & 3pm (Fortnightly: Starting 20 Apr) \u2014 Wattletree Rd, Malvern",
       "Saturdays at 10am (Fortnightly: Starting 18 Apr) \u2014 Wattletree Rd, Malvern"
@@ -252,7 +167,11 @@ export const PRACTITIONERS_DATA = [
         ]
       }
     ],
-    "style": "A parent, Active Listener, Calm, Compassionate, Empathetic, Non Judgemental, Openness, Sensitive and Gentle, Warm"
+    "style": "A parent, Active Listener, Calm, Compassionate, Empathetic, Non Judgemental, Openness, Sensitive and Gentle, Warm",
+    "working_hours": "",
+    "location_notes": {
+      "Wattletree Rd, Malvern": "Please Note: As of 9th June 2026 Rebekah will be moving from our Malvern Clinic to our new Clinic on Burke Road, Camberwell."
+    }
   },
   {
     "id": 5,
@@ -262,78 +181,8 @@ export const PRACTITIONERS_DATA = [
     "medicare_rebate": "145.25",
     "gender": "Female",
     "alert": "",
-    "presentations": [
-      "Anxiety;  Attachment Disorder;  Bereavement;  Burnout;  Childhood Abuse and neglect;  Depression;  Fear of Failure;  Generalized Anxiety Disorder (GAD);  Grief & Loss;  LGBTIQA+;  Low self esteem;  Panic Disorder & Panic Attacks;  Perfectionism;  Phobias;  Post Traumatic Stress Disorder (PTSD);  Social anxiety disorder / Social Phobia;  Stress;  Trauma;  Vulnerability;  Workplace stress",
-      "Agoraphobia",
-      "Anxiety",
-      "Claustrophobia",
-      "Fear of Failure",
-      "General Adaptation Disorder (Adjustment Disorder)",
-      "Generalized Anxiety Disorder (GAD)",
-      "Health Anxiety",
-      "Panic Disorder & Panic Attacks",
-      "Perfectionism",
-      "Phobias",
-      "Social anxiety disorder / Social Phobia",
-      "Stress",
-      "Adjustment Disorder",
-      "Bereavement",
-      "Burnout",
-      "Clinical Depression (Major Depressive Disorder)",
-      "Confidence",
-      "Depression",
-      "Grief & Loss",
-      "Loss",
-      "Major Depressive Disorder",
-      "Self esteem",
-      "Bullying / workplace conflict",
-      "Career dissatisfaction or change adjustment",
-      "Career transition",
-      "Compassion fatigue / vicarious trauma",
-      "Occupational stress or burnout",
-      "Professional identity and role strain",
-      "Work-life balance challenges",
-      "Workplace stress",
-      "Codependency or people-pleasing",
-      "Communication and boundary issues",
-      "Friendship difficulties / social isolation",
-      "Interpersonal trauma or betrayal",
-      "Intimacy and trust difficulties",
-      "Relationship breakdown",
-      "Separation / divorce adjustment",
-      "Low self esteem",
-      "Perfectionism or Imposter Syndrome",
-      "Life transitions (career change",
-      "relocation",
-      "retirement",
-      "ageing)",
-      "Existential concerns / loss of meaning",
-      "Midlife crisis or \u201cstuck\u201d feelings",
-      "Personal growth and self-development goals",
-      "Fertility / IVF stress",
-      "Pregnancy loss or birth trauma",
-      "Menopause adjustment",
-      "Balancing multiple roles (career",
-      "parenting",
-      "caregiving)",
-      "Relationship or parenting stress",
-      "Social isolation",
-      "Health Anxiety/ Medical Trauma",
-      "Culturally and linguistically diverse clients",
-      "LGBTQIA+ affirmative therapy",
-      "Refugees / migrants / asylum seekers"
-    ],
-    "modalities": [
-      "Acceptance and Commitment Therapy (ACT);  Attachment Based Therapy;  Cognitive Behaviour Therapy (CBT);  Eye Movement Desensitisation and Reprocessing (EMDR);  Internal Family Systems (IFS) - Informed;  Schema Therapy",
-      "Acceptance and Commitment Therapy (ACT)",
-      "Cognitive Behavioural Therapy (CBT)",
-      "Schema Therapy",
-      "Eye Movement Desensitisation and Reprocessing (EMDR)",
-      "Internal Family Systems (IFS) / Parts Work - Informed",
-      "Motivational Interviewing (MI)",
-      "Trauma-Informed Care",
-      "Polyvagal-Informed Therapy"
-    ],
+    "presentations": "Anxiety;  Attachment Disorder;  Bereavement;  Burnout;  Childhood Abuse and neglect;  Depression;  Fear of Failure;  Generalized Anxiety Disorder (GAD);  Grief & Loss;  LGBTIQA+;  Low self esteem;  Panic Disorder & Panic Attacks;  Perfectionism;  Phobias;  Post Traumatic Stress Disorder (PTSD);  Social anxiety disorder / Social Phobia;  Stress;  Trauma;  Vulnerability;  Workplace stress; Agoraphobia; Anxiety; Claustrophobia; Fear of Failure; General Adaptation Disorder (Adjustment Disorder); Generalized Anxiety Disorder (GAD); Health Anxiety; Panic Disorder & Panic Attacks; Perfectionism; Phobias; Social anxiety disorder / Social Phobia; Stress; Adjustment Disorder; Bereavement; Burnout; Clinical Depression (Major Depressive Disorder); Confidence; Depression; Grief & Loss; Loss; Major Depressive Disorder; Self esteem; Bullying / workplace conflict; Career dissatisfaction or change adjustment; Career transition; Compassion fatigue / vicarious trauma; Occupational stress or burnout; Professional identity and role strain; Work-life balance challenges; Workplace stress; Codependency or people-pleasing; Communication and boundary issues; Friendship difficulties / social isolation; Interpersonal trauma or betrayal; Intimacy and trust difficulties; Relationship breakdown; Separation / divorce adjustment; Low self esteem; Perfectionism or Imposter Syndrome; Life transitions (career change; relocation; retirement; ageing); Existential concerns / loss of meaning; Midlife crisis or \u201cstuck\u201d feelings; Personal growth and self-development goals; Fertility / IVF stress; Pregnancy loss or birth trauma; Menopause adjustment; Balancing multiple roles (career; parenting; caregiving); Relationship or parenting stress; Social isolation; Health Anxiety/ Medical Trauma; Culturally and linguistically diverse clients; LGBTQIA+ affirmative therapy; Refugees / migrants / asylum seekers",
+    "modalities": "Acceptance and Commitment Therapy (ACT);  Attachment Based Therapy;  Cognitive Behaviour Therapy (CBT);  Eye Movement Desensitisation and Reprocessing (EMDR);  Internal Family Systems (IFS) - Informed;  Schema Therapy; Acceptance and Commitment Therapy (ACT); Cognitive Behavioural Therapy (CBT); Schema Therapy; Eye Movement Desensitisation and Reprocessing (EMDR); Internal Family Systems (IFS) / Parts Work - Informed; Motivational Interviewing (MI); Trauma-Informed Care; Polyvagal-Informed Therapy",
     "client_types": "Individual",
     "age_range": "18 Yrs +",
     "therapist_type": "Clinical Psychologist",
@@ -350,28 +199,28 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/brigid-blanckenberg-clinical-psychologist/",
     "locations": [
       {
-        "availability": [
-          "Tuesdays at 2:30pm (Fortnightly: Starting 26th May)"
-        ],
+        "availability": "",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Wattletree Rd, Malvern"
       },
       {
-        "availability": [
-          "Thursdays at 7:30pm (Fortnightly: Starting 9th Apr)"
-        ],
+        "availability": "",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
       }
     ],
-    "last_updated": "2026-03-06",
+    "last_updated": "2026-04-15",
     "availability": [],
     "short_bio": "Brigid is a calm, attachment-informed clinical psychologist using schema, EMDR and mindfulness to support adolescents and adults, including LGBTIQ+ clients",
     "weekly_availability": [],
     "fortnightly_availability": [],
-    "style": "Active Listener, Animal Lover, Calm, Creative, Female, Sensitive and Gentle"
+    "style": "Active Listener, Animal Lover, Calm, Creative, Female, Sensitive and Gentle",
+    "working_hours": "Working Days: Monday afternoons/ evenings in Malvern, Wednesday mornings in Prahran & Thursday afternoons/ evenings in Prahran",
+    "location_notes": {
+      "Wattletree Rd, Malvern": "Please Note: As of 9th June 2026 Brigid's Tuesday appointments will be moving from our Malvern Clinic to our new Clinic on Burke Road, Camberwell."
+    }
   },
   {
     "id": 3,
@@ -400,18 +249,18 @@ export const PRACTITIONERS_DATA = [
     "locations": [
       {
         "availability": [
-          "Fridays at 11am (Weekly: Starting 10th Apr)",
-          "Fridays at 8am (Fortnightly: Starting 10th Apr)",
-          "Mondays at 9am (Fortnightly: Starting 20th Apr)",
-          "Mondays at 10am (Fortnightly: Starting 20th Apr)",
-          "Mondays at 11:30am (Fortnightly: Starting 20th Apr)"
+          "Fridays at 11am (Weekly: Starting 1st May)",
+          "Fridays at 8am (Fortnightly: Starting 8th May)",
+          "Mondays at 9am (Fortnightly: Starting 4th May)",
+          "Mondays at 10am (Fortnightly: Starting 4th May)",
+          "Mondays at 11:30am (Fortnightly: Starting 4th May)"
         ],
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
       }
     ],
-    "last_updated": "2026-03-25",
+    "last_updated": "2026-04-27",
     "availability": [
       "Fridays at 11am (Weekly: from 20 Mar) \u2014 Greville St, Prahran",
       "Mondays at 9am, 10am & 11:30am (Fortnightly: Starting 20 Apr) \u2014 Greville St, Prahran",
@@ -455,7 +304,11 @@ export const PRACTITIONERS_DATA = [
         ]
       }
     ],
-    "style": ""
+    "style": "",
+    "working_hours": "Working Days: Monday Mornings & Friday Mornings in Prahran",
+    "location_notes": {
+      "Greville St, Prahran": "Please Note: As of 9th June 2026 Amy will be moving from our Prahran Clinic to our new Clinic on Burke Road, Camberwell."
+    }
   },
   {
     "id": 27,
@@ -465,44 +318,8 @@ export const PRACTITIONERS_DATA = [
     "medicare_rebate": "96.65",
     "gender": "Female",
     "alert": "",
-    "presentations": [
-      "ADD and ADHD;  Agoraphobia;  Anxiety;  Attachment Disorder;  Bereavement;  Body issues;  Borderline Personality Disorder;  Burnout;  Career transition;  Childhood Abuse and neglect;  Clinical Depression (Major Depressive Disorder);  Confidence;  Depression;  Disruptive Mood Dysregulation Disorder;  Family;  Fear of Failure;  General Adaptation Disorder (Adjustment Disorder);  Generalized Anxiety Disorder (GAD);  Grief & Loss;  Imposter Syndrome;  Insomnia Disorder;  Intergenerational Trauma;  LGBTIQA+;  Life Transitions;  Loss;  Low self esteem;  Non-Monogomy/ Polyamory;  Obsessive-Compulsive Disorder (OCD);  Oppositional Defiant Disorder (ODD);  Panic Disorder & Panic Attacks;  Perfectionism;  Personality Disorder;  Phobias;  Post Traumatic Stress Disorder (PTSD);  Relationship breakdown;  Self esteem;  Self-Harm (Cutting);  Separation anxiety disorder;  Social anxiety disorder / Social Phobia;  Stress;  Substance Misuse;  Trauma;  Vulnerability;  Workplace stress",
-      "Anxiety",
-      "Obsessive-Compulsive Disorder (OCD)",
-      "Panic Disorder & Panic Attacks",
-      "Perfectionism",
-      "Adjustment Disorder",
-      "Confidence",
-      "Depression",
-      "Disruptive Mood Dysregulation Disorder",
-      "Grief & Loss",
-      "Loss",
-      "Self esteem",
-      "Complex Trauma",
-      "Post Traumatic Stress Disorder PTSD",
-      "Trauma",
-      "Vulnerability",
-      "Friendship difficulties / social isolation",
-      "Relationship breakdown",
-      "Low self esteem",
-      "Perfectionism or Imposter Syndrome",
-      "Identity exploration (gender",
-      "sexual orientation",
-      "cultural",
-      "spiritual)",
-      "Queer",
-      "ADD and ADHD",
-      "Autism Spectrum Disorders (ASD)",
-      "Emotion Dysregulation / Impulsivity",
-      "LGBTQIA+ affirmative therapy"
-    ],
-    "modalities": [
-      "Acceptance and Commitment Therapy (ACT);  Cognitive Behaviour Therapy (CBT);  Dialectical Behavioural Therapy (DBT);  Exposure and Response Prevention Therapy ( ERP) for OCD;  Mindfulness;  Motivational Interviewing (MI);  Person/ Client centred Therapy;  Schema Therapy;  Supportive Therapy",
-      "Acceptance and Commitment Therapy (ACT)",
-      "Cognitive Behavioural Therapy (CBT)",
-      "Schema Therapy",
-      "Internal Family Systems (IFS) / Parts Work - Certified Level 1"
-    ],
+    "presentations": "ADD and ADHD;  Agoraphobia;  Anxiety;  Attachment Disorder;  Bereavement;  Body issues;  Borderline Personality Disorder;  Burnout;  Career transition;  Childhood Abuse and neglect;  Clinical Depression (Major Depressive Disorder);  Confidence;  Depression;  Disruptive Mood Dysregulation Disorder;  Family;  Fear of Failure;  General Adaptation Disorder (Adjustment Disorder);  Generalized Anxiety Disorder (GAD);  Grief & Loss;  Imposter Syndrome;  Insomnia Disorder;  Intergenerational Trauma;  LGBTIQA+;  Life Transitions;  Loss;  Low self esteem;  Non-Monogomy/ Polyamory;  Obsessive-Compulsive Disorder (OCD);  Oppositional Defiant Disorder (ODD);  Panic Disorder & Panic Attacks;  Perfectionism;  Personality Disorder;  Phobias;  Post Traumatic Stress Disorder (PTSD);  Relationship breakdown;  Self esteem;  Self-Harm (Cutting);  Separation anxiety disorder;  Social anxiety disorder / Social Phobia;  Stress;  Substance Misuse;  Trauma;  Vulnerability;  Workplace stress; Anxiety; Obsessive-Compulsive Disorder (OCD); Panic Disorder & Panic Attacks; Perfectionism; Adjustment Disorder; Confidence; Depression; Disruptive Mood Dysregulation Disorder; Grief & Loss; Loss; Self esteem; Complex Trauma; Post Traumatic Stress Disorder PTSD; Trauma; Vulnerability; Friendship difficulties / social isolation; Relationship breakdown; Low self esteem; Perfectionism or Imposter Syndrome; Identity exploration (gender; sexual orientation; cultural; spiritual); Queer; ADD and ADHD; Autism Spectrum Disorders (ASD); Emotion Dysregulation / Impulsivity; LGBTQIA+ affirmative therapy",
+    "modalities": "Acceptance and Commitment Therapy (ACT);  Cognitive Behaviour Therapy (CBT);  Dialectical Behavioural Therapy (DBT);  Exposure and Response Prevention Therapy ( ERP) for OCD;  Mindfulness;  Motivational Interviewing (MI);  Person/ Client centred Therapy;  Schema Therapy;  Supportive Therapy; Acceptance and Commitment Therapy (ACT); Cognitive Behavioural Therapy (CBT); Schema Therapy; Internal Family Systems (IFS) / Parts Work - Certified Level 1",
     "client_types": "Individual",
     "age_range": "18 Yrs +",
     "therapist_type": "Clinical Psychology Registra;  Psychologist",
@@ -519,17 +336,13 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/ruby-bouhadana/",
     "locations": [
       {
-        "availability": [
-          "Tuesdays at 8am (Fortnightly: Starting 19th May)",
-          "Tuesdays at 9am (Fortnightly: Starting 19th May)",
-          "Tuesdays at 1pm (Fortnightly: Starting 26th May)"
-        ],
+        "availability": "",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Wattletree Rd, Malvern"
       }
     ],
-    "last_updated": "2026-03-06",
+    "last_updated": "2026-04-15",
     "availability": [
       "Tuesdays at 9am (Fortnightly: Starting 24 Mar) \u2014 Wattletree Rd, Malvern"
     ],
@@ -549,7 +362,11 @@ export const PRACTITIONERS_DATA = [
         ]
       }
     ],
-    "style": "Active Listener, Animal Lover, Calm, Conscientiousness, Creative, Female, Openness, Outgoing, Sensitive and Gentle"
+    "style": "Active Listener, Animal Lover, Calm, Conscientiousness, Creative, Female, Openness, Outgoing, Sensitive and Gentle",
+    "working_hours": "",
+    "location_notes": {
+      "Wattletree Rd, Malvern": "Please Note: As of 9th June 2026 Ruby will be moving from our Malvern Clinic to our new Clinic on Burke Road, Camberwell."
+    }
   },
   {
     "id": 17,
@@ -559,168 +376,8 @@ export const PRACTITIONERS_DATA = [
     "medicare_rebate": "96.65",
     "gender": "Female",
     "alert": "",
-    "presentations": [
-      "Anxiety; Fear of Failure; Generalized Anxiety Disorder (GAD); Health Anxiety; Obsessive-Compulsive Disorder (OCD); Panic Disorder & Panic Attacks; Perfectionism; Separation anxiety disorder; Social anxiety disorder / Social Phobia; Stress; Adjustment Disorder; Bereavement; Burnout; Clinical Depression (Major Depressive Disorder); Confidence; Depression; Disruptive Mood Dysregulation Disorder; Grief & Loss; Loss; Major Depressive Disorder; Pregnancy and Postnatal Depression; Seasonal Affective Disorder; Self esteem; Bullying / workplace conflict; Career dissatisfaction or change adjustment; Career transition; Compassion fatigue / vicarious trauma; Executive and Professional Coaching; Occupational stress or burnout; Professional identity and role strain; Work-life balance challenges; Workplace stress; Childhood Abuse and Neglect; Complex Trauma; Domestic or Family Violence; Intergenerational Trauma; Post Traumatic Stress Disorder PTSD; Trauma; Vulnerability; Codependency or people-pleasing; Communication and boundary issues; Couples and Marriage Difficulties; Family Conflict/ belnded family stress; Friendship difficulties / social isolation; Interpersonal trauma or betrayal; Intimacy and trust difficulties; Relationship breakdown; Separation / divorce adjustment; Sex and intimacy; Low self esteem; Perfectionism or Imposter Syndrome; Life transitions (career change / relocation / retirement / ageing); Existential concerns / loss of meaning; Midlife crisis or stuck feelings; Personal growth and self-development goals; Alcohol Dependence (Not Current); Alcohol Dependence (Recent Diagnosis or suspected); Drug Dependence (Not Current); Drug Dependence (Recent Diagnosis or Suspected); Cannabis Dependence ( Not Current); Cannabis Dependence (Recent diagnoisis or Suspected); Addictions - Gaming; Addictions - Gambling; Compulsive Shopping; Compulsive Pornography use; Emotional Eating; Hypersexuality (Sex Addiction); Substance Misuse; Perinatal Anxiety and Depression; Fertility / IVF stress; Pregnancy loss or birth trauma; Menopause adjustment; Balancing multiple roles (career / parenting / caregiving); Relationship or parenting stress; Adjusting to fatherhood or retirement; Emotional suppression / anger issues; Erectile Dysfunction; Identity or career pressures; Social isolation; Cognitive decline / memory concerns; Grief and bereavement; Chronic illness or loss of independence; Loneliness and social isolation; Life review and meaning-making; Carers and support workers; Adjustment to health conditions; and ageing; ADD and ADHD; Autism Spectrum Disorders (ASD); Asperger Syndrome; Learning Difficulties; Sensory processing differences; Social skill development needs; Intellectual Development Disorder (form. Mental Retardation); Antisocial Personality Disorder; Emotion Dysregulation / Impulsivity; Narcissistic traits or trauma recovery from narcissistic abuse; Perfectionistic / obsessive personality patterns; Self-Harm or Suicidal Ideation ( Non-Crisis support); Chronic Pain and illness; Health Anxiety/ Medical Trauma; Insomnia Disorder; Pain Management; Psychosomatic symptoms; Sleep terror disorder; Anorexia Nervosa ( not current); Anorexia Nervosa (Recent Diagnosis or suspected); Binge-Eating Disorder (Not Current); Binge-Eating Disorder (Recent Diagnosis or suspected); Body Dysmorphic Disorder; Body issues; Bulimia Nervosa ( NOT CURRENT); Bulimia Nervosa (Recent Diagnosis or suspected); Eating Disorders (Not Current); Eating Disorders (Recent Diagnosis or Suspected); Academic pressure / performance stress; school refusal or perfectionism; Bullying / peer difficulties; Emotional regulation / behavioural difficulties; Family conflict or parental separation adjustment; Self-harm or risky behaviours; Culturally and linguistically diverse clients; Refugees / migrants / asylum seekers; test",
-      "Anxiety",
-      "Fear of Failure",
-      "Generalized Anxiety Disorder (GAD)",
-      "Health Anxiety",
-      "Obsessive-Compulsive Disorder (OCD)",
-      "Panic Disorder & Panic Attacks",
-      "Perfectionism",
-      "Separation anxiety disorder",
-      "Social anxiety disorder / Social Phobia",
-      "Stress",
-      "Adjustment Disorder",
-      "Bereavement",
-      "Burnout",
-      "Clinical Depression (Major Depressive Disorder)",
-      "Confidence",
-      "Depression",
-      "Disruptive Mood Dysregulation Disorder",
-      "Grief & Loss",
-      "Loss",
-      "Major Depressive Disorder",
-      "Pregnancy and Postnatal Depression",
-      "Seasonal Affective Disorder",
-      "Self esteem",
-      "Bullying / workplace conflict",
-      "Career dissatisfaction or change adjustment",
-      "Career transition",
-      "Compassion fatigue / vicarious trauma",
-      "Executive and Professional Coaching",
-      "Occupational stress or burnout",
-      "Professional identity and role strain",
-      "Work-life balance challenges",
-      "Workplace stress",
-      "Childhood Abuse and Neglect",
-      "Complex Trauma",
-      "Domestic or Family Violence",
-      "Intergenerational Trauma",
-      "Post Traumatic Stress Disorder PTSD",
-      "Trauma",
-      "Vulnerability",
-      "Codependency or people-pleasing",
-      "Communication and boundary issues",
-      "Couples and Marriage Difficulties",
-      "Family Conflict/ belnded family stress",
-      "Friendship difficulties / social isolation",
-      "Interpersonal trauma or betrayal",
-      "Intimacy and trust difficulties",
-      "Relationship breakdown",
-      "Separation / divorce adjustment",
-      "Sex and intimacy",
-      "Low self esteem",
-      "Perfectionism or Imposter Syndrome",
-      "Life transitions (career change",
-      "relocation",
-      "retirement",
-      "ageing)",
-      "Existential concerns / loss of meaning",
-      "Midlife crisis or \u201cstuck\u201d feelings",
-      "Personal growth and self-development goals",
-      "Alcohol Dependence (Not Current)",
-      "Alcohol Dependence (Recent Diagnosis or suspected)",
-      "Drug Dependence (Not Current)",
-      "Drug Dependence (Recent Diagnosis or Suspected)",
-      "Cannabis Dependence ( Not Current)",
-      "Cannabis Dependence (Recent diagnoisis or Suspected)",
-      "Addictions - Gaming",
-      "Addictions - Gambling",
-      "Compulsive Shopping",
-      "Compulsive Pornography use",
-      "Emotional Eating",
-      "Hypersexuality (Sex Addiction)",
-      "Substance Misuse",
-      "Perinatal Anxiety and Depression",
-      "Fertility / IVF stress",
-      "Pregnancy loss or birth trauma",
-      "Menopause adjustment",
-      "Balancing multiple roles (career",
-      "parenting",
-      "caregiving)",
-      "Relationship or parenting stress",
-      "Adjusting to fatherhood or retirement",
-      "Emotional suppression / anger issues",
-      "Erectile Dysfunction",
-      "Identity or career pressures",
-      "Social isolation",
-      "Cognitive decline / memory concerns",
-      "Grief and bereavement",
-      "Chronic illness or loss of independence",
-      "Loneliness and social isolation",
-      "Life review and meaning-making",
-      "Carers and support workers",
-      "Adjustment to health conditions",
-      "and ageing",
-      "ADD and ADHD",
-      "Autism Spectrum Disorders (ASD)",
-      "Asperger Syndrome",
-      "Learning Difficulties",
-      "Sensory processing differences",
-      "Social skill development needs",
-      "Intellectual Development Disorder (form. Mental Retardation)",
-      "Antisocial Personality Disorder",
-      "Emotion Dysregulation / Impulsivity",
-      "Narcissistic traits or trauma recovery from narcissistic abuse",
-      "Perfectionistic / obsessive personality patterns",
-      "Self-Harm or Suicidal Ideation ( Non-Crisis support)",
-      "Chronic Pain and illness",
-      "Health Anxiety/ Medical Trauma",
-      "Insomnia Disorder",
-      "Pain Management",
-      "Psychosomatic symptoms",
-      "Sleep terror disorder",
-      "Anorexia Nervosa ( not current)",
-      "Anorexia Nervosa (Recent Diagnosis or suspected)",
-      "Binge-Eating Disorder (Not Current)",
-      "Binge-Eating Disorder (Recent Diagnosis or suspected)",
-      "Body Dysmorphic Disorder",
-      "Body issues",
-      "Bulimia Nervosa ( NOT CURRENT)",
-      "Bulimia Nervosa (Recent Diagnosis or suspected)",
-      "Eating Disorders (Not Current)",
-      "Eating Disorders (Recent Diagnosis or Suspected)",
-      "Academic pressure / performance stress",
-      "school refusal or perfectionism",
-      "Bullying / peer difficulties",
-      "Emotional regulation / behavioural difficulties",
-      "Family conflict or parental separation adjustment",
-      "Self-harm or risky behaviours",
-      "Culturally and linguistically diverse clients",
-      "Refugees / migrants / asylum seekers",
-      "Addictions",
-      "Eating Disorders",
-      "Self-Harm or Suicidal Ideation (Non-Crisis Support)",
-      "Suicidal Ideation"
-    ],
-    "modalities": [
-      "Acceptance and Commitment Therapy (ACT); Behavioural Activation (BA); Cognitive Behavioural Therapy (CBT); Compassion-Focused Therapy (CFT); Dialectical Behaviour Therapy (DBT); Schema Therapy; Interpersonal Therapy (IPT); Existential Therapy; Humanistic / Person-Centred Therapy; Gestalt Therapy; Attachment-Based Therapy; Circle of Security (COS); Collaborative Problem Solving (CPS); Internal Family Systems (IFS) / Parts Work - Informed; Trauma-Focused Cognitive Behavioural Therapy (TF-CBT); Circle of Security; Emotionally Focused Therapy (EFT); Family Systems Therapy; Compassionate Inquiry; Solution-Focused Brief Therapy (SFBT); Narrative Therapy; Eclectic / Integrative Therapy; Trauma-Informed Care; Psychoeducation and Skills Training",
-      "Acceptance and Commitment Therapy (ACT)",
-      "Behavioural Activation (BA)",
-      "Cognitive Behavioural Therapy (CBT)",
-      "Compassion-Focused Therapy (CFT)",
-      "Dialectical Behaviour Therapy (DBT)",
-      "Schema Therapy",
-      "Interpersonal Therapy (IPT)",
-      "Existential Therapy",
-      "Humanistic / Person-Centred Therapy",
-      "Gestalt Therapy",
-      "Attachment-Based Therapy",
-      "Circle of Security (COS)",
-      "Collaborative Problem Solving (CPS)",
-      "Internal Family Systems (IFS) / Parts Work - Informed",
-      "Trauma-Focused Cognitive Behavioural Therapy (TF-CBT)",
-      "Circle of Security",
-      "Emotionally Focused Therapy (EFT)",
-      "Family Systems Therapy",
-      "Compassionate Inquiry",
-      "Solution-Focused Brief Therapy (SFBT)",
-      "Narrative Therapy",
-      "Eclectic / Integrative Therapy",
-      "Trauma-Informed Care",
-      "Psychoeducation and Skills Training"
-    ],
+    "presentations": "Anxiety; Fear of Failure; Generalized Anxiety Disorder (GAD); Health Anxiety; Obsessive-Compulsive Disorder (OCD); Panic Disorder & Panic Attacks; Perfectionism; Separation anxiety disorder; Social anxiety disorder / Social Phobia; Stress; Adjustment Disorder; Bereavement; Burnout; Clinical Depression (Major Depressive Disorder); Confidence; Depression; Disruptive Mood Dysregulation Disorder; Grief & Loss; Loss; Major Depressive Disorder; Pregnancy and Postnatal Depression; Seasonal Affective Disorder; Self esteem; Bullying / workplace conflict; Career dissatisfaction or change adjustment; Career transition; Compassion fatigue / vicarious trauma; Executive and Professional Coaching; Occupational stress or burnout; Professional identity and role strain; Work-life balance challenges; Workplace stress; Childhood Abuse and Neglect; Complex Trauma; Domestic or Family Violence; Intergenerational Trauma; Post Traumatic Stress Disorder PTSD; Trauma; Vulnerability; Codependency or people-pleasing; Communication and boundary issues; Couples and Marriage Difficulties; Family Conflict/ belnded family stress; Friendship difficulties / social isolation; Interpersonal trauma or betrayal; Intimacy and trust difficulties; Relationship breakdown; Separation / divorce adjustment; Sex and intimacy; Low self esteem; Perfectionism or Imposter Syndrome; Life transitions (career change / relocation / retirement / ageing); Existential concerns / loss of meaning; Midlife crisis or stuck feelings; Personal growth and self-development goals; Alcohol Dependence (Not Current); Alcohol Dependence (Recent Diagnosis or suspected); Drug Dependence (Not Current); Drug Dependence (Recent Diagnosis or Suspected); Cannabis Dependence ( Not Current); Cannabis Dependence (Recent diagnoisis or Suspected); Addictions - Gaming; Addictions - Gambling; Compulsive Shopping; Compulsive Pornography use; Emotional Eating; Hypersexuality (Sex Addiction); Substance Misuse; Perinatal Anxiety and Depression; Fertility / IVF stress; Pregnancy loss or birth trauma; Menopause adjustment; Balancing multiple roles (career / parenting / caregiving); Relationship or parenting stress; Adjusting to fatherhood or retirement; Emotional suppression / anger issues; Erectile Dysfunction; Identity or career pressures; Social isolation; Cognitive decline / memory concerns; Grief and bereavement; Chronic illness or loss of independence; Loneliness and social isolation; Life review and meaning-making; Carers and support workers; Adjustment to health conditions; and ageing; ADD and ADHD; Autism Spectrum Disorders (ASD); Asperger Syndrome; Learning Difficulties; Sensory processing differences; Social skill development needs; Intellectual Development Disorder (form. Mental Retardation); Antisocial Personality Disorder; Emotion Dysregulation / Impulsivity; Narcissistic traits or trauma recovery from narcissistic abuse; Perfectionistic / obsessive personality patterns; Self-Harm or Suicidal Ideation ( Non-Crisis support); Chronic Pain and illness; Health Anxiety/ Medical Trauma; Insomnia Disorder; Pain Management; Psychosomatic symptoms; Sleep terror disorder; Anorexia Nervosa ( not current); Anorexia Nervosa (Recent Diagnosis or suspected); Binge-Eating Disorder (Not Current); Binge-Eating Disorder (Recent Diagnosis or suspected); Body Dysmorphic Disorder; Body issues; Bulimia Nervosa ( NOT CURRENT); Bulimia Nervosa (Recent Diagnosis or suspected); Eating Disorders (Not Current); Eating Disorders (Recent Diagnosis or Suspected); Academic pressure / performance stress; school refusal or perfectionism; Bullying / peer difficulties; Emotional regulation / behavioural difficulties; Family conflict or parental separation adjustment; Self-harm or risky behaviours; Culturally and linguistically diverse clients; Refugees / migrants / asylum seekers; test; Anxiety; Fear of Failure; Generalized Anxiety Disorder (GAD); Health Anxiety; Obsessive-Compulsive Disorder (OCD); Panic Disorder & Panic Attacks; Perfectionism; Separation anxiety disorder; Social anxiety disorder / Social Phobia; Stress; Adjustment Disorder; Bereavement; Burnout; Clinical Depression (Major Depressive Disorder); Confidence; Depression; Disruptive Mood Dysregulation Disorder; Grief & Loss; Loss; Major Depressive Disorder; Pregnancy and Postnatal Depression; Seasonal Affective Disorder; Self esteem; Bullying / workplace conflict; Career dissatisfaction or change adjustment; Career transition; Compassion fatigue / vicarious trauma; Executive and Professional Coaching; Occupational stress or burnout; Professional identity and role strain; Work-life balance challenges; Workplace stress; Childhood Abuse and Neglect; Complex Trauma; Domestic or Family Violence; Intergenerational Trauma; Post Traumatic Stress Disorder PTSD; Trauma; Vulnerability; Codependency or people-pleasing; Communication and boundary issues; Couples and Marriage Difficulties; Family Conflict/ belnded family stress; Friendship difficulties / social isolation; Interpersonal trauma or betrayal; Intimacy and trust difficulties; Relationship breakdown; Separation / divorce adjustment; Sex and intimacy; Low self esteem; Perfectionism or Imposter Syndrome; Life transitions (career change; relocation; retirement; ageing); Existential concerns / loss of meaning; Midlife crisis or \u201cstuck\u201d feelings; Personal growth and self-development goals; Alcohol Dependence (Not Current); Alcohol Dependence (Recent Diagnosis or suspected); Drug Dependence (Not Current); Drug Dependence (Recent Diagnosis or Suspected); Cannabis Dependence ( Not Current); Cannabis Dependence (Recent diagnoisis or Suspected); Addictions - Gaming; Addictions - Gambling; Compulsive Shopping; Compulsive Pornography use; Emotional Eating; Hypersexuality (Sex Addiction); Substance Misuse; Perinatal Anxiety and Depression; Fertility / IVF stress; Pregnancy loss or birth trauma; Menopause adjustment; Balancing multiple roles (career; parenting; caregiving); Relationship or parenting stress; Adjusting to fatherhood or retirement; Emotional suppression / anger issues; Erectile Dysfunction; Identity or career pressures; Social isolation; Cognitive decline / memory concerns; Grief and bereavement; Chronic illness or loss of independence; Loneliness and social isolation; Life review and meaning-making; Carers and support workers; Adjustment to health conditions; and ageing; ADD and ADHD; Autism Spectrum Disorders (ASD); Asperger Syndrome; Learning Difficulties; Sensory processing differences; Social skill development needs; Intellectual Development Disorder (form. Mental Retardation); Antisocial Personality Disorder; Emotion Dysregulation / Impulsivity; Narcissistic traits or trauma recovery from narcissistic abuse; Perfectionistic / obsessive personality patterns; Self-Harm or Suicidal Ideation ( Non-Crisis support); Chronic Pain and illness; Health Anxiety/ Medical Trauma; Insomnia Disorder; Pain Management; Psychosomatic symptoms; Sleep terror disorder; Anorexia Nervosa ( not current); Anorexia Nervosa (Recent Diagnosis or suspected); Binge-Eating Disorder (Not Current); Binge-Eating Disorder (Recent Diagnosis or suspected); Body Dysmorphic Disorder; Body issues; Bulimia Nervosa ( NOT CURRENT); Bulimia Nervosa (Recent Diagnosis or suspected); Eating Disorders (Not Current); Eating Disorders (Recent Diagnosis or Suspected); Academic pressure / performance stress; school refusal or perfectionism; Bullying / peer difficulties; Emotional regulation / behavioural difficulties; Family conflict or parental separation adjustment; Self-harm or risky behaviours; Culturally and linguistically diverse clients; Refugees / migrants / asylum seekers; Addictions; Eating Disorders; Self-Harm or Suicidal Ideation (Non-Crisis Support); Suicidal Ideation",
+    "modalities": "Acceptance and Commitment Therapy (ACT); Behavioural Activation (BA); Cognitive Behavioural Therapy (CBT); Compassion-Focused Therapy (CFT); Dialectical Behaviour Therapy (DBT); Schema Therapy; Interpersonal Therapy (IPT); Existential Therapy; Humanistic / Person-Centred Therapy; Gestalt Therapy; Attachment-Based Therapy; Circle of Security (COS); Collaborative Problem Solving (CPS); Internal Family Systems (IFS) / Parts Work - Informed; Trauma-Focused Cognitive Behavioural Therapy (TF-CBT); Circle of Security; Emotionally Focused Therapy (EFT); Family Systems Therapy; Compassionate Inquiry; Solution-Focused Brief Therapy (SFBT); Narrative Therapy; Eclectic / Integrative Therapy; Trauma-Informed Care; Psychoeducation and Skills Training; Acceptance and Commitment Therapy (ACT); Behavioural Activation (BA); Cognitive Behavioural Therapy (CBT); Compassion-Focused Therapy (CFT); Dialectical Behaviour Therapy (DBT); Schema Therapy; Interpersonal Therapy (IPT); Existential Therapy; Humanistic / Person-Centred Therapy; Gestalt Therapy; Attachment-Based Therapy; Circle of Security (COS); Collaborative Problem Solving (CPS); Internal Family Systems (IFS) / Parts Work - Informed; Trauma-Focused Cognitive Behavioural Therapy (TF-CBT); Circle of Security; Emotionally Focused Therapy (EFT); Family Systems Therapy; Compassionate Inquiry; Solution-Focused Brief Therapy (SFBT); Narrative Therapy; Eclectic / Integrative Therapy; Trauma-Informed Care; Psychoeducation and Skills Training",
     "client_types": "Individuals",
     "age_range": "5 Yrs +;  10 yrs +;  12 Yrs +;  14 Yrs +;  15 Yrs+;  16 Yrs +;  17 Yrs +;  18 Yrs +;  21 Yrs +;  25 Yrs +;  30 Yrs+;  40 Yrs+;  50 Yrs+;  60 Yrs+;  70 Yrs+;  80 Yrs+",
     "therapist_type": "Clinical Psychology Registra;  Psychologist",
@@ -737,36 +394,25 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/dr-maddie-brygel-psychologist/",
     "locations": [
       {
-        "availability": [
-          "Thursdays at 10am (Fortnightly: Starting 9th Apr)",
-          "Thursdays at 12pm (Fortnightly: Starting 9th Apr)",
-          "Thursdays at 8am (Fortnightly: Starting 16th Apr)"
-        ],
+        "availability": "Thursdays at 1pm (Weekly: Starting 30th Apr)\nThursdays at 12pm (Fortnightly: Starting 7th May)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
       },
       {
-        "availability": [
-          "Fridays at 9am (Fortnightly: Starting 17th Apr)"
-        ],
+        "availability": "",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Wattletree Rd, Malvern"
       },
       {
-        "availability": [
-          "Mondays at 10am (Weekly: Starting 13th Apr)",
-          "Mondays at 11am (Weekly: Starting 13th Apr)",
-          "Mondays at 9am (Fortnightly: Starting 13th Apr)",
-          "Mondays at 1pm (Fortnightly: Starting 13th Apr)"
-        ],
+        "availability": "Mondays at 11am (Weekly: Starting 4th May)\nMondays at 9am (Fortnightly: Starting 11th May)\nMondays at 1pm (Fortnightly: Starting 11th May)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Telehealth"
       }
     ],
-    "last_updated": "2026-03-06",
+    "last_updated": "2026-04-15",
     "availability": [
       "Thursdays at 8am, 9am & 1pm (Weekly: from 19 Mar) \u2014 Greville St, Prahran",
       "Thursdays at 12pm (Fortnightly: Starting 26 Mar) \u2014 Greville St, Prahran",
@@ -842,7 +488,11 @@ export const PRACTITIONERS_DATA = [
         ]
       }
     ],
-    "style": "Active Listener, Artistic, Calm, Compassionate, Conscientiousness, Creative, Direct, Empathetic, Existential, Extravert, Gentle, Good at tough Love, Humorous, Humorous, Non Judgemental, Openness, Outgoing, Sensitive and Gentle, Solution Oriented, Talkative, Teach new Skills, Warm"
+    "style": "Active Listener, Artistic, Calm, Compassionate, Conscientiousness, Creative, Direct, Empathetic, Existential, Extravert, Gentle, Good at tough Love, Humorous, Humorous, Non Judgemental, Openness, Outgoing, Sensitive and Gentle, Solution Oriented, Talkative, Teach new Skills, Warm",
+    "working_hours": "",
+    "location_notes": {
+      "Wattletree Rd, Malvern": "Please Note: As of 9th June 2026 Maddie's Friday appointments will be moving from our Malvern Clinic to our Prahran Clinic on Greville Street."
+    }
   },
   {
     "id": 19,
@@ -852,63 +502,8 @@ export const PRACTITIONERS_DATA = [
     "medicare_rebate": "145.25",
     "gender": "Male",
     "alert": "",
-    "presentations": [
-      "Anxiety; Fear of Failure; General Adaptation Disorder (Adjustment Disorder); Generalized Anxiety Disorder (GAD); Perfectionism; Social anxiety disorder / Social Phobia; Stress; Adjustment Disorder; Bereavement; Burnout; Clinical Depression (Major Depressive Disorder); Confidence; Depression; Grief & Loss; Loss; Major Depressive Disorder; Persistent Depressive Disorder (Dysthymia); Self esteem; Bullying / workplace conflict; Compassion fatigue / vicarious trauma; Occupational stress or burnout; Codependency or people-pleasing; Communication and boundary issues; Friendship difficulties / social isolation; Interpersonal trauma or betrayal; Intimacy and trust difficulties; Sex and intimacy; Low self esteem; Perfectionism or Imposter Syndrome; Life transitions (career change / relocation / retirement / ageing); Existential concerns / loss of meaning; Midlife crisis or stuck feelings; Personal growth and self-development goals; Adjusting to fatherhood or retirement; Emotional suppression / anger issues; Erectile Dysfunction; Identity or career pressures; Relationship or parenting stress; Social isolation; Grief and bereavement; Life review and meaning-making; Adjustment to health conditions; and ageing; Psychosomatic symptoms",
-      "Anxiety",
-      "Fear of Failure",
-      "General Adaptation Disorder (Adjustment Disorder)",
-      "Generalized Anxiety Disorder (GAD)",
-      "Perfectionism",
-      "Social anxiety disorder / Social Phobia",
-      "Stress",
-      "Adjustment Disorder",
-      "Bereavement",
-      "Burnout",
-      "Clinical Depression (Major Depressive Disorder)",
-      "Confidence",
-      "Depression",
-      "Grief & Loss",
-      "Loss",
-      "Major Depressive Disorder",
-      "Persistent Depressive Disorder (Dysthymia)",
-      "Self esteem",
-      "Bullying / workplace conflict",
-      "Compassion fatigue / vicarious trauma",
-      "Occupational stress or burnout",
-      "Codependency or people-pleasing",
-      "Communication and boundary issues",
-      "Friendship difficulties / social isolation",
-      "Interpersonal trauma or betrayal",
-      "Intimacy and trust difficulties",
-      "Sex and intimacy",
-      "Low self esteem",
-      "Perfectionism or Imposter Syndrome",
-      "Life transitions (career change",
-      "relocation",
-      "retirement",
-      "ageing)",
-      "Existential concerns / loss of meaning",
-      "Midlife crisis or \u201cstuck\u201d feelings",
-      "Personal growth and self-development goals",
-      "Adjusting to fatherhood or retirement",
-      "Emotional suppression / anger issues",
-      "Erectile Dysfunction",
-      "Identity or career pressures",
-      "Relationship or parenting stress",
-      "Social isolation",
-      "Grief and bereavement",
-      "Life review and meaning-making",
-      "Adjustment to health conditions",
-      "and ageing",
-      "Psychosomatic symptoms"
-    ],
-    "modalities": [
-      "Cognitive Behavioural Therapy (CBT); Emotionally Focused Therapy (EFT); Intensive Short Term Dynamic Psychotherapy (ISTDP); Psychedelic-Assisted Psychotherapy (research/emerging)",
-      "Cognitive Behavioural Therapy (CBT)",
-      "Emotionally Focused Therapy (EFT)",
-      "Intensive Short Term Dynamic Psychotherapy (ISTDP)",
-      "Psychedelic-Assisted Psychotherapy (research/emerging)"
-    ],
+    "presentations": "Anxiety; Fear of Failure; General Adaptation Disorder (Adjustment Disorder); Generalized Anxiety Disorder (GAD); Perfectionism; Social anxiety disorder / Social Phobia; Stress; Adjustment Disorder; Bereavement; Burnout; Clinical Depression (Major Depressive Disorder); Confidence; Depression; Grief & Loss; Loss; Major Depressive Disorder; Persistent Depressive Disorder (Dysthymia); Self esteem; Bullying / workplace conflict; Compassion fatigue / vicarious trauma; Occupational stress or burnout; Codependency or people-pleasing; Communication and boundary issues; Friendship difficulties / social isolation; Interpersonal trauma or betrayal; Intimacy and trust difficulties; Sex and intimacy; Low self esteem; Perfectionism or Imposter Syndrome; Life transitions (career change / relocation / retirement / ageing); Existential concerns / loss of meaning; Midlife crisis or stuck feelings; Personal growth and self-development goals; Adjusting to fatherhood or retirement; Emotional suppression / anger issues; Erectile Dysfunction; Identity or career pressures; Relationship or parenting stress; Social isolation; Grief and bereavement; Life review and meaning-making; Adjustment to health conditions; and ageing; Psychosomatic symptoms; Anxiety; Fear of Failure; General Adaptation Disorder (Adjustment Disorder); Generalized Anxiety Disorder (GAD); Perfectionism; Social anxiety disorder / Social Phobia; Stress; Adjustment Disorder; Bereavement; Burnout; Clinical Depression (Major Depressive Disorder); Confidence; Depression; Grief & Loss; Loss; Major Depressive Disorder; Persistent Depressive Disorder (Dysthymia); Self esteem; Bullying / workplace conflict; Compassion fatigue / vicarious trauma; Occupational stress or burnout; Codependency or people-pleasing; Communication and boundary issues; Friendship difficulties / social isolation; Interpersonal trauma or betrayal; Intimacy and trust difficulties; Sex and intimacy; Low self esteem; Perfectionism or Imposter Syndrome; Life transitions (career change; relocation; retirement; ageing); Existential concerns / loss of meaning; Midlife crisis or \u201cstuck\u201d feelings; Personal growth and self-development goals; Adjusting to fatherhood or retirement; Emotional suppression / anger issues; Erectile Dysfunction; Identity or career pressures; Relationship or parenting stress; Social isolation; Grief and bereavement; Life review and meaning-making; Adjustment to health conditions; and ageing; Psychosomatic symptoms",
+    "modalities": "Cognitive Behavioural Therapy (CBT); Emotionally Focused Therapy (EFT); Intensive Short Term Dynamic Psychotherapy (ISTDP); Psychedelic-Assisted Psychotherapy (research/emerging); Cognitive Behavioural Therapy (CBT); Emotionally Focused Therapy (EFT); Intensive Short Term Dynamic Psychotherapy (ISTDP); Psychedelic-Assisted Psychotherapy (research/emerging)",
     "client_types": "Individual",
     "age_range": "18 Yrs +",
     "therapist_type": "Clinical Psychologist",
@@ -925,25 +520,19 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/nick-burden/",
     "locations": [
       {
-        "availability": [
-          "Tuesdays at 1:30pm (Weekly: Starting 14th Apr)",
-          "Thursdays at 12pm (Fortnightly: Starting 16th Apr)",
-          "Thursdays at 9am (Fortnightly: Starting 23rd Apr)",
-          "Tuesdays at 2:30pm (Fortnightly: Starting 28th Apr)",
-          "Wednesdays at 9am (Fortnightly: Starting 22nd Apr)"
-        ],
+        "availability": "",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Wattletree Rd, Malvern"
       },
       {
-        "availability": [],
+        "availability": "",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Telehealth"
       }
     ],
-    "last_updated": "2026-03-22",
+    "last_updated": "2026-04-15",
     "availability": [
       "Tuesdays at 2:30pm (Fortnightly: Starting 31 Mar) \u2014 Wattletree Rd, Malvern",
       "Thursdays at 10am (Fortnightly: Starting 16 Apr) \u2014 Wattletree Rd, Malvern"
@@ -971,7 +560,11 @@ export const PRACTITIONERS_DATA = [
         ]
       }
     ],
-    "style": "A parent, Animal Lover, Artistic, Calm, Conscientiousness, Creative, Direct, Existential, Gentle, Good at tough Love, Male, Spiritual"
+    "style": "A parent, Animal Lover, Artistic, Calm, Conscientiousness, Creative, Direct, Existential, Gentle, Good at tough Love, Male, Spiritual",
+    "working_hours": "",
+    "location_notes": {
+      "Wattletree Rd, Malvern": "Please Note: As of 9th June 2026 Nick will be moving from our Malvern Clinic to our new Clinic on Burke Road, Camberwell."
+    }
   },
   {
     "id": 16,
@@ -1007,13 +600,13 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/krista-de-castella/",
     "locations": [
       {
-        "availability": [],
+        "availability": "",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Wattletree Rd, Malvern"
       },
       {
-        "availability": [],
+        "availability": "",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Telehealth"
@@ -1024,7 +617,10 @@ export const PRACTITIONERS_DATA = [
     "availability": [],
     "weekly_availability": [],
     "fortnightly_availability": [],
-    "style": "A parent, Active Listener, Calm, Conscientiousness, Extravert, Female, Humorous, Humorous, Openness, Outgoing, Sensitive and Gentle, Spiritual, Talkative"
+    "style": "A parent, Active Listener, Calm, Conscientiousness, Extravert, Female, Humorous, Humorous, Openness, Outgoing, Sensitive and Gentle, Spiritual, Talkative",
+    "location_notes": {
+      "Wattletree Rd, Malvern": "Please Note: As of 9th June 2026 Krista's Monday appointments will be moving from our Malvern Clinic to our new Clinic on Burke Road, Camberwell."
+    }
   },
   {
     "id": 2,
@@ -1052,18 +648,19 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/allison-conyer/",
     "locations": [
       {
-        "availability": [],
+        "availability": "Thursdays at 12pm (Fortnightly: Starting 14th May)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
       }
     ],
-    "last_updated": "2026-03-25",
+    "last_updated": "2026-04-15",
     "availability": [],
     "short_bio": "Allison is a warm, culturally aware psychologist supporting all ages with anxiety, trauma, life transitions and family relationships using integrative evidence-based therapies.",
     "weekly_availability": [],
     "fortnightly_availability": [],
-    "style": ""
+    "style": "",
+    "working_hours": ""
   },
   {
     "id": 21,
@@ -1073,11 +670,7 @@ export const PRACTITIONERS_DATA = [
     "medicare_rebate": "145.25",
     "gender": "Female",
     "alert": "",
-    "presentations": [
-      "ADD and ADHD, Adjustment Disorder, Adjustment to health conditions, Alcohol Dependence (Not Current), Anxiety, Anxiety; General Adaptation Disorder (Adjustment Disorder); Generalized Anxiety Disorder (GAD); Health Anxiety; Panic Disorder & Panic Attacks; Perfectionism; Separation anxiety disorder; Social anxiety disorder / Social Phobia; Stress; Adjustment Disorder; Bereavement; Burnout; Clinical Depression (Major Depressive Disorder); Confidence; Depression; Disruptive Mood Dysregulation Disorder; Grief & Loss; Loss; Major Depressive Disorder; Persistent Depressive Disorder (Dysthymia); Self esteem; Bullying / workplace conflict; Career dissatisfaction or change adjustment; Career transition; Compassion fatigue / vicarious trauma; Occupational stress or burnout; Work-life balance challenges; Workplace stress; Codependency or people-pleasing; Communication and boundary issues; Friendship difficulties / social isolation; Interpersonal trauma or betrayal; Intimacy and trust difficulties; Non-Monogomy/ Polyamory; Relationship breakdown; Separation / divorce adjustment; Sex and intimacy; Low self esteem; Perfectionism or Imposter Syndrome; Identity exploration (gender / sexual orientation / cultural / spiritual); Life transitions (career change / relocation / retirement / ageing); Existential concerns / loss of meaning; Midlife crisis or stuck feelings; Personal growth and self-development goals; Sexuality and Gender; Gender Dysphoria (form. Gender Identity Disorder); Queer; Alcohol Dependence (Not Current); Drug Dependence (Not Current); Menopause adjustment; Social isolation; Grief and bereavement; Chronic illness or loss of independence; Loneliness and social isolation; Life review and meaning-making; Carers and support workers; Adjustment to health conditions; and ageing; ADD and ADHD; Autism Spectrum Disorders (ASD); Chronic Pain and illness; Insomnia Disorder; Psychosomatic symptoms; Culturally and linguistically diverse clients; LGBTQIA+ affirmative therapy; I\u2019m particularly passionate about working with clients who experience dysthymia;  MDD and depression, Autism Spectrum Disorders (ASD), Bereavement, Bullying / workplace conflict, Burnout, Career dissatisfaction or change adjustment, Career transition, Carers and support workers, Chronic Pain and illness, Chronic illness or loss of independence, Clinical Depression (Major Depressive Disorder), Codependency or people-pleasing, Communication and boundary issues, Compassion fatigue / vicarious trauma, Confidence, Culturally and linguistically diverse clients, Depression, Disruptive Mood Dysregulation Disorder, Drug Dependence (Not Current), Existential concerns / loss of meaning, Friendship difficulties / social isolation, Gender Dysphoria (form. Gender Identity Disorder), General Adaptation Disorder (Adjustment Disorder), Generalized Anxiety Disorder (GAD), Grief & Loss, Grief and bereavement, Health Anxiety, Identity exploration (gender, Insomnia Disorder, Interpersonal trauma or betrayal, Intimacy and trust difficulties, I\u2019m particularly passionate about working with clients who experience dysthymia, LGBTQIA+ affirmative therapy, Life review and meaning-making, Life transitions (career change, Loneliness and social isolation, Loss, Low self esteem, MDD and depression, Major Depressive Disorder, Menopause adjustment, Midlife crisis or \u201cstuck\u201d feelings, Non-Monogomy/ Polyamory, Occupational stress or burnout, Panic Disorder & Panic Attacks, Perfectionism, Perfectionism or Imposter Syndrome, Persistent Depressive Disorder (Dysthymia), Personal growth and self-development goals, Psychosomatic symptoms, Queer, Relationship breakdown, Self esteem, Separation / divorce adjustment, Separation anxiety disorder, Sex and intimacy, Sexuality and Gender, Social anxiety disorder / Social Phobia, Social isolation, Stress, Work-life balance challenges, Workplace stress, ageing), and ageing, cultural, relocation, retirement, sexual orientation, spiritual)",
-      "Addictions",
-      "Substance Misuse"
-    ],
+    "presentations": "ADD and ADHD, Adjustment Disorder, Adjustment to health conditions, Alcohol Dependence (Not Current), Anxiety, Anxiety; General Adaptation Disorder (Adjustment Disorder); Generalized Anxiety Disorder (GAD); Health Anxiety; Panic Disorder & Panic Attacks; Perfectionism; Separation anxiety disorder; Social anxiety disorder / Social Phobia; Stress; Adjustment Disorder; Bereavement; Burnout; Clinical Depression (Major Depressive Disorder); Confidence; Depression; Disruptive Mood Dysregulation Disorder; Grief & Loss; Loss; Major Depressive Disorder; Persistent Depressive Disorder (Dysthymia); Self esteem; Bullying / workplace conflict; Career dissatisfaction or change adjustment; Career transition; Compassion fatigue / vicarious trauma; Occupational stress or burnout; Work-life balance challenges; Workplace stress; Codependency or people-pleasing; Communication and boundary issues; Friendship difficulties / social isolation; Interpersonal trauma or betrayal; Intimacy and trust difficulties; Non-Monogomy/ Polyamory; Relationship breakdown; Separation / divorce adjustment; Sex and intimacy; Low self esteem; Perfectionism or Imposter Syndrome; Identity exploration (gender / sexual orientation / cultural / spiritual); Life transitions (career change / relocation / retirement / ageing); Existential concerns / loss of meaning; Midlife crisis or stuck feelings; Personal growth and self-development goals; Sexuality and Gender; Gender Dysphoria (form. Gender Identity Disorder); Queer; Alcohol Dependence (Not Current); Drug Dependence (Not Current); Menopause adjustment; Social isolation; Grief and bereavement; Chronic illness or loss of independence; Loneliness and social isolation; Life review and meaning-making; Carers and support workers; Adjustment to health conditions; and ageing; ADD and ADHD; Autism Spectrum Disorders (ASD); Chronic Pain and illness; Insomnia Disorder; Psychosomatic symptoms; Culturally and linguistically diverse clients; LGBTQIA+ affirmative therapy; I\u2019m particularly passionate about working with clients who experience dysthymia;  MDD and depression, Autism Spectrum Disorders (ASD), Bereavement, Bullying / workplace conflict, Burnout, Career dissatisfaction or change adjustment, Career transition, Carers and support workers, Chronic Pain and illness, Chronic illness or loss of independence, Clinical Depression (Major Depressive Disorder), Codependency or people-pleasing, Communication and boundary issues, Compassion fatigue / vicarious trauma, Confidence, Culturally and linguistically diverse clients, Depression, Disruptive Mood Dysregulation Disorder, Drug Dependence (Not Current), Existential concerns / loss of meaning, Friendship difficulties / social isolation, Gender Dysphoria (form. Gender Identity Disorder), General Adaptation Disorder (Adjustment Disorder), Generalized Anxiety Disorder (GAD), Grief & Loss, Grief and bereavement, Health Anxiety, Identity exploration (gender, Insomnia Disorder, Interpersonal trauma or betrayal, Intimacy and trust difficulties, I\u2019m particularly passionate about working with clients who experience dysthymia, LGBTQIA+ affirmative therapy, Life review and meaning-making, Life transitions (career change, Loneliness and social isolation, Loss, Low self esteem, MDD and depression, Major Depressive Disorder, Menopause adjustment, Midlife crisis or \u201cstuck\u201d feelings, Non-Monogomy/ Polyamory, Occupational stress or burnout, Panic Disorder & Panic Attacks, Perfectionism, Perfectionism or Imposter Syndrome, Persistent Depressive Disorder (Dysthymia), Personal growth and self-development goals, Psychosomatic symptoms, Queer, Relationship breakdown, Self esteem, Separation / divorce adjustment, Separation anxiety disorder, Sex and intimacy, Sexuality and Gender, Social anxiety disorder / Social Phobia, Social isolation, Stress, Work-life balance challenges, Workplace stress, ageing), and ageing, cultural, relocation, retirement, sexual orientation, spiritual); Addictions; Substance Misuse",
     "modalities": "Acceptance and Commitment Therapy (ACT), Acceptance and Commitment Therapy (ACT); Behavioural Activation (BA); Cognitive Behavioural Therapy (CBT); Dialectical Behaviour Therapy (DBT); Interpersonal Therapy (IPT); Existential Therapy; Internal Family Systems (IFS) / Parts Work - Certified Level 1; Sensorimotor Psychotherapy; Narrative Exposure Therapy (NET); Eclectic / Integrative Therapy; Trauma-Informed Care; Psychoeducation and Skills Training, Behavioural Activation (BA), Cognitive Behavioural Therapy (CBT), Dialectical Behaviour Therapy (DBT), Eclectic / Integrative Therapy, Existential Therapy, Internal Family Systems (IFS) / Parts Work - Certified Level 1, Interpersonal Therapy (IPT), Narrative Exposure Therapy (NET), Psychoeducation and Skills Training, Sensorimotor Psychotherapy, Trauma-Informed Care",
     "client_types": "Individual",
     "age_range": "18 Yrs +",
@@ -1095,23 +688,19 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/niloofar-danaei/",
     "locations": [
       {
-        "availability": [
-          "Tuesdays at 11am (Weekly: Starting 14th Apr)"
-        ],
+        "availability": "",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Telehealth"
       },
       {
-        "availability": [
-          "Mondays at 8am (Weekly: Starting 13th Apr)"
-        ],
+        "availability": "Mondays at 1:30pm (Fortnightly: Starting 11th May)\nThursdays at 8am (Fortnightly: Starting 30th Apr)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Wattletree Rd, Malvern"
       }
     ],
-    "last_updated": "2026-03-25",
+    "last_updated": "2026-04-15",
     "availability": [
       "Thursdays at 8am (Weekly: from 19 Mar) \u2014 Wattletree Rd, Malvern",
       "Mondays at 8am & 9am (Fortnightly: Starting 13 Apr) \u2014 Wattletree Rd, Malvern",
@@ -1154,7 +743,11 @@ export const PRACTITIONERS_DATA = [
         ]
       }
     ],
-    "style": "Animal Lover, Artistic, Gentle"
+    "style": "Animal Lover, Artistic, Gentle",
+    "working_hours": "",
+    "location_notes": {
+      "Wattletree Rd, Malvern": "Please Note: As of 9th June 2026 Niloo will be moving from our Malvern Clinic to our new Clinic on Burke Road, Camberwell."
+    }
   },
   {
     "id": 7,
@@ -1164,180 +757,8 @@ export const PRACTITIONERS_DATA = [
     "medicare_rebate": "87.25",
     "gender": "Female",
     "alert": "",
-    "presentations": [
-      "ADD and ADHD;  Antisocial Personality Disorder;  Anxiety;  Asperger Syndrome;  Autism Spectrum Disorders (ASD);  Bipolar Disorder;  Body Dysmorphic Disorder;  Childhood Abuse and neglect;  Chronic Pain and illness;  Complex Trauma;  Depression;  Disruptive Mood Dysregulation Disorder;  Dissociative Identity Disorder (Multiple Personality Disorder);  Domestic Violence;  Eating Disorders;  Family;  Intergenerational Trauma;  LGBTIQA+;  LGBTQI;  Narcissistic Personality Disorder;  Obsessive-Compulsive Disorder (OCD);  Oppositional Defiant Disorder (ODD);  Personality Disorder;  Post Traumatic Stress Disorder (PTSD);  Psychosis;  Self-Harm (Cutting);  Sexual Abuse/ Assault;  Sexuality and Gender;  Stress;  Substance Misuse;  Tourette's Syndrome;  Trauma",
-      "Anxiety; Fear of Failure; Generalized Anxiety Disorder (GAD); Health Anxiety; Obsessive-Compulsive Disorder (OCD); Panic Disorder & Panic Attacks; Perfectionism; Separation anxiety disorder; Social anxiety disorder / Social Phobia; Stress; Adjustment Disorder; Bereavement; Burnout; Clinical Depression (Major Depressive Disorder); Confidence; Depression; Disruptive Mood Dysregulation Disorder; Grief & Loss; Loss; Major Depressive Disorder; Pregnancy and Postnatal Depression; Seasonal Affective Disorder; Self esteem; Bullying / workplace conflict; Career dissatisfaction or change adjustment; Career transition; Compassion fatigue / vicarious trauma; Executive and Professional Coaching; Occupational stress or burnout; Professional identity and role strain; Work-life balance challenges; Workplace stress; Childhood Abuse and Neglect; Complex Trauma; Domestic or Family Violence; Intergenerational Trauma; Post Traumatic Stress Disorder PTSD; Trauma; Vulnerability; Codependency or people-pleasing; Communication and boundary issues; Couples and Marriage Difficulties; Family Conflict/ belnded family stress; Friendship difficulties / social isolation; Interpersonal trauma or betrayal; Intimacy and trust difficulties; Relationship breakdown; Separation / divorce adjustment; Sex and intimacy; Low self esteem; Perfectionism or Imposter Syndrome; Life transitions (career change / relocation / retirement / ageing); Existential concerns / loss of meaning; Midlife crisis or stuck feelings; Personal growth and self-development goals; Alcohol Dependence (Not Current); Alcohol Dependence (Recent Diagnosis or suspected); Drug Dependence (Not Current); Drug Dependence (Recent Diagnosis or Suspected); Cannabis Dependence ( Not Current); Cannabis Dependence (Recent diagnoisis or Suspected); Addictions - Gaming; Addictions - Gambling; Compulsive Shopping; Compulsive Pornography use; Emotional Eating; Hypersexuality (Sex Addiction); Substance Misuse; Perinatal Anxiety and Depression; Fertility / IVF stress; Pregnancy loss or birth trauma; Menopause adjustment; Balancing multiple roles (career / parenting / caregiving); Relationship or parenting stress; Adjusting to fatherhood or retirement; Emotional suppression / anger issues; Erectile Dysfunction; Identity or career pressures; Social isolation; Cognitive decline / memory concerns; Grief and bereavement; Chronic illness or loss of independence; Loneliness and social isolation; Life review and meaning-making; Carers and support workers; Adjustment to health conditions; and ageing; ADD and ADHD; Autism Spectrum Disorders (ASD); Asperger Syndrome; Learning Difficulties; Sensory processing differences; Social skill development needs; Intellectual Development Disorder (form. Mental Retardation); Antisocial Personality Disorder; Emotion Dysregulation / Impulsivity; Narcissistic traits or trauma recovery from narcissistic abuse; Perfectionistic / obsessive personality patterns; Self-Harm or Suicidal Ideation ( Non-Crisis support); Chronic Pain and illness; Health Anxiety/ Medical Trauma; Insomnia Disorder; Pain Management; Psychosomatic symptoms; Sleep terror disorder; Anorexia Nervosa ( not current); Anorexia Nervosa (Recent Diagnosis or suspected); Binge-Eating Disorder (Not Current); Binge-Eating Disorder (Recent Diagnosis or suspected); Body Dysmorphic Disorder; Body issues; Bulimia Nervosa ( NOT CURRENT); Bulimia Nervosa (Recent Diagnosis or suspected); Eating Disorders (Not Current); Eating Disorders (Recent Diagnosis or Suspected); Academic pressure / performance stress; school refusal or perfectionism; Bullying / peer difficulties; Emotional regulation / behavioural difficulties; Family conflict or parental separation adjustment; Self-harm or risky behaviours; Culturally and linguistically diverse clients; Refugees / migrants / asylum seekers; test",
-      "Agoraphobia",
-      "Anxiety",
-      "Claustrophobia",
-      "Fear of Failure",
-      "General Adaptation Disorder (Adjustment Disorder)",
-      "Generalized Anxiety Disorder (GAD)",
-      "Health Anxiety",
-      "Obsessive-Compulsive Disorder (OCD)",
-      "Panic Disorder & Panic Attacks",
-      "Perfectionism",
-      "Phobias",
-      "Separation anxiety disorder",
-      "Social anxiety disorder / Social Phobia",
-      "Stress",
-      "Adjustment Disorder",
-      "Bereavement",
-      "Bipolar Disorder",
-      "Burnout",
-      "Clinical Depression (Major Depressive Disorder)",
-      "Confidence",
-      "Depression",
-      "Disruptive Mood Dysregulation Disorder",
-      "Grief & Loss",
-      "Loss",
-      "Major Depressive Disorder",
-      "Persistent Depressive Disorder (Dysthymia)",
-      "Pregnancy and Postnatal Depression",
-      "Seasonal Affective Disorder",
-      "Self esteem",
-      "Bullying / workplace conflict",
-      "Career dissatisfaction or change adjustment",
-      "Career transition",
-      "Compassion fatigue / vicarious trauma",
-      "Executive and Professional Coaching",
-      "Occupational stress or burnout",
-      "Professional identity and role strain",
-      "Work-life balance challenges",
-      "Attachment Disorder",
-      "Childhood Abuse and Neglect",
-      "Complex Trauma",
-      "Depersonalisation Disorder",
-      "Domestic or Family Violence",
-      "Intergenerational Trauma",
-      "Post Traumatic Stress Disorder PTSD",
-      "Trauma",
-      "Vulnerability",
-      "Codependency or people-pleasing",
-      "Communication and boundary issues",
-      "Couples and Marriage Difficulties",
-      "Family Conflict/ belnded family stress",
-      "Friendship difficulties / social isolation",
-      "Interpersonal trauma or betrayal",
-      "Intimacy and trust difficulties",
-      "Non-Monogomy/ Polyamory",
-      "Relationship breakdown",
-      "Separation / divorce adjustment",
-      "Sex and intimacy",
-      "Low self esteem",
-      "Perfectionism or Imposter Syndrome",
-      "Identity exploration (gender",
-      "sexual orientation",
-      "cultural",
-      "spiritual)",
-      "Life transitions (career change",
-      "relocation",
-      "retirement",
-      "ageing)",
-      "Existential concerns / loss of meaning",
-      "Midlife crisis or \u201cstuck\u201d feelings",
-      "Personal growth and self-development goals",
-      "Sexuality and Gender",
-      "Gender Dysphoria (form. Gender Identity Disorder)",
-      "Queer",
-      "Alcohol Dependence (Not Current)",
-      "Alcohol Dependence (Recent Diagnosis or suspected)",
-      "Drug Dependence (Not Current)",
-      "Drug Dependence (Recent Diagnosis or Suspected)",
-      "Cannabis Dependence ( Not Current)",
-      "Cannabis Dependence (Recent diagnoisis or Suspected)",
-      "Addictions - Gaming",
-      "Addictions - Gambling",
-      "Compulsive Shopping",
-      "Compulsive Pornography use",
-      "Emotional Eating",
-      "Hypersexuality (Sex Addiction)",
-      "Substance Misuse",
-      "Perinatal Anxiety and Depression",
-      "Fertility / IVF stress",
-      "Pregnancy loss or birth trauma",
-      "Menopause adjustment",
-      "Balancing multiple roles (career",
-      "parenting",
-      "caregiving)",
-      "Relationship or parenting stress",
-      "Adjusting to fatherhood or retirement",
-      "Emotional suppression / anger issues",
-      "Erectile Dysfunction",
-      "Identity or career pressures",
-      "Social isolation",
-      "Cognitive decline / memory concerns",
-      "Grief and bereavement",
-      "Chronic illness or loss of independence",
-      "Loneliness and social isolation",
-      "Life review and meaning-making",
-      "Carers and support workers",
-      "Adjustment to health conditions",
-      "and ageing",
-      "Dissociative Identity Disorder",
-      "Hearing Voices and Paranoia",
-      "Psychosis",
-      "Schizophrenia",
-      "ADD and ADHD",
-      "Autism Spectrum Disorders (ASD)",
-      "Asperger Syndrome",
-      "Learning Difficulties",
-      "Executive functioning challenges",
-      "Sensory processing differences",
-      "Social skill development needs",
-      "Intellectual Development Disorder (form. Mental Retardation)",
-      "Antisocial Personality Disorder",
-      "Avoidant Personality Disorder",
-      "Borderline Personality Disorder (BPD)",
-      "Emotion Dysregulation / Impulsivity",
-      "Intermittent Explosive Disorder (Uncontrolled Anger)",
-      "Kleptomania",
-      "Narcissistic Personality Disorder",
-      "Narcissistic traits or trauma recovery from narcissistic abuse",
-      "Perfectionistic / obsessive personality patterns",
-      "Personality Disorder",
-      "Pyromania",
-      "Self-Harm or Suicidal Ideation ( Non-Crisis support)",
-      "Chronic Pain and illness",
-      "Health Anxiety/ Medical Trauma",
-      "Insomnia Disorder",
-      "Pain Management",
-      "Psychosomatic symptoms",
-      "Sleep terror disorder",
-      "Anorexia Nervosa ( not current)",
-      "Anorexia Nervosa (Recent Diagnosis or suspected)",
-      "Binge-Eating Disorder (Not Current)",
-      "Binge-Eating Disorder (Recent Diagnosis or suspected)",
-      "Body Dysmorphic Disorder",
-      "Body issues",
-      "Bulimia Nervosa ( NOT CURRENT)",
-      "Bulimia Nervosa (Recent Diagnosis or suspected)",
-      "Eating Disorders (Not Current)",
-      "Eating Disorders (Recent Diagnosis or Suspected)",
-      "Academic pressure / performance stress",
-      "school refusal or perfectionism",
-      "Bullying / peer difficulties",
-      "Emotional regulation / behavioural difficulties",
-      "Family conflict or parental separation adjustment",
-      "Self-harm or risky behaviours",
-      "Culturally and linguistically diverse clients",
-      "LGBTQIA+ affirmative therapy",
-      "Refugees / migrants / asylum seekers",
-      "Addictions",
-      "Self-Harm or Suicidal Ideation (Non-Crisis Support)",
-      "Suicidal Ideation"
-    ],
-    "modalities": [
-      "Attachment Based Therapy;  Compassion focused therapy;  Eye Movement Desensitisation and Reprocessing (EMDR);  LGBTQIA+ informed therapies;  Mindfulness;  Motivational Interviewing (MI);  Narrative Therapy;  Person/ Client centred Therapy;  Play Therapy;  Psychoanalysis;  Psychodynamic Psychotherapy;  Schema Therapy;  Sex Therapy;  Somatic Psychotherapy;  Supportive Therapy;  Trauma Informed Recovery based practice",
-      "Acceptance and Commitment Therapy (ACT)",
-      "Compassion-Focused Therapy (CFT)",
-      "Schema Therapy",
-      "Psychodynamic Therapy",
-      "Psychoanalytic Psychotherapy",
-      "Eye Movement Desensitisation and Reprocessing (EMDR)",
-      "Trauma-Focused Cognitive Behavioural Therapy (TF-CBT)",
-      "Trauma-Informed Care"
-    ],
+    "presentations": "ADD and ADHD;  Antisocial Personality Disorder;  Anxiety;  Asperger Syndrome;  Autism Spectrum Disorders (ASD);  Bipolar Disorder;  Body Dysmorphic Disorder;  Childhood Abuse and neglect;  Chronic Pain and illness;  Complex Trauma;  Depression;  Disruptive Mood Dysregulation Disorder;  Dissociative Identity Disorder (Multiple Personality Disorder);  Domestic Violence;  Eating Disorders;  Family;  Intergenerational Trauma;  LGBTIQA+;  LGBTQI;  Narcissistic Personality Disorder;  Obsessive-Compulsive Disorder (OCD);  Oppositional Defiant Disorder (ODD);  Personality Disorder;  Post Traumatic Stress Disorder (PTSD);  Psychosis;  Self-Harm (Cutting);  Sexual Abuse/ Assault;  Sexuality and Gender;  Stress;  Substance Misuse;  Tourette's Syndrome;  Trauma; Anxiety; Fear of Failure; Generalized Anxiety Disorder (GAD); Health Anxiety; Obsessive-Compulsive Disorder (OCD); Panic Disorder & Panic Attacks; Perfectionism; Separation anxiety disorder; Social anxiety disorder / Social Phobia; Stress; Adjustment Disorder; Bereavement; Burnout; Clinical Depression (Major Depressive Disorder); Confidence; Depression; Disruptive Mood Dysregulation Disorder; Grief & Loss; Loss; Major Depressive Disorder; Pregnancy and Postnatal Depression; Seasonal Affective Disorder; Self esteem; Bullying / workplace conflict; Career dissatisfaction or change adjustment; Career transition; Compassion fatigue / vicarious trauma; Executive and Professional Coaching; Occupational stress or burnout; Professional identity and role strain; Work-life balance challenges; Workplace stress; Childhood Abuse and Neglect; Complex Trauma; Domestic or Family Violence; Intergenerational Trauma; Post Traumatic Stress Disorder PTSD; Trauma; Vulnerability; Codependency or people-pleasing; Communication and boundary issues; Couples and Marriage Difficulties; Family Conflict/ belnded family stress; Friendship difficulties / social isolation; Interpersonal trauma or betrayal; Intimacy and trust difficulties; Relationship breakdown; Separation / divorce adjustment; Sex and intimacy; Low self esteem; Perfectionism or Imposter Syndrome; Life transitions (career change / relocation / retirement / ageing); Existential concerns / loss of meaning; Midlife crisis or stuck feelings; Personal growth and self-development goals; Alcohol Dependence (Not Current); Alcohol Dependence (Recent Diagnosis or suspected); Drug Dependence (Not Current); Drug Dependence (Recent Diagnosis or Suspected); Cannabis Dependence ( Not Current); Cannabis Dependence (Recent diagnoisis or Suspected); Addictions - Gaming; Addictions - Gambling; Compulsive Shopping; Compulsive Pornography use; Emotional Eating; Hypersexuality (Sex Addiction); Substance Misuse; Perinatal Anxiety and Depression; Fertility / IVF stress; Pregnancy loss or birth trauma; Menopause adjustment; Balancing multiple roles (career / parenting / caregiving); Relationship or parenting stress; Adjusting to fatherhood or retirement; Emotional suppression / anger issues; Erectile Dysfunction; Identity or career pressures; Social isolation; Cognitive decline / memory concerns; Grief and bereavement; Chronic illness or loss of independence; Loneliness and social isolation; Life review and meaning-making; Carers and support workers; Adjustment to health conditions; and ageing; ADD and ADHD; Autism Spectrum Disorders (ASD); Asperger Syndrome; Learning Difficulties; Sensory processing differences; Social skill development needs; Intellectual Development Disorder (form. Mental Retardation); Antisocial Personality Disorder; Emotion Dysregulation / Impulsivity; Narcissistic traits or trauma recovery from narcissistic abuse; Perfectionistic / obsessive personality patterns; Self-Harm or Suicidal Ideation ( Non-Crisis support); Chronic Pain and illness; Health Anxiety/ Medical Trauma; Insomnia Disorder; Pain Management; Psychosomatic symptoms; Sleep terror disorder; Anorexia Nervosa ( not current); Anorexia Nervosa (Recent Diagnosis or suspected); Binge-Eating Disorder (Not Current); Binge-Eating Disorder (Recent Diagnosis or suspected); Body Dysmorphic Disorder; Body issues; Bulimia Nervosa ( NOT CURRENT); Bulimia Nervosa (Recent Diagnosis or suspected); Eating Disorders (Not Current); Eating Disorders (Recent Diagnosis or Suspected); Academic pressure / performance stress; school refusal or perfectionism; Bullying / peer difficulties; Emotional regulation / behavioural difficulties; Family conflict or parental separation adjustment; Self-harm or risky behaviours; Culturally and linguistically diverse clients; Refugees / migrants / asylum seekers; test; Agoraphobia; Anxiety; Claustrophobia; Fear of Failure; General Adaptation Disorder (Adjustment Disorder); Generalized Anxiety Disorder (GAD); Health Anxiety; Obsessive-Compulsive Disorder (OCD); Panic Disorder & Panic Attacks; Perfectionism; Phobias; Separation anxiety disorder; Social anxiety disorder / Social Phobia; Stress; Adjustment Disorder; Bereavement; Bipolar Disorder; Burnout; Clinical Depression (Major Depressive Disorder); Confidence; Depression; Disruptive Mood Dysregulation Disorder; Grief & Loss; Loss; Major Depressive Disorder; Persistent Depressive Disorder (Dysthymia); Pregnancy and Postnatal Depression; Seasonal Affective Disorder; Self esteem; Bullying / workplace conflict; Career dissatisfaction or change adjustment; Career transition; Compassion fatigue / vicarious trauma; Executive and Professional Coaching; Occupational stress or burnout; Professional identity and role strain; Work-life balance challenges; Attachment Disorder; Childhood Abuse and Neglect; Complex Trauma; Depersonalisation Disorder; Domestic or Family Violence; Intergenerational Trauma; Post Traumatic Stress Disorder PTSD; Trauma; Vulnerability; Codependency or people-pleasing; Communication and boundary issues; Couples and Marriage Difficulties; Family Conflict/ belnded family stress; Friendship difficulties / social isolation; Interpersonal trauma or betrayal; Intimacy and trust difficulties; Non-Monogomy/ Polyamory; Relationship breakdown; Separation / divorce adjustment; Sex and intimacy; Low self esteem; Perfectionism or Imposter Syndrome; Identity exploration (gender; sexual orientation; cultural; spiritual); Life transitions (career change; relocation; retirement; ageing); Existential concerns / loss of meaning; Midlife crisis or \u201cstuck\u201d feelings; Personal growth and self-development goals; Sexuality and Gender; Gender Dysphoria (form. Gender Identity Disorder); Queer; Alcohol Dependence (Not Current); Alcohol Dependence (Recent Diagnosis or suspected); Drug Dependence (Not Current); Drug Dependence (Recent Diagnosis or Suspected); Cannabis Dependence ( Not Current); Cannabis Dependence (Recent diagnoisis or Suspected); Addictions - Gaming; Addictions - Gambling; Compulsive Shopping; Compulsive Pornography use; Emotional Eating; Hypersexuality (Sex Addiction); Substance Misuse; Perinatal Anxiety and Depression; Fertility / IVF stress; Pregnancy loss or birth trauma; Menopause adjustment; Balancing multiple roles (career; parenting; caregiving); Relationship or parenting stress; Adjusting to fatherhood or retirement; Emotional suppression / anger issues; Erectile Dysfunction; Identity or career pressures; Social isolation; Cognitive decline / memory concerns; Grief and bereavement; Chronic illness or loss of independence; Loneliness and social isolation; Life review and meaning-making; Carers and support workers; Adjustment to health conditions; and ageing; Dissociative Identity Disorder; Hearing Voices and Paranoia; Psychosis; Schizophrenia; ADD and ADHD; Autism Spectrum Disorders (ASD); Asperger Syndrome; Learning Difficulties; Executive functioning challenges; Sensory processing differences; Social skill development needs; Intellectual Development Disorder (form. Mental Retardation); Antisocial Personality Disorder; Avoidant Personality Disorder; Borderline Personality Disorder (BPD); Emotion Dysregulation / Impulsivity; Intermittent Explosive Disorder (Uncontrolled Anger); Kleptomania; Narcissistic Personality Disorder; Narcissistic traits or trauma recovery from narcissistic abuse; Perfectionistic / obsessive personality patterns; Personality Disorder; Pyromania; Self-Harm or Suicidal Ideation ( Non-Crisis support); Chronic Pain and illness; Health Anxiety/ Medical Trauma; Insomnia Disorder; Pain Management; Psychosomatic symptoms; Sleep terror disorder; Anorexia Nervosa ( not current); Anorexia Nervosa (Recent Diagnosis or suspected); Binge-Eating Disorder (Not Current); Binge-Eating Disorder (Recent Diagnosis or suspected); Body Dysmorphic Disorder; Body issues; Bulimia Nervosa ( NOT CURRENT); Bulimia Nervosa (Recent Diagnosis or suspected); Eating Disorders (Not Current); Eating Disorders (Recent Diagnosis or Suspected); Academic pressure / performance stress; school refusal or perfectionism; Bullying / peer difficulties; Emotional regulation / behavioural difficulties; Family conflict or parental separation adjustment; Self-harm or risky behaviours; Culturally and linguistically diverse clients; LGBTQIA+ affirmative therapy; Refugees / migrants / asylum seekers; Addictions; Self-Harm or Suicidal Ideation (Non-Crisis Support); Suicidal Ideation",
+    "modalities": "Attachment Based Therapy;  Compassion focused therapy;  Eye Movement Desensitisation and Reprocessing (EMDR);  LGBTQIA+ informed therapies;  Mindfulness;  Motivational Interviewing (MI);  Narrative Therapy;  Person/ Client centred Therapy;  Play Therapy;  Psychoanalysis;  Psychodynamic Psychotherapy;  Schema Therapy;  Sex Therapy;  Somatic Psychotherapy;  Supportive Therapy;  Trauma Informed Recovery based practice; Acceptance and Commitment Therapy (ACT); Compassion-Focused Therapy (CFT); Schema Therapy; Psychodynamic Therapy; Psychoanalytic Psychotherapy; Eye Movement Desensitisation and Reprocessing (EMDR); Trauma-Focused Cognitive Behavioural Therapy (TF-CBT); Trauma-Informed Care",
     "client_types": "Individual",
     "age_range": "5 Yrs +",
     "therapist_type": "Accredited Mental Health Social Worker;  Psychoanalyst;  Psychotherapist",
@@ -1354,16 +775,17 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/christine-deftereos/",
     "locations": [
       {
-        "availability": [
-          "Tuesdays at 9am (Weekly: Starting 14th Apr)",
-          "Saturdays at 9am (Fortnightly: Starting 9th May)"
-        ],
+        "availability": "Saturdays at 12pm (Weekly: Starting 9th May)\nMondays at 1pm (Fortnightly: Starting 4th May)\nSaturdays at 4pm (Fortnightly: Starting 9th May)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Wattletree Rd, Malvern"
+      },
+      {
+        "location": "Greville St, Prahran",
+        "availability": "Saturdays at 12pm (Weekly: Starting 13th Jun)\nMondays at 1pm (Fortnightly: Starting 15th Jun)\nSaturdays at 4pm (Fortnightly: Starting 20th Jun)"
       }
     ],
-    "last_updated": "2026-03-06",
+    "last_updated": "2026-04-15",
     "availability": [
       "Tuesdays at 9am (Weekly: from 31 Mar) \u2014 Wattletree Rd, Malvern",
       "Wednesdays at 5:30pm (Fortnightly: Starting 1 Apr) \u2014 Wattletree Rd, Malvern",
@@ -1413,7 +835,11 @@ export const PRACTITIONERS_DATA = [
         ]
       }
     ],
-    "style": "A parent, Artistic, Conscientiousness, Creative, Existential, Female, Good at tough Love, Humorous, Introvert, Sensitive and Gentle, Spiritual, Talkative"
+    "style": "A parent, Artistic, Conscientiousness, Creative, Existential, Female, Good at tough Love, Humorous, Introvert, Sensitive and Gentle, Spiritual, Talkative",
+    "working_hours": "Working Days: Monday mornings, Tuesday Mornings, Wednesday Afternoon/ Evening, Thursday afternoon/ Evening & Saturdays in Malvern",
+    "location_notes": {
+      "Wattletree Rd, Malvern": "Please Note: As of 9th June 2026 Christine will be moving from our Malvern Clinic to our Prahran Clinic on Greville Street."
+    }
   },
   {
     "id": 22,
@@ -1423,20 +849,8 @@ export const PRACTITIONERS_DATA = [
     "medicare_rebate": "96.65",
     "gender": "Male",
     "alert": "",
-    "presentations": [
-      "Bereavement;  Clinical Depression (Major Depressive Disorder);  General Adaptation Disorder (Adjustment Disorder);  Generalized Anxiety Disorder (GAD);  Insomnia Disorder;  Panic Disorder & Panic Attacks;  Post Traumatic Stress Disorder (PTSD);  Social anxiety disorder / Social Phobia",
-      "Post Traumatic Stress Disorder PTSD",
-      "Trauma",
-      "Vulnerability"
-    ],
-    "modalities": [
-      "Acceptance and Commitment Therapy (ACT); Cognitive Behavioural Therapy (CBT); Schema Therapy; Eye Movement Desensitisation and Reprocessing (EMDR); Internal Family Systems (IFS) / Parts Work - Informed",
-      "Acceptance and Commitment Therapy (ACT)",
-      "Cognitive Behavioural Therapy (CBT)",
-      "Schema Therapy",
-      "Eye Movement Desensitisation and Reprocessing (EMDR)",
-      "Internal Family Systems (IFS) / Parts Work - Informed"
-    ],
+    "presentations": "Bereavement;  Clinical Depression (Major Depressive Disorder);  General Adaptation Disorder (Adjustment Disorder);  Generalized Anxiety Disorder (GAD);  Insomnia Disorder;  Panic Disorder & Panic Attacks;  Post Traumatic Stress Disorder (PTSD);  Social anxiety disorder / Social Phobia; Post Traumatic Stress Disorder PTSD; Trauma; Vulnerability",
+    "modalities": "Acceptance and Commitment Therapy (ACT); Cognitive Behavioural Therapy (CBT); Schema Therapy; Eye Movement Desensitisation and Reprocessing (EMDR); Internal Family Systems (IFS) / Parts Work - Informed; Acceptance and Commitment Therapy (ACT); Cognitive Behavioural Therapy (CBT); Schema Therapy; Eye Movement Desensitisation and Reprocessing (EMDR); Internal Family Systems (IFS) / Parts Work - Informed",
     "client_types": "Individual",
     "age_range": "18 Yrs +",
     "therapist_type": "Psychologist",
@@ -1453,15 +867,13 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/oliver-eastwood/",
     "locations": [
       {
-        "availability": [
-          "Tuesdays at 1pm (Fortnightly: Starting 2nd Jun)"
-        ],
+        "availability": "",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
       }
     ],
-    "last_updated": "2026-03-18",
+    "last_updated": "2026-04-15",
     "availability": [
       "Tuesdays at 10am & 12pm (Fortnightly: Starting 24 Mar) \u2014 Greville St, Prahran"
     ],
@@ -1481,7 +893,9 @@ export const PRACTITIONERS_DATA = [
           }
         ]
       }
-    ]
+    ],
+    "working_hours": "Working Days: Tuesday Mornings in Prahran",
+    "style": ""
   },
   {
     "id": 18,
@@ -1491,62 +905,8 @@ export const PRACTITIONERS_DATA = [
     "medicare_rebate": "96.65",
     "gender": "Female",
     "alert": "",
-    "presentations": [
-      "Anxiety; Fear of Failure; Generalized Anxiety Disorder (GAD); Perfectionism; Stress; Adjustment Disorder; Burnout; Confidence; Depression; Grief & Loss; Loss; Self esteem; Bullying / workplace conflict; Career dissatisfaction or change adjustment; Career transition; Compassion fatigue / vicarious trauma; Occupational stress or burnout; Professional identity and role strain; Work-life balance challenges; Workplace stress; Codependency or people-pleasing; Communication and boundary issues; Family Conflict/ belnded family stress; Friendship difficulties / social isolation; Interpersonal trauma or betrayal; Intimacy and trust difficulties; Relationship breakdown; Low self esteem; Perfectionism or Imposter Syndrome; Life transitions (career change / relocation / retirement / ageing); Existential concerns / loss of meaning; Balancing multiple roles (career / parenting / caregiving); Relationship or parenting stress; Adjusting to fatherhood or retirement; Emotional suppression / anger issues; Identity or career pressures; Grief and bereavement; Chronic illness or loss of independence; Loneliness and social isolation; Life review and meaning-making; Health Anxiety",
-      "Anxiety",
-      "Fear of Failure",
-      "Generalized Anxiety Disorder (GAD)",
-      "Perfectionism",
-      "Stress",
-      "Adjustment Disorder",
-      "Burnout",
-      "Confidence",
-      "Depression",
-      "Grief & Loss",
-      "Loss",
-      "Self esteem",
-      "Bullying / workplace conflict",
-      "Career dissatisfaction or change adjustment",
-      "Career transition",
-      "Compassion fatigue / vicarious trauma",
-      "Occupational stress or burnout",
-      "Professional identity and role strain",
-      "Work-life balance challenges",
-      "Workplace stress",
-      "Codependency or people-pleasing",
-      "Communication and boundary issues",
-      "Family Conflict/ belnded family stress",
-      "Friendship difficulties / social isolation",
-      "Interpersonal trauma or betrayal",
-      "Intimacy and trust difficulties",
-      "Relationship breakdown",
-      "Low self esteem",
-      "Perfectionism or Imposter Syndrome",
-      "Life transitions (career change",
-      "relocation",
-      "retirement",
-      "ageing)",
-      "Existential concerns / loss of meaning",
-      "Balancing multiple roles (career",
-      "parenting",
-      "caregiving)",
-      "Relationship or parenting stress",
-      "Adjusting to fatherhood or retirement",
-      "Emotional suppression / anger issues",
-      "Identity or career pressures",
-      "Grief and bereavement",
-      "Chronic illness or loss of independence",
-      "Loneliness and social isolation",
-      "Life review and meaning-making",
-      "Health Anxiety"
-    ],
-    "modalities": [
-      "Acceptance and Commitment Therapy (ACT);  Cognitive Behaviour Therapy (CBT);  Intensive Short Term Dynamic Psychotherapy (ISTDP);  Mindfulness;  Person/ Client centred Therapy;  Psychodynamic Psychotherapy",
-      "Acceptance and Commitment Therapy (ACT)",
-      "Cognitive Behavioural Therapy (CBT)",
-      "Psychodynamic Therapy",
-      "Attachment-Based Therapy"
-    ],
+    "presentations": "Anxiety; Fear of Failure; Generalized Anxiety Disorder (GAD); Perfectionism; Stress; Adjustment Disorder; Burnout; Confidence; Depression; Grief & Loss; Loss; Self esteem; Bullying / workplace conflict; Career dissatisfaction or change adjustment; Career transition; Compassion fatigue / vicarious trauma; Occupational stress or burnout; Professional identity and role strain; Work-life balance challenges; Workplace stress; Codependency or people-pleasing; Communication and boundary issues; Family Conflict/ belnded family stress; Friendship difficulties / social isolation; Interpersonal trauma or betrayal; Intimacy and trust difficulties; Relationship breakdown; Low self esteem; Perfectionism or Imposter Syndrome; Life transitions (career change / relocation / retirement / ageing); Existential concerns / loss of meaning; Balancing multiple roles (career / parenting / caregiving); Relationship or parenting stress; Adjusting to fatherhood or retirement; Emotional suppression / anger issues; Identity or career pressures; Grief and bereavement; Chronic illness or loss of independence; Loneliness and social isolation; Life review and meaning-making; Health Anxiety; Anxiety; Fear of Failure; Generalized Anxiety Disorder (GAD); Perfectionism; Stress; Adjustment Disorder; Burnout; Confidence; Depression; Grief & Loss; Loss; Self esteem; Bullying / workplace conflict; Career dissatisfaction or change adjustment; Career transition; Compassion fatigue / vicarious trauma; Occupational stress or burnout; Professional identity and role strain; Work-life balance challenges; Workplace stress; Codependency or people-pleasing; Communication and boundary issues; Family Conflict/ belnded family stress; Friendship difficulties / social isolation; Interpersonal trauma or betrayal; Intimacy and trust difficulties; Relationship breakdown; Low self esteem; Perfectionism or Imposter Syndrome; Life transitions (career change; relocation; retirement; ageing); Existential concerns / loss of meaning; Balancing multiple roles (career; parenting; caregiving); Relationship or parenting stress; Adjusting to fatherhood or retirement; Emotional suppression / anger issues; Identity or career pressures; Grief and bereavement; Chronic illness or loss of independence; Loneliness and social isolation; Life review and meaning-making; Health Anxiety",
+    "modalities": "Acceptance and Commitment Therapy (ACT);  Cognitive Behaviour Therapy (CBT);  Intensive Short Term Dynamic Psychotherapy (ISTDP);  Mindfulness;  Person/ Client centred Therapy;  Psychodynamic Psychotherapy; Acceptance and Commitment Therapy (ACT); Cognitive Behavioural Therapy (CBT); Psychodynamic Therapy; Attachment-Based Therapy",
     "client_types": "Individual",
     "age_range": "18 Yrs +",
     "therapist_type": "Psychologist",
@@ -1563,18 +923,13 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/megan-edelman/",
     "locations": [
       {
-        "availability": [
-          "Thursdays at 9am (Weekly: Starting 9th Apr)",
-          "Thursdays at 12pm (Weekly: Starting 9th Apr)",
-          "Tuesdays at 1pm (Weekly: Starting 14th Apr)",
-          "Thursdays at 10am (Fortnightly: Starting 9th Apr)"
-        ],
+        "availability": "Thursdays at 12pm (Weekly: Starting 30th Apr)\nThursdays at 9am (Weekly: Starting 21st May)\nTuesdays at 1pm (Weekly: Starting 28th Apr)\nTuesdays at 10am (Fortnightly: Starting 28th Apr)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Wattletree Rd, Malvern"
       }
     ],
-    "last_updated": "2026-03-06",
+    "last_updated": "2026-04-15",
     "availability": [
       "Thursdays at 9am (Weekly: from 19 Mar) \u2014 Wattletree Rd, Malvern",
       "Tuesdays at 9am (Fortnightly: Starting 31 Mar) \u2014 Wattletree Rd, Malvern",
@@ -1617,7 +972,11 @@ export const PRACTITIONERS_DATA = [
         ]
       }
     ],
-    "style": "Active Listener, Animal Lover, Calm, Compassionate, Empathetic, Female, Openness, Sensitive and Gentle, Spiritual"
+    "style": "Active Listener, Animal Lover, Calm, Compassionate, Empathetic, Female, Openness, Sensitive and Gentle, Spiritual",
+    "working_hours": "",
+    "location_notes": {
+      "Wattletree Rd, Malvern": "Please Note: As of 9th June 2026 Meg will be moving from our Malvern Clinic to our new Clinic on Burke Road, Camberwell."
+    }
   },
   {
     "id": 15,
@@ -1693,7 +1052,7 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/kiira-gavralas/",
     "locations": [
       {
-        "availability": [],
+        "availability": "",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Telehealth"
@@ -1748,7 +1107,7 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/jillian-giannios/",
     "locations": [
       {
-        "availability": [],
+        "availability": "",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Wattletree Rd, Malvern"
@@ -1769,84 +1128,8 @@ export const PRACTITIONERS_DATA = [
     "medicare_rebate": "96.65",
     "gender": "Female",
     "alert": "",
-    "presentations": [
-      "Agoraphobia;  Anxiety;  Attachment Disorder;  Avoidant Personality Disorder;  Bereavement;  Body Dysmorphic Disorder;  Borderline Personality Disorder;  Burnout;  Childhood Abuse and neglect;  Chronic Pain and illness;  Claustrophobia;  Clinical Depression (Major Depressive Disorder);  Complex Trauma;  Confidence;  Depersonalization Disorder;  Depression;  Family;  Fear of Failure;  General Adaptation Disorder (Adjustment Disorder);  Generalized Anxiety Disorder (GAD);  Grief & Loss;  Imposter Syndrome;  Insomnia Disorder;  Intergenerational Trauma;  Life Transitions;  Loss;  Low self esteem;  Pain Management;  Panic Disorder & Panic Attacks;  Perfectionism;  Phobias;  Post Traumatic Stress Disorder (PTSD);  Pregnancy and Postnatal Depression Anxiety;  Relationship breakdown;  Self esteem;  Self-Harm (Cutting);  Social anxiety disorder / Social Phobia;  Stress;  Trauma;  Workplace stress",
-      "Agoraphobia",
-      "Anxiety",
-      "Claustrophobia",
-      "Fear of Failure",
-      "General Adaptation Disorder (Adjustment Disorder)",
-      "Generalized Anxiety Disorder (GAD)",
-      "Health Anxiety",
-      "Panic Disorder & Panic Attacks",
-      "Perfectionism",
-      "Phobias",
-      "Social anxiety disorder / Social Phobia",
-      "Stress",
-      "Adjustment Disorder",
-      "Bereavement",
-      "Burnout",
-      "Clinical Depression (Major Depressive Disorder)",
-      "Confidence",
-      "Depression",
-      "Disruptive Mood Dysregulation Disorder",
-      "Grief & Loss",
-      "Loss",
-      "Major Depressive Disorder",
-      "Persistent Depressive Disorder (Dysthymia)",
-      "Pregnancy and Postnatal Depression",
-      "Seasonal Affective Disorder",
-      "Self esteem",
-      "Compassion fatigue / vicarious trauma",
-      "Work-life balance challenges",
-      "Workplace stress",
-      "Codependency or people-pleasing",
-      "Communication and boundary issues",
-      "Friendship difficulties / social isolation",
-      "Interpersonal trauma or betrayal",
-      "Relationship breakdown",
-      "Separation / divorce adjustment",
-      "Low self esteem",
-      "Perfectionism or Imposter Syndrome",
-      "Life transitions (career change",
-      "relocation",
-      "retirement",
-      "ageing)",
-      "Midlife crisis or \u201cstuck\u201d feelings",
-      "Perinatal Anxiety and Depression",
-      "Pregnancy loss or birth trauma",
-      "Menopause adjustment",
-      "Balancing multiple roles (career",
-      "parenting",
-      "caregiving)",
-      "Relationship or parenting stress",
-      "Adjusting to fatherhood or retirement",
-      "Social isolation",
-      "Grief and bereavement",
-      "Loneliness and social isolation",
-      "Adjustment to health conditions",
-      "and ageing",
-      "Avoidant Personality Disorder",
-      "Borderline Personality Disorder (BPD)",
-      "Perfectionistic / obsessive personality patterns",
-      "Self-Harm or Suicidal Ideation ( Non-Crisis support)",
-      "Chronic Pain and illness",
-      "Health Anxiety/ Medical Trauma",
-      "Insomnia Disorder",
-      "Psychosomatic symptoms",
-      "Culturally and linguistically diverse clients",
-      "DDNOS",
-      "Self-Harm or Suicidal Ideation (Non-Crisis Support)",
-      "Suicidal Ideation"
-    ],
-    "modalities": [
-      "Acceptance and Commitment Therapy (ACT);  Attachment Based Therapy;  Cognitive Behaviour Therapy (CBT);  Compassion focused therapy;  Dialectical Behavioural Therapy (DBT);  Eye Movement Desensitisation and Reprocessing (EMDR);  Mindfulness;  Motivational Interviewing (MI);  Person/ Client centred Therapy;  Schema Therapy;  Supportive Therapy;  EMDR",
-      "Acceptance and Commitment Therapy (ACT)",
-      "Cognitive Behavioural Therapy (CBT)",
-      "Eye Movement Desensitisation and Reprocessing (EMDR)",
-      "Sensorimotor Psychotherapy",
-      "Trauma-Informed Care"
-    ],
+    "presentations": "Agoraphobia;  Anxiety;  Attachment Disorder;  Avoidant Personality Disorder;  Bereavement;  Body Dysmorphic Disorder;  Borderline Personality Disorder;  Burnout;  Childhood Abuse and neglect;  Chronic Pain and illness;  Claustrophobia;  Clinical Depression (Major Depressive Disorder);  Complex Trauma;  Confidence;  Depersonalization Disorder;  Depression;  Family;  Fear of Failure;  General Adaptation Disorder (Adjustment Disorder);  Generalized Anxiety Disorder (GAD);  Grief & Loss;  Imposter Syndrome;  Insomnia Disorder;  Intergenerational Trauma;  Life Transitions;  Loss;  Low self esteem;  Pain Management;  Panic Disorder & Panic Attacks;  Perfectionism;  Phobias;  Post Traumatic Stress Disorder (PTSD);  Pregnancy and Postnatal Depression Anxiety;  Relationship breakdown;  Self esteem;  Self-Harm (Cutting);  Social anxiety disorder / Social Phobia;  Stress;  Trauma;  Workplace stress; Agoraphobia; Anxiety; Claustrophobia; Fear of Failure; General Adaptation Disorder (Adjustment Disorder); Generalized Anxiety Disorder (GAD); Health Anxiety; Panic Disorder & Panic Attacks; Perfectionism; Phobias; Social anxiety disorder / Social Phobia; Stress; Adjustment Disorder; Bereavement; Burnout; Clinical Depression (Major Depressive Disorder); Confidence; Depression; Disruptive Mood Dysregulation Disorder; Grief & Loss; Loss; Major Depressive Disorder; Persistent Depressive Disorder (Dysthymia); Pregnancy and Postnatal Depression; Seasonal Affective Disorder; Self esteem; Compassion fatigue / vicarious trauma; Work-life balance challenges; Workplace stress; Codependency or people-pleasing; Communication and boundary issues; Friendship difficulties / social isolation; Interpersonal trauma or betrayal; Relationship breakdown; Separation / divorce adjustment; Low self esteem; Perfectionism or Imposter Syndrome; Life transitions (career change; relocation; retirement; ageing); Midlife crisis or \u201cstuck\u201d feelings; Perinatal Anxiety and Depression; Pregnancy loss or birth trauma; Menopause adjustment; Balancing multiple roles (career; parenting; caregiving); Relationship or parenting stress; Adjusting to fatherhood or retirement; Social isolation; Grief and bereavement; Loneliness and social isolation; Adjustment to health conditions; and ageing; Avoidant Personality Disorder; Borderline Personality Disorder (BPD); Perfectionistic / obsessive personality patterns; Self-Harm or Suicidal Ideation ( Non-Crisis support); Chronic Pain and illness; Health Anxiety/ Medical Trauma; Insomnia Disorder; Psychosomatic symptoms; Culturally and linguistically diverse clients; DDNOS; Self-Harm or Suicidal Ideation (Non-Crisis Support); Suicidal Ideation",
+    "modalities": "Acceptance and Commitment Therapy (ACT);  Attachment Based Therapy;  Cognitive Behaviour Therapy (CBT);  Compassion focused therapy;  Dialectical Behavioural Therapy (DBT);  Eye Movement Desensitisation and Reprocessing (EMDR);  Mindfulness;  Motivational Interviewing (MI);  Person/ Client centred Therapy;  Schema Therapy;  Supportive Therapy;  EMDR; Acceptance and Commitment Therapy (ACT); Cognitive Behavioural Therapy (CBT); Eye Movement Desensitisation and Reprocessing (EMDR); Sensorimotor Psychotherapy; Trauma-Informed Care",
     "client_types": "Individual",
     "age_range": "18 Yrs +",
     "therapist_type": "Clinical Psychology Registra;  Psychologist",
@@ -1863,15 +1146,13 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/ella-graj/",
     "locations": [
       {
-        "availability": [
-          "Tuesdays at 7:30pm (Fortnightly: Starting 21st Apr)"
-        ],
+        "availability": "",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Wattletree Rd, Malvern"
       }
     ],
-    "last_updated": "2026-03-18",
+    "last_updated": "2026-04-16",
     "availability": [
       "Tuesdays at 5:30pm & 6:30pm (Fortnightly: Starting 21 Apr) \u2014 Wattletree Rd, Malvern"
     ],
@@ -1892,7 +1173,8 @@ export const PRACTITIONERS_DATA = [
         ]
       }
     ],
-    "style": "A parent, Active Listener, Compassionate, Non Judgemental, Female, Sensitive and Gentle"
+    "style": "A parent, Active Listener, Compassionate, Non Judgemental, Female, Sensitive and Gentle",
+    "working_hours": "Working Days: Tuesday afternoon/ Evenings & Thursday mornings in Malvern"
   },
   {
     "id": 9,
@@ -1902,135 +1184,8 @@ export const PRACTITIONERS_DATA = [
     "medicare_rebate": "No rebate applicable. No MHCP or referral required.",
     "gender": "Female",
     "alert": "",
-    "presentations": [
-      "Anxiety; Fear of Failure; General Adaptation Disorder (Adjustment Disorder); Generalized Anxiety Disorder (GAD); Health Anxiety; Obsessive-Compulsive Disorder (OCD); Panic Disorder & Panic Attacks; Perfectionism; Phobias; Separation anxiety disorder; Social anxiety disorder / Social Phobia; Stress; Adjustment Disorder; Bereavement; Burnout; Clinical Depression (Major Depressive Disorder); Confidence; Depression; Disruptive Mood Dysregulation Disorder; Grief & Loss; Loss; Major Depressive Disorder; Pregnancy and Postnatal Depression; Seasonal Affective Disorder; Self esteem; Bullying / workplace conflict; Career dissatisfaction or change adjustment; Career transition; Compassion fatigue / vicarious trauma; Executive and Professional Coaching; Occupational stress or burnout; Professional identity and role strain; Work-life balance challenges; Workplace stress; Codependency or people-pleasing; Communication and boundary issues; Couples and Marriage Difficulties; Family Conflict/ belnded family stress; Friendship difficulties / social isolation; Interpersonal trauma or betrayal; Intimacy and trust difficulties; Non-Monogomy/ Polyamory; Relationship breakdown; Separation / divorce adjustment; Sex and intimacy; Low self esteem; Perfectionism or Imposter Syndrome; Identity exploration (gender / sexual orientation / cultural / spiritual); Life transitions (career change / relocation / retirement / ageing); Existential concerns / loss of meaning; Midlife crisis or stuck feelings; Personal growth and self-development goals; Sexuality and Gender; Gender Dysphoria (form. Gender Identity Disorder); Queer; Alcohol Dependence (Not Current); Alcohol Dependence (Recent Diagnosis or suspected); Drug Dependence (Not Current); Drug Dependence (Recent Diagnosis or Suspected); Cannabis Dependence ( Not Current); Cannabis Dependence (Recent diagnoisis or Suspected); Perinatal Anxiety and Depression; Fertility / IVF stress; Pregnancy loss or birth trauma; Menopause adjustment; Balancing multiple roles (career / parenting / caregiving); Relationship or parenting stress; Adjusting to fatherhood or retirement; Emotional suppression / anger issues; Erectile Dysfunction; Identity or career pressures; Social isolation; Cognitive decline / memory concerns; Grief and bereavement; Chronic illness or loss of independence; Loneliness and social isolation; Life review and meaning-making; Carers and support workers; Adjustment to health conditions; and ageing; ADD and ADHD; Autism Spectrum Disorders (ASD); Learning Difficulties; Social skill development needs; Chronic Pain and illness; Health Anxiety/ Medical Trauma; Insomnia Disorder; Pain Management; Psychosomatic symptoms; Anorexia Nervosa ( not current); Binge-Eating Disorder (Not Current); Bulimia Nervosa ( NOT CURRENT); Eating Disorders (Not Current); Culturally and linguistically diverse clients; LGBTQIA+ affirmative therapy; Refugees / migrants / asylum seekers",
-      "Anxiety",
-      "Fear of Failure",
-      "General Adaptation Disorder (Adjustment Disorder)",
-      "Generalized Anxiety Disorder (GAD)",
-      "Health Anxiety",
-      "Obsessive-Compulsive Disorder (OCD)",
-      "Panic Disorder & Panic Attacks",
-      "Perfectionism",
-      "Phobias",
-      "Separation anxiety disorder",
-      "Social anxiety disorder / Social Phobia",
-      "Stress",
-      "Adjustment Disorder",
-      "Bereavement",
-      "Burnout",
-      "Clinical Depression (Major Depressive Disorder)",
-      "Confidence",
-      "Depression",
-      "Disruptive Mood Dysregulation Disorder",
-      "Grief & Loss",
-      "Loss",
-      "Major Depressive Disorder",
-      "Pregnancy and Postnatal Depression",
-      "Seasonal Affective Disorder",
-      "Self esteem",
-      "Bullying / workplace conflict",
-      "Career dissatisfaction or change adjustment",
-      "Career transition",
-      "Compassion fatigue / vicarious trauma",
-      "Executive and Professional Coaching",
-      "Occupational stress or burnout",
-      "Professional identity and role strain",
-      "Work-life balance challenges",
-      "Workplace stress",
-      "Codependency or people-pleasing",
-      "Communication and boundary issues",
-      "Couples and Marriage Difficulties",
-      "Family Conflict/ belnded family stress",
-      "Friendship difficulties / social isolation",
-      "Interpersonal trauma or betrayal",
-      "Intimacy and trust difficulties",
-      "Non-Monogomy/ Polyamory",
-      "Relationship breakdown",
-      "Separation / divorce adjustment",
-      "Sex and intimacy",
-      "Low self esteem",
-      "Perfectionism or Imposter Syndrome",
-      "Identity exploration (gender",
-      "sexual orientation",
-      "cultural",
-      "spiritual)",
-      "Life transitions (career change",
-      "relocation",
-      "retirement",
-      "ageing)",
-      "Existential concerns / loss of meaning",
-      "Midlife crisis or \u201cstuck\u201d feelings",
-      "Personal growth and self-development goals",
-      "Sexuality and Gender",
-      "Gender Dysphoria (form. Gender Identity Disorder)",
-      "Queer",
-      "Alcohol Dependence (Not Current)",
-      "Alcohol Dependence (Recent Diagnosis or suspected)",
-      "Drug Dependence (Not Current)",
-      "Drug Dependence (Recent Diagnosis or Suspected)",
-      "Cannabis Dependence ( Not Current)",
-      "Cannabis Dependence (Recent diagnoisis or Suspected)",
-      "Perinatal Anxiety and Depression",
-      "Fertility / IVF stress",
-      "Pregnancy loss or birth trauma",
-      "Menopause adjustment",
-      "Balancing multiple roles (career",
-      "parenting",
-      "caregiving)",
-      "Relationship or parenting stress",
-      "Adjusting to fatherhood or retirement",
-      "Emotional suppression / anger issues",
-      "Erectile Dysfunction",
-      "Identity or career pressures",
-      "Social isolation",
-      "Cognitive decline / memory concerns",
-      "Grief and bereavement",
-      "Chronic illness or loss of independence",
-      "Loneliness and social isolation",
-      "Life review and meaning-making",
-      "Carers and support workers",
-      "Adjustment to health conditions",
-      "and ageing",
-      "ADD and ADHD",
-      "Autism Spectrum Disorders (ASD)",
-      "Learning Difficulties",
-      "Social skill development needs",
-      "Chronic Pain and illness",
-      "Health Anxiety/ Medical Trauma",
-      "Insomnia Disorder",
-      "Pain Management",
-      "Psychosomatic symptoms",
-      "Anorexia Nervosa ( not current)",
-      "Binge-Eating Disorder (Not Current)",
-      "Bulimia Nervosa ( NOT CURRENT)",
-      "Eating Disorders (Not Current)",
-      "Culturally and linguistically diverse clients",
-      "LGBTQIA+ affirmative therapy",
-      "Refugees / migrants / asylum seekers",
-      "Addictions",
-      "Eating Disorders",
-      "Substance Misuse"
-    ],
-    "modalities": [
-      "Acceptance and Commitment Therapy (ACT); Interpersonal Therapy (IPT); Existential Therapy; Humanistic / Person-Centred Therapy; Gestalt Therapy; Attachment-Based Therapy; Somatic Experiencing; Sensorimotor Psychotherapy; Gottman Method Couples Therapy; Compassionate Inquiry; Positive Psychology Coaching; Coaching Psychology; Trauma-Informed Care; Psychoeducation and Skills Training; Polyvagal-Informed Therapy; Transpersonal Psychology",
-      "Acceptance and Commitment Therapy (ACT)",
-      "Interpersonal Therapy (IPT)",
-      "Existential Therapy",
-      "Humanistic / Person-Centred Therapy",
-      "Gestalt Therapy",
-      "Attachment-Based Therapy",
-      "Somatic Experiencing",
-      "Sensorimotor Psychotherapy",
-      "Gottman Method Couples Therapy",
-      "Compassionate Inquiry",
-      "Positive Psychology Coaching",
-      "Coaching Psychology",
-      "Trauma-Informed Care",
-      "Psychoeducation and Skills Training",
-      "Polyvagal-Informed Therapy",
-      "Transpersonal Psychology"
-    ],
+    "presentations": "Anxiety; Fear of Failure; General Adaptation Disorder (Adjustment Disorder); Generalized Anxiety Disorder (GAD); Health Anxiety; Obsessive-Compulsive Disorder (OCD); Panic Disorder & Panic Attacks; Perfectionism; Phobias; Separation anxiety disorder; Social anxiety disorder / Social Phobia; Stress; Adjustment Disorder; Bereavement; Burnout; Clinical Depression (Major Depressive Disorder); Confidence; Depression; Disruptive Mood Dysregulation Disorder; Grief & Loss; Loss; Major Depressive Disorder; Pregnancy and Postnatal Depression; Seasonal Affective Disorder; Self esteem; Bullying / workplace conflict; Career dissatisfaction or change adjustment; Career transition; Compassion fatigue / vicarious trauma; Executive and Professional Coaching; Occupational stress or burnout; Professional identity and role strain; Work-life balance challenges; Workplace stress; Codependency or people-pleasing; Communication and boundary issues; Couples and Marriage Difficulties; Family Conflict/ belnded family stress; Friendship difficulties / social isolation; Interpersonal trauma or betrayal; Intimacy and trust difficulties; Non-Monogomy/ Polyamory; Relationship breakdown; Separation / divorce adjustment; Sex and intimacy; Low self esteem; Perfectionism or Imposter Syndrome; Identity exploration (gender / sexual orientation / cultural / spiritual); Life transitions (career change / relocation / retirement / ageing); Existential concerns / loss of meaning; Midlife crisis or stuck feelings; Personal growth and self-development goals; Sexuality and Gender; Gender Dysphoria (form. Gender Identity Disorder); Queer; Alcohol Dependence (Not Current); Alcohol Dependence (Recent Diagnosis or suspected); Drug Dependence (Not Current); Drug Dependence (Recent Diagnosis or Suspected); Cannabis Dependence ( Not Current); Cannabis Dependence (Recent diagnoisis or Suspected); Perinatal Anxiety and Depression; Fertility / IVF stress; Pregnancy loss or birth trauma; Menopause adjustment; Balancing multiple roles (career / parenting / caregiving); Relationship or parenting stress; Adjusting to fatherhood or retirement; Emotional suppression / anger issues; Erectile Dysfunction; Identity or career pressures; Social isolation; Cognitive decline / memory concerns; Grief and bereavement; Chronic illness or loss of independence; Loneliness and social isolation; Life review and meaning-making; Carers and support workers; Adjustment to health conditions; and ageing; ADD and ADHD; Autism Spectrum Disorders (ASD); Learning Difficulties; Social skill development needs; Chronic Pain and illness; Health Anxiety/ Medical Trauma; Insomnia Disorder; Pain Management; Psychosomatic symptoms; Anorexia Nervosa ( not current); Binge-Eating Disorder (Not Current); Bulimia Nervosa ( NOT CURRENT); Eating Disorders (Not Current); Culturally and linguistically diverse clients; LGBTQIA+ affirmative therapy; Refugees / migrants / asylum seekers; Anxiety; Fear of Failure; General Adaptation Disorder (Adjustment Disorder); Generalized Anxiety Disorder (GAD); Health Anxiety; Obsessive-Compulsive Disorder (OCD); Panic Disorder & Panic Attacks; Perfectionism; Phobias; Separation anxiety disorder; Social anxiety disorder / Social Phobia; Stress; Adjustment Disorder; Bereavement; Burnout; Clinical Depression (Major Depressive Disorder); Confidence; Depression; Disruptive Mood Dysregulation Disorder; Grief & Loss; Loss; Major Depressive Disorder; Pregnancy and Postnatal Depression; Seasonal Affective Disorder; Self esteem; Bullying / workplace conflict; Career dissatisfaction or change adjustment; Career transition; Compassion fatigue / vicarious trauma; Executive and Professional Coaching; Occupational stress or burnout; Professional identity and role strain; Work-life balance challenges; Workplace stress; Codependency or people-pleasing; Communication and boundary issues; Couples and Marriage Difficulties; Family Conflict/ belnded family stress; Friendship difficulties / social isolation; Interpersonal trauma or betrayal; Intimacy and trust difficulties; Non-Monogomy/ Polyamory; Relationship breakdown; Separation / divorce adjustment; Sex and intimacy; Low self esteem; Perfectionism or Imposter Syndrome; Identity exploration (gender; sexual orientation; cultural; spiritual); Life transitions (career change; relocation; retirement; ageing); Existential concerns / loss of meaning; Midlife crisis or \u201cstuck\u201d feelings; Personal growth and self-development goals; Sexuality and Gender; Gender Dysphoria (form. Gender Identity Disorder); Queer; Alcohol Dependence (Not Current); Alcohol Dependence (Recent Diagnosis or suspected); Drug Dependence (Not Current); Drug Dependence (Recent Diagnosis or Suspected); Cannabis Dependence ( Not Current); Cannabis Dependence (Recent diagnoisis or Suspected); Perinatal Anxiety and Depression; Fertility / IVF stress; Pregnancy loss or birth trauma; Menopause adjustment; Balancing multiple roles (career; parenting; caregiving); Relationship or parenting stress; Adjusting to fatherhood or retirement; Emotional suppression / anger issues; Erectile Dysfunction; Identity or career pressures; Social isolation; Cognitive decline / memory concerns; Grief and bereavement; Chronic illness or loss of independence; Loneliness and social isolation; Life review and meaning-making; Carers and support workers; Adjustment to health conditions; and ageing; ADD and ADHD; Autism Spectrum Disorders (ASD); Learning Difficulties; Social skill development needs; Chronic Pain and illness; Health Anxiety/ Medical Trauma; Insomnia Disorder; Pain Management; Psychosomatic symptoms; Anorexia Nervosa ( not current); Binge-Eating Disorder (Not Current); Bulimia Nervosa ( NOT CURRENT); Eating Disorders (Not Current); Culturally and linguistically diverse clients; LGBTQIA+ affirmative therapy; Refugees / migrants / asylum seekers; Addictions; Eating Disorders; Substance Misuse",
+    "modalities": "Acceptance and Commitment Therapy (ACT); Interpersonal Therapy (IPT); Existential Therapy; Humanistic / Person-Centred Therapy; Gestalt Therapy; Attachment-Based Therapy; Somatic Experiencing; Sensorimotor Psychotherapy; Gottman Method Couples Therapy; Compassionate Inquiry; Positive Psychology Coaching; Coaching Psychology; Trauma-Informed Care; Psychoeducation and Skills Training; Polyvagal-Informed Therapy; Transpersonal Psychology; Acceptance and Commitment Therapy (ACT); Interpersonal Therapy (IPT); Existential Therapy; Humanistic / Person-Centred Therapy; Gestalt Therapy; Attachment-Based Therapy; Somatic Experiencing; Sensorimotor Psychotherapy; Gottman Method Couples Therapy; Compassionate Inquiry; Positive Psychology Coaching; Coaching Psychology; Trauma-Informed Care; Psychoeducation and Skills Training; Polyvagal-Informed Therapy; Transpersonal Psychology",
     "client_types": "Individual;  Couples",
     "age_range": "16 Yrs +;  18 Yrs +",
     "therapist_type": "Psychotherapist",
@@ -2047,20 +1202,13 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/cristina-jimenez/",
     "locations": [
       {
-        "availability": [
-          "Tuesdays at 9am (Weekly: Starting 14th Apr)",
-          "Tuesdays at 10am (Weekly: Starting 14th Apr)",
-          "Tuesdays at 11am (Weekly: Starting 14th Apr)",
-          "Tuesdays at 3:30pm (Weekly: Starting 14th Apr)",
-          "Tuesdays at 12pm (Weekly: Starting 28th Apr)",
-          "Tuesdays at 1pm (Fortnightly: Starting 5th May)"
-        ],
+        "availability": "Tuesdays at 9am (Weekly: Starting 28th Apr)\nTuesdays at 11am (Weekly: Starting 28th Apr)\nTuesdays at 3:30pm (Weekly: Starting 28th Apr)\nTuesdays at 12pm (Weekly: Starting 5th May)\nTuesdays at 1pm (Fortnightly: Starting 5th May)\nTuesdays at 5:30pm (Fortnightly: Starting 9th Jun)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
       }
     ],
-    "last_updated": "2026-03-18",
+    "last_updated": "2026-04-15",
     "availability": [
       "Tuesdays at 10am, 12pm & 3:30pm (Weekly: from 24 Mar) \u2014 Greville St, Prahran",
       "Tuesdays at 9am (Fortnightly: Starting 31 Mar) \u2014 Greville St, Prahran"
@@ -2096,7 +1244,8 @@ export const PRACTITIONERS_DATA = [
         ]
       }
     ],
-    "style": "A parent, Active Listener, Animal Lover, Artistic, Assigns Homework/ Worksheets, Calm, Compassionate, Conscientiousness, Creative, Direct, Empathetic, Existential, Existential, Extravert, Gentle, Female, Good at tough Love, Guides to set Goals, Humorous, Humorous, Introvert, Like a coach, Non Judgemental, Openness, Outgoing, Sensitive and Gentle, Solution Oriented, Spiritual, Talkative, Teach new Skills, Warm"
+    "style": "A parent, Active Listener, Animal Lover, Artistic, Assigns Homework/ Worksheets, Calm, Compassionate, Conscientiousness, Creative, Direct, Empathetic, Existential, Existential, Extravert, Gentle, Female, Good at tough Love, Guides to set Goals, Humorous, Humorous, Introvert, Like a coach, Non Judgemental, Openness, Outgoing, Sensitive and Gentle, Solution Oriented, Spiritual, Talkative, Teach new Skills, Warm",
+    "working_hours": ""
   },
   {
     "id": 6,
@@ -2193,7 +1342,7 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/chiara-killey/",
     "locations": [
       {
-        "availability": [],
+        "availability": "",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Wattletree Rd, Malvern"
@@ -2219,7 +1368,10 @@ export const PRACTITIONERS_DATA = [
         ]
       }
     ],
-    "style": "A parent"
+    "style": "A parent",
+    "location_notes": {
+      "Wattletree Rd, Malvern": "Please Note: As of 9th June 2026 Chiara's Saturday appointments will be moving from our Malvern Clinic to our new Clinic on Burke Road, Camberwell."
+    }
   },
   {
     "id": 20,
@@ -2229,122 +1381,8 @@ export const PRACTITIONERS_DATA = [
     "medicare_rebate": "145.25",
     "gender": "Male",
     "alert": "Per email from NK on 15/04- pause any new clients who have already received a diagnosis of autism or querying an ASD diagnosis as it's not a specialist area I want to work predominantly with at the moment.",
-    "presentations": [
-      "Agoraphobia; Anxiety; Claustrophobia; Fear of Failure; General Adaptation Disorder (Adjustment Disorder); Generalized Anxiety Disorder (GAD); Health Anxiety; Obsessive-Compulsive Disorder (OCD); Panic Disorder & Panic Attacks; Perfectionism; Phobias; Separation anxiety disorder; Social anxiety disorder / Social Phobia; Stress; Adjustment Disorder; Bereavement; Burnout; Clinical Depression (Major Depressive Disorder); Confidence; Depression; Grief & Loss; Loss; Major Depressive Disorder; Seasonal Affective Disorder; Self esteem; Bullying / workplace conflict; Career dissatisfaction or change adjustment; Career transition; Compassion fatigue / vicarious trauma; Executive and Professional Coaching; Occupational stress or burnout; Professional identity and role strain; Work-life balance challenges; Workplace stress; Codependency or people-pleasing; Communication and boundary issues; Couples and Marriage Difficulties; Family Conflict/ belnded family stress; Friendship difficulties / social isolation; Interpersonal trauma or betrayal; Intimacy and trust difficulties; Separation / divorce adjustment; Low self esteem; Perfectionism or Imposter Syndrome; Life transitions (career change / relocation / retirement / ageing); Existential concerns / loss of meaning; Midlife crisis or stuck feelings; Personal growth and self-development goals; Alcohol Dependence (Not Current); Alcohol Dependence (Recent Diagnosis or suspected); Drug Dependence (Not Current); Cannabis Dependence ( Not Current); Addictions - Gaming; Addictions - Gambling; Compulsive Shopping; Compulsive Pornography use; Emotional Eating; Substance Misuse; Relationship or parenting stress; Adjusting to fatherhood or retirement; Emotional suppression / anger issues; Erectile Dysfunction; Identity or career pressures; Sex and intimacy; Social isolation; Grief and bereavement; Chronic illness or loss of independence; Loneliness and social isolation; Life review and meaning-making; Adjustment to health conditions; and ageing; ADD and ADHD; Executive functioning challenges; Social skill development needs; Avoidant Personality Disorder; Perfectionistic / obsessive personality patterns; Chronic Pain and illness; Health Anxiety/ Medical Trauma; Pain Management; Body issues; Eating Disorders (Not Current); Academic pressure / performance stress; school refusal or perfectionism; Bullying / peer difficulties; Emotional regulation / behavioural difficulties; Family conflict or parental separation adjustment; Culturally and linguistically diverse clients; LGBTQIA+ affirmative therapy; Refugees / migrants / asylum seekers",
-      "Agoraphobia",
-      "Anxiety",
-      "Claustrophobia",
-      "Fear of Failure",
-      "General Adaptation Disorder (Adjustment Disorder)",
-      "Generalized Anxiety Disorder (GAD)",
-      "Health Anxiety",
-      "Obsessive-Compulsive Disorder (OCD)",
-      "Panic Disorder & Panic Attacks",
-      "Perfectionism",
-      "Phobias",
-      "Separation anxiety disorder",
-      "Social anxiety disorder / Social Phobia",
-      "Stress",
-      "Adjustment Disorder",
-      "Bereavement",
-      "Burnout",
-      "Clinical Depression (Major Depressive Disorder)",
-      "Confidence",
-      "Depression",
-      "Grief & Loss",
-      "Loss",
-      "Major Depressive Disorder",
-      "Seasonal Affective Disorder",
-      "Self esteem",
-      "Bullying / workplace conflict",
-      "Career dissatisfaction or change adjustment",
-      "Career transition",
-      "Compassion fatigue / vicarious trauma",
-      "Executive and Professional Coaching",
-      "Occupational stress or burnout",
-      "Professional identity and role strain",
-      "Work-life balance challenges",
-      "Workplace stress",
-      "Codependency or people-pleasing",
-      "Communication and boundary issues",
-      "Couples and Marriage Difficulties",
-      "Family Conflict/ belnded family stress",
-      "Friendship difficulties / social isolation",
-      "Interpersonal trauma or betrayal",
-      "Intimacy and trust difficulties",
-      "Separation / divorce adjustment",
-      "Low self esteem",
-      "Perfectionism or Imposter Syndrome",
-      "Life transitions (career change",
-      "relocation",
-      "retirement",
-      "ageing)",
-      "Existential concerns / loss of meaning",
-      "Midlife crisis or \u201cstuck\u201d feelings",
-      "Personal growth and self-development goals",
-      "Alcohol Dependence (Not Current)",
-      "Alcohol Dependence (Recent Diagnosis or suspected)",
-      "Drug Dependence (Not Current)",
-      "Cannabis Dependence ( Not Current)",
-      "Addictions - Gaming",
-      "Addictions - Gambling",
-      "Compulsive Shopping",
-      "Compulsive Pornography use",
-      "Emotional Eating",
-      "Substance Misuse",
-      "Relationship or parenting stress",
-      "Adjusting to fatherhood or retirement",
-      "Emotional suppression / anger issues",
-      "Erectile Dysfunction",
-      "Identity or career pressures",
-      "Sex and intimacy",
-      "Social isolation",
-      "Grief and bereavement",
-      "Chronic illness or loss of independence",
-      "Loneliness and social isolation",
-      "Life review and meaning-making",
-      "Adjustment to health conditions",
-      "and ageing",
-      "ADD and ADHD",
-      "Executive functioning challenges",
-      "Social skill development needs",
-      "Avoidant Personality Disorder",
-      "Perfectionistic / obsessive personality patterns",
-      "Chronic Pain and illness",
-      "Health Anxiety/ Medical Trauma",
-      "Pain Management",
-      "Body issues",
-      "Eating Disorders (Not Current)",
-      "Academic pressure / performance stress",
-      "school refusal or perfectionism",
-      "Bullying / peer difficulties",
-      "Emotional regulation / behavioural difficulties",
-      "Family conflict or parental separation adjustment",
-      "Culturally and linguistically diverse clients",
-      "LGBTQIA+ affirmative therapy",
-      "Refugees / migrants / asylum seekers",
-      "Addictions",
-      "Eating Disorders"
-    ],
-    "modalities": [
-      "Acceptance and Commitment Therapy (ACT); Behavioural Activation (BA); Cognitive Behavioural Therapy (CBT); Compassion-Focused Therapy (CFT); Mindfulness-Based Cognitive Therapy (MBCT); Interpersonal Therapy (IPT); Existential Therapy; Humanistic / Person-Centred Therapy; Attachment-Based Therapy; Internal Family Systems (IFS) / Parts Work - Informed; Motivational Interviewing (MI); Positive Psychology Coaching; Trauma-Informed Care; Psychoeducation and Skills Training; Acceptance-Based Couples Therapy; Psychedelic-Assisted Psychotherapy (research/emerging)",
-      "Acceptance and Commitment Therapy (ACT)",
-      "Behavioural Activation (BA)",
-      "Cognitive Behavioural Therapy (CBT)",
-      "Compassion-Focused Therapy (CFT)",
-      "Mindfulness-Based Cognitive Therapy (MBCT)",
-      "Interpersonal Therapy (IPT)",
-      "Existential Therapy",
-      "Humanistic / Person-Centred Therapy",
-      "Attachment-Based Therapy",
-      "Internal Family Systems (IFS) / Parts Work - Informed",
-      "Motivational Interviewing (MI)",
-      "Positive Psychology Coaching",
-      "Trauma-Informed Care",
-      "Psychoeducation and Skills Training",
-      "Acceptance-Based Couples Therapy",
-      "Psychedelic-Assisted Psychotherapy (research/emerging)"
-    ],
+    "presentations": "Agoraphobia; Anxiety; Claustrophobia; Fear of Failure; General Adaptation Disorder (Adjustment Disorder); Generalized Anxiety Disorder (GAD); Health Anxiety; Obsessive-Compulsive Disorder (OCD); Panic Disorder & Panic Attacks; Perfectionism; Phobias; Separation anxiety disorder; Social anxiety disorder / Social Phobia; Stress; Adjustment Disorder; Bereavement; Burnout; Clinical Depression (Major Depressive Disorder); Confidence; Depression; Grief & Loss; Loss; Major Depressive Disorder; Seasonal Affective Disorder; Self esteem; Bullying / workplace conflict; Career dissatisfaction or change adjustment; Career transition; Compassion fatigue / vicarious trauma; Executive and Professional Coaching; Occupational stress or burnout; Professional identity and role strain; Work-life balance challenges; Workplace stress; Codependency or people-pleasing; Communication and boundary issues; Couples and Marriage Difficulties; Family Conflict/ belnded family stress; Friendship difficulties / social isolation; Interpersonal trauma or betrayal; Intimacy and trust difficulties; Separation / divorce adjustment; Low self esteem; Perfectionism or Imposter Syndrome; Life transitions (career change / relocation / retirement / ageing); Existential concerns / loss of meaning; Midlife crisis or stuck feelings; Personal growth and self-development goals; Alcohol Dependence (Not Current); Alcohol Dependence (Recent Diagnosis or suspected); Drug Dependence (Not Current); Cannabis Dependence ( Not Current); Addictions - Gaming; Addictions - Gambling; Compulsive Shopping; Compulsive Pornography use; Emotional Eating; Substance Misuse; Relationship or parenting stress; Adjusting to fatherhood or retirement; Emotional suppression / anger issues; Erectile Dysfunction; Identity or career pressures; Sex and intimacy; Social isolation; Grief and bereavement; Chronic illness or loss of independence; Loneliness and social isolation; Life review and meaning-making; Adjustment to health conditions; and ageing; ADD and ADHD; Executive functioning challenges; Social skill development needs; Avoidant Personality Disorder; Perfectionistic / obsessive personality patterns; Chronic Pain and illness; Health Anxiety/ Medical Trauma; Pain Management; Body issues; Eating Disorders (Not Current); Academic pressure / performance stress; school refusal or perfectionism; Bullying / peer difficulties; Emotional regulation / behavioural difficulties; Family conflict or parental separation adjustment; Culturally and linguistically diverse clients; LGBTQIA+ affirmative therapy; Refugees / migrants / asylum seekers; Agoraphobia; Anxiety; Claustrophobia; Fear of Failure; General Adaptation Disorder (Adjustment Disorder); Generalized Anxiety Disorder (GAD); Health Anxiety; Obsessive-Compulsive Disorder (OCD); Panic Disorder & Panic Attacks; Perfectionism; Phobias; Separation anxiety disorder; Social anxiety disorder / Social Phobia; Stress; Adjustment Disorder; Bereavement; Burnout; Clinical Depression (Major Depressive Disorder); Confidence; Depression; Grief & Loss; Loss; Major Depressive Disorder; Seasonal Affective Disorder; Self esteem; Bullying / workplace conflict; Career dissatisfaction or change adjustment; Career transition; Compassion fatigue / vicarious trauma; Executive and Professional Coaching; Occupational stress or burnout; Professional identity and role strain; Work-life balance challenges; Workplace stress; Codependency or people-pleasing; Communication and boundary issues; Couples and Marriage Difficulties; Family Conflict/ belnded family stress; Friendship difficulties / social isolation; Interpersonal trauma or betrayal; Intimacy and trust difficulties; Separation / divorce adjustment; Low self esteem; Perfectionism or Imposter Syndrome; Life transitions (career change; relocation; retirement; ageing); Existential concerns / loss of meaning; Midlife crisis or \u201cstuck\u201d feelings; Personal growth and self-development goals; Alcohol Dependence (Not Current); Alcohol Dependence (Recent Diagnosis or suspected); Drug Dependence (Not Current); Cannabis Dependence ( Not Current); Addictions - Gaming; Addictions - Gambling; Compulsive Shopping; Compulsive Pornography use; Emotional Eating; Substance Misuse; Relationship or parenting stress; Adjusting to fatherhood or retirement; Emotional suppression / anger issues; Erectile Dysfunction; Identity or career pressures; Sex and intimacy; Social isolation; Grief and bereavement; Chronic illness or loss of independence; Loneliness and social isolation; Life review and meaning-making; Adjustment to health conditions; and ageing; ADD and ADHD; Executive functioning challenges; Social skill development needs; Avoidant Personality Disorder; Perfectionistic / obsessive personality patterns; Chronic Pain and illness; Health Anxiety/ Medical Trauma; Pain Management; Body issues; Eating Disorders (Not Current); Academic pressure / performance stress; school refusal or perfectionism; Bullying / peer difficulties; Emotional regulation / behavioural difficulties; Family conflict or parental separation adjustment; Culturally and linguistically diverse clients; LGBTQIA+ affirmative therapy; Refugees / migrants / asylum seekers; Addictions; Eating Disorders",
+    "modalities": "Acceptance and Commitment Therapy (ACT); Behavioural Activation (BA); Cognitive Behavioural Therapy (CBT); Compassion-Focused Therapy (CFT); Mindfulness-Based Cognitive Therapy (MBCT); Interpersonal Therapy (IPT); Existential Therapy; Humanistic / Person-Centred Therapy; Attachment-Based Therapy; Internal Family Systems (IFS) / Parts Work - Informed; Motivational Interviewing (MI); Positive Psychology Coaching; Trauma-Informed Care; Psychoeducation and Skills Training; Acceptance-Based Couples Therapy; Psychedelic-Assisted Psychotherapy (research/emerging); Acceptance and Commitment Therapy (ACT); Behavioural Activation (BA); Cognitive Behavioural Therapy (CBT); Compassion-Focused Therapy (CFT); Mindfulness-Based Cognitive Therapy (MBCT); Interpersonal Therapy (IPT); Existential Therapy; Humanistic / Person-Centred Therapy; Attachment-Based Therapy; Internal Family Systems (IFS) / Parts Work - Informed; Motivational Interviewing (MI); Positive Psychology Coaching; Trauma-Informed Care; Psychoeducation and Skills Training; Acceptance-Based Couples Therapy; Psychedelic-Assisted Psychotherapy (research/emerging)",
     "client_types": "Individual",
     "age_range": "16 Yrs +",
     "therapist_type": "Clinical Psychologist",
@@ -2361,28 +1399,25 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/nicholas-kleeman/",
     "locations": [
       {
-        "availability": [],
+        "availability": "Wednesdays at 9am (Fortnightly: Starting 6th May)\nWednesdays at 1pm (Fortnightly: Starting 6th May)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Wattletree Rd, Malvern"
       },
       {
-        "availability": [
-          "Tuesdays at 2pm (Fortnightly: Starting 14th Apr)",
-          "Tuesdays at 3pm (Fortnightly: Starting 21st Apr)"
-        ],
+        "availability": "",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
       },
       {
-        "availability": [],
+        "availability": "",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Telehealth"
       }
     ],
-    "last_updated": "2026-03-06",
+    "last_updated": "2026-04-15",
     "availability": [
       "Tuesdays at 3pm (Fortnightly: Starting 24 Mar) \u2014 Greville St, Prahran",
       "Tuesdays at 1pm (Fortnightly: Starting 31 Mar) \u2014 Telehealth",
@@ -2442,7 +1477,11 @@ export const PRACTITIONERS_DATA = [
         ]
       }
     ],
-    "style": "Active Listener, Calm, Creative, Existential, Humorous, Like a coach, Male, Openness, Outgoing, Sensitive and Gentle"
+    "style": "Active Listener, Calm, Creative, Existential, Humorous, Like a coach, Male, Openness, Outgoing, Sensitive and Gentle",
+    "working_hours": "",
+    "location_notes": {
+      "Wattletree Rd, Malvern": "Please Note: As of 9th June 2026 Nicholas's Wednesday, Thursday and Friday appointments will be moving from our Malvern Clinic to our new Clinic on Burke Road, Camberwell."
+    }
   },
   {
     "id": 26,
@@ -2470,31 +1509,25 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/ricki-knoetze/",
     "locations": [
       {
-        "availability": [
-          "Saturdays at 11:30am (Fortnightly: Starting 9th May)"
-        ],
+        "availability": "",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Wattletree Rd, Malvern"
       },
       {
-        "availability": [
-          "Mondays at 2:30pm (Fortnightly: Starting 27th Apr)",
-          "Mondays at 5pm (Fortnightly: Starting 27th Apr)",
-          "Mondays at 3:30pm (Fortnightly: Starting 11th May)"
-        ],
+        "availability": "Mondays at 3:30pm (Fortnightly: Starting 11th May)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
       },
       {
-        "availability": [],
+        "availability": "",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Telehealth"
       }
     ],
-    "last_updated": "2026-03-06",
+    "last_updated": "2026-04-15",
     "availability": [
       "Mondays at 2:30pm, 3:30pm & 5pm (Fortnightly: Starting 27 Apr) \u2014 Greville St, Prahran"
     ],
@@ -2516,7 +1549,11 @@ export const PRACTITIONERS_DATA = [
         ]
       }
     ],
-    "style": "A parent"
+    "style": "A parent",
+    "working_hours": "",
+    "location_notes": {
+      "Wattletree Rd, Malvern": "Please Note: As of 9th June 2026 Ricki's Saturday appointments will be moving from our Malvern Clinic to our new Clinic on Burke Road, Camberwell."
+    }
   },
   {
     "id": 13,
@@ -2641,28 +1678,20 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/josh-Kugel/",
     "locations": [
       {
-        "availability": [
-          "Wednesdays at 2:30pm (Weekly: Starting 10th Jun)",
-          "Wednesdays at 3:30pm (Weekly: Starting 10th Jun)",
-          "Wednesdays at 4:30pm (Weekly: Starting 10th Jun)",
-          "Wednesdays at 6:30pm (Weekly: Starting 10th Jun)",
-          "Wednesdays at 7:30pm (Weekly: Starting 10th Jun)"
-        ],
+        "availability": "",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Wattletree Rd, Malvern"
       },
       {
-        "availability": [
-          "Fridays at 8am (Weekly: Starting 12th Jun)",
-          "Fridays at 9am (Weekly: Starting 12th Jun)",
-          "Fridays at 10am (Weekly: Starting 12th Jun)",
-          "Fridays at 12pm (Weekly: Starting 12th Jun)",
-          "Fridays at 1pm (Weekly: Starting 12th Jun)"
-        ],
+        "availability": "",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
+      },
+      {
+        "location": "673 Burke Road, Camberwell",
+        "availability": "Wednesdays at 2:30pm (Weekly: Starting 10th Jun)\nWednesdays at 3:30pm (Weekly: Starting 10th Jun)\nWednesdays at 4:30pm (Weekly: Starting 10th Jun)\nWednesdays at 6:30pm (Weekly: Starting 10th Jun)\nWednesdays at 7:30pm (Weekly: Starting 10th Jun)"
       }
     ],
     "last_updated": "2026-03-16",
@@ -2670,7 +1699,10 @@ export const PRACTITIONERS_DATA = [
     "availability": [],
     "weekly_availability": [],
     "fortnightly_availability": [],
-    "style": "Active Listener, Calm, Compassionate, Direct, Empathetic, Existential, Gentle, Non Judgemental, Solution Oriented, Spiritual, Teach new Skills, Warm"
+    "style": "Active Listener, Calm, Compassionate, Direct, Empathetic, Existential, Gentle, Non Judgemental, Solution Oriented, Spiritual, Teach new Skills, Warm",
+    "location_notes": {
+      "Wattletree Rd, Malvern": "Please Note: As of 9th June 2026 Joshua will also be available at our new Clinic on Burke Road, Camberwell."
+    }
   },
   {
     "id": 29,
@@ -2680,87 +1712,8 @@ export const PRACTITIONERS_DATA = [
     "medicare_rebate": "$96.65\n\nNo rebate for couples",
     "gender": "Female",
     "alert": ". Couples clients must be referred to TVM for her intake (after ours), then we can book in",
-    "presentations": [
-      "Anxiety; General Adaptation Disorder (Adjustment Disorder); Generalized Anxiety Disorder (GAD); Health Anxiety; Obsessive-Compulsive Disorder (OCD); Panic Disorder & Panic Attacks; Perfectionism; Phobias; Separation anxiety disorder; Social anxiety disorder / Social Phobia; Stress; Bereavement; Burnout; Clinical Depression (Major Depressive Disorder); Confidence; Depression; Disruptive Mood Dysregulation Disorder; Grief & Loss; Loss; Major Depressive Disorder; Persistent Depressive Disorder (Dysthymia); Pregnancy and Postnatal Depression; Seasonal Affective Disorder; Self esteem; Codependency or people-pleasing; Communication and boundary issues; Couples and Marriage Difficulties; Family Conflict/ belnded family stress; Friendship difficulties / social isolation; Interpersonal trauma or betrayal; Intimacy and trust difficulties; Non-Monogomy/ Polyamory; Relationship breakdown; Separation / divorce adjustment; Sex and intimacy; Low self esteem; Perfectionism or Imposter Syndrome; Identity exploration (gender / sexual orientation / cultural / spiritual); Life transitions (career change / relocation / retirement / ageing); Existential concerns / loss of meaning; Midlife crisis or stuck feelings; Personal growth and self-development goals; Sexuality and Gender; Gender Dysphoria (form. Gender Identity Disorder); Queer; Alcohol Dependence (Not Current); Drug Dependence (Not Current); Cannabis Dependence ( Not Current); Perinatal Anxiety and Depression; Pregnancy loss or birth trauma; Menopause adjustment; Balancing multiple roles (career / parenting / caregiving); Relationship or parenting stress; Grief and bereavement; Loneliness and social isolation; Life review and meaning-making; Adjustment to health conditions; and ageing",
-      "Anxiety",
-      "General Adaptation Disorder (Adjustment Disorder)",
-      "Generalized Anxiety Disorder (GAD)",
-      "Health Anxiety",
-      "Obsessive-Compulsive Disorder (OCD)",
-      "Panic Disorder & Panic Attacks",
-      "Perfectionism",
-      "Phobias",
-      "Separation anxiety disorder",
-      "Social anxiety disorder / Social Phobia",
-      "Stress",
-      "Bereavement",
-      "Burnout",
-      "Clinical Depression (Major Depressive Disorder)",
-      "Confidence",
-      "Depression",
-      "Disruptive Mood Dysregulation Disorder",
-      "Grief & Loss",
-      "Loss",
-      "Major Depressive Disorder",
-      "Persistent Depressive Disorder (Dysthymia)",
-      "Pregnancy and Postnatal Depression",
-      "Seasonal Affective Disorder",
-      "Self esteem",
-      "Codependency or people-pleasing",
-      "Communication and boundary issues",
-      "Couples and Marriage Difficulties",
-      "Family Conflict/ belnded family stress",
-      "Friendship difficulties / social isolation",
-      "Interpersonal trauma or betrayal",
-      "Intimacy and trust difficulties",
-      "Non-Monogomy/ Polyamory",
-      "Relationship breakdown",
-      "Separation / divorce adjustment",
-      "Sex and intimacy",
-      "Low self esteem",
-      "Perfectionism or Imposter Syndrome",
-      "Identity exploration (gender",
-      "sexual orientation",
-      "cultural",
-      "spiritual)",
-      "Life transitions (career change",
-      "relocation",
-      "retirement",
-      "ageing)",
-      "Existential concerns / loss of meaning",
-      "Midlife crisis or \u201cstuck\u201d feelings",
-      "Personal growth and self-development goals",
-      "Sexuality and Gender",
-      "Gender Dysphoria (form. Gender Identity Disorder)",
-      "Queer",
-      "Alcohol Dependence (Not Current)",
-      "Drug Dependence (Not Current)",
-      "Cannabis Dependence ( Not Current)",
-      "Perinatal Anxiety and Depression",
-      "Pregnancy loss or birth trauma",
-      "Menopause adjustment",
-      "Balancing multiple roles (career",
-      "parenting",
-      "caregiving)",
-      "Relationship or parenting stress",
-      "Grief and bereavement",
-      "Loneliness and social isolation",
-      "Life review and meaning-making",
-      "Adjustment to health conditions",
-      "and ageing",
-      "Addictions",
-      "Substance Misuse"
-    ],
-    "modalities": [
-      "Cognitive Behavioural Therapy (CBT); Compassion-Focused Therapy (CFT); Psychodynamic Therapy; Interpersonal Therapy (IPT); Humanistic / Person-Centred Therapy; Attachment-Based Therapy; Circle of Security (COS)",
-      "Cognitive Behavioural Therapy (CBT)",
-      "Compassion-Focused Therapy (CFT)",
-      "Psychodynamic Therapy",
-      "Interpersonal Therapy (IPT)",
-      "Humanistic / Person-Centred Therapy",
-      "Attachment-Based Therapy",
-      "Circle of Security (COS)"
-    ],
+    "presentations": "Anxiety; General Adaptation Disorder (Adjustment Disorder); Generalized Anxiety Disorder (GAD); Health Anxiety; Obsessive-Compulsive Disorder (OCD); Panic Disorder & Panic Attacks; Perfectionism; Phobias; Separation anxiety disorder; Social anxiety disorder / Social Phobia; Stress; Bereavement; Burnout; Clinical Depression (Major Depressive Disorder); Confidence; Depression; Disruptive Mood Dysregulation Disorder; Grief & Loss; Loss; Major Depressive Disorder; Persistent Depressive Disorder (Dysthymia); Pregnancy and Postnatal Depression; Seasonal Affective Disorder; Self esteem; Codependency or people-pleasing; Communication and boundary issues; Couples and Marriage Difficulties; Family Conflict/ belnded family stress; Friendship difficulties / social isolation; Interpersonal trauma or betrayal; Intimacy and trust difficulties; Non-Monogomy/ Polyamory; Relationship breakdown; Separation / divorce adjustment; Sex and intimacy; Low self esteem; Perfectionism or Imposter Syndrome; Identity exploration (gender / sexual orientation / cultural / spiritual); Life transitions (career change / relocation / retirement / ageing); Existential concerns / loss of meaning; Midlife crisis or stuck feelings; Personal growth and self-development goals; Sexuality and Gender; Gender Dysphoria (form. Gender Identity Disorder); Queer; Alcohol Dependence (Not Current); Drug Dependence (Not Current); Cannabis Dependence ( Not Current); Perinatal Anxiety and Depression; Pregnancy loss or birth trauma; Menopause adjustment; Balancing multiple roles (career / parenting / caregiving); Relationship or parenting stress; Grief and bereavement; Loneliness and social isolation; Life review and meaning-making; Adjustment to health conditions; and ageing; Anxiety; General Adaptation Disorder (Adjustment Disorder); Generalized Anxiety Disorder (GAD); Health Anxiety; Obsessive-Compulsive Disorder (OCD); Panic Disorder & Panic Attacks; Perfectionism; Phobias; Separation anxiety disorder; Social anxiety disorder / Social Phobia; Stress; Bereavement; Burnout; Clinical Depression (Major Depressive Disorder); Confidence; Depression; Disruptive Mood Dysregulation Disorder; Grief & Loss; Loss; Major Depressive Disorder; Persistent Depressive Disorder (Dysthymia); Pregnancy and Postnatal Depression; Seasonal Affective Disorder; Self esteem; Codependency or people-pleasing; Communication and boundary issues; Couples and Marriage Difficulties; Family Conflict/ belnded family stress; Friendship difficulties / social isolation; Interpersonal trauma or betrayal; Intimacy and trust difficulties; Non-Monogomy/ Polyamory; Relationship breakdown; Separation / divorce adjustment; Sex and intimacy; Low self esteem; Perfectionism or Imposter Syndrome; Identity exploration (gender; sexual orientation; cultural; spiritual); Life transitions (career change; relocation; retirement; ageing); Existential concerns / loss of meaning; Midlife crisis or \u201cstuck\u201d feelings; Personal growth and self-development goals; Sexuality and Gender; Gender Dysphoria (form. Gender Identity Disorder); Queer; Alcohol Dependence (Not Current); Drug Dependence (Not Current); Cannabis Dependence ( Not Current); Perinatal Anxiety and Depression; Pregnancy loss or birth trauma; Menopause adjustment; Balancing multiple roles (career; parenting; caregiving); Relationship or parenting stress; Grief and bereavement; Loneliness and social isolation; Life review and meaning-making; Adjustment to health conditions; and ageing; Addictions; Substance Misuse",
+    "modalities": "Cognitive Behavioural Therapy (CBT); Compassion-Focused Therapy (CFT); Psychodynamic Therapy; Interpersonal Therapy (IPT); Humanistic / Person-Centred Therapy; Attachment-Based Therapy; Circle of Security (COS); Cognitive Behavioural Therapy (CBT); Compassion-Focused Therapy (CFT); Psychodynamic Therapy; Interpersonal Therapy (IPT); Humanistic / Person-Centred Therapy; Attachment-Based Therapy; Circle of Security (COS)",
     "client_types": "Individual;  Couples",
     "age_range": "18 Yrs +",
     "therapist_type": "Psycholoist",
@@ -2777,17 +1730,13 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/therese-van-maanen/",
     "locations": [
       {
-        "availability": [
-          "Thursdays at 3:15pm (Weekly: Starting 9th Apr)",
-          "Thursdays at 2pm (Fortnightly: Starting 7th May)",
-          "Thursdays at 12:45pm (Fortnightly: Starting 14th May)"
-        ],
+        "availability": "Thursdays at 3:15pm (Weekly: Starting 7th May)\nThursdays at 2pm (Fortnightly: Starting 7th May)\nThursdays at 12:45pm (Fortnightly: Starting 14th May)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Victoria St, St Kilda"
       }
     ],
-    "last_updated": "2026-03-06",
+    "last_updated": "2026-04-15",
     "availability": [
       "Thursdays at 12:45pm & 3:15pm (Weekly: from 19 Mar) \u2014 Victoria St, St Kilda",
       "Thursdays at 2pm & 10:15am (Fortnightly: Starting 26 Mar) \u2014 Victoria St, St Kilda"
@@ -2823,7 +1772,8 @@ export const PRACTITIONERS_DATA = [
         ]
       }
     ],
-    "style": "A parent"
+    "style": "A parent",
+    "working_hours": ""
   },
   {
     "id": 4,
@@ -2833,75 +1783,8 @@ export const PRACTITIONERS_DATA = [
     "medicare_rebate": "145.25",
     "gender": "Female",
     "alert": "",
-    "presentations": [
-      "Agoraphobia; Anxiety; Claustrophobia; Fear of Failure; General Adaptation Disorder (Adjustment Disorder); Generalized Anxiety Disorder (GAD); Health Anxiety; Panic Disorder & Panic Attacks; Perfectionism; Phobias; Social anxiety disorder / Social Phobia; Stress; Adjustment Disorder; Bereavement; Burnout; Clinical Depression (Major Depressive Disorder); Confidence; Depression; Grief & Loss; Loss; Major Depressive Disorder; Self esteem; Bullying / workplace conflict; Career dissatisfaction or change adjustment; Career transition; Compassion fatigue / vicarious trauma; Occupational stress or burnout; Professional identity and role strain; Work-life balance challenges; Workplace stress; Codependency or people-pleasing; Communication and boundary issues; Friendship difficulties / social isolation; Interpersonal trauma or betrayal; Intimacy and trust difficulties; Relationship breakdown; Separation / divorce adjustment; Low self esteem; Perfectionism or Imposter Syndrome; Life transitions (career change / relocation / retirement / ageing); Existential concerns / loss of meaning; Midlife crisis or stuck feelings; Personal growth and self-development goals; Fertility / IVF stress; Pregnancy loss or birth trauma; Menopause adjustment; Balancing multiple roles (career / parenting / caregiving); Relationship or parenting stress; Social isolation; Health Anxiety/ Medical Trauma; Culturally and linguistically diverse clients; LGBTQIA+ affirmative therapy; Refugees / migrants / asylum seekers",
-      "Agoraphobia",
-      "Anxiety",
-      "Claustrophobia",
-      "Fear of Failure",
-      "General Adaptation Disorder (Adjustment Disorder)",
-      "Generalized Anxiety Disorder (GAD)",
-      "Health Anxiety",
-      "Panic Disorder & Panic Attacks",
-      "Perfectionism",
-      "Phobias",
-      "Social anxiety disorder / Social Phobia",
-      "Stress",
-      "Adjustment Disorder",
-      "Bereavement",
-      "Burnout",
-      "Clinical Depression (Major Depressive Disorder)",
-      "Confidence",
-      "Depression",
-      "Grief & Loss",
-      "Loss",
-      "Major Depressive Disorder",
-      "Self esteem",
-      "Bullying / workplace conflict",
-      "Career dissatisfaction or change adjustment",
-      "Career transition",
-      "Compassion fatigue / vicarious trauma",
-      "Occupational stress or burnout",
-      "Professional identity and role strain",
-      "Work-life balance challenges",
-      "Workplace stress",
-      "Codependency or people-pleasing",
-      "Communication and boundary issues",
-      "Friendship difficulties / social isolation",
-      "Interpersonal trauma or betrayal",
-      "Intimacy and trust difficulties",
-      "Relationship breakdown",
-      "Separation / divorce adjustment",
-      "Low self esteem",
-      "Perfectionism or Imposter Syndrome",
-      "Life transitions (career change",
-      "relocation",
-      "retirement",
-      "ageing)",
-      "Existential concerns / loss of meaning",
-      "Personal growth and self-development goals",
-      "Fertility / IVF stress",
-      "Pregnancy loss or birth trauma",
-      "Menopause adjustment",
-      "Balancing multiple roles (career",
-      "parenting",
-      "caregiving)",
-      "Relationship or parenting stress",
-      "Health Anxiety/ Medical Trauma",
-      "Culturally and linguistically diverse clients",
-      "LGBTQIA+ affirmative therapy"
-    ],
-    "modalities": [
-      "Acceptance and Commitment Therapy (ACT); Cognitive Behavioural Therapy (CBT); Schema Therapy; Eye Movement Desensitisation and Reprocessing (EMDR); Internal Family Systems (IFS) / Parts Work - Informed; Motivational Interviewing (MI); Trauma-Informed Care; Polyvagal-Informed Therapy",
-      "Acceptance and Commitment Therapy (ACT)",
-      "Cognitive Behavioural Therapy (CBT)",
-      "Schema Therapy",
-      "Eye Movement Desensitisation and Reprocessing (EMDR)",
-      "Internal Family Systems (IFS) / Parts Work - Informed",
-      "Motivational Interviewing (MI)",
-      "Trauma-Informed Care",
-      "Polyvagal-Informed Therapy"
-    ],
+    "presentations": "Agoraphobia; Anxiety; Claustrophobia; Fear of Failure; General Adaptation Disorder (Adjustment Disorder); Generalized Anxiety Disorder (GAD); Health Anxiety; Panic Disorder & Panic Attacks; Perfectionism; Phobias; Social anxiety disorder / Social Phobia; Stress; Adjustment Disorder; Bereavement; Burnout; Clinical Depression (Major Depressive Disorder); Confidence; Depression; Grief & Loss; Loss; Major Depressive Disorder; Self esteem; Bullying / workplace conflict; Career dissatisfaction or change adjustment; Career transition; Compassion fatigue / vicarious trauma; Occupational stress or burnout; Professional identity and role strain; Work-life balance challenges; Workplace stress; Codependency or people-pleasing; Communication and boundary issues; Friendship difficulties / social isolation; Interpersonal trauma or betrayal; Intimacy and trust difficulties; Relationship breakdown; Separation / divorce adjustment; Low self esteem; Perfectionism or Imposter Syndrome; Life transitions (career change / relocation / retirement / ageing); Existential concerns / loss of meaning; Midlife crisis or stuck feelings; Personal growth and self-development goals; Fertility / IVF stress; Pregnancy loss or birth trauma; Menopause adjustment; Balancing multiple roles (career / parenting / caregiving); Relationship or parenting stress; Social isolation; Health Anxiety/ Medical Trauma; Culturally and linguistically diverse clients; LGBTQIA+ affirmative therapy; Refugees / migrants / asylum seekers; Agoraphobia; Anxiety; Claustrophobia; Fear of Failure; General Adaptation Disorder (Adjustment Disorder); Generalized Anxiety Disorder (GAD); Health Anxiety; Panic Disorder & Panic Attacks; Perfectionism; Phobias; Social anxiety disorder / Social Phobia; Stress; Adjustment Disorder; Bereavement; Burnout; Clinical Depression (Major Depressive Disorder); Confidence; Depression; Grief & Loss; Loss; Major Depressive Disorder; Self esteem; Bullying / workplace conflict; Career dissatisfaction or change adjustment; Career transition; Compassion fatigue / vicarious trauma; Occupational stress or burnout; Professional identity and role strain; Work-life balance challenges; Workplace stress; Codependency or people-pleasing; Communication and boundary issues; Friendship difficulties / social isolation; Interpersonal trauma or betrayal; Intimacy and trust difficulties; Relationship breakdown; Separation / divorce adjustment; Low self esteem; Perfectionism or Imposter Syndrome; Life transitions (career change; relocation; retirement; ageing); Existential concerns / loss of meaning; Personal growth and self-development goals; Fertility / IVF stress; Pregnancy loss or birth trauma; Menopause adjustment; Balancing multiple roles (career; parenting; caregiving); Relationship or parenting stress; Health Anxiety/ Medical Trauma; Culturally and linguistically diverse clients; LGBTQIA+ affirmative therapy",
+    "modalities": "Acceptance and Commitment Therapy (ACT); Cognitive Behavioural Therapy (CBT); Schema Therapy; Eye Movement Desensitisation and Reprocessing (EMDR); Internal Family Systems (IFS) / Parts Work - Informed; Motivational Interviewing (MI); Trauma-Informed Care; Polyvagal-Informed Therapy; Acceptance and Commitment Therapy (ACT); Cognitive Behavioural Therapy (CBT); Schema Therapy; Eye Movement Desensitisation and Reprocessing (EMDR); Internal Family Systems (IFS) / Parts Work - Informed; Motivational Interviewing (MI); Trauma-Informed Care; Polyvagal-Informed Therapy",
     "client_types": "Individual",
     "age_range": "17 Yrs +",
     "therapist_type": "Clinical Psychologist",
@@ -2918,13 +1801,13 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/belinda-pacella/",
     "locations": [
       {
-        "availability": [],
+        "availability": "Mondays at 8am (Weekly: Starting 8th Jun)\nThursdays at 9am (Fortnightly: Starting 21st May)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
       }
     ],
-    "last_updated": "2026-03-06",
+    "last_updated": "2026-04-15",
     "availability": [
       "Mondays at 12pm & 1pm (Weekly: from 23 Mar) \u2014 Greville St, Prahran",
       "Thursdays at 11am (Weekly: from 2 Apr) \u2014 Greville St, Prahran",
@@ -2968,7 +1851,8 @@ export const PRACTITIONERS_DATA = [
         ]
       }
     ],
-    "style": "Animal Lover, Openness, Sensitive and Gentle, Spiritual"
+    "style": "Animal Lover, Openness, Sensitive and Gentle, Spiritual",
+    "working_hours": "Working Days: Monday Mornings and Thursday Mornings in Prahran"
   },
   {
     "id": 24,
@@ -2978,20 +1862,8 @@ export const PRACTITIONERS_DATA = [
     "medicare_rebate": "145.25",
     "gender": "Female",
     "alert": "",
-    "presentations": [
-      "Addictions - Gaming;  Agoraphobia;  Anorexia Nervosa;  Anxiety;  Attachment Disorder;  Bereavement;  Binge-Eating Disorder;  Body Dysmorphic Disorder;  Body issues;  Bulimia Nervosa;  Burnout;  Career transition;  Clinical Depression (Major Depressive Disorder);  Confidence;  Depression;  Eating Disorders;  Family;  Fear of Failure;  Gender Dysphoria (form. Gender Identity Disorder);  General Adaptation Disorder (Adjustment Disorder);  Generalized Anxiety Disorder (GAD);  Grief & Loss;  Imposter Syndrome;  LGBTIQA+;  LGBTQI;  Life Transitions;  Loss;  Low self esteem;  Non-Monogomy/ Polyamory;  Panic Disorder & Panic Attacks;  Perfectionism;  Phobias;  Pregnancy and Postnatal Depression Anxiety;  Queer;  Relationship breakdown;  Self esteem;  Separation anxiety disorder;  Sexual problems;  Sexuality and Gender;  Social anxiety disorder / Social Phobia;  Stress;  Vulnerability;  Workplace stress",
-      "Anxiety",
-      "Addictions"
-    ],
-    "modalities": [
-      "Acceptance and Commitment Therapy (ACT); Cognitive Behavioural Therapy (CBT); Schema Therapy; Psychodynamic Therapy; Internal Family Systems (IFS) / Parts Work - Informed; Trauma-Focused Cognitive Behavioural Therapy (TF-CBT)",
-      "Acceptance and Commitment Therapy (ACT)",
-      "Cognitive Behavioural Therapy (CBT)",
-      "Schema Therapy",
-      "Psychodynamic Therapy",
-      "Internal Family Systems (IFS) / Parts Work - Informed",
-      "Trauma-Focused Cognitive Behavioural Therapy (TF-CBT)"
-    ],
+    "presentations": "Addictions - Gaming;  Agoraphobia;  Anorexia Nervosa;  Anxiety;  Attachment Disorder;  Bereavement;  Binge-Eating Disorder;  Body Dysmorphic Disorder;  Body issues;  Bulimia Nervosa;  Burnout;  Career transition;  Clinical Depression (Major Depressive Disorder);  Confidence;  Depression;  Eating Disorders;  Family;  Fear of Failure;  Gender Dysphoria (form. Gender Identity Disorder);  General Adaptation Disorder (Adjustment Disorder);  Generalized Anxiety Disorder (GAD);  Grief & Loss;  Imposter Syndrome;  LGBTIQA+;  LGBTQI;  Life Transitions;  Loss;  Low self esteem;  Non-Monogomy/ Polyamory;  Panic Disorder & Panic Attacks;  Perfectionism;  Phobias;  Pregnancy and Postnatal Depression Anxiety;  Queer;  Relationship breakdown;  Self esteem;  Separation anxiety disorder;  Sexual problems;  Sexuality and Gender;  Social anxiety disorder / Social Phobia;  Stress;  Vulnerability;  Workplace stress; Anxiety; Addictions",
+    "modalities": "Acceptance and Commitment Therapy (ACT); Cognitive Behavioural Therapy (CBT); Schema Therapy; Psychodynamic Therapy; Internal Family Systems (IFS) / Parts Work - Informed; Trauma-Focused Cognitive Behavioural Therapy (TF-CBT); Acceptance and Commitment Therapy (ACT); Cognitive Behavioural Therapy (CBT); Schema Therapy; Psychodynamic Therapy; Internal Family Systems (IFS) / Parts Work - Informed; Trauma-Focused Cognitive Behavioural Therapy (TF-CBT)",
     "client_types": "Individual",
     "age_range": "18 Yrs +",
     "therapist_type": "Clinical Psychologist",
@@ -3008,19 +1880,13 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/poorna-selvaraja/",
     "locations": [
       {
-        "availability": [
-          "Mondays at 9am (Fortnightly: Starting 13th Apr)",
-          "Mondays at 10am (Fortnightly: Starting 13th Apr)",
-          "Tuesdays at 2:30pm (Fortnightly: Starting 21st Apr)",
-          "Wednesdays at 2:30pm (Fortnightly: Starting 15th Apr)",
-          "Wednesdays at 3:30pm (Fortnightly: Starting 6th May)"
-        ],
+        "availability": "Mondays at 9am (Fortnightly: Starting 11th May)\nMondays at 10am (Fortnightly: Starting 11th May)\nWednesdays at 2:30pm (Fortnightly: Starting 13th May)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
       }
     ],
-    "last_updated": "2026-03-06",
+    "last_updated": "2026-04-15",
     "availability": [
       "Mondays at 9am, 10am & 2pm (Fortnightly: Starting 30 Mar) \u2014 Greville St, Prahran",
       "Tuesdays at 2:30pm (Fortnightly: Starting 24 Mar) \u2014 Greville St, Prahran",
@@ -3058,7 +1924,8 @@ export const PRACTITIONERS_DATA = [
         ]
       }
     ],
-    "style": "Assigns Homework/ Worksheets, Calm, Compassionate, Existential, Humorous, Non Judgemental, Outgoing, Spiritual, Warm"
+    "style": "Assigns Homework/ Worksheets, Calm, Compassionate, Existential, Humorous, Non Judgemental, Outgoing, Spiritual, Warm",
+    "working_hours": ""
   },
   {
     "name": "Dr David Spektor",
@@ -3070,7 +1937,7 @@ export const PRACTITIONERS_DATA = [
     "medicareRebate": 145.25,
     "locations": [
       {
-        "availability": [],
+        "availability": "",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
@@ -3136,23 +2003,19 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/pete-steele/",
     "locations": [
       {
-        "availability": [
-          "Tuesdays at 11am (Fortnightly: Starting 14th Apr)",
-          "Tuesdays at 1pm (Fortnightly: Starting 21st Apr)",
-          "Tuesdays at 2pm (Fortnightly: Starting 21st Apr)"
-        ],
+        "availability": "Tuesdays at 11am (Fortnightly: Starting 12th May)\nTuesdays at 9am (Fortnightly: Starting 19th May)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
       },
       {
-        "availability": [],
+        "availability": "",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Telehealth"
       }
     ],
-    "last_updated": "2026-03-25",
+    "last_updated": "2026-04-15",
     "availability": [
       "Tuesdays at 11am (Fortnightly: Starting 31 Mar) \u2014 Greville St, Prahran"
     ],
@@ -3172,7 +2035,8 @@ export const PRACTITIONERS_DATA = [
         ]
       }
     ],
-    "style": ""
+    "style": "",
+    "working_hours": "Working Days: Tuesday Mornings & Wednesday Mornings in Prahran"
   },
   {
     "id": 28,
@@ -3182,59 +2046,8 @@ export const PRACTITIONERS_DATA = [
     "medicare_rebate": "96.65",
     "gender": "Female",
     "alert": "",
-    "presentations": [
-      "ADD and ADHD;  Addictions - Gaming;  Agoraphobia;  Alcohol Dependence;  Anxiety;  Binge-Eating Disorder;  Body Dysmorphic Disorder;  Body issues;  Borderline Personality Disorder;  Bulimia Nervosa;  Cannabis Dependence;  Cocaine Dependence;  Complex Trauma;  Confidence;  Depersonalization Disorder;  Family;  Fear of Failure;  Generalized Anxiety Disorder (GAD);  Hearing Voices and Paranoia;  Imposter Syndrome;  Intergenerational Trauma;  Life Transitions;  Low self esteem;  Obsessive-Compulsive Disorder (OCD);  Panic Disorder & Panic Attacks;  Perfectionism;  Phobias;  Psychosis;  Relationship breakdown;  Schizophrenia;  Self esteem;  Self Injury (Cutting);  Self-Harm (Cutting);  Social anxiety disorder / Social Phobia;  Stress;  Substance Misuse;  Trauma;  Vulnerability",
-      "Anxiety",
-      "Panic Disorder & Panic Attacks",
-      "Phobias",
-      "Burnout",
-      "Clinical Depression (Major Depressive Disorder)",
-      "Confidence",
-      "Depression",
-      "Major Depressive Disorder",
-      "Bullying / workplace conflict",
-      "Career transition",
-      "Work-life balance challenges",
-      "Workplace stress",
-      "Attachment Disorder",
-      "Complex Trauma",
-      "Dissociative Identity / Multiple Personality Disorders",
-      "Trauma",
-      "Vulnerability",
-      "Low self esteem",
-      "Perfectionism or Imposter Syndrome",
-      "Identity exploration (gender",
-      "sexual orientation",
-      "cultural",
-      "spiritual)",
-      "Existential concerns / loss of meaning",
-      "Midlife crisis or \u201cstuck\u201d feelings",
-      "Personal growth and self-development goals",
-      "Alcohol Dependence (Not Current)",
-      "Addictions - Gaming",
-      "Substance Misuse",
-      "Psychosis",
-      "Schizophrenia",
-      "ADD and ADHD",
-      "Borderline Personality Disorder (BPD)",
-      "Chronic Pain and illness",
-      "Anorexia Nervosa ( not current)",
-      "Binge-Eating Disorder (Not Current)",
-      "Body Dysmorphic Disorder",
-      "Body issues",
-      "Bulimia Nervosa ( NOT CURRENT)",
-      "Eating Disorders (Not Current)",
-      "Addictions",
-      "Eating Disorders"
-    ],
-    "modalities": [
-      "Acceptance and Commitment Therapy (ACT);  Cognitive Behaviour Therapy (CBT);  Internal Family Systems (IFS) - Informed;  Mindfulness;  Motivational Interviewing (MI);  Internal Family Systems (IFS)",
-      "Acceptance and Commitment Therapy (ACT)",
-      "Cognitive Behavioural Therapy (CBT)",
-      "Mindfulness-Based Cognitive Therapy (MBCT)",
-      "Internal Family Systems (IFS) / Parts Work - Informed",
-      "Motivational Interviewing (MI)"
-    ],
+    "presentations": "ADD and ADHD;  Addictions - Gaming;  Agoraphobia;  Alcohol Dependence;  Anxiety;  Binge-Eating Disorder;  Body Dysmorphic Disorder;  Body issues;  Borderline Personality Disorder;  Bulimia Nervosa;  Cannabis Dependence;  Cocaine Dependence;  Complex Trauma;  Confidence;  Depersonalization Disorder;  Family;  Fear of Failure;  Generalized Anxiety Disorder (GAD);  Hearing Voices and Paranoia;  Imposter Syndrome;  Intergenerational Trauma;  Life Transitions;  Low self esteem;  Obsessive-Compulsive Disorder (OCD);  Panic Disorder & Panic Attacks;  Perfectionism;  Phobias;  Psychosis;  Relationship breakdown;  Schizophrenia;  Self esteem;  Self Injury (Cutting);  Self-Harm (Cutting);  Social anxiety disorder / Social Phobia;  Stress;  Substance Misuse;  Trauma;  Vulnerability; Anxiety; Panic Disorder & Panic Attacks; Phobias; Burnout; Clinical Depression (Major Depressive Disorder); Confidence; Depression; Major Depressive Disorder; Bullying / workplace conflict; Career transition; Work-life balance challenges; Workplace stress; Attachment Disorder; Complex Trauma; Dissociative Identity / Multiple Personality Disorders; Trauma; Vulnerability; Low self esteem; Perfectionism or Imposter Syndrome; Identity exploration (gender; sexual orientation; cultural; spiritual); Existential concerns / loss of meaning; Midlife crisis or \u201cstuck\u201d feelings; Personal growth and self-development goals; Alcohol Dependence (Not Current); Addictions - Gaming; Substance Misuse; Psychosis; Schizophrenia; ADD and ADHD; Borderline Personality Disorder (BPD); Chronic Pain and illness; Anorexia Nervosa ( not current); Binge-Eating Disorder (Not Current); Body Dysmorphic Disorder; Body issues; Bulimia Nervosa ( NOT CURRENT); Eating Disorders (Not Current); Addictions; Eating Disorders",
+    "modalities": "Acceptance and Commitment Therapy (ACT);  Cognitive Behaviour Therapy (CBT);  Internal Family Systems (IFS) - Informed;  Mindfulness;  Motivational Interviewing (MI);  Internal Family Systems (IFS); Acceptance and Commitment Therapy (ACT); Cognitive Behavioural Therapy (CBT); Mindfulness-Based Cognitive Therapy (MBCT); Internal Family Systems (IFS) / Parts Work - Informed; Motivational Interviewing (MI)",
     "client_types": "Individual",
     "age_range": "18 Yrs +",
     "therapist_type": "Clinical Psychology Registra",
@@ -3251,15 +2064,13 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/stephanie-stewart/",
     "locations": [
       {
-        "availability": [
-          "Mondays at 2:30pm (Fortnightly: Starting 20th Apr)"
-        ],
+        "availability": "",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Wattletree Rd, Malvern"
       }
     ],
-    "last_updated": "2026-03-06",
+    "last_updated": "2026-04-15",
     "availability": [
       "Mondays at 2:30pm (Fortnightly: Starting 20 Apr) \u2014 Wattletree Rd, Malvern"
     ],
@@ -3279,7 +2090,8 @@ export const PRACTITIONERS_DATA = [
         ]
       }
     ],
-    "style": "Active Listener, Female, Humorous, Openness, Outgoing, Sensitive and Gentle, Talkative"
+    "style": "Active Listener, Female, Humorous, Openness, Outgoing, Sensitive and Gentle, Talkative",
+    "working_hours": ""
   },
   {
     "id": 8,
@@ -3351,13 +2163,13 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/clare-tuttleby/",
     "locations": [
       {
-        "availability": [],
+        "availability": "",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
       },
       {
-        "availability": [],
+        "availability": "",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Telehealth"
@@ -3512,15 +2324,7 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/elizabeth-white/",
     "locations": [
       {
-        "availability": [
-          "Mondays at 2:30pm (Weekly: Starting 18th May)",
-          "Fridays at 11am (Fortnightly: Starting 15th May)",
-          "Fridays at 9am (Fortnightly: Starting 22nd May)",
-          "Mondays at 5:30pm (Fortnightly: Starting 18th May)",
-          "Thursdays at 8am (Fortnightly: Starting 14th May)",
-          "Thursdays at 10am (Fortnightly: Starting 14th May)",
-          "Wednesdays at 10am (Fortnightly: Starting 27th May)"
-        ],
+        "availability": "Mondays at 2:30pm (Weekly: Starting 18th May)\nWednesdays at 9am (Weekly: Starting 20th May)\nFridays at 9am (Fortnightly: Starting 15th May)\nFridays at 11am (Fortnightly: Starting 15th May)\nMondays at 5:30pm (Fortnightly: Starting 15th Jun)\nThursdays at 8am (Fortnightly: Starting 14th May)\nThursdays at 10am (Fortnightly: Starting 14th May)\nWednesdays at 10am (Fortnightly: Starting 27th May)\nWednesdays at 1pm (Fortnightly: Starting 27th May)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
@@ -3580,66 +2384,8 @@ export const PRACTITIONERS_DATA = [
     "medicare_rebate": "145.25",
     "gender": "Female",
     "alert": "",
-    "presentations": [
-      "Compassion fatigue / vicarious trauma; Professional identity and role strain; Work-life balance challenges; Codependency or people-pleasing; Communication and boundary issues; Family Conflict/ belnded family stress; Friendship difficulties / social isolation; Interpersonal trauma or betrayal; Relationship breakdown; Separation / divorce adjustment; Sex and intimacy; Low self esteem; Life transitions (career change / relocation / retirement / ageing); Existential concerns / loss of meaning; Midlife crisis or stuck feelings; Alcohol Dependence (Recent Diagnosis or suspected); Cannabis Dependence (Recent diagnoisis or Suspected); Emotional Eating; Substance Misuse; Perinatal Anxiety and Depression; Fertility / IVF stress; Pregnancy loss or birth trauma; Menopause adjustment; Balancing multiple roles (career / parenting / caregiving); Relationship or parenting stress; Adjusting to fatherhood or retirement; Emotional suppression / anger issues; Grief and bereavement; Chronic illness or loss of independence; Loneliness and social isolation; Life review and meaning-making; Adjustment to health conditions; and ageing; Health Anxiety/ Medical Trauma; Anorexia Nervosa ( not current); Binge-Eating Disorder (Not Current); Body issues; Eating Disorders (Not Current); immigration issues;  issues with feeling different; cultural misfits; adjustment of migrants.",
-      "Compassion fatigue / vicarious trauma",
-      "Professional identity and role strain",
-      "Work-life balance challenges",
-      "Codependency or people-pleasing",
-      "Communication and boundary issues",
-      "Family Conflict/ belnded family stress",
-      "Friendship difficulties / social isolation",
-      "Interpersonal trauma or betrayal",
-      "Relationship breakdown",
-      "Separation / divorce adjustment",
-      "Sex and intimacy",
-      "Low self esteem",
-      "Life transitions (career change",
-      "relocation",
-      "retirement",
-      "ageing)",
-      "Existential concerns / loss of meaning",
-      "Midlife crisis or \u201cstuck\u201d feelings",
-      "Alcohol Dependence (Recent Diagnosis or suspected)",
-      "Cannabis Dependence (Recent diagnoisis or Suspected)",
-      "Emotional Eating",
-      "Substance Misuse",
-      "Perinatal Anxiety and Depression",
-      "Fertility / IVF stress",
-      "Pregnancy loss or birth trauma",
-      "Menopause adjustment",
-      "Balancing multiple roles (career",
-      "parenting",
-      "caregiving)",
-      "Relationship or parenting stress",
-      "Adjusting to fatherhood or retirement",
-      "Emotional suppression / anger issues",
-      "Grief and bereavement",
-      "Chronic illness or loss of independence",
-      "Loneliness and social isolation",
-      "Life review and meaning-making",
-      "Adjustment to health conditions",
-      "and ageing",
-      "Health Anxiety/ Medical Trauma",
-      "Anorexia Nervosa ( not current)",
-      "Binge-Eating Disorder (Not Current)",
-      "Body issues",
-      "Eating Disorders (Not Current)",
-      "immigration issues, issues with feeling 'different'",
-      "'cultural misfits',adjustment of migrants.",
-      "Addictions",
-      "Eating Disorders"
-    ],
-    "modalities": [
-      "Compassion-Focused Therapy (CFT); Psychodynamic Therapy; Interpersonal Therapy (IPT); Humanistic / Person-Centred Therapy; Eye Movement Desensitisation and Reprocessing (EMDR); Internal Family Systems (IFS) / Parts Work - Informed; Eclectic / Integrative Therapy",
-      "Compassion-Focused Therapy (CFT)",
-      "Psychodynamic Therapy",
-      "Interpersonal Therapy (IPT)",
-      "Humanistic / Person-Centred Therapy",
-      "Eye Movement Desensitisation and Reprocessing (EMDR)",
-      "Internal Family Systems (IFS) / Parts Work - Informed",
-      "Eclectic / Integrative Therapy"
-    ],
+    "presentations": "Compassion fatigue / vicarious trauma; Professional identity and role strain; Work-life balance challenges; Codependency or people-pleasing; Communication and boundary issues; Family Conflict/ belnded family stress; Friendship difficulties / social isolation; Interpersonal trauma or betrayal; Relationship breakdown; Separation / divorce adjustment; Sex and intimacy; Low self esteem; Life transitions (career change / relocation / retirement / ageing); Existential concerns / loss of meaning; Midlife crisis or stuck feelings; Alcohol Dependence (Recent Diagnosis or suspected); Cannabis Dependence (Recent diagnoisis or Suspected); Emotional Eating; Substance Misuse; Perinatal Anxiety and Depression; Fertility / IVF stress; Pregnancy loss or birth trauma; Menopause adjustment; Balancing multiple roles (career / parenting / caregiving); Relationship or parenting stress; Adjusting to fatherhood or retirement; Emotional suppression / anger issues; Grief and bereavement; Chronic illness or loss of independence; Loneliness and social isolation; Life review and meaning-making; Adjustment to health conditions; and ageing; Health Anxiety/ Medical Trauma; Anorexia Nervosa ( not current); Binge-Eating Disorder (Not Current); Body issues; Eating Disorders (Not Current); immigration issues;  issues with feeling different; cultural misfits; adjustment of migrants.; Compassion fatigue / vicarious trauma; Professional identity and role strain; Work-life balance challenges; Codependency or people-pleasing; Communication and boundary issues; Family Conflict/ belnded family stress; Friendship difficulties / social isolation; Interpersonal trauma or betrayal; Relationship breakdown; Separation / divorce adjustment; Sex and intimacy; Low self esteem; Life transitions (career change; relocation; retirement; ageing); Existential concerns / loss of meaning; Midlife crisis or \u201cstuck\u201d feelings; Alcohol Dependence (Recent Diagnosis or suspected); Cannabis Dependence (Recent diagnoisis or Suspected); Emotional Eating; Substance Misuse; Perinatal Anxiety and Depression; Fertility / IVF stress; Pregnancy loss or birth trauma; Menopause adjustment; Balancing multiple roles (career; parenting; caregiving); Relationship or parenting stress; Adjusting to fatherhood or retirement; Emotional suppression / anger issues; Grief and bereavement; Chronic illness or loss of independence; Loneliness and social isolation; Life review and meaning-making; Adjustment to health conditions; and ageing; Health Anxiety/ Medical Trauma; Anorexia Nervosa ( not current); Binge-Eating Disorder (Not Current); Body issues; Eating Disorders (Not Current); immigration issues, issues with feeling 'different'; 'cultural misfits',adjustment of migrants.; Addictions; Eating Disorders",
+    "modalities": "Compassion-Focused Therapy (CFT); Psychodynamic Therapy; Interpersonal Therapy (IPT); Humanistic / Person-Centred Therapy; Eye Movement Desensitisation and Reprocessing (EMDR); Internal Family Systems (IFS) / Parts Work - Informed; Eclectic / Integrative Therapy; Compassion-Focused Therapy (CFT); Psychodynamic Therapy; Interpersonal Therapy (IPT); Humanistic / Person-Centred Therapy; Eye Movement Desensitisation and Reprocessing (EMDR); Internal Family Systems (IFS) / Parts Work - Informed; Eclectic / Integrative Therapy",
     "client_types": "Individual",
     "age_range": "25 Yrs +",
     "therapist_type": "Clinical Psychologist",
@@ -3656,18 +2402,13 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/karen-pereira-york/",
     "locations": [
       {
-        "availability": [
-          "Mondays at 10:30am (Weekly: Starting 13th Apr)",
-          "Wednesdays at 1pm (Weekly: Starting 15th Apr)",
-          "Wednesdays at 2pm (Weekly: Starting 15th Apr)",
-          "Thursdays at 9am (Fortnightly: Starting 9th Apr)"
-        ],
+        "availability": "Thursdays at 1pm (Fortnightly: Starting 7th May)\nTuesdays at 4:30pm (Fortnightly: Starting 5th May)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
       }
     ],
-    "last_updated": "2026-03-06",
+    "last_updated": "2026-04-15",
     "availability": [
       "Wednesdays at 1pm & 2pm (Weekly: from 25 Mar) \u2014 Greville St, Prahran",
       "Thursdays at 10:30am & 9am (Fortnightly: Starting 2 Apr) \u2014 Greville St, Prahran"
@@ -3703,6 +2444,7 @@ export const PRACTITIONERS_DATA = [
         ]
       }
     ],
-    "style": "A parent, Calm, Creative, Female, Good at tough Love, Spiritual"
+    "style": "A parent, Calm, Creative, Female, Good at tough Love, Spiritual",
+    "working_hours": "Working Days: Monday Mornings, Tuesday Afternoon / Evenings, Wednesday Afternoon/ Evenings & Thursday Mornings in Prahran"
   }
 ];

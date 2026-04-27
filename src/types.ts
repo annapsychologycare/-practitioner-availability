@@ -29,6 +29,9 @@ export type Practitioner = {
   locations: Location[];
   accepts_couples?: boolean;
   short_bio?: string;
+  working_hours?: string;
+  location_notes?: Record<string, string>;
+  style?: string;
   availability?: Array<{ location: string; weekly: string[]; fortnightly: string[]; monthly?: string[] }>;
   additional_info?: string;
   spare_time?: string;
