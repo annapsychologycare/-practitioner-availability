@@ -52,7 +52,8 @@ function renderSlotLine(slot: string, type: "weekly" | "fortnightly"): string {
 }
 
 function buildAvailabilitySection(
-  locations: Array<{ location: string; availability: string | string[] }>
+  locations: Array<{ location: string; availability: string | string[] }>,
+  locationNotes?: Record<string, string>
 ): string {
   const activeLocs = locations.filter((l) => {
     const { weekly, fortnightly } = parseAvailability(l.availability || "");
@@ -71,11 +72,16 @@ function buildAvailabilitySection(
     const malvernNote = isMalvern
       ? `<div style="font-size:12px;color:#8D5273;font-style:italic;margin-bottom:10px;line-height:1.6;">📍 We're excited to be moving to a larger, purpose-built clinic at Burke Road, Camberwell from 9 June 2026. Appointments from that date will be held at the new location.</div>`
       : "";
+    // Practitioner-specific location change note
+    const locNoteText = locationNotes?.[loc.location] || "";
+    const locChangeNote = locNoteText
+      ? `<div style="font-size:12px;color:#5a3060;background:#f5f0f9;border-left:3px solid #8D5273;border-radius:4px;padding:8px 12px;margin-bottom:10px;line-height:1.6;"><strong>Please Note:</strong> ${locNoteText.replace(/^Please Note:\s*/i, "")}</div>`
+      : "";
     const slots = [
       ...weekly.map((s) => renderSlotLine(s, "weekly")),
       ...fortnightly.map((s) => renderSlotLine(s, "fortnightly")),
     ];
-    html += `<div style="padding:18px 22px 0;"><div style="font-size:11px;font-weight:700;color:#8D5273;text-transform:uppercase;letter-spacing:0.07em;margin-bottom:10px;">Availability${locLabel}</div>${malvernNote}<div style="font-size:14px;color:#333;line-height:2;">${slots.join("<br>")}</div></div>`;
+    html += `<div style="padding:18px 22px 0;"><div style="font-size:11px;font-weight:700;color:#8D5273;text-transform:uppercase;letter-spacing:0.07em;margin-bottom:10px;">Availability${locLabel}</div>${malvernNote}${locChangeNote}<div style="font-size:14px;color:#333;line-height:2;">${slots.join("<br>")}</div></div>`;
   }
   return html;
 }
@@ -123,11 +129,12 @@ function buildEmailHtml(
     link_to_bio: string;
     short_bio?: string;
     working_hours?: string;
+    location_notes?: Record<string, string>;
   }>
 ): string {
   let cards = "";
   for (const p of practitioners) {
-    const availHtml = buildAvailabilitySection(p.availabilityLocations || []);
+    const availHtml = buildAvailabilitySection(p.availabilityLocations || [], p.location_notes);
     const feesInline = formatFeesInline(p.fees || "");
     const medicareInline = formatMedicareInline(p.medicare_rebate || "");
     const profileLink = p.link_to_bio
@@ -252,6 +259,7 @@ const SendClientModal: React.FC<Props> = ({ selected, locationFilter, onClose, o
           alert: p.alert,
           short_bio: p.short_bio,
           working_hours: (p as any).working_hours,
+          location_notes: (p as any).location_notes,
         };
       }),
     [selected, locationFilter]
