@@ -87,6 +87,7 @@ function PractitionerEditor({ p, onUpdate, onClose }: { p: Practitioner; onUpdat
 
   // Profile
   const [shortBio, setShortBio] = useState(p.short_bio || "");
+  const [workingHours, setWorkingHours] = useState((p as any).working_hours || "");
   const [bio, setBio] = useState(p.bio || "");
   const [qualifications, setQualifications] = useState(p.qualifications || "");
   const [additionalInfo, setAdditionalInfo] = useState(p.additional_info || "");
@@ -136,6 +137,7 @@ function PractitionerEditor({ p, onUpdate, onClose }: { p: Practitioner; onUpdat
       medicare_rebate: medicareRebate,
       billing_types: billingTypes,
       short_bio: shortBio,
+      working_hours: workingHours,
       bio,
       qualifications,
       additional_info: additionalInfo,
@@ -232,6 +234,7 @@ function PractitionerEditor({ p, onUpdate, onClose }: { p: Practitioner; onUpdat
             <TextField label="Therapist Style" value={style} onChange={setStyle} placeholder="e.g. Calm, Compassionate, Warm, Direct" />
             <div className="text-xs text-base-content/50 mb-2">Comma-separated personality keywords shown as tags in search</div>
             <TextAreaField label="Short Bio (email/cards)" value={shortBio} onChange={setShortBio} rows={3} placeholder="Brief description for emails..." />
+            <TextField label="Working Days, Hours & Locations" value={workingHours} onChange={setWorkingHours} placeholder="e.g. Mon–Fri, 8am–7pm · Wattletree Rd Malvern & Greville St Prahran" />
             <TextAreaField label="Full Bio" value={bio} onChange={setBio} rows={6} placeholder="Full practitioner bio..." />
             <TextField label="Qualifications" value={qualifications} onChange={setQualifications} />
             <TextAreaField label="Additional Info" value={additionalInfo} onChange={setAdditionalInfo} rows={3} />
@@ -258,9 +261,10 @@ function PractitionerEditor({ p, onUpdate, onClose }: { p: Practitioner; onUpdat
                     <option value="">Select location...</option>
                     <option key="greville" value="Greville St, Prahran">Greville St, Prahran</option>
                     <option key="malvern" value="Wattletree Rd, Malvern">Wattletree Rd, Malvern</option>
+                    <option key="camberwell" value="Burke Rd, Camberwell">Burke Rd, Camberwell</option>
                     <option key="stkilda" value="Victoria St, St Kilda">Victoria St, St Kilda</option>
                     <option key="telehealth" value="Telehealth">Telehealth</option>
-                    {loc.location && !["Greville St, Prahran", "Wattletree Rd, Malvern", "Victoria St, St Kilda", "Telehealth"].includes(loc.location) && (
+                    {loc.location && !["Greville St, Prahran", "Wattletree Rd, Malvern", "Burke Rd, Camberwell", "Victoria St, St Kilda", "Telehealth"].includes(loc.location) && (
                       <option key="custom" value={loc.location}>{loc.location}</option>
                     )}
                   </select>

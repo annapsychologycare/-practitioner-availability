@@ -562,7 +562,8 @@ export default function FindPractitioner({ practitioners }: Props) {
                 <option value="">Any location</option>
                 <option value="Prahran">Greville St, Prahran</option>
                 <option value="Malvern">Wattletree Rd, Malvern</option>
-                <option value="St Kilda">St Kilda</option>
+                <option value="Camberwell">Burke Rd, Camberwell</option>
+                <option value="St Kilda">Victoria St, St Kilda</option>
                 <option value="Telehealth">Online / Telehealth</option>
               </select>
             </div>
