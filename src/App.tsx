@@ -1,24 +1,13 @@
-import React, { useState, Component, ErrorInfo, ReactNode } from "react";
-import { PRACTITIONERS_DATA } from "./practitionersData";
-import { Practitioner } from "./types";
+import React, { Component, ErrorInfo, ReactNode, useState } from "react";
 import FindPractitioner from "./FindPractitioner";
 import Directory from "./Directory";
 import AvailabilitySnapshot from "./AvailabilitySnapshot";
 import IntakeTab from "./components/IntakeTab";
 import { createRoot } from "react-dom/client";
+import { PRACTITIONERS_DATA } from "./practitionersData";
 import "./index.css";
 
-const STORAGE_KEY = "pc_practitioners_v8";
-
-function loadPractitioners(): Practitioner[] {
-  try {
-    const stored = localStorage.getItem(STORAGE_KEY);
-    if (stored) return JSON.parse(stored);
-  } catch {}
-  return PRACTITIONERS_DATA as unknown as Practitioner[];
-}
-
-// Error boundary to catch crashes and show diagnostic info
+// Error boundary
 class ErrorBoundary extends Component<{ children: ReactNode }, { error: Error | null }> {
   constructor(props: { children: ReactNode }) {
     super(props);
@@ -52,64 +41,67 @@ class ErrorBoundary extends Component<{ children: ReactNode }, { error: Error | 
 
 type Tab = "find" | "directory" | "snapshot" | "intake";
 
-export default function App() {
+function AppContent() {
   const [tab, setTab] = useState<Tab>("find");
-  const [practitioners] = useState<Practitioner[]>(loadPractitioners);
+
+  const tabs = [
+    { key: "find", label: "🔍 Find a Practitioner" },
+    { key: "directory", label: "📖 Directory" },
+    { key: "snapshot", label: "📋 Availability Snapshot" },
+    { key: "intake", label: "📝 Intake" },
+  ] as const;
 
   return (
-    <div className="min-h-screen bg-base-200">
+    <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <div className="bg-primary text-primary-content shadow-md">
-        <div className="max-w-7xl mx-auto px-4 py-4">
-          <h1 className="text-2xl font-bold">PsychologyCare</h1>
-          <p className="text-primary-content/80 text-sm">Practitioner Matching & Availability Tool</p>
+      <div className="bg-gradient-to-r from-purple-700 to-purple-900 text-white shadow-md">
+        <div className="max-w-7xl mx-auto px-4 py-8">
+          <h1 className="text-4xl font-bold mb-2" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300 }}>
+            <span>psychology</span><span style={{ fontWeight: 700 }}>care</span>
+          </h1>
+          <p className="text-purple-100">Practitioner Matching & Client Intake</p>
         </div>
       </div>
 
-      {/* Tabs */}
-      <div className="bg-base-100 shadow-sm border-b border-base-300">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="tabs tabs-bordered">
+      {/* Tab Navigation */}
+      <div className="bg-white border-b border-purple-100 sticky top-0 z-40 shadow-sm">
+        <div className="max-w-7xl mx-auto px-4 flex gap-4">
+          {tabs.map((t) => (
             <button
-              className={`tab tab-lg font-medium ${tab === "find" ? "tab-active" : ""}`}
-              onClick={() => setTab("find")}
+              key={t.key}
+              onClick={() => setTab(t.key as Tab)}
+              className={`px-4 py-3 font-medium text-sm border-b-2 transition-all ${
+                tab === t.key
+                  ? "text-purple-700 border-purple-700"
+                  : "text-gray-600 border-transparent hover:text-purple-600"
+              }`}
             >
-              🔍 Find a Practitioner
+              {t.label}
             </button>
-            <button
-              className={`tab tab-lg font-medium ${tab === "directory" ? "tab-active" : ""}`}
-              onClick={() => setTab("directory")}
-            >
-              👥 Directory
-            </button>
-            <button
-              className={`tab tab-lg font-medium ${tab === "snapshot" ? "tab-active" : ""}`}
-              onClick={() => setTab("snapshot")}
-            >
-              📋 Availability Snapshot
-            </button>
-            <button
-              className={`tab tab-lg font-medium ${tab === "intake" ? "tab-active" : ""}`}
-              onClick={() => setTab("intake")}
-            >
-              📝 Intake
-            </button>
-          </div>
+          ))}
         </div>
       </div>
 
       {/* Content */}
-      <div className="max-w-7xl mx-auto px-4 py-6">
+      <div className="max-w-7xl mx-auto px-4 py-8">
         <ErrorBoundary>
-          {tab === "find" && <FindPractitioner practitioners={practitioners} />}
-          {tab === "directory" && <Directory practitioners={practitioners} />}
-          {tab === "snapshot" && <AvailabilitySnapshot practitioners={practitioners} />}
+          {tab === "find" && <FindPractitioner practitioners={PRACTITIONERS_DATA} />}
+          {tab === "directory" && <Directory practitioners={PRACTITIONERS_DATA} />}
+          {tab === "snapshot" && <AvailabilitySnapshot practitioners={PRACTITIONERS_DATA} />}
           {tab === "intake" && <IntakeTab />}
         </ErrorBoundary>
       </div>
+
+      {/* Footer */}
+      <footer className="bg-gray-900 text-gray-300 mt-16 py-8">
+        <div className="max-w-7xl mx-auto px-4 text-center text-sm">
+          <p>PsychologyCare VIC · Melbourne</p>
+          <p className="mt-2 text-gray-500">For professional inquiries: info@psychologycare.com.au</p>
+        </div>
+      </footer>
     </div>
   );
 }
 
 const root = createRoot(document.getElementById("root")!);
-root.render(<App />);
+root.render(<AppContent />);

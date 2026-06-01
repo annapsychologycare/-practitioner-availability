@@ -35,7 +35,8 @@ const AvailabilitySnapshot: React.FC<Props> = ({ practitioners }) => {
 
   const visible = useMemo(() => {
     const q = search.toLowerCase();
-    return practitioners
+    return [...practitioners]
+      .sort((a, b) => a.name.localeCompare(b.name))
       .map(prac => {
         const locs = prac.locations
           .map(loc => ({
@@ -80,7 +81,7 @@ const AvailabilitySnapshot: React.FC<Props> = ({ practitioners }) => {
           {FILTERS.map(f => (
             <button
               key={f.key}
-              className={`join-item btn btn-sm ${filter === f.key ? "btn-primary" : "btn-ghost border border-base-300"}`}
+              className="join-item btn btn-sm" style={{ backgroundColor: filter === f.key ? "#2C244C" : "white", color: filter === f.key ? "white" : "#36454F", border: filter === f.key ? "none" : "1px solid #CDA8BA" }}
               onClick={() => setFilter(f.key)}
             >
               {f.label}
@@ -100,7 +101,7 @@ const AvailabilitySnapshot: React.FC<Props> = ({ practitioners }) => {
       ) : (
         <div className="grid grid-cols-2 gap-3">
           {visible.map(({ prac, locs }) => (
-            <div key={prac.name} className="card bg-base-100 border border-base-300 shadow-sm">
+            <div key={prac.name} className="card bg-white shadow-sm" style={{ border: "1px solid #CDA8BA" }}>
               <div className="card-body p-4 gap-2">
                 <h3 className="font-bold text-base text-base-content">{prac.name}</h3>
                 {locs.map(loc => (
@@ -115,7 +116,7 @@ const AvailabilitySnapshot: React.FC<Props> = ({ practitioners }) => {
                           <li key={i} className="text-sm text-base-content flex items-baseline gap-2">
                             <span>{time}</span>
                             {type && (
-                              <span className={`text-xs font-semibold px-1.5 py-0.5 rounded ${type.toLowerCase() === "weekly" ? "bg-green-100 text-green-700" : "bg-blue-100 text-blue-700"}`}>
+                              <span className="text-xs font-semibold px-1.5 py-0.5 rounded" style={{ backgroundColor: type.toLowerCase() === "weekly" ? "rgba(54,97,136,0.12)" : "rgba(82,163,186,0.12)", color: type.toLowerCase() === "weekly" ? "#366188" : "#52A3BA" }}>
                                 {type}{date ? ` · from ${date}` : ""}
                               </span>
                             )}

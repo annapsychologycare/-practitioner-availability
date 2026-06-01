@@ -34,8 +34,8 @@ export default function MultiSelectDropdown({ label, options, selected, onChange
       <button
         type="button"
         onClick={() => setOpen(!open)}
-        className="btn btn-sm btn-bordered w-full justify-between font-normal border border-base-300 bg-base-100 hover:bg-base-200 text-left"
-        style={{ minHeight: "2rem", height: "auto", paddingTop: "0.3rem", paddingBottom: "0.3rem" }}
+        className="btn btn-sm w-full justify-between font-normal text-left"
+        style={{ border: "1px solid #CDA8BA", backgroundColor: "white", minHeight: "2rem", height: "auto", paddingTop: "0.3rem", paddingBottom: "0.3rem" }}
       >
         <span className="truncate text-sm">
           {selected.length === 0
@@ -48,8 +48,8 @@ export default function MultiSelectDropdown({ label, options, selected, onChange
       </button>
 
       {open && (
-        <div className="absolute z-50 mt-1 w-full min-w-64 bg-base-100 border border-base-300 rounded-lg shadow-lg"
-          style={{ maxHeight: "280px", overflowY: "auto" }}>
+        <div className="absolute z-50 mt-1 w-full min-w-64 bg-white rounded-lg shadow-lg"
+          style={{ border: "1px solid #CDA8BA", maxHeight: "280px", overflowY: "auto" }}>
           <div className="p-2 border-b border-base-200 sticky top-0 bg-base-100">
             <input
               type="text"

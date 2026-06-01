@@ -24,7 +24,7 @@ export default function Directory({ practitioners }: Props) {
     <div>
       {selected && (
         <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4" onClick={() => setSelected(null)}>
-          <div className="bg-base-100 rounded-2xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto" onClick={e => e.stopPropagation()}>
+          <div className="bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto" onClick={e => e.stopPropagation()}>
             <div className="p-6">
               <div className="flex items-start justify-between mb-4">
                 <div>
@@ -37,7 +37,7 @@ export default function Directory({ practitioners }: Props) {
               </div>
               
               {selected.alert && (
-                <div className="alert alert-warning py-2 px-3 text-sm mb-4">⚠️ {selected.alert}</div>
+                <div className="py-2 px-3 text-sm mb-4 rounded-lg border-l-4" style={{ backgroundColor: "#F0EEF7", borderLeftColor: "#8D5273", color: "#2C244C" }}>⚠️ {selected.alert}</div>
               )}
 
               <div className="grid grid-cols-2 gap-3 mb-4 text-sm">
@@ -71,7 +71,7 @@ export default function Directory({ practitioners }: Props) {
                     <div key={i} className="mb-2">
                       <div className="text-xs font-semibold text-base-content/60">📍 {loc.location}</div>
                       {loc.availability ? (
-                        <div className="text-sm text-success whitespace-pre-line">{loc.availability}</div>
+                        <div className="text-sm whitespace-pre-line" style={{ color: "#366188" }}>{Array.isArray(loc.availability) ? loc.availability.join('\n') : loc.availability}</div>
                       ) : (
                         <div className="text-sm text-base-content/40 italic">None listed</div>
                       )}
@@ -116,17 +116,21 @@ export default function Directory({ practitioners }: Props) {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
         {filtered.map(p => {
-          const hasAvail = p.locations.some(l => l.availability && l.availability.trim());
+          const hasAvail = p.locations.some(l => {
+            if (!l.availability) return false;
+            if (Array.isArray(l.availability)) return l.availability.length > 0;
+            return l.availability.trim().length > 0;
+          });
           return (
             <div
-              key={p.id}
-              className="card bg-base-100 shadow-sm border border-base-300 cursor-pointer hover:border-primary/50 hover:shadow-md transition-all"
+              key={p.name}
+              className="card bg-white shadow-sm cursor-pointer hover:shadow-md transition-all" style={{ border: "1px solid #CDA8BA" }}
               onClick={() => setSelected(p)}
             >
               <div className="card-body p-4">
                 <div className="flex items-start justify-between">
                   <div className="flex-1 min-w-0">
-                    <div className="font-bold text-primary truncate">{p.name}</div>
+                    <div className="font-bold truncate" style={{ color: "#2C244C" }}>{p.name}</div>
                     <div className="text-xs text-base-content/60 mt-0.5">{p.title}</div>
                   </div>
                   <div className="flex flex-col gap-1 items-end ml-2">

@@ -11,7 +11,8 @@ interface Props {
 
 interface Filters {
   keyword: string;
-  location: string;
+  locations: string[];
+  locationMatchAll: boolean;
   gender: string;
   clientType: string;
   therapistType: string;
@@ -19,13 +20,17 @@ interface Filters {
   hasAvailability: boolean;
 
   presentations: string[];
+  presentationsMatchAll: boolean;
   modalities: string[];
+  modalitiesMatchAll: boolean;
   styles: string[];
+  stylesMatchAll: boolean;
   billingTypes: string[];
   clientAge: string;
   practitionerNames: string[];
   availabilityTypes: string[];
   days: string[];
+  daysMatchAll: boolean;
 }
 
 const DAYS_OF_WEEK = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
@@ -125,8 +130,11 @@ function scoreMatch(p: Practitioner, filters: Filters): number {
     score += matches + presMatches * 2;
   }
 
-  if (filters.location) {
-    const hasLoc = p.locations.some(l => l.location.toLowerCase().includes(filters.location.toLowerCase()));
+  if (filters.locations.length > 0) {
+    const locMatchFn = (loc: string) => p.locations.some(l => l.location.toLowerCase().includes(loc.toLowerCase()));
+    const hasLoc = filters.locationMatchAll
+      ? filters.locations.every(locMatchFn)
+      : filters.locations.some(locMatchFn);
     if (!hasLoc) return -1;
   }
 
@@ -152,7 +160,11 @@ function scoreMatch(p: Practitioner, filters: Filters): number {
   }
 
   if (filters.hasAvailability) {
-    const hasAvail = p.locations.some(l => {
+    // When a location filter is active, only count availability at matching locations
+    const relevantLocs = filters.locations.length > 0
+      ? p.locations.filter(l => filters.locations.some(loc => l.location.toLowerCase().includes(loc.toLowerCase())))
+      : p.locations;
+    const hasAvail = relevantLocs.some(l => {
       const avail = l.availability;
       if (!avail) return false;
       if (Array.isArray(avail)) return avail.length > 0;
@@ -164,15 +176,20 @@ function scoreMatch(p: Practitioner, filters: Filters): number {
   if (filters.presentations.length > 0) {
     const presVal: any = p.presentations;
     const presText = (presVal == null ? "" : typeof presVal === "string" ? presVal : Array.isArray(presVal) ? presVal.join(" ") : String(presVal)).toLowerCase();
-    const allMatch = filters.presentations.every(pres => presText.includes(pres.toLowerCase()));
-    if (!allMatch) return -1;
+    // OR or AND logic based on toggle
+    const presMatch = filters.presentationsMatchAll
+      ? filters.presentations.every(pres => presText.includes(pres.toLowerCase()))
+      : filters.presentations.some(pres => presText.includes(pres.toLowerCase()));
+    if (!presMatch) return -1;
   }
 
   if (filters.styles.length > 0) {
     const styleVal: any = (p as any).style;
     const styleText = (styleVal == null ? "" : typeof styleVal === "string" ? styleVal : Array.isArray(styleVal) ? styleVal.join(" ") : String(styleVal)).toLowerCase();
-    const allMatch = filters.styles.every(s => styleText.includes(s.toLowerCase()));
-    if (!allMatch) return -1;
+    const styleMatch = filters.stylesMatchAll
+      ? filters.styles.every(s => styleText.includes(s.toLowerCase()))
+      : filters.styles.some(s => styleText.includes(s.toLowerCase()));
+    if (!styleMatch) return -1;
   }
 
   if (filters.billingTypes.length > 0) {
@@ -196,12 +213,15 @@ function scoreMatch(p: Practitioner, filters: Filters): number {
   if (filters.modalities.length > 0) {
     const modVal: any = p.modalities;
     const modText = (modVal == null ? "" : typeof modVal === "string" ? modVal : Array.isArray(modVal) ? modVal.join(" ") : String(modVal)).toLowerCase();
-    // For EMDR, also check for "Eye Movement"
-    const allMatch = filters.modalities.every(mod => {
+    // OR or AND logic based on toggle
+    const modMatchFn = (mod: string) => {
       const key = mod.toLowerCase().replace(/^emdr.*/, "eye movement").replace(/^humanistic.*/, "humanistic").replace(/^trauma-informed.*/, "trauma");
       return modText.includes(key) || modText.includes(mod.toLowerCase().substring(0, 10));
-    });
-    if (!allMatch) return -1;
+    };
+    const modMatch = filters.modalitiesMatchAll
+      ? filters.modalities.every(modMatchFn)
+      : filters.modalities.some(modMatchFn);
+    if (!modMatch) return -1;
   }
 
   if (filters.clientAge.trim()) {
@@ -235,8 +255,10 @@ function scoreMatch(p: Practitioner, filters: Filters): number {
       if (!a) return "";
       return Array.isArray(a) ? a.join(" ") : a;
     }).join(" ").toLowerCase();
-    const hasDay = filters.days.some(day => allAvail.includes(day.toLowerCase()));
-    if (!hasDay) return -1;
+    const dayMatch = filters.daysMatchAll
+      ? filters.days.every(day => allAvail.includes(day.toLowerCase()))
+      : filters.days.some(day => allAvail.includes(day.toLowerCase()));
+    if (!dayMatch) return -1;
   }
 
   return score;
@@ -244,7 +266,7 @@ function scoreMatch(p: Practitioner, filters: Filters): number {
 
 interface CardProps {
   p: Practitioner;
-  locationFilter: string;
+  locationFilter: string[];
   isSelected: boolean;
   onToggleSelect: (name: string) => void;
 }
@@ -274,8 +296,8 @@ const PractitionerCard: React.FC<CardProps> = ({ p, locationFilter, isSelected, 
   const [expanded, setExpanded] = useState(false);
   const [copied, setCopied] = useState(false);
 
-  const displayLocs = (locationFilter
-    ? p.locations.filter(l => l.location.toLowerCase().includes(locationFilter.toLowerCase()))
+  const displayLocs = (locationFilter.length > 0
+    ? p.locations.filter(l => locationFilter.some(f => l.location.toLowerCase().includes(f.toLowerCase())))
     : p.locations
   ).map(l => ({ ...l, availability: l.availability ? filterOutMonthly(l.availability) : "" }));
 
@@ -477,7 +499,8 @@ const PractitionerCard: React.FC<CardProps> = ({ p, locationFilter, isSelected, 
 
 export default function FindPractitioner({ practitioners }: Props) {
   const [keyword, setKeyword] = useState("");
-  const [location, setLocation] = useState("");
+  const [selectedLocations, setSelectedLocations] = useState<string[]>([]);
+  const [locationMatchAll, setLocationMatchAll] = useState(false);
   const [gender, setGender] = useState("");
   const [clientType, setClientType] = useState("");
   const [therapistType, setTherapistType] = useState("");
@@ -485,50 +508,56 @@ export default function FindPractitioner({ practitioners }: Props) {
   const [hasAvailability, setHasAvailability] = useState(true);
 
   const [selectedPresentations, setSelectedPresentations] = useState<string[]>([]);
+  const [presentationsMatchAll, setPresentationsMatchAll] = useState(false);
   const [selectedModalities, setSelectedModalities] = useState<string[]>([]);
+  const [modalitiesMatchAll, setModalitiesMatchAll] = useState(false);
   const [selectedStyles, setSelectedStyles] = useState<string[]>([]);
+  const [stylesMatchAll, setStylesMatchAll] = useState(false);
   const [clientAge, setClientAge] = useState("");
   const [selectedPractitionerNames, setSelectedPractitionerNames] = useState<string[]>([]);
   const [selectedAvailabilityTypes, setSelectedAvailabilityTypes] = useState<string[]>([]);
   const [selectedDays, setSelectedDays] = useState<string[]>([]);
+  const [daysMatchAll, setDaysMatchAll] = useState(false);
   const [selectedBillingTypes, setSelectedBillingTypes] = useState<string[]>([]);
-  const [selectedNames, setSelectedNames] = useState<Set<string>>(new Set());
+  const [selectedNames, setSelectedNames] = useState<string[]>([]);
   const [showSendModal, setShowSendModal] = useState(false);
   const [sentSuccess, setSentSuccess] = useState(false);
 
   const allPractitionerNames = useMemo(() => practitioners.map(p => p.name).sort(), [practitioners]);
 
   const results = useMemo(() => {
-    const filters: Filters = { keyword, location, gender, clientType, therapistType, afterHours, hasAvailability, presentations: selectedPresentations, modalities: selectedModalities, styles: selectedStyles, billingTypes: selectedBillingTypes, clientAge, practitionerNames: selectedPractitionerNames, availabilityTypes: selectedAvailabilityTypes, days: selectedDays };
+    const filters: Filters = { keyword, locations: selectedLocations, locationMatchAll, gender, clientType, therapistType, afterHours, hasAvailability, presentations: selectedPresentations, presentationsMatchAll, modalities: selectedModalities, modalitiesMatchAll, styles: selectedStyles, stylesMatchAll, billingTypes: selectedBillingTypes, clientAge, practitionerNames: selectedPractitionerNames, availabilityTypes: selectedAvailabilityTypes, days: selectedDays, daysMatchAll };
     return practitioners
       .map(p => ({ p, score: scoreMatch(p, filters) }))
       .filter(item => item.score >= 0)
       .sort((a, b) => b.score - a.score || a.p.name.localeCompare(b.p.name));
-  }, [practitioners, keyword, location, gender, clientType, therapistType, afterHours, hasAvailability, selectedPresentations, selectedModalities, selectedStyles, selectedBillingTypes, clientAge, selectedPractitionerNames, selectedAvailabilityTypes, selectedDays]);
+  }, [practitioners, keyword, selectedLocations, locationMatchAll, gender, clientType, therapistType, afterHours, hasAvailability, selectedPresentations, presentationsMatchAll, selectedModalities, modalitiesMatchAll, selectedStyles, stylesMatchAll, selectedBillingTypes, clientAge, selectedPractitionerNames, selectedAvailabilityTypes, selectedDays, daysMatchAll]);
 
   const clearFilters = () => {
-    setKeyword(""); setLocation(""); setGender(""); setClientType("");
+    setKeyword(""); setSelectedLocations([]); setLocationMatchAll(false); setGender(""); setClientType("");
     setTherapistType(""); setAfterHours(false); setHasAvailability(false);
-    setSelectedPresentations([]); setSelectedModalities([]); setSelectedStyles([]); setSelectedBillingTypes([]);
-    setClientAge(""); setSelectedPractitionerNames([]); setSelectedAvailabilityTypes([]); setSelectedDays([]);
+    setSelectedPresentations([]); setPresentationsMatchAll(false);
+    setSelectedModalities([]); setModalitiesMatchAll(false);
+    setSelectedStyles([]); setStylesMatchAll(false); setSelectedBillingTypes([]);
+    setClientAge(""); setSelectedPractitionerNames([]); setSelectedAvailabilityTypes([]); setSelectedDays([]); setDaysMatchAll(false);
   };
 
-  const hasFilters = !!(keyword || location || gender || clientType || therapistType || afterHours || hasAvailability || selectedPresentations.length || selectedModalities.length || selectedStyles.length || selectedBillingTypes.length || clientAge || selectedPractitionerNames.length || selectedAvailabilityTypes.length || selectedDays.length);
+  const hasFilters = !!(keyword || selectedLocations.length || gender || clientType || therapistType || afterHours || hasAvailability || selectedPresentations.length || selectedModalities.length || selectedStyles.length || selectedBillingTypes.length || clientAge || selectedPractitionerNames.length || selectedAvailabilityTypes.length || selectedDays.length);
 
   const toggleSelect = (name: string) => {
-    setSelectedNames(prev => {
-      const next = new Set(prev);
-      if (next.has(name)) next.delete(name);
-      else next.add(name);
-      return next;
-    });
+    setSelectedNames(prev =>
+      prev.includes(name) ? prev.filter(n => n !== name) : [...prev, name]
+    );
   };
 
-  const selectedPractitioners = practitioners.filter(p => selectedNames.has(p.name));
+  // Preserve selection order — map names in the order they were selected
+  const selectedPractitioners = selectedNames
+    .map(name => practitioners.find(p => p.name === name))
+    .filter((p): p is typeof practitioners[0] => !!p);
 
   const handleSent = () => {
     setShowSendModal(false);
-    setSelectedNames(new Set());
+    setSelectedNames([]);
     setSentSuccess(true);
     setTimeout(() => setSentSuccess(false), 4000);
   };
@@ -557,15 +586,22 @@ export default function FindPractitioner({ practitioners }: Props) {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 mb-3">
             <div>
-              <label className="label label-text font-semibold pb-1">Location</label>
-              <select className="select select-bordered w-full select-sm" value={location} onChange={e => setLocation(e.target.value)}>
-                <option value="">Any location</option>
-                <option value="Prahran">Greville St, Prahran</option>
-                <option value="Malvern">Wattletree Rd, Malvern</option>
-                <option value="Camberwell">Burke Rd, Camberwell</option>
-                <option value="St Kilda">Victoria St, St Kilda</option>
-                <option value="Telehealth">Online / Telehealth</option>
-              </select>
+              <div className="flex items-center justify-between mb-1">
+                <span className="text-xs font-bold text-base-content/50 uppercase tracking-wide">Location</span>
+                {selectedLocations.length > 1 && (
+                  <div className="flex rounded overflow-hidden border border-purple-200 text-xs">
+                    <button onClick={() => setLocationMatchAll(false)} className={`px-2 py-0.5 ${!locationMatchAll ? "bg-purple-600 text-white" : "bg-white text-purple-600"}`}>Match any</button>
+                    <button onClick={() => setLocationMatchAll(true)} className={`px-2 py-0.5 ${locationMatchAll ? "bg-purple-600 text-white" : "bg-white text-purple-600"}`}>Match all</button>
+                  </div>
+                )}
+              </div>
+              <MultiSelectDropdown
+                label=""
+                options={["Greville St, Prahran", "Wattletree Rd, Malvern", "Burke Rd, Camberwell", "Victoria St, St Kilda", "Telehealth"]}
+                selected={selectedLocations}
+                onChange={setSelectedLocations}
+                placeholder="Any location"
+              />
             </div>
             <div>
               <label className="label label-text font-semibold pb-1">Gender</label>
@@ -596,27 +632,72 @@ export default function FindPractitioner({ practitioners }: Props) {
             </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-3">
-            <MultiSelectDropdown
-              label="Presentations"
-              options={PRESENTATION_OPTIONS}
-              selected={selectedPresentations}
-              onChange={setSelectedPresentations}
-              placeholder="Any presentation"
-            />
-            <MultiSelectDropdown
-              label="Modalities"
-              options={MODALITY_OPTIONS}
-              selected={selectedModalities}
-              onChange={setSelectedModalities}
-              placeholder="Any modality"
-            />
-            <MultiSelectDropdown
-              label="Therapist Style"
-              options={STYLE_OPTIONS}
-              selected={selectedStyles}
-              onChange={setSelectedStyles}
-              placeholder="Any style"
-            />
+            <div>
+              <div className="flex items-center justify-between mb-1">
+                <span className="text-xs font-bold text-base-content/50 uppercase tracking-wide">Presentations</span>
+                {selectedPresentations.length > 1 && (
+                  <div className="flex rounded overflow-hidden border border-purple-200 text-xs">
+                    <button
+                      onClick={() => setPresentationsMatchAll(false)}
+                      className={`px-2 py-0.5 ${!presentationsMatchAll ? "bg-purple-600 text-white" : "bg-white text-purple-600"}`}
+                    >Match any</button>
+                    <button
+                      onClick={() => setPresentationsMatchAll(true)}
+                      className={`px-2 py-0.5 ${presentationsMatchAll ? "bg-purple-600 text-white" : "bg-white text-purple-600"}`}
+                    >Match all</button>
+                  </div>
+                )}
+              </div>
+              <MultiSelectDropdown
+                label=""
+                options={PRESENTATION_OPTIONS}
+                selected={selectedPresentations}
+                onChange={setSelectedPresentations}
+                placeholder="Any presentation"
+              />
+            </div>
+            <div>
+              <div className="flex items-center justify-between mb-1">
+                <span className="text-xs font-bold text-base-content/50 uppercase tracking-wide">Modalities</span>
+                {selectedModalities.length > 1 && (
+                  <div className="flex rounded overflow-hidden border border-purple-200 text-xs">
+                    <button
+                      onClick={() => setModalitiesMatchAll(false)}
+                      className={`px-2 py-0.5 ${!modalitiesMatchAll ? "bg-purple-600 text-white" : "bg-white text-purple-600"}`}
+                    >Match any</button>
+                    <button
+                      onClick={() => setModalitiesMatchAll(true)}
+                      className={`px-2 py-0.5 ${modalitiesMatchAll ? "bg-purple-600 text-white" : "bg-white text-purple-600"}`}
+                    >Match all</button>
+                  </div>
+                )}
+              </div>
+              <MultiSelectDropdown
+                label=""
+                options={MODALITY_OPTIONS}
+                selected={selectedModalities}
+                onChange={setSelectedModalities}
+                placeholder="Any modality"
+              />
+            </div>
+            <div>
+              <div className="flex items-center justify-between mb-1">
+                <span className="text-xs font-bold text-base-content/50 uppercase tracking-wide">Therapist Style</span>
+                {selectedStyles.length > 1 && (
+                  <div className="flex rounded overflow-hidden border border-purple-200 text-xs">
+                    <button onClick={() => setStylesMatchAll(false)} className={`px-2 py-0.5 ${!stylesMatchAll ? "bg-purple-600 text-white" : "bg-white text-purple-600"}`}>Match any</button>
+                    <button onClick={() => setStylesMatchAll(true)} className={`px-2 py-0.5 ${stylesMatchAll ? "bg-purple-600 text-white" : "bg-white text-purple-600"}`}>Match all</button>
+                  </div>
+                )}
+              </div>
+              <MultiSelectDropdown
+                label=""
+                options={STYLE_OPTIONS}
+                selected={selectedStyles}
+                onChange={setSelectedStyles}
+                placeholder="Any style"
+              />
+            </div>
             <MultiSelectDropdown
               label="Billing / Funding"
               options={BILLING_OPTIONS}
@@ -653,13 +734,24 @@ export default function FindPractitioner({ practitioners }: Props) {
               onChange={setSelectedAvailabilityTypes}
               placeholder="Any type"
             />
-            <MultiSelectDropdown
-              label="Day of Week"
-              options={DAYS_OF_WEEK}
-              selected={selectedDays}
-              onChange={setSelectedDays}
-              placeholder="Any day"
-            />
+            <div>
+              <div className="flex items-center justify-between mb-1">
+                <span className="text-xs font-bold text-base-content/50 uppercase tracking-wide">Day of Week</span>
+                {selectedDays.length > 1 && (
+                  <div className="flex rounded overflow-hidden border border-purple-200 text-xs">
+                    <button onClick={() => setDaysMatchAll(false)} className={`px-2 py-0.5 ${!daysMatchAll ? "bg-purple-600 text-white" : "bg-white text-purple-600"}`}>Match any</button>
+                    <button onClick={() => setDaysMatchAll(true)} className={`px-2 py-0.5 ${daysMatchAll ? "bg-purple-600 text-white" : "bg-white text-purple-600"}`}>Match all</button>
+                  </div>
+                )}
+              </div>
+              <MultiSelectDropdown
+                label=""
+                options={DAYS_OF_WEEK}
+                selected={selectedDays}
+                onChange={setSelectedDays}
+                placeholder="Any day"
+              />
+            </div>
           </div>
           <div className="flex flex-wrap gap-4 items-center">
             <label className="cursor-pointer flex items-center gap-2">
@@ -687,10 +779,10 @@ export default function FindPractitioner({ practitioners }: Props) {
           {keyword && (
             <div className="text-sm text-base-content/60">Sorted by relevance</div>
           )}
-          {selectedNames.size > 0 && (
+          {selectedNames.length > 0 && (
             <div className="flex items-center gap-2">
-              <span className="text-sm text-base-content/60">{selectedNames.size} selected</span>
-              <button onClick={() => setSelectedNames(new Set())} className="btn btn-ghost btn-xs">Clear</button>
+              <span className="text-sm text-base-content/60">{selectedNames.length} selected</span>
+              <button onClick={() => setSelectedNames([])} className="btn btn-ghost btn-xs">Clear</button>
             </div>
           )}
         </div>
@@ -710,8 +802,8 @@ export default function FindPractitioner({ practitioners }: Props) {
             <div key={idx}>
               <PractitionerCard
                 p={item.p}
-                locationFilter={location}
-                isSelected={selectedNames.has(item.p.name)}
+                locationFilter={selectedLocations}
+                isSelected={selectedNames.includes(item.p.name)}
                 onToggleSelect={toggleSelect}
               />
             </div>
@@ -720,19 +812,19 @@ export default function FindPractitioner({ practitioners }: Props) {
       )}
 
       {/* Floating Send Bar */}
-      {selectedNames.size > 0 && (
+      {selectedNames.length > 0 && (
         <div className="fixed bottom-0 left-0 right-0 z-50 p-4 bg-white shadow-lg" style={{ borderTop: "2px solid #CDA8BA" }}>
           <div className="max-w-4xl mx-auto flex items-center justify-between gap-4">
             <div className="flex items-center gap-2">
               <CheckSquare size={18} style={{ color: "#8D5273" }} />
-              <span className="font-semibold">{selectedNames.size} practitioner{selectedNames.size !== 1 ? "s" : ""} selected</span>
+              <span className="font-semibold">{selectedNames.length} practitioner{selectedNames.length !== 1 ? "s" : ""} selected</span>
               <span className="text-base-content/50 text-sm hidden sm:inline">
                 — {selectedPractitioners.map(p => p.name.split(" ")[0]).join(", ")}
               </span>
             </div>
             <div className="flex items-center gap-2">
               <button
-                onClick={() => setSelectedNames(new Set())}
+                onClick={() => setSelectedNames([])}
                 className="btn btn-ghost btn-sm gap-1"
                 style={{ color: "#8D5273" }}
               >
@@ -753,7 +845,7 @@ export default function FindPractitioner({ practitioners }: Props) {
       {showSendModal && (
         <SendClientModal
           selected={selectedPractitioners}
-          locationFilter={location}
+          locationFilter={selectedLocations.length === 1 ? selectedLocations[0] : ""}
           onClose={() => setShowSendModal(false)}
           onSent={handleSent}
         />
