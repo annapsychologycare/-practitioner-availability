@@ -54,9 +54,12 @@ function AppContent() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <div style={{ background: "#2C244C" }} className="text-white shadow-md">
-        <div className="max-w-7xl mx-auto px-6 py-6 flex items-center gap-6">
-          <img src="/logo.svg" alt="PsychologyCare" style={{ height: 56, width: "auto" }} />
+      <div style={{ background: "#2C244C" }} className="text-white shadow-lg">
+        <div className="max-w-7xl mx-auto px-6 py-10 flex flex-col items-center">
+          <img src="/logo.svg" alt="PsychologyCare" style={{ height: 72, width: "auto", marginBottom: 10 }} />
+          <p style={{ color: "#d8d0ec", fontSize: 14, letterSpacing: "0.12em", textTransform: "uppercase", fontFamily: "'Poppins', sans-serif", fontWeight: 400 }}>
+            Practitioner Matching &amp; Client Intake
+          </p>
         </div>
       </div>
 
