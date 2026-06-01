@@ -54,27 +54,26 @@ function AppContent() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <div className="bg-gradient-to-r from-purple-700 to-purple-900 text-white shadow-md">
-        <div className="max-w-7xl mx-auto px-4 py-8">
-          <h1 className="text-4xl font-bold mb-2" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300 }}>
-            <span>psychology</span><span style={{ fontWeight: 700 }}>care</span>
-          </h1>
-          <p className="text-purple-100">Practitioner Matching & Client Intake</p>
+      <div style={{ background: "#2C244C" }} className="text-white shadow-md">
+        <div className="max-w-7xl mx-auto px-6 py-6 flex items-center gap-6">
+          <img src="/logo.svg" alt="PsychologyCare" style={{ height: 56, width: "auto" }} />
         </div>
       </div>
 
       {/* Tab Navigation */}
-      <div className="bg-white border-b border-purple-100 sticky top-0 z-40 shadow-sm">
+      <div className="bg-white border-b sticky top-0 z-40 shadow-sm" style={{ borderColor: "#e8e4f0" }}>
         <div className="max-w-7xl mx-auto px-4 flex gap-4">
           {tabs.map((t) => (
             <button
               key={t.key}
               onClick={() => setTab(t.key as Tab)}
-              className={`px-4 py-3 font-medium text-sm border-b-2 transition-all ${
-                tab === t.key
-                  ? "text-purple-700 border-purple-700"
-                  : "text-gray-600 border-transparent hover:text-purple-600"
-              }`}
+              className="px-4 py-3 font-medium text-sm border-b-2 transition-all"
+              style={tab === t.key
+                ? { color: "#2C244C", borderColor: "#2C244C" }
+                : { color: "#666", borderColor: "transparent" }
+              }
+              onMouseEnter={e => { if (tab !== t.key) (e.target as HTMLElement).style.color = "#8D5273"; }}
+              onMouseLeave={e => { if (tab !== t.key) (e.target as HTMLElement).style.color = "#666"; }}
             >
               {t.label}
             </button>
