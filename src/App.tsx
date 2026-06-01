@@ -54,7 +54,7 @@ function AppContent() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <div style={{ background: "#2C244C" }} className="text-white shadow-lg">
+      <div style={{ background: "linear-gradient(135deg, #2C244C 0%, #8D5273 100%)" }} className="text-white shadow-lg">
         <div className="max-w-7xl mx-auto px-6 py-10 flex flex-col items-center">
           <img src="/logo.svg" alt="PsychologyCare" style={{ height: 72, width: "auto", marginBottom: 10 }} />
           <p style={{ color: "#d8d0ec", fontSize: 14, letterSpacing: "0.12em", textTransform: "uppercase", fontFamily: "'Poppins', sans-serif", fontWeight: 400 }}>
