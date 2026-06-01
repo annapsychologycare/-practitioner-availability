@@ -31,6 +31,7 @@ export type Practitioner = {
   short_bio?: string;
   working_hours?: string;
   location_notes?: Record<string, string>;
+  photo_url?: string;
   style?: string;
   availability?: Array<{ location: string; weekly: string[]; fortnightly: string[]; monthly?: string[] }>;
   additional_info?: string;

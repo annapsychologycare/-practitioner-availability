@@ -52,6 +52,7 @@ const SendClientModal: React.FC<Props> = ({ selected, locationFilter, onClose, o
           short_bio: p.short_bio,
           working_hours: (p as any).working_hours,
           location_notes: (p as any).location_notes,
+          photo_url: (p as any).photo_url,
         };
       }),
     [selected, locationFilter]
