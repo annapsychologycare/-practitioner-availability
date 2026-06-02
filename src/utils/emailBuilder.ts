@@ -125,10 +125,11 @@ function buildPractitionerCard(p: PractitionerEmailData, config: EmailTemplateCo
   const feesInline = formatFeesInline(p.fees || "");
   const medicareInline = formatMedicareInline(p.medicare_rebate || "");
 
-  // Photo circle in header
-  const photoHtml = p.photo_url
+  // Photo circle in header — use embedded base64 (avoids Gmail image blocking)
+  const photoSrc = (p as any).photo_b64 || p.photo_url || null;
+  const photoHtml = photoSrc
     ? `<td width="84" valign="middle" style="padding-right:16px;">
-        <img src="${p.photo_url}" width="80" height="80"
+        <img src="${photoSrc}" width="80" height="80"
           style="border-radius:50%;border:3px solid rgba(255,255,255,0.35);display:block;object-fit:cover;width:80px;height:80px;" />
       </td>`
     : `<td width="84" valign="middle" style="padding-right:16px;">
