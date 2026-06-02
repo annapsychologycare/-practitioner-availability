@@ -1,5 +1,4 @@
-// AUTO-GENERATED — do not edit directly. Edit practitioners_data.json instead.
-export const practitionersData = [
+export const PRACTITIONERS_DATA = [
   {
     "id": 1,
     "name": "Alex Barry",
@@ -129,7 +128,7 @@ export const practitionersData = [
     "location_notes": {
       "Wattletree Rd, Malvern": "Please Note: As of 9th June 2026 Alex will be moving from our Malvern Clinic to our new Clinic on Burke Road, Camberwell."
     },
-    "photo_url": "https://psychologycare.com.au/wp-content/uploads/2022/06/Alex-Barry.png"
+    "photo_url": "https://practitioneravailabilitypsychologycar.netlify.app/photos/alex-barry_thumb.jpg"
   },
   {
     "id": 25,
@@ -282,7 +281,7 @@ export const practitionersData = [
     "location_notes": {
       "Wattletree Rd, Malvern": "Please Note: As of 9th June 2026 Rebekah will be moving from our Malvern Clinic to our new Clinic on Burke Road, Camberwell."
     },
-    "photo_url": "https://psychologycare.com.au/wp-content/uploads/2022/06/Rebekah-Barson-1.png"
+    "photo_url": "https://practitioneravailabilitypsychologycar.netlify.app/photos/rebekah-barson_thumb.jpg"
   },
   {
     "id": 5,
@@ -404,7 +403,7 @@ export const practitionersData = [
     "location_notes": {
       "Wattletree Rd, Malvern": "Please Note: As of 9th June 2026 Brigid's Tuesday appointments will be moving from our Malvern Clinic to our new Clinic on Burke Road, Camberwell."
     },
-    "photo_url": "https://psychologycare.com.au/wp-content/uploads/2025/06/Brigid-Photo.png"
+    "photo_url": "https://practitioneravailabilitypsychologycar.netlify.app/photos/brigid-blanckenberg_thumb.jpg"
   },
   {
     "id": 3,
@@ -591,7 +590,7 @@ export const practitionersData = [
     "location_notes": {
       "Greville St, Prahran": "Please Note: As of 9th June 2026 Amy will be moving from our Prahran Clinic to our new Clinic on Burke Road, Camberwell."
     },
-    "photo_url": "https://psychologycare.com.au/wp-content/uploads/2022/06/AMYB-HIGHRES-CROPPED.png"
+    "photo_url": "https://practitioneravailabilitypsychologycar.netlify.app/photos/amy-bortz_thumb.jpg"
   },
   {
     "id": 27,
@@ -688,7 +687,7 @@ export const practitionersData = [
     "location_notes": {
       "Wattletree Rd, Malvern": "Please Note: As of 9th June 2026 Ruby will be moving from our Malvern Clinic to our new Clinic on Burke Road, Camberwell."
     },
-    "photo_url": "https://psychologycare.com.au/wp-content/uploads/2022/06/Ruby-Bouhadana-Photo-1.png"
+    "photo_url": "https://practitioneravailabilitypsychologycar.netlify.app/photos/ruby-bouhadana_thumb.jpg"
   },
   {
     "id": 17,
@@ -956,7 +955,7 @@ export const practitionersData = [
     "location_notes": {
       "Wattletree Rd, Malvern": "Please Note: As of 9th June 2026 Maddie's Friday appointments will be moving from our Malvern Clinic to our Prahran Clinic on Greville Street."
     },
-    "photo_url": "https://psychologycare.com.au/wp-content/uploads/2025/06/PORTRAIT_Maddie-B-Headshots_26Nov2025_0067-1.png.webp"
+    "photo_url": "https://practitioneravailabilitypsychologycar.netlify.app/photos/dr-maddie-brygel_thumb.jpg"
   },
   {
     "id": 19,
@@ -1086,7 +1085,7 @@ export const practitionersData = [
     "location_notes": {
       "Wattletree Rd, Malvern": "Please Note: As of 9th June 2026 Nick will be moving from our Malvern Clinic to our new Clinic on Burke Road, Camberwell."
     },
-    "photo_url": "https://psychologycare.com.au/wp-content/uploads/2022/06/Nick-Burden.png.webp"
+    "photo_url": "https://practitioneravailabilitypsychologycar.netlify.app/photos/nick-burden_thumb.jpg"
   },
   {
     "id": 16,
@@ -1144,7 +1143,7 @@ export const practitionersData = [
       "Wattletree Rd, Malvern": "Please Note: As of 9th June 2026 Krista's Monday appointments will be moving from our Malvern Clinic to our new Clinic on Burke Road, Camberwell."
     },
     "working_hours": "Mondays in Camberwell & Tuesdays via Telehealth",
-    "photo_url": "https://psychologycare.com.au/wp-content/uploads/2022/06/Krista-De-Castella.png"
+    "photo_url": "https://practitioneravailabilitypsychologycar.netlify.app/photos/dr-krista-de-castella_thumb.jpg"
   },
   {
     "id": 2,
@@ -1198,7 +1197,7 @@ export const practitionersData = [
     "fortnightly_availability": [],
     "style": "A parent, Creative, Humorous, Openness",
     "working_hours": "Working Days: Thursdays 12PM to 2PM in Prahran",
-    "photo_url": "https://psychologycare.com.au/wp-content/uploads/2022/06/Allison-Coneyr-PsychologyCare.png"
+    "photo_url": "https://practitioneravailabilitypsychologycar.netlify.app/photos/allison-conyer_thumb.jpg"
   },
   {
     "id": 21,
@@ -1295,7 +1294,7 @@ export const practitionersData = [
     "location_notes": {
       "Wattletree Rd, Malvern": "Please Note: As of 9th June 2026 Niloo will be moving from our Malvern Clinic to our new Clinic on Burke Road, Camberwell."
     },
-    "photo_url": "https://psychologycare.com.au/wp-content/uploads/2025/05/Niloo-Photo-cropped-2025.png"
+    "photo_url": "https://practitioneravailabilitypsychologycar.netlify.app/photos/niloo-danaei_thumb.jpg"
   },
   {
     "id": 7,
@@ -1556,7 +1555,7 @@ export const practitionersData = [
     "location_notes": {
       "Wattletree Rd, Malvern": "Please Note: As of 9th June 2026 Christine will be moving from our Malvern Clinic to our Prahran Clinic on Greville Street."
     },
-    "photo_url": "https://psychologycare.com.au/wp-content/uploads/2025/06/Christine-Deftereos.png"
+    "photo_url": "https://practitioneravailabilitypsychologycar.netlify.app/photos/dr-christine-deftereos_thumb.jpg"
   },
   {
     "id": 22,
@@ -1623,7 +1622,7 @@ export const practitionersData = [
     ],
     "working_hours": "",
     "style": "",
-    "photo_url": "https://psychologycare.com.au/wp-content/uploads/2022/06/OE_Headshot-scaled-1.png"
+    "photo_url": "https://practitioneravailabilitypsychologycar.netlify.app/photos/oliver-eastwood_thumb.jpg"
   },
   {
     "id": 18,
@@ -1762,7 +1761,7 @@ export const practitionersData = [
     "location_notes": {
       "Wattletree Rd, Malvern": "Please Note: As of 9th June 2026 Meg will be moving from our Malvern Clinic to our new Clinic on Burke Road, Camberwell."
     },
-    "photo_url": "https://psychologycare.com.au/wp-content/uploads/2022/06/Meg-Edelman-PsychologyCare.png"
+    "photo_url": "https://practitioneravailabilitypsychologycar.netlify.app/photos/meg-edelman_thumb.jpg"
   },
   {
     "id": 15,
@@ -1848,7 +1847,7 @@ export const practitionersData = [
     "weekly_availability": [],
     "fortnightly_availability": [],
     "style": "A parent, Active Listener, Animal Lover, Compassionate, Direct, Empathetic, Non Judgemental, Warm",
-    "photo_url": "https://psychologycare.com.au/wp-content/uploads/2024/10/Kiira.jpeg.webp"
+    "photo_url": "https://practitioneravailabilitypsychologycar.netlify.app/photos/kiira-gavralas_thumb.jpg"
   },
   {
     "id": 12,
@@ -1902,7 +1901,7 @@ export const practitionersData = [
     "weekly_availability": [],
     "fortnightly_availability": [],
     "style": "A parent, Active Listener, Calm, Compassionate, Empathetic, Existential, Humerous, Humorous, Non Judgemental, Openness, Outgoing, Warm",
-    "photo_url": "https://psychologycare.com.au/wp-content/uploads/2022/06/Jillian-Giannios.png"
+    "photo_url": "https://practitioneravailabilitypsychologycar.netlify.app/photos/jillian-giannios_thumb.jpg"
   },
   {
     "id": 11,
@@ -2031,7 +2030,7 @@ export const practitionersData = [
     ],
     "style": "A parent, Active Listener, Compassionate, Non Judgemental, Sensitive and Gentle",
     "working_hours": "",
-    "photo_url": "https://psychologycare.com.au/wp-content/uploads/2025/06/Ella-Graj-27-06-2025-15-40-15-1024x1024.png"
+    "photo_url": "https://practitioneravailabilitypsychologycar.netlify.app/photos/ella-graj_thumb.jpg"
   },
   {
     "id": 9,
@@ -2225,7 +2224,7 @@ export const practitionersData = [
     ],
     "style": "A parent, Active Listener, Animal Lover, Artistic, Assigns Homework/ Worksheets, Calm, Compassionate, Conscientiousness, Creative, Direct, Empathetic, Existential, Extinensial, Extravert, Gentle, Good at tough Love, Guides to set Goals, Humerous, Humorous, Introvert, Like a coach, Non Judgemental, Openness, Outgoing, Sensitive and Gentle, Solution Oriented, Spiritual, Talkative, Teach new Skills, Warm",
     "working_hours": "Working days: Tuesdays 9am to 7:30PM Prahran",
-    "photo_url": "https://psychologycare.com.au/wp-content/uploads/2022/06/Cristina-Jimenez-Headshot-1.png"
+    "photo_url": "https://practitioneravailabilitypsychologycar.netlify.app/photos/cristina-jimenez_thumb.jpg"
   },
   {
     "id": 6,
@@ -2351,7 +2350,7 @@ export const practitionersData = [
       "Wattletree Rd, Malvern": "Please Note: As of 9th June 2026 Chiara's Saturday appointments will be moving from our Malvern Clinic to our new Clinic on Burke Road, Camberwell."
     },
     "working_hours": "Working Days: Saturdays via Telehealth",
-    "photo_url": "https://psychologycare.com.au/wp-content/uploads/2025/05/Chiara-Cropped.png"
+    "photo_url": "https://practitioneravailabilitypsychologycar.netlify.app/photos/chiara-killey_thumb.jpg"
   },
   {
     "id": 20,
@@ -2576,7 +2575,7 @@ export const practitionersData = [
     "location_notes": {
       "Wattletree Rd, Malvern": "Please Note: As of 9th June 2026 Nicholas's Wednesday, Thursday and Friday appointments will be moving from our Malvern Clinic to our new Clinic on Burke Road, Camberwell."
     },
-    "photo_url": "https://psychologycare.com.au/wp-content/uploads/2022/06/Nick-Kleeman.png"
+    "photo_url": "https://practitioneravailabilitypsychologycar.netlify.app/photos/nicholas-kleeman_thumb.jpg"
   },
   {
     "id": 26,
@@ -2653,7 +2652,7 @@ export const practitionersData = [
     "location_notes": {
       "Wattletree Rd, Malvern": "Please Note: As of 9th June 2026 Ricki's Saturday appointments will be moving from our Malvern Clinic to our new Clinic on Burke Road, Camberwell."
     },
-    "photo_url": "https://psychologycare.com.au/wp-content/uploads/2022/06/Ricki_profile-img.png"
+    "photo_url": "https://practitioneravailabilitypsychologycar.netlify.app/photos/ricki-knoetze_thumb.jpg"
   },
   {
     "id": 13,
@@ -2795,7 +2794,7 @@ export const practitionersData = [
       "Wattletree Rd, Malvern": "Please Note: As of 9th June 2026 Joshua will also be available at our new Clinic on Burke Road, Camberwell."
     },
     "working_hours": "Working Days: Wednesday 2:30PM to 8:30PM  in Camberwell",
-    "photo_url": "https://psychologycare.com.au/wp-content/uploads/2026/02/Josh-Kugel-Psychologist-scaled.png"
+    "photo_url": "https://practitioneravailabilitypsychologycar.netlify.app/photos/joshua-kugel_thumb.jpg"
   },
   {
     "id": 29,
@@ -2942,7 +2941,7 @@ export const practitionersData = [
     ],
     "style": "A parent",
     "working_hours": "Thursdays in St Kilda",
-    "photo_url": "https://psychologycare.com.au/wp-content/uploads/2022/06/Therese-Van-Maanen.png"
+    "photo_url": "https://practitioneravailabilitypsychologycar.netlify.app/photos/therese-van-maanen_thumb.jpg"
   },
   {
     "id": 4,
@@ -3088,7 +3087,7 @@ export const practitionersData = [
     ],
     "style": "Animal Lover, Openness, Sensitive and Gentle, Spiritual",
     "working_hours": "Working Days: Monday Mornings and Thursday Mornings in Prahran",
-    "photo_url": "https://psychologycare.com.au/wp-content/uploads/2022/06/Belinda-Pacella-PsychologyCare.png"
+    "photo_url": "https://practitioneravailabilitypsychologycar.netlify.app/photos/belinda-pacella_thumb.jpg"
   },
   {
     "id": 24,
@@ -3174,7 +3173,7 @@ export const practitionersData = [
     ],
     "style": "Assigns Homework/ Worksheets, Calm, Compassionate, Existential, Humorous, Non Judgemental, Outgoing, Spiritual, Warm",
     "working_hours": "Working Days: Mondays 9am to 4PM, Tuesdays 8:30am to 3:30PM & Wednesdays 2:30PM to 8PM in Prahran",
-    "photo_url": "https://psychologycare.com.au/wp-content/uploads/2022/06/Poorna.png"
+    "photo_url": "https://practitioneravailabilitypsychologycar.netlify.app/photos/poorna-selvaraja_thumb.jpg"
   },
   {
     "name": "Dr David Spektor",
@@ -3238,7 +3237,7 @@ export const practitionersData = [
     "billing_types": "Medicare Rebate (Chronic Disease Management Plan);  Medicare Rebate (Eating Disorder Treatment Plan);  Medicare Rebate (Mental Health Care Plan);  National Disability Insurance Scheme (NDIS) Plan Managed;  National Disability Insurance Scheme (NDIS) Self Managed;  Self Funded (Private paying);  Third Party Funded ( EG Genwest)",
     "religions_groups": "Jewish",
     "style": "A parent",
-    "photo_url": "https://psychologycare.com.au/wp-content/uploads/2024/03/Dr-David-Spektor-cropped1-scaled.jpeg"
+    "photo_url": "https://practitioneravailabilitypsychologycar.netlify.app/photos/dr-david-spektor_thumb.jpg"
   },
   {
     "id": 23,
@@ -3321,7 +3320,7 @@ export const practitionersData = [
     ],
     "style": "A parent",
     "working_hours": "Working Days: Tuesday Mornings & Wednesday Mornings in Prahran",
-    "photo_url": "https://psychologycare.com.au/wp-content/uploads/2025/06/Pete-Steele-2-scaled.png"
+    "photo_url": "https://practitioneravailabilitypsychologycar.netlify.app/photos/peter-steele_thumb.jpg"
   },
   {
     "id": 28,
@@ -3424,7 +3423,7 @@ export const practitionersData = [
     ],
     "style": "Active Listener, Humorous, Openness, Outgoing, Sensitive and Gentle, Talkative",
     "working_hours": "",
-    "photo_url": "https://psychologycare.com.au/wp-content/uploads/2024/06/Stephanie-Stewart_Bio-Photo-1-2.png"
+    "photo_url": "https://practitioneravailabilitypsychologycar.netlify.app/photos/stephanie-stewart_thumb.jpg"
   },
   {
     "id": 8,
@@ -3513,7 +3512,7 @@ export const practitionersData = [
     "fortnightly_availability": [],
     "style": "Active Listener, Calm, Sensitive and Gentle",
     "working_hours": "Working Days: Mondays & Tuesdays Afternoon/ Evening in Prahran",
-    "photo_url": "https://psychologycare.com.au/wp-content/uploads/2022/06/Clare-Tuttleby.png"
+    "photo_url": "https://practitioneravailabilitypsychologycar.netlify.app/photos/clare-tuttleby_thumb.jpg"
   },
   {
     "id": 10,
@@ -3704,7 +3703,7 @@ export const practitionersData = [
     ],
     "style": "A parent, Active Listener, Compassionate, Conscientiousness, Creative, Empathetic, Existential, Extravert, Gentle, Introvert, Non Judgemental, Openness, Sensitive and Gentle, Talkative, Warm",
     "working_hours": "Working Days: Monday 2:30PM to 7:30PM, Wednesday 8am to 2PM, Thursday 8am to 2PM & Friday 8am to 1PM in Prahran",
-    "photo_url": "https://psychologycare.com.au/wp-content/uploads/2022/06/Elizabeth-White-PsychologyCare.png"
+    "photo_url": "https://practitioneravailabilitypsychologycar.netlify.app/photos/elizabeth-white_thumb.jpg"
   },
   {
     "id": 14,
@@ -3830,8 +3829,8 @@ export const practitionersData = [
     ],
     "style": "A parent, Calm, Creative, Good at tough Love, Spiritual",
     "working_hours": "Working Days: Monday Mornings, Tuesday Afternoon / Evenings, Wednesday Afternoon/ Evenings & Thursday Mornings in Prahran",
-    "photo_url": "https://psychologycare.com.au/wp-content/uploads/2025/03/KP-300x300.png"
+    "photo_url": "https://practitioneravailabilitypsychologycar.netlify.app/photos/karen-pereira-york_thumb.jpg"
   }
 ] as any[];
 
-export const practitionersData = practitionersData;
+export const practitionersData = PRACTITIONERS_DATA;
