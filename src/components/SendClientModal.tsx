@@ -58,13 +58,9 @@ const SendClientModal: React.FC<Props> = ({ selected, locationFilter, onClose, o
     [selected, locationFilter]
   );
 
-  const compareUrl = selected.length >= 2
-    ? `https://practitioneravailabilitypsychologycar.netlify.app/?compare=${encodeURIComponent(selected.map((p) => p.name).join(","))}`
-    : undefined;
-
   const previewHtml = useMemo(
-    () => buildEmailHtml(clientName || "Client", note, senderName, practitionerData, config, compareUrl),
-    [clientName, note, senderName, practitionerData, config, compareUrl]
+    () => buildEmailHtml(clientName || "Client", note, senderName, practitionerData, config),
+    [clientName, note, senderName, practitionerData, config]
   );
 
   const handleCopyEmail = () => {
