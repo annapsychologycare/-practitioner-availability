@@ -3,6 +3,7 @@ import FindPractitioner from "./FindPractitioner";
 import Directory from "./Directory";
 import AvailabilitySnapshot from "./AvailabilitySnapshot";
 import IntakeTab from "./components/IntakeTab";
+import { Compare } from "./Compare";
 import { createRoot } from "react-dom/client";
 import { PRACTITIONERS_DATA } from "./practitionersData";
 import "./index.css";
@@ -39,9 +40,18 @@ class ErrorBoundary extends Component<{ children: ReactNode }, { error: Error | 
   }
 }
 
+// Detect compare mode from URL query params
+function getCompareNames(): string[] | null {
+  const params = new URLSearchParams(window.location.search);
+  const raw = params.get("compare");
+  if (!raw) return null;
+  const names = decodeURIComponent(raw).split(",").map((n) => n.trim()).filter(Boolean);
+  return names.length >= 1 ? names : null;
+}
+
 type Tab = "find" | "directory" | "snapshot" | "intake";
 
-function AppContent() {
+function AppMain() {
   const [tab, setTab] = useState<Tab>("find");
 
   const tabs = [
@@ -102,6 +112,22 @@ function AppContent() {
         </div>
       </footer>
     </div>
+  );
+}
+
+function AppContent() {
+  const compareNames = getCompareNames();
+  if (compareNames) {
+    return (
+      <ErrorBoundary>
+        <Compare names={compareNames} />
+      </ErrorBoundary>
+    );
+  }
+  return (
+    <ErrorBoundary>
+      <AppMain />
+    </ErrorBoundary>
   );
 }
 

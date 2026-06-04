@@ -186,7 +186,8 @@ export function buildEmailHtml(
   note: string,
   senderName: string,
   practitioners: PractitionerEmailData[],
-  config: EmailTemplateConfig = DEFAULT_EMAIL_TEMPLATE_CONFIG
+  config: EmailTemplateConfig = DEFAULT_EMAIL_TEMPLATE_CONFIG,
+  compareUrl?: string
 ): string {
   const c = config.colors;
   const sig = config.signature;
@@ -245,6 +246,15 @@ export function buildEmailHtml(
           <p style="font-size:14px;line-height:1.85;color:#555;margin:0 0 24px;">${config.intro_text}</p>
           ${note ? `<div style="background:#F0EEF7;border-left:4px solid ${c.title_color};padding:12px 16px;border-radius:6px;font-size:14px;font-style:italic;color:#555;margin-bottom:24px;">${note}</div>` : ""}
           ${cards}
+          ${compareUrl && practitioners.length >= 2
+            ? `<div style="text-align:center;margin:4px 0 28px;">
+                <a href="${compareUrl}"
+                   style="display:inline-block;background:linear-gradient(135deg,#2C244C 0%,#8D5273 100%);color:#fff;padding:12px 28px;border-radius:8px;font-size:14px;font-weight:700;text-decoration:none;box-shadow:0 3px 12px rgba(44,36,76,0.22);letter-spacing:0.01em;">
+                  🔍 Compare these practitioners side by side →
+                </a>
+                <div style="font-size:11px;color:#aaa;margin-top:8px;">Opens a comparison page in your browser</div>
+              </div>`
+            : ""}
         </div>
 
         <!-- Good to Know -->
