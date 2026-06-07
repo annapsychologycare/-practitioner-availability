@@ -69,9 +69,8 @@ export const DEFAULT_EMAIL_TEMPLATE_CONFIG: EmailTemplateConfig = {
     email: "info@psychologycare.com.au",
     website: "www.psychologycare.com.au",
     addresses:
-      "167 Wattletree Road, MALVERN 3144 | 183A Greville Street, PRAHRAN 3181 | 185A Greville Street, PRAHRAN 3181",
-    footnote:
-      "📍 Malvern clinic relocating to 673 Burke Road, CAMBERWELL 3124 from 9 June 2026",
+      "673 Burke Road, CAMBERWELL 3124 | 183A Greville Street, PRAHRAN 3181 | 185A Greville Street, PRAHRAN 3181",
+    footnote: "",
   },
   disclaimer:
     "DISCLAIMER: PsychologyCare is not a mental health crisis service and cannot provide urgent or immediate support. If immediate mental health assistance is required, please contact emergency services on 000 or Lifeline on 13 11 14.\n\nThis email and any files transmitted with it are confidential and intended solely for the use of the individual or entity to whom they are addressed. This message contains confidential information and is intended only for the individual named. If you are not the named addressee you should not disseminate, distribute or copy this e-mail. Please notify the sender immediately by email if you have received this e-mail by mistake and delete this email from your system. If you are not the intended recipient you are notified that disclosing, copying, distributing or taking any action in reliance on the contents of this information is strictly prohibited.\n\nPlease note: There are inherent confidentiality risks in communicating by email. While safeguards are in place to ensure your privacy, you should not use email communication if you are concerned about any breaches of privacy that might inadvertently occur.",

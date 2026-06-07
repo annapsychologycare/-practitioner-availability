@@ -65,13 +65,7 @@ function buildAvailabilitySection(
   let html = "";
   for (const loc of activeLocs) {
     const { weekly, fortnightly } = parseAvailability(loc.availability);
-    const isMalvern = loc.location.toLowerCase().includes("malvern");
-    const locLabel = isMalvern
-      ? ` — Wattletree Rd, Malvern / Burke Rd, Camberwell (from 9 June 2026)`
-      : ` — ${loc.location}`;
-    const malvernNote = isMalvern
-      ? `<div style="font-size:12px;color:${c.availability_heading};font-style:italic;margin-bottom:8px;line-height:1.6;">📍 Moving to a larger, purpose-built clinic at Burke Road, Camberwell from 9 June 2026.</div>`
-      : "";
+    const locLabel = ` — ${loc.location}`;
     const locNoteText = locationNotes?.[loc.location] || "";
     const locChangeNote = locNoteText
       ? `<div style="font-size:12px;color:#5a3060;background:#f5f0f9;border-left:3px solid ${c.availability_heading};border-radius:4px;padding:8px 12px;margin-bottom:10px;line-height:1.6;"><strong>Please Note:</strong> ${locNoteText.replace(/^Please Note:\s*/i, "")}</div>`
@@ -82,7 +76,7 @@ function buildAvailabilitySection(
     html += `
       <div style="padding:16px 24px 0;">
         <div style="font-size:11px;font-weight:700;color:${c.availability_heading};text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">Availability${locLabel}</div>
-        ${malvernNote}${locChangeNote}
+        ${locChangeNote}
         <div style="background:#f8f6fc;border-radius:8px;padding:12px 14px;">
           <div style="font-size:13px;color:#333;line-height:2.0;">${allSlots.join("<br>")}</div>
         </div>

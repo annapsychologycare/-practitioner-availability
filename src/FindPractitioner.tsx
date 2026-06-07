@@ -597,7 +597,7 @@ export default function FindPractitioner({ practitioners }: Props) {
               </div>
               <MultiSelectDropdown
                 label=""
-                options={["Greville St, Prahran", "Wattletree Rd, Malvern", "Burke Rd, Camberwell", "Victoria St, St Kilda", "Telehealth"]}
+                options={["Greville St, Prahran", "Burke Rd, Camberwell", "Burke Rd, Camberwell", "Victoria St, St Kilda", "Telehealth"]}
                 selected={selectedLocations}
                 onChange={setSelectedLocations}
                 placeholder="Any location"
