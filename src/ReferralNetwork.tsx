@@ -542,11 +542,19 @@ const ReferralNetwork: React.FC<ReferralNetworkProps> = ({ practitioners }) => {
       )}
 
       {editingP && (
-        <AddReferralForm
-          initialValues={editingP}
-          onAdd={handleEditSave}
-          onCancel={() => setEditingP(null)}
-        />
+        <div style={{
+          position: "fixed", inset: 0, background: "rgba(0,0,0,0.45)",
+          zIndex: 1000, display: "flex", alignItems: "center", justifyContent: "center",
+          padding: 24,
+        }} onClick={(e) => { if (e.target === e.currentTarget) setEditingP(null); }}>
+          <div style={{ background: "#fff", borderRadius: 12, padding: 28, width: "100%", maxWidth: 620, maxHeight: "90vh", overflowY: "auto", boxShadow: "0 8px 40px rgba(0,0,0,0.18)" }}>
+            <AddReferralForm
+              initialValues={editingP}
+              onAdd={handleEditSave}
+              onCancel={() => setEditingP(null)}
+            />
+          </div>
+        </div>
       )}
 
       {filtered.length === 0 ? (
