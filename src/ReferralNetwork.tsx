@@ -45,7 +45,7 @@ interface AddReferralFormProps {
   onCancel: () => void;
 }
 
-function AddReferralForm({ onAdd, onCancel }: AddReferralFormProps) {
+const AddReferralForm: React.FC<AddReferralFormProps> = ({ onAdd, onCancel }) => {
   const [form, setForm] = useState({
     name: "", title: "", therapist_type: "", gender: "",
     age_range: "", presentations: "", modalities: "", billing_types: "",
@@ -130,7 +130,7 @@ interface ReferralCardProps {
   onEdit: (p: Practitioner) => void;
 }
 
-function ReferralCard({ p, onEdit }: ReferralCardProps) {
+const ReferralCard: React.FC<ReferralCardProps> = ({ p, onEdit }) => {
   const [expanded, setExpanded] = useState(false);
   const presentations = safeArr(p.presentations);
   const modalities = safeArr(p.modalities);
@@ -162,7 +162,7 @@ function ReferralCard({ p, onEdit }: ReferralCardProps) {
           {p.short_bio && <p style={{ margin: "0 0 8px", fontSize: 13, color: BRAND.text, lineHeight: 1.5 }}>{p.short_bio}</p>}
 
           <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginBottom: 8 }}>
-            {presentations.slice(0, expanded ? undefined : 5).map((s, i) => (
+            {presentations.slice(0, expanded ? undefined : 5).map((s: string, i: number) => (
               <span key={i} style={{ background: "#f3f4f6", color: BRAND.text, borderRadius: 20, padding: "2px 10px", fontSize: 11 }}>{s}</span>
             ))}
             {!expanded && presentations.length > 5 && (
@@ -175,7 +175,7 @@ function ReferralCard({ p, onEdit }: ReferralCardProps) {
 
           {modalities.length > 0 && (
             <div style={{ display: "flex", flexWrap: "wrap", gap: 5, marginBottom: 8 }}>
-              {modalities.map((m, i) => (
+              {modalities.map((m: string, i: number) => (
                 <span key={i} style={{ background: "#ede9f7", color: BRAND.lilac, borderRadius: 20, padding: "2px 10px", fontSize: 11 }}>{m}</span>
               ))}
             </div>
@@ -216,7 +216,7 @@ interface ReferralNetworkProps {
   practitioners: Practitioner[];
 }
 
-export default function ReferralNetwork({ practitioners }: ReferralNetworkProps) {
+const ReferralNetwork: React.FC<ReferralNetworkProps> = ({ practitioners }) => {
   const [search, setSearch] = useState("");
   const [showAddForm, setShowAddForm] = useState(false);
   const [editingP, setEditingP] = useState<Practitioner | null>(null);
@@ -293,8 +293,10 @@ export default function ReferralNetwork({ practitioners }: ReferralNetworkProps)
           {!search && <p style={{ fontSize: 13 }}>Add external referrals using the button above.</p>}
         </div>
       ) : (
-        filtered.map(p => <ReferralCard key={`${p.id}-${p.name}`} p={p} onEdit={handleEdit} />)
+        filtered.map((p, idx) => <ReferralCard key={idx} p={p} onEdit={handleEdit} />)
       )}
     </div>
   );
-}
+};
+
+export default ReferralNetwork;
