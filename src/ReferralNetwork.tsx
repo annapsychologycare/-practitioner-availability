@@ -213,25 +213,33 @@ const CheckboxGroup: React.FC<{
 interface AddReferralFormProps {
   onAdd: (p: Practitioner) => void;
   onCancel: () => void;
+  initialValues?: Practitioner;
 }
 
-const AddReferralForm: React.FC<AddReferralFormProps> = ({ onAdd, onCancel }) => {
-  const [name, setName] = useState("");
-  const [title, setTitle] = useState("");
-  const [therapistType, setTherapistType] = useState("");
-  const [gender, setGender] = useState("");
-  const [ageRange, setAgeRange] = useState("");
-  const [billingTypes, setBillingTypes] = useState<string[]>([]);
-  const [presentations, setPresentations] = useState<string[]>([]);
-  const [modalities, setModalities] = useState<string[]>([]);
-  const [clientTypes, setClientTypes] = useState("");
-  const [shortBio, setShortBio] = useState("");
-  const [qualifications, setQualifications] = useState("");
-  const [languages, setLanguages] = useState("");
-  const [referralContact, setReferralContact] = useState("");
-  const [referralWebsite, setReferralWebsite] = useState("");
-  const [isFormerPC, setIsFormerPC] = useState(false);
-  const [currentClinic, setCurrentClinic] = useState("");
+const AddReferralForm: React.FC<AddReferralFormProps> = ({ onAdd, onCancel, initialValues }) => {
+  const iv = initialValues;
+  const [name, setName] = useState(iv?.name ?? "");
+  const [title, setTitle] = useState(iv?.title ?? "");
+  const [therapistType, setTherapistType] = useState(iv?.therapist_type ?? "");
+  const [gender, setGender] = useState(iv?.gender ?? "");
+  const [ageRange, setAgeRange] = useState(iv?.age_range ?? "");
+  const [billingTypes, setBillingTypes] = useState<string[]>(
+    iv?.billing_types ? iv.billing_types.split(",").map(s => s.trim()).filter(Boolean) : []
+  );
+  const [presentations, setPresentations] = useState<string[]>(
+    Array.isArray(iv?.presentations) ? iv!.presentations as string[] : []
+  );
+  const [modalities, setModalities] = useState<string[]>(
+    Array.isArray(iv?.modalities) ? iv!.modalities as string[] : []
+  );
+  const [clientTypes, setClientTypes] = useState(iv?.client_types ?? "");
+  const [shortBio, setShortBio] = useState(iv?.short_bio ?? "");
+  const [qualifications, setQualifications] = useState(iv?.qualifications ?? "");
+  const [languages, setLanguages] = useState(iv?.languages ?? "");
+  const [referralContact, setReferralContact] = useState(iv?.referral_contact ?? "");
+  const [referralWebsite, setReferralWebsite] = useState(iv?.referral_website ?? "");
+  const [isFormerPC, setIsFormerPC] = useState(iv?.former_pc ?? (!iv?.referral_source || iv?.referral_source === "former_pc"));
+  const [currentClinic, setCurrentClinic] = useState(iv?.current_clinic ?? "");
 
   const field = (label: string, value: string, onChange: (v: string) => void, placeholder?: string, type: "input" | "textarea" = "input") => (
     <div style={{ marginBottom: 12 }}>
@@ -248,7 +256,7 @@ const AddReferralForm: React.FC<AddReferralFormProps> = ({ onAdd, onCancel }) =>
   const handleAdd = () => {
     if (!name.trim()) { alert("Name is required."); return; }
     const newP: Practitioner = {
-      id: Date.now(),
+      id: iv?.id ?? Date.now(),
       name: name.trim(),
       title,
       therapist_type: therapistType,
@@ -274,7 +282,7 @@ const AddReferralForm: React.FC<AddReferralFormProps> = ({ onAdd, onCancel }) =>
 
   return (
     <div style={{ background: "#fff", border: `1px solid #e5e7eb`, borderRadius: 12, padding: 20, marginBottom: 24, position: "relative" }}>
-      <h3 style={{ margin: "0 0 16px", fontSize: 16, color: "#7C6B9E" }}>➕ Add External Referral</h3>
+      <h3 style={{ margin: "0 0 16px", fontSize: 16, color: "#7C6B9E" }}>{iv ? `✏️ Edit — ${iv.name}` : "➕ Add External Referral"}</h3>
 
       {/* Row 1: Name + Title */}
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0 16px" }}>
@@ -346,7 +354,7 @@ const AddReferralForm: React.FC<AddReferralFormProps> = ({ onAdd, onCancel }) =>
       <div style={{ display: "flex", gap: 10, marginTop: 8 }}>
         <button onClick={handleAdd}
           style={{ background: "#7C6B9E", color: "#fff", border: "none", borderRadius: 8, padding: "8px 20px", fontWeight: 600, cursor: "pointer", fontSize: 14 }}>
-          Add to Network
+          {iv ? "Save Changes" : "Add to Network"}
         </button>
         <button onClick={onCancel}
           style={{ background: "#fff", color: "#6b7280", border: `1px solid #e5e7eb`, borderRadius: 8, padding: "8px 20px", fontWeight: 600, cursor: "pointer", fontSize: 14 }}>
@@ -453,14 +461,15 @@ const ReferralNetwork: React.FC<ReferralNetworkProps> = ({ practitioners }) => {
   const [search, setSearch] = useState("");
   const [showAddForm, setShowAddForm] = useState(false);
   const [editingP, setEditingP] = useState<Practitioner | null>(null);
+  const [overrides, setOverrides] = useState<Record<number, Practitioner>>({});
   // Extra referrals added in-session (not persisted — for persistence would need backend)
   const [extras, setExtras] = useState<Practitioner[]>([]);
 
   const referrals = useMemo(() => {
-    // Combine former PC practitioners (referral_only) with any extras added in-session
-    const base = practitioners.filter(p => p.referral_only === true);
+    const base = practitioners.filter(p => p.referral_only === true)
+      .map(p => overrides[p.id as number] ?? p);
     return [...base, ...extras];
-  }, [practitioners, extras]);
+  }, [practitioners, extras, overrides]);
 
   const filtered = useMemo(() => {
     const q = search.toLowerCase().trim();
@@ -483,8 +492,21 @@ const ReferralNetwork: React.FC<ReferralNetworkProps> = ({ practitioners }) => {
 
   const handleEdit = (p: Practitioner) => {
     setEditingP(p);
-    // For now just alert — a full edit form could be added
-    alert(`To edit ${p.name}'s details, please ask your admin to update their profile.`);
+  };
+
+  const handleEditSave = (updated: Practitioner) => {
+    // If it's an in-session extra, update it there; otherwise store as an override
+    setExtras(prev => {
+      const idx = prev.findIndex(e => e.id === updated.id);
+      if (idx !== -1) {
+        const next = [...prev];
+        next[idx] = updated;
+        return next;
+      }
+      return prev;
+    });
+    setOverrides(prev => ({ ...prev, [updated.id as number]: updated }));
+    setEditingP(null);
   };
 
   return (
@@ -517,6 +539,14 @@ const ReferralNetwork: React.FC<ReferralNetworkProps> = ({ practitioners }) => {
 
       {showAddForm && (
         <AddReferralForm onAdd={handleAdd} onCancel={() => setShowAddForm(false)} />
+      )}
+
+      {editingP && (
+        <AddReferralForm
+          initialValues={editingP}
+          onAdd={handleEditSave}
+          onCancel={() => setEditingP(null)}
+        />
       )}
 
       {filtered.length === 0 ? (
