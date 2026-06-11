@@ -85,18 +85,42 @@ function extractSummary(text, textLower) {
     /\b(\d{1,2})\s*(?:year[s]?\s*old|yo|y\.o\.?|yrs?\s*old)\b/i,
     /\bage[d]?\s*:?\s*(\d{1,2})\b/i,
     /\b(\d{1,2})\s*year[s]?\s*of\s*age\b/i,
+    /\bdob[:\s]+\S+\s+\((\d{1,2})\s*years?\)/i,
   ];
   for (const pat of agePatterns) {
-    const m = textLower.match(pat);
+    const m = text.match(pat);
     if (m) { age = m[1]; break; }
   }
 
-  // Client gender (pronouns)
-  let clientGender = null;
-  const sheCount = (textLower.match(/\bshe\b|\bher\b/g) || []).length;
-  const heCount = (textLower.match(/\bhe\b|\bhim\b|\bhis\b/g) || []).length;
-  if (sheCount > heCount) clientGender = 'Female';
-  else if (heCount > sheCount) clientGender = 'Male';
+  // Try to calculate from DOB
+  if (!age) {
+    const dobMatch = text.match(/(?:dob|date of birth|born)[:\s]+(\d{1,2}[\/\-]\d{1,2}[\/\-]\d{2,4})/i);
+    if (dobMatch) {
+      const parts = dobMatch[1].split(/[\/\-]/);
+      if (parts.length === 3) {
+        const year = parseInt(parts[2].length === 2 ? '19' + parts[2] : parts[2]);
+        const month = parseInt(parts[1]) - 1;
+        const day = parseInt(parts[0]);
+        const dob = new Date(year, month, day);
+        const today = new Date();
+        let calcAge = today.getFullYear() - dob.getFullYear();
+        const m = today.getMonth() - dob.getMonth();
+        if (m < 0 || (m === 0 && today.getDate() < dob.getDate())) calcAge--;
+        if (calcAge > 0 && calcAge < 120) age = String(calcAge);
+      }
+    }
+  }
+
+  // Client sex (from explicit mention or pronouns)
+  let sex = null;
+  if (textLower.match(/\b(sex|gender)\s*:?\s*(male|man|gentleman)\b/)) sex = 'Male';
+  else if (textLower.match(/\b(sex|gender)\s*:?\s*(female|woman)\b/)) sex = 'Female';
+  else {
+    const sheCount = (textLower.match(/\bshe\b|\bher\b/g) || []).length;
+    const heCount = (textLower.match(/\bhe\b|\bhim\b|\bhis\b/g) || []).length;
+    if (sheCount > heCount + 1) sex = 'Female';
+    else if (heCount > sheCount + 1) sex = 'Male';
+  }
 
   // Clinician gender preference
   let gender = null;
@@ -112,38 +136,94 @@ function extractSummary(text, textLower) {
   else if (textLower.match(/\bcamberwell\b|burke\s*rd/)) location_preference = 'Burke Rd, Camberwell';
   else if (textLower.match(/\bst[\s-]*kilda\b|victoria\s*st/)) location_preference = 'Victoria St, St Kilda';
   else if (textLower.match(/\b(telehealth|online|remote|zoom|video\s+call)\b/)) location_preference = 'Telehealth';
+  else if (textLower.match(/\bflexible\b|\bno preference\b|\bany location\b/)) location_preference = 'Flexible';
 
   // Funding
   let funding = null;
-  if (textLower.match(/\bndis\b/)) funding = 'NDIS';
-  else if (textLower.match(/\bmedicare\b/)) funding = 'Medicare';
-  else if (textLower.match(/\bworksafe\b/)) funding = 'WorkSafe';
-  else if (textLower.match(/\btac\b/)) funding = 'TAC';
-  else if (textLower.match(/\bdva\b/)) funding = 'DVA';
-  else if (textLower.match(/\behe\b|enhanced\s+mental\s+health/)) funding = 'EHE';
-  else if (textLower.match(/\bprivate\b|\bself.pay\b/)) funding = 'Private / Self-pay';
+  const fundingParts = [];
+  if (textLower.match(/\bndis\b/)) {
+    if (textLower.match(/plan.managed/)) fundingParts.push('NDIS (Plan Managed)');
+    else if (textLower.match(/self.managed/)) fundingParts.push('NDIS (Self Managed)');
+    else fundingParts.push('NDIS');
+  }
+  if (textLower.match(/\bmedicare\b/)) {
+    if (textLower.match(/mhcp|mhtp|mental health (care|treatment) plan/)) fundingParts.push('Medicare (has MHCP)');
+    else if (textLower.match(/gp|needs (a )?(referral|plan)/)) fundingParts.push('Medicare (needs MHCP)');
+    else fundingParts.push('Medicare');
+  }
+  if (textLower.match(/\bworksafe\b|\bworkcover\b/)) fundingParts.push('WorkCover ⚠️ Not accepted');
+  if (textLower.match(/\btac\b/)) fundingParts.push('TAC ⚠️ Not accepted');
+  if (textLower.match(/\bdva\b/)) fundingParts.push('DVA');
+  if (textLower.match(/\behe\b|enhanced\s+mental\s+health/)) fundingParts.push('EHE');
+  if (textLower.match(/\bprivate\b|\bself.pay\b|\bout of pocket\b/)) fundingParts.push('Private / Self-pay');
+  funding = fundingParts.length ? fundingParts.join('; ') : null;
 
   // Client name
   let client_name = null;
-  const nameMatch = text.match(/(?:client|patient|name|referral\s+for)[:\s]+([A-Z][a-zA-Z'-]+(?:\s+[A-Z][a-zA-Z'-]+)?)/);
-  if (nameMatch) client_name = nameMatch[1];
+  const namePatterns = [
+    /(?:client|patient|name)[:\s]+([A-Z][a-zA-Z'-]+(?:\s+[A-Z][a-zA-Z'-]+)?)/,
+    /(?:referral\s+for)[:\s]+([A-Z][a-zA-Z'-]+(?:\s+[A-Z][a-zA-Z'-]+)?)/,
+    /^([A-Z][a-zA-Z'-]+\s+[A-Z][a-zA-Z'-]+)\s*[\n\r]/m,
+  ];
+  for (const pat of namePatterns) {
+    const m = text.match(pat);
+    if (m) { client_name = m[1]; break; }
+  }
 
   // Presenting issues
   const presenting_issues = detectPresentations(textLower);
 
-  // Risk
-  let risk_indicators = null;
-  if (textLower.match(/\b(suicid|self.harm|self harm|harm to (self|others)|crisis|at risk|actively|ideation)\b/)) {
-    risk_indicators = 'Risk indicators mentioned — review notes carefully';
+  // Risk — more detailed
+  let risk_suicidality = null;
+  let risk_selfharm = null;
+  let risk_eating = null;
+  let risk_substances = null;
+  let risk_other = null;
+
+  if (textLower.match(/\b(suicid|ending (their|his|her|my) life|thoughts of (death|dying)|ideation|self-destruct)\b/)) {
+    risk_suicidality = '⚠️ Mentioned — review notes';
+  }
+  if (textLower.match(/\bself.harm\b|\bcutting\b|\bself.injur/)) {
+    risk_selfharm = '⚠️ Mentioned — review notes';
+  }
+  if (textLower.match(/\beating disorder\b|\banorexia\b|\bbulimia\b|\bbinge eating\b|\bdisordered eating\b|\bbody image\b/)) {
+    risk_eating = '⚠️ Mentioned — review notes';
+  }
+  if (textLower.match(/\b(alcohol|substance|drug use|addiction|addicted|gambling)\b/)) {
+    risk_substances = '⚠️ Mentioned — review notes';
+  }
+  if (textLower.match(/\b(domestic violence|dv|aggression|psychosis|hospitalised|hospital|crisis team|acute)\b/)) {
+    risk_other = '⚠️ Mentioned — review notes';
   }
 
-  // Modality preference
-  const modality_preference = detectModality(textLower);
+  // Collapse into single risk_indicators field for scoring (preserve backward compat)
+  let risk_indicators = null;
+  const risks = [risk_suicidality, risk_selfharm, risk_eating, risk_substances, risk_other].filter(Boolean);
+  if (risks.length) risk_indicators = 'Risk indicators mentioned — review notes carefully';
+
+  // Modality preference — collect all
+  const allModalities = [];
+  for (const [modality, keywords] of Object.entries(MODALITY_KEYWORDS)) {
+    if (keywords.some(kw => textLower.includes(kw))) allModalities.push(modality);
+  }
+  const modality_preference = allModalities.length ? allModalities.join(', ') : null;
+
+  // Therapy style preference
+  let therapy_style = null;
+  if (textLower.match(/structured|practical|tools|strategies|skills.based|coping strategies/)) therapy_style = 'Structured / practical / skills-based';
+  else if (textLower.match(/exploratory|open.ended|talk.based|conversational|depth|deeper/)) therapy_style = 'Exploratory / conversational';
+  else if (textLower.match(/trauma.focused|past experiences|childhood/)) therapy_style = 'Trauma-focused / depth work';
+
+  // Frequency
+  let frequency = null;
+  if (textLower.match(/\bweekly\b/)) frequency = 'Weekly';
+  else if (textLower.match(/\bfortnightly\b|\bevery (two|2) weeks\b/)) frequency = 'Fortnightly';
+  else if (textLower.match(/\bflexible\b|\bunsure\b/)) frequency = 'Flexible';
 
   // Timing
   let timing = null;
   const days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
-  const times = ['morning', 'afternoon', 'evening', 'weekday', 'weekend'];
+  const times = ['morning', 'afternoon', 'evening', 'weekday', 'weekend', 'before school', 'after school', 'after hours'];
   const foundDays = days.filter(d => textLower.includes(d));
   const foundTimes = times.filter(t => textLower.includes(t));
   const timingParts = [...foundDays.map(d => d.charAt(0).toUpperCase() + d.slice(1) + 's'), ...foundTimes];
@@ -152,34 +232,90 @@ function extractSummary(text, textLower) {
   // Previous therapy
   let previous_therapy = null;
   if (textLower.match(/\b(previously|previous|prior|has seen|has had|tried|used to see|been in)\b.*\b(therap|psycholog|counsel)\b/)) {
-    previous_therapy = 'Yes (mentioned in notes)';
+    previous_therapy = 'Yes (see notes for details)';
+  } else if (textLower.match(/\bno previous\b|\bno prior\b|\bfirst time\b|\bnever seen\b/)) {
+    previous_therapy = 'No';
+  }
+
+  // Diagnosis / background
+  let diagnosis = null;
+  const diagKeywords = ['adhd', 'autism', 'asd', 'anxiety disorder', 'depression', 'bipolar', 'bpd', 'borderline', 'ptsd', 'ocd', 'schizophrenia', 'eating disorder', 'anorexia', 'bulimia', 'personality disorder'];
+  const foundDiag = diagKeywords.filter(d => textLower.includes(d));
+  if (foundDiag.length) diagnosis = foundDiag.map(d => d.toUpperCase()).join(', ');
+
+  // Medication
+  let medication = null;
+  if (textLower.match(/\b(medicated|medication|antidepressant|ssri|snri|antipsychotic|mood stabiliser|ritalin|concerta|vyvanse|lexapro|zoloft|prozac|effexor|abilify|seroquel|lithium)\b/)) {
+    medication = 'Yes (mentioned in notes)';
+  } else if (textLower.match(/\bno medication\b|\bnot medicated\b/)) {
+    medication = 'No';
   }
 
   // Referral source
   let referral_source = null;
-  const refMatch = text.match(/(?:referred?\s+(?:by|from)|referral\s+(?:from|source|via))[:\s]+([^\n.]{3,50})/i);
+  const refMatch = text.match(/(?:referred?\s+(?:by|from)|referral\s+(?:from|source|via)|found\s+(?:us|pc)\s+(?:via|through|on))[:\s]+([^\n.]{3,60})/i);
   if (refMatch) referral_source = refMatch[1].trim();
 
   // Urgency note
   let additional_notes = null;
-  if (textLower.match(/\b(urgent|asap|as soon as possible|emergency)\b/)) {
-    additional_notes = 'Urgent referral';
-  }
+  const urgencyMatch = textLower.match(/\b(urgent|asap|as soon as possible|emergency)\b/);
+  if (urgencyMatch) additional_notes = '⚡ Urgent referral requested';
+
+  // Specific practitioner requested
+  let specific_practitioner = null;
+  const specMatch = text.match(/(?:specific(?:ally)?|requested|wants to see|referred to see|asked for)[:\s]+(?:(?:Dr\.?|Mr\.?|Ms\.?|Mrs\.?)\s+)?([A-Z][a-z]+(?:\s+[A-Z][a-z]+)?)/);
+  if (specMatch) specific_practitioner = specMatch[1];
 
   return {
     client_name: client_name || null,
-    age: age ? `${age} years old${clientGender ? ` (${clientGender})` : ''}` : (clientGender || null),
+    age: age ? `${age} years old` : null,
+    sex,
     gender,
     presenting_issues,
     risk_indicators,
+    risk_suicidality,
+    risk_selfharm,
+    risk_eating,
+    risk_substances,
+    risk_other,
     location_preference,
     timing,
+    frequency,
     modality_preference,
+    therapy_style,
     funding,
     previous_therapy,
+    diagnosis,
+    medication,
     referral_source,
+    specific_practitioner,
     additional_notes,
   };
+}
+
+function generateEmailIntro(summary) {
+  const firstName = summary.client_name ? summary.client_name.split(' ')[0] : null;
+  const greeting = firstName ? `Hi ${firstName},` : 'Hi,';
+
+  const issues = summary.presenting_issues || [];
+  let issueRef = '';
+  if (issues.length === 1) {
+    issueRef = ` with ${issues[0].toLowerCase()}`;
+  } else if (issues.length === 2) {
+    issueRef = ` with ${issues[0].toLowerCase()} and ${issues[1].toLowerCase()}`;
+  } else if (issues.length > 2) {
+    issueRef = ` with ${issues.slice(0, 2).map(i => i.toLowerCase()).join(', ')} and related concerns`;
+  }
+
+  const modalityRef = summary.modality_preference
+    ? ` We have also kept in mind your interest in ${summary.modality_preference}.`
+    : '';
+
+  const locationRef = summary.location_preference && !['Flexible', 'No preference'].includes(summary.location_preference)
+    ? ` All options below are available at ${summary.location_preference} as per your preference.`
+    : '';
+
+  return `${greeting} Thank you so much for taking the time to speak with us — we really appreciate you sharing what you've been going through${issueRef}, and we're so glad you've reached out to PsychologyCare. We've carefully reviewed everything you shared and have put together some practitioners we think would be a wonderful fit for you and your needs.${modalityRef}${locationRef} Each option has been selected with your goals and preferences in mind. Please feel free to reach out if you have any questions — we're here to help and look forward to supporting you on this journey.`;
 }
 
 function getAvailabilityNote(p) {
@@ -367,7 +503,7 @@ exports.handler = async (event) => {
         'Content-Type': 'application/json',
         'Access-Control-Allow-Origin': '*',
       },
-      body: JSON.stringify({ summary, matches }),
+      body: JSON.stringify({ summary, matches, email_intro: generateEmailIntro(summary) }),
     };
 
   } catch (err) {

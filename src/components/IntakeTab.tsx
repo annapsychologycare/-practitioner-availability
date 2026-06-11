@@ -11,17 +11,28 @@ const COLORS = {
 };
 
 interface IntakeSummary {
-  client_name: string;
-  age: string;
-  gender: string;
+  client_name: string | null;
+  age: string | null;
+  sex: string | null;
+  gender: string | null;
   presenting_issues: string[];
   risk_indicators: string | null;
+  risk_suicidality: string | null;
+  risk_selfharm: string | null;
+  risk_eating: string | null;
+  risk_substances: string | null;
+  risk_other: string | null;
   location_preference: string | null;
   timing: string | null;
+  frequency: string | null;
   modality_preference: string | null;
+  therapy_style: string | null;
   funding: string | null;
   previous_therapy: string | null;
+  diagnosis: string | null;
+  medication: string | null;
   referral_source: string | null;
+  specific_practitioner: string | null;
   additional_notes: string | null;
 }
 
@@ -40,6 +51,7 @@ interface PractitionerMatch {
 interface MatchResult {
   summary: IntakeSummary;
   matches: PractitionerMatch[];
+  email_intro: string | null;
 }
 
 const NETLIFY_BASE = 'https://practitioneravailabilitypsychologycar.netlify.app';
@@ -254,41 +266,168 @@ export default function IntakeTab() {
               <MatchCard key={i} match={match} rank={i + 1} />
             ))}
           </div>
+
+          {/* Email Intro section */}
+          {result.email_intro && (
+            <EmailIntroBox intro={result.email_intro} clientName={result.summary.client_name} />
+          )}
         </div>
       )}
     </div>
   );
 }
 
+function SummaryField({ label, value, highlight }: { label: string; value: string | string[] | null | undefined; highlight?: boolean }) {
+  if (!value || (Array.isArray(value) && value.length === 0)) return null;
+  return (
+    <div style={{ display: 'flex', gap: 8, fontSize: 13, marginBottom: 4 }}>
+      <span style={{ color: COLORS.mauve, fontWeight: 600, minWidth: 140, flexShrink: 0 }}>{label}:</span>
+      <span style={{ color: highlight ? '#c00' : '#333', fontWeight: highlight ? 600 : 400 }}>
+        {Array.isArray(value) ? value.join(', ') : value}
+      </span>
+    </div>
+  );
+}
+
+function SummarySection({ title, children }: { title: string; children: React.ReactNode }) {
+  return (
+    <div style={{ marginBottom: 14 }}>
+      <div style={{ fontWeight: 700, color: COLORS.darkPurple, fontSize: 12, textTransform: 'uppercase', letterSpacing: 0.5, marginBottom: 6, borderBottom: `1px solid ${COLORS.lightMauve}`, paddingBottom: 3 }}>{title}</div>
+      {children}
+    </div>
+  );
+}
+
 function SummaryDisplay({ summary }: { summary: IntakeSummary }) {
-  const fields: [string, string | string[] | null | undefined][] = [
-    ['Client', summary.client_name],
-    ['Age', summary.age],
-    ['Gender', summary.gender],
-    ['Presenting Issues', summary.presenting_issues],
-    ['Risk Indicators', summary.risk_indicators],
-    ['Location Preference', summary.location_preference],
-    ['Timing / Availability', summary.timing],
-    ['Modality Preference', summary.modality_preference],
-    ['Funding', summary.funding],
-    ['Previous Therapy', summary.previous_therapy],
-    ['Referral Source', summary.referral_source],
-    ['Additional Notes', summary.additional_notes],
-  ];
+  const riskFields = [
+    summary.risk_suicidality ? `Suicidality: ${summary.risk_suicidality}` : null,
+    summary.risk_selfharm ? `Self-harm: ${summary.risk_selfharm}` : null,
+    summary.risk_eating ? `Eating/body image: ${summary.risk_eating}` : null,
+    summary.risk_substances ? `Substances: ${summary.risk_substances}` : null,
+    summary.risk_other ? `Other: ${summary.risk_other}` : null,
+  ].filter(Boolean) as string[];
+
+  const hasRisk = riskFields.length > 0;
 
   return (
-    <div style={{ display: 'grid', gap: 8 }}>
-      {fields.map(([label, value]) => {
-        if (!value || (Array.isArray(value) && value.length === 0)) return null;
-        return (
-          <div key={label} style={{ display: 'flex', gap: 8, fontSize: 13 }}>
-            <span style={{ color: COLORS.mauve, fontWeight: 600, minWidth: 160, flexShrink: 0 }}>{label}:</span>
-            <span style={{ color: '#333' }}>
-              {Array.isArray(value) ? value.join(', ') : value}
-            </span>
+    <div>
+      {/* Client */}
+      <SummarySection title="👤 Client">
+        <SummaryField label="Name" value={summary.client_name} />
+        <SummaryField label="Age" value={summary.age} />
+        <SummaryField label="Sex" value={summary.sex} />
+        <SummaryField label="Referral source" value={summary.referral_source} />
+      </SummarySection>
+
+      {/* Presenting */}
+      {(summary.presenting_issues?.length > 0) && (
+        <SummarySection title="🎯 Presenting Issues">
+          <div style={{ fontSize: 13, color: '#333' }}>
+            {summary.presenting_issues.map((issue, i) => (
+              <div key={i} style={{ marginBottom: 2 }}>• {issue}</div>
+            ))}
           </div>
-        );
-      })}
+        </SummarySection>
+      )}
+
+      {/* Risk */}
+      <SummarySection title="⚠️ Risk">
+        {hasRisk ? (
+          <div style={{ background: '#fff3cd', borderRadius: 6, padding: '8px 12px', border: '1px solid #ffc107' }}>
+            {riskFields.map((r, i) => (
+              <div key={i} style={{ fontSize: 13, color: '#856404', fontWeight: 600, marginBottom: 2 }}>{r}</div>
+            ))}
+          </div>
+        ) : (
+          <div style={{ fontSize: 13, color: '#2e7d32' }}>✓ Nil identified</div>
+        )}
+      </SummarySection>
+
+      {/* Modalities & approach */}
+      <SummarySection title="🧠 Modalities & Approach">
+        <SummaryField label="Preferred modalities" value={summary.modality_preference || 'Not specified'} />
+        <SummaryField label="Therapy style" value={summary.therapy_style} />
+        <SummaryField label="Clinician gender pref" value={summary.gender} />
+        <SummaryField label="Specific practitioner" value={summary.specific_practitioner} />
+      </SummarySection>
+
+      {/* Background */}
+      <SummarySection title="🏥 Background">
+        <SummaryField label="Diagnoses" value={summary.diagnosis} />
+        <SummaryField label="Medication" value={summary.medication} />
+        <SummaryField label="Previous therapy" value={summary.previous_therapy} />
+      </SummarySection>
+
+      {/* Location & Availability */}
+      <SummarySection title="📍 Location & Availability">
+        <SummaryField label="Location" value={summary.location_preference} />
+        <SummaryField label="Days/times" value={summary.timing} />
+        <SummaryField label="Frequency" value={summary.frequency} />
+      </SummarySection>
+
+      {/* Funding */}
+      <SummarySection title="💰 Funding">
+        <SummaryField label="Funding" value={summary.funding || 'Not discussed'} highlight={!!(summary.funding?.includes('⚠️'))} />
+      </SummarySection>
+
+      {/* Notes */}
+      {summary.additional_notes && (
+        <SummarySection title="📝 Notes">
+          <SummaryField label="Notes" value={summary.additional_notes} />
+        </SummarySection>
+      )}
+    </div>
+  );
+}
+
+function EmailIntroBox({ intro, clientName }: { intro: string; clientName: string | null }) {
+  const [copied, setCopied] = React.useState(false);
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(intro);
+    } catch {
+      const el = document.createElement('textarea');
+      el.value = intro;
+      el.style.position = 'fixed';
+      el.style.left = '-9999px';
+      document.body.appendChild(el);
+      el.focus(); el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2500);
+  };
+  return (
+    <div style={{
+      marginTop: 32,
+      background: '#f0f7ff',
+      borderRadius: 12,
+      padding: 20,
+      borderLeft: `4px solid ${COLORS.coolBlue}`,
+    }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 }}>
+        <h3 style={{ margin: 0, color: COLORS.darkPurple, fontSize: 16 }}>
+          ✉️ Email Intro {clientName ? `for ${clientName.split(' ')[0]}` : ''}
+        </h3>
+        <button
+          onClick={handleCopy}
+          style={{
+            padding: '6px 14px',
+            background: copied ? '#2e7d32' : COLORS.coolBlue,
+            color: 'white',
+            border: 'none',
+            borderRadius: 6,
+            cursor: 'pointer',
+            fontSize: 12,
+            fontWeight: 600,
+          }}
+        >
+          {copied ? '✓ Copied!' : '📋 Copy Intro'}
+        </button>
+      </div>
+      <p style={{ margin: 0, fontSize: 13, color: '#333', lineHeight: 1.6, fontStyle: 'italic' }}>{intro}</p>
+      <p style={{ margin: '8px 0 0', fontSize: 11, color: '#888' }}>Paste this as the opening paragraph of your client email, then add the practitioner details below.</p>
     </div>
   );
 }
@@ -403,18 +542,60 @@ function MatchCard({ match, rank }: { match: PractitionerMatch; rank: number }) 
 
 function buildSummaryText(s: IntakeSummary): string {
   const lines: string[] = [];
-  if (s.client_name) lines.push(`Client: ${s.client_name}`);
-  if (s.age) lines.push(`Age: ${s.age}`);
-  if (s.gender) lines.push(`Gender: ${s.gender}`);
-  if (s.presenting_issues?.length) lines.push(`Presenting Issues: ${s.presenting_issues.join(', ')}`);
-  if (s.risk_indicators) lines.push(`Risk Indicators: ${s.risk_indicators}`);
-  if (s.location_preference) lines.push(`Location Preference: ${s.location_preference}`);
-  if (s.timing) lines.push(`Timing: ${s.timing}`);
-  if (s.modality_preference) lines.push(`Modality Preference: ${s.modality_preference}`);
-  if (s.funding) lines.push(`Funding: ${s.funding}`);
-  if (s.previous_therapy) lines.push(`Previous Therapy: ${s.previous_therapy}`);
-  if (s.referral_source) lines.push(`Referral Source: ${s.referral_source}`);
-  if (s.additional_notes) lines.push(`Notes: ${s.additional_notes}`);
+  lines.push('👤 CLIENT');
+  if (s.client_name) lines.push(`  Name: ${s.client_name}`);
+  if (s.age) lines.push(`  Age: ${s.age}`);
+  if (s.sex) lines.push(`  Sex: ${s.sex}`);
+  if (s.referral_source) lines.push(`  Referred by: ${s.referral_source}`);
+
+  if (s.presenting_issues?.length) {
+    lines.push('');
+    lines.push('🎯 PRESENTING ISSUES');
+    s.presenting_issues.forEach(i => lines.push(`  • ${i}`));
+  }
+
+  lines.push('');
+  lines.push('⚠️ RISK');
+  const risks = [s.risk_suicidality, s.risk_selfharm, s.risk_eating, s.risk_substances, s.risk_other].filter(Boolean);
+  if (risks.length) {
+    if (s.risk_suicidality) lines.push(`  Suicidality: ${s.risk_suicidality}`);
+    if (s.risk_selfharm) lines.push(`  Self-harm: ${s.risk_selfharm}`);
+    if (s.risk_eating) lines.push(`  Eating/body image: ${s.risk_eating}`);
+    if (s.risk_substances) lines.push(`  Substances: ${s.risk_substances}`);
+    if (s.risk_other) lines.push(`  Other: ${s.risk_other}`);
+  } else {
+    lines.push('  Nil identified');
+  }
+
+  lines.push('');
+  lines.push('🧠 MODALITIES & APPROACH');
+  lines.push(`  Modalities: ${s.modality_preference || 'Not specified'}`);
+  if (s.therapy_style) lines.push(`  Style: ${s.therapy_style}`);
+  if (s.gender) lines.push(`  Clinician pref: ${s.gender}`);
+  if (s.specific_practitioner) lines.push(`  Specific prac: ${s.specific_practitioner}`);
+
+  lines.push('');
+  lines.push('🏥 BACKGROUND');
+  if (s.diagnosis) lines.push(`  Diagnoses: ${s.diagnosis}`);
+  if (s.medication) lines.push(`  Medication: ${s.medication}`);
+  if (s.previous_therapy) lines.push(`  Previous therapy: ${s.previous_therapy}`);
+
+  lines.push('');
+  lines.push('📍 LOCATION & AVAILABILITY');
+  if (s.location_preference) lines.push(`  Location: ${s.location_preference}`);
+  if (s.timing) lines.push(`  Days/times: ${s.timing}`);
+  if (s.frequency) lines.push(`  Frequency: ${s.frequency}`);
+
+  lines.push('');
+  lines.push('💰 FUNDING');
+  lines.push(`  ${s.funding || 'Not discussed'}`);
+
+  if (s.additional_notes) {
+    lines.push('');
+    lines.push('📝 NOTES');
+    lines.push(`  ${s.additional_notes}`);
+  }
+
   return lines.join('\n');
 }
 
@@ -441,5 +622,10 @@ function buildFullCopyText(result: MatchResult): string {
       lines.push(`   Availability: ${m.availability_note || 'Waitlist only'}`);
     }
   });
+  if (result.email_intro) {
+    lines.push('');
+    lines.push('=== EMAIL INTRO ===');
+    lines.push(result.email_intro);
+  }
   return lines.join('\n');
 }
