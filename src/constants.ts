@@ -95,7 +95,6 @@ export const CANONICAL_PRESENTATIONS: string[] = [
   "Non-Monogomy/ Polyamory",
   "Family conflict or parental separation adjustment",
   "Family Conflict/ belnded family stress",
-  "Relationship or parenting stress",
   "Erectile Dysfunction",
   "Sexual problems",
 
