@@ -184,12 +184,12 @@ export default function IntakeTab() {
           fontSize: 15,
         }}
       >
-        {loading ? '⏳ Analysing...' : '✨ Summarise & Match Practitioners'}
+        {loading ? '⏳ Matching...' : '✨ Summarise & Match Practitioners'}
       </button>
 
       {loading && (
         <p style={{ color: COLORS.mauve, marginTop: 12, fontSize: 13 }}>
-          Analysing intake and matching against practitioner roster… this takes about 20–30 seconds ☕
+          Matching against practitioner roster…
         </p>
       )}
 
@@ -197,7 +197,7 @@ export default function IntakeTab() {
         <div style={{ marginTop: 16, padding: 16, background: '#ffeaea', borderRadius: 8, color: '#c00', fontSize: 13 }}>
           <strong>⚠️ Matching unavailable</strong>
           <div style={{ marginTop: 6, color: '#800' }}>
-            The AI matching service isn't configured yet. Please ask your Tasklet agent to add the <code>ANTHROPIC_API_KEY</code> to Netlify environment variables.
+            Matching service error. Please try again or contact your Tasklet agent.
           </div>
           <details style={{ marginTop: 8 }}>
             <summary style={{ cursor: 'pointer', color: '#a00', fontSize: 12 }}>Technical detail</summary>
