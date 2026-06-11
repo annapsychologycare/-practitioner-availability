@@ -1,382 +1,392 @@
-import React, { useState, useCallback } from "react";
+import React, { useState } from 'react';
 
-type IntakeType = "form" | "transcript" | "notes";
+const COLORS = {
+  darkPurple: '#2C244C',
+  mauve: '#8D5273',
+  lightLilac: '#F0EEF7',
+  lightMauve: '#CDA8BA',
+  coolBlue: '#366188',
+  warmBlue: '#52A3BA',
+};
 
 interface IntakeSummary {
-  client_name?: string | null;
-  client_age?: string | null;
-  gender?: string | null;
-  presenting_issues?: string[] | null;
-  risk_indicators?: string[] | null;
-  location_preference?: string | null;
-  timing_preference?: string | null;
-  frequency?: string | null;
-  modality_preference?: string | null;
-  funding?: string | null;
-  previous_therapy?: string | null;
-  referral_source?: string | null;
-  additional_notes?: string | null;
+  client_name: string;
+  age: string;
+  gender: string;
+  presenting_issues: string[];
+  risk_indicators: string | null;
+  location_preference: string | null;
+  timing: string | null;
+  modality_preference: string | null;
+  funding: string | null;
+  previous_therapy: string | null;
+  referral_source: string | null;
+  additional_notes: string | null;
 }
 
-const IntakeTab: React.FC = () => {
-  const [intakeType, setIntakeType] = useState<IntakeType>("form");
-  const [text, setText] = useState("");
-  const [sending, setSending] = useState(false);
-  const [summary, setSummary] = useState<IntakeSummary | null>(null);
-  const [error, setError] = useState("");
+interface PractitionerMatch {
+  name: string;
+  match_score: 'Strong' | 'Good' | 'Possible';
+  reasons: string[];
+  availability_note: string;
+  photo_url?: string;
+  title?: string;
+  gender?: string;
+  locations?: { location: string; availability: string }[];
+  billing_types?: string[];
+}
 
-  const handleSummarise = useCallback(async () => {
+interface MatchResult {
+  summary: IntakeSummary;
+  matches: PractitionerMatch[];
+}
+
+const NETLIFY_BASE = 'https://practitioneravailabilitypsychologycar.netlify.app';
+
+const scoreColor = (score: string) => {
+  if (score === 'Strong') return '#2e7d32';
+  if (score === 'Good') return COLORS.coolBlue;
+  return COLORS.mauve;
+};
+
+const scoreBg = (score: string) => {
+  if (score === 'Strong') return '#e8f5e9';
+  if (score === 'Good') return '#e3f2fd';
+  return '#f8e8ef';
+};
+
+export default function IntakeTab() {
+  const [text, setText] = useState('');
+  const [intakeType, setIntakeType] = useState<'form' | 'transcript' | 'notes'>('notes');
+  const [loading, setLoading] = useState(false);
+  const [result, setResult] = useState<MatchResult | null>(null);
+  const [error, setError] = useState('');
+  const [copied, setCopied] = useState(false);
+
+  const handleSubmit = async () => {
     if (!text.trim()) return;
-
-    setSending(true);
-    setError("");
-    setSummary(null);
-
+    setLoading(true);
+    setResult(null);
+    setError('');
     try {
-      const res = await fetch("/.netlify/functions/process-intake", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          intake_type: intakeType,
-          text: text,
-        }),
+      const res = await fetch('/.netlify/functions/match-intake', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ text, intake_type: intakeType }),
       });
-
-      if (!res.ok) {
-        const data = (await res.json()) as Record<string, unknown>;
-        throw new Error(
-          typeof data.error === "string"
-            ? data.error
-            : "Failed to process intake"
-        );
+      const data = await res.json();
+      if (data.error) {
+        setError(data.error);
+      } else {
+        setResult(data);
       }
-
-      const result = (await res.json()) as IntakeSummary;
-      setSummary(result);
-    } catch (err: unknown) {
-      const msg = err instanceof Error ? err.message : "Unknown error";
-      setError(msg);
+    } catch (e: any) {
+      setError(e.message || 'Something went wrong');
     } finally {
-      setSending(false);
+      setLoading(false);
     }
-  }, [text, intakeType]);
+  };
 
-  const handleClear = useCallback(() => {
-    setText("");
-    setSummary(null);
-    setError("");
-  }, []);
+  const summaryText = result ? buildSummaryText(result.summary) : '';
 
-  const handleCopySummary = useCallback(async () => {
-    if (!summary) return;
-
-    const lines: string[] = [];
-
-    if (summary.client_name) lines.push(`Client: ${summary.client_name}`);
-    if (summary.client_age) lines.push(`Age: ${summary.client_age}`);
-    if (summary.gender) lines.push(`Gender: ${summary.gender}`);
-
-    if (summary.presenting_issues && summary.presenting_issues.length > 0) {
-      lines.push("\nPresenting Issues:");
-      summary.presenting_issues.forEach((issue) => {
-        lines.push(`• ${issue}`);
-      });
-    }
-
-    if (summary.risk_indicators && summary.risk_indicators.length > 0) {
-      lines.push("\nRisk Indicators:");
-      summary.risk_indicators.forEach((risk) => {
-        lines.push(`• ${risk}`);
-      });
-    }
-
-    if (summary.location_preference)
-      lines.push(`\nLocation Preference: ${summary.location_preference}`);
-    if (summary.timing_preference)
-      lines.push(`Timing: ${summary.timing_preference}`);
-    if (summary.frequency) lines.push(`Frequency: ${summary.frequency}`);
-    if (summary.modality_preference)
-      lines.push(`Modality: ${summary.modality_preference}`);
-    if (summary.funding) lines.push(`Funding: ${summary.funding}`);
-    if (summary.previous_therapy)
-      lines.push(`Previous Therapy: ${summary.previous_therapy}`);
-    if (summary.referral_source)
-      lines.push(`Referral Source: ${summary.referral_source}`);
-    if (summary.additional_notes)
-      lines.push(`\nAdditional Notes:\n${summary.additional_notes}`);
-
-    const copyText = lines.join("\n");
-
+  const handleCopy = async () => {
     try {
-      await navigator.clipboard.writeText(copyText);
-      alert("Summary copied to clipboard!");
+      await navigator.clipboard.writeText(summaryText);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
     } catch {
-      // Fallback for older browsers
-      const textarea = document.createElement("textarea");
-      textarea.value = copyText;
-      document.body.appendChild(textarea);
-      textarea.select();
-      document.execCommand("copy");
-      document.body.removeChild(textarea);
-      alert("Summary copied to clipboard!");
+      const el = document.createElement('textarea');
+      el.value = summaryText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
     }
-  }, [summary]);
+  };
 
   return (
-    <div className="space-y-6">
-      {/* Intro */}
-      <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
-        <h2 className="text-xl font-bold text-gray-900 mb-2">
-          📝 Intake Summary
-        </h2>
-        <p className="text-gray-500 text-sm">
-          Paste an intake form submission, call transcript, or call notes below.
-          AI will instantly extract the key matching criteria for practitioner
-          selection.
-        </p>
+    <div style={{ maxWidth: 800, margin: '0 auto', padding: '24px 16px' }}>
+      <h2 style={{ color: COLORS.darkPurple, marginBottom: 4 }}>📝 Intake & Practitioner Matching</h2>
+      <p style={{ color: '#666', marginBottom: 24, fontSize: 14 }}>
+        Paste intake notes, a form response, or a call transcript. Get an instant summary and practitioner match suggestions.
+      </p>
+
+      {/* Type selector */}
+      <div style={{ display: 'flex', gap: 8, marginBottom: 12 }}>
+        {(['form', 'transcript', 'notes'] as const).map(t => (
+          <button
+            key={t}
+            onClick={() => setIntakeType(t)}
+            style={{
+              padding: '6px 16px',
+              borderRadius: 20,
+              border: `2px solid ${intakeType === t ? COLORS.mauve : '#ccc'}`,
+              background: intakeType === t ? COLORS.mauve : 'white',
+              color: intakeType === t ? 'white' : '#555',
+              cursor: 'pointer',
+              fontWeight: intakeType === t ? 600 : 400,
+              fontSize: 13,
+              textTransform: 'capitalize',
+            }}
+          >
+            {t === 'form' ? '📋 Form' : t === 'transcript' ? '🎙️ Transcript' : '📝 Notes'}
+          </button>
+        ))}
       </div>
 
-      {/* Input Section */}
-      {!summary && (
-        <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200 space-y-4">
-          {/* Type selector */}
-          <div className="flex gap-2 flex-wrap">
-            {(
-              [
-                { key: "form", icon: "📋", label: "Intake Form" },
-                { key: "transcript", icon: "📞", label: "Call Transcript" },
-                { key: "notes", icon: "📝", label: "Call Notes" },
-              ] as const
-            ).map((opt) => (
-              <button
-                key={opt.key}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-                  intakeType === opt.key
-                    ? "bg-purple-600 text-white"
-                    : "bg-gray-100 text-gray-600 hover:bg-gray-200"
-                }`}
-                onClick={() => setIntakeType(opt.key)}
-                disabled={sending}
-              >
-                {opt.icon} {opt.label}
-              </button>
-            ))}
-          </div>
+      {/* Text area */}
+      <textarea
+        value={text}
+        onChange={e => setText(e.target.value)}
+        placeholder="Paste intake information here..."
+        rows={10}
+        style={{
+          width: '100%',
+          padding: 12,
+          borderRadius: 8,
+          border: `1px solid ${COLORS.lightMauve}`,
+          fontSize: 13,
+          fontFamily: 'inherit',
+          resize: 'vertical',
+          boxSizing: 'border-box',
+          outline: 'none',
+        }}
+      />
 
-          {/* Text area */}
-          <textarea
-            className="w-full h-64 p-4 border border-gray-300 rounded-lg text-sm leading-relaxed resize-y focus:ring-2 focus:ring-purple-400 focus:border-purple-400 outline-none disabled:bg-gray-50"
-            placeholder={
-              intakeType === "form"
-                ? "Paste the intake form content here..."
-                : intakeType === "transcript"
-                  ? "Paste the call transcript here..."
-                  : "Paste your call notes here..."
-            }
-            value={text}
-            onChange={(e) => setText(e.target.value)}
-            disabled={sending}
-          />
+      <button
+        onClick={handleSubmit}
+        disabled={loading || !text.trim()}
+        style={{
+          marginTop: 12,
+          padding: '10px 28px',
+          background: loading || !text.trim() ? '#ccc' : `linear-gradient(135deg, ${COLORS.darkPurple}, ${COLORS.mauve})`,
+          color: 'white',
+          border: 'none',
+          borderRadius: 8,
+          cursor: loading || !text.trim() ? 'not-allowed' : 'pointer',
+          fontWeight: 600,
+          fontSize: 15,
+        }}
+      >
+        {loading ? '⏳ Analysing...' : '✨ Summarise & Match Practitioners'}
+      </button>
 
-          {/* Character count */}
-          {text.length > 0 && (
-            <p className="text-xs text-gray-400">
-              {text.length.toLocaleString()} characters
-            </p>
-          )}
+      {loading && (
+        <p style={{ color: COLORS.mauve, marginTop: 12, fontSize: 13 }}>
+          Analysing intake and matching against practitioner roster… this takes about 20–30 seconds ☕
+        </p>
+      )}
 
-          {/* Actions */}
-          <div className="flex items-center gap-3 flex-wrap">
-            <button
-              className="px-5 py-2.5 bg-purple-600 text-white rounded-lg font-medium text-sm hover:bg-purple-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
-              onClick={handleSummarise}
-              disabled={!text.trim() || sending}
-            >
-              {sending ? (
-                <>
-                  <svg
-                    className="animate-spin h-4 w-4"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                  >
-                    <circle
-                      cx="12"
-                      cy="12"
-                      r="10"
-                      stroke="currentColor"
-                      strokeWidth="3"
-                      className="opacity-25"
-                    />
-                    <path
-                      d="M4 12a8 8 0 018-8"
-                      stroke="currentColor"
-                      strokeWidth="3"
-                      strokeLinecap="round"
-                    />
-                  </svg>
-                  Processing...
-                </>
-              ) : (
-                <>✨ Summarise</>
-              )}
-            </button>
-            {text && !sending && (
-              <button
-                className="px-4 py-2 text-gray-500 hover:text-gray-700 text-sm font-medium"
-                onClick={handleClear}
-              >
-                ✕ Clear
-              </button>
-            )}
-          </div>
-
-          {error && (
-            <div className="p-3 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm">
-              {error}
-            </div>
-          )}
+      {error && (
+        <div style={{ marginTop: 16, padding: 12, background: '#ffeaea', borderRadius: 8, color: '#c00', fontSize: 13 }}>
+          ⚠️ {error}
         </div>
       )}
 
-      {/* Summary display */}
-      {summary && (
-        <div className="bg-white rounded-xl p-6 shadow-sm border border-green-200 space-y-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <span className="text-green-500 text-xl">✅</span>
-              <h3 className="text-lg font-bold text-gray-900">
-                Intake Summary
-              </h3>
+      {result && (
+        <div style={{ marginTop: 32 }}>
+          {/* Summary section */}
+          <div style={{
+            background: COLORS.lightLilac,
+            borderRadius: 12,
+            padding: 20,
+            marginBottom: 32,
+            borderLeft: `4px solid ${COLORS.mauve}`,
+          }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
+              <h3 style={{ margin: 0, color: COLORS.darkPurple, fontSize: 16 }}>📋 Intake Summary</h3>
+              <button
+                onClick={handleCopy}
+                style={{
+                  padding: '6px 14px',
+                  background: copied ? '#2e7d32' : COLORS.mauve,
+                  color: 'white',
+                  border: 'none',
+                  borderRadius: 6,
+                  cursor: 'pointer',
+                  fontSize: 12,
+                  fontWeight: 600,
+                }}
+              >
+                {copied ? '✓ Copied!' : '📋 Copy'}
+              </button>
             </div>
-            <button
-              className="px-3 py-1.5 bg-purple-100 text-purple-700 rounded-lg text-sm font-medium hover:bg-purple-200 transition-colors flex items-center gap-2"
-              onClick={handleCopySummary}
-            >
-              📋 Copy
-            </button>
+            <SummaryDisplay summary={result.summary} />
           </div>
 
-          {/* Summary content */}
-          <div className="space-y-3 text-sm">
-            {summary.client_name && (
-              <div>
-                <p className="text-gray-500 font-semibold">Client Name</p>
-                <p className="text-gray-900">{summary.client_name}</p>
-              </div>
-            )}
+          {/* Matches section */}
+          <h3 style={{ color: COLORS.darkPurple, marginBottom: 4, fontSize: 18 }}>🎯 Suggested Practitioners</h3>
+          <p style={{ color: '#666', fontSize: 13, marginBottom: 20 }}>
+            Ranked by match strength based on presentations, client preferences, and current availability.
+          </p>
 
-            {(summary.client_age || summary.gender) && (
-              <div>
-                <p className="text-gray-500 font-semibold">Demographics</p>
-                <p className="text-gray-900">
-                  {[summary.client_age, summary.gender]
-                    .filter(Boolean)
-                    .join(", ")}
-                </p>
-              </div>
-            )}
-
-            {summary.presenting_issues &&
-              summary.presenting_issues.length > 0 && (
-                <div>
-                  <p className="text-gray-500 font-semibold">
-                    Presenting Issues
-                  </p>
-                  <ul className="text-gray-900 space-y-1">
-                    {summary.presenting_issues.map((issue, i) => (
-                      <li key={i}>• {issue}</li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-
-            {summary.risk_indicators && summary.risk_indicators.length > 0 && (
-              <div>
-                <p className="text-gray-500 font-semibold">Risk Indicators</p>
-                <ul className="text-gray-900 space-y-1">
-                  {summary.risk_indicators.map((risk, i) => (
-                    <li key={i}>• {risk}</li>
-                  ))}
-                </ul>
-              </div>
-            )}
-
-            {summary.location_preference && (
-              <div>
-                <p className="text-gray-500 font-semibold">
-                  Location Preference
-                </p>
-                <p className="text-gray-900">{summary.location_preference}</p>
-              </div>
-            )}
-
-            {summary.timing_preference && (
-              <div>
-                <p className="text-gray-500 font-semibold">Timing</p>
-                <p className="text-gray-900">{summary.timing_preference}</p>
-              </div>
-            )}
-
-            {summary.frequency && (
-              <div>
-                <p className="text-gray-500 font-semibold">Frequency</p>
-                <p className="text-gray-900">{summary.frequency}</p>
-              </div>
-            )}
-
-            {summary.modality_preference && (
-              <div>
-                <p className="text-gray-500 font-semibold">Modality</p>
-                <p className="text-gray-900">{summary.modality_preference}</p>
-              </div>
-            )}
-
-            {summary.funding && (
-              <div>
-                <p className="text-gray-500 font-semibold">Funding</p>
-                <p className="text-gray-900">{summary.funding}</p>
-              </div>
-            )}
-
-            {summary.previous_therapy && (
-              <div>
-                <p className="text-gray-500 font-semibold">Previous Therapy</p>
-                <p className="text-gray-900">{summary.previous_therapy}</p>
-              </div>
-            )}
-
-            {summary.referral_source && (
-              <div>
-                <p className="text-gray-500 font-semibold">Referral Source</p>
-                <p className="text-gray-900">{summary.referral_source}</p>
-              </div>
-            )}
-
-            {summary.additional_notes && (
-              <div>
-                <p className="text-gray-500 font-semibold">
-                  Additional Notes
-                </p>
-                <p className="text-gray-900 whitespace-pre-wrap">
-                  {summary.additional_notes}
-                </p>
-              </div>
-            )}
-          </div>
-
-          {/* Actions */}
-          <div className="pt-3 border-t border-gray-200 flex gap-2">
-            <button
-              className="px-4 py-2 bg-gray-100 text-gray-600 rounded-lg text-sm font-medium hover:bg-gray-200 transition-colors flex-1"
-              onClick={handleClear}
-            >
-              Process another intake
-            </button>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
+            {result.matches.map((match, i) => (
+              <MatchCard key={i} match={match} rank={i + 1} />
+            ))}
           </div>
         </div>
       )}
     </div>
   );
-};
+}
 
-export default IntakeTab;
+function SummaryDisplay({ summary }: { summary: IntakeSummary }) {
+  const fields: [string, string | string[] | null | undefined][] = [
+    ['Client', summary.client_name],
+    ['Age', summary.age],
+    ['Gender', summary.gender],
+    ['Presenting Issues', summary.presenting_issues],
+    ['Risk Indicators', summary.risk_indicators],
+    ['Location Preference', summary.location_preference],
+    ['Timing / Availability', summary.timing],
+    ['Modality Preference', summary.modality_preference],
+    ['Funding', summary.funding],
+    ['Previous Therapy', summary.previous_therapy],
+    ['Referral Source', summary.referral_source],
+    ['Additional Notes', summary.additional_notes],
+  ];
+
+  return (
+    <div style={{ display: 'grid', gap: 8 }}>
+      {fields.map(([label, value]) => {
+        if (!value || (Array.isArray(value) && value.length === 0)) return null;
+        return (
+          <div key={label} style={{ display: 'flex', gap: 8, fontSize: 13 }}>
+            <span style={{ color: COLORS.mauve, fontWeight: 600, minWidth: 160, flexShrink: 0 }}>{label}:</span>
+            <span style={{ color: '#333' }}>
+              {Array.isArray(value) ? value.join(', ') : value}
+            </span>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
+function MatchCard({ match, rank }: { match: PractitionerMatch; rank: number }) {
+  const photoFilename = match.photo_url ? match.photo_url.split('/').pop() : null;
+  const localPhoto = photoFilename ? `/photos/${photoFilename}` : null;
+
+  const rankEmoji = rank === 1 ? '🥇' : rank === 2 ? '🥈' : rank === 3 ? '🥉' : `${rank}.`;
+
+  const hasAvailability = match.locations?.some(l => l.availability?.trim());
+
+  return (
+    <div style={{
+      borderRadius: 12,
+      border: `1px solid ${COLORS.lightMauve}`,
+      overflow: 'hidden',
+      boxShadow: '0 2px 8px rgba(44,36,76,0.08)',
+    }}>
+      {/* Card header */}
+      <div style={{
+        background: `linear-gradient(135deg, ${COLORS.darkPurple}, ${COLORS.mauve})`,
+        padding: '16px 20px',
+        display: 'flex',
+        alignItems: 'center',
+        gap: 16,
+      }}>
+        {localPhoto && (
+          <img
+            src={localPhoto}
+            alt={match.name}
+            style={{
+              width: 56, height: 56,
+              borderRadius: '50%',
+              border: '2px solid rgba(255,255,255,0.4)',
+              objectFit: 'cover',
+              flexShrink: 0,
+            }}
+            onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+          />
+        )}
+        <div style={{ flex: 1 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+            <span style={{ fontSize: 18 }}>{rankEmoji}</span>
+            <span style={{ color: 'white', fontWeight: 700, fontSize: 17 }}>{match.name}</span>
+            <span style={{
+              background: scoreBg(match.match_score),
+              color: scoreColor(match.match_score),
+              fontWeight: 700,
+              fontSize: 11,
+              padding: '2px 10px',
+              borderRadius: 12,
+            }}>
+              {match.match_score} Match
+            </span>
+          </div>
+          {match.title && (
+            <div style={{ color: 'rgba(255,255,255,0.8)', fontSize: 13, marginTop: 2 }}>{match.title}</div>
+          )}
+        </div>
+      </div>
+
+      {/* Card body */}
+      <div style={{ padding: '16px 20px', background: 'white' }}>
+        {/* Why they match */}
+        <div style={{ marginBottom: 14 }}>
+          <div style={{ fontWeight: 600, color: COLORS.darkPurple, fontSize: 13, marginBottom: 6 }}>Why they're a good match:</div>
+          <ul style={{ margin: 0, paddingLeft: 18 }}>
+            {match.reasons.map((r, i) => (
+              <li key={i} style={{ color: '#444', fontSize: 13, marginBottom: 3 }}>{r}</li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Availability */}
+        <div style={{
+          background: hasAvailability ? '#f0f7ff' : '#fdf5f8',
+          borderRadius: 8,
+          padding: '10px 14px',
+          borderLeft: `3px solid ${hasAvailability ? COLORS.coolBlue : COLORS.lightMauve}`,
+        }}>
+          <div style={{ fontWeight: 600, color: hasAvailability ? COLORS.coolBlue : COLORS.mauve, fontSize: 12, marginBottom: hasAvailability ? 4 : 0 }}>
+            🗓 {hasAvailability ? 'Current Availability' : 'Availability'}
+          </div>
+          {hasAvailability ? (
+            match.locations?.filter(l => l.availability?.trim()).map((loc, i) => (
+              <div key={i} style={{ marginBottom: i < (match.locations?.length || 0) - 1 ? 6 : 0 }}>
+                <div style={{ fontWeight: 600, color: '#555', fontSize: 12 }}>{loc.location}</div>
+                {loc.availability.split('\n').filter(Boolean).map((slot, j) => (
+                  <div key={j} style={{ color: '#444', fontSize: 12, paddingLeft: 8 }}>• {slot}</div>
+                ))}
+              </div>
+            ))
+          ) : (
+            <div style={{ color: COLORS.mauve, fontSize: 13, fontStyle: 'italic' }}>
+              {match.availability_note || 'Currently fully booked — waitlist only'}
+            </div>
+          )}
+        </div>
+
+        {/* Billing */}
+        {match.billing_types && match.billing_types.length > 0 && (
+          <div style={{ marginTop: 10, fontSize: 12, color: '#666' }}>
+            <span style={{ fontWeight: 600 }}>Billing: </span>
+            {Array.isArray(match.billing_types) ? match.billing_types.join(' · ') : match.billing_types}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+function buildSummaryText(s: IntakeSummary): string {
+  const lines: string[] = [];
+  if (s.client_name) lines.push(`Client: ${s.client_name}`);
+  if (s.age) lines.push(`Age: ${s.age}`);
+  if (s.gender) lines.push(`Gender: ${s.gender}`);
+  if (s.presenting_issues?.length) lines.push(`Presenting Issues: ${s.presenting_issues.join(', ')}`);
+  if (s.risk_indicators) lines.push(`Risk Indicators: ${s.risk_indicators}`);
+  if (s.location_preference) lines.push(`Location Preference: ${s.location_preference}`);
+  if (s.timing) lines.push(`Timing: ${s.timing}`);
+  if (s.modality_preference) lines.push(`Modality Preference: ${s.modality_preference}`);
+  if (s.funding) lines.push(`Funding: ${s.funding}`);
+  if (s.previous_therapy) lines.push(`Previous Therapy: ${s.previous_therapy}`);
+  if (s.referral_source) lines.push(`Referral Source: ${s.referral_source}`);
+  if (s.additional_notes) lines.push(`Notes: ${s.additional_notes}`);
+  return lines.join('\n');
+}
