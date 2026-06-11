@@ -52,6 +52,8 @@ interface MatchResult {
   summary: IntakeSummary;
   matches: PractitionerMatch[];
   email_intro: string | null;
+  ai_display_summary: string | null;
+  ai_powered: boolean;
 }
 
 const NETLIFY_BASE = 'https://practitioneravailabilitypsychologycar.netlify.app';
@@ -252,7 +254,11 @@ export default function IntakeTab() {
                 {copied ? '✓ Copied!' : '📋 Copy Summary + Matches'}
               </button>
             </div>
-            <SummaryDisplay summary={result.summary} />
+            {result.ai_display_summary ? (
+              <AISummaryDisplay text={result.ai_display_summary} />
+            ) : (
+              <SummaryDisplay summary={result.summary} />
+            )}
           </div>
 
           {/* Matches section */}
@@ -294,6 +300,59 @@ function SummarySection({ title, children }: { title: string; children: React.Re
     <div style={{ marginBottom: 14 }}>
       <div style={{ fontWeight: 700, color: COLORS.darkPurple, fontSize: 12, textTransform: 'uppercase', letterSpacing: 0.5, marginBottom: 6, borderBottom: `1px solid ${COLORS.lightMauve}`, paddingBottom: 3 }}>{title}</div>
       {children}
+    </div>
+  );
+}
+
+function AISummaryDisplay({ text }: { text: string }) {
+  // Render the AI-generated plain-text summary with emoji headers styled nicely
+  const lines = text.split('\n');
+  return (
+    <div>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 10 }}>
+        <span style={{
+          background: 'linear-gradient(135deg, #7c3aed, #a855f7)',
+          color: 'white',
+          fontSize: 10,
+          fontWeight: 700,
+          letterSpacing: 0.5,
+          padding: '2px 8px',
+          borderRadius: 10,
+        }}>✨ AI Summary</span>
+      </div>
+      <div style={{ fontSize: 13.5, lineHeight: 1.65, color: '#333' }}>
+        {lines.map((line, i) => {
+          const trimmed = line.trim();
+          if (!trimmed) return <div key={i} style={{ height: 6 }} />;
+          // Emoji-header lines (start with emoji + space + ALL CAPS or mixed)
+          const isHeader = /^[👤🎯📋⚠️🧠🏥📍💰👨‍⚕️📝]/.test(trimmed);
+          if (isHeader) {
+            return (
+              <div key={i} style={{
+                fontWeight: 700,
+                color: COLORS.darkPurple,
+                fontSize: 12,
+                textTransform: 'uppercase',
+                letterSpacing: 0.5,
+                marginTop: i === 0 ? 0 : 14,
+                marginBottom: 5,
+                borderBottom: `1px solid ${COLORS.lightMauve}`,
+                paddingBottom: 3,
+              }}>{trimmed}</div>
+            );
+          }
+          // Bullet lines
+          if (trimmed.startsWith('•')) {
+            return (
+              <div key={i} style={{ display: 'flex', gap: 6, marginBottom: 3 }}>
+                <span style={{ color: COLORS.mauve, flexShrink: 0 }}>•</span>
+                <span>{trimmed.slice(1).trim()}</span>
+              </div>
+            );
+          }
+          return <div key={i} style={{ marginBottom: 3 }}>{trimmed}</div>;
+        })}
+      </div>
     </div>
   );
 }
@@ -602,7 +661,12 @@ function buildSummaryText(s: IntakeSummary): string {
 function buildFullCopyText(result: MatchResult): string {
   const lines: string[] = [];
   lines.push('=== INTAKE SUMMARY ===');
-  lines.push(buildSummaryText(result.summary));
+  // Use AI summary if available (richer), otherwise keyword-extracted summary
+  if (result.ai_display_summary) {
+    lines.push(result.ai_display_summary);
+  } else {
+    lines.push(buildSummaryText(result.summary));
+  }
   lines.push('');
   lines.push('=== SUGGESTED PRACTITIONERS ===');
   result.matches.forEach((m, i) => {

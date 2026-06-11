@@ -22,7 +22,7 @@ const PRESENTATION_KEYWORDS = {
   'Chronic Pain': ['chronic pain', 'ongoing pain', 'fibromyalgia', 'persistent pain'],
   'Chronic Illness': ['chronic illness', 'health anxiety', 'long-term illness', 'physical health'],
   'Personality Disorders': ['personality disorder', 'bpd', 'borderline', 'borderline personality'],
-  'Phobias': ['phobia', 'phobic', 'specific fear', 'fear of '],
+  'Phobias': ['phobia', 'phobic', 'specific fear', 'fear of ', 'agoraphobia', 'agoraphobic'],
   'Self-Esteem': ['self-esteem', 'self esteem', 'self-worth', 'self worth', 'low confidence', 'self-confidence'],
   'Life Transitions': ['life transition', 'life change', 'adjustment', 'major change', 'transition'],
   'Family Issues': ['family issues', 'family conflict', 'family difficulties', 'parenting difficulties', 'parent-child'],
@@ -40,12 +40,14 @@ const MODALITY_KEYWORDS = {
   'DBT': ['dbt', 'dialectical behaviour', 'dialectical behavior'],
   'EMDR': ['emdr', 'eye movement'],
   'ACT': [' act ', 'acceptance and commitment', 'acceptance & commitment'],
+  'ISTDP': ['istdp', 'intensive short-term dynamic', 'short-term dynamic psychotherapy'],
   'Schema Therapy': ['schema therapy', 'schema focused', 'schema-focused'],
   'Psychodynamic': ['psychodynamic', 'psychoanalytic'],
   'Mindfulness': ['mindfulness', 'mindfulness-based', 'mbsr', 'mbct'],
-  'Somatic': ['somatic', 'body-based', 'somatic experiencing'],
+  'Somatic': ['somatic', 'body-based', 'somatic experiencing', 'somatic therapist'],
   'Narrative Therapy': ['narrative therapy', 'narrative approach'],
   'IFS': ['ifs', 'internal family systems', 'parts work'],
+  'Exposure Therapy': ['exposure therapy', 'exposure-based', 'exposure walks', 'graded exposure'],
 };
 
 function detectPresentations(textLower) {
@@ -318,6 +320,106 @@ function generateEmailIntro(summary) {
   return `${greeting} Thank you so much for taking the time to speak with us — we really appreciate you sharing what you've been going through${issueRef}, and we're so glad you've reached out to PsychologyCare. We've carefully reviewed everything you shared and have put together some practitioners we think would be a wonderful fit for you and your needs.${modalityRef}${locationRef} Each option has been selected with your goals and preferences in mind. Please feel free to reach out if you have any questions — we're here to help and look forward to supporting you on this journey.`;
 }
 
+// ─── AI-powered rich summary (used when OPENAI_API_KEY is set) ───────────────
+
+async function generateAISummary(text) {
+  const apiKey = process.env.OPENAI_API_KEY;
+  if (!apiKey) return null;
+
+  const systemPrompt = `You are an intake coordinator assistant for PsychologyCare, a psychology practice in Melbourne, Australia. You process intake call transcripts or notes and produce a rich structured summary + a warm client email intro.
+
+Return a JSON object with exactly two fields: "display_summary" and "email_intro".
+
+DISPLAY_SUMMARY FORMAT — use these exact emoji headers, plain text, bullet points:
+
+👤 CLIENT
+• Name: [Full name if given, or "Not provided"]
+• Age: [Exact age from DOB, OR estimate from context clues — e.g. "likely mid-40s (mentions adult children)". Never just write "aged male/female".]
+• Sex: [Male / Female / Not specified — infer from name/pronouns if not explicit]
+
+🎯 PRESENTING ISSUES  (most important first)
+• [Primary issue — specific and descriptive, not just a label. E.g. "Severe agoraphobia — present for ~30 years, unable to leave home without safe person and medication" not just "phobias"]
+• [Secondary with context]
+• [Further issues as needed]
+• Impact: [How issues affect daily life, work, relationships, functioning]
+
+📋 CALL SUMMARY
+[5–10 concise bullet points covering ALL key call content: what brought them in, history, current situation, supports, therapy history, goals, anything notable about the call]
+
+⚠️ RISK
+• Suicidality/self-harm: [Nuanced detail — e.g. "Chronic passive SI — reports ideation is long-standing and part of his experience; denies current intent or plan; appears insightful" or "Nil identified"]
+• Eating/body image: [Detail or "Nil identified"]
+• Substances: [Detail or "Nil identified"]
+• Other: [DV, crisis history, acute distress — or "Nil identified"]
+• Protective factors: [e.g. "Reports good support network" — or "Not identified"]
+• Private practice suitability: [Suitable ✓ / Discuss with Anna ⚠️ / Not suitable ✗ — brief reason]
+
+🧠 MODALITIES & APPROACH
+• Preferred modalities: [ALL mentioned — spell out in full, e.g. ISTDP, Somatic, Exposure Therapy — or "Not specified"]
+• Therapy style: [What they want from therapy — e.g. "Experiential / depth work — explicitly does NOT want talk-only therapy"]
+• Previous therapy: [Summary of what they've tried and what worked/didn't, or "None" / "Not mentioned"]
+
+🏥 BACKGROUND
+• Diagnoses: [Formal diagnoses mentioned, or "None disclosed"]
+• Medication: [Specific medications if named — e.g. "Atomoxetine (ADHD), Valium PRN (anxiety)" — or "Yes (details in notes)" / "No" / "Not mentioned"]
+• Current supports: [Other therapists, psychiatrist, GP, support workers currently seeing — or "None"]
+
+📍 LOCATION & AVAILABILITY
+• Location: [Their location + travel capacity + preference — e.g. "Fitzroy — Telehealth preferred; open to Camberwell if needed"]
+• Days/times: [Preferred schedule or "Flexible / Not specified"]
+• Frequency: [Weekly / Fortnightly / Flexible / Not mentioned]
+
+💰 FUNDING
+• [Specific: e.g. "NDIS (self-managed)" / "Medicare (MHTP) — has existing plan" / "Private / self-funded". If WorkCover or TAC: flag ⚠️ we do NOT accept these.]
+
+👨‍⚕️ PRACTITIONER PREFERENCES
+• Gender: [Male / Female / No preference / Not stated]
+• Specific request: [Named practitioner if mentioned, e.g. "Initially enquired about Dr David Spektor (closed)" — or "None"]
+• Other: [Cultural preferences, approach qualities, experience level mentioned]
+
+📝 NOTES
+[Anything else worth flagging — urgency, logistics, red flags, cultural needs, or anything that stood out on the call]
+
+EMAIL_INTRO FORMAT:
+Warm, professional, 3–5 sentences. Use their first name. Reference their presenting issues warmly (not clinically). Mention we've reviewed their info and found strong matches. Reference 1–2 relevant practitioner strengths (modality/location fit). End with an encouraging welcoming tone.
+Example: "Hi Daniel, thank you so much for taking the time to speak with us — it sounds like you've been navigating some really significant challenges for a long time, and we're so glad you've reached out..."`;
+
+  try {
+    const response = await fetch('https://api.openai.com/v1/chat/completions', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${apiKey}`,
+      },
+      body: JSON.stringify({
+        model: 'gpt-4o-mini',
+        messages: [
+          { role: 'system', content: systemPrompt },
+          { role: 'user', content: `Please process this intake:\n\n${text}` },
+        ],
+        temperature: 0.2,
+        response_format: { type: 'json_object' },
+        max_tokens: 2000,
+      }),
+    });
+
+    if (!response.ok) {
+      console.error('OpenAI API error:', response.status);
+      return null;
+    }
+
+    const data = await response.json();
+    const content = JSON.parse(data.choices[0].message.content);
+    return {
+      display_summary: content.display_summary || null,
+      email_intro: content.email_intro || null,
+    };
+  } catch (err) {
+    console.error('AI summary generation failed:', err.message);
+    return null;
+  }
+}
+
 function getAvailabilityNote(p) {
   const availLocs = (p.locations || []).filter(l => l.availability && typeof l.availability === 'string' && l.availability.trim());
   if (availLocs.length === 0) return 'Waitlist only';
@@ -497,13 +599,23 @@ exports.handler = async (event) => {
       availability_note: getAvailabilityNote(m.practitioner),
     }));
 
+    // Try AI-powered rich summary (requires OPENAI_API_KEY env var in Netlify)
+    const aiResult = await generateAISummary(text);
+    const email_intro = aiResult?.email_intro || generateEmailIntro(summary);
+
     return {
       statusCode: 200,
       headers: {
         'Content-Type': 'application/json',
         'Access-Control-Allow-Origin': '*',
       },
-      body: JSON.stringify({ summary, matches, email_intro: generateEmailIntro(summary) }),
+      body: JSON.stringify({
+        summary,
+        matches,
+        email_intro,
+        ai_display_summary: aiResult?.display_summary || null,
+        ai_powered: !!aiResult,
+      }),
     };
 
   } catch (err) {
