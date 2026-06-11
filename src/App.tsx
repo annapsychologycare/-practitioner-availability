@@ -6,7 +6,7 @@ import IntakeTab from "./components/IntakeTab";
 import ReferralNetwork from "./ReferralNetwork";
 import { Compare } from "./Compare";
 import { createRoot } from "react-dom/client";
-import { PRACTITIONERS_DATA } from "./practitionersData";
+import { PRACTITIONERS_DATA, AVAILABILITY_LAST_UPDATED } from "./practitionersData";
 import "./index.css";
 
 // Error boundary
@@ -77,7 +77,7 @@ function AppMain() {
 
       {/* Tab Navigation */}
       <div className="bg-white border-b sticky top-0 z-40 shadow-sm" style={{ borderColor: "#e8e4f0" }}>
-        <div className="max-w-7xl mx-auto px-4 flex gap-4">
+        <div className="max-w-7xl mx-auto px-4 flex gap-4 items-center">
           {tabs.map((t) => (
             <button
               key={t.key}
@@ -93,6 +93,10 @@ function AppMain() {
               {t.label}
             </button>
           ))}
+          <div style={{ marginLeft: "auto", display: "flex", alignItems: "center", gap: 6, padding: "4px 10px", background: "#f0eef7", borderRadius: 20, fontSize: 12, color: "#6b5b8a", whiteSpace: "nowrap" }}>
+            <span>📅</span>
+            <span>Availability updated {AVAILABILITY_LAST_UPDATED}</span>
+          </div>
         </div>
       </div>
 

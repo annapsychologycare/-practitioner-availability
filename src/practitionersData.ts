@@ -4005,3 +4005,4 @@ export const PRACTITIONERS_DATA = [
   }
 ];
 export const practitionersData = PRACTITIONERS_DATA;
+export const AVAILABILITY_LAST_UPDATED = "11 Jun 2026";

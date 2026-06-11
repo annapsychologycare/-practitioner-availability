@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { AVAILABILITY_LAST_UPDATED } from '../practitionersData';
 
 const COLORS = {
   darkPurple: '#2C244C',
@@ -122,7 +123,12 @@ export default function IntakeTab() {
 
   return (
     <div style={{ maxWidth: 800, margin: '0 auto', padding: '24px 16px' }}>
-      <h2 style={{ color: COLORS.darkPurple, marginBottom: 4 }}>📝 Intake & Practitioner Matching</h2>
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 4 }}>
+        <h2 style={{ color: COLORS.darkPurple, margin: 0 }}>📝 Intake & Practitioner Matching</h2>
+        <span style={{ fontSize: 12, color: '#6b5b8a', background: '#f0eef7', padding: '4px 10px', borderRadius: 20, whiteSpace: 'nowrap' }}>
+          📅 Availability updated {AVAILABILITY_LAST_UPDATED}
+        </span>
+      </div>
       <p style={{ color: '#666', marginBottom: 24, fontSize: 14 }}>
         Paste intake notes, a form response, or a call transcript. Get an instant summary and practitioner match suggestions.
       </p>
