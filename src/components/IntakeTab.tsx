@@ -396,4 +396,44 @@ function MatchCard({ match, rank }: { match: PractitionerMatch; rank: number }) 
 }
 
 function buildSummaryText(s: IntakeSummary): string {
-  c
+  const lines: string[] = [];
+  if (s.client_name) lines.push(`Client: ${s.client_name}`);
+  if (s.age) lines.push(`Age: ${s.age}`);
+  if (s.gender) lines.push(`Gender: ${s.gender}`);
+  if (s.presenting_issues?.length) lines.push(`Presenting Issues: ${s.presenting_issues.join(', ')}`);
+  if (s.risk_indicators) lines.push(`Risk Indicators: ${s.risk_indicators}`);
+  if (s.location_preference) lines.push(`Location Preference: ${s.location_preference}`);
+  if (s.timing) lines.push(`Timing: ${s.timing}`);
+  if (s.modality_preference) lines.push(`Modality Preference: ${s.modality_preference}`);
+  if (s.funding) lines.push(`Funding: ${s.funding}`);
+  if (s.previous_therapy) lines.push(`Previous Therapy: ${s.previous_therapy}`);
+  if (s.referral_source) lines.push(`Referral Source: ${s.referral_source}`);
+  if (s.additional_notes) lines.push(`Notes: ${s.additional_notes}`);
+  return lines.join('\n');
+}
+
+function buildFullCopyText(result: MatchResult): string {
+  const lines: string[] = [];
+  lines.push('=== INTAKE SUMMARY ===');
+  lines.push(buildSummaryText(result.summary));
+  lines.push('');
+  lines.push('=== SUGGESTED PRACTITIONERS ===');
+  result.matches.forEach((m, i) => {
+    lines.push('');
+    lines.push(`${i + 1}. ${m.name}${m.title ? ` — ${m.title}` : ''} [${m.match_score} Match]`);
+    if (m.reasons?.length) {
+      m.reasons.forEach(r => lines.push(`   • ${r}`));
+    }
+    const availLocations = m.locations?.filter(l => l.availability?.trim()) || [];
+    if (availLocations.length) {
+      lines.push(`   Availability:`);
+      availLocations.forEach(loc => {
+        lines.push(`   ${loc.location}:`);
+        loc.availability.split('\n').filter(Boolean).forEach(slot => lines.push(`     - ${slot}`));
+      });
+    } else {
+      lines.push(`   Availability: ${m.availability_note || 'Waitlist only'}`);
+    }
+  });
+  return lines.join('\n');
+}
