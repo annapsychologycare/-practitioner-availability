@@ -105,22 +105,19 @@ const SendClientModal: React.FC<Props> = ({ selected, locationFilter, onClose, o
         emailHtml: previewHtml,
       };
 
-      // Send via webhook to Tasklet
-      const webhookUrl = process.env.REACT_APP_TASKLET_WEBHOOK_URL;
-      if (!webhookUrl) {
-        setError("Webhook URL not configured. Please contact support.");
-        setSending(false);
-        return;
-      }
-
-      const response = await fetch(webhookUrl, {
+      // Send via serverless function (keeps webhook URL server-side)
+      const response = await fetch("/.netlify/functions/send-email", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
 
       if (!response.ok) {
-        throw new Error(`Webhook returned ${response.status}`);
+        const errData = await response.json().catch(() => ({}));
+        if (errData.error?.includes("Webhook URL not configured")) {
+          throw new Error("Email service not configured. Please contact Anna.");
+        }
+        throw new Error(`Send failed (${response.status})`);
       }
 
       onSent();
