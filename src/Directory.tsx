@@ -13,7 +13,8 @@ export default function Directory({ practitioners }: Props) {
   const filtered = useMemo(() => {
     const q = search.toLowerCase();
     return practitioners
-      .filter(p => !q || p.name.toLowerCase().includes(q) || p.title.toLowerCase().includes(q) || p.therapist_type.toLowerCase().includes(q))
+      .filter(p => !(p as any).referral_only)
+      .filter(p => !q || p.name.toLowerCase().includes(q) || (p.title || "").toLowerCase().includes(q) || (p.therapist_type || "").toLowerCase().includes(q))
       .sort((a, b) => {
         if (sortBy === "name") return a.name.localeCompare(b.name);
         return a.therapist_type.localeCompare(b.therapist_type) || a.name.localeCompare(b.name);
@@ -25,17 +26,27 @@ export default function Directory({ practitioners }: Props) {
       {selected && (
         <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4" onClick={() => setSelected(null)}>
           <div className="bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto" onClick={e => e.stopPropagation()}>
-            <div className="p-6">
-              <div className="flex items-start justify-between mb-4">
-                <div>
-                  <h3 className="text-xl font-bold">{selected.name}</h3>
-                  <p className="text-sm text-base-content/60">{selected.title}</p>
-                  {selected.qualifications && <p className="text-xs text-base-content/50 italic">{selected.qualifications}</p>}
-                  {selected.pronouns && <p className="text-xs text-base-content/40">{selected.pronouns}</p>}
+            {/* Gradient header with photo */}
+            <div style={{ background: "linear-gradient(135deg,#2C244C 0%,#8D5273 100%)", borderRadius: "16px 16px 0 0", padding: "20px 24px" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+                {(selected as any).photo_url ? (
+                  <img src={`./public/photos/${(selected as any).photo_url.split('/').pop()}`} width={72} height={72}
+                    style={{ borderRadius: "50%", border: "3px solid rgba(255,255,255,0.35)", objectFit: "cover", width: 72, height: 72, flexShrink: 0 }} />
+                ) : (
+                  <div style={{ width: 72, height: 72, borderRadius: "50%", background: "rgba(255,255,255,0.2)", border: "3px solid rgba(255,255,255,0.35)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 28, color: "#fff", flexShrink: 0 }}>
+                    {selected.name.charAt(0)}
+                  </div>
+                )}
+                <div style={{ flex: 1 }}>
+                  <h3 style={{ fontSize: 20, fontWeight: 700, color: "#fff", margin: 0 }}>{selected.name}</h3>
+                  <p style={{ fontSize: 13, color: "#e8d4e4", margin: "2px 0 0" }}>{selected.title}</p>
+                  {selected.qualifications && <p style={{ fontSize: 11, color: "rgba(255,255,255,0.6)", margin: "2px 0 0", fontStyle: "italic" }}>{selected.qualifications}</p>}
+                  {selected.pronouns && <p style={{ fontSize: 11, color: "rgba(255,255,255,0.5)", margin: "2px 0 0" }}>{selected.pronouns}</p>}
                 </div>
-                <button onClick={() => setSelected(null)} className="btn btn-ghost btn-sm btn-circle">✕</button>
+                <button onClick={() => setSelected(null)} style={{ color: "#fff", background: "rgba(255,255,255,0.15)", border: "none", borderRadius: "50%", width: 32, height: 32, cursor: "pointer", fontSize: 16, flexShrink: 0, lineHeight: "32px" }}>✕</button>
               </div>
-              
+            </div>
+            <div className="p-6">
               {selected.alert && (
                 <div className="py-2 px-3 text-sm mb-4 rounded-lg border-l-4" style={{ backgroundColor: "#F0EEF7", borderLeftColor: "#8D5273", color: "#2C244C" }}>⚠️ {selected.alert}</div>
               )}
@@ -67,7 +78,7 @@ export default function Directory({ practitioners }: Props) {
                 )}
                 <div>
                   <div className="text-xs font-bold text-base-content/50 uppercase tracking-wide mb-1">Availability</div>
-                  {selected.locations.map((loc, i) => (
+                  {(selected.locations || []).map((loc, i) => (
                     <div key={i} className="mb-2">
                       <div className="text-xs font-semibold text-base-content/60">📍 {loc.location}</div>
                       {loc.availability ? (
@@ -116,7 +127,7 @@ export default function Directory({ practitioners }: Props) {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
         {filtered.map(p => {
-          const hasAvail = p.locations.some(l => {
+          const hasAvail = (p.locations || []).some(l => {
             if (!l.availability) return false;
             if (Array.isArray(l.availability)) return l.availability.length > 0;
             return l.availability.trim().length > 0;
@@ -127,13 +138,22 @@ export default function Directory({ practitioners }: Props) {
               className="card bg-white shadow-sm cursor-pointer hover:shadow-md transition-all" style={{ border: "1px solid #CDA8BA" }}
               onClick={() => setSelected(p)}
             >
-              <div className="card-body p-4">
-                <div className="flex items-start justify-between">
-                  <div className="flex-1 min-w-0">
-                    <div className="font-bold truncate" style={{ color: "#2C244C" }}>{p.name}</div>
-                    <div className="text-xs text-base-content/60 mt-0.5">{p.title}</div>
+              <div className="card-body p-0 overflow-hidden">
+                {/* Card photo header */}
+                <div style={{ background: "linear-gradient(135deg,#2C244C 0%,#8D5273 100%)", padding: "12px 14px", display: "flex", alignItems: "center", gap: 10 }}>
+                  {(p as any).photo_url ? (
+                    <img src={`./public/photos/${(p as any).photo_url.split('/').pop()}`} width={48} height={48}
+                      style={{ borderRadius: "50%", border: "2px solid rgba(255,255,255,0.4)", objectFit: "cover", width: 48, height: 48, flexShrink: 0 }} />
+                  ) : (
+                    <div style={{ width: 48, height: 48, borderRadius: "50%", background: "rgba(255,255,255,0.2)", border: "2px solid rgba(255,255,255,0.4)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 20, color: "#fff", flexShrink: 0 }}>
+                      {p.name.charAt(0)}
+                    </div>
+                  )}
+                  <div style={{ flex: 1, minWidth: 0 }}>
+                    <div style={{ fontWeight: 700, color: "#fff", fontSize: 14, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{p.name}</div>
+                    <div style={{ fontSize: 11, color: "#e8d4e4" }}>{p.title}</div>
                   </div>
-                  <div className="flex flex-col gap-1 items-end ml-2">
+                  <div className="flex flex-col gap-1 items-end">
                     <span className={`badge badge-sm ${hasAvail ? "badge-success" : "badge-ghost"}`}>
                       {hasAvail ? "Available" : "Waitlist"}
                     </span>
@@ -141,17 +161,20 @@ export default function Directory({ practitioners }: Props) {
                     {p.alert && <span className="badge badge-warning badge-xs">⚠</span>}
                   </div>
                 </div>
-                <div className="flex gap-1 flex-wrap mt-2">
-                  <span className="badge badge-outline badge-xs">{p.gender || "—"}</span>
-                  <span className="badge badge-outline badge-xs">{p.age_range}</span>
-                  {p.pap_clinician === "Yes" && <span className="badge badge-secondary badge-xs">PAP</span>}
-                  {p.after_hours && <span className="badge badge-accent badge-xs">AH</span>}
-                </div>
-                <div className="flex gap-1 flex-wrap mt-1">
-                  {p.locations.slice(0, 2).map((l, i) => (
-                    <span key={i} className="text-xs text-base-content/50 truncate">📍 {l.location}</span>
-                  ))}
-                  {p.locations.length > 2 && <span className="text-xs text-base-content/40">+{p.locations.length - 2}</span>}
+                {/* Card lower section */}
+                <div style={{ padding: "10px 14px 12px" }}>
+                  <div className="flex gap-1 flex-wrap mb-1">
+                    <span className="badge badge-outline badge-xs">{p.gender || "—"}</span>
+                    <span className="badge badge-outline badge-xs">{p.age_range}</span>
+                    {p.pap_clinician === "Yes" && <span className="badge badge-secondary badge-xs">PAP</span>}
+                    {p.after_hours && <span className="badge badge-accent badge-xs">AH</span>}
+                  </div>
+                  <div className="flex gap-1 flex-wrap">
+                    {(p.locations || []).slice(0, 2).map((l, i) => (
+                      <span key={i} className="text-xs text-base-content/50 truncate">📍 {l.location}</span>
+                    ))}
+                    {(p.locations || []).length > 2 && <span className="text-xs text-base-content/40">+{(p.locations || []).length - 2}</span>}
+                  </div>
                 </div>
               </div>
             </div>

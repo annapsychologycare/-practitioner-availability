@@ -3,6 +3,7 @@ import FindPractitioner from "./FindPractitioner";
 import Directory from "./Directory";
 import AvailabilitySnapshot from "./AvailabilitySnapshot";
 import IntakeTab from "./components/IntakeTab";
+import ReferralNetwork from "./ReferralNetwork";
 import { Compare } from "./Compare";
 import { createRoot } from "react-dom/client";
 import { PRACTITIONERS_DATA } from "./practitionersData";
@@ -49,7 +50,7 @@ function getCompareNames(): string[] | null {
   return names.length >= 1 ? names : null;
 }
 
-type Tab = "find" | "directory" | "snapshot" | "intake";
+type Tab = "find" | "directory" | "snapshot" | "intake" | "referral";
 
 function AppMain() {
   const [tab, setTab] = useState<Tab>("find");
@@ -59,6 +60,7 @@ function AppMain() {
     { key: "directory", label: "📖 Directory" },
     { key: "snapshot", label: "📋 Availability Snapshot" },
     { key: "intake", label: "📝 Intake" },
+    { key: "referral", label: "🔗 Referral Network" },
   ] as const;
 
   return (
@@ -101,6 +103,7 @@ function AppMain() {
           {tab === "directory" && <Directory practitioners={PRACTITIONERS_DATA} />}
           {tab === "snapshot" && <AvailabilitySnapshot practitioners={PRACTITIONERS_DATA} />}
           {tab === "intake" && <IntakeTab />}
+          {tab === "referral" && <ReferralNetwork practitioners={PRACTITIONERS_DATA} />}
         </ErrorBoundary>
       </div>
 

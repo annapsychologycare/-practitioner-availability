@@ -130,8 +130,10 @@ function scoreMatch(p: Practitioner, filters: Filters): number {
     score += matches + presMatches * 2;
   }
 
+  const pLocs = p.locations || [];
+
   if (filters.locations.length > 0) {
-    const locMatchFn = (loc: string) => p.locations.some(l => l.location.toLowerCase().includes(loc.toLowerCase()));
+    const locMatchFn = (loc: string) => pLocs.some(l => (l.location || "").toLowerCase().includes(loc.toLowerCase()));
     const hasLoc = filters.locationMatchAll
       ? filters.locations.every(locMatchFn)
       : filters.locations.some(locMatchFn);
@@ -155,15 +157,15 @@ function scoreMatch(p: Practitioner, filters: Filters): number {
     if (!typeToCheck.includes(filters.therapistType.toLowerCase())) return -1;
   }
 
-  if (filters.afterHours && !hasAfterHoursAvailability(p.locations.map(l => ({ availability: l.availability })))) {
+  if (filters.afterHours && !hasAfterHoursAvailability(pLocs.map(l => ({ availability: l.availability })))) {
     return -1;
   }
 
   if (filters.hasAvailability) {
     // When a location filter is active, only count availability at matching locations
     const relevantLocs = filters.locations.length > 0
-      ? p.locations.filter(l => filters.locations.some(loc => l.location.toLowerCase().includes(loc.toLowerCase())))
-      : p.locations;
+      ? pLocs.filter(l => filters.locations.some(loc => (l.location || "").toLowerCase().includes(loc.toLowerCase())))
+      : pLocs;
     const hasAvail = relevantLocs.some(l => {
       const avail = l.availability;
       if (!avail) return false;
@@ -240,7 +242,7 @@ function scoreMatch(p: Practitioner, filters: Filters): number {
   }
 
   if (filters.availabilityTypes.length > 0) {
-    const allAvail = p.locations.map(l => {
+    const allAvail = pLocs.map(l => {
       const a = l.availability;
       if (!a) return "";
       return Array.isArray(a) ? a.join(" ") : a;
@@ -250,7 +252,7 @@ function scoreMatch(p: Practitioner, filters: Filters): number {
   }
 
   if (filters.days.length > 0) {
-    const allAvail = p.locations.map(l => {
+    const allAvail = pLocs.map(l => {
       const a = l.availability;
       if (!a) return "";
       return Array.isArray(a) ? a.join(" ") : a;
@@ -296,9 +298,10 @@ const PractitionerCard: React.FC<CardProps> = ({ p, locationFilter, isSelected, 
   const [expanded, setExpanded] = useState(false);
   const [copied, setCopied] = useState(false);
 
+  const safeLocs = p.locations || [];
   const displayLocs = (locationFilter.length > 0
-    ? p.locations.filter(l => locationFilter.some(f => l.location.toLowerCase().includes(f.toLowerCase())))
-    : p.locations
+    ? safeLocs.filter(l => locationFilter.some(f => (l.location || "").toLowerCase().includes(f.toLowerCase())))
+    : safeLocs
   ).map(l => ({ ...l, availability: l.availability ? filterOutMonthly(l.availability) : "" }));
 
   const hasAvail = displayLocs.some(l => l.availability && l.availability.trim());
@@ -337,7 +340,7 @@ const PractitionerCard: React.FC<CardProps> = ({ p, locationFilter, isSelected, 
                 </h3>
                 {p.pronouns && <span className="text-xs text-base-content/50">({p.pronouns})</span>}
                 {p.pap_clinician === "Yes" && <span className="badge badge-sm text-white" style={{ backgroundColor: "#8D5273" }}>PAP</span>}
-                {hasAfterHoursAvailability(p.locations.map(l => ({ availability: l.availability }))) && <span className="badge badge-sm text-white" style={{ backgroundColor: "#52A3BA" }}>After Hours</span>}
+                {hasAfterHoursAvailability((p.locations || []).map(l => ({ availability: l.availability }))) && <span className="badge badge-sm text-white" style={{ backgroundColor: "#52A3BA" }}>After Hours</span>}
                 {p.accepts_couples && <span className="badge badge-sm text-white" style={{ backgroundColor: "#366188" }}>Couples</span>}
               </div>
               <p className="text-sm text-base-content/70 font-medium">{p.title}</p>
@@ -374,7 +377,7 @@ const PractitionerCard: React.FC<CardProps> = ({ p, locationFilter, isSelected, 
         </div>
 
         <div className="mt-2 flex items-center gap-1 flex-wrap">
-          {p.locations.map((loc, i) => (
+          {(p.locations || []).map((loc, i) => (
             <span key={i} className="badge badge-outline badge-sm">{"📍"} {loc.location}</span>
           ))}
         </div>
@@ -528,6 +531,7 @@ export default function FindPractitioner({ practitioners }: Props) {
   const results = useMemo(() => {
     const filters: Filters = { keyword, locations: selectedLocations, locationMatchAll, gender, clientType, therapistType, afterHours, hasAvailability, presentations: selectedPresentations, presentationsMatchAll, modalities: selectedModalities, modalitiesMatchAll, styles: selectedStyles, stylesMatchAll, billingTypes: selectedBillingTypes, clientAge, practitionerNames: selectedPractitionerNames, availabilityTypes: selectedAvailabilityTypes, days: selectedDays, daysMatchAll };
     return practitioners
+      .filter(p => !(p as any).referral_only)
       .map(p => ({ p, score: scoreMatch(p, filters) }))
       .filter(item => item.score >= 0)
       .sort((a, b) => b.score - a.score || a.p.name.localeCompare(b.p.name));
@@ -597,7 +601,7 @@ export default function FindPractitioner({ practitioners }: Props) {
               </div>
               <MultiSelectDropdown
                 label=""
-                options={["Greville St, Prahran", "Burke Rd, Camberwell", "Burke Rd, Camberwell", "Victoria St, St Kilda", "Telehealth"]}
+                options={["Greville St, Prahran", "Burke Rd, Camberwell", "Victoria St, St Kilda", "Telehealth"]}
                 selected={selectedLocations}
                 onChange={setSelectedLocations}
                 placeholder="Any location"
