@@ -183,7 +183,7 @@ function extractSummary(text, textLower) {
 }
 
 function getAvailabilityNote(p) {
-  const availLocs = (p.locations || []).filter(l => l.availability && l.availability.trim());
+  const availLocs = (p.locations || []).filter(l => l.availability && typeof l.availability === 'string' && l.availability.trim());
   if (availLocs.length === 0) return 'Waitlist only';
   const slots = availLocs.map(l => {
     const firstSlot = l.availability.split('\n').find(s => s.trim()) || '';
@@ -223,7 +223,7 @@ function scorePractitioner(p, summary, textLower) {
   }
 
   // 3. Current availability
-  const availLocs = (p.locations || []).filter(l => l.availability && l.availability.trim());
+  const availLocs = (p.locations || []).filter(l => l.availability && typeof l.availability === 'string' && l.availability.trim());
   const hasAvail = availLocs.length > 0;
   if (hasAvail) {
     score += 3;
