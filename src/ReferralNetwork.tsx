@@ -23,6 +23,8 @@ interface Practitioner {
   referral_contact?: string;
   referral_website?: string;
   referral_source?: string; // "former_pc" | "external"
+  former_pc?: boolean;
+  current_clinic?: string;
 }
 
 const BRAND = {
@@ -228,6 +230,8 @@ const AddReferralForm: React.FC<AddReferralFormProps> = ({ onAdd, onCancel }) =>
   const [languages, setLanguages] = useState("");
   const [referralContact, setReferralContact] = useState("");
   const [referralWebsite, setReferralWebsite] = useState("");
+  const [isFormerPC, setIsFormerPC] = useState(false);
+  const [currentClinic, setCurrentClinic] = useState("");
 
   const field = (label: string, value: string, onChange: (v: string) => void, placeholder?: string, type: "input" | "textarea" = "input") => (
     <div style={{ marginBottom: 12 }}>
@@ -259,9 +263,11 @@ const AddReferralForm: React.FC<AddReferralFormProps> = ({ onAdd, onCancel }) =>
       languages,
       referral_contact: referralContact,
       referral_website: referralWebsite,
+      former_pc: isFormerPC,
+      current_clinic: currentClinic.trim() || undefined,
       active: false,
       referral_only: true,
-      referral_source: "external",
+      referral_source: isFormerPC ? "former_pc" : "external",
     };
     onAdd(newP);
   };
@@ -308,6 +314,25 @@ const AddReferralForm: React.FC<AddReferralFormProps> = ({ onAdd, onCancel }) =>
         options={CANONICAL_MODALITIES}
         placeholder="Select modalities…"
       />
+
+      {/* Former PC + Current Clinic */}
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0 16px", alignItems: "start" }}>
+        <div style={{ marginBottom: 12 }}>
+          <label style={labelStyle}>Former PC Practitioner?</label>
+          <label style={{ display: "flex", alignItems: "center", gap: 10, cursor: "pointer", marginTop: 6 }}>
+            <input
+              type="checkbox"
+              checked={isFormerPC}
+              onChange={e => setIsFormerPC(e.target.checked)}
+              style={{ width: 18, height: 18, accentColor: "#7C6B9E", cursor: "pointer" }}
+            />
+            <span style={{ fontSize: 14, color: isFormerPC ? "#7C6B9E" : "#6b7280", fontWeight: isFormerPC ? 600 : 400 }}>
+              {isFormerPC ? "Yes — former PC practitioner" : "No — external referral"}
+            </span>
+          </label>
+        </div>
+        <div>{field("Current Clinic / Practice", currentClinic, setCurrentClinic, "e.g. Melbourne Psych Group")}</div>
+      </div>
 
       {/* Row: Contact + Website */}
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0 16px" }}>
@@ -365,6 +390,7 @@ const ReferralCard: React.FC<ReferralCardProps> = ({ p, onEdit }) => {
           </div>
           <p style={{ margin: "0 0 4px", fontSize: 13, color: BRAND.subtext }}>
             {[p.title || p.therapist_type, p.gender, p.age_range].filter(Boolean).join(" · ")}
+            {p.current_clinic && <span style={{ marginLeft: 6, color: BRAND.teal }}>📍 {p.current_clinic}</span>}
           </p>
           {p.short_bio && <p style={{ margin: "0 0 8px", fontSize: 13, color: BRAND.text, lineHeight: 1.5 }}>{p.short_bio}</p>}
 
