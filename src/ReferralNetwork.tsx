@@ -1,4 +1,5 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useRef, useEffect } from "react";
+import { CANONICAL_PRESENTATIONS, CANONICAL_MODALITIES } from "./constants";
 
 interface Practitioner {
   id: number;
@@ -40,39 +41,224 @@ function safeArr(val: string | string[] | undefined): string[] {
   return val.split(/[,|]/).map(s => s.trim()).filter(Boolean);
 }
 
+// ── Reusable form components ──────────────────────────────────────────────────
+
+const inputStyle: React.CSSProperties = {
+  width: "100%", border: `1px solid #e5e7eb`, borderRadius: 6,
+  padding: "6px 10px", fontSize: 13, boxSizing: "border-box", background: "#fff",
+};
+
+const labelStyle: React.CSSProperties = {
+  display: "block", fontWeight: 600, fontSize: 13, color: "#2d2d2d", marginBottom: 4,
+};
+
+const THERAPIST_TYPES = [
+  "Clinical Psychologist", "Registered Psychologist", "Psychologist",
+  "Counsellor", "Social Worker", "Psychiatrist", "Neuropsychologist", "Other",
+];
+
+const GENDER_OPTIONS = ["Female", "Male", "Non-binary", "Other"];
+
+const AGE_RANGE_OPTIONS = [
+  "Children (5–12 Yrs)", "Adolescents (13–17 Yrs)", "Adults (18+ Yrs)",
+  "Older Adults (65+ Yrs)", "All Ages",
+];
+
+const BILLING_OPTIONS = [
+  "Medicare Rebate", "NDIS", "WorkSafe", "EAP", "Self Funded", "Third Party",
+];
+
+/** Simple select dropdown */
+const SelectField: React.FC<{
+  label: string; value: string; onChange: (v: string) => void;
+  options: string[]; placeholder?: string;
+}> = ({ label, value, onChange, options, placeholder }) => (
+  <div style={{ marginBottom: 12 }}>
+    <label style={labelStyle}>{label}</label>
+    <select value={value} onChange={e => onChange(e.target.value)} style={{ ...inputStyle, appearance: "auto" }}>
+      <option value="">{placeholder || "Select…"}</option>
+      {options.map(o => <option key={o} value={o}>{o}</option>)}
+    </select>
+  </div>
+);
+
+/** Searchable multi-select with chip display */
+const SearchableMultiSelect: React.FC<{
+  label: string; selected: string[]; onChange: (v: string[]) => void;
+  options: string[]; placeholder?: string;
+}> = ({ label, selected, onChange, options, placeholder }) => {
+  const [open, setOpen] = useState(false);
+  const [search, setSearch] = useState("");
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handler = (e: MouseEvent) => {
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
+    };
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, []);
+
+  const filtered = useMemo(() =>
+    options.filter(o => o.toLowerCase().includes(search.toLowerCase()) && !selected.includes(o)),
+    [options, search, selected]
+  );
+
+  const toggle = (o: string) => {
+    onChange(selected.includes(o) ? selected.filter(s => s !== o) : [...selected, o]);
+  };
+
+  return (
+    <div style={{ marginBottom: 12 }} ref={ref}>
+      <label style={labelStyle}>{label}</label>
+      {/* Chip display + trigger */}
+      <div
+        onClick={() => setOpen(o => !o)}
+        style={{
+          ...inputStyle, minHeight: 36, cursor: "pointer", display: "flex",
+          flexWrap: "wrap", gap: 4, alignItems: "center", paddingBottom: selected.length ? 4 : 6,
+        }}
+      >
+        {selected.length === 0 && (
+          <span style={{ color: "#9ca3af", fontSize: 13 }}>{placeholder || "Select…"}</span>
+        )}
+        {selected.map(s => (
+          <span key={s} style={{
+            background: "#ede9f7", color: "#7C6B9E", borderRadius: 20,
+            padding: "2px 8px", fontSize: 11, fontWeight: 600, display: "flex", alignItems: "center", gap: 4,
+          }}>
+            {s}
+            <span
+              onMouseDown={e => { e.stopPropagation(); toggle(s); }}
+              style={{ cursor: "pointer", fontWeight: 700, marginLeft: 2 }}
+            >×</span>
+          </span>
+        ))}
+        <span style={{ marginLeft: "auto", color: "#9ca3af", fontSize: 11 }}>▾</span>
+      </div>
+      {/* Dropdown */}
+      {open && (
+        <div style={{
+          position: "absolute", zIndex: 999, background: "#fff",
+          border: `1px solid #e5e7eb`, borderRadius: 8, boxShadow: "0 4px 16px rgba(0,0,0,0.12)",
+          maxHeight: 260, overflow: "hidden", display: "flex", flexDirection: "column",
+          width: "calc(100% - 2px)", minWidth: 260,
+        }}>
+          <div style={{ padding: "8px 10px", borderBottom: "1px solid #f3f4f6" }}>
+            <input
+              autoFocus
+              value={search}
+              onChange={e => setSearch(e.target.value)}
+              placeholder="Search…"
+              style={{ ...inputStyle, fontSize: 12 }}
+              onMouseDown={e => e.stopPropagation()}
+            />
+          </div>
+          <div style={{ overflowY: "auto", maxHeight: 200 }}>
+            {filtered.length === 0 && (
+              <div style={{ padding: "10px 14px", fontSize: 12, color: "#9ca3af" }}>No options found</div>
+            )}
+            {filtered.map(o => (
+              <div
+                key={o}
+                onMouseDown={e => { e.preventDefault(); toggle(o); }}
+                style={{
+                  padding: "7px 14px", fontSize: 13, cursor: "pointer",
+                  background: "#fff", transition: "background 0.1s",
+                }}
+                onMouseEnter={e => (e.currentTarget.style.background = "#f5f3ff")}
+                onMouseLeave={e => (e.currentTarget.style.background = "#fff")}
+              >
+                {o}
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
+/** Checkbox group for small sets (e.g. billing) */
+const CheckboxGroup: React.FC<{
+  label: string; selected: string[]; onChange: (v: string[]) => void; options: string[];
+}> = ({ label, selected, onChange, options }) => {
+  const toggle = (o: string) => onChange(
+    selected.includes(o) ? selected.filter(s => s !== o) : [...selected, o]
+  );
+  return (
+    <div style={{ marginBottom: 12 }}>
+      <label style={labelStyle}>{label}</label>
+      <div style={{ display: "flex", flexWrap: "wrap", gap: "6px 14px", paddingTop: 4 }}>
+        {options.map(o => (
+          <label key={o} style={{ display: "flex", alignItems: "center", gap: 5, fontSize: 13, cursor: "pointer", fontWeight: "normal" }}>
+            <input
+              type="checkbox"
+              checked={selected.includes(o)}
+              onChange={() => toggle(o)}
+              style={{ accentColor: "#7C6B9E" }}
+            />
+            {o}
+          </label>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+// ── Add Referral Form ─────────────────────────────────────────────────────────
+
 interface AddReferralFormProps {
   onAdd: (p: Practitioner) => void;
   onCancel: () => void;
 }
 
 const AddReferralForm: React.FC<AddReferralFormProps> = ({ onAdd, onCancel }) => {
-  const [form, setForm] = useState({
-    name: "", title: "", therapist_type: "", gender: "",
-    age_range: "", presentations: "", modalities: "", billing_types: "",
-    client_types: "", short_bio: "", qualifications: "", languages: "",
-    referral_contact: "", referral_website: "",
-  });
+  const [name, setName] = useState("");
+  const [title, setTitle] = useState("");
+  const [therapistType, setTherapistType] = useState("");
+  const [gender, setGender] = useState("");
+  const [ageRange, setAgeRange] = useState("");
+  const [billingTypes, setBillingTypes] = useState<string[]>([]);
+  const [presentations, setPresentations] = useState<string[]>([]);
+  const [modalities, setModalities] = useState<string[]>([]);
+  const [clientTypes, setClientTypes] = useState("");
+  const [shortBio, setShortBio] = useState("");
+  const [qualifications, setQualifications] = useState("");
+  const [languages, setLanguages] = useState("");
+  const [referralContact, setReferralContact] = useState("");
+  const [referralWebsite, setReferralWebsite] = useState("");
 
-  const set = (key: string, val: string) => setForm(f => ({ ...f, [key]: val }));
+  const field = (label: string, value: string, onChange: (v: string) => void, placeholder?: string, type: "input" | "textarea" = "input") => (
+    <div style={{ marginBottom: 12 }}>
+      <label style={labelStyle}>{label}</label>
+      {type === "textarea"
+        ? <textarea value={value} onChange={e => onChange(e.target.value)} placeholder={placeholder}
+            style={{ ...inputStyle, resize: "vertical", minHeight: 60 }} />
+        : <input value={value} onChange={e => onChange(e.target.value)} placeholder={placeholder}
+            style={inputStyle} />
+      }
+    </div>
+  );
 
   const handleAdd = () => {
-    if (!form.name.trim()) { alert("Name is required."); return; }
+    if (!name.trim()) { alert("Name is required."); return; }
     const newP: Practitioner = {
       id: Date.now(),
-      name: form.name.trim(),
-      title: form.title,
-      therapist_type: form.therapist_type,
-      gender: form.gender,
-      age_range: form.age_range,
-      presentations: form.presentations.split(",").map(s => s.trim()).filter(Boolean),
-      modalities: form.modalities.split(",").map(s => s.trim()).filter(Boolean),
-      billing_types: form.billing_types,
-      client_types: form.client_types,
-      short_bio: form.short_bio,
-      qualifications: form.qualifications,
-      languages: form.languages,
-      referral_contact: form.referral_contact,
-      referral_website: form.referral_website,
+      name: name.trim(),
+      title,
+      therapist_type: therapistType,
+      gender,
+      age_range: ageRange,
+      presentations,
+      modalities,
+      billing_types: billingTypes.join(", "),
+      client_types: clientTypes,
+      short_bio: shortBio,
+      qualifications,
+      languages,
+      referral_contact: referralContact,
+      referral_website: referralWebsite,
       active: false,
       referral_only: true,
       referral_source: "external",
@@ -80,44 +266,65 @@ const AddReferralForm: React.FC<AddReferralFormProps> = ({ onAdd, onCancel }) =>
     onAdd(newP);
   };
 
-  const field = (label: string, key: string, placeholder?: string, type: "input" | "textarea" = "input") => (
-    <div style={{ marginBottom: 12 }}>
-      <label style={{ display: "block", fontWeight: 600, fontSize: 13, color: BRAND.text, marginBottom: 4 }}>{label}</label>
-      {type === "textarea"
-        ? <textarea value={(form as any)[key]} onChange={e => set(key, e.target.value)} placeholder={placeholder}
-            style={{ width: "100%", border: `1px solid ${BRAND.border}`, borderRadius: 6, padding: "6px 10px", fontSize: 13, resize: "vertical", minHeight: 60 }} />
-        : <input value={(form as any)[key]} onChange={e => set(key, e.target.value)} placeholder={placeholder}
-            style={{ width: "100%", border: `1px solid ${BRAND.border}`, borderRadius: 6, padding: "6px 10px", fontSize: 13 }} />
-      }
-    </div>
-  );
-
   return (
-    <div style={{ background: "#fff", border: `1px solid ${BRAND.border}`, borderRadius: 12, padding: 20, marginBottom: 24 }}>
-      <h3 style={{ margin: "0 0 16px", fontSize: 16, color: BRAND.lilac }}>➕ Add External Referral</h3>
+    <div style={{ background: "#fff", border: `1px solid #e5e7eb`, borderRadius: 12, padding: 20, marginBottom: 24, position: "relative" }}>
+      <h3 style={{ margin: "0 0 16px", fontSize: 16, color: "#7C6B9E" }}>➕ Add External Referral</h3>
+
+      {/* Row 1: Name + Title */}
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0 16px" }}>
-        <div>{field("Full Name *", "name", "e.g. Dr Jane Smith")}</div>
-        <div>{field("Title / Role", "title", "e.g. Clinical Psychologist")}</div>
-        <div>{field("Therapist Type", "therapist_type", "e.g. Psychologist")}</div>
-        <div>{field("Gender", "gender", "e.g. Female")}</div>
-        <div>{field("Age Range", "age_range", "e.g. 18 Yrs +")}</div>
-        <div>{field("Client Types", "client_types", "e.g. Individual, Couples")}</div>
-        <div>{field("Billing Types", "billing_types", "e.g. Medicare Rebate, Self Funded")}</div>
-        <div>{field("Languages", "languages", "e.g. English, Spanish")}</div>
-        <div>{field("Contact / Email", "referral_contact", "e.g. jane@example.com or (03) 9xxx xxxx")}</div>
-        <div>{field("Website / Profile URL", "referral_website", "e.g. https://...")}</div>
+        <div>{field("Full Name *", name, setName, "e.g. Dr Jane Smith")}</div>
+        <div>{field("Title / Role", title, setTitle, "e.g. Clinical Psychologist")}</div>
       </div>
-      {field("Specialties / Presentations (comma-separated)", "presentations", "e.g. Anxiety, Trauma, ADHD")}
-      {field("Modalities (comma-separated)", "modalities", "e.g. CBT, EMDR, ACT")}
-      {field("Short Bio / Notes", "short_bio", "Brief notes about this referral…", "textarea")}
-      {field("Qualifications", "qualifications", "e.g. MPsych(Clin), MAPS")}
-      <div style={{ display: "flex", gap: 10, marginTop: 4 }}>
+
+      {/* Row 2: Therapist Type + Gender */}
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0 16px" }}>
+        <SelectField label="Therapist Type" value={therapistType} onChange={setTherapistType} options={THERAPIST_TYPES} placeholder="Select type…" />
+        <SelectField label="Gender" value={gender} onChange={setGender} options={GENDER_OPTIONS} placeholder="Select gender…" />
+      </div>
+
+      {/* Row 3: Age Range + Languages */}
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0 16px" }}>
+        <SelectField label="Age Range" value={ageRange} onChange={setAgeRange} options={AGE_RANGE_OPTIONS} placeholder="Select age range…" />
+        <div>{field("Languages", languages, setLanguages, "e.g. English, Spanish")}</div>
+      </div>
+
+      {/* Billing Types — checkboxes */}
+      <CheckboxGroup label="Billing Types" selected={billingTypes} onChange={setBillingTypes} options={BILLING_OPTIONS} />
+
+      {/* Presentations — searchable multi-select */}
+      <SearchableMultiSelect
+        label="Specialties / Presentations"
+        selected={presentations}
+        onChange={setPresentations}
+        options={CANONICAL_PRESENTATIONS}
+        placeholder="Select presentations…"
+      />
+
+      {/* Modalities — searchable multi-select */}
+      <SearchableMultiSelect
+        label="Therapy Modalities"
+        selected={modalities}
+        onChange={setModalities}
+        options={CANONICAL_MODALITIES}
+        placeholder="Select modalities…"
+      />
+
+      {/* Row: Contact + Website */}
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0 16px" }}>
+        <div>{field("Contact / Email", referralContact, setReferralContact, "e.g. jane@example.com")}</div>
+        <div>{field("Website / Profile URL", referralWebsite, setReferralWebsite, "e.g. https://…")}</div>
+      </div>
+
+      {field("Short Bio / Notes", shortBio, setShortBio, "Brief notes about this referral…", "textarea")}
+      {field("Qualifications", qualifications, setQualifications, "e.g. MPsych(Clin), MAPS")}
+
+      <div style={{ display: "flex", gap: 10, marginTop: 8 }}>
         <button onClick={handleAdd}
-          style={{ background: BRAND.lilac, color: "#fff", border: "none", borderRadius: 8, padding: "8px 20px", fontWeight: 600, cursor: "pointer", fontSize: 14 }}>
+          style={{ background: "#7C6B9E", color: "#fff", border: "none", borderRadius: 8, padding: "8px 20px", fontWeight: 600, cursor: "pointer", fontSize: 14 }}>
           Add to Network
         </button>
         <button onClick={onCancel}
-          style={{ background: "#fff", color: BRAND.subtext, border: `1px solid ${BRAND.border}`, borderRadius: 8, padding: "8px 20px", fontWeight: 600, cursor: "pointer", fontSize: 14 }}>
+          style={{ background: "#fff", color: "#6b7280", border: `1px solid #e5e7eb`, borderRadius: 8, padding: "8px 20px", fontWeight: 600, cursor: "pointer", fontSize: 14 }}>
           Cancel
         </button>
       </div>
