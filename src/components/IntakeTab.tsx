@@ -90,19 +90,33 @@ export default function IntakeTab() {
   const summaryText = result ? buildSummaryText(result.summary) : '';
 
   const handleCopy = async () => {
-    try {
-      await navigator.clipboard.writeText(summaryText);
+    if (!result) return;
+    const fullText = buildFullCopyText(result);
+    const copyText = async (text: string) => {
+      try {
+        await navigator.clipboard.writeText(text);
+        return true;
+      } catch {
+        try {
+          const el = document.createElement('textarea');
+          el.value = text;
+          el.style.position = 'fixed';
+          el.style.left = '-9999px';
+          document.body.appendChild(el);
+          el.focus();
+          el.select();
+          const ok = document.execCommand('copy');
+          document.body.removeChild(el);
+          return ok;
+        } catch {
+          return false;
+        }
+      }
+    };
+    const ok = await copyText(fullText);
+    if (ok) {
       setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    } catch {
-      const el = document.createElement('textarea');
-      el.value = summaryText;
-      document.body.appendChild(el);
-      el.select();
-      document.execCommand('copy');
-      document.body.removeChild(el);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
+      setTimeout(() => setCopied(false), 2500);
     }
   };
 
@@ -180,8 +194,15 @@ export default function IntakeTab() {
       )}
 
       {error && (
-        <div style={{ marginTop: 16, padding: 12, background: '#ffeaea', borderRadius: 8, color: '#c00', fontSize: 13 }}>
-          ⚠️ {error}
+        <div style={{ marginTop: 16, padding: 16, background: '#ffeaea', borderRadius: 8, color: '#c00', fontSize: 13 }}>
+          <strong>⚠️ Matching unavailable</strong>
+          <div style={{ marginTop: 6, color: '#800' }}>
+            The AI matching service isn't configured yet. Please ask your Tasklet agent to add the <code>ANTHROPIC_API_KEY</code> to Netlify environment variables.
+          </div>
+          <details style={{ marginTop: 8 }}>
+            <summary style={{ cursor: 'pointer', color: '#a00', fontSize: 12 }}>Technical detail</summary>
+            <div style={{ marginTop: 4, fontSize: 12, fontFamily: 'monospace' }}>{error}</div>
+          </details>
         </div>
       )}
 
@@ -210,7 +231,7 @@ export default function IntakeTab() {
                   fontWeight: 600,
                 }}
               >
-                {copied ? '✓ Copied!' : '📋 Copy'}
+                {copied ? '✓ Copied!' : '📋 Copy Summary + Matches'}
               </button>
             </div>
             <SummaryDisplay summary={result.summary} />
@@ -375,18 +396,4 @@ function MatchCard({ match, rank }: { match: PractitionerMatch; rank: number }) 
 }
 
 function buildSummaryText(s: IntakeSummary): string {
-  const lines: string[] = [];
-  if (s.client_name) lines.push(`Client: ${s.client_name}`);
-  if (s.age) lines.push(`Age: ${s.age}`);
-  if (s.gender) lines.push(`Gender: ${s.gender}`);
-  if (s.presenting_issues?.length) lines.push(`Presenting Issues: ${s.presenting_issues.join(', ')}`);
-  if (s.risk_indicators) lines.push(`Risk Indicators: ${s.risk_indicators}`);
-  if (s.location_preference) lines.push(`Location Preference: ${s.location_preference}`);
-  if (s.timing) lines.push(`Timing: ${s.timing}`);
-  if (s.modality_preference) lines.push(`Modality Preference: ${s.modality_preference}`);
-  if (s.funding) lines.push(`Funding: ${s.funding}`);
-  if (s.previous_therapy) lines.push(`Previous Therapy: ${s.previous_therapy}`);
-  if (s.referral_source) lines.push(`Referral Source: ${s.referral_source}`);
-  if (s.additional_notes) lines.push(`Notes: ${s.additional_notes}`);
-  return lines.join('\n');
-}
+  c
