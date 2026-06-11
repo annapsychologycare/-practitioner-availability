@@ -72,6 +72,9 @@ function AppMain() {
           <p style={{ color: "#d8d0ec", fontSize: 14, letterSpacing: "0.12em", textTransform: "uppercase", fontFamily: "'Poppins', sans-serif", fontWeight: 400 }}>
             Practitioner Matching &amp; Client Intake
           </p>
+          <p style={{ color: "#c8bfe8", fontSize: 12, marginTop: 6, fontFamily: "'Poppins', sans-serif" }}>
+            📅 Availability updated {AVAILABILITY_LAST_UPDATED}
+          </p>
         </div>
       </div>
 
@@ -93,10 +96,7 @@ function AppMain() {
               {t.label}
             </button>
           ))}
-          <div style={{ marginLeft: "auto", display: "flex", alignItems: "center", gap: 6, padding: "4px 10px", background: "#f0eef7", borderRadius: 20, fontSize: 12, color: "#6b5b8a", whiteSpace: "nowrap" }}>
-            <span>📅</span>
-            <span>Availability updated {AVAILABILITY_LAST_UPDATED}</span>
-          </div>
+
         </div>
       </div>
 
