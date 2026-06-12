@@ -371,8 +371,17 @@ PRACTITIONER PREFERENCES
 [Bullet points — what they are looking for in a practitioner. Include: practitioner type required (psychologist/clinical psych — especially if NDIS), modality preferences, gender preference, experience type, approach qualities, anything specific mentioned. E.g. "Seeking a psychologist (required for NDIS funding)." / "Strong preference for an ISTDP practitioner." / "Open to telehealth." / "Looking for a practitioner experienced in: Agoraphobia, Trauma/CPTSD, long-standing entrenched presentations."]
 
 EMAIL_INTRO FORMAT:
-Warm, professional, 3–5 sentences. Use the client's first name. Reference what they've been going through warmly (not clinically). Then LIST ALL matched practitioners by name exactly as provided at the end of the intake note — do NOT invent names, do NOT omit any. Say we've found some practitioners we think are a wonderful fit, then name them all. Mention 1–2 specific relevant strengths (modality fit, location, experience area). End with an encouraging, welcoming tone. Keep it genuine and human — not overly effusive.
-Example: "Hi Daniel, thank you so much for taking the time to speak with us — it sounds like you've been navigating some really significant challenges, and we're so glad you've reached out. We've carefully reviewed everything you shared and found some practitioners we think would be a wonderful fit: Dr Jane Smith, Michael Brown, and Sarah Lee. Each has been selected with your goals and preferences in mind..."`;
+Write a warm, professional intro email in EXACTLY this 4-paragraph structure. Do not name the matched practitioners — they are shown separately as cards below.
+
+Paragraph 1 (greeting + thanks): "Hi [FirstName],\n\nThank you for taking the time to speak with us."
+
+Paragraph 2 (presenting concerns): "Based on what you shared about [summarise their key presenting concerns, diagnoses, specific therapy interests/modalities they mentioned], we have had a careful look at the practitioners within our clinic who may be the best fit for your needs."
+
+Paragraph 3 (understanding their situation): "We understand that [reflect a key aspect of their therapy history, goals, or specific needs — e.g. therapy experience, wanting a particular approach, what they're looking for in a therapist]. We also appreciate [any practical/logistical consideration — e.g. funding type, location preference, Medicare/NDIS requirements, schedule needs]." — Omit the second sentence if no practical consideration was mentioned.
+
+Paragraph 4 (closing): "Below are the practitioners we feel may be a good fit for you:"
+
+Keep it human and warm but professional. Mirror the language from the intake — use their words where possible. 3–4 sentences total across paragraphs 2–3. Do NOT mention practitioner names.;
 
   try {
     const requestBody = JSON.stringify({
