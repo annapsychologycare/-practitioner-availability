@@ -423,8 +423,33 @@ Example: "Hi Daniel, thank you so much for taking the time to speak with us — 
     }
 
     const content = JSON.parse(rawContent);
+
+    // GPT sometimes returns display_summary as a structured object instead of a string.
+    // Convert to a formatted text string that AISummaryDisplay expects.
+    let displaySummary = content.display_summary || null;
+    if (displaySummary && typeof displaySummary === 'object') {
+      const lines = [];
+      for (const [section, value] of Object.entries(displaySummary)) {
+        lines.push(section); // Section header (ALL CAPS)
+        if (Array.isArray(value)) {
+          for (const item of value) {
+            lines.push(item.startsWith('•') ? item : `• ${item}`);
+          }
+        } else if (typeof value === 'object' && value !== null) {
+          // Key-value block (e.g. the header block)
+          for (const [k, v] of Object.entries(value)) {
+            if (v) lines.push(`${k}: ${v}`);
+          }
+        } else if (value) {
+          lines.push(typeof value === 'string' && value.startsWith('•') ? value : `• ${value}`);
+        }
+        lines.push(''); // blank line between sections
+      }
+      displaySummary = lines.join('\n');
+    }
+
     return {
-      display_summary: content.display_summary || null,
+      display_summary: displaySummary,
       email_intro: content.email_intro || null,
     };
   } catch (err) {
