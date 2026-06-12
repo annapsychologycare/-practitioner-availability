@@ -305,11 +305,11 @@ function SummarySection({ title, children }: { title: string; children: React.Re
 }
 
 function AISummaryDisplay({ text }: { text: string }) {
-  // Render the AI-generated plain-text summary with emoji headers styled nicely
+  // Render the AI-generated clinical intake note with section headers, KV pairs, bullets
   const lines = text.split('\n');
   return (
     <div>
-      <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 10 }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 12 }}>
         <span style={{
           background: 'linear-gradient(135deg, #7c3aed, #a855f7)',
           color: 'white',
@@ -320,37 +320,67 @@ function AISummaryDisplay({ text }: { text: string }) {
           borderRadius: 10,
         }}>✨ AI Summary</span>
       </div>
-      <div style={{ fontSize: 13.5, lineHeight: 1.65, color: '#333' }}>
+      <div style={{ fontSize: 13.5, lineHeight: 1.7, color: '#333' }}>
         {lines.map((line, i) => {
           const trimmed = line.trim();
-          if (!trimmed) return <div key={i} style={{ height: 6 }} />;
-          // Emoji-header lines (start with emoji + space + ALL CAPS or mixed)
-          const isHeader = /^[👤🎯📋⚠️🧠🏥📍💰👨‍⚕️📝]/.test(trimmed);
-          if (isHeader) {
+          if (!trimmed) return <div key={i} style={{ height: 5 }} />;
+
+          // Title line: "INTAKE SUMMARY – PSYCHOLOGYCARE"
+          if (/^INTAKE SUMMARY/i.test(trimmed)) {
             return (
               <div key={i} style={{
                 fontWeight: 700,
                 color: COLORS.darkPurple,
-                fontSize: 12,
-                textTransform: 'uppercase',
-                letterSpacing: 0.5,
-                marginTop: i === 0 ? 0 : 14,
-                marginBottom: 5,
-                borderBottom: `1px solid ${COLORS.lightMauve}`,
-                paddingBottom: 3,
+                fontSize: 15,
+                marginBottom: 12,
+                borderBottom: `2px solid ${COLORS.mauve}`,
+                paddingBottom: 6,
               }}>{trimmed}</div>
             );
           }
-          // Bullet lines
-          if (trimmed.startsWith('•')) {
+
+          // Section headers: ALL CAPS lines only (e.g. "PRESENTING CONCERNS", "RISK ASSESSMENT")
+          const isAllCaps = /^[A-Z][A-Z\s\/\-&,\.]+$/.test(trimmed) && trimmed.length > 4 && !/^\d/.test(trimmed);
+          if (isAllCaps) {
             return (
-              <div key={i} style={{ display: 'flex', gap: 6, marginBottom: 3 }}>
-                <span style={{ color: COLORS.mauve, flexShrink: 0 }}>•</span>
-                <span>{trimmed.slice(1).trim()}</span>
+              <div key={i} style={{
+                fontWeight: 700,
+                color: COLORS.darkPurple,
+                fontSize: 11.5,
+                letterSpacing: 0.8,
+                marginTop: 16,
+                marginBottom: 6,
+                borderBottom: `1px solid ${COLORS.lightMauve}`,
+                paddingBottom: 4,
+              }}>{trimmed}</div>
+            );
+          }
+
+          // Key: Value lines in the header block (e.g. "Client: Daniel", "Funding: Self-managed NDIS")
+          // Only match if the key part has no more than 5 words
+          const kvMatch = trimmed.match(/^([A-Za-z][A-Za-z\s]{1,40}?):\s+(.+)$/);
+          if (kvMatch && !trimmed.startsWith('•') && !trimmed.startsWith('-') && kvMatch[1].split(' ').length <= 5) {
+            return (
+              <div key={i} style={{ display: 'flex', gap: 6, marginBottom: 4, flexWrap: 'wrap' }}>
+                <span style={{ fontWeight: 600, color: COLORS.mauve, minWidth: 190, flexShrink: 0 }}>{kvMatch[1]}:</span>
+                <span style={{ flex: 1 }}>{kvMatch[2]}</span>
               </div>
             );
           }
-          return <div key={i} style={{ marginBottom: 3 }}>{trimmed}</div>;
+
+          // Bullet lines starting with • or -
+          if (trimmed.startsWith('•') || trimmed.startsWith('- ') || trimmed.startsWith('-\t')) {
+            const content = trimmed.startsWith('•') ? trimmed.slice(1).trim() : trimmed.slice(1).trim();
+            return (
+              <div key={i} style={{ display: 'flex', gap: 7, marginBottom: 4 }}>
+                <span style={{ color: COLORS.mauve, flexShrink: 0, marginTop: 1 }}>•</span>
+                <span>{content}</span>
+              </div>
+            );
+          }
+
+          // Default: prose line
+          return <div key={i} style={{ marginBottom: 4 }}>{trimmed}</div>;
         })}
       </div>
     </div>
