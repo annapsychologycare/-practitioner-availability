@@ -577,12 +577,17 @@ function scorePractitioner(p, summary, textLower) {
     }
   }
 
-  // 7. Modality preference
+  // 7. Modality preference — treat as a strong filter when explicitly requested
   if (summary.modality_preference) {
     const pracModalities = (Array.isArray(p.modalities) ? p.modalities : []).join(' ').toLowerCase();
-    if (pracModalities.includes(summary.modality_preference.toLowerCase())) {
-      score += 2;
-      reasons.push(`Uses ${summary.modality_preference}`);
+    // Handle comma-separated list of requested modalities
+    const requestedModalities = summary.modality_preference.split(',').map(m => m.trim().toLowerCase());
+    const matchedModalities = requestedModalities.filter(m => pracModalities.includes(m));
+    if (matchedModalities.length > 0) {
+      score += 8; // Strong bonus — client explicitly asked for this modality
+      reasons.push(`Uses ${matchedModalities.map(m => m.toUpperCase()).join(', ')}`);
+    } else {
+      score -= 5; // Client explicitly requested a modality this practitioner doesn't offer
     }
   }
 
