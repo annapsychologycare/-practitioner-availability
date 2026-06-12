@@ -164,8 +164,16 @@ function extractSummary(text, textLower) {
   // Client name
   let client_name = null;
   const namePatterns = [
+    // Structured notes: "Client: Daniel Smith" / "Name: Daniel"
     /(?:client|patient|name)[:\s]+([A-Z][a-zA-Z'-]+(?:\s+[A-Z][a-zA-Z'-]+)?)/,
     /(?:referral\s+for)[:\s]+([A-Z][a-zA-Z'-]+(?:\s+[A-Z][a-zA-Z'-]+)?)/,
+    // Voice transcript: client says "Hello, Daniel speaking" / "Daniel speaking" / "Daniel here"
+    /\bHello[,.]?\s+([A-Z][a-z]+)\s+speaking\b/,
+    /^[\d\s]+Hello[,.]?\s+([A-Z][a-z]+)\s+speaking\b/m,
+    /\b([A-Z][a-z]+)\s+speaking\b/,
+    // Intake coordinator greets client by name: "Hi, Daniel" / "Hi Daniel,"
+    /\bHi[,.]?\s+([A-Z][a-z]+)[,.]?\s+(?:sorry|how|I|thank|just)/,
+    // Fallback: "Name Name" at start of line
     /^([A-Z][a-zA-Z'-]+\s+[A-Z][a-zA-Z'-]+)\s*[\n\r]/m,
   ];
   for (const pat of namePatterns) {
@@ -335,7 +343,7 @@ DISPLAY_SUMMARY FORMAT — this is a clinical intake note. Use the exact section
 
 INTAKE SUMMARY – PSYCHOLOGYCARE
 
-Client: [Full name, or "Not provided"]
+Client: [Full name, or first name only if that's all that's available, or "Not provided". IMPORTANT: if this is a voice/phone call transcript, look carefully for the client saying their name — e.g. "Hello, Daniel speaking", "Hi, it's Daniel", "Daniel here" — the client is usually the non-PC-staff speaker. Also check if the intake coordinator greets the client by name early in the call, e.g. "Hi Daniel,". Extract the name even if only a first name is given.]
 Age: [Exact age from DOB, or estimate from context — e.g. "Approximately 50s (long therapy history since childhood)". Never just "aged male/female".]
 Sex: [Male / Female / Not specified — infer from name/pronouns]
 Funding: [Specific — e.g. "Self-managed NDIS" / "Medicare (MHTP)" / "Private/self-funded". Flag ⚠️ if WorkCover or TAC — we do not accept these.]
@@ -388,7 +396,7 @@ Keep it human and warm but professional. Mirror the language from the intake —
       model: 'gpt-4o-mini',
       messages: [
         { role: 'system', content: systemPrompt },
-        { role: 'user', content: `Please process this intake:\n\n${text}${matchedPractitioners.length ? `\n\n---\nMatched practitioners (for email_intro — reference ALL of these by name):\n${matchedPractitioners.map((n, i) => `${i + 1}. ${n}`).join('\n')}` : ''}` },
+        { role: 'user', content: `Please process this intake:\n\n${text}${matchedPractitioners.length ? `\n\n---\nMatched practitioners: ${matchedPractitioners.join(', ')}\n(Do NOT include practitioner names in the email_intro — they appear as cards below the email. Just write a warm personalised intro that ends with "Below are the practitioners we feel may be a good fit for you:")` : ''}` },
       ],
       temperature: 0.2,
       response_format: { type: 'json_object' },
