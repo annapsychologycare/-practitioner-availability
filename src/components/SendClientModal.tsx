@@ -64,11 +64,17 @@ const SendClientModal: React.FC<Props> = ({ selected, locationFilter, onClose, o
     [clientName, note, senderName, practitionerData, config, openingParagraph]
   );
 
+  // Copy HTML: no outer background wrapper, full-width so it fills any email editor (e.g. Zanda)
+  const copyHtml = useMemo(
+    () => buildEmailHtml(clientName || "Client", note, senderName, practitionerData, { ...config, intro_text: openingParagraph }, true),
+    [clientName, note, senderName, practitionerData, config, openingParagraph]
+  );
+
   const handleCopyEmail = () => {
     try {
       // Use ClipboardItem with text/html for rich-text copy (pastes rendered HTML, not raw tags)
       if (navigator.clipboard && (window as any).ClipboardItem) {
-        const blob = new Blob([previewHtml], { type: "text/html" });
+        const blob = new Blob([copyHtml], { type: "text/html" });
         const item = new (window as any).ClipboardItem({ "text/html": blob });
         navigator.clipboard.write([item]).then(() => {
           setCopied(true);

@@ -180,7 +180,8 @@ export function buildEmailHtml(
   note: string,
   senderName: string,
   practitioners: PractitionerEmailData[],
-  config: EmailTemplateConfig = DEFAULT_EMAIL_TEMPLATE_CONFIG
+  config: EmailTemplateConfig = DEFAULT_EMAIL_TEMPLATE_CONFIG,
+  forCopy = false
 ): string {
   const c = config.colors;
   const sig = config.signature;
@@ -226,9 +227,12 @@ export function buildEmailHtml(
       </div>
     </div>`;
 
+  const outerOpen = forCopy
+    ? `<div style="font-family:Arial,Helvetica,sans-serif;background:#fff;width:100%;"><div style="width:100%;background:#fff;">`
+    : `<div style="font-family:Arial,Helvetica,sans-serif;background:#f0eef7;padding:28px 12px;"><div style="max-width:600px;margin:0 auto;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 4px 24px rgba(44,36,76,0.13);">`;
+
   return `
-    <div style="font-family:Arial,Helvetica,sans-serif;background:#f0eef7;padding:28px 12px;">
-      <div style="max-width:600px;margin:0 auto;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 4px 24px rgba(44,36,76,0.13);">
+    ${outerOpen}
 
         <!-- Top accent bar -->
         <div style="height:5px;background:linear-gradient(90deg,${c.header_bar_start} 0%,${c.header_bar_mid} 60%,${c.header_bar_end} 100%);"></div>
