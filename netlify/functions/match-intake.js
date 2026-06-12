@@ -1,5 +1,6 @@
 const path = require('path');
 const fs = require('fs');
+const https = require('https');
 
 // Presentation keyword map — presentation name -> keywords to detect in intake notes
 const PRESENTATION_KEYWORDS = {
@@ -374,38 +375,53 @@ Warm, professional, 3–5 sentences. Use their first name. Reference what they'v
 Example: "Hi Daniel, thank you so much for taking the time to speak with us — it sounds like you've been navigating some really significant challenges for a long time, and we're really glad you've reached out. We've reviewed everything you've shared and found some practitioners we think could be a wonderful fit..."`;
 
   try {
-    const response = await fetch('https://api.openai.com/v1/chat/completions', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${apiKey}`,
-      },
-      body: JSON.stringify({
-        model: 'gpt-4o-mini',
-        messages: [
-          { role: 'system', content: systemPrompt },
-          { role: 'user', content: `Please process this intake:\n\n${text}` },
-        ],
-        temperature: 0.2,
-        response_format: { type: 'json_object' },
-        max_tokens: 4000,
-      }),
+    const requestBody = JSON.stringify({
+      model: 'gpt-4o-mini',
+      messages: [
+        { role: 'system', content: systemPrompt },
+        { role: 'user', content: `Please process this intake:\n\n${text}` },
+      ],
+      temperature: 0.2,
+      response_format: { type: 'json_object' },
+      max_tokens: 4000,
     });
 
-    if (!response.ok) {
-      console.error('OpenAI API error:', response.status);
-      return null;
-    }
+    const data = await new Promise((resolve, reject) => {
+      const options = {
+        hostname: 'api.openai.com',
+        path: '/v1/chat/completions',
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${apiKey}`,
+          'Content-Length': Buffer.byteLength(requestBody),
+        },
+      };
+      const req = https.request(options, (res) => {
+        let body = '';
+        res.on('data', chunk => body += chunk);
+        res.on('end', () => {
+          console.log('OpenAI HTTP status:', res.statusCode);
+          if (res.statusCode !== 200) {
+            reject(new Error(`OpenAI HTTP ${res.statusCode}: ${body.slice(0, 200)}`));
+          } else {
+            resolve(JSON.parse(body));
+          }
+        });
+      });
+      req.on('error', reject);
+      req.write(requestBody);
+      req.end();
+    });
 
-    const data = await response.json();
     const rawContent = data.choices[0].message.content;
     console.log('OpenAI raw response length:', rawContent?.length);
     console.log('Finish reason:', data.choices[0].finish_reason);
-    
+
     if (data.choices[0].finish_reason === 'length') {
-      console.error('OpenAI response was cut off (max_tokens exceeded) — increase max_tokens');
+      console.error('OpenAI response was cut off — increase max_tokens');
     }
-    
+
     const content = JSON.parse(rawContent);
     return {
       display_summary: content.display_summary || null,

@@ -9,3 +9,4 @@
 
 [context.production.environment]
   REACT_APP_TASKLET_WEBHOOK_URL = "${TASKLET_WEBHOOK_URL}"
+  NODE_VERSION = "18"
