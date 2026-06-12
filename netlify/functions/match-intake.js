@@ -388,7 +388,7 @@ Example: "Hi Daniel, thank you so much for taking the time to speak with us — 
         ],
         temperature: 0.2,
         response_format: { type: 'json_object' },
-        max_tokens: 3000,
+        max_tokens: 2000,
       }),
     });
 

@@ -83,12 +83,16 @@ export default function IntakeTab() {
     setLoading(true);
     setResult(null);
     setError('');
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 28000);
     try {
       const res = await fetch('/.netlify/functions/match-intake', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ text, intake_type: intakeType }),
+        signal: controller.signal,
       });
+      clearTimeout(timeoutId);
       const data = await res.json();
       if (data.error) {
         setError(data.error);
@@ -96,7 +100,12 @@ export default function IntakeTab() {
         setResult(data);
       }
     } catch (e: any) {
-      setError(e.message || 'Something went wrong');
+      clearTimeout(timeoutId);
+      if (e.name === 'AbortError') {
+        setError('Request timed out — the AI took too long to respond. Please try again.');
+      } else {
+        setError(e.message || 'Something went wrong');
+      }
     } finally {
       setLoading(false);
     }
