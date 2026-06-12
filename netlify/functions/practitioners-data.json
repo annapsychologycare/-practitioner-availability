@@ -389,7 +389,7 @@
     "locations": [
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "Tuesdays at 2:30pm (Fortnightly: Starting 21st Jul)\nTuesdays at 3:30pm (Fortnightly: Starting 14th Jul)",
+        "availability": "Tuesdays at 3:30pm (Fortnightly: Starting 14th Jul)\nTuesdays at 2:30pm (Fortnightly: Starting 21st Jul)",
         "weekly_availability": [],
         "fortnightly_availability": [
           {
@@ -531,7 +531,7 @@
     "locations": [
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "Fridays at 9am (Weekly: Starting 17th Jul)",
+        "availability": "",
         "weekly_availability": [
           {
             "day": "Friday",
@@ -881,7 +881,7 @@
     "link_to_bio": "https://psychologycare.com.au/dr-maddie-brygel-psychologist/",
     "locations": [
       {
-        "availability": "Fridays at 10am (Fortnightly: Starting 31st Jul)\nFridays at 1pm (Fortnightly: Starting 19th Jun)\nThursdays at 9am (Fortnightly: Starting 18th Jun)",
+        "availability": "Fridays at 10am (Fortnightly: Starting 31st Jul)\nThursdays at 9am (Fortnightly: Starting 18th Jun)",
         "weekly_availability": [],
         "fortnightly_availability": [
           {
@@ -904,7 +904,7 @@
       },
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "Tuesdays at 10am (Weekly: Starting 7th Jul)\nTuesdays at 11am (Weekly: Starting 7th Jul)\nTuesdays at 12pm (Weekly: Starting 7th Jul)\nTuesdays at 1pm (Weekly: Starting 7th Jul)\nTuesdays at 9am (Weekly: Starting 7th Jul)",
+        "availability": "",
         "weekly_availability": [
           {
             "day": "Tuesday",
@@ -1117,7 +1117,7 @@
       },
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "Tuesdays at 12:30pm (Weekly: Starting 30th Jun)\nTuesdays at 1:30pm (Fortnightly: Starting 30th Jun)\nWednesdays at 12pm (Fortnightly: Starting 1st Jul)",
+        "availability": "",
         "weekly_availability": [
           {
             "day": "Tuesday",
@@ -1408,13 +1408,13 @@
     "link_to_bio": "https://psychologycare.com.au/niloofar-danaei/",
     "locations": [
       {
-        "availability": "",
+        "availability": "Tuesdays at 11am (Weekly: Starting 7th Jul)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Telehealth"
       },
       {
-        "availability": "Mondays at 11:30am (Weekly: Starting 22nd Jun)\nMondays at 10am (Fortnightly: Starting 13th Jul)\nMondays at 12:30pm (Fortnightly: Starting 22nd Jun)\nThursdays at 8am (Fortnightly: Starting 9th Jul)",
+        "availability": "Mondays at 11:30am (Weekly: Starting 22nd Jun)\nMondays at 12:30pm (Fortnightly: Starting 22nd Jun)\nMondays at 10am (Fortnightly: Starting 13th Jul)\nThursdays at 8am (Fortnightly: Starting 9th Jul)",
         "weekly_availability": [
           {
             "day": "Monday",
@@ -1520,7 +1520,7 @@
     "locations": [
       {
         "location": "Greville St, Prahran",
-        "availability": "Fridays at 3:30pm (Fortnightly: Starting 24th Jul)\nMondays at 9am (Fortnightly: Starting 22nd Jun)",
+        "availability": "Fridays at 3:30pm (Fortnightly: Starting 24th Jul)\nSaturdays at 3pm (Fortnightly: Starting 25th Jul)",
         "weekly_availability": [],
         "fortnightly_availability": [
           {
@@ -1742,7 +1742,7 @@
     "locations": [
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "Thursdays at 12pm (Weekly: Starting 18th Jun)\nThursdays at 9am (Weekly: Starting 18th Jun)\nTuesdays at 1pm (Weekly: Starting 16th Jun)\nTuesdays at 10am (Fortnightly: Starting 23rd Jun)\nWednesdays at 12pm (Fortnightly: Starting 1st Jul)\nWednesdays at 1pm (Fortnightly: Starting 12th Aug)",
+        "availability": "Thursdays at 9am (Weekly: Starting 18th Jun)\nThursdays at 12pm (Weekly: Starting 18th Jun)\nTuesdays at 1pm (Weekly: Starting 16th Jun)\nTuesdays at 10am (Fortnightly: Starting 23rd Jun)\nWednesdays at 12pm (Fortnightly: Starting 1st Jul)\nWednesdays at 1pm (Fortnightly: Starting 12th Aug)",
         "weekly_availability": [
           {
             "day": "Thursday",
@@ -2255,7 +2255,7 @@
     "link_to_bio": "https://psychologycare.com.au/cristina-jimenez/",
     "locations": [
       {
-        "availability": "Tuesdays at 10am (Weekly: Starting 23rd Jun)\nTuesdays at 11am (Weekly: Starting 16th Jun)\nTuesdays at 12pm (Weekly: Starting 16th Jun)\nTuesdays at 4:30pm (Weekly: Starting 16th Jun)\nTuesdays at 1pm (Fortnightly: Starting 28th Jul)\nTuesdays at 3:30pm (Fortnightly: Starting 23rd Jun)\nTuesdays at 5:30pm (Fortnightly: Starting 21st Jul)",
+        "availability": "Tuesdays at 11am (Weekly: Starting 16th Jun)\nTuesdays at 12pm (Weekly: Starting 16th Jun)\nTuesdays at 4:30pm (Weekly: Starting 16th Jun)\nTuesdays at 10am (Weekly: Starting 23rd Jun)\nTuesdays at 3:30pm (Fortnightly: Starting 23rd Jun)\nTuesdays at 5:30pm (Fortnightly: Starting 21st Jul)\nTuesdays at 1pm (Fortnightly: Starting 28th Jul)",
         "weekly_availability": [
           {
             "day": "Tuesday",
@@ -2548,7 +2548,7 @@
       },
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "Thursdays at 10am (Weekly: Starting 30th Jul)\nThursdays at 12pm (Weekly: Starting 30th Jul)\nThursdays at 1pm (Weekly: Starting 30th Jul)\nThursdays at 8am (Weekly: Starting 30th Jul)\nThursdays at 9am (Weekly: Starting 30th Jul)\nFridays at 1pm (Fortnightly: Starting 14th Aug)\nFridays at 2pm (Fortnightly: Starting 7th Aug)\nWednesdays at 8am (Fortnightly: Starting 12th Aug)",
+        "availability": "Thursdays at 8am (Weekly: Starting 30th Jul)\nThursdays at 9am (Weekly: Starting 30th Jul)\nThursdays at 10am (Weekly: Starting 30th Jul)\nThursdays at 12pm (Weekly: Starting 30th Jul)\nThursdays at 1pm (Weekly: Starting 30th Jul)\nFridays at 2pm (Fortnightly: Starting 7th Aug)\nFridays at 1pm (Fortnightly: Starting 14th Aug)\nWednesdays at 8am (Fortnightly: Starting 12th Aug)",
         "weekly_availability": [
           {
             "day": "Thursday",
@@ -2702,7 +2702,7 @@
       },
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "Saturdays at 9:30am (Fortnightly: Starting 20th Jun)",
+        "availability": "",
         "weekly_availability": [],
         "fortnightly_availability": [
           {
@@ -2864,7 +2864,7 @@
     "locations": [
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "Wednesdays at 2:30pm (Fortnightly: Starting 17th Jun)\nWednesdays at 7:30pm (Fortnightly: Starting 17th Jun)",
+        "availability": "Wednesdays at 2:30pm (Fortnightly: Starting 17th Jun)\nWednesdays at 7:30pm (Fortnightly: Starting 1st Jul)",
         "weekly_availability": [],
         "fortnightly_availability": [
           {
@@ -3000,7 +3000,7 @@
     "link_to_bio": "https://psychologycare.com.au/therese-van-maanen/",
     "locations": [
       {
-        "availability": "Thursdays at 11:30am (Weekly: Starting 16th Jul)\nThursdays at 10:15am (Fortnightly: Starting 16th Jul)\nThursdays at 12:45pm (Fortnightly: Starting 23rd Jul)\nThursdays at 2pm (Fortnightly: Starting 23rd Jul)\nThursdays at 3:15pm (Fortnightly: Starting 16th Jul)",
+        "availability": "Thursdays at 10:15am (Weekly: Starting 16th Jul)\nThursdays at 11:30am (Weekly: Starting 16th Jul)\nThursdays at 3:15pm (Fortnightly: Starting 16th Jul)\nThursdays at 12:45pm (Fortnightly: Starting 23rd Jul)\nThursdays at 2pm (Fortnightly: Starting 23rd Jul)",
         "weekly_availability": [
           {
             "day": "Thursday",
@@ -3265,7 +3265,7 @@
     "link_to_bio": "https://psychologycare.com.au/poorna-selvaraja/",
     "locations": [
       {
-        "availability": "Mondays at 11am (Fortnightly: Starting 27th Jul)\nTuesdays at 11:30am (Fortnightly: Starting 28th Jul)\nTuesdays at 2:30pm (Fortnightly: Starting 21st Jul)",
+        "availability": "Mondays at 11am (Fortnightly: Starting 27th Jul)\nTuesdays at 2:30pm (Fortnightly: Starting 21st Jul)\nTuesdays at 11:30am (Fortnightly: Starting 28th Jul)",
         "weekly_availability": [],
         "fortnightly_availability": [
           {
@@ -3618,7 +3618,7 @@
     "link_to_bio": "https://psychologycare.com.au/clare-tuttleby/",
     "locations": [
       {
-        "availability": "Tuesdays at 2:30pm (Weekly: Starting 16th Jun)\nTuesdays at 3:30pm (Fortnightly: Starting 16th Jun)\nTuesdays at 6:30pm (Fortnightly: Starting 30th Jun)",
+        "availability": "Tuesdays at 2:30pm (Weekly: Starting 16th Jun)\nTuesdays at 6:30pm (Fortnightly: Starting 30th Jun)",
         "weekly_availability": [
           {
             "day": "Tuesday",
@@ -3935,7 +3935,7 @@
     "link_to_bio": "https://psychologycare.com.au/karen-pereira-york/",
     "locations": [
       {
-        "availability": "Mondays at 8:30am (Fortnightly: Starting 6th Jul)\nThursdays at 1pm (Fortnightly: Starting 25th Jun)\nThursdays at 9:30am (Fortnightly: Starting 18th Jun)\nTuesdays at 3:30pm (Fortnightly: Starting 16th Jun)",
+        "availability": "Wednesdays at 5:30pm (Weekly: Starting 17th Jun)\nMondays at 8:30am (Fortnightly: Starting 6th Jul)\nThursdays at 9:30am (Fortnightly: Starting 2nd Jul)\nTuesdays at 3:30pm (Fortnightly: Starting 16th Jun)\nWednesdays at 4:30pm (Fortnightly: Starting 17th Jun)",
         "weekly_availability": [],
         "fortnightly_availability": [
           {
