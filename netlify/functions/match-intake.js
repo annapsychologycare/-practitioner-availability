@@ -388,7 +388,7 @@ Example: "Hi Daniel, thank you so much for taking the time to speak with us — 
         ],
         temperature: 0.2,
         response_format: { type: 'json_object' },
-        max_tokens: 2000,
+        max_tokens: 4000,
       }),
     });
 
@@ -398,7 +398,15 @@ Example: "Hi Daniel, thank you so much for taking the time to speak with us — 
     }
 
     const data = await response.json();
-    const content = JSON.parse(data.choices[0].message.content);
+    const rawContent = data.choices[0].message.content;
+    console.log('OpenAI raw response length:', rawContent?.length);
+    console.log('Finish reason:', data.choices[0].finish_reason);
+    
+    if (data.choices[0].finish_reason === 'length') {
+      console.error('OpenAI response was cut off (max_tokens exceeded) — increase max_tokens');
+    }
+    
+    const content = JSON.parse(rawContent);
     return {
       display_summary: content.display_summary || null,
       email_intro: content.email_intro || null,
