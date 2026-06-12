@@ -284,7 +284,7 @@ export default function IntakeTab() {
 
           {/* Email Intro section */}
           {result.email_intro && (
-            <EmailIntroBox intro={result.email_intro} clientName={result.summary.client_name} />
+            <EmailIntroBox intro={result.email_intro} clientName={result.summary?.client_name ?? null} />
           )}
         </div>
       )}
@@ -638,7 +638,8 @@ function MatchCard({ match, rank }: { match: PractitionerMatch; rank: number }) 
   );
 }
 
-function buildSummaryText(s: IntakeSummary): string {
+function buildSummaryText(s: IntakeSummary | null | undefined): string {
+  if (!s) return '';
   const lines: string[] = [];
   lines.push('👤 CLIENT');
   if (s.client_name) lines.push(`  Name: ${s.client_name}`);
