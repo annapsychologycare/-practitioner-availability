@@ -5,6 +5,10 @@
 [functions]
   directory = "netlify/functions"
   included_files = ["netlify/functions/practitioners-data.json"]
+  node_bundler = "esbuild"
+
+[functions.match-intake]
+  timeout = 30
 
 [context.production.environment]
   REACT_APP_TASKLET_WEBHOOK_URL = "${TASKLET_WEBHOOK_URL}"
