@@ -323,7 +323,7 @@ function generateEmailIntro(summary) {
 
 // ─── AI-powered rich summary (used when OPENAI_API_KEY is set) ───────────────
 
-async function generateAISummary(text) {
+async function generateAISummary(text, matchedPractitioners = []) {
   const apiKey = process.env.OPENAI_API_KEY;
   if (!apiKey) return null;
 
@@ -371,15 +371,15 @@ PRACTITIONER PREFERENCES
 [Bullet points — what they are looking for in a practitioner. Include: practitioner type required (psychologist/clinical psych — especially if NDIS), modality preferences, gender preference, experience type, approach qualities, anything specific mentioned. E.g. "Seeking a psychologist (required for NDIS funding)." / "Strong preference for an ISTDP practitioner." / "Open to telehealth." / "Looking for a practitioner experienced in: Agoraphobia, Trauma/CPTSD, long-standing entrenched presentations."]
 
 EMAIL_INTRO FORMAT:
-Warm, professional, 3–5 sentences. Use their first name. Reference what they've been going through warmly (not clinically). Say we've reviewed their information and found practitioners we think are a great fit. Mention 1–2 specific relevant strengths of the match (modality fit, location, experience area). End with an encouraging, welcoming tone. Do NOT be overly effusive — keep it genuine and human.
-Example: "Hi Daniel, thank you so much for taking the time to speak with us — it sounds like you've been navigating some really significant challenges for a long time, and we're really glad you've reached out. We've reviewed everything you've shared and found some practitioners we think could be a wonderful fit..."`;
+Warm, professional, 3–5 sentences. Use the client's first name. Reference what they've been going through warmly (not clinically). Then LIST ALL matched practitioners by name exactly as provided at the end of the intake note — do NOT invent names, do NOT omit any. Say we've found some practitioners we think are a wonderful fit, then name them all. Mention 1–2 specific relevant strengths (modality fit, location, experience area). End with an encouraging, welcoming tone. Keep it genuine and human — not overly effusive.
+Example: "Hi Daniel, thank you so much for taking the time to speak with us — it sounds like you've been navigating some really significant challenges, and we're so glad you've reached out. We've carefully reviewed everything you shared and found some practitioners we think would be a wonderful fit: Dr Jane Smith, Michael Brown, and Sarah Lee. Each has been selected with your goals and preferences in mind..."`;
 
   try {
     const requestBody = JSON.stringify({
       model: 'gpt-4o-mini',
       messages: [
         { role: 'system', content: systemPrompt },
-        { role: 'user', content: `Please process this intake:\n\n${text}` },
+        { role: 'user', content: `Please process this intake:\n\n${text}${matchedPractitioners.length ? `\n\n---\nMatched practitioners (for email_intro — reference ALL of these by name):\n${matchedPractitioners.map((n, i) => `${i + 1}. ${n}`).join('\n')}` : ''}` },
       ],
       temperature: 0.2,
       response_format: { type: 'json_object' },
@@ -638,7 +638,8 @@ exports.handler = async (event) => {
     }));
 
     // Try AI-powered rich summary (requires OPENAI_API_KEY env var in Netlify)
-    const aiResult = await generateAISummary(text);
+    const matchedNames = matches.map(m => `${m.title ? m.title + ' ' : ''}${m.name}`);
+    const aiResult = await generateAISummary(text, matchedNames);
     const email_intro = aiResult?.email_intro || generateEmailIntro(summary);
 
     return {
