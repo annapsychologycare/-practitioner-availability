@@ -381,7 +381,7 @@ Paragraph 3 (understanding their situation): "We understand that [reflect a key 
 
 Paragraph 4 (closing): "Below are the practitioners we feel may be a good fit for you:"
 
-Keep it human and warm but professional. Mirror the language from the intake — use their words where possible. 3–4 sentences total across paragraphs 2–3. Do NOT mention practitioner names.;
+Keep it human and warm but professional. Mirror the language from the intake — use their words where possible. 3–4 sentences total across paragraphs 2–3. Do NOT mention practitioner names.`;
 
   try {
     const requestBody = JSON.stringify({
