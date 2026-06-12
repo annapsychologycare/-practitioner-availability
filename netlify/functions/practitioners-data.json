@@ -60,7 +60,7 @@
       },
       {
         "location": "Burke Rd, Camberwell",
-        "availability": [],
+        "availability": "",
         "weekly_availability": [],
         "fortnightly_availability": [
           {
@@ -241,7 +241,7 @@
     "locations": [
       {
         "location": "Burke Rd, Camberwell",
-        "availability": [],
+        "availability": "",
         "weekly_availability": [],
         "fortnightly_availability": [
           {
@@ -389,7 +389,7 @@
     "locations": [
       {
         "location": "Burke Rd, Camberwell",
-        "availability": [],
+        "availability": "",
         "weekly_availability": [],
         "fortnightly_availability": [
           {
@@ -543,7 +543,7 @@
       },
       {
         "location": "Telehealth",
-        "availability": [],
+        "availability": "",
         "weekly_availability": [
           {
             "day": "Friday",
@@ -673,7 +673,7 @@
     "locations": [
       {
         "location": "Burke Rd, Camberwell",
-        "availability": [],
+        "availability": "",
         "weekly_availability": [],
         "fortnightly_availability": [
           {
@@ -881,7 +881,7 @@
     "link_to_bio": "https://psychologycare.com.au/dr-maddie-brygel-psychologist/",
     "locations": [
       {
-        "availability": [],
+        "availability": "",
         "weekly_availability": [],
         "fortnightly_availability": [
           {
@@ -935,7 +935,7 @@
         "fortnightly_availability": []
       },
       {
-        "availability": [],
+        "availability": "",
         "weekly_availability": [],
         "fortnightly_availability": [
           {
@@ -1273,7 +1273,7 @@
     "link_to_bio": "https://psychologycare.com.au/allison-conyer/",
     "locations": [
       {
-        "availability": [],
+        "availability": "",
         "weekly_availability": [],
         "fortnightly_availability": [
           {
@@ -1408,13 +1408,13 @@
     "link_to_bio": "https://psychologycare.com.au/niloofar-danaei/",
     "locations": [
       {
-        "availability": [],
+        "availability": "",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Telehealth"
       },
       {
-        "availability": [],
+        "availability": "",
         "weekly_availability": [
           {
             "day": "Monday",
@@ -1520,7 +1520,7 @@
     "locations": [
       {
         "location": "Greville St, Prahran",
-        "availability": [],
+        "availability": "",
         "weekly_availability": [],
         "fortnightly_availability": [
           {
@@ -1742,7 +1742,7 @@
     "locations": [
       {
         "location": "Burke Rd, Camberwell",
-        "availability": [],
+        "availability": "",
         "weekly_availability": [
           {
             "day": "Thursday",
@@ -2255,7 +2255,7 @@
     "link_to_bio": "https://psychologycare.com.au/cristina-jimenez/",
     "locations": [
       {
-        "availability": [],
+        "availability": "",
         "weekly_availability": [
           {
             "day": "Tuesday",
@@ -2548,7 +2548,7 @@
       },
       {
         "location": "Burke Rd, Camberwell",
-        "availability": [],
+        "availability": "",
         "weekly_availability": [
           {
             "day": "Thursday",
@@ -2864,7 +2864,7 @@
     "locations": [
       {
         "location": "Burke Rd, Camberwell",
-        "availability": [],
+        "availability": "",
         "weekly_availability": [],
         "fortnightly_availability": [
           {
@@ -3000,7 +3000,7 @@
     "link_to_bio": "https://psychologycare.com.au/therese-van-maanen/",
     "locations": [
       {
-        "availability": [],
+        "availability": "",
         "weekly_availability": [
           {
             "day": "Thursday",
@@ -3166,7 +3166,7 @@
     "link_to_bio": "https://psychologycare.com.au/belinda-pacella/",
     "locations": [
       {
-        "availability": [],
+        "availability": "",
         "weekly_availability": [],
         "fortnightly_availability": [
           {
@@ -3265,7 +3265,7 @@
     "link_to_bio": "https://psychologycare.com.au/poorna-selvaraja/",
     "locations": [
       {
-        "availability": [],
+        "availability": "",
         "weekly_availability": [],
         "fortnightly_availability": [
           {
@@ -3438,7 +3438,7 @@
     "link_to_bio": "https://psychologycare.com.au/pete-steele/",
     "locations": [
       {
-        "availability": [],
+        "availability": "",
         "weekly_availability": [],
         "fortnightly_availability": [
           {
@@ -3618,7 +3618,7 @@
     "link_to_bio": "https://psychologycare.com.au/clare-tuttleby/",
     "locations": [
       {
-        "availability": [],
+        "availability": "",
         "weekly_availability": [
           {
             "day": "Tuesday",
@@ -3641,7 +3641,7 @@
         "location": "Greville St, Prahran"
       },
       {
-        "availability": [],
+        "availability": "",
         "weekly_availability": [],
         "fortnightly_availability": [
           {
@@ -3935,7 +3935,7 @@
     "link_to_bio": "https://psychologycare.com.au/karen-pereira-york/",
     "locations": [
       {
-        "availability": [],
+        "availability": "",
         "weekly_availability": [],
         "fortnightly_availability": [
           {
