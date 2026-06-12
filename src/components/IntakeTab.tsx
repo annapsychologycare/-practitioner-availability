@@ -93,9 +93,15 @@ export default function IntakeTab() {
         signal: controller.signal,
       });
       clearTimeout(timeoutId);
-      const data = await res.json();
-      if (data.error) {
-        setError(data.error);
+      let data: any;
+      try {
+        data = await res.json();
+      } catch {
+        setError(`Server returned an unexpected response (status ${res.status}). Please try again.`);
+        return;
+      }
+      if (!res.ok || data.error) {
+        setError(data?.error || `Request failed (${res.status})`);
       } else {
         setResult(data);
       }
@@ -265,9 +271,9 @@ export default function IntakeTab() {
             </div>
             {result.ai_display_summary ? (
               <AISummaryDisplay text={result.ai_display_summary} />
-            ) : (
+            ) : result.summary ? (
               <SummaryDisplay summary={result.summary} />
-            )}
+            ) : null}
           </div>
 
           {/* Matches section */}
@@ -277,7 +283,7 @@ export default function IntakeTab() {
           </p>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
-            {result.matches.map((match, i) => (
+            {(result.matches || []).map((match, i) => (
               <MatchCard key={i} match={match} rank={i + 1} />
             ))}
           </div>
@@ -396,7 +402,8 @@ function AISummaryDisplay({ text }: { text: string }) {
   );
 }
 
-function SummaryDisplay({ summary }: { summary: IntakeSummary }) {
+function SummaryDisplay({ summary }: { summary: IntakeSummary | null | undefined }) {
+  if (!summary) return null;
   const riskFields = [
     summary.risk_suicidality ? `Suicidality: ${summary.risk_suicidality}` : null,
     summary.risk_selfharm ? `Self-harm: ${summary.risk_selfharm}` : null,
