@@ -66,16 +66,40 @@ const SendClientModal: React.FC<Props> = ({ selected, locationFilter, onClose, o
 
   const handleCopyEmail = () => {
     try {
-      // Use a hidden textarea + execCommand — works in sandboxed iframes
-      const ta = document.createElement("textarea");
-      ta.value = previewHtml;
-      ta.style.position = "fixed";
-      ta.style.opacity = "0";
-      document.body.appendChild(ta);
-      ta.focus();
-      ta.select();
+      // Use ClipboardItem with text/html for rich-text copy (pastes rendered HTML, not raw tags)
+      if (navigator.clipboard && (window as any).ClipboardItem) {
+        const blob = new Blob([previewHtml], { type: "text/html" });
+        const item = new (window as any).ClipboardItem({ "text/html": blob });
+        navigator.clipboard.write([item]).then(() => {
+          setCopied(true);
+          setTimeout(() => setCopied(false), 3000);
+        }).catch(() => fallbackCopy());
+      } else {
+        fallbackCopy();
+      }
+    } catch (e) {
+      fallbackCopy();
+    }
+  };
+
+  const fallbackCopy = () => {
+    try {
+      // contenteditable approach — copies rendered HTML not raw text
+      const div = document.createElement("div");
+      div.contentEditable = "true";
+      div.innerHTML = previewHtml;
+      div.style.position = "fixed";
+      div.style.left = "-9999px";
+      div.style.top = "0";
+      div.style.opacity = "0";
+      document.body.appendChild(div);
+      const range = document.createRange();
+      range.selectNodeContents(div);
+      const sel = window.getSelection();
+      sel?.removeAllRanges();
+      sel?.addRange(range);
       document.execCommand("copy");
-      document.body.removeChild(ta);
+      document.body.removeChild(div);
       setCopied(true);
       setTimeout(() => setCopied(false), 3000);
     } catch (e) {

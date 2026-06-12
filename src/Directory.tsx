@@ -30,7 +30,7 @@ export default function Directory({ practitioners }: Props) {
             <div style={{ background: "linear-gradient(135deg,#2C244C 0%,#8D5273 100%)", borderRadius: "16px 16px 0 0", padding: "20px 24px" }}>
               <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
                 {(selected as any).photo_url ? (
-                  <img src={`./public/photos/${(selected as any).photo_url.split('/').pop()}`} width={72} height={72}
+                  <img src={`/photos/${(selected as any).photo_url.split('/').pop()}`} width={72} height={72}
                     style={{ borderRadius: "50%", border: "3px solid rgba(255,255,255,0.35)", objectFit: "cover", width: 72, height: 72, flexShrink: 0 }} />
                 ) : (
                   <div style={{ width: 72, height: 72, borderRadius: "50%", background: "rgba(255,255,255,0.2)", border: "3px solid rgba(255,255,255,0.35)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 28, color: "#fff", flexShrink: 0 }}>
@@ -142,7 +142,7 @@ export default function Directory({ practitioners }: Props) {
                 {/* Card photo header */}
                 <div style={{ background: "linear-gradient(135deg,#2C244C 0%,#8D5273 100%)", padding: "12px 14px", display: "flex", alignItems: "center", gap: 10 }}>
                   {(p as any).photo_url ? (
-                    <img src={`./public/photos/${(p as any).photo_url.split('/').pop()}`} width={48} height={48}
+                    <img src={`/photos/${(p as any).photo_url.split('/').pop()}`} width={48} height={48}
                       style={{ borderRadius: "50%", border: "2px solid rgba(255,255,255,0.4)", objectFit: "cover", width: 48, height: 48, flexShrink: 0 }} />
                   ) : (
                     <div style={{ width: 48, height: 48, borderRadius: "50%", background: "rgba(255,255,255,0.2)", border: "2px solid rgba(255,255,255,0.4)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 20, color: "#fff", flexShrink: 0 }}>
