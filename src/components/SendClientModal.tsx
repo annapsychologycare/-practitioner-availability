@@ -24,6 +24,7 @@ const SendClientModal: React.FC<Props> = ({ selected, locationFilter, onClose, o
   const [clientEmail, setClientEmail] = useState("");
   const [ccEmails, setCcEmails] = useState("anna@psychologycare.com.au");
   const [senderName, setSenderName] = useState(config.senders[0] || "Anna Donaldson");
+  const [openingParagraph, setOpeningParagraph] = useState(config.intro_text);
   const [note, setNote] = useState("");
   const [sending, setSending] = useState(false);
   const [error, setError] = useState("");
@@ -59,8 +60,8 @@ const SendClientModal: React.FC<Props> = ({ selected, locationFilter, onClose, o
   );
 
   const previewHtml = useMemo(
-    () => buildEmailHtml(clientName || "Client", note, senderName, practitionerData, config),
-    [clientName, note, senderName, practitionerData, config]
+    () => buildEmailHtml(clientName || "Client", note, senderName, practitionerData, { ...config, intro_text: openingParagraph }),
+    [clientName, note, senderName, practitionerData, config, openingParagraph]
   );
 
   const handleCopyEmail = () => {
@@ -227,6 +228,28 @@ const SendClientModal: React.FC<Props> = ({ selected, locationFilter, onClose, o
                   className="input input-bordered w-full"
                   value={ccEmails}
                   onChange={(e) => setCcEmails(e.target.value)}
+                />
+              </div>
+
+              {/* Opening Paragraph */}
+              <div>
+                <div className="flex items-center justify-between pb-1">
+                  <label className="label label-text font-semibold">Opening Paragraph</label>
+                  {openingParagraph !== config.intro_text && (
+                    <button
+                      type="button"
+                      className="text-xs text-primary underline"
+                      onClick={() => setOpeningParagraph(config.intro_text)}
+                    >
+                      Reset to default
+                    </button>
+                  )}
+                </div>
+                <textarea
+                  className="textarea textarea-bordered w-full text-sm"
+                  rows={4}
+                  value={openingParagraph}
+                  onChange={(e) => setOpeningParagraph(e.target.value)}
                 />
               </div>
 
