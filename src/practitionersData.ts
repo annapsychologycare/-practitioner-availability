@@ -1,5 +1,5 @@
 // Auto-generated from practitioners_data.json — DO NOT EDIT MANUALLY
-// Synced from Zoho CRM on 2026-06-14 13:03
+// Synced from Zoho CRM on 2026-06-14 23:54
 export const PRACTITIONERS_DATA = [
   {
     "id": 1,
@@ -949,7 +949,7 @@ export const PRACTITIONERS_DATA = [
         "location": "Telehealth"
       }
     ],
-    "last_updated": "2026-06-07",
+    "last_updated": "2026-06-14",
     "availability": [
       "Thursdays at 8am, 9am & 1pm (Weekly: from 19 Mar) — Greville St, Prahran",
       "Thursdays at 12pm (Fortnightly: Starting 26 Mar) — Greville St, Prahran",
@@ -3123,7 +3123,7 @@ export const PRACTITIONERS_DATA = [
         "location": "Greville St, Prahran"
       }
     ],
-    "last_updated": "2026-06-07",
+    "last_updated": "2026-06-14",
     "short_bio": "Josh is a warm, research-active clinical psychologist supporting adolescents and adults with integrative, values-based therapy for trauma, neurodiversity and emotional difficulties.",
     "availability": [],
     "weekly_availability": [],
