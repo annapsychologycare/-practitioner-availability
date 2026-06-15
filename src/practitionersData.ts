@@ -6,7 +6,7 @@ export const PRACTITIONERS_DATA = [
     "fees": "B/H: $235\nA/H: $275",
     "medicare_rebate": "96.65",
     "gender": "Female",
-    "alert": "",
+    "alert": "Currently accepting Female clients only. Prior approval from Alex required for exceptions.",
     "presentations": [
       "Anxiety",
       "Attachment Disorder",
