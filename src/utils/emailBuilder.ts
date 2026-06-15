@@ -166,9 +166,17 @@ function buildPractitionerCard(p: PractitionerEmailData, config: EmailTemplateCo
 
       <!-- Fees -->
       ${feesInline || medicareInline ? `
-      <div style="padding:14px 24px 16px;font-size:13px;color:#444;line-height:2.0;border-top:1px solid #ede9f5;margin-top:16px;">
-        ${feesInline ? `<div><span style="font-weight:700;color:${c.name_color};">Fees:</span> ${feesInline}</div>` : ""}
-        ${medicareInline ? `<div style="margin-top:2px;"><span style="font-weight:700;color:${c.name_color};">Medicare Rebate:</span> ${medicareInline}</div>` : ""}
+      <div style="padding:14px 24px 16px;border-top:1px solid #ede9f5;margin-top:16px;">
+        <table cellpadding="0" cellspacing="0" border="0" width="100%" style="border-collapse:collapse;">
+          ${feesInline ? `<tr>
+            <td style="font-size:13px;font-weight:700;color:${c.name_color};vertical-align:top;padding:0 10px 6px 0;white-space:nowrap;">Fees:</td>
+            <td style="font-size:13px;color:#444;vertical-align:top;padding:0 0 6px 0;line-height:1.8;">${feesInline}</td>
+          </tr>` : ""}
+          ${medicareInline ? `<tr>
+            <td style="font-size:13px;font-weight:700;color:${c.name_color};vertical-align:top;padding:0 10px 0 0;white-space:nowrap;">Medicare Rebate:</td>
+            <td style="font-size:13px;color:#444;vertical-align:top;padding:0;line-height:1.8;">${medicareInline}</td>
+          </tr>` : ""}
+        </table>
       </div>` : ""}
 
       ${profileLink}
@@ -211,13 +219,10 @@ export function buildEmailHtml(
   const signature = `
     <div style="border-top:1px solid #ede9f5;padding-top:16px;margin-top:20px;">
       <div style="font-size:13px;font-weight:700;color:${c.name_color};margin-bottom:6px;">${sig.practice_name}</div>
-      <div style="font-size:12px;color:#666;line-height:2.0;">
-        PH: ${sig.phone} &nbsp;&nbsp; Fax: ${sig.fax}<br>
-        Email: <a href="mailto:${sig.email}" style="color:${c.title_color};text-decoration:none;">${sig.email}</a> &nbsp;&nbsp;
-        Web: <a href="https://${sig.website}" style="color:${c.title_color};text-decoration:none;">${sig.website}</a><br>
-        ${sig.addresses}<br>
-        ${sig.footnote ? `<span style="font-size:11px;color:${c.title_color};font-style:italic;">${sig.footnote}</span>` : ""}
-      </div>
+      <div style="font-size:12px;color:#666;margin:0;padding:0;line-height:1.8;">PH: ${sig.phone} &nbsp;&nbsp; Fax: ${sig.fax}</div>
+      <div style="font-size:12px;color:#666;margin:0;padding:0;line-height:1.8;">Email: <a href="mailto:${sig.email}" style="color:${c.title_color};text-decoration:none;">${sig.email}</a> &nbsp;&nbsp; Web: <a href="https://${sig.website}" style="color:${c.title_color};text-decoration:none;">${sig.website}</a></div>
+      <div style="font-size:12px;color:#666;margin:0;padding:0;line-height:1.8;">${sig.addresses}</div>
+      ${sig.footnote ? `<div style="font-size:11px;color:${c.title_color};font-style:italic;margin:4px 0 0 0;padding:0;">${sig.footnote}</div>` : ""}
     </div>`;
 
   const disclaimer = `
