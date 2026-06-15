@@ -48,7 +48,7 @@ export default function Directory({ practitioners }: Props) {
             </div>
             <div className="p-6">
               {selected.alert && (
-                <div style={{ backgroundColor: "#00B8C8", color: "white", borderRadius: "10px", padding: "8px 14px", fontSize: "13px", fontWeight: 700, boxShadow: "0 2px 8px rgba(0,184,200,0.35)", marginBottom: "16px" }}>
+                <div style={{ backgroundColor: "#00B8C8", color: "white", borderRadius: "10px", padding: "8px 14px", fontSize: "13px", fontWeight: 700, boxShadow: "0 2px 8px rgba(0,184,200,0.35)", marginBottom: "16px", display: "inline-block" }}>
                 🚨 {selected.alert}
               </div>
               )}
