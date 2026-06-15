@@ -304,7 +304,7 @@ function extractSummary(text, textLower) {
   };
 }
 
-function generateEmailIntro(summary) {
+function generateEmailIntro(summary, istdp_note = null) {
   const firstName = summary.client_name ? summary.client_name.split(' ')[0] : null;
   const greeting = firstName ? `Hi ${firstName},` : 'Hi,';
 
@@ -318,7 +318,13 @@ function generateEmailIntro(summary) {
     issueRef = ` with ${issues.slice(0, 2).map(i => i.toLowerCase()).join(', ')} and related concerns`;
   }
 
-  const modalityRef = summary.modality_preference
+  // If ISTDP was requested but none of our ISTDP practitioners were matched, explain why
+  let istdpLine = '';
+  if (istdp_note) {
+    istdpLine = ` ${istdp_note}`;
+  }
+
+  const modalityRef = (summary.modality_preference && !istdp_note)
     ? ` We have also kept in mind your interest in ${summary.modality_preference}.`
     : '';
 
@@ -326,12 +332,12 @@ function generateEmailIntro(summary) {
     ? ` All options below are available at ${summary.location_preference} as per your preference.`
     : '';
 
-  return `${greeting} Thank you so much for taking the time to speak with us — we really appreciate you sharing what you've been going through${issueRef}, and we're so glad you've reached out to PsychologyCare. We've carefully reviewed everything you shared and have put together some practitioners we think would be a wonderful fit for you and your needs.${modalityRef}${locationRef} Each option has been selected with your goals and preferences in mind. Please feel free to reach out if you have any questions — we're here to help and look forward to supporting you on this journey.`;
+  return `${greeting} Thank you so much for taking the time to speak with us — we really appreciate you sharing what you've been going through${issueRef}, and we're so glad you've reached out to PsychologyCare. We've carefully reviewed everything you shared and have put together some practitioners we think would be a wonderful fit for you and your needs.${istdpLine}${modalityRef}${locationRef} Each option has been selected with your goals and preferences in mind. Please feel free to reach out if you have any questions — we're here to help and look forward to supporting you on this journey.`;
 }
 
 // ─── AI-powered rich summary (used when OPENAI_API_KEY is set) ───────────────
 
-async function generateAISummary(text, matchedPractitioners = []) {
+async function generateAISummary(text, matchedPractitioners = [], istdp_note = null) {
   const apiKey = process.env.OPENAI_API_KEY;
   if (!apiKey) return null;
 
@@ -388,6 +394,8 @@ Paragraph 2 (presenting concerns): "Based on what you shared about [summarise th
 Paragraph 3 (understanding their situation): "We understand that [reflect a key aspect of their therapy history, goals, or specific needs — e.g. therapy experience, wanting a particular approach, what they're looking for in a therapist]. We also appreciate [any practical/logistical consideration — e.g. funding type, location preference, Medicare/NDIS requirements, schedule needs]." — Omit the second sentence if no practical consideration was mentioned.
 
 Paragraph 4 (closing): "Below are the practitioners we feel may be a good fit for you:"
+
+IMPORTANT — IF ISTDP WAS REQUESTED BUT NOT MATCHED: If the client specifically requested ISTDP and an ISTDP note is provided in the user message, paragraph 3 MUST acknowledge this. For example: "We understand you expressed a strong preference for ISTDP. Unfortunately, [explain the specific reason from the ISTDP note]. We've matched you with practitioners who offer [name relevant modalities] which are well-suited to your needs." Do NOT silently ignore an ISTDP preference — always acknowledge it and explain the substitution.
 
 Keep it human and warm but professional. Mirror the language from the intake — use their words where possible. 3–4 sentences total across paragraphs 2–3. Do NOT mention practitioner names.`;
 
