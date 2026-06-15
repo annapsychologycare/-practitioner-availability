@@ -357,8 +357,8 @@ const PractitionerCard: React.FC<CardProps> = ({ p, locationFilter, isSelected, 
         </div>
 
         {p.alert && (
-          <div className="py-2 px-3 text-sm mt-2 rounded-lg border-l-4" style={{ backgroundColor: "#F0EEF7", borderLeftColor: "#8D5273", color: "#2C244C" }}>
-            <span>{"⚠"} {p.alert}</span>
+          <div style={{ backgroundColor: "#00B8C8", color: "white", borderRadius: "10px", padding: "8px 14px", fontSize: "13px", fontWeight: 700, boxShadow: "0 2px 8px rgba(0,184,200,0.35)" }}>
+            🚨 {p.alert}
           </div>
         )}
 

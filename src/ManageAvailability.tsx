@@ -352,7 +352,7 @@ const ManageAvailability: React.FC<Props> = ({ practitioners, onUpdate }) => {
                       <span className={`badge badge-sm ${avail ? "badge-success" : "badge-ghost"}`}>
                         {avail ? "Has availability" : "No availability"}
                       </span>
-                      {p.alert && <span className="badge badge-warning badge-sm">⚠ Note</span>}
+                      {p.alert && <span style={{ backgroundColor: "#00B8C8", color: "white", borderRadius: "999px", padding: "2px 8px", fontSize: "11px", fontWeight: 700 }}>🚨 Note</span>}
                     </div>
                     <div className="text-sm text-base-content/60 mt-0.5">{p.title}</div>
                     {summary && (

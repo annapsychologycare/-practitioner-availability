@@ -48,7 +48,9 @@ export default function Directory({ practitioners }: Props) {
             </div>
             <div className="p-6">
               {selected.alert && (
-                <div className="py-2 px-3 text-sm mb-4 rounded-lg border-l-4" style={{ backgroundColor: "#F0EEF7", borderLeftColor: "#8D5273", color: "#2C244C" }}>⚠️ {selected.alert}</div>
+                <div style={{ backgroundColor: "#00B8C8", color: "white", borderRadius: "10px", padding: "8px 14px", fontSize: "13px", fontWeight: 700, boxShadow: "0 2px 8px rgba(0,184,200,0.35)", marginBottom: "16px" }}>
+                🚨 {selected.alert}
+              </div>
               )}
 
               <div className="grid grid-cols-2 gap-3 mb-4 text-sm">
@@ -158,7 +160,7 @@ export default function Directory({ practitioners }: Props) {
                       {hasAvail ? "Available" : "Waitlist"}
                     </span>
                     {p.accepts_couples && <span className="badge badge-info badge-xs">Couples</span>}
-                    {p.alert && <span className="badge badge-warning badge-xs">⚠</span>}
+                    {p.alert && <span style={{ backgroundColor: "#00B8C8", color: "white", borderRadius: "999px", padding: "1px 8px", fontSize: "11px", fontWeight: 700, marginLeft: "4px" }}>🚨 Note</span>}
                   </div>
                 </div>
                 {/* Card lower section */}
