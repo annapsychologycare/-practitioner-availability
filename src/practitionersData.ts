@@ -303,7 +303,7 @@ export const PRACTITIONERS_DATA = [
     "pronouns": "She/Her",
     "age_range": "18 Yrs +",
     "client_types": "Individual",
-    "alert": "",
+    "alert": "No new clients until August",
     "presentations": [
       "Agoraphobia",
       "Anxiety",
@@ -389,20 +389,9 @@ export const PRACTITIONERS_DATA = [
     "locations": [
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "Tuesdays at 2:30pm (Fortnightly: Starting 21st Jul)\nTuesdays at 3:30pm (Fortnightly: Starting 28th Jul)",
+        "availability": "",
         "weekly_availability": [],
-        "fortnightly_availability": [
-          {
-            "day": "Tuesday",
-            "time": "2:30pm",
-            "from": "21 Jul"
-          },
-          {
-            "day": "Tuesday",
-            "time": "3:30pm",
-            "from": "14 Jul"
-          }
-        ]
+        "fortnightly_availability": []
       }
     ],
     "location_notes": {},
