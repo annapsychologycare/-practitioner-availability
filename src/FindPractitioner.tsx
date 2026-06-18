@@ -216,11 +216,16 @@ function scoreMatch(p: Practitioner, filters: Filters): number {
 
   if (filters.modalities.length > 0) {
     const modVal: any = p.modalities;
-    const modText = (modVal == null ? "" : typeof modVal === "string" ? modVal : Array.isArray(modVal) ? modVal.join(" ") : String(modVal)).toLowerCase();
+    const modArray: string[] = Array.isArray(modVal) ? modVal : typeof modVal === "string" ? modVal.split(/[,\n]/).map((s: string) => s.trim()).filter(Boolean) : [];
+    const modText = modArray.join(" ").toLowerCase();
     // OR or AND logic based on toggle
     const modMatchFn = (mod: string) => {
+      // Exact match first (case-insensitive)
+      if (modArray.some((m: string) => m.toLowerCase() === mod.toLowerCase())) return true;
+      // Fuzzy fallback for legacy/short labels
       const key = mod.toLowerCase().replace(/^emdr.*/, "eye movement").replace(/^humanistic.*/, "humanistic").replace(/^trauma-informed.*/, "trauma");
-      return modText.includes(key) || modText.includes(mod.toLowerCase().substring(0, 10));
+      // Only use substring if key is meaningfully long (>15 chars) to avoid false positives
+      return key.length > 15 && modText.includes(key);
     };
     const modMatch = filters.modalitiesMatchAll
       ? filters.modalities.every(modMatchFn)
@@ -846,16 +851,4 @@ export default function FindPractitioner({ practitioners }: Props) {
             </div>
           </div>
         </div>
-      )}
-
-      {showSendModal && (
-        <SendClientModal
-          selected={selectedPractitioners}
-          locationFilter={selectedLocations.length === 1 ? selectedLocations[0] : ""}
-          onClose={() => setShowSendModal(false)}
-          onSent={handleSent}
-        />
-      )}
-    </div>
-  );
-}
+ 
