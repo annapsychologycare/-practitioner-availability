@@ -47,7 +47,7 @@
     "link_to_bio": "https://psychologycare.com.au/alex-barry/",
     "locations": [
       {
-        "availability": "Thursdays at 3:30pm (Fortnightly: Starting 25th Jun)",
+        "availability": "",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
@@ -60,7 +60,7 @@
       },
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "Mondays at 7:30pm (Fortnightly: Starting 13th Jul)\nTuesdays at 3:30pm (Fortnightly: Starting 23rd Jun)",
+        "availability": "Mondays at 7:30pm (Fortnightly: Starting 13th Jul)",
         "weekly_availability": [],
         "fortnightly_availability": []
       }
@@ -372,7 +372,7 @@
     "locations": [
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "Tuesdays at 2:30pm (Fortnightly: Starting 23rd Jun)\nTuesdays at 4:30pm (Fortnightly: Starting 7th Jul)",
+        "availability": "",
         "weekly_availability": [],
         "fortnightly_availability": []
       }
@@ -1926,7 +1926,7 @@
     "link_to_bio": "https://psychologycare.com.au/kiira-gavralas/",
     "locations": [
       {
-        "availability": "Tuesdays at 10:30am (Weekly: Starting 21st Jul)\nTuesdays at 11:45am (Weekly: Starting 21st Jul)\nTuesdays at 8am (Weekly: Starting 28th Jul)\nTuesdays at 9:15am (Weekly: Starting 21st Jul)",
+        "availability": "",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Telehealth"
@@ -3292,7 +3292,7 @@
     "medicareRebate": 145.25,
     "locations": [
       {
-        "availability": "Thursdays at 3:30pm (Fortnightly: Starting 25th Jun)",
+        "availability": "",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
@@ -3766,7 +3766,7 @@
     "link_to_bio": "https://psychologycare.com.au/elizabeth-white/",
     "locations": [
       {
-        "availability": "Mondays at 4:30pm (Fortnightly: Starting 29th Jun)\nMondays at 6:30pm (Fortnightly: Starting 6th Jul)\nWednesdays at 10am (Fortnightly: Starting 15th Jul)",
+        "availability": "",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
