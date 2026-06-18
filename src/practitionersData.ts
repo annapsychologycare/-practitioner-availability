@@ -1,7 +1,7 @@
 // Auto-generated — do not edit manually
-// Last updated: 18 June 2026, 10:28am
+// Last updated: 18 June 2026, 10:35am
 
-export const AVAILABILITY_LAST_UPDATED = "18 June 2026, 10:28am";
+export const AVAILABILITY_LAST_UPDATED = "18 June 2026, 10:35am";
 
 export const PRACTITIONERS_DATA = [
   {
@@ -377,7 +377,7 @@ export const PRACTITIONERS_DATA = [
     "locations": [
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "Tuesdays at 2:30pm (Fortnightly: Starting 23rd Jun)\nTuesdays at 4:30pm (Fortnightly: Starting 7th Jul)",
+        "availability": "",
         "weekly_availability": [],
         "fortnightly_availability": []
       }
@@ -508,7 +508,7 @@ export const PRACTITIONERS_DATA = [
     "locations": [
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "",
+        "availability": "Fridays at 11am (Fortnightly: Starting 26th Jun)\nFridays at 8am (Weekly: Starting 3rd Jul)",
         "weekly_availability": [
           {
             "day": "Friday",
@@ -520,7 +520,7 @@ export const PRACTITIONERS_DATA = [
       },
       {
         "location": "Telehealth",
-        "availability": "Fridays at 11am (Fortnightly: Starting 26th Jun)\nFridays at 8am (Weekly: Starting 3rd Jul)",
+        "availability": "",
         "weekly_availability": [],
         "fortnightly_availability": []
       }
@@ -1060,7 +1060,7 @@ export const PRACTITIONERS_DATA = [
       },
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "Tuesdays at 12:30pm (Fortnightly: Starting 23rd Jun)\nTuesdays at 12:30pm (Weekly: Starting 30th Jun)\nTuesdays at 1:30pm (Fortnightly: Starting 30th Jun)\nTuesdays at 2:30pm (Fortnightly: Starting 30th Jun)\nTuesdays at 8am (Fortnightly: Starting 30th Jun)\nWednesdays at 12pm (Fortnightly: Starting 1st Jul)",
+        "availability": "",
         "weekly_availability": [],
         "fortnightly_availability": []
       }
@@ -3303,7 +3303,7 @@ export const PRACTITIONERS_DATA = [
     "medicareRebate": 145.25,
     "locations": [
       {
-        "availability": "Thursdays at 3:30pm (Fortnightly: Starting 25th Jun)",
+        "availability": "",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
@@ -3777,7 +3777,7 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/elizabeth-white/",
     "locations": [
       {
-        "availability": "Mondays at 4:30pm (Fortnightly: Starting 29th Jun)\nMondays at 6:30pm (Fortnightly: Starting 6th Jul)\nWednesdays at 10am (Fortnightly: Starting 15th Jul)",
+        "availability": "",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
