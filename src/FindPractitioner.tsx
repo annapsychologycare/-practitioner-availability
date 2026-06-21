@@ -851,4 +851,16 @@ export default function FindPractitioner({ practitioners }: Props) {
             </div>
           </div>
         </div>
- 
+      )}
+
+      {showSendModal && (
+        <SendClientModal
+          selected={selectedPractitioners}
+          locationFilter={selectedLocations.length === 1 ? selectedLocations[0] : ""}
+          onClose={() => setShowSendModal(false)}
+          onSent={handleSent}
+        />
+      )}
+    </div>
+  );
+}
