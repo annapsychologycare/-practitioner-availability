@@ -47,13 +47,13 @@
     "link_to_bio": "https://psychologycare.com.au/alex-barry/",
     "locations": [
       {
-        "availability": "",
+        "availability": "Mondays at 7:30pm (Fortnightly: Starting 13th Jul)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
       },
       {
-        "availability": "",
+        "availability": "Mondays at 7:30pm (Fortnightly: Starting 13th Jul)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Telehealth"
@@ -842,7 +842,7 @@
       },
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "",
+        "availability": "Mondays at 8am (Fortnightly: Starting 22nd Jun)",
         "weekly_availability": [
           {
             "day": "Tuesday",
@@ -1042,7 +1042,7 @@
     "link_to_bio": "https://psychologycare.com.au/nick-burden/",
     "locations": [
       {
-        "availability": "",
+        "availability": "Tuesdays at 12:30pm (Fortnightly: Starting 23rd Jun)\nTuesdays at 12:30pm (Weekly: Starting 30th Jun)\nTuesdays at 1:30pm (Fortnightly: Starting 30th Jun)\nTuesdays at 2:30pm (Fortnightly: Starting 30th Jun)\nTuesdays at 8am (Fortnightly: Starting 30th Jun)\nWednesdays at 12pm (Fortnightly: Starting 1st Jul)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Telehealth"
@@ -2597,13 +2597,13 @@
     "link_to_bio": "https://psychologycare.com.au/nicholas-kleeman/",
     "locations": [
       {
-        "availability": "",
+        "availability": "Thursdays at 10am (Fortnightly: Starting 6th Aug)\nWednesdays at 8am (Fortnightly: Starting 12th Aug)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
       },
       {
-        "availability": "",
+        "availability": "Thursdays at 10am (Fortnightly: Starting 6th Aug)\nWednesdays at 8am (Fortnightly: Starting 12th Aug)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Telehealth"
