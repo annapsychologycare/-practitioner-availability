@@ -20,6 +20,7 @@ interface Practitioner {
   photo_url?: string;
   active?: boolean;
   referral_only?: boolean;
+  referral_clinic?: string;
   referral_contact?: string;
   referral_phone?: string;
   referral_address?: string;
@@ -238,6 +239,7 @@ const AddReferralForm: React.FC<AddReferralFormProps> = ({ onAdd, onCancel, init
   const [shortBio, setShortBio] = useState(iv?.short_bio ?? "");
   const [qualifications, setQualifications] = useState(iv?.qualifications ?? "");
   const [languages, setLanguages] = useState(iv?.languages ?? "");
+  const [referralClinic, setReferralClinic] = useState(iv?.referral_clinic ?? "");
   const [referralContact, setReferralContact] = useState(iv?.referral_contact ?? "");
   const [referralPhone, setReferralPhone] = useState(iv?.referral_phone ?? "");
   const [referralAddress, setReferralAddress] = useState(iv?.referral_address ?? "");
@@ -273,6 +275,7 @@ const AddReferralForm: React.FC<AddReferralFormProps> = ({ onAdd, onCancel, init
       short_bio: shortBio,
       qualifications,
       languages,
+      referral_clinic: referralClinic,
       referral_contact: referralContact,
       referral_phone: referralPhone,
       referral_address: referralAddress,
@@ -354,6 +357,7 @@ const AddReferralForm: React.FC<AddReferralFormProps> = ({ onAdd, onCancel, init
         <div>{field("Phone", referralPhone, setReferralPhone, "e.g. (03) 9123 4567")}</div>
       </div>
 
+      {field("Clinic Name", referralClinic, setReferralClinic, "e.g. Melbourne Psychology Group")}
       {field("Address", referralAddress, setReferralAddress, "e.g. 123 Collins St, Melbourne VIC 3000")}
       {field("Website / Profile URL", referralWebsite, setReferralWebsite, "e.g. https://…")}
 
@@ -456,6 +460,9 @@ const ReferralCard: React.FC<ReferralCardProps> = ({ p, onEdit }) => {
             <div style={{ marginTop: 12, background: "#f8f7fd", border: `1px solid ${BRAND.lightLilac}`, borderRadius: 10, padding: "12px 14px" }}>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 10 }}>
                 <div style={{ display: "flex", flexDirection: "column", gap: 6, fontSize: 13 }}>
+                  {p.referral_clinic && (
+                    <span style={{ color: BRAND.text }}>🏥 <strong>{p.referral_clinic}</strong></span>
+                  )}
                   {p.referral_address && (
                     <span style={{ color: BRAND.text }}>📍 <strong>{p.referral_address}</strong></span>
                   )}
