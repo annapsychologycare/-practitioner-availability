@@ -21,6 +21,8 @@ interface Practitioner {
   active?: boolean;
   referral_only?: boolean;
   referral_contact?: string;
+  referral_phone?: string;
+  referral_address?: string;
   referral_website?: string;
   referral_source?: string; // "former_pc" | "external"
   former_pc?: boolean;
@@ -237,6 +239,8 @@ const AddReferralForm: React.FC<AddReferralFormProps> = ({ onAdd, onCancel, init
   const [qualifications, setQualifications] = useState(iv?.qualifications ?? "");
   const [languages, setLanguages] = useState(iv?.languages ?? "");
   const [referralContact, setReferralContact] = useState(iv?.referral_contact ?? "");
+  const [referralPhone, setReferralPhone] = useState(iv?.referral_phone ?? "");
+  const [referralAddress, setReferralAddress] = useState(iv?.referral_address ?? "");
   const [referralWebsite, setReferralWebsite] = useState(iv?.referral_website ?? "");
   const [isFormerPC, setIsFormerPC] = useState(iv?.former_pc ?? (!iv?.referral_source || iv?.referral_source === "former_pc"));
   const [currentClinic, setCurrentClinic] = useState(iv?.current_clinic ?? "");
@@ -270,6 +274,8 @@ const AddReferralForm: React.FC<AddReferralFormProps> = ({ onAdd, onCancel, init
       qualifications,
       languages,
       referral_contact: referralContact,
+      referral_phone: referralPhone,
+      referral_address: referralAddress,
       referral_website: referralWebsite,
       former_pc: isFormerPC,
       current_clinic: currentClinic.trim() || undefined,
@@ -342,11 +348,14 @@ const AddReferralForm: React.FC<AddReferralFormProps> = ({ onAdd, onCancel, init
         <div>{field("Current Clinic / Practice", currentClinic, setCurrentClinic, "e.g. Melbourne Psych Group")}</div>
       </div>
 
-      {/* Row: Contact + Website */}
+      {/* Row: Email + Phone */}
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0 16px" }}>
-        <div>{field("Contact / Email", referralContact, setReferralContact, "e.g. jane@example.com")}</div>
-        <div>{field("Website / Profile URL", referralWebsite, setReferralWebsite, "e.g. https://…")}</div>
+        <div>{field("Email", referralContact, setReferralContact, "e.g. jane@example.com")}</div>
+        <div>{field("Phone", referralPhone, setReferralPhone, "e.g. (03) 9123 4567")}</div>
       </div>
+
+      {field("Address", referralAddress, setReferralAddress, "e.g. 123 Collins St, Melbourne VIC 3000")}
+      {field("Website / Profile URL", referralWebsite, setReferralWebsite, "e.g. https://…")}
 
       {field("Short Bio / Notes", shortBio, setShortBio, "Brief notes about this referral…", "textarea")}
       {field("Qualifications", qualifications, setQualifications, "e.g. MPsych(Clin), MAPS")}
@@ -372,9 +381,24 @@ interface ReferralCardProps {
 
 const ReferralCard: React.FC<ReferralCardProps> = ({ p, onEdit }) => {
   const [expanded, setExpanded] = useState(false);
+  const [copied, setCopied] = useState(false);
   const presentations = safeArr(p.presentations);
   const modalities = safeArr(p.modalities);
   const isFormerPC = !p.referral_source || p.referral_source === "former_pc";
+
+  const handleCopy = () => {
+    const lines: string[] = [];
+    lines.push([(p.title || p.therapist_type) ? `${p.name} — ${p.title || p.therapist_type}` : p.name].join(""));
+    if (p.current_clinic) lines.push(p.current_clinic);
+    if (p.referral_address) lines.push(p.referral_address);
+    if (p.referral_phone) lines.push(p.referral_phone);
+    if (p.referral_contact) lines.push(p.referral_contact);
+    if (p.referral_website || p.link_to_bio) lines.push(p.referral_website || p.link_to_bio || "");
+    navigator.clipboard.writeText(lines.filter(Boolean).join("\n")).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    });
+  };
 
   return (
     <div style={{ background: "#fff", border: `1px solid ${BRAND.border}`, borderRadius: 12, padding: 18, marginBottom: 14, boxShadow: "0 1px 3px rgba(0,0,0,0.06)" }}>
@@ -428,19 +452,39 @@ const ReferralCard: React.FC<ReferralCardProps> = ({ p, onEdit }) => {
             {p.languages && <span>🌐 {p.languages}</span>}
           </div>
 
-          {(p.referral_contact || p.referral_website || p.link_to_bio) && (
-            <div style={{ marginTop: 10, display: "flex", flexWrap: "wrap", gap: 10, fontSize: 13 }}>
-              {p.referral_contact && (
-                <span style={{ background: BRAND.lightLilac, color: BRAND.lilac, borderRadius: 8, padding: "4px 12px", fontWeight: 600 }}>
-                  📞 {p.referral_contact}
-                </span>
-              )}
-              {(p.referral_website || p.link_to_bio) && (
-                <a href={p.referral_website || p.link_to_bio} target="_blank" rel="noreferrer"
-                  style={{ background: BRAND.lightLilac, color: BRAND.lilac, borderRadius: 8, padding: "4px 12px", fontWeight: 600, textDecoration: "none" }}>
-                  🔗 Profile / Website
-                </a>
-              )}
+          {(p.referral_address || p.referral_phone || p.referral_contact || p.referral_website || p.link_to_bio) && (
+            <div style={{ marginTop: 12, background: "#f8f7fd", border: `1px solid ${BRAND.lightLilac}`, borderRadius: 10, padding: "12px 14px" }}>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 10 }}>
+                <div style={{ display: "flex", flexDirection: "column", gap: 6, fontSize: 13 }}>
+                  {p.referral_address && (
+                    <span style={{ color: BRAND.text }}>📍 <strong>{p.referral_address}</strong></span>
+                  )}
+                  {p.referral_phone && (
+                    <span style={{ color: BRAND.text }}>📞 <strong>{p.referral_phone}</strong></span>
+                  )}
+                  {p.referral_contact && (
+                    <span style={{ color: BRAND.text }}>✉️ {p.referral_contact}</span>
+                  )}
+                  {(p.referral_website || p.link_to_bio) && (
+                    <a href={p.referral_website || p.link_to_bio} target="_blank" rel="noreferrer"
+                      style={{ color: BRAND.lilac, fontWeight: 600, textDecoration: "none" }}>
+                      🔗 Profile / Website
+                    </a>
+                  )}
+                </div>
+                <button
+                  onClick={handleCopy}
+                  title="Copy contact details"
+                  style={{
+                    background: copied ? "#4A9B9A" : BRAND.lilac,
+                    color: "#fff", border: "none", borderRadius: 8,
+                    padding: "6px 14px", fontWeight: 600, cursor: "pointer",
+                    fontSize: 12, whiteSpace: "nowrap", flexShrink: 0,
+                    transition: "background 0.2s",
+                  }}>
+                  {copied ? "✓ Copied!" : "📋 Copy Details"}
+                </button>
+              </div>
             </div>
           )}
         </div>
