@@ -47,13 +47,13 @@
     "link_to_bio": "https://psychologycare.com.au/alex-barry/",
     "locations": [
       {
-        "availability": "",
+        "availability": "Thursdays at 2:30pm (Fortnightly: Starting 25th Jun)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
       },
       {
-        "availability": "",
+        "availability": "Wednesdays at 12:30pm (Fortnightly: Starting 1st Jul)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Telehealth"
@@ -65,7 +65,7 @@
         "fortnightly_availability": []
       }
     ],
-    "last_updated": "2026-06-14",
+    "last_updated": "2026-06-21",
     "availability": [
       "Wednesdays at 5:30pm (Fortnightly: Starting 25 Mar) \u2014 Greville St, Prahran",
       "Wednesdays at 1:30pm (Fortnightly: Starting 1 Apr) \u2014 Telehealth",
@@ -235,12 +235,12 @@
     "locations": [
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "Mondays at 10am (Fortnightly: Starting 22nd Jun)\nMondays at 1pm (Fortnightly: Starting 29th Jun)\nSaturdays at 9am (Fortnightly: Starting 18th Jul)",
+        "availability": "Saturdays at 9am (Weekly: Starting 11th Jul)\nMondays at 1pm (Fortnightly: Starting 29th Jun)\nSaturdays at 1pm (Fortnightly: Starting 4th Jul)",
         "weekly_availability": [],
         "fortnightly_availability": []
       }
     ],
-    "last_updated": "2026-06-14",
+    "last_updated": "2026-06-21",
     "availability": [
       "Mondays at 1pm & 3pm (Fortnightly: Starting 20 Apr) \u2014 Wattletree Rd, Malvern",
       "Saturdays at 10am (Fortnightly: Starting 18 Apr) \u2014 Wattletree Rd, Malvern"
@@ -352,7 +352,7 @@
       "Cognitive Behavioural Therapy (CBT)",
       "Schema Therapy",
       "Eye Movement Desensitisation and Reprocessing (EMDR)",
-      "Internal Family Systems (IFS) / Parts Work - Informed",
+      "Internal Family Systems (IFS) / Parts Work - Certified Level 1",
       "Motivational Interviewing (MI)",
       "Trauma-Informed Care",
       "Polyvagal-Informed Therapy"
@@ -361,7 +361,7 @@
     "style": "Active Listener, Animal Lover, Calm, Creative, Sensitive and Gentle",
     "fees": "",
     "medicare_rebate": "",
-    "bio": "Brigid Blanckenberg is a Clinical Psychologist who offers a calm and reflective space for clients to explore their inner worlds and make meaningful changes in their lives.  She values the therapeutic relationship as a foundation for healing and works collaboratively with each client to understand their experiences with curiosity, care, and respect.\n\nDrawing from an attachment-informed perspective, Brigid is attuned to how early experiences shape present patterns\u2014particularly within relationships\u2014and supports clients to develop new ways of relating to themselves and others. She uses an integrative approach, tailoring therapy to meet each individual\u2019s needs. Her work is primarily grounded in trauma-informed Schema Therapy and EMDR, complemented by Cognitive Behavioural Therapy (CBT) and Acceptance and Commitment Therapy (ACT).\n\nWith a background as a yoga teacher and long-term meditator, Brigid also weaves mindfulness and somatic awareness into her practice, helping clients cultivate self-compassion, acceptance, and inner balance.\n\nBrigid has experience supporting adults and adolescents across community and private settings with a wide range of concerns including anxiety, mood difficulties, stress, PTSD, complex trauma, relationship issues, self-esteem, life transitions, grief, identity, and body image. She also has a strong commitment to working inclusively with members of the LGBTIQ+ community.",
+    "bio": "Brigid Blanckenberg is a Clinical Psychologist who offers a calm and reflective space for clients to explore their inner worlds and make meaningful changes in their lives.\u00a0 She values the therapeutic relationship as a foundation for healing and works collaboratively with each client to understand their experiences with curiosity, care, and respect.\n\nDrawing from an attachment-informed perspective, Brigid is attuned to how early experiences shape present patterns\u2014particularly within relationships\u2014and supports clients to develop new ways of relating to themselves and others. Using an integrative approach, Brigid is an accredited EMDR therapist and Internal Family Systems therapist (Level 1), and she also draws upon Schema Therapy, Cognitive Behavioural Therapy (CBT) and Acceptance and Commitment Therapy (ACT) to meet individual client needs.\n\nWith a background as a yoga teacher and long-term meditator, Brigid also weaves mindfulness and somatic awareness into her practice, helping clients cultivate self-compassion, acceptance, and inner balance.\n\nBrigid has experience supporting adults and adolescents across community and private settings with a wide range of concerns including anxiety, mood difficulties, stress, PTSD, complex trauma, relationship issues, self-esteem, life transitions, grief, identity, and body image. She also has a strong commitment to working inclusively with members of the LGBTIQ+ community.",
     "short_bio": "Brigid Blanckenberg\nBrigid is a warm and reflective therapist who offers a calm, supportive space for clients to explore life\u2019s challenges and create meaningful change. Her approach is grounded in trauma-informed Schema Therapy and EMDR, supported by CBT, ACT, and mindfulness-based techniques. With a background in yoga and meditation, she brings a gentle, body-aware presence to her work. Brigid supports adults and adolescents with anxiety, mood difficulties, trauma, relationships, and self-esteem, and is passionate about working inclusively with the LGBTIQ+ community.",
     "qualifications": "BPsych (Hons 1), MPsych (Clinical), LLB",
     "languages": "English",
@@ -378,7 +378,7 @@
       }
     ],
     "location_notes": {},
-    "last_updated": "2026-06-14"
+    "last_updated": "2026-06-21"
   },
   {
     "id": 3,
@@ -503,18 +503,18 @@
     "locations": [
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "Fridays at 11am (Weekly: Starting 19th Jun)\nFridays at 8am (Weekly: Starting 3rd Jul)",
+        "availability": "Fridays at 8am (Weekly: Starting 3rd Jul)\nFridays at 11am (Fortnightly: Starting 26th Jun)",
         "weekly_availability": [],
         "fortnightly_availability": []
       },
       {
         "location": "Telehealth",
-        "availability": "Fridays at 11am (Weekly: Starting 19th Jun)\nFridays at 8am (Weekly: Starting 3rd Jul)",
+        "availability": "",
         "weekly_availability": [],
         "fortnightly_availability": []
       }
     ],
-    "last_updated": "2026-06-14",
+    "last_updated": "2026-06-21",
     "availability": [
       "Fridays at 11am (Weekly: from 20 Mar) \u2014 Greville St, Prahran",
       "Mondays at 9am, 10am & 11:30am (Fortnightly: Starting 20 Apr) \u2014 Greville St, Prahran",
@@ -638,7 +638,7 @@
         ]
       }
     ],
-    "last_updated": "2026-06-14",
+    "last_updated": "2026-06-21",
     "availability": [
       "Tuesdays at 9am (Fortnightly: Starting 24 Mar) \u2014 Wattletree Rd, Malvern"
     ],
@@ -835,7 +835,7 @@
     "link_to_bio": "https://psychologycare.com.au/dr-maddie-brygel-psychologist/",
     "locations": [
       {
-        "availability": "Fridays at 10am (Fortnightly: Starting 19th Jun)\nFridays at 9am (Fortnightly: Starting 31st Jul)\nThursdays at 1pm (Weekly: Starting 25th Jun)\nThursdays at 9am (Fortnightly: Starting 2nd Jul)",
+        "availability": "",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
@@ -873,13 +873,13 @@
         "fortnightly_availability": []
       },
       {
-        "availability": "Mondays at 8am (Fortnightly: Starting 22nd Jun)",
+        "availability": "Mondays at 8am (Fortnightly: Starting 6th Jul)\nMondays at 10am (Fortnightly: Starting 6th Jul)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Telehealth"
       }
     ],
-    "last_updated": "2026-06-14",
+    "last_updated": "2026-06-21",
     "availability": [
       "Thursdays at 8am, 9am & 1pm (Weekly: from 19 Mar) \u2014 Greville St, Prahran",
       "Thursdays at 12pm (Fortnightly: Starting 26 Mar) \u2014 Greville St, Prahran",
@@ -1049,12 +1049,12 @@
       },
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "Tuesdays at 12:30pm (Fortnightly: Starting 23rd Jun)\nTuesdays at 12:30pm (Weekly: Starting 30th Jun)\nTuesdays at 1:30pm (Fortnightly: Starting 30th Jun)\nTuesdays at 2:30pm (Fortnightly: Starting 30th Jun)\nTuesdays at 8am (Fortnightly: Starting 30th Jun)\nWednesdays at 12pm (Fortnightly: Starting 1st Jul)",
+        "availability": "Thursdays at 10am (Fortnightly: Starting 25th Jun)",
         "weekly_availability": [],
         "fortnightly_availability": []
       }
     ],
-    "last_updated": "2026-06-14",
+    "last_updated": "2026-06-21",
     "availability": [
       "Tuesdays at 2:30pm (Fortnightly: Starting 31 Mar) \u2014 Wattletree Rd, Malvern",
       "Thursdays at 10am (Fortnightly: Starting 16 Apr) \u2014 Wattletree Rd, Malvern"
@@ -1136,7 +1136,7 @@
         "location": "Telehealth"
       }
     ],
-    "last_updated": "2026-06-14",
+    "last_updated": "2026-06-21",
     "short_bio": "A clinical psychologist and psychedelic-assisted therapist integrating IFS, mindfulness and attachment-based approaches to support values-led healing, growth and non-ordinary states.",
     "availability": [],
     "weekly_availability": [],
@@ -1188,7 +1188,7 @@
     "link_to_bio": "https://psychologycare.com.au/allison-conyer/",
     "locations": [
       {
-        "availability": "Thursdays at 12pm (Fortnightly: Starting 2nd Jul)",
+        "availability": "Thursdays at 12pm (Fortnightly: Starting 16th Jul)",
         "weekly_availability": [],
         "fortnightly_availability": [
           {
@@ -1206,7 +1206,7 @@
         "fortnightly_availability": []
       }
     ],
-    "last_updated": "2026-06-14",
+    "last_updated": "2026-06-21",
     "availability": [],
     "short_bio": "Allison is a warm, culturally aware psychologist supporting all ages with anxiety, trauma, life transitions and family relationships using integrative evidence-based therapies.",
     "weekly_availability": [],
@@ -1335,13 +1335,13 @@
         "location": "Telehealth"
       },
       {
-        "availability": "Mondays at 11:30am (Fortnightly: Starting 29th Jun)\nMondays at 11:30am (Weekly: Starting 6th Jul)\nMondays at 12:30pm (Fortnightly: Starting 22nd Jun)\nMondays at 1:30pm (Fortnightly: Starting 22nd Jun)\nMondays at 1:30pm (Weekly: Starting 6th Jul)\nMondays at 8am (Fortnightly: Starting 22nd Jun)\nMondays at 8am (Weekly: Starting 6th Jul)\nTuesdays at 2:30pm (Fortnightly: Starting 14th Jul)",
+        "availability": "Mondays at 8am (Weekly: Starting 6th Jul)\nMondays at 1:30pm (Weekly: Starting 6th Jul)\nMondays at 12:30pm (Fortnightly: Starting 6th Jul)\nMondays at 10am (Fortnightly: Starting 13th Jul)\nThursdays at 8am (Fortnightly: Starting 9th Jul)\nTuesdays at 2:30pm (Fortnightly: Starting 14th Jul)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Burke Rd, Camberwell"
       }
     ],
-    "last_updated": "2026-06-14",
+    "last_updated": "2026-06-21",
     "availability": [
       "Thursdays at 8am (Weekly: from 19 Mar) \u2014 Wattletree Rd, Malvern",
       "Mondays at 8am & 9am (Fortnightly: Starting 13 Apr) \u2014 Wattletree Rd, Malvern",
@@ -1587,12 +1587,12 @@
     "locations": [
       {
         "location": "Greville St, Prahran",
-        "availability": "Fridays at 2:30pm (Fortnightly: Starting 24th Jul)\nFridays at 3:30pm (Fortnightly: Starting 26th Jun)\nMondays at 11am (Fortnightly: Starting 29th Jun)\nMondays at 9am (Fortnightly: Starting 22nd Jun)\nSaturdays at 12pm (Fortnightly: Starting 4th Jul)\nSaturdays at 1pm (Weekly: Starting 27th Jun)\nSaturdays at 3pm (Weekly: Starting 27th Jun)",
+        "availability": "Saturdays at 1pm (Weekly: Starting 4th Jul)\nSaturdays at 3pm (Fortnightly: Starting 25th Jul)",
         "weekly_availability": [],
         "fortnightly_availability": []
       }
     ],
-    "last_updated": "2026-06-14",
+    "last_updated": "2026-06-21",
     "availability": [
       "Tuesdays at 9am (Weekly: from 31 Mar) \u2014 Wattletree Rd, Malvern",
       "Wednesdays at 5:30pm (Fortnightly: Starting 1 Apr) \u2014 Wattletree Rd, Malvern",
@@ -1692,7 +1692,7 @@
         "location": "Greville St, Prahran"
       }
     ],
-    "last_updated": "2026-06-14",
+    "last_updated": "2026-06-21",
     "availability": [
       "Tuesdays at 10am & 12pm (Fortnightly: Starting 24 Mar) \u2014 Greville St, Prahran"
     ],
@@ -1798,12 +1798,12 @@
     "locations": [
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "Thursdays at 12pm (Weekly: Starting 25th Jun)\nWednesdays at 12pm (Fortnightly: Starting 1st Jul)\nWednesdays at 1pm (Fortnightly: Starting 12th Aug)",
+        "availability": "Thursdays at 12pm (Weekly: Starting 25th Jun)\nTuesdays at 1pm (Weekly: Starting 23rd Jun)\nThursdays at 9am (Fortnightly: Starting 25th Jun)\nTuesdays at 10am (Fortnightly: Starting 23rd Jun)\nTuesdays at 9am (Fortnightly: Starting 30th Jun)\nWednesdays at 12pm (Fortnightly: Starting 1st Jul)\nWednesdays at 1pm (Fortnightly: Starting 12th Aug)",
         "weekly_availability": [],
         "fortnightly_availability": []
       }
     ],
-    "last_updated": "2026-06-14",
+    "last_updated": "2026-06-21",
     "availability": [
       "Thursdays at 9am (Weekly: from 19 Mar) \u2014 Wattletree Rd, Malvern",
       "Tuesdays at 9am (Fortnightly: Starting 31 Mar) \u2014 Wattletree Rd, Malvern",
@@ -1932,7 +1932,7 @@
         "location": "Telehealth"
       }
     ],
-    "last_updated": "2026-06-14",
+    "last_updated": "2026-06-21",
     "short_bio": "A genuine, relational psychologist using psychodynamic, attachment-informed ISTDP to help clients understand emotional patterns, ease distress and navigate parenthood transitions.",
     "availability": [],
     "weekly_availability": [],
@@ -1987,7 +1987,7 @@
         "location": "Burke Rd, Camberwell"
       }
     ],
-    "last_updated": "2026-06-14",
+    "last_updated": "2026-06-21",
     "availability": [],
     "short_bio": "A schema, EMDR and couples-focused psychologist helping individuals and partners heal long-standing patterns and trauma through relational, goal-oriented therapy.",
     "weekly_availability": [],
@@ -2103,7 +2103,7 @@
         "location": "Burke Rd, Camberwell"
       }
     ],
-    "last_updated": "2026-06-14",
+    "last_updated": "2026-06-21",
     "availability": [
       "Tuesdays at 5:30pm & 6:30pm (Fortnightly: Starting 21 Apr) \u2014 Wattletree Rd, Malvern"
     ],
@@ -2279,13 +2279,13 @@
     "link_to_bio": "https://psychologycare.com.au/cristina-jimenez/",
     "locations": [
       {
-        "availability": "Tuesdays at 4:30pm (Weekly: Starting 23rd Jun)",
+        "availability": "Tuesdays at 11am (Weekly: Starting 21st Jul)\nTuesdays at 12pm (Weekly: Starting 21st Jul)\nTuesdays at 4:30pm (Weekly: Starting 21st Jul)\nTuesdays at 10am (Weekly: Starting 28th Jul)\nTuesdays at 3:30pm (Fortnightly: Starting 21st Jul)\nTuesdays at 5:30pm (Fortnightly: Starting 21st Jul)\nTuesdays at 1pm (Fortnightly: Starting 28th Jul)\nTuesdays at 6:30pm (Fortnightly: Starting 11th Aug)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
       }
     ],
-    "last_updated": "2026-06-14",
+    "last_updated": "2026-06-21",
     "availability": [
       "Tuesdays at 10am, 12pm & 3:30pm (Weekly: from 24 Mar) \u2014 Greville St, Prahran",
       "Tuesdays at 9am (Fortnightly: Starting 31 Mar) \u2014 Greville St, Prahran"
@@ -2425,7 +2425,7 @@
         "location": "Burke Rd, Camberwell"
       }
     ],
-    "last_updated": "2026-06-14",
+    "last_updated": "2026-06-21",
     "availability": [
       "Saturdays at 10am (Fortnightly: Starting 21 Mar) \u2014 Wattletree Rd, Malvern"
     ],
@@ -2602,12 +2602,12 @@
       },
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "Thursdays at 10am (Fortnightly: Starting 6th Aug)\nWednesdays at 8am (Fortnightly: Starting 12th Aug)",
+        "availability": "Thursdays at 8am (Weekly: Starting 30th Jul)\nThursdays at 9am (Weekly: Starting 30th Jul)\nThursdays at 1pm (Weekly: Starting 6th Aug)\nThursdays at 12pm (Weekly: Starting 13th Aug)\nFridays at 2pm (Fortnightly: Starting 7th Aug)\nFridays at 1pm (Fortnightly: Starting 14th Aug)\nWednesdays at 8am (Fortnightly: Starting 12th Aug)",
         "weekly_availability": [],
         "fortnightly_availability": []
       }
     ],
-    "last_updated": "2026-06-14",
+    "last_updated": "2026-06-21",
     "availability": [
       "Tuesdays at 3pm (Fortnightly: Starting 24 Mar) \u2014 Greville St, Prahran",
       "Tuesdays at 1pm (Fortnightly: Starting 31 Mar) \u2014 Telehealth",
@@ -2725,7 +2725,7 @@
         ]
       }
     ],
-    "last_updated": "2026-06-14",
+    "last_updated": "2026-06-21",
     "availability": [
       "Mondays at 2:30pm, 3:30pm & 5pm (Fortnightly: Starting 27 Apr) \u2014 Greville St, Prahran"
     ],
@@ -2876,7 +2876,7 @@
     "locations": [
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "Wednesdays at 7:30pm (Fortnightly: Starting 1st Jul)",
+        "availability": "Wednesdays at 2:30pm (Fortnightly: Starting 1st Jul)\nWednesdays at 7:30pm (Fortnightly: Starting 1st Jul)",
         "weekly_availability": [],
         "fortnightly_availability": []
       },
@@ -2887,7 +2887,7 @@
         "location": "Greville St, Prahran"
       }
     ],
-    "last_updated": "2026-06-14",
+    "last_updated": "2026-06-21",
     "short_bio": "Josh is a warm, research-active clinical psychologist supporting adolescents and adults with integrative, values-based therapy for trauma, neurodiversity and emotional difficulties.",
     "availability": [],
     "weekly_availability": [],
@@ -3001,13 +3001,13 @@
     "link_to_bio": "https://psychologycare.com.au/therese-van-maanen/",
     "locations": [
       {
-        "availability": "Thursdays at 10:15am (Weekly: Starting 16th Jul)\nThursdays at 12:45pm (Fortnightly: Starting 23rd Jul)\nThursdays at 2pm (Fortnightly: Starting 23rd Jul)\nThursdays at 3:15pm (Fortnightly: Starting 30th Jul)",
+        "availability": "Thursdays at 11:30am (Weekly: Starting 16th Jul)\nThursdays at 10:15am (Weekly: Starting 23rd Jul)\nThursdays at 12:45pm (Fortnightly: Starting 23rd Jul)\nThursdays at 2pm (Fortnightly: Starting 23rd Jul)\nThursdays at 3:15pm (Fortnightly: Starting 30th Jul)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Victoria St, St Kilda"
       }
     ],
-    "last_updated": "2026-06-14",
+    "last_updated": "2026-06-21",
     "availability": [
       "Thursdays at 12:45pm & 3:15pm (Weekly: from 19 Mar) \u2014 Victoria St, St Kilda",
       "Thursdays at 2pm & 10:15am (Fortnightly: Starting 26 Mar) \u2014 Victoria St, St Kilda"
@@ -3140,13 +3140,13 @@
     "link_to_bio": "https://psychologycare.com.au/belinda-pacella/",
     "locations": [
       {
-        "availability": "Mondays at 12pm (Fortnightly: Starting 22nd Jun)\nThursdays at 11am (Fortnightly: Starting 25th Jun)",
+        "availability": "Thursdays at 9am (Fortnightly: Starting 27th Aug)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
       }
     ],
-    "last_updated": "2026-06-14",
+    "last_updated": "2026-06-21",
     "availability": [
       "Mondays at 12pm & 1pm (Weekly: from 23 Mar) \u2014 Greville St, Prahran",
       "Thursdays at 11am (Weekly: from 2 Apr) \u2014 Greville St, Prahran",
@@ -3233,13 +3233,13 @@
     "link_to_bio": "https://psychologycare.com.au/poorna-selvaraja/",
     "locations": [
       {
-        "availability": "Tuesdays at 2:30pm (Fortnightly: Starting 21st Jul)",
+        "availability": "Mondays at 11am (Fortnightly: Starting 27th Jul)\nTuesdays at 2:30pm (Fortnightly: Starting 21st Jul)\nTuesdays at 8:30am (Fortnightly: Starting 28th Jul)\nTuesdays at 11:30am (Fortnightly: Starting 28th Jul)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
       }
     ],
-    "last_updated": "2026-06-14",
+    "last_updated": "2026-06-21",
     "availability": [
       "Mondays at 9am, 10am & 2pm (Fortnightly: Starting 30 Mar) \u2014 Greville St, Prahran",
       "Tuesdays at 2:30pm (Fortnightly: Starting 24 Mar) \u2014 Greville St, Prahran",
@@ -3353,26 +3353,87 @@
     "alert": "",
     "presentations": [
       "Anxiety",
-      "Autism Spectrum Disorders (ASD)",
-      "Burnout",
-      "Childhood Abuse and neglect",
-      "Depression",
-      "Grief & Loss",
-      "Life Transitions",
-      "Low self esteem",
+      "Fear of Failure",
+      "General Adaptation Disorder (Adjustment Disorder)",
+      "Generalized Anxiety Disorder (GAD)",
+      "Health Anxiety",
       "Obsessive-Compulsive Disorder (OCD)",
       "Panic Disorder & Panic Attacks",
+      "Perfectionism",
       "Phobias",
-      "Post Traumatic Stress Disorder (PTSD)",
+      "Separation anxiety disorder",
       "Social anxiety disorder / Social Phobia",
-      "Trauma",
+      "Stress",
+      "Adjustment Disorder",
+      "Bereavement",
+      "Burnout",
+      "Clinical Depression (Major Depressive Disorder)",
+      "Confidence",
+      "Depression",
+      "Grief & Loss",
+      "Loss",
+      "Major Depressive Disorder",
+      "Seasonal Affective Disorder",
+      "Self esteem",
+      "Bullying / workplace conflict",
+      "Career dissatisfaction or change adjustment",
+      "Career transition",
+      "Compassion fatigue / vicarious trauma",
+      "Occupational stress or burnout",
+      "Professional identity and role strain",
       "Workplace stress",
-      "ADD and ADHD"
+      "Attachment Disorder",
+      "Complex Trauma",
+      "Post Traumatic Stress Disorder PTSD",
+      "Trauma",
+      "Vulnerability",
+      "Interpersonal trauma or betrayal",
+      "Relationship breakdown",
+      "Separation / divorce adjustment",
+      "Low self esteem",
+      "Perfectionism or Imposter Syndrome",
+      "Identity exploration (gender/ sexual orientation/ cultural/ spiritual)",
+      "Life transitions (career change/ relocation/ retirement/ ageing)",
+      "Existential concerns / loss of meaning",
+      "Midlife crisis or \u201cstuck\u201d feelings",
+      "Personal growth and self-development goals",
+      "Sexuality and Gender",
+      "Gender Dysphoria (form. Gender Identity Disorder)",
+      "Queer",
+      "Adjusting to fatherhood or retirement",
+      "Emotional suppression / anger issues",
+      "Erectile Dysfunction",
+      "Identity or career pressures",
+      "Relationship or parenting stress",
+      "Sex and intimacy",
+      "Social isolation",
+      "Grief and bereavement",
+      "Life review and meaning-making",
+      "Carers and support workers",
+      "Adjustment to health conditions",
+      "retirement",
+      "and ageing",
+      "Autism Spectrum Disorders (ASD)",
+      "Asperger Syndrome",
+      "Learning Difficulties",
+      "Sensory processing differences",
+      "Social skill development needs",
+      "Intellectual Development Disorder (form. Mental Retardation)",
+      "Self-Harm or Suicidal Ideation ( Non-Crisis support)",
+      "Health Anxiety/ Medical Trauma",
+      "Academic pressure / performance stress",
+      "school refusal or perfectionism",
+      "Bullying / peer difficulties",
+      "Emotional regulation / behavioural difficulties",
+      "Family conflict or parental separation adjustment",
+      "Self-harm or risky behaviours",
+      "Culturally and linguistically diverse clients",
+      "LGBTQIA+ affirmative therapy"
     ],
     "modalities": [
       "Acceptance and Commitment Therapy (ACT)",
-      "Cognitive Behaviour Therapy (CBT)",
-      "Exposure and Response Prevention Therapy ( ERP) for OCD"
+      "Cognitive Behavioural Therapy (CBT)",
+      "Exposure and Response Prevention (ERP)"
     ],
     "client_types": "Individual",
     "age_range": "12 Yrs +",
@@ -3390,7 +3451,7 @@
     "link_to_bio": "https://psychologycare.com.au/pete-steele/",
     "locations": [
       {
-        "availability": "Tuesdays at 10am (Fortnightly: Starting 23rd Jun)\nWednesdays at 2pm (Fortnightly: Starting 24th Jun)",
+        "availability": "Wednesdays at 11am (Fortnightly: Starting 24th Jun)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
@@ -3402,7 +3463,7 @@
         "location": "Telehealth"
       }
     ],
-    "last_updated": "2026-06-14",
+    "last_updated": "2026-06-21",
     "availability": [
       "Tuesdays at 11am (Fortnightly: Starting 31 Mar) \u2014 Greville St, Prahran"
     ],
@@ -3506,7 +3567,7 @@
         "location": "Burke Rd, Camberwell"
       }
     ],
-    "last_updated": "2026-06-14",
+    "last_updated": "2026-06-21",
     "availability": [
       "Mondays at 2:30pm (Fortnightly: Starting 20 Apr) \u2014 Wattletree Rd, Malvern"
     ],
@@ -3601,7 +3662,7 @@
     "link_to_bio": "https://psychologycare.com.au/clare-tuttleby/",
     "locations": [
       {
-        "availability": "Mondays at 3:30pm (Fortnightly: Starting 22nd Jun)\nMondays at 5:30pm (Fortnightly: Starting 29th Jun)\nTuesdays at 3:30pm (Fortnightly: Starting 7th Jul)\nTuesdays at 6:30pm (Fortnightly: Starting 30th Jun)",
+        "availability": "Tuesdays at 2:30pm (Weekly: Starting 23rd Jun)\nMondays at 5:30pm (Fortnightly: Starting 13th Jul)\nTuesdays at 3:30pm (Fortnightly: Starting 7th Jul)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
@@ -3619,7 +3680,7 @@
         "location": "Telehealth"
       }
     ],
-    "last_updated": "2026-06-14",
+    "last_updated": "2026-06-21",
     "availability": [],
     "short_bio": "Clare is a warm, client-centred psychologist supporting life transitions, anxiety, perinatal and health challenges using CBT, ACT and mindfulness-based approaches.",
     "weekly_availability": [],
@@ -3772,7 +3833,7 @@
         "location": "Greville St, Prahran"
       }
     ],
-    "last_updated": "2026-06-14",
+    "last_updated": "2026-06-21",
     "availability": [
       "Mondays at 2:30pm & 3:30pm (Weekly: from 23 Mar) \u2014 Greville St, Prahran",
       "Wednesdays at 1pm (Fortnightly: Starting 1 Apr) \u2014 Greville St, Prahran",
@@ -3901,13 +3962,13 @@
     "link_to_bio": "https://psychologycare.com.au/karen-pereira-york/",
     "locations": [
       {
-        "availability": "Mondays at 8:30am (Fortnightly: Starting 6th Jul)\nThursdays at 10:30am (Fortnightly: Starting 25th Jun)\nThursdays at 1pm (Fortnightly: Starting 25th Jun)\nThursdays at 9:30am (Fortnightly: Starting 16th Jul)\nTuesdays at 3:30pm (Fortnightly: Starting 30th Jun)\nWednesdays at 1pm (Fortnightly: Starting 1st Jul)\nWednesdays at 4:30pm (Fortnightly: Starting 1st Jul)\nWednesdays at 5:30pm (Weekly: Starting 24th Jun)",
+        "availability": "Wednesdays at 5:30pm (Weekly: Starting 24th Jun)\nThursdays at 10:30am (Fortnightly: Starting 25th Jun)\nThursdays at 9:30am (Fortnightly: Starting 16th Jul)\nWednesdays at 4:30pm (Fortnightly: Starting 1st Jul)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
       }
     ],
-    "last_updated": "2026-06-14",
+    "last_updated": "2026-06-21",
     "availability": [
       "Wednesdays at 1pm & 2pm (Weekly: from 25 Mar) \u2014 Greville St, Prahran",
       "Thursdays at 10:30am & 9am (Fortnightly: Starting 2 Apr) \u2014 Greville St, Prahran"

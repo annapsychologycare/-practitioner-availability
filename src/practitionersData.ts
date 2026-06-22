@@ -1,5 +1,3 @@
-// Auto-generated from practitioners_data.json — DO NOT EDIT MANUALLY
-// Synced from Zoho CRM on 2026-06-21 13:01
 export const PRACTITIONERS_DATA = [
   {
     "id": 1,
@@ -38,7 +36,7 @@ export const PRACTITIONERS_DATA = [
     "therapist_type": "Psychologist",
     "additional_info": "Completed introductory training and extensive self-directed learning. Using IFS concepts in practice for ~18 months.",
     "qualifications": "Bmus, GDipPsych, MProfPsych, MAPS",
-    "bio": "Alex is a registered psychologist with experience providing assessment and psychological support to people within government, community and private sectors of mental health. \n\nAlex has experience working with young and older adults who are seeking support for the impacts of sexual trauma, abuse and neglect, family and intimate partner violence, relationship and intimacy issues, negative thoughts, feelings and bodily sensations, loss of self confidence/esteem and; feelings of anxiety, including panic and excessive worry. Alex’s therapeutic approach is integrative in nature and focused on the needs and strengths of each individual, drawing on a range of interventions including EMDR, cognitive behavioural therapy, schema therapy, internal family systems, mindfulness and somatic based practice.\n\nAlex understands the importance of creating a safe, compassionate and non-judgemental therapeutic space for people to explore inner thoughts and experiences. Alex practices from a place that is deeply person-centred, neuro-affirming, sex positive, and LGBTQIA+ inclusive.\n\nAlex is passionate about normalising the distress we may experience in response to our environment and internal worlds, and reducing the blame we place on ourselves for how we adapt in these moments. Alex has particular interest in supporting women in the context of sexual health and well-being, life changes, stages and adjustments.",
+    "bio": "Alex is a registered psychologist with experience providing assessment and psychological support to people within government, community and private sectors of mental health. \n\nAlex has experience working with young and older adults who are seeking support for the impacts of sexual trauma, abuse and neglect, family and intimate partner violence, relationship and intimacy issues, negative thoughts, feelings and bodily sensations, loss of self confidence/esteem and; feelings of anxiety, including panic and excessive worry. Alex\u2019s therapeutic approach is integrative in nature and focused on the needs and strengths of each individual, drawing on a range of interventions including EMDR, cognitive behavioural therapy, schema therapy, internal family systems, mindfulness and somatic based practice.\n\nAlex understands the importance of creating a safe, compassionate and non-judgemental therapeutic space for people to explore inner thoughts and experiences. Alex practices from a place that is deeply person-centred, neuro-affirming, sex positive, and LGBTQIA+ inclusive.\n\nAlex is passionate about normalising the distress we may experience in response to our environment and internal worlds, and reducing the blame we place on ourselves for how we adapt in these moments. Alex has particular interest in supporting women in the context of sexual health and well-being, life changes, stages and adjustments.",
     "pronouns": "She/Her",
     "billing_types": "Medicare Rebate, NDIS, Self Funded, Third Party",
     "languages": "English",
@@ -49,13 +47,13 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/alex-barry/",
     "locations": [
       {
-        "availability": "",
+        "availability": "Thursdays at 2:30pm (Fortnightly: Starting 25th Jun)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
       },
       {
-        "availability": "",
+        "availability": "Wednesdays at 12:30pm (Fortnightly: Starting 1st Jul)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Telehealth"
@@ -69,10 +67,10 @@ export const PRACTITIONERS_DATA = [
     ],
     "last_updated": "2026-06-21",
     "availability": [
-      "Wednesdays at 5:30pm (Fortnightly: Starting 25 Mar) — Greville St, Prahran",
-      "Wednesdays at 1:30pm (Fortnightly: Starting 1 Apr) — Telehealth",
-      "Tuesdays at 2:30pm (Fortnightly: Starting 31 Mar) — Wattletree Rd, Malvern",
-      "Fridays at 12pm (Fortnightly: Starting 17 Apr) — Wattletree Rd, Malvern"
+      "Wednesdays at 5:30pm (Fortnightly: Starting 25 Mar) \u2014 Greville St, Prahran",
+      "Wednesdays at 1:30pm (Fortnightly: Starting 1 Apr) \u2014 Telehealth",
+      "Tuesdays at 2:30pm (Fortnightly: Starting 31 Mar) \u2014 Wattletree Rd, Malvern",
+      "Fridays at 12pm (Fortnightly: Starting 17 Apr) \u2014 Wattletree Rd, Malvern"
     ],
     "short_bio": "Trauma-informed psychologist supporting adults across sectors with integrative EMDR, CBT, schema, and somatic therapies in neuroaffirming, sex-positive, LGBTQIA+ inclusive practice.",
     "weekly_availability": [],
@@ -183,7 +181,7 @@ export const PRACTITIONERS_DATA = [
       "retirement",
       "ageing)",
       "Existential concerns / loss of meaning",
-      "Midlife crisis or “stuck” feelings",
+      "Midlife crisis or \u201cstuck\u201d feelings",
       "Personal growth and self-development goals",
       "Sexuality and Gender",
       "Queer",
@@ -224,7 +222,7 @@ export const PRACTITIONERS_DATA = [
     "age_range": "18 Yrs +",
     "therapist_type": "Mental Health Social Worker",
     "additional_info": "",
-    "qualifications": "Psychoanalytic Psychotherapy - Victorian Association of Psychoanalytic PsychotherapistsPsychoanalytic Psychotherapy - Victorian Association of Psychoanalytic Psychotherapists\n Counseling PsychologyCounseling Psychology\n 2015 - 20202015 - 2020\n Specialist Course Couples Counselling - Relationships AustraliaSpecialist Course Couples Counselling - Relationships Australia\n Marriage and Family Therapy/CounselingMarriage and Family Therapy/Counseling\n 2016 - 20172016 - 2017\n ACT Mindfully - Acceptance and Commitment Therapy TrainingACT Mindfully - Acceptance and Commitment Therapy Training\n 2012 - 20162012 - 2016\n Social Work - Melbourne UniversitySocial Work - Melbourne University\n Bachelor‚Äôs DegreeBachelor‚Äôs Degree\n 2002 - 20032002 - 2003\n Allied Health - La Trobe UniversityAllied Health - La Trobe University\n Bachelor‚Äôs DegreeBachelor‚Äôs Degree\n 1998 - 20011998 - 2001\n The Institute For Youth Leaders - Middle EastThe Institute For Youth Leaders - Middle East\n Scholarship Program, Youth Leadership and Group FacilitationScholarship Program, Youth Leadership and Group Facilitation\n 19971997\n Relationship AustraliaRelationship Australia\n Couples and Relationship Counselling",
+    "qualifications": "Psychoanalytic Psychotherapy - Victorian Association of Psychoanalytic PsychotherapistsPsychoanalytic Psychotherapy - Victorian Association of Psychoanalytic Psychotherapists\n Counseling PsychologyCounseling Psychology\n 2015 - 20202015 - 2020\n Specialist Course Couples Counselling - Relationships AustraliaSpecialist Course Couples Counselling - Relationships Australia\n Marriage and Family Therapy/CounselingMarriage and Family Therapy/Counseling\n 2016 - 20172016 - 2017\n ACT Mindfully - Acceptance and Commitment Therapy TrainingACT Mindfully - Acceptance and Commitment Therapy Training\n 2012 - 20162012 - 2016\n Social Work - Melbourne UniversitySocial Work - Melbourne University\n Bachelor\u201a\u00c4\u00f4s DegreeBachelor\u201a\u00c4\u00f4s Degree\n 2002 - 20032002 - 2003\n Allied Health - La Trobe UniversityAllied Health - La Trobe University\n Bachelor\u201a\u00c4\u00f4s DegreeBachelor\u201a\u00c4\u00f4s Degree\n 1998 - 20011998 - 2001\n The Institute For Youth Leaders - Middle EastThe Institute For Youth Leaders - Middle East\n Scholarship Program, Youth Leadership and Group FacilitationScholarship Program, Youth Leadership and Group Facilitation\n 19971997\n Relationship AustraliaRelationship Australia\n Couples and Relationship Counselling",
     "bio": "Rebekah is a clinical Mental Health Social Worker, who has additional training in Psychotherapy (Victorian Association of Psychoanalytic Psychotherapists), Relationship Counselling (Relationships Australia) and Acceptance and Commitment Therapy (ACT mindfully), who works with both individuals and couples.\n\nRebekah seeks to support her clients to discover the value of greater emotional awareness, and more flexible expression and management of emotions. Through the process of therapy, clients have the opportunity to develop a deeper ability for reflection, a greater sense of self awareness and resilience, towards creating meaning and wellbeing in life.\n\nRebekah has a compassionate and thoughtful approach to the emotional care and support of her clients, and provides a therapeutic space that is safe, supportive, and strengthening. Using a collaborative and strength based approach, Rebekah believes that change and healing is possible.",
     "pronouns": "She/Her",
     "billing_types": "EAP, Medicare Rebate, NDIS, Self Funded, Third Party",
@@ -237,15 +235,15 @@ export const PRACTITIONERS_DATA = [
     "locations": [
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "Mondays at 10am (Fortnightly: Starting 22nd Jun)\nMondays at 1pm (Fortnightly: Starting 29th Jun)\nSaturdays at 9am (Fortnightly: Starting 18th Jul)",
+        "availability": "Saturdays at 9am (Weekly: Starting 11th Jul)\nMondays at 1pm (Fortnightly: Starting 29th Jun)\nSaturdays at 1pm (Fortnightly: Starting 4th Jul)",
         "weekly_availability": [],
         "fortnightly_availability": []
       }
     ],
     "last_updated": "2026-06-21",
     "availability": [
-      "Mondays at 1pm & 3pm (Fortnightly: Starting 20 Apr) — Wattletree Rd, Malvern",
-      "Saturdays at 10am (Fortnightly: Starting 18 Apr) — Wattletree Rd, Malvern"
+      "Mondays at 1pm & 3pm (Fortnightly: Starting 20 Apr) \u2014 Wattletree Rd, Malvern",
+      "Saturdays at 10am (Fortnightly: Starting 18 Apr) \u2014 Wattletree Rd, Malvern"
     ],
     "short_bio": "Rebekah is a relationship-focused mental health social worker using counselling, psychotherapy and ACT to help individuals and couples strengthen connection and wellbeing.",
     "weekly_availability": [],
@@ -334,7 +332,7 @@ export const PRACTITIONERS_DATA = [
       "retirement",
       "ageing)",
       "Existential concerns / loss of meaning",
-      "Midlife crisis or “stuck” feelings",
+      "Midlife crisis or \u201cstuck\u201d feelings",
       "Personal growth and self-development goals",
       "Fertility / IVF stress",
       "Pregnancy loss or birth trauma",
@@ -363,8 +361,8 @@ export const PRACTITIONERS_DATA = [
     "style": "Active Listener, Animal Lover, Calm, Creative, Sensitive and Gentle",
     "fees": "",
     "medicare_rebate": "",
-    "bio": "Brigid Blanckenberg is a Clinical Psychologist who offers a calm and reflective space for clients to explore their inner worlds and make meaningful changes in their lives.  She values the therapeutic relationship as a foundation for healing and works collaboratively with each client to understand their experiences with curiosity, care, and respect.\n\nDrawing from an attachment-informed perspective, Brigid is attuned to how early experiences shape present patterns—particularly within relationships—and supports clients to develop new ways of relating to themselves and others. Using an integrative approach, Brigid is an accredited EMDR therapist and Internal Family Systems therapist (Level 1), and she also draws upon Schema Therapy, Cognitive Behavioural Therapy (CBT) and Acceptance and Commitment Therapy (ACT) to meet individual client needs.\n\nWith a background as a yoga teacher and long-term meditator, Brigid also weaves mindfulness and somatic awareness into her practice, helping clients cultivate self-compassion, acceptance, and inner balance.\n\nBrigid has experience supporting adults and adolescents across community and private settings with a wide range of concerns including anxiety, mood difficulties, stress, PTSD, complex trauma, relationship issues, self-esteem, life transitions, grief, identity, and body image. She also has a strong commitment to working inclusively with members of the LGBTIQ+ community.",
-    "short_bio": "Brigid Blanckenberg\nBrigid is a warm and reflective therapist who offers a calm, supportive space for clients to explore life’s challenges and create meaningful change. Her approach is grounded in trauma-informed Schema Therapy and EMDR, supported by CBT, ACT, and mindfulness-based techniques. With a background in yoga and meditation, she brings a gentle, body-aware presence to her work. Brigid supports adults and adolescents with anxiety, mood difficulties, trauma, relationships, and self-esteem, and is passionate about working inclusively with the LGBTIQ+ community.",
+    "bio": "Brigid Blanckenberg is a Clinical Psychologist who offers a calm and reflective space for clients to explore their inner worlds and make meaningful changes in their lives.\u00a0 She values the therapeutic relationship as a foundation for healing and works collaboratively with each client to understand their experiences with curiosity, care, and respect.\n\nDrawing from an attachment-informed perspective, Brigid is attuned to how early experiences shape present patterns\u2014particularly within relationships\u2014and supports clients to develop new ways of relating to themselves and others. Using an integrative approach, Brigid is an accredited EMDR therapist and Internal Family Systems therapist (Level 1), and she also draws upon Schema Therapy, Cognitive Behavioural Therapy (CBT) and Acceptance and Commitment Therapy (ACT) to meet individual client needs.\n\nWith a background as a yoga teacher and long-term meditator, Brigid also weaves mindfulness and somatic awareness into her practice, helping clients cultivate self-compassion, acceptance, and inner balance.\n\nBrigid has experience supporting adults and adolescents across community and private settings with a wide range of concerns including anxiety, mood difficulties, stress, PTSD, complex trauma, relationship issues, self-esteem, life transitions, grief, identity, and body image. She also has a strong commitment to working inclusively with members of the LGBTIQ+ community.",
+    "short_bio": "Brigid Blanckenberg\nBrigid is a warm and reflective therapist who offers a calm, supportive space for clients to explore life\u2019s challenges and create meaningful change. Her approach is grounded in trauma-informed Schema Therapy and EMDR, supported by CBT, ACT, and mindfulness-based techniques. With a background in yoga and meditation, she brings a gentle, body-aware presence to her work. Brigid supports adults and adolescents with anxiety, mood difficulties, trauma, relationships, and self-esteem, and is passionate about working inclusively with the LGBTIQ+ community.",
     "qualifications": "BPsych (Hons 1), MPsych (Clinical), LLB",
     "languages": "English",
     "religions_groups": "",
@@ -438,7 +436,7 @@ export const PRACTITIONERS_DATA = [
       "relocation",
       "retirement",
       "ageing)",
-      "Midlife crisis or “stuck” feelings",
+      "Midlife crisis or \u201cstuck\u201d feelings",
       "Personal growth and self-development goals",
       "Sexuality and Gender",
       "Gender Dysphoria (form. Gender Identity Disorder)",
@@ -493,7 +491,7 @@ export const PRACTITIONERS_DATA = [
     "therapist_type": "Clinical Psychologist",
     "additional_info": "Profile updated @annaholder",
     "qualifications": "BArts(Psych), Hons(Psych), Masters of Clinical Psychology\n \n Master of Psychology (Clinical Psychology), University of Melbourne, Australia, 2020\n Bachelor of Arts (Honours), University of Melbourne, Australia, 2017\n Bachelor of Arts, University of Melbourne, Australia, 2016",
-    "bio": "Amy (she/her) is a compassionate and LGBTQIAP+ friendly clinician who works with clients aged 16+. She received her full clinical training (Bachelor of Arts with Major in Psychology; Honours in Psychology; and Master of Clinical Psychology) from the University of Melbourne.\n\nWhilst Amy works with various presentations, she holds particular experience working with individuals with mood disorders (including depression, anxiety, stress management and anger), relationship difficulties (romantic or other), and eating disorders, body image and self-esteem/self-worth difficulties. Amy prefers a more flexible 'bag of tricks' approach to therapy therapy (rather than a structured approach), and combines skills from various therapies, including Schema Therapy, Acceptance and Commitment Therapy (ACT), Cognitive Behavioural Therapy (CBT), Mindfulness, Dialectical Behaviour Therapy (DBT) and Compassion-Focused Therapy (CFT). Amy's clients have appreciated the personality she brings, along with the non-judgmental, safe space she naturally provides.\n\nAmy loves being a psychologist due to its seamless blend of both science and art. Amy’s commitment to her clients is that she stays informed on the science of psychology through ongoing professional development and learning; an aspect of her role that she thoroughly enjoys. Amy also places great importance on the art of psychology; she understands that therapy is not a ‘one size fits all’ approach and requires the art of flexibility. Through providing a collaborative, non-judgemental, and warm atmosphere, Amy aims to ensure that each person’s therapy will suit their own personality, individual goals, and circumstances in order to help provide them with the best possible outcomes.\n\nBroadly, Amy is obsessed with her new 6yo rescue kelpie x staffy, Naia; she loves movement, being an endurance runner (spending a lot of time outside in general); and travels as much as possible",
+    "bio": "Amy (she/her) is a compassionate and LGBTQIAP+ friendly clinician who works with clients aged 16+. She received her full clinical training (Bachelor of Arts with Major in Psychology; Honours in Psychology; and Master of Clinical Psychology) from the University of Melbourne.\n\nWhilst Amy works with various presentations, she holds particular experience working with individuals with mood disorders (including depression, anxiety, stress management and anger), relationship difficulties (romantic or other), and eating disorders, body image and self-esteem/self-worth difficulties. Amy prefers a more flexible 'bag of tricks' approach to therapy therapy (rather than a structured approach), and combines skills from various therapies, including Schema Therapy, Acceptance and Commitment Therapy (ACT), Cognitive Behavioural Therapy (CBT), Mindfulness, Dialectical Behaviour Therapy (DBT) and Compassion-Focused Therapy (CFT). Amy's clients have appreciated the personality she brings, along with the non-judgmental, safe space she naturally provides.\n\nAmy loves being a psychologist due to its seamless blend of both science and art. Amy\u2019s commitment to her clients is that she stays informed on the science of psychology through ongoing professional development and learning; an aspect of her role that she thoroughly enjoys. Amy also places great importance on the art of psychology; she understands that therapy is not a \u2018one size fits all\u2019 approach and requires the art of flexibility. Through providing a collaborative, non-judgemental, and warm atmosphere, Amy aims to ensure that each person\u2019s therapy will suit their own personality, individual goals, and circumstances in order to help provide them with the best possible outcomes.\n\nBroadly, Amy is obsessed with her new 6yo rescue kelpie x staffy, Naia; she loves movement, being an endurance runner (spending a lot of time outside in general); and travels as much as possible",
     "pronouns": "She/Her",
     "billing_types": "Medicare Rebate, NDIS, Self Funded, Third Party",
     "languages": "English",
@@ -505,22 +503,22 @@ export const PRACTITIONERS_DATA = [
     "locations": [
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "Fridays at 11am (Weekly: Starting 19th Jun)\nFridays at 8am (Weekly: Starting 3rd Jul)",
+        "availability": "Fridays at 8am (Weekly: Starting 3rd Jul)\nFridays at 11am (Fortnightly: Starting 26th Jun)",
         "weekly_availability": [],
         "fortnightly_availability": []
       },
       {
         "location": "Telehealth",
-        "availability": "Fridays at 11am (Weekly: Starting 19th Jun)\nFridays at 8am (Weekly: Starting 3rd Jul)",
+        "availability": "",
         "weekly_availability": [],
         "fortnightly_availability": []
       }
     ],
     "last_updated": "2026-06-21",
     "availability": [
-      "Fridays at 11am (Weekly: from 20 Mar) — Greville St, Prahran",
-      "Mondays at 9am, 10am & 11:30am (Fortnightly: Starting 20 Apr) — Greville St, Prahran",
-      "Fridays at 2pm (Fortnightly: Starting 20 Mar) — Greville St, Prahran"
+      "Fridays at 11am (Weekly: from 20 Mar) \u2014 Greville St, Prahran",
+      "Mondays at 9am, 10am & 11:30am (Fortnightly: Starting 20 Apr) \u2014 Greville St, Prahran",
+      "Fridays at 2pm (Fortnightly: Starting 20 Mar) \u2014 Greville St, Prahran"
     ],
     "short_bio": "Amy is a warm, LGBTQIAP+ friendly clinical psychologist supporting clients 16+ with mood, relationship and eating difficulties using flexible, evidence-based therapies.",
     "weekly_availability": [
@@ -617,7 +615,7 @@ export const PRACTITIONERS_DATA = [
     "therapist_type": "Clinical Psychology Registrar",
     "additional_info": "I am happy to work with LGBTQIA+ clients, although if gender/sexuality related issues are the primary concern please discuss with me prior to booking",
     "qualifications": "Bachelor of Arts and Bachelor of Arts (Honours) majoring in psychology at the University of Melbourne.\n Masters of Clinical Psychology at the University of Sydney.",
-    "bio": "What I find most meaningful about being a psychologist is the privilege of being alongside people as they move through difficulties towards greater self-understanding, growth, and connection. I believe therapy is a space where change becomes possible, and it’s a role I feel deeply grateful to be in.\n\n\n\nI'm a Registered Psychologist and Clinical Psychology Registrar, and I work with adults navigating a range of mental health challenges, including anxiety, depression, complex trauma, emotional overwhelm and dysregulation, relationship difficulties, self-esteem difficulties, and study/work burnout. Whether someone is feeling stuck, going through a period of transition, or looking to explore themselves more deeply, I aim to offer a space that feels safe, supportive, and grounded.\n\n\n\nMy approach to therapy is collaborative and respectful of each person’s unique story. My therapeutic work often blends emotional exploration with practical strategies, and is informed by evidence-based approaches such as Internal Family Systems, Cognitive Behavioural Therapy, Acceptance and Commitment Therapy, Schema Therapy, and mindfulness-based practices. I’m especially interested in relational and attachment-focused ways of working, and in supporting clients to build a more compassionate relationship with themselves. I value working together to make sense of experiences - past and present - and to find ways forward that feel authentic and meaningful. \n\n\n\nI bring a warm, thoughtful, and calm presence to my work in the therapy room, and I welcome all parts of a person’s experience without judgment. I know that beginning therapy can feel daunting, and I’m always mindful of the trust it takes to share your story. My hope is to offer a space where you feel truly heard, and where we can work together through challenges, toward greater clarity, self-acceptance, and emotional wellbeing.",
+    "bio": "What I find most meaningful about being a psychologist is the privilege of being alongside people as they move through difficulties towards greater self-understanding, growth, and connection. I believe therapy is a space where change becomes possible, and it\u2019s a role I feel deeply grateful to be in.\n\n\n\nI'm a Registered Psychologist and Clinical Psychology Registrar, and I work with adults navigating a range of mental health challenges, including anxiety, depression, complex trauma, emotional overwhelm and dysregulation, relationship difficulties, self-esteem difficulties, and study/work burnout. Whether someone is feeling stuck, going through a period of transition, or looking to explore themselves more deeply, I aim to offer a space that feels safe, supportive, and grounded.\n\n\n\nMy approach to therapy is collaborative and respectful of each person\u2019s unique story. My therapeutic work often blends emotional exploration with practical strategies, and is informed by evidence-based approaches such as Internal Family Systems, Cognitive Behavioural Therapy, Acceptance and Commitment Therapy, Schema Therapy, and mindfulness-based practices. I\u2019m especially interested in relational and attachment-focused ways of working, and in supporting clients to build a more compassionate relationship with themselves. I value working together to make sense of experiences - past and present - and to find ways forward that feel authentic and meaningful. \n\n\n\nI bring a warm, thoughtful, and calm presence to my work in the therapy room, and I welcome all parts of a person\u2019s experience without judgment. I know that beginning therapy can feel daunting, and I\u2019m always mindful of the trust it takes to share your story. My hope is to offer a space where you feel truly heard, and where we can work together through challenges, toward greater clarity, self-acceptance, and emotional wellbeing.",
     "pronouns": "She/Her",
     "billing_types": "Medicare Rebate, NDIS, Self Funded, Third Party",
     "languages": "English",
@@ -642,7 +640,7 @@ export const PRACTITIONERS_DATA = [
     ],
     "last_updated": "2026-06-21",
     "availability": [
-      "Tuesdays at 9am (Fortnightly: Starting 24 Mar) — Wattletree Rd, Malvern"
+      "Tuesdays at 9am (Fortnightly: Starting 24 Mar) \u2014 Wattletree Rd, Malvern"
     ],
     "short_bio": "A warm clinical psychology registrar integrating IFS, CBT, ACT, schema and mindfulness to support adults toward self-understanding, compassion and emotionally grounded change.",
     "weekly_availability": [],
@@ -733,7 +731,7 @@ export const PRACTITIONERS_DATA = [
       "retirement",
       "ageing)",
       "Existential concerns / loss of meaning",
-      "Midlife crisis or “stuck” feelings",
+      "Midlife crisis or \u201cstuck\u201d feelings",
       "Personal growth and self-development goals",
       "Alcohol Dependence (Not Current)",
       "Drug Dependence (Not Current)",
@@ -826,7 +824,7 @@ export const PRACTITIONERS_DATA = [
     "therapist_type": "Clinical Psychology Registrar",
     "additional_info": "",
     "qualifications": "",
-    "bio": "I am a registered psychologist with a doctorate in clinical and forensic psychology. \n \nI came to psychology because I believe that each mind is like an entire world. I think that taking the time to more deeply explore the inner worlds of ourselves and others can bring life-long benefits. \n \nI have worked across various settings, including public hospitals, addiction rehabs and palliative care. I frequently work with anxiety, depression, relationship difficulties, trauma, grief, addiction and eating disorders, and have had several publications on women’s mental health and family violence. \n \nI would describe my approach to therapy as collaborative, warm and direct. Regardless of what you come to therapy with, my aim is to support you in getting to a greater place of peace within your mind, help you to see your patterns and blind spots and provide guidance using evidence-based frameworks. \n \nClinical Interests:\nAnxiety\nDepression and low mood\nStress and burnout\nTrauma and PTSD\nRelationship difficulties\nGrief & loss\nSelf-esteem and confidence\nBody image concerns\nAddictive behaviours\nLife transitions (e.g., career change, parenthood, separation)\nAdjustment to illness or major life events\nIdentity/existential concerns/life review work \nModalities:\nHumanistic and Existential Therapy \nCognitive Behaviour Therapy (CBT) \nAcceptance and Commitment Therapy (ACT)\nDialectical Behaviour Therapy (DBT)\nSchema Therapy\nBehavioural Activation\nCompassion-Focused Therapy\nLanguages:\n English\nAges:\n 5 years +",
+    "bio": "I am a registered psychologist with a doctorate in clinical and forensic psychology. \n \nI came to psychology because I believe that each mind is like an entire world. I think that taking the time to more deeply explore the inner worlds of ourselves and others can bring life-long benefits. \n \nI have worked across various settings, including public hospitals, addiction rehabs and palliative care. I frequently work with anxiety, depression, relationship difficulties, trauma, grief, addiction and eating disorders, and have had several publications on women\u2019s mental health and family violence. \n \nI would describe my approach to therapy as collaborative, warm and direct. Regardless of what you come to therapy with, my aim is to support you in getting to a greater place of peace within your mind, help you to see your patterns and blind spots and provide guidance using evidence-based frameworks. \n \nClinical Interests:\nAnxiety\nDepression and low mood\nStress and burnout\nTrauma and PTSD\nRelationship difficulties\nGrief & loss\nSelf-esteem and confidence\nBody image concerns\nAddictive behaviours\nLife transitions (e.g., career change, parenthood, separation)\nAdjustment to illness or major life events\nIdentity/existential concerns/life review work \nModalities:\nHumanistic and Existential Therapy \nCognitive Behaviour Therapy (CBT) \nAcceptance and Commitment Therapy (ACT)\nDialectical Behaviour Therapy (DBT)\nSchema Therapy\nBehavioural Activation\nCompassion-Focused Therapy\nLanguages:\n English\nAges:\n 5 years +",
     "pronouns": "She/Her",
     "billing_types": "Medicare Rebate, Self Funded",
     "languages": "",
@@ -837,7 +835,7 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/dr-maddie-brygel-psychologist/",
     "locations": [
       {
-        "availability": "Fridays at 10am (Fortnightly: Starting 19th Jun)\nFridays at 9am (Fortnightly: Starting 31st Jul)\nThursdays at 1pm (Weekly: Starting 25th Jun)\nThursdays at 9am (Fortnightly: Starting 2nd Jul)",
+        "availability": "",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
@@ -875,7 +873,7 @@ export const PRACTITIONERS_DATA = [
         "fortnightly_availability": []
       },
       {
-        "availability": "Mondays at 8am (Fortnightly: Starting 22nd Jun)",
+        "availability": "Mondays at 8am (Fortnightly: Starting 6th Jul)\nMondays at 10am (Fortnightly: Starting 6th Jul)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Telehealth"
@@ -883,13 +881,13 @@ export const PRACTITIONERS_DATA = [
     ],
     "last_updated": "2026-06-21",
     "availability": [
-      "Thursdays at 8am, 9am & 1pm (Weekly: from 19 Mar) — Greville St, Prahran",
-      "Thursdays at 12pm (Fortnightly: Starting 26 Mar) — Greville St, Prahran",
-      "Mondays at 10am & 11am (Weekly: from 23 Mar) — Telehealth",
-      "Mondays at 8am (Fortnightly: Starting 30 Mar) — Telehealth",
-      "Fridays at 10am (Fortnightly: Starting 20 Mar) — Wattletree Rd, Malvern"
+      "Thursdays at 8am, 9am & 1pm (Weekly: from 19 Mar) \u2014 Greville St, Prahran",
+      "Thursdays at 12pm (Fortnightly: Starting 26 Mar) \u2014 Greville St, Prahran",
+      "Mondays at 10am & 11am (Weekly: from 23 Mar) \u2014 Telehealth",
+      "Mondays at 8am (Fortnightly: Starting 30 Mar) \u2014 Telehealth",
+      "Fridays at 10am (Fortnightly: Starting 20 Mar) \u2014 Wattletree Rd, Malvern"
     ],
-    "short_bio": "A psychologist trained in both clinical and forensic psychology, lecturer, and researcher supporting adults with anxiety, depression, trauma, grief, addiction and women’s mental health",
+    "short_bio": "A psychologist trained in both clinical and forensic psychology, lecturer, and researcher supporting adults with anxiety, depression, trauma, grief, addiction and women\u2019s mental health",
     "weekly_availability": [
       {
         "location": "Telehealth",
@@ -1008,7 +1006,7 @@ export const PRACTITIONERS_DATA = [
       "retirement",
       "ageing)",
       "Existential concerns / loss of meaning",
-      "Midlife crisis or “stuck” feelings",
+      "Midlife crisis or \u201cstuck\u201d feelings",
       "Personal growth and self-development goals",
       "Adjusting to fatherhood or retirement",
       "Emotional suppression / anger issues",
@@ -1033,7 +1031,7 @@ export const PRACTITIONERS_DATA = [
     "therapist_type": "Clinical Psychologist",
     "additional_info": "OCD (Mild to Moderate Only)\n \n Regarding substance use: Able to work with patients able to abstain from substance use / for whom substance use is one of a range of avoidance strategies (e.g. drinking to manage anxiety in social situations / to self-sabotage). \n \n For patients unable to abstain from substance use / with substance use dependance it is better for patients to address this first with a substance use focussed counsellor before addressing underlying emotional issues.",
     "qualifications": "",
-    "bio": "Pain is part of being human, the price we pay for loving and wanting to love. \n \nEven the most fortunate of us have been wounded.  And the feelings which tell us about our hurts are so very human too.  As painful as they can be, our feelings give texture and meaning to life, give us direction and help us to connect with ourselves and others. \n \nSadly, many of us have learned very early on and without meaning to that we should hide or ignore or punish these feelings, and when we do this we can cause further suffering which shows up as anxiety, depression, relationship difficulties and a whole host of other mental health difficulties. \n \nBut if we can turn towards our painful feelings, listen to what they have to tell us and feel them deeply rather than avoiding them in unhelpful ways, then we can find healing on the other side and live a life with more freedom and connection.\n \nWhat is hurt in relationship must be healed in relationship, and I see my role as your therapist as walking with you step by step as you begin to welcome these exiled feelings back home, in whatever stage of the journey you are on.\n\nMy therapy approach is primarily informed by Intensive Short Term Dynamic Psychotherapy (ISTDP), an evidence-based emotion-focussed therapy which uses the therapy relationship to help people to stop avoiding their feelings in unhelpful ways which lead to anxiety, depression, somatic complaints and relationship difficulties.  However, as an integrative therapist I draw on other therapies when appropriate to suit the needs of the individual, including Cognitive Behavioural Therapy (CBT) and Internal Family Systems Therapy (IFS).  \n\nI have a developing interest and training in the new research around psychedelic assisted therapies and I have also received training in ‘bad trip integration’ - helping people to integrate negative experiences of psychedelics.  I have a background in Social Psychology and Cultural History research and I am fascinated by what we can learn",
+    "bio": "Pain is part of being human, the price we pay for loving and wanting to love. \n \nEven the most fortunate of us have been wounded.  And the feelings which tell us about our hurts are so very human too.  As painful as they can be, our feelings give texture and meaning to life, give us direction and help us to connect with ourselves and others. \n \nSadly, many of us have learned very early on and without meaning to that we should hide or ignore or punish these feelings, and when we do this we can cause further suffering which shows up as anxiety, depression, relationship difficulties and a whole host of other mental health difficulties. \n \nBut if we can turn towards our painful feelings, listen to what they have to tell us and feel them deeply rather than avoiding them in unhelpful ways, then we can find healing on the other side and live a life with more freedom and connection.\n \nWhat is hurt in relationship must be healed in relationship, and I see my role as your therapist as walking with you step by step as you begin to welcome these exiled feelings back home, in whatever stage of the journey you are on.\n\nMy therapy approach is primarily informed by Intensive Short Term Dynamic Psychotherapy (ISTDP), an evidence-based emotion-focussed therapy which uses the therapy relationship to help people to stop avoiding their feelings in unhelpful ways which lead to anxiety, depression, somatic complaints and relationship difficulties.  However, as an integrative therapist I draw on other therapies when appropriate to suit the needs of the individual, including Cognitive Behavioural Therapy (CBT) and Internal Family Systems Therapy (IFS).  \n\nI have a developing interest and training in the new research around psychedelic assisted therapies and I have also received training in \u2018bad trip integration\u2019 - helping people to integrate negative experiences of psychedelics.  I have a background in Social Psychology and Cultural History research and I am fascinated by what we can learn",
     "pronouns": "He/Him",
     "billing_types": "Medicare Rebate, NDIS, Self Funded, Third Party",
     "languages": "English",
@@ -1051,15 +1049,15 @@ export const PRACTITIONERS_DATA = [
       },
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "Tuesdays at 12:30pm (Fortnightly: Starting 23rd Jun)\nTuesdays at 12:30pm (Weekly: Starting 30th Jun)\nTuesdays at 1:30pm (Fortnightly: Starting 30th Jun)\nTuesdays at 2:30pm (Fortnightly: Starting 30th Jun)\nTuesdays at 8am (Fortnightly: Starting 30th Jun)\nWednesdays at 12pm (Fortnightly: Starting 1st Jul)",
+        "availability": "Thursdays at 10am (Fortnightly: Starting 25th Jun)",
         "weekly_availability": [],
         "fortnightly_availability": []
       }
     ],
     "last_updated": "2026-06-21",
     "availability": [
-      "Tuesdays at 2:30pm (Fortnightly: Starting 31 Mar) — Wattletree Rd, Malvern",
-      "Thursdays at 10am (Fortnightly: Starting 16 Apr) — Wattletree Rd, Malvern"
+      "Tuesdays at 2:30pm (Fortnightly: Starting 31 Mar) \u2014 Wattletree Rd, Malvern",
+      "Thursdays at 10am (Fortnightly: Starting 16 Apr) \u2014 Wattletree Rd, Malvern"
     ],
     "short_bio": "An integrative ISTDP, CBT and IFS therapist helping clients face painful feelings, heal relational wounds and integrate difficult psychedelic experiences.",
     "weekly_availability": [],
@@ -1115,7 +1113,7 @@ export const PRACTITIONERS_DATA = [
     "therapist_type": "Clinical Psychologist",
     "additional_info": "",
     "qualifications": "PhD, LMFT, PhB, MSCP, MAPS",
-    "bio": "For as long as I can remember, I've been intrigued by the things we believe and how they can shape our experience — whether that's beliefs about ourselves and others, or even the world and our place in it. I'm a clinical psychologist, licensed also as a therapist (LMFT) in California. I completed a PhD in Psychology at the Australian National University and a Master's in Clinical Psychology at San Francisco State University. While living in the U.S. I also spent two years as a visiting researcher in Stanford's Clinically Applied Affective Neuroscience Lab (CAAN) researching the implications of mindfulness meditation for anxiety disorders and emotion regulation. \n\nIn my clinical work, I’ve taught meditation and mindfulness (MBSR) to individuals and groups; provided nature-based therapy for neurodiverse kids; and worked with adolescents, couples and adults in San Francisco and Australia. In 2024, I also had the opportunity to join Monash University's Clinical Psychedelic Research team, working as a psychedelic-assisted therapist providing MDMA-assisted therapy for PTSD and psilocybin-assisted therapy for treatment-resistant depression. \n\nI'm primarily influenced by Internal Family Systems, Hakomi, psychodynamic, humanistic,  and attachment theory frameworks in this work and believe strongly in the importance of a warm, open and authentic therapeutic relationship.  \n\nOutside of clinical work, I'm an avid martial arts practitioner and have spent over a decade training in the Japanese Soto Zen meditation tradition in which I am an ordained Zen priest. I have a personal interest in Buddhist and transpersonal psychology, ethics, and non-ordinary states of consciousness.",
+    "bio": "For as long as I can remember, I've been intrigued by the things we believe and how they can shape our experience \u2014 whether that's beliefs about ourselves and others, or even the world and our place in it. I'm a clinical psychologist, licensed\u00a0also as\u00a0a therapist (LMFT) in California. I completed\u00a0a PhD in Psychology at the Australian National University and a Master's in Clinical Psychology at San Francisco State University. While living in the U.S. I also spent two years as a visiting researcher in Stanford's Clinically Applied Affective Neuroscience Lab (CAAN) researching the implications of mindfulness meditation for anxiety disorders and emotion regulation.\u00a0\n\nIn my clinical work, I\u2019ve taught meditation and mindfulness (MBSR) to individuals and groups; provided nature-based therapy for neurodiverse kids; and worked with adolescents, couples and adults in San Francisco and Australia. In 2024, I also had the opportunity to join Monash University's Clinical Psychedelic Research team, working as a psychedelic-assisted therapist providing MDMA-assisted therapy for PTSD and psilocybin-assisted therapy for treatment-resistant depression. \n\nI'm primarily influenced by Internal Family Systems, Hakomi, psychodynamic, humanistic,  and attachment theory frameworks in this work and believe strongly in the importance of a warm, open and authentic therapeutic relationship.\u00a0\u00a0\n\nOutside of clinical work, I'm an avid martial arts practitioner and have spent over a decade training in the Japanese Soto Zen meditation tradition in which I am an ordained Zen priest. I have a personal interest in Buddhist and transpersonal psychology, ethics, and non-ordinary states of consciousness.",
     "pronouns": "She/Her",
     "billing_types": "Medicare Rebate, NDIS, Self Funded, Third Party",
     "languages": "English",
@@ -1179,7 +1177,7 @@ export const PRACTITIONERS_DATA = [
     "therapist_type": "Psychologist",
     "additional_info": "As for children, I prefer clients 12yrs+ or teenagers, but happy to take younger children if no one else is available.",
     "qualifications": "BPsychSci (Hons), MPP\n MAPS",
-    "bio": "Allison has lived in different countries, travelled extensively, and worked in various contexts with children, adolescents, adults, and seniors. Allison relates well to people of all ages from different cultural and religious backgrounds. She recognises the influence of cultural and familial backgrounds on the emotional and cognitive wellbeing of an individual, in addition to one’s life experience and current circumstances. As a registered Psychologist, she brings a warm, compassionate, and straight-forward approach which is particularly engaging with adolescents.\n\nAllison has counselled individuals managing anxiety, depression, trauma, abuse, low self-esteem, body issues, perfectionism, phobias, workplace stress and burnout, career transition, relationship breakdowns, chronic pain and illness, grief, loss, and death anxiety.\n\nInfluenced by family systems theory, Allison also works with couples and families to support both the individuals and the family unit. She believes that healthy relationships foster healthy individuals and healthy individuals live more content and meaningful lives.\n\nAllison employs an integrative approach to therapy, drawing upon a wide-range of evidence-based therapies such as cognitive behaviour therapy, acceptance and commitment therapy, schema therapy, brief psychodynamic psychotherapy, mindfulness, trauma-informed recovery-based practice, and play therapy. She believes that there is no “therapy-fits-all”; thus, she works collaboratively with each individual client to develop a comfortable, trusting relationship and find the approach that best suits them.",
+    "bio": "Allison has lived in different countries, travelled extensively, and worked in various contexts with children, adolescents, adults, and seniors. Allison relates well to people of all ages from different cultural and religious backgrounds. She recognises the influence of cultural and familial backgrounds on the emotional and cognitive wellbeing of an individual, in addition to one\u2019s life experience and current circumstances. As a registered Psychologist, she brings a warm, compassionate, and straight-forward approach which is particularly engaging with adolescents.\n\nAllison has counselled individuals managing anxiety, depression, trauma, abuse, low self-esteem, body issues, perfectionism, phobias, workplace stress and burnout, career transition, relationship breakdowns, chronic pain and illness, grief, loss, and death anxiety.\n\nInfluenced by family systems theory, Allison also works with couples and families to support both the individuals and the family unit. She believes that healthy relationships foster healthy individuals and healthy individuals live more content and meaningful lives.\n\nAllison employs an integrative approach to therapy, drawing upon a wide-range of evidence-based therapies such as cognitive behaviour therapy, acceptance and commitment therapy, schema therapy, brief psychodynamic psychotherapy, mindfulness, trauma-informed recovery-based practice, and play therapy. She believes that there is no \u201ctherapy-fits-all\u201d; thus, she works collaboratively with each individual client to develop a comfortable, trusting relationship and find the approach that best suits them.",
     "pronouns": "She/Her",
     "billing_types": "Medicare Rebate, NDIS, Self Funded, Third Party",
     "languages": "",
@@ -1190,7 +1188,7 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/allison-conyer/",
     "locations": [
       {
-        "availability": "Thursdays at 12pm (Fortnightly: Starting 2nd Jul)",
+        "availability": "Thursdays at 12pm (Fortnightly: Starting 16th Jul)",
         "weekly_availability": [],
         "fortnightly_availability": [
           {
@@ -1275,7 +1273,7 @@ export const PRACTITIONERS_DATA = [
       "retirement",
       "ageing)",
       "Existential concerns / loss of meaning",
-      "Midlife crisis or “stuck” feelings",
+      "Midlife crisis or \u201cstuck\u201d feelings",
       "Personal growth and self-development goals",
       "Sexuality and Gender",
       "Gender Dysphoria (form. Gender Identity Disorder)",
@@ -1299,7 +1297,7 @@ export const PRACTITIONERS_DATA = [
       "Culturally and linguistically diverse clients",
       "LGBTQIA+ affirmative therapy",
       "Refugees / migrants / asylum seekers",
-      "I’m particularly passionate about working with clients who experience dysthymia, MDD and depression"
+      "I\u2019m particularly passionate about working with clients who experience dysthymia, MDD and depression"
     ],
     "modalities": [
       "Acceptance and Commitment Therapy (ACT)",
@@ -1320,7 +1318,7 @@ export const PRACTITIONERS_DATA = [
     "therapist_type": "Clinical Psychologist",
     "additional_info": "21/07- IFS Certified now.\n FS-informed and uses it as a primary therapy approach. Has completed a few introductory and advanced trainings, and will complete Level 1 by mid-June. Over 3 years of experience, with regular IFS supervision. Also integrates a trauma-informed and client-centred lens.",
     "qualifications": "MPsych(Clin)\n MSW \n BPsych (Hons)",
-    "bio": "I’m a registered Psychologist and qualified Social Worker with a passion for supporting people on their mental health journey. Over the past decade, I’ve worked in community organisations, government settings, and private practice with people from all walks of life, including First Nations people, culturally and linguistically diverse communities, and the broader Australian community.\nMy style is calm, warm, client-centred and down-to-earth. I aim to create a safe and supportive space where my clients can explore their inner worlds and make sense of the complexities of their lives. I believe in each person’s capacity for healing and growth, and I continuously pursue knowledge and personal growth to improve my practice.\nI am particularly passionate about supporting individuals affected by traumatic experiences, using a trauma-informed lens to guide their healing journey. Additionally, I have substantial experience in assisting individuals dealing with depressive symptoms, anxiety-related issues, loss, grief, and life transitions.\nI hold two Master's degrees, one in Social Work and another in Clinical Psychology. I’m an integrative, IFS-informed Psychologist, drawing on ACT, CBT, DBT, IFS, Polyvagal Theory, and mindfulness. I tailor therapy to each person’s unique needs, as no two journeys are the same.\nBeing a psychologist is a humbling role and a valued part of my life. I feel honoured to walk alongside individuals in their journeys of recovery, healing, growth, and thriving. Outside of my professional role, I also enjoy reading, art, meditation, and spending quality time with loved ones and in nature.",
+    "bio": "I\u2019m a registered Psychologist and qualified Social Worker with a passion for supporting people on their mental health journey. Over the past decade, I\u2019ve worked in community organisations, government settings, and private practice with people from all walks of life, including First Nations people, culturally and linguistically diverse communities, and the broader Australian community.\nMy style is calm, warm, client-centred and down-to-earth. I aim to create a safe and supportive space where my clients can explore their inner worlds and make sense of the complexities of their lives. I believe in each person\u2019s capacity for healing and growth, and I continuously pursue knowledge and personal growth to improve my practice.\nI am particularly passionate about supporting individuals affected by traumatic experiences, using a trauma-informed lens to guide their healing journey. Additionally, I have substantial experience in assisting individuals dealing with depressive symptoms, anxiety-related issues, loss, grief, and life transitions.\nI hold two Master's degrees, one in Social Work and another in Clinical Psychology. I\u2019m an integrative, IFS-informed Psychologist, drawing on ACT, CBT, DBT, IFS, Polyvagal Theory, and mindfulness. I tailor therapy to each person\u2019s unique needs, as no two journeys are the same.\nBeing a psychologist is a humbling role and a valued part of my life. I feel honoured to walk alongside individuals in their journeys of recovery, healing, growth, and thriving. Outside of my professional role, I also enjoy reading, art, meditation, and spending quality time with loved ones and in nature.",
     "pronouns": "She/Her",
     "billing_types": "Medicare Rebate, NDIS, Self Funded, Third Party",
     "languages": "English, Farsi, Dari",
@@ -1337,7 +1335,7 @@ export const PRACTITIONERS_DATA = [
         "location": "Telehealth"
       },
       {
-        "availability": "Mondays at 11:30am (Fortnightly: Starting 29th Jun)\nMondays at 11:30am (Weekly: Starting 6th Jul)\nMondays at 12:30pm (Fortnightly: Starting 22nd Jun)\nMondays at 1:30pm (Fortnightly: Starting 22nd Jun)\nMondays at 1:30pm (Weekly: Starting 6th Jul)\nMondays at 8am (Fortnightly: Starting 22nd Jun)\nMondays at 8am (Weekly: Starting 6th Jul)\nTuesdays at 2:30pm (Fortnightly: Starting 14th Jul)",
+        "availability": "Mondays at 8am (Weekly: Starting 6th Jul)\nMondays at 1:30pm (Weekly: Starting 6th Jul)\nMondays at 12:30pm (Fortnightly: Starting 6th Jul)\nMondays at 10am (Fortnightly: Starting 13th Jul)\nThursdays at 8am (Fortnightly: Starting 9th Jul)\nTuesdays at 2:30pm (Fortnightly: Starting 14th Jul)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Burke Rd, Camberwell"
@@ -1345,9 +1343,9 @@ export const PRACTITIONERS_DATA = [
     ],
     "last_updated": "2026-06-21",
     "availability": [
-      "Thursdays at 8am (Weekly: from 19 Mar) — Wattletree Rd, Malvern",
-      "Mondays at 8am & 9am (Fortnightly: Starting 13 Apr) — Wattletree Rd, Malvern",
-      "Thursdays at 9am (Fortnightly: Starting 26 Mar) — Wattletree Rd, Malvern"
+      "Thursdays at 8am (Weekly: from 19 Mar) \u2014 Wattletree Rd, Malvern",
+      "Mondays at 8am & 9am (Fortnightly: Starting 13 Apr) \u2014 Wattletree Rd, Malvern",
+      "Thursdays at 9am (Fortnightly: Starting 26 Mar) \u2014 Wattletree Rd, Malvern"
     ],
     "short_bio": "A trauma-informed clinical psychologist and social worker integrating IFS, ACT, DBT, CBT and mindfulness to support healing from trauma, intense emotions and life transitions.",
     "weekly_availability": [
@@ -1473,7 +1471,7 @@ export const PRACTITIONERS_DATA = [
       "retirement",
       "ageing)",
       "Existential concerns / loss of meaning",
-      "Midlife crisis or “stuck” feelings",
+      "Midlife crisis or \u201cstuck\u201d feelings",
       "Personal growth and self-development goals",
       "Sexuality and Gender",
       "Gender Dysphoria (form. Gender Identity Disorder)",
@@ -1577,7 +1575,7 @@ export const PRACTITIONERS_DATA = [
     "therapist_type": "Accredited Mental Health Social Worker",
     "additional_info": "Chronic Pain and Fibromylagia - clinical interest for me David, I often see Chronic pain, psychosomatic presentations and trauma symptoms in clients but of course it is always case by case.",
     "qualifications": "2019 Masters of Social Work (with Distinction), RMIT University\n 2009 Doctor of Philosophy, The University of Melbourne\n 2002 Masters of Arts, The University of Melbourne\n 1997 Bachelor of Arts (Honours), The University of Melbourne\n \n Member of the Australian Association of Social Workers (AASW)\n Member of the Australian Centre for Psychoanalysis\n Member of the International Forums of the Lacanian Field\n Member of the Institute of Postcolonial Studies\n Member of The Australian Sociological Association\n 2023 Eye Movement and Reprocessing (EMDR) Level 1 Accreditation, Psychology\n Training\n 2023 Autism Spectrum Disorder Assessment Fundamentals, Mindful, The University\n of Melbourne\n 2022 Introduction to Child and Adolescent Mental Health Assessments, Mindful\n ICAMHA certification, The University of Melbourne\n 2021 Trauma Responsive Leadership (Blue Knot Foundation)\n 2021 Managing Wellbeing and Recognizing Vicarious Trauma (Blue Knot Foundation)\n 2016 -2020 Clinical and Theoretical Studies, Australian Centre for Psychoanalysis\n Christine Deftereos 3\n 2019 Working with Psychosis and Trauma Master class (Blue Knot Foundation)\n 2019 Working Therapeutically with Complex Trauma Clients Level 1 and 2 (Blue Knot\n Foundation)\n 2010 Working with Trauma 3 Staged Approach (Blue Knot Foundation)\n 2018 Accredited Mental Health First Aider\n 2018 Attachment and Attunement in Complex Trauma (DHHS)\n Working with Children Check Current",
-    "bio": "I am a Psychoanalyst and Trauma Psychotherapist working in private practice and hold specialized accreditations in working with Complex Trauma, Acute Stress, Post Traumatic Stress Disorders and Intergenerational Trauma and EMDR. I have clinical experience in working with survivors of sexual assault, childhood abuse and neglect, family and domestic violence, dissociative states and disorders, substance misuse, disordered eating, body dysmoprhia, depression and anxiety amongst other clinical presentations. \n\nI am committed to providing best practice trauma informed care in a confidential, sensitive and validating therapeutic space, with an emphasis on ‘learning to find meaningful ways to live with our stories.’ My primary ethical commitment is to provide a safe non-judgmental space for ‘bearing witness,’ for truth telling,’ and in sharing your ‘lived experiences’ via free association and the formation of a safe therapeutic alliance. I hold space for my clients to explore ways of being and living, and their relationships with others with sensitivity and compassion.",
+    "bio": "I am a Psychoanalyst and Trauma Psychotherapist working in private practice and hold specialized accreditations in working with Complex Trauma, Acute Stress, Post Traumatic Stress Disorders and Intergenerational Trauma and EMDR. I have clinical experience in working with survivors of sexual assault, childhood abuse and neglect, family and domestic violence, dissociative states and disorders, substance misuse, disordered eating, body dysmoprhia, depression and anxiety amongst other clinical presentations. \n\nI am committed to providing best practice trauma informed care in a confidential, sensitive and validating therapeutic space, with an emphasis on \u2018learning to find meaningful ways to live with our stories.\u2019 My primary ethical commitment is to provide a safe non-judgmental space for \u2018bearing witness,\u2019 for truth telling,\u2019 and in sharing your \u2018lived experiences\u2019 via free association and the formation of a safe therapeutic alliance. I hold space for my clients to explore ways of being and living, and their relationships with others with sensitivity and compassion.",
     "pronouns": "She/Her",
     "billing_types": "Medicare Rebate, NDIS, Self Funded, Third Party",
     "languages": "English, Greek",
@@ -1589,19 +1587,19 @@ export const PRACTITIONERS_DATA = [
     "locations": [
       {
         "location": "Greville St, Prahran",
-        "availability": "Fridays at 2:30pm (Fortnightly: Starting 24th Jul)\nFridays at 3:30pm (Fortnightly: Starting 26th Jun)\nMondays at 11am (Fortnightly: Starting 29th Jun)\nMondays at 9am (Fortnightly: Starting 22nd Jun)\nSaturdays at 12pm (Fortnightly: Starting 4th Jul)\nSaturdays at 1pm (Weekly: Starting 27th Jun)\nSaturdays at 3pm (Weekly: Starting 27th Jun)",
+        "availability": "Saturdays at 1pm (Weekly: Starting 4th Jul)\nSaturdays at 3pm (Fortnightly: Starting 25th Jul)",
         "weekly_availability": [],
         "fortnightly_availability": []
       }
     ],
     "last_updated": "2026-06-21",
     "availability": [
-      "Tuesdays at 9am (Weekly: from 31 Mar) — Wattletree Rd, Malvern",
-      "Wednesdays at 5:30pm (Fortnightly: Starting 1 Apr) — Wattletree Rd, Malvern",
-      "Fridays at 7:30pm (Fortnightly: Starting 10 Apr) — Wattletree Rd, Malvern",
-      "Saturdays at 3pm (Fortnightly: Starting 21 Mar) — Wattletree Rd, Malvern"
+      "Tuesdays at 9am (Weekly: from 31 Mar) \u2014 Wattletree Rd, Malvern",
+      "Wednesdays at 5:30pm (Fortnightly: Starting 1 Apr) \u2014 Wattletree Rd, Malvern",
+      "Fridays at 7:30pm (Fortnightly: Starting 10 Apr) \u2014 Wattletree Rd, Malvern",
+      "Saturdays at 3pm (Fortnightly: Starting 21 Mar) \u2014 Wattletree Rd, Malvern"
     ],
-    "short_bio": "Christine is a trauma specialist psychotherapist and psychoanalyst offering EMDR and depth therapy to help survivors reclaim and live with their stories.​",
+    "short_bio": "Christine is a trauma specialist psychotherapist and psychoanalyst offering EMDR and depth therapy to help survivors reclaim and live with their stories.\u200b",
     "weekly_availability": [
       {
         "location": "Wattletree Rd, Malvern",
@@ -1677,7 +1675,7 @@ export const PRACTITIONERS_DATA = [
     "therapist_type": "Psychologist",
     "additional_info": "Regularly uses IFS in clinical work. Completing the IFS Circle and enrolled in Level 1 training. Supervised by a certified IFS practitioner",
     "qualifications": "University of Melbourne\n Master of Psychology (Clinical\n 2020 - 2022\n Grade: First Class Honours\n \n University of Melbourne\n Honours, Psychology 2017 - 2017\n Grade: First Class Honours\n \n The Faculty of Arts at The University of Melbourne\n Bachelor of Arts, Psychology\n 2014 - 2016\n Grade: First Class Honours",
-    "bio": "Oliver was inspired to become a psychologist after working as a personal carer in a public hospital, where he witnessed the therapeutic value of listening, non-judgement, and compassion. He remains committed to these principles in his clinical practice, where he strives to build an authentic and trusting relationship with clients to work through whatever challenges they may be experiencing. \n\nOliver holds a Master of Clinical Psychology from the University of Melbourne. His primary modality is Internal Family Systems (IFS), a non-pathologising therapy that helps people better understand and work with their different ‘parts’. Oliver is trained in Eye Movement Desensitisation and Reprocessing (EMDR), an evidence-based therapy for post-traumatic stress disorder (PTSD) and other trauma-related problems.  His work also draws on Cognitive Behavioural Therapy (CBT) and Acceptance and Commitment Therapy (ACT) using experiential techniques. \n\nOliver has worked with older adolescents and adults experiencing a range of mental health difficulties, including depression, anxiety, trauma-related distress, substance use, grief and loss, identity concerns, and relational issues. Oliver has published research on trauma-informed care and is passionate about creating a safe and inclusive therapeutic environment where healing can occur.",
+    "bio": "Oliver was inspired to become a psychologist after working as a personal carer in a public hospital, where he witnessed the therapeutic value of listening, non-judgement, and compassion. He remains committed to these principles in his clinical practice, where he strives to build an authentic and trusting relationship with clients to work through whatever challenges they may be experiencing. \n\nOliver holds a Master of Clinical Psychology from the University of Melbourne. His primary modality is Internal Family Systems (IFS), a non-pathologising therapy that helps people better understand and work with their different \u2018parts\u2019. Oliver is trained in Eye Movement Desensitisation and Reprocessing (EMDR), an evidence-based therapy for post-traumatic stress disorder (PTSD) and other trauma-related problems.  His work also draws on Cognitive Behavioural Therapy (CBT) and Acceptance and Commitment Therapy (ACT) using experiential techniques. \n\nOliver has worked with older adolescents and adults experiencing a range of mental health difficulties, including depression, anxiety, trauma-related distress, substance use, grief and loss, identity concerns, and relational issues. Oliver has published research on trauma-informed care and is passionate about creating a safe and inclusive therapeutic environment where healing can occur.",
     "pronouns": "",
     "billing_types": "Medicare Rebate, NDIS, Self Funded, Third Party",
     "languages": "",
@@ -1696,7 +1694,7 @@ export const PRACTITIONERS_DATA = [
     ],
     "last_updated": "2026-06-21",
     "availability": [
-      "Tuesdays at 10am & 12pm (Fortnightly: Starting 24 Mar) — Greville St, Prahran"
+      "Tuesdays at 10am & 12pm (Fortnightly: Starting 24 Mar) \u2014 Greville St, Prahran"
     ],
     "short_bio": "Oliver is a compassionate psychologist using IFS, EMDR, CBT and ACT to provide trauma-informed, inclusive care for adolescents and adults",
     "weekly_availability": [],
@@ -1800,16 +1798,16 @@ export const PRACTITIONERS_DATA = [
     "locations": [
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "Thursdays at 12pm (Weekly: Starting 25th Jun)\nWednesdays at 12pm (Fortnightly: Starting 1st Jul)\nWednesdays at 1pm (Fortnightly: Starting 12th Aug)",
+        "availability": "Thursdays at 12pm (Weekly: Starting 25th Jun)\nTuesdays at 1pm (Weekly: Starting 23rd Jun)\nThursdays at 9am (Fortnightly: Starting 25th Jun)\nTuesdays at 10am (Fortnightly: Starting 23rd Jun)\nTuesdays at 9am (Fortnightly: Starting 30th Jun)\nWednesdays at 12pm (Fortnightly: Starting 1st Jul)\nWednesdays at 1pm (Fortnightly: Starting 12th Aug)",
         "weekly_availability": [],
         "fortnightly_availability": []
       }
     ],
     "last_updated": "2026-06-21",
     "availability": [
-      "Thursdays at 9am (Weekly: from 19 Mar) — Wattletree Rd, Malvern",
-      "Tuesdays at 9am (Fortnightly: Starting 31 Mar) — Wattletree Rd, Malvern",
-      "Thursdays at 10am & 12pm (Fortnightly: Starting 26 Mar) — Wattletree Rd, Malvern"
+      "Thursdays at 9am (Weekly: from 19 Mar) \u2014 Wattletree Rd, Malvern",
+      "Tuesdays at 9am (Fortnightly: Starting 31 Mar) \u2014 Wattletree Rd, Malvern",
+      "Thursdays at 10am & 12pm (Fortnightly: Starting 26 Mar) \u2014 Wattletree Rd, Malvern"
     ],
     "short_bio": "Meg is a warm, person-centred psychologist using integrative cognitive, behavioural and psychodynamic therapies to support stress, anxiety, depression, trauma and life changes.",
     "weekly_availability": [
@@ -1917,7 +1915,7 @@ export const PRACTITIONERS_DATA = [
     "therapist_type": "Clinical Psychologist",
     "additional_info": "",
     "qualifications": "",
-    "bio": "My therapeutic style is genuine, compassionate, and non-judgemental, but also challenging enough to foster growth and change. I focus on building a therapeutic relationship where clients feel safe to share, reflect and process emotional experiences in session, while navigating life’s difficult events. I feel privileged to be invited into people’s emotional worlds and sit alongside them throughout their journey of understanding themselves better, so that they can move toward a life filled with more satisfaction and ease.\n\nI believe that our relationships with ourselves and others are at the heart of our wellbeing, and my work is predominantly informed by psychodynamic, relational, and emotion-focused frameworks, mostly drawing from Intensive Short-Term Dynamic Psychotherapy and models grounded in attachment theory. This means that therapy involves working collaboratively to understand emotional patterns that shape how we think, behave, and relate to others. Together, we bring curiosity and compassion to how these (often unconscious) patterns may have developed. By bringing awareness to this, clients are empowered to shift automatic responses that may be contributing to current difficulties, and to foster more adaptive and lasting ways of managing emotional distress. This way of working can be helpful for emotional difficulties including depressive symptoms, anxiety symptoms, trauma symptoms, grief and loss, emotion regulation difficulties, relationship difficulties and physical/somatic complaints.\n\nI have worked consistently across both public and private settings in my career, working with infants, children, adolescents, adults, and families. I have a particular interest in supporting both women and men through the transition to parenthood. This transition is often a time where we think about how we were parented, and how we may like to parent similarly, or differently. Often, it becomes a meaningful opportunity for parents to courageously break intergenerational cy",
+    "bio": "My therapeutic style is genuine, compassionate, and non-judgemental, but also challenging enough to foster growth and change. I focus on building a therapeutic relationship where clients feel safe to share, reflect and process emotional experiences in session, while navigating life\u2019s difficult events. I feel privileged to be invited into people\u2019s emotional worlds and sit alongside them throughout their journey of understanding themselves better, so that they can move toward a life filled with more satisfaction and ease.\n\nI believe that our relationships with ourselves and others are at the heart of our wellbeing, and my work is predominantly informed by psychodynamic, relational, and emotion-focused frameworks, mostly drawing from Intensive Short-Term Dynamic Psychotherapy and models grounded in attachment theory. This means that therapy involves working collaboratively to understand emotional patterns that shape how we think, behave, and relate to others. Together, we bring curiosity and compassion to how these (often unconscious) patterns may have developed. By bringing awareness to this, clients are empowered to shift automatic responses that may be contributing to current difficulties, and to foster more adaptive and lasting ways of managing emotional distress. This way of working can be helpful for emotional difficulties including depressive symptoms, anxiety symptoms, trauma symptoms, grief and loss, emotion regulation difficulties, relationship difficulties and physical/somatic complaints.\n\nI have worked consistently across both public and private settings in my career, working with infants, children, adolescents, adults, and families. I have a particular interest in supporting both women and men through the transition to parenthood. This transition is often a time where we think about how we were parented, and how we may like to parent similarly, or differently. Often, it becomes a meaningful opportunity for parents to courageously break intergenerational cy",
     "pronouns": "She/Her",
     "billing_types": "Medicare Rebate, NDIS, Self Funded, Third Party",
     "languages": "English",
@@ -1950,7 +1948,7 @@ export const PRACTITIONERS_DATA = [
     "fees": "B/H: $235\nA/H: $275\nCouples: $275",
     "medicare_rebate": "$96.65\n\nNo rebate for Couples",
     "gender": "Female",
-    "alert": "No longer at Psychology Care — available as an external referral.",
+    "alert": "No longer at Psychology Care \u2014 available as an external referral.",
     "presentations": [
       "Anxiety",
       "Depression",
@@ -2008,7 +2006,7 @@ export const PRACTITIONERS_DATA = [
     "fees": "B/H: $235\nA/H: $275",
     "medicare_rebate": "96.65",
     "gender": "Female",
-    "alert": "No longer at Psychology Care — available as an external referral.",
+    "alert": "No longer at Psychology Care \u2014 available as an external referral.",
     "presentations": [
       "Agoraphobia",
       "Anxiety",
@@ -2051,7 +2049,7 @@ export const PRACTITIONERS_DATA = [
       "relocation",
       "retirement",
       "ageing)",
-      "Midlife crisis or “stuck” feelings",
+      "Midlife crisis or \u201cstuck\u201d feelings",
       "Perinatal Anxiety and Depression",
       "Pregnancy loss or birth trauma",
       "Menopause adjustment",
@@ -2088,7 +2086,7 @@ export const PRACTITIONERS_DATA = [
     "therapist_type": "Clinical Psychology Registrar",
     "additional_info": "Not formally trained in IFS, but uses a related theory (Structural Dissociation) and parts-based approaches. Believes clients drawn to IFS would find this work similarly meaningful.",
     "qualifications": "BA(Psych)(Hons), MPsych(Clin)\n Currently undertaking clinician psychology registrar program\n \n Professional Membership with AAPi",
-    "bio": "Ella is a registered psychologist passionate about using a resilience-based approach to help those seeking support to improve their quality of life. Ella emphasises the development of a strong and collaborative therapeutic relationship as the conduit through which therapeutic change can flow. She brings compassion and warmth to her work, and seeks to foster an environment in which clients feel safe, respected, and heard. Ella is mindful of the humility, courage, and financial and time investment involved in seeking psychological support, and is open to and welcomes client feedback. She works within a client-led framework in which clients’ personal goals and values serve as the roadmap which direct the content, style, and pace of the therapeutic work.\n\nElla has experience working with adults, older adults, and young people, having worked in both private and public healthcare sectors with individuals from a diverse range of backgrounds and cultures. Ella is trained in a variety of robust evidence-based, trauma-informed cognitive-behavioural treatments. She is primarily guided by attachment-based perspectives, in which presenting concerns are viewed within a lens that appreciates the rich role of past and present interpersonal relationships. Whilst specific treatments may include EMDR, parts-work, and somatic interventions, these are delivered in an integrated fashion that weaves between various modalities as guided by the preferences and psychological needs of the client.\n\nClinical Interests:\n\nPTSD\n\nC-PTSD (Complex Trauma, or Complex-PTSD)\n\nAnxiety and panic\n\nDepression\n\nSelf Worth\n\nAttachment difficulties\n\nWomen’s Health\n\nChronic pain and chronic health conditions\n\nAdjustment and transitions\n\nModalities:\n\n    Eye Movement Desensitisation and Reprocessing (EMDR)\n    Parts-work (integrated modalities)\n    Phase-Oriented approaches to trauma and dissociation\n    Sensorimotor Psychotherapy\n    Acceptance and Commitment Therapy (ACT)\n    Cognitive Behaviour Therapy (CBT)",
+    "bio": "Ella is a registered psychologist passionate about using a resilience-based approach to help those seeking support to improve their quality of life. Ella emphasises the development of a strong and collaborative therapeutic relationship as the conduit through which therapeutic change can flow. She brings compassion and warmth to her work, and seeks to foster an environment in which clients feel safe, respected, and heard. Ella is mindful of the humility, courage, and financial and time investment involved in seeking psychological support, and is open to and welcomes client feedback. She works within a client-led framework in which clients\u2019 personal goals and values serve as the roadmap which direct the content, style, and pace of the therapeutic work.\n\nElla has experience working with adults, older adults, and young people, having worked in both private and public healthcare sectors with individuals from a diverse range of backgrounds and cultures. Ella is trained in a variety of robust evidence-based, trauma-informed cognitive-behavioural treatments. She is primarily guided by attachment-based perspectives, in which presenting concerns are viewed within a lens that appreciates the rich role of past and present interpersonal relationships. Whilst specific treatments may include EMDR, parts-work, and somatic interventions, these are delivered in an integrated fashion that weaves between various modalities as guided by the preferences and psychological needs of the client.\n\nClinical Interests:\n\nPTSD\n\nC-PTSD (Complex Trauma, or Complex-PTSD)\n\nAnxiety and panic\n\nDepression\n\nSelf Worth\n\nAttachment difficulties\n\nWomen\u2019s Health\n\nChronic pain and chronic health conditions\n\nAdjustment and transitions\n\nModalities:\n\n    Eye Movement Desensitisation and Reprocessing (EMDR)\n    Parts-work (integrated modalities)\n    Phase-Oriented approaches to trauma and dissociation\n    Sensorimotor Psychotherapy\n    Acceptance and Commitment Therapy (ACT)\n    Cognitive Behaviour Therapy (CBT)",
     "pronouns": "She/Her",
     "billing_types": "Medicare Rebate, NDIS, Self Funded, Third Party",
     "languages": "English",
@@ -2107,7 +2105,7 @@ export const PRACTITIONERS_DATA = [
     ],
     "last_updated": "2026-06-21",
     "availability": [
-      "Tuesdays at 5:30pm & 6:30pm (Fortnightly: Starting 21 Apr) — Wattletree Rd, Malvern"
+      "Tuesdays at 5:30pm & 6:30pm (Fortnightly: Starting 21 Apr) \u2014 Wattletree Rd, Malvern"
     ],
     "short_bio": "Ella is a warm, attachment-informed psychologist using resilience-based, feedback-informed EMDR, parts work and somatic approaches to support diverse adults.",
     "weekly_availability": [],
@@ -2198,7 +2196,7 @@ export const PRACTITIONERS_DATA = [
       "retirement",
       "ageing)",
       "Existential concerns / loss of meaning",
-      "Midlife crisis or “stuck” feelings",
+      "Midlife crisis or \u201cstuck\u201d feelings",
       "Personal growth and self-development goals",
       "Sexuality and Gender",
       "Gender Dysphoria (form. Gender Identity Disorder)",
@@ -2270,7 +2268,7 @@ export const PRACTITIONERS_DATA = [
     "therapist_type": "Psychotherapist",
     "additional_info": "",
     "qualifications": "ACA, Level 2",
-    "bio": "Cristina is an ACA-accredited Holistic Counsellor and Psychotherapist with a genuine and compassionate approach to her work. She firmly believes in addressing the mind and body, fostering a deep sense of safety and trust in her clients. Cristina's unwavering warmth, empathy, and presence form the bedrock of every interaction, fostering collaborative partnerships with her clients to facilitate positive change. Fluent in Spanish, she embraces diversity and welcomes individuals from all backgrounds, including the LGBTIQ+ community.\n \nSpecialising in individual counselling for adults, Cristina adeptly addresses various issues, such as depression, anxiety, grief and loss, trauma, interpersonal relationships, sexuality and intimacy, existential challenges, emotional difficulties, and self-exploration.\n\nBeyond her counselling practice, Cristina is a skilled Dance Movement Therapist. Her extensive background as a dancer and movement therapist has refined her ability to tap into the somatic level of the body. She has witnessed the transformative potential of healing trauma through subtle cues and the innate wisdom of the body.\n\nCristina is a beginning-level student in the Somatic Experiencing™ Professional Training, further deepening her expertise in facilitating holistic healing.",
+    "bio": "Cristina is an ACA-accredited Holistic Counsellor and Psychotherapist with a genuine and compassionate approach to her work. She firmly believes in addressing the mind and body, fostering a deep sense of safety and trust in her clients. Cristina's unwavering warmth, empathy, and presence form the bedrock of every interaction, fostering collaborative partnerships with her clients to facilitate positive change. Fluent in Spanish, she embraces diversity and welcomes individuals from all backgrounds, including the LGBTIQ+ community.\n \nSpecialising in individual counselling for adults, Cristina adeptly addresses various issues, such as depression, anxiety, grief and loss, trauma, interpersonal relationships, sexuality and intimacy, existential challenges, emotional difficulties, and self-exploration.\n\nBeyond her counselling practice, Cristina is a skilled Dance Movement Therapist. Her extensive background as a dancer and movement therapist has refined her ability to tap into the somatic level of the body. She has witnessed the transformative potential of healing trauma through subtle cues and the innate wisdom of the body.\n\nCristina is a beginning-level student in the Somatic Experiencing\u2122 Professional Training, further deepening her expertise in facilitating holistic healing.",
     "pronouns": "She/Her",
     "billing_types": "Self Funded, Third Party, WorkSafe, EAP",
     "languages": "English\nSpanish",
@@ -2281,7 +2279,7 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/cristina-jimenez/",
     "locations": [
       {
-        "availability": "Tuesdays at 4:30pm (Weekly: Starting 23rd Jun)",
+        "availability": "Tuesdays at 11am (Weekly: Starting 21st Jul)\nTuesdays at 12pm (Weekly: Starting 21st Jul)\nTuesdays at 4:30pm (Weekly: Starting 21st Jul)\nTuesdays at 10am (Weekly: Starting 28th Jul)\nTuesdays at 3:30pm (Fortnightly: Starting 21st Jul)\nTuesdays at 5:30pm (Fortnightly: Starting 21st Jul)\nTuesdays at 1pm (Fortnightly: Starting 28th Jul)\nTuesdays at 6:30pm (Fortnightly: Starting 11th Aug)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
@@ -2289,8 +2287,8 @@ export const PRACTITIONERS_DATA = [
     ],
     "last_updated": "2026-06-21",
     "availability": [
-      "Tuesdays at 10am, 12pm & 3:30pm (Weekly: from 24 Mar) — Greville St, Prahran",
-      "Tuesdays at 9am (Fortnightly: Starting 31 Mar) — Greville St, Prahran"
+      "Tuesdays at 10am, 12pm & 3:30pm (Weekly: from 24 Mar) \u2014 Greville St, Prahran",
+      "Tuesdays at 9am (Fortnightly: Starting 31 Mar) \u2014 Greville St, Prahran"
     ],
     "short_bio": "Cristina is a compassionate, Spanish-speaking holistic counsellor and dance movement therapist supporting adults with trauma, emotional challenges and self-exploration through somatic, LGBTIQ+ inclusive care.",
     "weekly_availability": [
@@ -2380,7 +2378,7 @@ export const PRACTITIONERS_DATA = [
       "retirement",
       "ageing)",
       "Existential concerns / loss of meaning",
-      "Midlife crisis or “stuck” feelings",
+      "Midlife crisis or \u201cstuck\u201d feelings",
       "Personal growth and self-development goals",
       "Sexuality and Gender",
       "Gender Dysphoria (form. Gender Identity Disorder)",
@@ -2429,7 +2427,7 @@ export const PRACTITIONERS_DATA = [
     ],
     "last_updated": "2026-06-21",
     "availability": [
-      "Saturdays at 10am (Fortnightly: Starting 21 Mar) — Wattletree Rd, Malvern"
+      "Saturdays at 10am (Fortnightly: Starting 21 Mar) \u2014 Wattletree Rd, Malvern"
     ],
     "short_bio": "Chiara is a neurodivergent, neuro-affirming clinical psychologist supporting adults with autism, ADHD and diverse needs using collaborative, family-inclusive, evidence-based therapies.",
     "weekly_availability": [],
@@ -2513,7 +2511,7 @@ export const PRACTITIONERS_DATA = [
       "retirement",
       "ageing)",
       "Existential concerns / loss of meaning",
-      "Midlife crisis or “stuck” feelings",
+      "Midlife crisis or \u201cstuck\u201d feelings",
       "Personal growth and self-development goals",
       "Alcohol Dependence (Not Current)",
       "Alcohol Dependence (Recent Diagnosis or suspected)",
@@ -2580,7 +2578,7 @@ export const PRACTITIONERS_DATA = [
     "therapist_type": "Clinical Psychologist",
     "additional_info": "I have particular interest working with ADHD and working with young adults.",
     "qualifications": "Masters of Clinical Psychology Griffith University\n \n Honours in Psychology Victoria University\n \n Bachelor of Science Melbourne University",
-    "bio": "Nick is a registered clinical psychology registrar with a genuine compassion towards each individual’s unique mental health experience. Nick has a warm and approachable therapeutic style. He views the development of a collaborative, trusting, and non-judgemental therapeutic relationship as a central container for supporting each individual’s unique healing journey.\n\nAs an integrative psychologist, Nick practices using a number of therapeutic approaches including acceptance and commitment therapy (ACT), solution focused therapy (SFT), mindfulness approaches, and cognitive behaviour therapy (CBT) and uses a trauma-informed approach across all his therapeutic work. When he is not working at Psychology Care he facilitates group therapy programs with adults.\n\nPrior to training as a psychologist, Nick worked extensively with adolescents in the schooling system, specifically he facilitated conversations with adolescents aiming to reduce the stigma associated with mental ill health with the youth mental health organisation batyr.  \n\nNick has worked with adults and adolescents experiencing a range of mental health difficulties including depression, anxiety, grief, health related adjustment, and relational issues. Nick provides a safe and inclusive therapy space for people of all backgrounds and has experiencing working with people from LGBTIQ+ and CALD communities. He has an empathetic and strengths-based approach when working with neurodivergence and has particular interest working with individuals with ADHD.\n\nOutside of work, Nick spends his time in nature, surfing, learning Spanish, and spending quality time with family and friends.",
+    "bio": "Nick is a registered clinical psychology registrar with a genuine compassion towards each individual\u2019s unique mental health experience. Nick has a warm and approachable therapeutic style. He views the development of a collaborative, trusting, and non-judgemental therapeutic relationship as a central container for supporting each individual\u2019s unique healing journey.\n\nAs an integrative psychologist, Nick practices using a number of therapeutic approaches including acceptance and commitment therapy (ACT), solution focused therapy (SFT), mindfulness approaches, and cognitive behaviour therapy (CBT) and uses a trauma-informed approach across all his therapeutic work. When he is not working at Psychology Care he facilitates group therapy programs with adults.\n\nPrior to training as a psychologist, Nick worked extensively with adolescents in the schooling system, specifically he facilitated conversations with adolescents aiming to reduce the stigma associated with mental ill health with the youth mental health organisation batyr.  \n\nNick has worked with adults and adolescents experiencing a range of mental health difficulties including depression, anxiety, grief, health related adjustment, and relational issues. Nick provides a safe and inclusive therapy space for people of all backgrounds and has experiencing working with people from LGBTIQ+ and CALD communities. He has an empathetic and strengths-based approach when working with neurodivergence and has particular interest working with individuals with ADHD.\n\nOutside of work, Nick spends his time in nature, surfing, learning Spanish, and spending quality time with family and friends.",
     "pronouns": "He/Him",
     "billing_types": "EAP, Medicare Rebate, NDIS, Self Funded, Third Party, WorkSafe",
     "languages": "",
@@ -2604,17 +2602,17 @@ export const PRACTITIONERS_DATA = [
       },
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "Thursdays at 10am (Fortnightly: Starting 6th Aug)\nWednesdays at 8am (Fortnightly: Starting 12th Aug)",
+        "availability": "Thursdays at 8am (Weekly: Starting 30th Jul)\nThursdays at 9am (Weekly: Starting 30th Jul)\nThursdays at 1pm (Weekly: Starting 6th Aug)\nThursdays at 12pm (Weekly: Starting 13th Aug)\nFridays at 2pm (Fortnightly: Starting 7th Aug)\nFridays at 1pm (Fortnightly: Starting 14th Aug)\nWednesdays at 8am (Fortnightly: Starting 12th Aug)",
         "weekly_availability": [],
         "fortnightly_availability": []
       }
     ],
     "last_updated": "2026-06-21",
     "availability": [
-      "Tuesdays at 3pm (Fortnightly: Starting 24 Mar) — Greville St, Prahran",
-      "Tuesdays at 1pm (Fortnightly: Starting 31 Mar) — Telehealth",
-      "Wednesdays at 12pm (Weekly: from 25 Mar) — Wattletree Rd, Malvern",
-      "Fridays at 2pm (Fortnightly: Starting 10 Apr) — Wattletree Rd, Malvern"
+      "Tuesdays at 3pm (Fortnightly: Starting 24 Mar) \u2014 Greville St, Prahran",
+      "Tuesdays at 1pm (Fortnightly: Starting 31 Mar) \u2014 Telehealth",
+      "Wednesdays at 12pm (Weekly: from 25 Mar) \u2014 Wattletree Rd, Malvern",
+      "Fridays at 2pm (Fortnightly: Starting 10 Apr) \u2014 Wattletree Rd, Malvern"
     ],
     "short_bio": "Nick is a warm, trauma-informed clinical psychologist using ACT, mindfulness, CBT and SFT to support diverse adults and adolescents, including neurodivergent clients.",
     "weekly_availability": [
@@ -2729,7 +2727,7 @@ export const PRACTITIONERS_DATA = [
     ],
     "last_updated": "2026-06-21",
     "availability": [
-      "Mondays at 2:30pm, 3:30pm & 5pm (Fortnightly: Starting 27 Apr) — Greville St, Prahran"
+      "Mondays at 2:30pm, 3:30pm & 5pm (Fortnightly: Starting 27 Apr) \u2014 Greville St, Prahran"
     ],
     "short_bio": "Ricki is a warm, non-judgemental psychologist using CBT, ACT and psychodynamic therapies to support adolescents and adults with anxiety, depression, trauma and ADHD.",
     "weekly_availability": [],
@@ -2815,7 +2813,7 @@ export const PRACTITIONERS_DATA = [
       "retirement",
       "ageing)",
       "Existential concerns / loss of meaning",
-      "Midlife crisis or “stuck” feelings",
+      "Midlife crisis or \u201cstuck\u201d feelings",
       "Personal growth and self-development goals",
       "Alcohol Dependence (Not Current)",
       "Alcohol Dependence (Recent Diagnosis or suspected)",
@@ -2866,7 +2864,7 @@ export const PRACTITIONERS_DATA = [
     "therapist_type": "Psychologist",
     "additional_info": "",
     "qualifications": "",
-    "bio": "With a PhD (Clinical Psychology) and an active role in academic research, Josh has a strong grounding in psychological science. He also believes that what ultimately makes therapy effective, is an authentic, honest, heart-to-heart connection between therapist and patient.\n\nJosh is a non-judgemental, warm therapist who approaches therapy with humility and deep respect for people’s own capacity for healing and growth. He offers an environment where clients feel deeply heard and accepted; where it becomes possible to reconnect with parts of themselves that may have long been forgotten or buried. He supports clients to clarify what truly matters to them and to develop the awareness and skills needed to align their life with their values.\n\nJosh is lit up by seeing adults and adolescents flourish – developing self-understanding and clarity, becoming more fully themselves, and living rich and meaningful lives. He empowers clients by taking a holistic and integrative approach to therapy, drawing on a range of evidence-based modalities and tailoring therapy to the needs and preferences of each unique person.\n\nJosh has worked in both public and private sectors, and has experience with trauma, neurodiversity, depression, anxiety, parent-child relationships, OCD, grief and loss, perfectionism, and personality disorders.",
+    "bio": "With a PhD (Clinical Psychology) and an active role in academic research, Josh has a strong grounding in psychological science. He also believes that what ultimately makes therapy effective, is an authentic, honest, heart-to-heart connection between therapist and patient.\n\nJosh is a non-judgemental, warm therapist who approaches therapy with humility and deep respect for people\u2019s own capacity for healing and growth. He offers an environment where clients feel deeply heard and accepted; where it becomes possible to reconnect with parts of themselves that may have long been forgotten or buried. He supports clients to clarify what truly matters to them and to develop the awareness and skills needed to align their life with their values.\n\nJosh is lit up by seeing adults and adolescents flourish \u2013 developing self-understanding and clarity, becoming more fully themselves, and living rich and meaningful lives. He empowers clients by taking a holistic and integrative approach to therapy, drawing on a range of evidence-based modalities and tailoring therapy to the needs and preferences of each unique person.\n\nJosh has worked in both public and private sectors, and has experience with trauma, neurodiversity, depression, anxiety, parent-child relationships, OCD, grief and loss, perfectionism, and personality disorders.",
     "pronouns": "He/Him",
     "billing_types": "Medicare Rebate, NDIS, Self Funded, Third Party",
     "languages": "English",
@@ -2878,7 +2876,7 @@ export const PRACTITIONERS_DATA = [
     "locations": [
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "Wednesdays at 7:30pm (Fortnightly: Starting 1st Jul)",
+        "availability": "Wednesdays at 2:30pm (Fortnightly: Starting 1st Jul)\nWednesdays at 7:30pm (Fortnightly: Starting 1st Jul)",
         "weekly_availability": [],
         "fortnightly_availability": []
       },
@@ -2957,7 +2955,7 @@ export const PRACTITIONERS_DATA = [
       "retirement",
       "ageing)",
       "Existential concerns / loss of meaning",
-      "Midlife crisis or “stuck” feelings",
+      "Midlife crisis or \u201cstuck\u201d feelings",
       "Personal growth and self-development goals",
       "Sexuality and Gender",
       "Gender Dysphoria (form. Gender Identity Disorder)",
@@ -2992,7 +2990,7 @@ export const PRACTITIONERS_DATA = [
     "therapist_type": "Psycholoist",
     "additional_info": "",
     "qualifications": "BPsychSc, BPsychSc(Hons), MPP, MAPS",
-    "bio": "To paraphrase the novelist Gabriel Garcia Marquez, our arrival in this world foreshadows the many opportunities life will afford us to reimagine ourselves. I  completed the long journey to become a registered psychologist, after an early career in architecture followed by one in the Internet industry when email was still a novelty and social media a twinkle in somebody’s eye.\n\nLife has become increasingly fast-paced, complex, and sometimes overwhelming. As a psychologist, I use my knowledge and expertise to understand and support my clients in making sense of their lived experiences. Doing so unlocks potential, for hope when it’s a struggle and for change when it may seem impossible. I aim to build a secure therapeutic alliance that provides the foundation to explore the barriers to potential, be that in intimate relationships, work, or private internal experiences.\n\nI have a particular interest in the role that our early attachment relationships have on our adult functioning and the intergenerational consequences of attachment styles. I have additional training in The Circle of Security® Parenting™ program which is based on decades of research about supporting and strengthening secure parent-child relationships, and I bring this reflective capacity into my individual therapy work. I work with teenagers, adults, new parents, and couples in both traditional and non-heteronormative relationships.",
+    "bio": "To paraphrase the novelist Gabriel Garcia Marquez, our arrival in this world foreshadows the many opportunities life will afford us to reimagine ourselves. I  completed the long journey to become a registered psychologist, after an early career in architecture followed by one in the Internet industry when email was still a novelty and social media a twinkle in somebody\u2019s eye.\n\nLife has become increasingly fast-paced, complex, and sometimes overwhelming. As a psychologist, I use my knowledge and expertise to understand and support my clients in making sense of their lived experiences. Doing so unlocks potential, for hope when it\u2019s a struggle and for change when it may seem impossible. I aim to build a secure therapeutic alliance that provides the foundation to explore the barriers to potential, be that in intimate relationships, work, or private internal experiences.\n\nI have a particular interest in the role that our early attachment relationships have on our adult functioning and the intergenerational consequences of attachment styles. I have additional training in The Circle of Security\u00ae Parenting\u2122 program which is based on decades of research about supporting and strengthening secure parent-child relationships, and I bring this reflective capacity into my individual therapy work. I work with teenagers, adults, new parents, and couples in both traditional and non-heteronormative relationships.",
     "pronouns": "",
     "billing_types": "Medicare Rebate, NDIS, Self Funded, Third Party",
     "languages": "",
@@ -3003,7 +3001,7 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/therese-van-maanen/",
     "locations": [
       {
-        "availability": "Thursdays at 10:15am (Weekly: Starting 16th Jul)\nThursdays at 12:45pm (Fortnightly: Starting 23rd Jul)\nThursdays at 2pm (Fortnightly: Starting 23rd Jul)\nThursdays at 3:15pm (Fortnightly: Starting 30th Jul)",
+        "availability": "Thursdays at 11:30am (Weekly: Starting 16th Jul)\nThursdays at 10:15am (Weekly: Starting 23rd Jul)\nThursdays at 12:45pm (Fortnightly: Starting 23rd Jul)\nThursdays at 2pm (Fortnightly: Starting 23rd Jul)\nThursdays at 3:15pm (Fortnightly: Starting 30th Jul)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Victoria St, St Kilda"
@@ -3011,8 +3009,8 @@ export const PRACTITIONERS_DATA = [
     ],
     "last_updated": "2026-06-21",
     "availability": [
-      "Thursdays at 12:45pm & 3:15pm (Weekly: from 19 Mar) — Victoria St, St Kilda",
-      "Thursdays at 2pm & 10:15am (Fortnightly: Starting 26 Mar) — Victoria St, St Kilda"
+      "Thursdays at 12:45pm & 3:15pm (Weekly: from 19 Mar) \u2014 Victoria St, St Kilda",
+      "Thursdays at 2pm & 10:15am (Fortnightly: Starting 26 Mar) \u2014 Victoria St, St Kilda"
     ],
     "short_bio": "A reflective, attachment-focused psychologist drawing on Circle of Security to support teens, adults, new parents and diverse couples toward meaningful change.",
     "weekly_availability": [
@@ -3131,7 +3129,7 @@ export const PRACTITIONERS_DATA = [
     "therapist_type": "Clinical Psychologist",
     "additional_info": "Willingness to video record sessions is preferred but not necessary :-)",
     "qualifications": "MPsych (Clinical)\n BPsych (Hons)",
-    "bio": "Belinda completed her Master of Clinical Psychology at the University of Melbourne, and has experience working with adults and adolescents experiencing a range of emotional difficulties. She values building an authentic therapeutic relationship where people feel safe to explore parts of their inner world in a non-judgemental and empathic space. \n\nBelinda aims to work collaboratively with her clients to help them develop a deeper understanding of themselves and underlying patterns that may be causing emotional suffering. She adopts an integrative approach mainly informed by Intensive Short Term Dynamic Psychotherapy (ISTDP). ISTDP is an evidence-based therapy that understands emotional suffering as arising from the use of defensive mechanisms that work out of our awareness to create barriers to authentically connecting with ourselves and our core emotions. By bringing awareness to these unconscious emotional processes, unhelpful defensive patterns can be understood and let go of, to make space for adaptive emotional processes to develop. She also draws upon Cognitive Behavioural Therapy (CBT) and Acceptance and Commitment Therapy (ACT), adopting a tailored approach that is guided by each client’s unique needs. Belinda is most passionate about working with her clients to achieve emotional wellbeing, with the aim of lasting change.",
+    "bio": "Belinda completed her Master of Clinical Psychology at the University of Melbourne, and has experience working with adults and adolescents experiencing a range of emotional difficulties. She values building an authentic therapeutic relationship where people feel safe to explore parts of their inner world in a non-judgemental and empathic space. \n\nBelinda aims to work collaboratively with her clients to help them develop a deeper understanding of themselves and underlying patterns that may be causing emotional suffering. She adopts an integrative approach mainly informed by Intensive Short Term Dynamic Psychotherapy (ISTDP). ISTDP is an evidence-based therapy that understands emotional suffering as arising from the use of defensive mechanisms that work out of our awareness to create barriers to authentically connecting with ourselves and our core emotions. By bringing awareness to these unconscious emotional processes, unhelpful defensive patterns can be understood and let go of, to make space for adaptive emotional processes to develop. She also draws upon Cognitive Behavioural Therapy (CBT) and Acceptance and Commitment Therapy (ACT), adopting a tailored approach that is guided by each client\u2019s unique needs. Belinda is most passionate about working with her clients to achieve emotional wellbeing, with the aim of lasting change.",
     "pronouns": "She/Her",
     "billing_types": "Medicare Rebate, NDIS, Self Funded, Third Party",
     "languages": "",
@@ -3142,7 +3140,7 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/belinda-pacella/",
     "locations": [
       {
-        "availability": "Mondays at 12pm (Fortnightly: Starting 22nd Jun)\nThursdays at 11am (Fortnightly: Starting 25th Jun)",
+        "availability": "Thursdays at 9am (Fortnightly: Starting 27th Aug)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
@@ -3150,9 +3148,9 @@ export const PRACTITIONERS_DATA = [
     ],
     "last_updated": "2026-06-21",
     "availability": [
-      "Mondays at 12pm & 1pm (Weekly: from 23 Mar) — Greville St, Prahran",
-      "Thursdays at 11am (Weekly: from 2 Apr) — Greville St, Prahran",
-      "Thursdays at 10am & 1pm (Fortnightly: Starting 26 Mar) — Greville St, Prahran"
+      "Mondays at 12pm & 1pm (Weekly: from 23 Mar) \u2014 Greville St, Prahran",
+      "Thursdays at 11am (Weekly: from 2 Apr) \u2014 Greville St, Prahran",
+      "Thursdays at 10am & 1pm (Fortnightly: Starting 26 Mar) \u2014 Greville St, Prahran"
     ],
     "short_bio": "Belinda is a collaborative clinical psychologist and supervisor using relational, emotion-focused ISTDP to foster deep self-understanding, emotional resilience and lasting change.",
     "weekly_availability": [
@@ -3224,7 +3222,7 @@ export const PRACTITIONERS_DATA = [
     "therapist_type": "Clinical Psychologist",
     "additional_info": "",
     "qualifications": "Bachelor of Arts (with Honours), Monash University, Australia, 2016\n Bachelor of Arts, Stetson University, United States of America, 2014\n Master of Psychology (Clinical), University of Melbourne, Australia, 2019",
-    "bio": "Poorna is a Clinical psychologist with a Master of Clinical Psychology Degree. She works with a wide range of psychological, cultural and emotional challenges. Her warm and humorous style of engaging with clients allows for an easy and collaborative approach to alleviating challenges faced by individuals.\n\nPoorna has developed expertise in working with people experiencing anxiety, depression, mood and personality disorders, relationship difficulties, trauma, complex trauma (gender-based violence, migrant, asylum seeker and refugee contexts), life stressors and cultural adjustment related challenges. She is trained in several therapeutic approaches including CBT, Schema Therapy and Psychodynamic Therapy. Through Poorna’s attentive and supportive approach to dealing with psychological difficulties, she aims to compassionately confront behaviours and thought patterns that prevent clients from fully and positively engaging with their lives.\n\nPoorna completed her undergraduate studies in the United States, and graduate degree in Melbourne, Australia. Prior to pursuing her Masters, she worked in a variety of clinical and non-clinical settings across South America, the Middle East, South and Southeast Asia. Throughout this time, Poorna worked with people experiencing adversity in vastly different societies and communities. This allowed her the opportunity to recognise the importance of drawing on cultural and community-based value systems when considering the psychological or emotional challenges that we face. She seeks to support each individual client to develop a deeper understanding of themselves that resonates with their unique systemic values, enabling holistic healing so clients may fully connect with themselves, and others.\n\nPoorna greatly values the therapeutic alliance between client and therapist. Therefore she works hard to foster an environment where this positive alliance can be nurtured and strengthened to benefit the client in other aspects of their lives.",
+    "bio": "Poorna is a Clinical psychologist with a Master of Clinical Psychology Degree. She works with a wide range of psychological, cultural and emotional challenges. Her warm and humorous style of engaging with clients allows for an easy and collaborative approach to alleviating challenges faced by individuals.\n\nPoorna has developed expertise in working with people experiencing anxiety, depression, mood and personality disorders, relationship difficulties, trauma, complex trauma (gender-based violence, migrant, asylum seeker and refugee contexts), life stressors and cultural adjustment related challenges. She is trained in several therapeutic approaches including CBT, Schema Therapy and Psychodynamic Therapy. Through Poorna\u2019s attentive and supportive approach to dealing with psychological difficulties, she aims to compassionately confront behaviours and thought patterns that prevent clients from fully and positively engaging with their lives.\n\nPoorna completed her undergraduate studies in the United States, and graduate degree in Melbourne, Australia. Prior to pursuing her Masters, she worked in a variety of clinical and non-clinical settings across South America, the Middle East, South and Southeast Asia. Throughout this time, Poorna worked with people experiencing adversity in vastly different societies and communities. This allowed her the opportunity to recognise the importance of drawing on cultural and community-based value systems when considering the psychological or emotional challenges that we face. She seeks to support each individual client to develop a deeper understanding of themselves that resonates with their unique systemic values, enabling holistic healing so clients may fully connect with themselves, and others.\n\nPoorna greatly values the therapeutic alliance between client and therapist. Therefore she works hard to foster an environment where this positive alliance can be nurtured and strengthened to benefit the client in other aspects of their lives.",
     "pronouns": "",
     "billing_types": "Medicare Rebate, Self Funded, Third Party",
     "languages": "Tamil, English",
@@ -3235,7 +3233,7 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/poorna-selvaraja/",
     "locations": [
       {
-        "availability": "Tuesdays at 2:30pm (Fortnightly: Starting 21st Jul)",
+        "availability": "Mondays at 11am (Fortnightly: Starting 27th Jul)\nTuesdays at 2:30pm (Fortnightly: Starting 21st Jul)\nTuesdays at 8:30am (Fortnightly: Starting 28th Jul)\nTuesdays at 11:30am (Fortnightly: Starting 28th Jul)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
@@ -3243,9 +3241,9 @@ export const PRACTITIONERS_DATA = [
     ],
     "last_updated": "2026-06-21",
     "availability": [
-      "Mondays at 9am, 10am & 2pm (Fortnightly: Starting 30 Mar) — Greville St, Prahran",
-      "Tuesdays at 2:30pm (Fortnightly: Starting 24 Mar) — Greville St, Prahran",
-      "Wednesdays at 2:30pm (Fortnightly: Starting 1 Apr) — Greville St, Prahran"
+      "Mondays at 9am, 10am & 2pm (Fortnightly: Starting 30 Mar) \u2014 Greville St, Prahran",
+      "Tuesdays at 2:30pm (Fortnightly: Starting 24 Mar) \u2014 Greville St, Prahran",
+      "Wednesdays at 2:30pm (Fortnightly: Starting 1 Apr) \u2014 Greville St, Prahran"
     ],
     "short_bio": "Poorna is a warm, culturally attuned clinical psychologist using CBT, schema and psychodynamic therapy to support trauma, identity, adjustment and cross-cultural challenges",
     "weekly_availability": [],
@@ -3304,7 +3302,7 @@ export const PRACTITIONERS_DATA = [
     "presentations": "Anxiety; Depression; Relationship Concerns; Grief & Loss; Self-Esteem & Confidence; Life Transitions; Work Stress; Trauma and Post-Traumatic Stress Disorder (PTSD)",
     "modalities": "Psychodynamic Therapy; Internal Family Systems Therapy (IFS); Emotion Focused Therapy (EFT)",
     "availability": [
-      "Thursdays at 9am & 10am (Weekly: from 2 Apr) — Greville St, Prahran"
+      "Thursdays at 9am & 10am (Weekly: from 2 Apr) \u2014 Greville St, Prahran"
     ],
     "bio": "When I was young, I wanted to be a marine biologist. I was in awe of the mysteries of the ocean and marvelled at the variety of creatures living within it. As I grew older and began to see the world through more adult eyes, I realised that the depth and breadth of human emotion and behaviour was far vaster and more complex than any ocean could ever be. And so, my path was set.\n\nAfter many years of study and work, I am now a Senior Clinical Psychologist having worked in the UK, New Zealand and finally Australia. I have many years of experience working in the public sector with severe and enduring mental health issues, and also with mild to moderate mental health issues that most of us experience at some point in our lifetime.\n\nI am an integrative Doctor of Clinical Psychology and as such, I draw upon a wide variety of models of therapy such as Intensive Short Term Dynamic Psychotherapy (ISTDP) and Cognitive Behavioural Therapy (CBT), as well as others. This enables me to tailor treatments to the unique needs of each individual I see.\n\nHowever, as research has proven over and over again, the most important ingredient to effective treatment in psychological therapy is the therapeutic relationship itself. As such, I strive to form an authentic relationship with every client I see, and with an empathic understanding at its core. The sharing of vulnerability opens the door to intimacy, and it is my role to provide a safe and validating space that allows this process to occur.\n\nI have developed many areas of interest throughout my career, I have been invited to speak and keynote speak at a number of national and international conferences, and have worked on the Clinical Psychology Program at the University of Melbourne for the past 8 years. Finally, I am fortunate to be a supervisor and mentor to many psychologists, whether they be seasoned professionals or just starting out on their journey as a psychologist.\n\nMy passion remains in individual psychological therapy, especially using ISTDP, as well as research into the promising new arena of psychedelic sciences, and how this can be applied to the psychotherapeutic space once legalised.",
     "qualifications": "BSc (Hons) ClinPsyD",
@@ -3343,7 +3341,7 @@ export const PRACTITIONERS_DATA = [
     "languages": "",
     "spare_time": "",
     "pap_clinician": "",
-    "alert": "Books closed indefinitely — not taking any new clients. No waitlist."
+    "alert": "Books closed indefinitely \u2014 not taking any new clients. No waitlist."
   },
   {
     "id": 23,
@@ -3397,7 +3395,7 @@ export const PRACTITIONERS_DATA = [
       "Identity exploration (gender/ sexual orientation/ cultural/ spiritual)",
       "Life transitions (career change/ relocation/ retirement/ ageing)",
       "Existential concerns / loss of meaning",
-      "Midlife crisis or “stuck” feelings",
+      "Midlife crisis or \u201cstuck\u201d feelings",
       "Personal growth and self-development goals",
       "Sexuality and Gender",
       "Gender Dysphoria (form. Gender Identity Disorder)",
@@ -3453,7 +3451,7 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/pete-steele/",
     "locations": [
       {
-        "availability": "Tuesdays at 10am (Fortnightly: Starting 23rd Jun)\nWednesdays at 2pm (Fortnightly: Starting 24th Jun)",
+        "availability": "Wednesdays at 11am (Fortnightly: Starting 24th Jun)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
@@ -3467,7 +3465,7 @@ export const PRACTITIONERS_DATA = [
     ],
     "last_updated": "2026-06-21",
     "availability": [
-      "Tuesdays at 11am (Fortnightly: Starting 31 Mar) — Greville St, Prahran"
+      "Tuesdays at 11am (Fortnightly: Starting 31 Mar) \u2014 Greville St, Prahran"
     ],
     "short_bio": "Pete is a warm, trauma-informed clinical psychologist using CBT and ACT to support diverse adults and adolescents, including LGBTIQ+ and CALD communities.",
     "weekly_availability": [],
@@ -3497,7 +3495,7 @@ export const PRACTITIONERS_DATA = [
     "fees": "B/H: $235\nA/H: $275",
     "medicare_rebate": "96.65",
     "gender": "Female",
-    "alert": "No longer at Psychology Care — available as an external referral.",
+    "alert": "No longer at Psychology Care \u2014 available as an external referral.",
     "presentations": [
       "Anxiety",
       "Panic Disorder & Panic Attacks",
@@ -3523,7 +3521,7 @@ export const PRACTITIONERS_DATA = [
       "cultural",
       "spiritual)",
       "Existential concerns / loss of meaning",
-      "Midlife crisis or “stuck” feelings",
+      "Midlife crisis or \u201cstuck\u201d feelings",
       "Personal growth and self-development goals",
       "Alcohol Dependence (Not Current)",
       "Addictions - Gaming",
@@ -3552,7 +3550,7 @@ export const PRACTITIONERS_DATA = [
     "therapist_type": "Clinical Psychology Registrar",
     "additional_info": "Might start with ADHD Assessments\n Experience with Psychosis and OCD\n \n I have significant research experience with the Lived Experience workforce, and my practice is informed by Lived Experience expertise, values and principles.\n \n While I haven't listed queer/LGBTIQA+ etc presentations as an interest (it wouldn't be my preference to work with someone coming to explore their sexuality or gender identity as a primary focus, for instance), I am very happy to work with members of the queer community in a more general sense.\n \n List of publications is incomplete (selected publications and talks).\n IFS- Accepted into Level 1 training starting May, using IFS as her primary modality. Has worked with ~60 clients, including presentations such as suicidality, self-harm, binge eating, and DID.",
     "qualifications": "Bachelor of Arts in Psychology\n Bachelor of Science in Psychology (Honours)\n Master of Psychology (Clinical Psychology)\n Doctor of Philosophy\n \n AHPRA Registration Number: PSY0002105403\n Working With Children Check Number: 0884244A-01\n APS Member Number: 170726",
-    "bio": "Stephanie is a Registered Psychologist with a PhD and Master of Clinical Psychology from the University of Melbourne. She supports people who are neurodiverse, who are navigating major life transitions or relationship challenges, who struggle with shame or self-doubt, who have lived through trauma, who feel compelled to act on their thoughts, and who experience different realities. \n\nStephanie is warm, non-judgemental and collaborative in her approach to therapy. Her practice is both affirming of the humanity inherent in even our most difficult and ‘othered’ experiences, and attendant to the ways in which we are all unique and uniquely situated. At the centre of her practice is respect for self-determination, our right to define a meaningful life for ourselves and to make our own choices.\n\nStephanie draws primarily on Internal Family Systems Therapy (IFS), Mindful Self-compassion and Lived Expertise to inform her work, and is also trained in approaches including Acceptance and Commitment Therapy (ACT), Cognitive Behavioural Therapy (CBT) and Motivational Interviewing (MI). She has experience working with people in difficult circumstances and people who experience the world differently, including asylum seekers, people sleeping rough, voice hearers and adolescents and adults who are neurodiverse. \n\nIt is important to Stephanie that her practice is safe and affirming, including for people from the LGBTIQA+ community and culturally diverse backgrounds. Her practice is informed by knowledge of systemic injustices and their effects, and the impacts of interpersonal and other forms of trauma.",
+    "bio": "Stephanie is a Registered Psychologist with a PhD and Master of Clinical Psychology from the University of Melbourne. She supports people who are neurodiverse, who are navigating major life transitions or relationship challenges, who struggle with shame or self-doubt, who have lived through trauma, who feel compelled to act on their thoughts, and who experience different realities. \n\nStephanie is warm, non-judgemental and collaborative in her approach to therapy. Her practice is both affirming of the humanity inherent in even our most difficult and \u2018othered\u2019 experiences, and attendant to the ways in which we are all unique and uniquely situated. At the centre of her practice is respect for self-determination, our right to define a meaningful life for ourselves and to make our own choices.\n\nStephanie draws primarily on Internal Family Systems Therapy (IFS), Mindful Self-compassion and Lived Expertise to inform her work, and is also trained in approaches including Acceptance and Commitment Therapy (ACT), Cognitive Behavioural Therapy (CBT) and Motivational Interviewing (MI). She has experience working with people in difficult circumstances and people who experience the world differently, including asylum seekers, people sleeping rough, voice hearers and adolescents and adults who are neurodiverse. \n\nIt is important to Stephanie that her practice is safe and affirming, including for people from the LGBTIQA+ community and culturally diverse backgrounds. Her practice is informed by knowledge of systemic injustices and their effects, and the impacts of interpersonal and other forms of trauma.",
     "pronouns": "She/Her",
     "billing_types": "Medicare Rebate, NDIS, Self Funded, Third Party",
     "languages": "English",
@@ -3571,7 +3569,7 @@ export const PRACTITIONERS_DATA = [
     ],
     "last_updated": "2026-06-21",
     "availability": [
-      "Mondays at 2:30pm (Fortnightly: Starting 20 Apr) — Wattletree Rd, Malvern"
+      "Mondays at 2:30pm (Fortnightly: Starting 20 Apr) \u2014 Wattletree Rd, Malvern"
     ],
     "short_bio": "Stephanie is a warm, collaborative clinical psychologist and researcher supporting diverse, marginalised and neurodiverse clients with affirming, trauma-informed, LGBTIQA+ inclusive care.",
     "weekly_availability": [],
@@ -3653,7 +3651,7 @@ export const PRACTITIONERS_DATA = [
     "therapist_type": "Psychologist",
     "additional_info": "I would prefer to work solely with women for the first 6-8 months as this is where my experience lies. \n \n When I refer to chronic illness in 'presentations I like to treat' I am referring to pelvic health related conditions such as endometriosis, adenomyosis, PCOS and infertility which impact on self-esteem and mental health. \n \n I haven't worked with life-limiting or terminal illnesses and would prefer not to take on these clients in my first year.",
     "qualifications": "Bachelor of Psychology and Criminology, Graduate Diploma of Psychology (Advanced), Masters of Educational and Developmental Psychology",
-    "bio": "Clare’s approach is warm, collaborative, and client-centred, focusing on helping individuals gain a deeper understanding of themselves and their struggles. She creates a safe, non-judgmental space, tailoring her approach to meet each client’s unique needs, empowering them to build resilience, challenge unhelpful patterns, and foster lasting change.\n\nWith a Master of Educational and Developmental Psychology, Clare is passionate about supporting individuals through life’s transitions and challenges, drawing on a solid foundation of psychological development. She integrates evidence-based approaches, including Cognitive Behavioural Therapy (CBT), Acceptance and Commitment Therapy (ACT), and mindfulness practices, to help clients develop psychological flexibility and adopt effective coping strategies.\n\nClare has experience working with clients facing a variety of difficulties, including anxiety, mood-related concerns, perinatal mental health, grief and loss related to infertility and reproductive health treatments, pelvic and chronic health conditions, as well as challenges linked to stress, burnout, low self-esteem, perfectionism, and life or career transitions.",
+    "bio": "Clare\u2019s approach is warm, collaborative, and client-centred, focusing on helping individuals gain a deeper understanding of themselves and their struggles. She creates a safe, non-judgmental space, tailoring her approach to meet each client\u2019s unique needs, empowering them to build resilience, challenge unhelpful patterns, and foster lasting change.\n\nWith a Master of Educational and Developmental Psychology, Clare is passionate about supporting individuals through life\u2019s transitions and challenges, drawing on a solid foundation of psychological development. She integrates evidence-based approaches, including Cognitive Behavioural Therapy (CBT), Acceptance and Commitment Therapy (ACT), and mindfulness practices, to help clients develop psychological flexibility and adopt effective coping strategies.\n\nClare has experience working with clients facing a variety of difficulties, including anxiety, mood-related concerns, perinatal mental health, grief and loss related to infertility and reproductive health treatments, pelvic and chronic health conditions, as well as challenges linked to stress, burnout, low self-esteem, perfectionism, and life or career transitions.",
     "pronouns": "She/Her",
     "billing_types": "Medicare Rebate, NDIS, Self Funded, Third Party",
     "languages": "English",
@@ -3664,7 +3662,7 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/clare-tuttleby/",
     "locations": [
       {
-        "availability": "Mondays at 3:30pm (Fortnightly: Starting 22nd Jun)\nMondays at 5:30pm (Fortnightly: Starting 29th Jun)\nTuesdays at 3:30pm (Fortnightly: Starting 7th Jul)\nTuesdays at 6:30pm (Fortnightly: Starting 30th Jun)",
+        "availability": "Tuesdays at 2:30pm (Weekly: Starting 23rd Jun)\nMondays at 5:30pm (Fortnightly: Starting 13th Jul)\nTuesdays at 3:30pm (Fortnightly: Starting 7th Jul)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
@@ -3699,7 +3697,7 @@ export const PRACTITIONERS_DATA = [
     "fees": "B/H: $275\nA/H: $315",
     "medicare_rebate": "145.25",
     "gender": "Female",
-    "alert": "Anna 16/03- No NDIS or complex clients\nCannot see clients who I have been working with at Kingston Rehab (Monash Health) at this time while I am still working there.\nNot currently taking new clients — contact Elizabeth directly before booking in.",
+    "alert": "Anna 16/03- No NDIS or complex clients\nCannot see clients who I have been working with at Kingston Rehab (Monash Health) at this time while I am still working there.\nNot currently taking new clients \u2014 contact Elizabeth directly before booking in.",
     "presentations": [
       "Agoraphobia",
       "Anxiety",
@@ -3757,7 +3755,7 @@ export const PRACTITIONERS_DATA = [
       "retirement",
       "ageing)",
       "Existential concerns / loss of meaning",
-      "Midlife crisis or “stuck” feelings",
+      "Midlife crisis or \u201cstuck\u201d feelings",
       "Personal growth and self-development goals",
       "Sexuality and Gender",
       "Fertility / IVF stress",
@@ -3818,7 +3816,7 @@ export const PRACTITIONERS_DATA = [
     "therapist_type": "Clinical Psychologist",
     "additional_info": "Adults late 20s and older, esp. middle age and older people.\n No Post-natal depression please.\n Prefer not drug and alcohol.\n Prefer not solely telehealth (in-person,  some telehealth sessions for flexibility only)\n People with health issues need to be able to manage stairs at Greville St.\n Please don't say much about my personality or personal status (have/don't have children,  sexuality/married/not married) due to the types of therapy I am engaging.\n Please add 'Interpersonal Therapy' to the list if Therapy types are added to the website profile.\n Health professional mental health/stress\n Health anxiety\n Adjustment to health conditions, retirement, and ageing\n Carer stress (Caring for others with mental or physical health challenges)",
     "qualifications": "BPharm PhD Grad Dip Psych Master of Psychology (Clinical) \n Member: Australian Clinical Psychology Association\n Associate Member: APS College of Clinical Psychologists",
-    "bio": "I am a Clinical Psychologist, having trained in psychology as a mature age student at Monash University & University of Melbourne. Previously working in pharmacy, research and teaching, I am now enjoying my on-going professional training in experiential and relational psychotherapies, including Intensive Short-term Psychodynamic Therapy (ISTDP) and ANZAP’s Conversational Model. I also draw from my training in Acceptance and Commitment Therapy (ACT) and Cognitive-Behavioural Therapy (CBT). My focus is always on what appears to best suit the client.\n\nMy psychology experience includes working with adults in public and private hospitals, and with older people in residential aged care and community-based public mental health. I also provide input to a telephone peer support service for health professionals. I have a particular interest in working with people with chronic depression and/or physical symptoms that are related to mental or emotional stress, as well as people adjusting to the many challenging stages of our lifespan (e.g., mid-life, retirement).\n\nRegular therapy sessions can be a brief or a longer-term investment, depending on the person’s level of curiosity and needs. The therapeutic focus is on helping us listen to what our anxieties, emotions and interactions with other people tell us about what is important to us. What we may believe are annoyances or weaknesses may be rich information and growth experiences. Working with a therapist is about using the therapeutic relationship to help us feel someone else is there as we, bravely and patiently, make room for uncomfortable experiences and process whatever we come to therapy to process: suffering, sense of self, relationship to others, or general growth across the lifespan.",
+    "bio": "I am a Clinical Psychologist, having trained in psychology as a mature age student at Monash University & University of Melbourne. Previously working in pharmacy, research and teaching, I am now enjoying my on-going professional training in experiential and relational psychotherapies, including Intensive Short-term Psychodynamic Therapy (ISTDP) and ANZAP\u2019s Conversational Model. I also draw from my training in Acceptance and Commitment Therapy (ACT) and Cognitive-Behavioural Therapy (CBT). My focus is always on what appears to best suit the client.\n\nMy psychology experience includes working with adults in public and private hospitals, and with older people in residential aged care and community-based public mental health. I also provide input to a telephone peer support service for health professionals. I have a particular interest in working with people with chronic depression and/or physical symptoms that are related to mental or emotional stress, as well as people adjusting to the many challenging stages of our lifespan (e.g., mid-life, retirement).\n\nRegular therapy sessions can be a brief or a longer-term investment, depending on the person\u2019s level of curiosity and needs. The therapeutic focus is on helping us listen to what our anxieties, emotions and interactions with other people tell us about what is important to us. What we may believe are annoyances or weaknesses may be rich information and growth experiences. Working with a therapist is about using the therapeutic relationship to help us feel someone else is there as we, bravely and patiently, make room for uncomfortable experiences and process whatever we come to therapy to process: suffering, sense of self, relationship to others, or general growth across the lifespan.",
     "pronouns": "She/Her",
     "billing_types": "Medicare Rebate, Self Funded, Third Party",
     "languages": "English",
@@ -3837,9 +3835,9 @@ export const PRACTITIONERS_DATA = [
     ],
     "last_updated": "2026-06-21",
     "availability": [
-      "Mondays at 2:30pm & 3:30pm (Weekly: from 23 Mar) — Greville St, Prahran",
-      "Wednesdays at 1pm (Fortnightly: Starting 1 Apr) — Greville St, Prahran",
-      "Thursdays at 8am & 10am (Fortnightly: Starting 19 Mar) — Greville St, Prahran"
+      "Mondays at 2:30pm & 3:30pm (Weekly: from 23 Mar) \u2014 Greville St, Prahran",
+      "Wednesdays at 1pm (Fortnightly: Starting 1 Apr) \u2014 Greville St, Prahran",
+      "Thursdays at 8am & 10am (Fortnightly: Starting 19 Mar) \u2014 Greville St, Prahran"
     ],
     "short_bio": "A mature-age clinical psychologist using ISTDP, Conversational Model, ACT and CBT to support adults through chronic depression, stress-related symptoms and life transitions.",
     "weekly_availability": [
@@ -3910,7 +3908,7 @@ export const PRACTITIONERS_DATA = [
       "retirement",
       "ageing)",
       "Existential concerns / loss of meaning",
-      "Midlife crisis or “stuck” feelings",
+      "Midlife crisis or \u201cstuck\u201d feelings",
       "Alcohol Dependence (Recent Diagnosis or suspected)",
       "Cannabis Dependence (Recent diagnoisis or Suspected)",
       "Emotional Eating",
@@ -3953,7 +3951,7 @@ export const PRACTITIONERS_DATA = [
     "therapist_type": "Clinical Psychologist",
     "additional_info": "",
     "qualifications": "MA Clinical Psychologist",
-    "bio": "Karen Pereira-York is a clinical psychologist with over 30 years of experience, who has worked both in the public and private sector in South Africa, and New Zealand is now working in Australia. She works from a psychodynamic understanding of the person, and uses diverse modalities to tailor a personalized approach for each client.\n\nShe often looks at a person’s early childhood and formative relationships, as these experiences are believed to shape one’s world and patterns of relating to others. She helps clients uncover unresolved conflicts from childhood that continue to impact their current relationships and behaviour. She helps one look for patterns in relationships, and process unresolved emotional conflicts, which ultimately helps one gain insight, and emotional growth, through the exploration of past experiences.\n\n She works with unpacking trauma, managing anxiety, or understanding the intricacies of relationships. She has also worked extensively with sexual abuse trauma. She believes that healing is a process of rediscovery. Together, you will explore what it means to be vulnerable, to desire, to grow, and, ultimately, to reclaim a sense of agency in one’s life. She often uses EMDR to address past wounds, particularly those shaped by relational and complex trauma.\n\nHer practice is attuned to racial and cultural identity, exploring how these shapes one’s sense of self, in a world that imposes rigid definitions.  She supports people navigating life transitions—aging, fertility challenges, miscarriage, and maternal mental health—helping you process grief and pain. Grief and loss, whether from the death of a loved one, medical diagnosis or cancer, shifting roles, or personal transformation, are central to her work.\n\nHaving experienced the complexities of emigration herself, she has a unique understanding of the emotional and professional shifts that come with moving. She is passionate about supporting those in transition.\n\nIn working together, she provides a space for empathy, insight, and healing, where together you explore your inner world, understand your patterns, and work through the wounds that may be holding you back.\nClinical Interests:\nAnxiety\nChildhood Abuse and Neglect \nComplex Trauma\nDepression\nGrief and Loss\nLife Transitions\nLow Self- Esteem\nPost Traumatic Stress Disorder (PTSD)\nTrauma\nWorkplace Stress\nModalities:\nPerson / Client Centred Therapy\nPsychodynamic Psychotherapy\nSupportive Therapy\nEye Movement Desensitisation and Reprocessing (EMDR)\nInternal Family Systems (IFS) / Parts Work – Informed\nLanguages:\n English\nAges:\n 18 years +",
+    "bio": "Karen Pereira-York is a clinical psychologist with over 30 years of experience, who has worked both in the public and private sector in South Africa, and New Zealand is now working in Australia. She works from a psychodynamic understanding of the person, and uses diverse modalities to tailor a personalized approach for each client.\n\nShe often looks at a person\u2019s early childhood and formative relationships, as these experiences are believed to shape one\u2019s world and patterns of relating to others. She helps clients uncover unresolved conflicts from childhood that continue to impact their current relationships and behaviour. She helps one look for patterns in relationships, and process unresolved emotional conflicts, which ultimately helps one gain insight, and emotional growth, through the exploration of past experiences.\n\n She works with unpacking trauma, managing anxiety, or understanding the intricacies of relationships. She has also worked extensively with sexual abuse trauma. She believes that healing is a process of rediscovery. Together, you will explore what it means to be vulnerable, to desire, to grow, and, ultimately, to reclaim a sense of agency in one\u2019s life. She often uses EMDR to address past wounds, particularly those shaped by relational and complex trauma.\n\nHer practice is attuned to racial and cultural identity, exploring how these shapes one\u2019s sense of self, in a world that imposes rigid definitions.  She supports people navigating life transitions\u2014aging, fertility challenges, miscarriage, and maternal mental health\u2014helping you process grief and pain. Grief and loss, whether from the death of a loved one, medical diagnosis or cancer, shifting roles, or personal transformation, are central to her work.\n\nHaving experienced the complexities of emigration herself, she has a unique understanding of the emotional and professional shifts that come with moving. She is passionate about supporting those in transition.\n\nIn working together, she provides a space for empathy, insight, and healing, where together you explore your inner world, understand your patterns, and work through the wounds that may be holding you back.\nClinical Interests:\nAnxiety\nChildhood Abuse and Neglect \nComplex Trauma\nDepression\nGrief and Loss\nLife Transitions\nLow Self- Esteem\nPost Traumatic Stress Disorder (PTSD)\nTrauma\nWorkplace Stress\nModalities:\nPerson / Client Centred Therapy\nPsychodynamic Psychotherapy\nSupportive Therapy\nEye Movement Desensitisation and Reprocessing (EMDR)\nInternal Family Systems (IFS) / Parts Work \u2013 Informed\nLanguages:\n English\nAges:\n 18 years +",
     "pronouns": "She/Her",
     "billing_types": "Medicare Rebate, NDIS, Self Funded, Third Party",
     "languages": "English",
@@ -3964,7 +3962,7 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/karen-pereira-york/",
     "locations": [
       {
-        "availability": "Mondays at 8:30am (Fortnightly: Starting 6th Jul)\nThursdays at 10:30am (Fortnightly: Starting 25th Jun)\nThursdays at 1pm (Fortnightly: Starting 25th Jun)\nThursdays at 9:30am (Fortnightly: Starting 16th Jul)\nTuesdays at 3:30pm (Fortnightly: Starting 30th Jun)\nWednesdays at 1pm (Fortnightly: Starting 1st Jul)\nWednesdays at 4:30pm (Fortnightly: Starting 1st Jul)\nWednesdays at 5:30pm (Weekly: Starting 24th Jun)",
+        "availability": "Wednesdays at 5:30pm (Weekly: Starting 24th Jun)\nThursdays at 10:30am (Fortnightly: Starting 25th Jun)\nThursdays at 9:30am (Fortnightly: Starting 16th Jul)\nWednesdays at 4:30pm (Fortnightly: Starting 1st Jul)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
@@ -3972,8 +3970,8 @@ export const PRACTITIONERS_DATA = [
     ],
     "last_updated": "2026-06-21",
     "availability": [
-      "Wednesdays at 1pm & 2pm (Weekly: from 25 Mar) — Greville St, Prahran",
-      "Thursdays at 10:30am & 9am (Fortnightly: Starting 2 Apr) — Greville St, Prahran"
+      "Wednesdays at 1pm & 2pm (Weekly: from 25 Mar) \u2014 Greville St, Prahran",
+      "Thursdays at 10:30am & 9am (Fortnightly: Starting 2 Apr) \u2014 Greville St, Prahran"
     ],
     "short_bio": "Karen is a psychodynamic clinical psychologist integrating EMDR to support trauma, identity, grief and life transitions with culturally attuned, exploratory therapy.",
     "weekly_availability": [
@@ -4011,4 +4009,6 @@ export const PRACTITIONERS_DATA = [
     "photo_url": "https://pc-prac-availability.netlify.app/photos/karen-pereira-york_thumb.jpg",
     "photo_b64": "data:image/jpeg;base64,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"
   }
-] as const;
+];
+export const practitionersData = PRACTITIONERS_DATA;
+export const AVAILABILITY_LAST_UPDATED = "22 Jun 2026 at 10:54am";
