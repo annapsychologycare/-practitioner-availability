@@ -383,7 +383,7 @@ interface ReferralCardProps {
   onEdit: (p: Practitioner) => void;
 }
 
-const ReferralCard: React.FC<ReferralCardProps> = ({ p, onEdit }) => {
+const ReferralCard: React.FC<ReferralCardProps> = ({ p, onEdit, onDelete }) => {
   const [expanded, setExpanded] = useState(false);
   const [copied, setCopied] = useState(false);
   const presentations = safeArr(p.presentations);
@@ -456,7 +456,7 @@ const ReferralCard: React.FC<ReferralCardProps> = ({ p, onEdit }) => {
             {p.languages && <span>🌐 {p.languages}</span>}
           </div>
 
-          {(p.referral_address || p.referral_phone || p.referral_contact || p.referral_website || p.link_to_bio) && (
+          {(p.referral_clinic || p.referral_address || p.referral_phone || p.referral_contact || p.referral_website || p.link_to_bio) && (
             <div style={{ marginTop: 12, background: "#f8f7fd", border: `1px solid ${BRAND.lightLilac}`, borderRadius: 10, padding: "12px 14px" }}>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 10 }}>
                 <div style={{ display: "flex", flexDirection: "column", gap: 6, fontSize: 13 }}>
@@ -495,10 +495,16 @@ const ReferralCard: React.FC<ReferralCardProps> = ({ p, onEdit }) => {
             </div>
           )}
         </div>
-        <button onClick={() => onEdit(p)}
-          style={{ background: "none", border: `1px solid ${BRAND.border}`, borderRadius: 8, padding: "4px 10px", fontSize: 12, color: BRAND.subtext, cursor: "pointer", flexShrink: 0 }}>
-          Edit
-        </button>
+        <div style={{ display: "flex", flexDirection: "column", gap: 6, flexShrink: 0 }}>
+          <button onClick={() => onEdit(p)}
+            style={{ background: "none", border: `1px solid ${BRAND.border}`, borderRadius: 8, padding: "4px 10px", fontSize: 12, color: BRAND.subtext, cursor: "pointer" }}>
+            Edit
+          </button>
+          <button onClick={() => onDelete(p)}
+            style={{ background: "none", border: "1px solid #fca5a5", borderRadius: 8, padding: "4px 10px", fontSize: 12, color: "#ef4444", cursor: "pointer" }}>
+            Delete
+          </button>
+        </div>
       </div>
     </div>
   );
@@ -512,52 +518,71 @@ const ReferralNetwork: React.FC<ReferralNetworkProps> = ({ practitioners }) => {
   const [search, setSearch] = useState("");
   const [showAddForm, setShowAddForm] = useState(false);
   const [editingP, setEditingP] = useState<Practitioner | null>(null);
-  const [overrides, setOverrides] = useState<Record<number, Practitioner>>({});
-  // Extra referrals added in-session (not persisted — for persistence would need backend)
-  const [extras, setExtras] = useState<Practitioner[]>([]);
+
+  // localStorage-backed persistence for Netlify (Tasklet version uses filesystem)
+  const LS_KEY = "pc_referral_overrides";
+  const loadLS = (): { extras: Practitioner[], overrides: Record<number, Practitioner> } => {
+    try { return JSON.parse(localStorage.getItem(LS_KEY) || "{}"); } catch { return { extras: [], overrides: {} }; }
+  };
+  const [lsData, setLsData] = useState<{ extras: Practitioner[], overrides: Record<number, Practitioner> }>(loadLS);
+
+  const saveLS = (next: { extras: Practitioner[], overrides: Record<number, Practitioner> }) => {
+    localStorage.setItem(LS_KEY, JSON.stringify(next));
+    setLsData(next);
+  };
 
   const referrals = useMemo(() => {
-    const base = practitioners.filter(p => p.referral_only === true)
-      .map(p => overrides[p.id as number] ?? p);
-    return [...base, ...extras];
-  }, [practitioners, extras, overrides]);
+    const base = practitioners
+      .filter(p => p.referral_only === true)
+      .map(p => lsData.overrides?.[p.id as number] ?? p);
+    return [...base, ...(lsData.extras || [])].sort((a, b) => a.name.localeCompare(b.name));
+  }, [practitioners, lsData]);
 
   const filtered = useMemo(() => {
     const q = search.toLowerCase().trim();
-    if (!q) return referrals.sort((a, b) => a.name.localeCompare(b.name));
-    return referrals
-      .filter(p => {
-        const text = [p.name, p.title, p.therapist_type, p.short_bio, p.bio,
-          ...(Array.isArray(p.presentations) ? p.presentations : [p.presentations || ""]),
-          ...(Array.isArray(p.modalities) ? p.modalities : [p.modalities || ""])
-        ].filter(Boolean).join(" ").toLowerCase();
-        return q.split(" ").every(w => text.includes(w));
-      })
-      .sort((a, b) => a.name.localeCompare(b.name));
+    if (!q) return referrals;
+    return referrals.filter(p => {
+      const text = [p.name, p.title, p.therapist_type, p.short_bio, p.bio,
+        ...(Array.isArray(p.presentations) ? p.presentations : [p.presentations || ""]),
+        ...(Array.isArray(p.modalities) ? p.modalities : [p.modalities || ""])
+      ].filter(Boolean).join(" ").toLowerCase();
+      return q.split(" ").every(w => text.includes(w));
+    });
   }, [referrals, search]);
 
   const handleAdd = (p: Practitioner) => {
-    setExtras(prev => [...prev, { ...p, referral_source: "external" }]);
+    const existingIds = [...practitioners, ...(lsData.extras || [])].map(x => x.id as number).filter(Boolean);
+    const newId = Math.max(0, ...existingIds) + 1;
+    const next = { ...lsData, extras: [...(lsData.extras || []), { ...p, id: newId, referral_source: "external", referral_only: true }] };
+    saveLS(next);
     setShowAddForm(false);
   };
 
-  const handleEdit = (p: Practitioner) => {
-    setEditingP(p);
-  };
+  const handleEdit = (p: Practitioner) => setEditingP(p);
 
   const handleEditSave = (updated: Practitioner) => {
-    // If it's an in-session extra, update it there; otherwise store as an override
-    setExtras(prev => {
-      const idx = prev.findIndex(e => e.id === updated.id);
-      if (idx !== -1) {
-        const next = [...prev];
-        next[idx] = updated;
-        return next;
-      }
-      return prev;
-    });
-    setOverrides(prev => ({ ...prev, [updated.id as number]: updated }));
+    const isExtra = (lsData.extras || []).some(e => e.id === updated.id);
+    if (isExtra) {
+      const next = { ...lsData, extras: (lsData.extras || []).map(e => e.id === updated.id ? updated : e) };
+      saveLS(next);
+    } else {
+      const next = { ...lsData, overrides: { ...(lsData.overrides || {}), [updated.id as number]: updated } };
+      saveLS(next);
+    }
     setEditingP(null);
+  };
+
+  const handleDelete = (p: Practitioner) => {
+    if (!confirm(`Remove ${p.name} from Referral Network?`)) return;
+    const isExtra = (lsData.extras || []).some(e => e.id === p.id);
+    if (isExtra) {
+      const next = { ...lsData, extras: (lsData.extras || []).filter(e => e.id !== p.id) };
+      saveLS(next);
+    } else {
+      // Mark as deleted in overrides with a special flag
+      const next = { ...lsData, overrides: { ...(lsData.overrides || {}), [p.id as number]: { ...p, _deleted: true } as any } };
+      saveLS(next);
+    }
   };
 
   return (
@@ -615,7 +640,7 @@ const ReferralNetwork: React.FC<ReferralNetworkProps> = ({ practitioners }) => {
           {!search && <p style={{ fontSize: 13 }}>Add external referrals using the button above.</p>}
         </div>
       ) : (
-        filtered.map((p, idx) => <ReferralCard key={idx} p={p} onEdit={handleEdit} />)
+        filtered.map((p, idx) => <ReferralCard key={p.id ?? idx} p={p} onEdit={handleEdit} onDelete={handleDelete} />)
       )}
     </div>
   );
