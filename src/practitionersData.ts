@@ -1,6 +1,6 @@
 // AUTO-GENERATED — do not edit directly
 export const AVAILABILITY_LAST_UPDATED = "22 Jun 2026 at 10:54am";
-export const practitionersData = [
+export const PRACTITIONERS_DATA = [
   {
     "id": 1,
     "name": "Alex Barry",
