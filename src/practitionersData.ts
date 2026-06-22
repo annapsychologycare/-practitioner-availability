@@ -1,5 +1,5 @@
 // AUTO-GENERATED — do not edit directly
-export const AVAILABILITY_LAST_UPDATED = "22 Jun 2026 at 10:54am";
+export const AVAILABILITY_LAST_UPDATED = "22 Jun 2026 at 1:04pm";
 export const PRACTITIONERS_DATA = [
   {
     "id": 1,
@@ -49,13 +49,13 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/alex-barry/",
     "locations": [
       {
-        "availability": "Mondays at 7:30pm (Fortnightly: Starting 13th Jul)",
+        "availability": "Thursdays at 2:30pm (Fortnightly: Starting 25th Jun)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
       },
       {
-        "availability": "Mondays at 7:30pm (Fortnightly: Starting 13th Jul)",
+        "availability": "Wednesdays at 12:30pm (Fortnightly: Starting 1st Jul)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Telehealth"
@@ -237,7 +237,7 @@ export const PRACTITIONERS_DATA = [
     "locations": [
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "Mondays at 10am (Fortnightly: Starting 22nd Jun)\nMondays at 1pm (Fortnightly: Starting 29th Jun)\nSaturdays at 9am (Fortnightly: Starting 18th Jul)",
+        "availability": "Saturdays at 9am (Weekly: Starting 11th Jul)\nMondays at 1pm (Fortnightly: Starting 29th Jun)\nSaturdays at 1pm (Fortnightly: Starting 4th Jul)",
         "weekly_availability": [],
         "fortnightly_availability": []
       }
@@ -505,13 +505,13 @@ export const PRACTITIONERS_DATA = [
     "locations": [
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "Fridays at 11am (Weekly: Starting 19th Jun)\nFridays at 8am (Weekly: Starting 3rd Jul)",
+        "availability": "Fridays at 8am (Weekly: Starting 3rd Jul)\nFridays at 11am (Fortnightly: Starting 26th Jun)",
         "weekly_availability": [],
         "fortnightly_availability": []
       },
       {
         "location": "Telehealth",
-        "availability": "Fridays at 11am (Weekly: Starting 19th Jun)\nFridays at 8am (Weekly: Starting 3rd Jul)",
+        "availability": "",
         "weekly_availability": [],
         "fortnightly_availability": []
       }
@@ -837,14 +837,14 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/dr-maddie-brygel-psychologist/",
     "locations": [
       {
-        "availability": "Fridays at 10am (Fortnightly: Starting 19th Jun)\nFridays at 9am (Fortnightly: Starting 31st Jul)\nThursdays at 1pm (Weekly: Starting 25th Jun)\nThursdays at 9am (Fortnightly: Starting 2nd Jul)",
+        "availability": "",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
       },
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "Mondays at 8am (Fortnightly: Starting 22nd Jun)",
+        "availability": "",
         "weekly_availability": [
           {
             "day": "Tuesday",
@@ -875,7 +875,7 @@ export const PRACTITIONERS_DATA = [
         "fortnightly_availability": []
       },
       {
-        "availability": "Mondays at 8am (Fortnightly: Starting 22nd Jun)",
+        "availability": "Mondays at 8am (Fortnightly: Starting 6th Jul)\nMondays at 10am (Fortnightly: Starting 6th Jul)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Telehealth"
@@ -1044,14 +1044,14 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/nick-burden/",
     "locations": [
       {
-        "availability": "Tuesdays at 12:30pm (Fortnightly: Starting 23rd Jun)\nTuesdays at 12:30pm (Weekly: Starting 30th Jun)\nTuesdays at 1:30pm (Fortnightly: Starting 30th Jun)\nTuesdays at 2:30pm (Fortnightly: Starting 30th Jun)\nTuesdays at 8am (Fortnightly: Starting 30th Jun)\nWednesdays at 12pm (Fortnightly: Starting 1st Jul)",
+        "availability": "",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Telehealth"
       },
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "Tuesdays at 12:30pm (Fortnightly: Starting 23rd Jun)\nTuesdays at 12:30pm (Weekly: Starting 30th Jun)\nTuesdays at 1:30pm (Fortnightly: Starting 30th Jun)\nTuesdays at 2:30pm (Fortnightly: Starting 30th Jun)\nTuesdays at 8am (Fortnightly: Starting 30th Jun)\nWednesdays at 12pm (Fortnightly: Starting 1st Jul)",
+        "availability": "Thursdays at 10am (Fortnightly: Starting 25th Jun)",
         "weekly_availability": [],
         "fortnightly_availability": []
       }
@@ -1190,7 +1190,7 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/allison-conyer/",
     "locations": [
       {
-        "availability": "Thursdays at 12pm (Fortnightly: Starting 2nd Jul)",
+        "availability": "Thursdays at 12pm (Fortnightly: Starting 16th Jul)",
         "weekly_availability": [],
         "fortnightly_availability": [
           {
@@ -1337,7 +1337,7 @@ export const PRACTITIONERS_DATA = [
         "location": "Telehealth"
       },
       {
-        "availability": "Mondays at 11:30am (Fortnightly: Starting 29th Jun)\nMondays at 11:30am (Weekly: Starting 6th Jul)\nMondays at 12:30pm (Fortnightly: Starting 22nd Jun)\nMondays at 1:30pm (Fortnightly: Starting 22nd Jun)\nMondays at 1:30pm (Weekly: Starting 6th Jul)\nMondays at 8am (Fortnightly: Starting 22nd Jun)\nMondays at 8am (Weekly: Starting 6th Jul)\nTuesdays at 2:30pm (Fortnightly: Starting 14th Jul)",
+        "availability": "Mondays at 8am (Weekly: Starting 6th Jul)\nMondays at 1:30pm (Weekly: Starting 6th Jul)\nMondays at 12:30pm (Fortnightly: Starting 6th Jul)\nMondays at 10am (Fortnightly: Starting 13th Jul)\nThursdays at 8am (Fortnightly: Starting 9th Jul)\nTuesdays at 2:30pm (Fortnightly: Starting 14th Jul)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Burke Rd, Camberwell"
@@ -1589,7 +1589,7 @@ export const PRACTITIONERS_DATA = [
     "locations": [
       {
         "location": "Greville St, Prahran",
-        "availability": "Fridays at 2:30pm (Fortnightly: Starting 24th Jul)\nFridays at 3:30pm (Fortnightly: Starting 26th Jun)\nMondays at 11am (Fortnightly: Starting 29th Jun)\nMondays at 9am (Fortnightly: Starting 22nd Jun)\nSaturdays at 12pm (Fortnightly: Starting 4th Jul)\nSaturdays at 1pm (Weekly: Starting 27th Jun)\nSaturdays at 3pm (Weekly: Starting 27th Jun)",
+        "availability": "Saturdays at 1pm (Weekly: Starting 4th Jul)\nSaturdays at 3pm (Fortnightly: Starting 25th Jul)",
         "weekly_availability": [],
         "fortnightly_availability": []
       }
@@ -1800,7 +1800,7 @@ export const PRACTITIONERS_DATA = [
     "locations": [
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "Thursdays at 12pm (Weekly: Starting 25th Jun)\nWednesdays at 12pm (Fortnightly: Starting 1st Jul)\nWednesdays at 1pm (Fortnightly: Starting 12th Aug)",
+        "availability": "Thursdays at 12pm (Weekly: Starting 25th Jun)\nTuesdays at 1pm (Weekly: Starting 23rd Jun)\nThursdays at 9am (Fortnightly: Starting 25th Jun)\nTuesdays at 10am (Fortnightly: Starting 23rd Jun)\nTuesdays at 9am (Fortnightly: Starting 30th Jun)\nWednesdays at 12pm (Fortnightly: Starting 1st Jul)\nWednesdays at 1pm (Fortnightly: Starting 12th Aug)",
         "weekly_availability": [],
         "fortnightly_availability": []
       }
@@ -2289,7 +2289,7 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/cristina-jimenez/",
     "locations": [
       {
-        "availability": "Tuesdays at 4:30pm (Weekly: Starting 23rd Jun)",
+        "availability": "Tuesdays at 11am (Weekly: Starting 21st Jul)\nTuesdays at 12pm (Weekly: Starting 21st Jul)\nTuesdays at 4:30pm (Weekly: Starting 21st Jul)\nTuesdays at 10am (Weekly: Starting 28th Jul)\nTuesdays at 3:30pm (Fortnightly: Starting 21st Jul)\nTuesdays at 5:30pm (Fortnightly: Starting 21st Jul)\nTuesdays at 1pm (Fortnightly: Starting 28th Jul)\nTuesdays at 6:30pm (Fortnightly: Starting 11th Aug)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
@@ -2599,20 +2599,20 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/nicholas-kleeman/",
     "locations": [
       {
-        "availability": "Thursdays at 10am (Fortnightly: Starting 6th Aug)\nWednesdays at 8am (Fortnightly: Starting 12th Aug)",
+        "availability": "",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
       },
       {
-        "availability": "Thursdays at 10am (Fortnightly: Starting 6th Aug)\nWednesdays at 8am (Fortnightly: Starting 12th Aug)",
+        "availability": "",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Telehealth"
       },
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "Thursdays at 10am (Fortnightly: Starting 6th Aug)\nWednesdays at 8am (Fortnightly: Starting 12th Aug)",
+        "availability": "Thursdays at 8am (Weekly: Starting 30th Jul)\nThursdays at 9am (Weekly: Starting 30th Jul)\nThursdays at 1pm (Weekly: Starting 6th Aug)\nThursdays at 12pm (Weekly: Starting 13th Aug)\nFridays at 2pm (Fortnightly: Starting 7th Aug)\nFridays at 1pm (Fortnightly: Starting 14th Aug)\nWednesdays at 8am (Fortnightly: Starting 12th Aug)",
         "weekly_availability": [],
         "fortnightly_availability": []
       }
@@ -2886,7 +2886,7 @@ export const PRACTITIONERS_DATA = [
     "locations": [
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "Wednesdays at 7:30pm (Fortnightly: Starting 1st Jul)",
+        "availability": "Wednesdays at 2:30pm (Fortnightly: Starting 1st Jul)\nWednesdays at 7:30pm (Fortnightly: Starting 1st Jul)",
         "weekly_availability": [],
         "fortnightly_availability": []
       },
@@ -3011,7 +3011,7 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/therese-van-maanen/",
     "locations": [
       {
-        "availability": "Thursdays at 10:15am (Weekly: Starting 16th Jul)\nThursdays at 12:45pm (Fortnightly: Starting 23rd Jul)\nThursdays at 2pm (Fortnightly: Starting 23rd Jul)\nThursdays at 3:15pm (Fortnightly: Starting 30th Jul)",
+        "availability": "Thursdays at 11:30am (Weekly: Starting 16th Jul)\nThursdays at 10:15am (Weekly: Starting 23rd Jul)\nThursdays at 12:45pm (Fortnightly: Starting 23rd Jul)\nThursdays at 2pm (Fortnightly: Starting 23rd Jul)\nThursdays at 3:15pm (Fortnightly: Starting 30th Jul)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Victoria St, St Kilda"
@@ -3150,7 +3150,7 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/belinda-pacella/",
     "locations": [
       {
-        "availability": "Mondays at 12pm (Fortnightly: Starting 22nd Jun)\nThursdays at 11am (Fortnightly: Starting 25th Jun)",
+        "availability": "Thursdays at 9am (Fortnightly: Starting 27th Aug)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
@@ -3243,7 +3243,7 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/poorna-selvaraja/",
     "locations": [
       {
-        "availability": "Tuesdays at 2:30pm (Fortnightly: Starting 21st Jul)",
+        "availability": "Mondays at 11am (Fortnightly: Starting 27th Jul)\nTuesdays at 2:30pm (Fortnightly: Starting 21st Jul)\nTuesdays at 8:30am (Fortnightly: Starting 28th Jul)\nTuesdays at 11:30am (Fortnightly: Starting 28th Jul)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
@@ -3400,7 +3400,7 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/pete-steele/",
     "locations": [
       {
-        "availability": "Tuesdays at 10am (Fortnightly: Starting 23rd Jun)\nWednesdays at 2pm (Fortnightly: Starting 24th Jun)",
+        "availability": "Wednesdays at 11am (Fortnightly: Starting 24th Jun)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
@@ -3615,7 +3615,7 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/clare-tuttleby/",
     "locations": [
       {
-        "availability": "Mondays at 3:30pm (Fortnightly: Starting 22nd Jun)\nMondays at 5:30pm (Fortnightly: Starting 29th Jun)\nTuesdays at 3:30pm (Fortnightly: Starting 7th Jul)\nTuesdays at 6:30pm (Fortnightly: Starting 30th Jun)",
+        "availability": "Tuesdays at 2:30pm (Weekly: Starting 23rd Jun)\nMondays at 5:30pm (Fortnightly: Starting 13th Jul)\nTuesdays at 3:30pm (Fortnightly: Starting 7th Jul)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
@@ -3915,7 +3915,7 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/karen-pereira-york/",
     "locations": [
       {
-        "availability": "Mondays at 8:30am (Fortnightly: Starting 6th Jul)\nThursdays at 10:30am (Fortnightly: Starting 25th Jun)\nThursdays at 1pm (Fortnightly: Starting 25th Jun)\nThursdays at 9:30am (Fortnightly: Starting 16th Jul)\nTuesdays at 3:30pm (Fortnightly: Starting 30th Jun)\nWednesdays at 1pm (Fortnightly: Starting 1st Jul)\nWednesdays at 4:30pm (Fortnightly: Starting 1st Jul)\nWednesdays at 5:30pm (Weekly: Starting 24th Jun)",
+        "availability": "Wednesdays at 5:30pm (Weekly: Starting 24th Jun)\nThursdays at 10:30am (Fortnightly: Starting 25th Jun)\nThursdays at 9:30am (Fortnightly: Starting 16th Jul)\nWednesdays at 4:30pm (Fortnightly: Starting 1st Jul)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
