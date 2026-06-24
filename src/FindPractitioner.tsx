@@ -100,7 +100,7 @@ const MODALITY_OPTIONS = [
   "Compassion-Focused Therapy (CFT)", "Compassionate Inquiry",
   "Couples Counselling", "Dialectical Behaviour Therapy (DBT)",
   "Eclectic / Integrative Therapy", "Emotionally Focused Therapy (EFT)",
-  "EMDR (Eye Movement Desensitisation and Reprocessing)", "Existential Therapy",
+  "Eye Movement Desensitisation and Reprocessing (EMDR)", "Existential Therapy",
   "Exposure and Response Prevention (ERP)", "Family Systems Therapy",
   "Gestalt Therapy", "Gottman Method Couples Therapy", "Humanistic / Person-Centred",
   "Internal Family Systems (IFS) / Parts Work - Informed",
