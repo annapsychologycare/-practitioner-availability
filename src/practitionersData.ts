@@ -2427,13 +2427,13 @@ export const PRACTITIONERS_DATA = [
         "availability": "Saturdays at 12pm (Weekly: Starting 15th Aug)\nSaturdays at 10am (Fortnightly: Starting 25th Jul)",
         "weekly_availability": [],
         "fortnightly_availability": [],
-        "location": "Burke Rd, Camberwell"
+        "location": "Telehealth"
       }
     ],
     "last_updated": "2026-07-12",
     "availability": [
-      "Saturdays at 12pm (Weekly: Starting 15th Aug) \u2014 Burke Rd, Camberwell",
-      "Saturdays at 10am (Fortnightly: Starting 25th Jul) \u2014 Burke Rd, Camberwell"
+      "Saturdays at 12pm (Weekly: Starting 15th Aug) \u2014 Telehealth",
+      "Saturdays at 10am (Fortnightly: Starting 25th Jul) \u2014 Telehealth"
     ],
     "short_bio": "Chiara is a neurodivergent, neuro-affirming clinical psychologist supporting adults with autism, ADHD and diverse needs using collaborative, family-inclusive, evidence-based therapies.",
     "weekly_availability": [],
@@ -4046,4 +4046,4 @@ export const PRACTITIONERS_DATA = [
   }
 ];
 export const practitionersData = PRACTITIONERS_DATA;
-export const AVAILABILITY_LAST_UPDATED = "14 Jul 2026 at 9:52am";
+export const AVAILABILITY_LAST_UPDATED = "14 Jul 2026 at 10:02am";
