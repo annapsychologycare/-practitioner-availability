@@ -31,6 +31,11 @@ interface Filters {
   availabilityTypes: string[];
   days: string[];
   daysMatchAll: boolean;
+
+  // Gate filters
+  gateClientType: string;
+  gateAgeRep: number | null;
+  gateExcludeFemaleOnly: boolean;
 }
 
 const DAYS_OF_WEEK = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
@@ -242,6 +247,25 @@ function scoreMatch(p: Practitioner, filters: Filters): number {
         if (age < minAge) return -1;
       }
     }
+  }
+
+  // Gate: client type (Individual / Couples)
+  if (filters.gateClientType && p.client_types) {
+    if (!p.client_types.toLowerCase().includes(filters.gateClientType.toLowerCase())) return -1;
+  }
+
+  // Gate: age bracket
+  if (filters.gateAgeRep !== null && p.age_range) {
+    const nums = p.age_range.match(/\d+/g);
+    if (nums && nums.length > 0) {
+      const minAge = Math.min(...nums.map(Number));
+      if (filters.gateAgeRep < minAge) return -1;
+    }
+  }
+
+  // Gate: client gender — exclude female-only practitioners if client is not female
+  if (filters.gateExcludeFemaleOnly && (p as any).client_gender_accepted === "Female Only") {
+    return -1;
   }
 
   if (filters.practitionerNames.length > 0) {
@@ -508,6 +532,24 @@ const PractitionerCard: React.FC<CardProps> = ({ p, locationFilter, isSelected, 
 };
 
 export default function FindPractitioner({ practitioners }: Props) {
+  // Gate state — mandatory qualifying questions
+  const [gateClientType, setGateClientType] = useState("");
+  const [gateAgeBracket, setGateAgeBracket] = useState("");
+  const [gateClientGender, setGateClientGender] = useState("");
+
+
+  const gateComplete = !!gateClientType && !!gateAgeBracket && !!gateClientGender;
+
+  const AGE_BRACKET_MAP: Record<string, number> = {
+    "Under 12": 10,
+    "12–15": 12,
+    "16–17": 16,
+    "18–24": 18,
+    "25+": 25,
+  };
+  const gateAgeRep = gateAgeBracket ? (AGE_BRACKET_MAP[gateAgeBracket] ?? null) : null;
+  const gateExcludeFemaleOnly = gateClientGender === "Male" || gateClientGender === "Non-binary / Other";
+
   const [keyword, setKeyword] = useState("");
   const [selectedLocations, setSelectedLocations] = useState<string[]>([]);
   const [locationMatchAll, setLocationMatchAll] = useState(false);
@@ -536,13 +578,13 @@ export default function FindPractitioner({ practitioners }: Props) {
   const allPractitionerNames = useMemo(() => practitioners.map(p => p.name).sort(), [practitioners]);
 
   const results = useMemo(() => {
-    const filters: Filters = { keyword, locations: selectedLocations, locationMatchAll, gender, clientType, therapistType, afterHours, hasAvailability, presentations: selectedPresentations, presentationsMatchAll, modalities: selectedModalities, modalitiesMatchAll, styles: selectedStyles, stylesMatchAll, billingTypes: selectedBillingTypes, clientAge, practitionerNames: selectedPractitionerNames, availabilityTypes: selectedAvailabilityTypes, days: selectedDays, daysMatchAll };
+    const filters: Filters = { keyword, locations: selectedLocations, locationMatchAll, gender, clientType, therapistType, afterHours, hasAvailability, presentations: selectedPresentations, presentationsMatchAll, modalities: selectedModalities, modalitiesMatchAll, styles: selectedStyles, stylesMatchAll, billingTypes: selectedBillingTypes, clientAge, practitionerNames: selectedPractitionerNames, availabilityTypes: selectedAvailabilityTypes, days: selectedDays, daysMatchAll, gateClientType, gateAgeRep, gateExcludeFemaleOnly };
     return practitioners
       .filter(p => !(p as any).referral_only)
       .map(p => ({ p, score: scoreMatch(p, filters) }))
       .filter(item => item.score >= 0)
       .sort((a, b) => b.score - a.score || a.p.name.localeCompare(b.p.name));
-  }, [practitioners, keyword, selectedLocations, locationMatchAll, gender, clientType, therapistType, afterHours, hasAvailability, selectedPresentations, presentationsMatchAll, selectedModalities, modalitiesMatchAll, selectedStyles, stylesMatchAll, selectedBillingTypes, clientAge, selectedPractitionerNames, selectedAvailabilityTypes, selectedDays, daysMatchAll]);
+  }, [practitioners, keyword, selectedLocations, locationMatchAll, gender, clientType, therapistType, afterHours, hasAvailability, selectedPresentations, presentationsMatchAll, selectedModalities, modalitiesMatchAll, selectedStyles, stylesMatchAll, selectedBillingTypes, clientAge, selectedPractitionerNames, selectedAvailabilityTypes, selectedDays, daysMatchAll, gateClientType, gateAgeRep, gateExcludeFemaleOnly]);
 
   const clearFilters = () => {
     setKeyword(""); setSelectedLocations([]); setLocationMatchAll(false); setGender(""); setClientType("");
@@ -580,6 +622,79 @@ export default function FindPractitioner({ practitioners }: Props) {
           <span>✓ Email sent successfully to the client!</span>
         </div>
       )}
+
+      {/* ── Mandatory Gate ── */}
+      <div className="rounded-xl mb-5 px-6 py-5" style={{ backgroundColor: "#f0edf5" }}>
+        <div className="flex items-center gap-2 mb-4">
+          <span className="text-xs font-bold uppercase tracking-widest px-2.5 py-1 rounded text-white" style={{ backgroundColor: "#2C244C" }}>Required</span>
+          <span className="font-semibold text-base" style={{ color: "#2C244C" }}>Tell us about the client first</span>
+        </div>
+
+        {/* Row 1: Session type + Client's age side by side */}
+        <div className="flex flex-wrap gap-10 mb-5">
+          {/* Q1: Session type */}
+          <div>
+            <div className="text-xs font-semibold mb-2" style={{ color: "#2C244C" }}>
+              Session type {gateClientType && <span className="text-green-600 ml-1">✓</span>}
+            </div>
+            <div className="flex gap-2 flex-wrap">
+              {["Individual", "Couples"].map(opt => (
+                <button key={opt} onClick={() => setGateClientType(opt)}
+                  className="px-4 py-1.5 rounded-full text-sm font-medium border transition-all"
+                  style={gateClientType === opt
+                    ? { backgroundColor: "#2C244C", color: "white", borderColor: "#2C244C" }
+                    : { backgroundColor: "white", color: "#2C244C", borderColor: "#CDA8BA" }}>
+                  {opt === "Individual" ? "👤 Individual" : "👥 Couples"}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Q2: Client age */}
+          <div>
+            <div className="text-xs font-semibold mb-2" style={{ color: "#2C244C" }}>
+              Client's age {gateAgeBracket && <span className="text-green-600 ml-1">✓</span>}
+            </div>
+            <div className="flex gap-2 flex-wrap">
+              {["Under 12", "12–15", "16–17", "18–24", "25+"].map(opt => (
+                <button key={opt} onClick={() => setGateAgeBracket(opt)}
+                  className="px-4 py-1.5 rounded-full text-sm font-medium border transition-all"
+                  style={gateAgeBracket === opt
+                    ? { backgroundColor: "#2C244C", color: "white", borderColor: "#2C244C" }
+                    : { backgroundColor: "white", color: "#2C244C", borderColor: "#CDA8BA" }}>
+                  {opt}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Row 2: Client gender */}
+        <div>
+          <div className="text-xs font-semibold mb-2" style={{ color: "#2C244C" }}>
+            Client's gender {gateClientGender && <span className="text-green-600 ml-1">✓</span>}
+          </div>
+          <div className="flex gap-2 flex-wrap">
+            {["Male", "Female", "Non-binary / Other"].map(opt => (
+              <button key={opt} onClick={() => setGateClientGender(opt)}
+                className="px-4 py-1.5 rounded-full text-sm font-medium border transition-all"
+                style={gateClientGender === opt
+                  ? { backgroundColor: "#2C244C", color: "white", borderColor: "#2C244C" }
+                  : { backgroundColor: "white", color: "#2C244C", borderColor: "#CDA8BA" }}>
+                {opt}
+              </button>
+            ))}
+          </div>
+          {(gateClientGender === "Male" || gateClientGender === "Non-binary / Other") && (
+            <div className="text-xs mt-2" style={{ color: "#8D5273" }}>
+              ⚠️ Alex Barry, Chiara Killey and Clare Tuttleby accept female clients only.
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* ── Search card — always visible ── */}
+      {true && <>
 
       <div className="card bg-white shadow-sm border mb-6" style={{ borderColor: "#CDA8BA" }}>
         <div className="card-body p-4">
@@ -799,7 +914,13 @@ export default function FindPractitioner({ practitioners }: Props) {
         </div>
       </div>
 
-      {results.length === 0 ? (
+      {!gateComplete ? (
+        <div className="card bg-white shadow-sm border" style={{ borderColor: "#CDA8BA" }}>
+          <div className="card-body text-center py-12">
+            <p className="text-base font-medium" style={{ color: "#2C244C" }}>Complete the required questions above to see matching practitioners</p>
+          </div>
+        </div>
+      ) : results.length === 0 ? (
         <div className="card bg-white shadow-sm border" style={{ borderColor: "#CDA8BA" }}>
           <div className="card-body text-center py-12">
             <p className="text-lg" style={{ color: "#36454F" }}>No practitioners match your search</p>
@@ -861,6 +982,9 @@ export default function FindPractitioner({ practitioners }: Props) {
           onSent={handleSent}
         />
       )}
+
+      </> /* end gate-complete wrapper */}
+
     </div>
   );
 }
