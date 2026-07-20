@@ -1582,7 +1582,8 @@ export const PRACTITIONERS_DATA = [
       "Self-harm or risky behaviours",
       "Culturally and linguistically diverse clients",
       "LGBTQIA+ affirmative therapy",
-      "Refugees / migrants / asylum seekers"
+      "Refugees / migrants / asylum seekers",
+      "Depersonalisation / Derealisation"
     ],
     "modalities": [
       "Acceptance and Commitment Therapy (ACT)",
@@ -2430,7 +2431,8 @@ export const PRACTITIONERS_DATA = [
       "Antisocial Personality Disorder",
       "Avoidant Personality Disorder",
       "Health Anxiety/ Medical Trauma",
-      "LGBTQIA+ affirmative therapy"
+      "LGBTQIA+ affirmative therapy",
+      "Depersonalisation / Derealisation"
     ],
     "modalities": [
       "Acceptance and Commitment Therapy (ACT)",
