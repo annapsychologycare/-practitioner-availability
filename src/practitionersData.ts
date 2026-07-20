@@ -615,7 +615,8 @@ export const PRACTITIONERS_DATA = [
       "ADD and ADHD",
       "Autism Spectrum Disorders (ASD)",
       "Emotion Dysregulation / Impulsivity",
-      "LGBTQIA+ affirmative therapy"
+      "LGBTQIA+ affirmative therapy",
+      "Depersonalisation / Derealisation"
     ],
     "modalities": [
       "Acceptance and Commitment Therapy (ACT)",
@@ -3847,7 +3848,8 @@ export const PRACTITIONERS_DATA = [
       "Bulimia Nervosa ( NOT CURRENT)",
       "Eating Disorders (Not Current)",
       "Culturally and linguistically diverse clients",
-      "LGBTQIA+ affirmative therapy"
+      "LGBTQIA+ affirmative therapy",
+      "Depersonalisation / Derealisation"
     ],
     "modalities": [
       "Acceptance and Commitment Therapy (ACT)",
