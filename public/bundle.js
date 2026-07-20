@@ -1397,7 +1397,7 @@ See https://react.dev/link/invalid-hook-call for tips about how to debug and fix
         return dispatcher;
       }
       typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart === "function" && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(Error());
-      var React13 = require_react(), Internals = {
+      var React14 = require_react(), Internals = {
         d: {
           f: noop,
           r: function() {
@@ -1413,7 +1413,7 @@ See https://react.dev/link/invalid-hook-call for tips about how to debug and fix
         },
         p: 0,
         findDOMNode: null
-      }, REACT_PORTAL_TYPE = Symbol.for("react.portal"), ReactSharedInternals = React13.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE;
+      }, REACT_PORTAL_TYPE = Symbol.for("react.portal"), ReactSharedInternals = React14.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE;
       typeof Map === "function" && Map.prototype != null && typeof Map.prototype.forEach === "function" && typeof Set === "function" && Set.prototype != null && typeof Set.prototype.clear === "function" && typeof Set.prototype.forEach === "function" || console.error("React depends on Map and Set built-in types. Make sure that you load a polyfill in older browsers. https://reactjs.org/link/react-polyfills");
       exports.__DOM_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE = Internals;
       exports.createPortal = function(children, container) {
@@ -2828,7 +2828,7 @@ Error generating stack: ` + x.message + `
         type === "number" && getActiveElement(node.ownerDocument) === node || node.defaultValue === "" + value || (node.defaultValue = "" + value);
       }
       function validateOptionProps(element, props) {
-        props.value == null && (typeof props.children === "object" && props.children !== null ? React13.Children.forEach(props.children, function(child) {
+        props.value == null && (typeof props.children === "object" && props.children !== null ? React14.Children.forEach(props.children, function(child) {
           child == null || typeof child === "string" || typeof child === "number" || typeof child === "bigint" || didWarnInvalidChild || (didWarnInvalidChild = true, console.error("Cannot infer the option value of complex children. Pass a `value` prop or use a plain string as children to <option>."));
         }) : props.dangerouslySetInnerHTML == null || didWarnInvalidInnerHTML || (didWarnInvalidInnerHTML = true, console.error("Pass a `value` prop if you set dangerouslyInnerHTML so React knows which value should be selected.")));
         props.selected == null || didWarnSelectedSetOnOption || (console.error("Use the `defaultValue` or `value` props on <select> instead of setting `selected` on <option>."), didWarnSelectedSetOnOption = true);
@@ -14371,14 +14371,14 @@ Check the render method of %s.`, getComponentNameFromFiber(current) || "Unknown"
         container[internalContainerInstanceKey] && (container._reactRootContainer ? console.error("You are calling ReactDOMClient.createRoot() on a container that was previously passed to ReactDOM.render(). This is not supported.") : console.error("You are calling ReactDOMClient.createRoot() on a container that has already been passed to createRoot() before. Instead, call root.render() on the existing root instead if you want to update it."));
       }
       typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart === "function" && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(Error());
-      var Scheduler = require_scheduler(), React13 = require_react(), ReactDOM = require_react_dom(), assign = Object.assign, REACT_LEGACY_ELEMENT_TYPE = Symbol.for("react.element"), REACT_ELEMENT_TYPE = Symbol.for("react.transitional.element"), REACT_PORTAL_TYPE = Symbol.for("react.portal"), REACT_FRAGMENT_TYPE = Symbol.for("react.fragment"), REACT_STRICT_MODE_TYPE = Symbol.for("react.strict_mode"), REACT_PROFILER_TYPE = Symbol.for("react.profiler"), REACT_CONSUMER_TYPE = Symbol.for("react.consumer"), REACT_CONTEXT_TYPE = Symbol.for("react.context"), REACT_FORWARD_REF_TYPE = Symbol.for("react.forward_ref"), REACT_SUSPENSE_TYPE = Symbol.for("react.suspense"), REACT_SUSPENSE_LIST_TYPE = Symbol.for("react.suspense_list"), REACT_MEMO_TYPE = Symbol.for("react.memo"), REACT_LAZY_TYPE = Symbol.for("react.lazy");
+      var Scheduler = require_scheduler(), React14 = require_react(), ReactDOM = require_react_dom(), assign = Object.assign, REACT_LEGACY_ELEMENT_TYPE = Symbol.for("react.element"), REACT_ELEMENT_TYPE = Symbol.for("react.transitional.element"), REACT_PORTAL_TYPE = Symbol.for("react.portal"), REACT_FRAGMENT_TYPE = Symbol.for("react.fragment"), REACT_STRICT_MODE_TYPE = Symbol.for("react.strict_mode"), REACT_PROFILER_TYPE = Symbol.for("react.profiler"), REACT_CONSUMER_TYPE = Symbol.for("react.consumer"), REACT_CONTEXT_TYPE = Symbol.for("react.context"), REACT_FORWARD_REF_TYPE = Symbol.for("react.forward_ref"), REACT_SUSPENSE_TYPE = Symbol.for("react.suspense"), REACT_SUSPENSE_LIST_TYPE = Symbol.for("react.suspense_list"), REACT_MEMO_TYPE = Symbol.for("react.memo"), REACT_LAZY_TYPE = Symbol.for("react.lazy");
       Symbol.for("react.scope");
       var REACT_ACTIVITY_TYPE = Symbol.for("react.activity");
       Symbol.for("react.legacy_hidden");
       Symbol.for("react.tracing_marker");
       var REACT_MEMO_CACHE_SENTINEL = Symbol.for("react.memo_cache_sentinel");
       Symbol.for("react.view_transition");
-      var MAYBE_ITERATOR_SYMBOL = Symbol.iterator, REACT_CLIENT_REFERENCE = Symbol.for("react.client.reference"), isArrayImpl = Array.isArray, ReactSharedInternals = React13.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, ReactDOMSharedInternals = ReactDOM.__DOM_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, NotPending = Object.freeze({
+      var MAYBE_ITERATOR_SYMBOL = Symbol.iterator, REACT_CLIENT_REFERENCE = Symbol.for("react.client.reference"), isArrayImpl = Array.isArray, ReactSharedInternals = React14.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, ReactDOMSharedInternals = ReactDOM.__DOM_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, NotPending = Object.freeze({
         pending: false,
         data: null,
         method: null,
@@ -17013,7 +17013,7 @@ Check the top-level render call using <` + componentName2 + ">.");
         }
       };
       (function() {
-        var isomorphicReactPackageVersion = React13.version;
+        var isomorphicReactPackageVersion = React14.version;
         if (isomorphicReactPackageVersion !== "19.2.7")
           throw Error(`Incompatible React versions: The "react" and "react-dom" packages must have the exact same version. Instead got:
   - react:      ` + (isomorphicReactPackageVersion + `
@@ -17113,7 +17113,7 @@ You might need to use a local HTTP server (instead of file://): https://react.de
   });
 
   // app.tsx
-  var import_react15 = __toESM(require_react(), 1);
+  var import_react16 = __toESM(require_react(), 1);
 
   // FindPractitioner.tsx
   var import_react5 = __toESM(require_react(), 1);
@@ -28940,20 +28940,429 @@ Fridays at 2pm (Fortnightly: Starting 6th Jun)`
     }, undefined, true, undefined, this);
   }
 
+  // CRMSyncTab.tsx
+  var import_react15 = __toESM(require_react(), 1);
+  var jsx_dev_runtime13 = __toESM(require_jsx_dev_runtime(), 1);
+  var FIELD_SOURCES = [
+    { field: "Presentations (Clinical Interests)", appKey: "presentations", crmField: "Clinical_Interests", source: "crm", note: "✅ Live — synced from CRM" },
+    { field: "Modalities", appKey: "modalities", crmField: "Modalities", source: "available", note: "\uD83D\uDFE1 Available in CRM — not yet synced" },
+    { field: "Bio", appKey: "bio", crmField: "Bio", source: "available", note: "\uD83D\uDFE1 Available in CRM — not yet synced" },
+    { field: "Short Bio", appKey: "short_bio", crmField: "Short_Bio", source: "available", note: "\uD83D\uDFE1 Available in CRM — not yet synced" },
+    { field: "Ages Accepted", appKey: "ages_accepted", crmField: "Ages", source: "available", note: "\uD83D\uDFE1 Available in CRM — not yet synced" },
+    { field: "Session Types (Individual/Couples)", appKey: "session_types", crmField: "Client_Types", source: "available", note: "\uD83D\uDFE1 Available in CRM — not yet synced" },
+    { field: "Languages", appKey: "languages", crmField: "Languages_I_am_fluent_in", source: "available", note: "\uD83D\uDFE1 Available in CRM — not yet synced" },
+    { field: "Pronouns", appKey: "pronouns", crmField: "Pronouns", source: "available", note: "\uD83D\uDFE1 Available in CRM — not yet synced" },
+    { field: "Email", appKey: "email", crmField: "Email", source: "available", note: "\uD83D\uDFE1 Available in CRM — not yet synced" },
+    { field: "Role / Modality type", appKey: "role", crmField: "Modality", source: "available", note: "\uD83D\uDFE1 Available in CRM — not yet synced" },
+    { field: "Locations", appKey: "locations", crmField: "—", source: "manual", note: "\uD83D\uDD35 Manual — set in app config" },
+    { field: "Availability", appKey: "availability", crmField: "—", source: "manual", note: "\uD83D\uDD35 Manual — CSV import from Zanda" },
+    { field: "Photo", appKey: "photo_url", crmField: "—", source: "manual", note: "\uD83D\uDD35 Manual — uploaded directly" },
+    { field: "Client Gender Accepted", appKey: "client_gender_accepted", crmField: "—", source: "manual", note: "\uD83D\uDD35 Manual — set in app config" }
+  ];
+  var CRM_DATA = {
+    "Alex Barry": { in_crm: true, crm_presentations: [], crm_modalities: ["Acceptance and Commitment Therapy (ACT)", "Cognitive Behavioural Therapy (CBT)", "Dialectical Behaviour Therapy (DBT)", "Mindfulness-Based Cognitive Therapy (MBCT)", "Narrative Therapy", "Schema Therapy", "Trauma-Informed Care"], crm_bio: "", crm_short_bio: "", crm_ages: ["18 Yrs +"], crm_client_types: ["Individual"], crm_languages: "English", crm_pronouns: "She/Her", crm_email: "", crm_role: ["Clinical Psychologist"] },
+    "Rebekah Barson": { in_crm: true, crm_presentations: [], crm_modalities: [], crm_bio: "", crm_short_bio: "", crm_ages: ["18 Yrs +"], crm_client_types: ["Couples", "Individual"], crm_languages: "English", crm_pronouns: "She/Her", crm_email: "", crm_role: ["Psychologist"] },
+    "Brigid Blanckenberg": { in_crm: true, crm_presentations: [], crm_modalities: ["Acceptance and Commitment Therapy (ACT)", "Cognitive Behavioural Therapy (CBT)", "Mindfulness-Based Cognitive Therapy (MBCT)"], crm_bio: "", crm_short_bio: "", crm_ages: ["18 Yrs +"], crm_client_types: ["Individual"], crm_languages: "English, Afrikaans", crm_pronouns: "She/Her", crm_email: "", crm_role: ["Psychologist Registrar"] },
+    "Amy Bortz": { in_crm: true, crm_presentations: [], crm_modalities: [], crm_bio: "", crm_short_bio: "", crm_ages: ["18 Yrs +"], crm_client_types: ["Individual"], crm_languages: "English", crm_pronouns: "She/Her", crm_email: "", crm_role: ["Psychologist Registrar"] },
+    "Ruby Bouhadana": { in_crm: true, crm_presentations: [], crm_modalities: ["Acceptance and Commitment Therapy (ACT)", "Attachment-Based Therapy", "Behavioural Activation (BA)", "Cognitive Behavioural Therapy (CBT)", "Dialectical Behaviour Therapy (DBT)", "Emotion-Focused Therapy (EFT)", "Exposure and Response Prevention (ERP)", "Internal Family Systems (IFS) / Parts Work (Informed)", "Internal Family Systems (IFS) / Parts Work (Level 1 Certified)", "Interpersonal Therapy (IPT)", "Motivational Interviewing (MI)", "Schema Therapy"], crm_bio: "Ruby Bouhadana has a full bio in CRM", crm_short_bio: "A warm clinical psychology registrar integrating IFS, CBT, ACT, schema and mindfulness to support adults toward self-understanding, compassion and emotionally grounded change.", crm_ages: ["18 Yrs +"], crm_client_types: ["Individual"], crm_languages: "English", crm_pronouns: "She/Her", crm_email: "ruby.psychologycare@gmail.com", crm_role: ["Clinical Psychologist"] },
+    "Dr Maddie Brygel": { in_crm: true, crm_presentations: [], crm_modalities: [], crm_bio: "", crm_short_bio: "", crm_ages: ["18 Yrs +"], crm_client_types: ["Individual"], crm_languages: "English", crm_pronouns: "She/Her", crm_email: "", crm_role: ["Clinical Psychologist"] },
+    "Nick Burden": { in_crm: true, crm_presentations: [], crm_modalities: ["Acceptance and Commitment Therapy (ACT)", "Motivational Interviewing (MI)"], crm_bio: "", crm_short_bio: "", crm_ages: ["18 Yrs +"], crm_client_types: ["Individual"], crm_languages: "English", crm_pronouns: "He/Him", crm_email: "", crm_role: ["Mental Health Social Worker"] },
+    "Dr Krista De Castella": { in_crm: true, crm_presentations: [], crm_modalities: [], crm_bio: "", crm_short_bio: "", crm_ages: [], crm_client_types: ["Couples"], crm_languages: "", crm_pronouns: "", crm_email: "", crm_role: [] },
+    "Allison Conyer": { in_crm: true, crm_presentations: [], crm_modalities: ["Acceptance and Commitment Therapy (ACT)", "Cognitive Behavioural Therapy (CBT)", "Emotion-Focused Therapy (EFT)", "Gottman Method Couples Therapy"], crm_bio: "", crm_short_bio: "", crm_ages: ["18 Yrs +"], crm_client_types: ["Couples", "Family"], crm_languages: "English", crm_pronouns: "She/Her", crm_email: "", crm_role: ["Psychologist"] },
+    "Niloo Danaei": { in_crm: true, crm_presentations: [], crm_modalities: [], crm_bio: "", crm_short_bio: "", crm_ages: ["18 Yrs +"], crm_client_types: ["Individual"], crm_languages: "English, Farsi", crm_pronouns: "She/Her", crm_email: "", crm_role: ["Psychologist Registrar"] },
+    "Dr Christine Deftereos": { in_crm: true, crm_presentations: [], crm_modalities: [], crm_bio: "", crm_short_bio: "", crm_ages: ["18 Yrs +"], crm_client_types: ["Individual"], crm_languages: "English, Greek", crm_pronouns: "She/Her", crm_email: "", crm_role: ["Clinical Psychologist"] },
+    "Oliver Eastwood": { in_crm: false, crm_presentations: [], crm_modalities: [], crm_bio: "", crm_short_bio: "", crm_ages: [], crm_client_types: [], crm_languages: "", crm_pronouns: "", crm_email: "", crm_role: [] },
+    "Meg Edelman": { in_crm: true, crm_presentations: [], crm_modalities: ["Acceptance and Commitment Therapy (ACT)", "Cognitive Behavioural Therapy (CBT)", "Dialectical Behaviour Therapy (DBT)", "Mindfulness-Based Cognitive Therapy (MBCT)", "Schema Therapy"], crm_bio: "", crm_short_bio: "", crm_ages: ["18 Yrs +"], crm_client_types: ["Individual"], crm_languages: "English", crm_pronouns: "She/Her", crm_email: "", crm_role: ["Psychologist"] },
+    "Kiira Gavralas": { in_crm: true, crm_presentations: [], crm_modalities: [], crm_bio: "", crm_short_bio: "", crm_ages: ["18 Yrs +"], crm_client_types: ["Individual"], crm_languages: "English", crm_pronouns: "She/Her", crm_email: "", crm_role: ["Psychologist Registrar"] },
+    "Jillian Giannios": { in_crm: false, crm_presentations: [], crm_modalities: [], crm_bio: "", crm_short_bio: "", crm_ages: [], crm_client_types: [], crm_languages: "", crm_pronouns: "", crm_email: "", crm_role: [] },
+    "Ella Graj": { in_crm: false, crm_presentations: [], crm_modalities: [], crm_bio: "", crm_short_bio: "", crm_ages: [], crm_client_types: [], crm_languages: "", crm_pronouns: "", crm_email: "", crm_role: [] },
+    "Cristina Jimenez": { in_crm: true, crm_presentations: [], crm_modalities: [], crm_bio: "", crm_short_bio: "", crm_ages: ["18 Yrs +"], crm_client_types: ["Couples", "Individual"], crm_languages: "English, Spanish", crm_pronouns: "She/Her", crm_email: "", crm_role: ["Psychologist"] },
+    "Chiara Killey": { in_crm: true, crm_presentations: [], crm_modalities: ["Acceptance and Commitment Therapy (ACT)", "Cognitive Behavioural Therapy (CBT)", "Dialectical Behaviour Therapy (DBT)", "Schema Therapy"], crm_bio: "", crm_short_bio: "", crm_ages: ["18 Yrs +"], crm_client_types: ["Individual"], crm_languages: "English", crm_pronouns: "She/Her", crm_email: "", crm_role: ["Psychologist Registrar"] },
+    "Nicholas Kleeman": { in_crm: true, crm_presentations: [], crm_modalities: [], crm_bio: "", crm_short_bio: "", crm_ages: ["18 Yrs +"], crm_client_types: ["Individual"], crm_languages: "English", crm_pronouns: "He/Him", crm_email: "", crm_role: ["Psychologist"] },
+    "Ricki Knoetze": { in_crm: true, crm_presentations: [], crm_modalities: [], crm_bio: "", crm_short_bio: "", crm_ages: ["18 Yrs +"], crm_client_types: ["Individual"], crm_languages: "English, Afrikaans", crm_pronouns: "She/Her", crm_email: "", crm_role: ["Psychologist Registrar"] },
+    "Joshua Kugel": { in_crm: true, crm_presentations: [], crm_modalities: [], crm_bio: "", crm_short_bio: "", crm_ages: ["18 Yrs +"], crm_client_types: ["Individual"], crm_languages: "English", crm_pronouns: "He/Him", crm_email: "", crm_role: ["Psychologist"] },
+    "Therese Van Maanen": { in_crm: true, crm_presentations: [], crm_modalities: [], crm_bio: "", crm_short_bio: "", crm_ages: ["18 Yrs +"], crm_client_types: ["Couples"], crm_languages: "English", crm_pronouns: "She/Her", crm_email: "", crm_role: ["Psychologist"] },
+    "Belinda Pacella": { in_crm: true, crm_presentations: [], crm_modalities: [], crm_bio: "", crm_short_bio: "", crm_ages: ["18 Yrs +"], crm_client_types: ["Individual"], crm_languages: "English", crm_pronouns: "She/Her", crm_email: "", crm_role: ["Psychologist Registrar"] },
+    "Poorna Selvaraja": { in_crm: true, crm_presentations: [], crm_modalities: [], crm_bio: "", crm_short_bio: "", crm_ages: ["18 Yrs +"], crm_client_types: ["Individual"], crm_languages: "English, Tamil", crm_pronouns: "She/Her", crm_email: "", crm_role: ["Psychologist Registrar"] },
+    "Dr David Spektor": { in_crm: true, crm_presentations: [], crm_modalities: [], crm_bio: "", crm_short_bio: "", crm_ages: [], crm_client_types: [], crm_languages: "", crm_pronouns: "", crm_email: "", crm_role: [] },
+    "Peter Steele": { in_crm: true, crm_presentations: [], crm_modalities: [], crm_bio: "", crm_short_bio: "", crm_ages: ["18 Yrs +"], crm_client_types: ["Individual"], crm_languages: "English", crm_pronouns: "He/Him", crm_email: "", crm_role: ["Psychologist"] },
+    "Stephanie Stewart": { in_crm: false, crm_presentations: [], crm_modalities: [], crm_bio: "", crm_short_bio: "", crm_ages: [], crm_client_types: [], crm_languages: "", crm_pronouns: "", crm_email: "", crm_role: [] },
+    "Clare Tuttleby": { in_crm: true, crm_presentations: [], crm_modalities: [], crm_bio: "", crm_short_bio: "", crm_ages: ["18 Yrs +"], crm_client_types: ["Individual"], crm_languages: "English", crm_pronouns: "She/Her", crm_email: "", crm_role: ["Psychologist"] },
+    "Elizabeth White": { in_crm: true, crm_presentations: [], crm_modalities: [], crm_bio: "", crm_short_bio: "", crm_ages: ["18 Yrs +"], crm_client_types: ["Individual"], crm_languages: "English", crm_pronouns: "She/Her", crm_email: "", crm_role: ["Clinical Psychologist"] },
+    "Karen Pereira York": { in_crm: true, crm_presentations: [], crm_modalities: [], crm_bio: "", crm_short_bio: "", crm_ages: ["18 Yrs +"], crm_client_types: ["Individual"], crm_languages: "English, Portuguese", crm_pronouns: "She/Her", crm_email: "", crm_role: ["Psychologist Registrar"] }
+  };
+  PRACTITIONERS_DATA.forEach((p) => {
+    if (CRM_DATA[p.name]) {
+      CRM_DATA[p.name].crm_presentations = p.presentations || [];
+    }
+  });
+  function Badge({ type, label }) {
+    const styles = {
+      crm: "bg-green-900 text-green-200 border border-green-700",
+      available: "bg-yellow-900 text-yellow-200 border border-yellow-700",
+      manual: "bg-blue-900 text-blue-200 border border-blue-700",
+      missing: "bg-red-900 text-red-200 border border-red-700"
+    };
+    return /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("span", {
+      className: `inline-block px-2 py-0.5 rounded text-xs font-medium ${styles[type]}`,
+      children: label
+    }, undefined, false, undefined, this);
+  }
+  function CRMSyncTab() {
+    const [activeSection, setActiveSection] = import_react15.useState("fields");
+    const [expandedPrac, setExpandedPrac] = import_react15.useState(null);
+    return /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("div", {
+      className: "space-y-6",
+      children: [
+        /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("div", {
+          className: "flex gap-2",
+          children: [
+            /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("button", {
+              onClick: () => setActiveSection("fields"),
+              className: `px-4 py-2 rounded-lg text-sm font-medium transition-colors ${activeSection === "fields" ? "bg-purple-700 text-white" : "bg-slate-700 text-slate-300 hover:bg-slate-600"}`,
+              children: "\uD83D\uDCCB Field Sources"
+            }, undefined, false, undefined, this),
+            /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("button", {
+              onClick: () => setActiveSection("practitioners"),
+              className: `px-4 py-2 rounded-lg text-sm font-medium transition-colors ${activeSection === "practitioners" ? "bg-purple-700 text-white" : "bg-slate-700 text-slate-300 hover:bg-slate-600"}`,
+              children: "\uD83D\uDC65 Practitioner Sync Status"
+            }, undefined, false, undefined, this)
+          ]
+        }, undefined, true, undefined, this),
+        activeSection === "fields" && /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("div", {
+          children: [
+            /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("div", {
+              className: "flex gap-4 mb-4 flex-wrap",
+              children: [
+                /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("div", {
+                  className: "flex items-center gap-2 text-sm",
+                  children: [
+                    /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("span", {
+                      className: "w-3 h-3 rounded-full bg-green-500 inline-block"
+                    }, undefined, false, undefined, this),
+                    /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("span", {
+                      className: "text-slate-300",
+                      children: "Currently synced from CRM"
+                    }, undefined, false, undefined, this)
+                  ]
+                }, undefined, true, undefined, this),
+                /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("div", {
+                  className: "flex items-center gap-2 text-sm",
+                  children: [
+                    /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("span", {
+                      className: "w-3 h-3 rounded-full bg-yellow-500 inline-block"
+                    }, undefined, false, undefined, this),
+                    /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("span", {
+                      className: "text-slate-300",
+                      children: "Available in CRM — not yet synced"
+                    }, undefined, false, undefined, this)
+                  ]
+                }, undefined, true, undefined, this),
+                /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("div", {
+                  className: "flex items-center gap-2 text-sm",
+                  children: [
+                    /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("span", {
+                      className: "w-3 h-3 rounded-full bg-blue-500 inline-block"
+                    }, undefined, false, undefined, this),
+                    /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("span", {
+                      className: "text-slate-300",
+                      children: "Manual only (no CRM field)"
+                    }, undefined, false, undefined, this)
+                  ]
+                }, undefined, true, undefined, this)
+              ]
+            }, undefined, true, undefined, this),
+            /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("div", {
+              className: "overflow-x-auto rounded-xl border border-slate-700",
+              children: /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("table", {
+                className: "w-full text-sm",
+                children: [
+                  /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("thead", {
+                    children: /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("tr", {
+                      className: "bg-slate-800 text-slate-300 text-left",
+                      children: [
+                        /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("th", {
+                          className: "px-4 py-3 font-semibold",
+                          children: "App Field"
+                        }, undefined, false, undefined, this),
+                        /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("th", {
+                          className: "px-4 py-3 font-semibold",
+                          children: "CRM Field"
+                        }, undefined, false, undefined, this),
+                        /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("th", {
+                          className: "px-4 py-3 font-semibold",
+                          children: "Status"
+                        }, undefined, false, undefined, this)
+                      ]
+                    }, undefined, true, undefined, this)
+                  }, undefined, false, undefined, this),
+                  /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("tbody", {
+                    className: "divide-y divide-slate-700/50",
+                    children: FIELD_SOURCES.map((f) => /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("tr", {
+                      className: "bg-slate-800/40 hover:bg-slate-700/30 transition-colors",
+                      children: [
+                        /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("td", {
+                          className: "px-4 py-3 text-slate-100 font-medium",
+                          children: f.field
+                        }, undefined, false, undefined, this),
+                        /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("td", {
+                          className: "px-4 py-3 text-slate-400 font-mono text-xs",
+                          children: f.crmField
+                        }, undefined, false, undefined, this),
+                        /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("td", {
+                          className: "px-4 py-3",
+                          children: [
+                            /* @__PURE__ */ jsx_dev_runtime13.jsxDEV(Badge, {
+                              type: f.source,
+                              label: f.source === "crm" ? "✅ Synced" : f.source === "available" ? "\uD83D\uDFE1 Available" : "\uD83D\uDD35 Manual"
+                            }, undefined, false, undefined, this),
+                            /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("span", {
+                              className: "ml-2 text-slate-400 text-xs",
+                              children: f.note.replace(/^[^\s]+\s/, "")
+                            }, undefined, false, undefined, this)
+                          ]
+                        }, undefined, true, undefined, this)
+                      ]
+                    }, f.field, true, undefined, this))
+                  }, undefined, false, undefined, this)
+                ]
+              }, undefined, true, undefined, this)
+            }, undefined, false, undefined, this),
+            /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("div", {
+              className: "mt-4 p-4 bg-yellow-950/40 border border-yellow-700/40 rounded-xl text-sm text-yellow-200",
+              children: [
+                /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("strong", {
+                  children: "\uD83D\uDCA1 Ready to sync:"
+                }, undefined, false, undefined, this),
+                " Modalities, Bio, Short Bio, Ages, Session Types, Languages, Pronouns and Email are all populated in Zoho CRM and ready to pull into the app. Ask me to sync any of these fields."
+              ]
+            }, undefined, true, undefined, this)
+          ]
+        }, undefined, true, undefined, this),
+        activeSection === "practitioners" && /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("div", {
+          children: [
+            /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("div", {
+              className: "overflow-x-auto rounded-xl border border-slate-700",
+              children: /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("table", {
+                className: "w-full text-sm",
+                children: [
+                  /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("thead", {
+                    children: /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("tr", {
+                      className: "bg-slate-800 text-slate-300 text-left",
+                      children: [
+                        /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("th", {
+                          className: "px-4 py-3 font-semibold",
+                          children: "Practitioner"
+                        }, undefined, false, undefined, this),
+                        /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("th", {
+                          className: "px-4 py-3 font-semibold text-center",
+                          children: "In CRM?"
+                        }, undefined, false, undefined, this),
+                        /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("th", {
+                          className: "px-4 py-3 font-semibold text-center",
+                          children: "Presentations"
+                        }, undefined, false, undefined, this),
+                        /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("th", {
+                          className: "px-4 py-3 font-semibold text-center",
+                          children: "Modalities"
+                        }, undefined, false, undefined, this),
+                        /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("th", {
+                          className: "px-4 py-3 font-semibold",
+                          children: "CRM Ages"
+                        }, undefined, false, undefined, this),
+                        /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("th", {
+                          className: "px-4 py-3 font-semibold",
+                          children: "CRM Session Types"
+                        }, undefined, false, undefined, this),
+                        /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("th", {
+                          className: "px-4 py-3 font-semibold",
+                          children: "Languages"
+                        }, undefined, false, undefined, this),
+                        /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("th", {
+                          className: "px-4 py-3 font-semibold",
+                          children: "Details"
+                        }, undefined, false, undefined, this)
+                      ]
+                    }, undefined, true, undefined, this)
+                  }, undefined, false, undefined, this),
+                  /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("tbody", {
+                    className: "divide-y divide-slate-700/50",
+                    children: PRACTITIONERS_DATA.map((p) => {
+                      const crm = CRM_DATA[p.name];
+                      const inCRM = crm?.in_crm ?? false;
+                      const appPres = (p.presentations || []).length;
+                      const crmPres = (crm?.crm_presentations || []).length;
+                      const appMod = (p.modalities || []).length;
+                      const crmMod = (crm?.crm_modalities || []).length;
+                      const isExpanded = expandedPrac === p.name;
+                      return /* @__PURE__ */ jsx_dev_runtime13.jsxDEV(import_react15.default.Fragment, {
+                        children: [
+                          /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("tr", {
+                            className: `${inCRM ? "bg-slate-800/40" : "bg-red-950/20"} hover:bg-slate-700/30 transition-colors`,
+                            children: [
+                              /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("td", {
+                                className: "px-4 py-2.5 font-medium text-slate-100",
+                                children: p.name
+                              }, undefined, false, undefined, this),
+                              /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("td", {
+                                className: "px-4 py-2.5 text-center",
+                                children: inCRM ? /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("span", {
+                                  className: "text-green-400 text-base",
+                                  children: "✅"
+                                }, undefined, false, undefined, this) : /* @__PURE__ */ jsx_dev_runtime13.jsxDEV(Badge, {
+                                  type: "missing",
+                                  label: "Not in CRM"
+                                }, undefined, false, undefined, this)
+                              }, undefined, false, undefined, this),
+                              /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("td", {
+                                className: "px-4 py-2.5 text-center",
+                                children: [
+                                  /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("span", {
+                                    className: "text-green-400 font-semibold",
+                                    children: appPres
+                                  }, undefined, false, undefined, this),
+                                  /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("span", {
+                                    className: "text-slate-500 text-xs ml-1",
+                                    children: "synced"
+                                  }, undefined, false, undefined, this)
+                                ]
+                              }, undefined, true, undefined, this),
+                              /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("td", {
+                                className: "px-4 py-2.5 text-center",
+                                children: [
+                                  /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("span", {
+                                    className: "text-slate-300",
+                                    children: appMod
+                                  }, undefined, false, undefined, this),
+                                  inCRM && crmMod > 0 && crmMod !== appMod && /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("span", {
+                                    className: "text-yellow-400 text-xs ml-1",
+                                    children: [
+                                      "(",
+                                      crmMod,
+                                      " in CRM)"
+                                    ]
+                                  }, undefined, true, undefined, this)
+                                ]
+                              }, undefined, true, undefined, this),
+                              /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("td", {
+                                className: "px-4 py-2.5 text-slate-400 text-xs",
+                                children: inCRM ? crm.crm_ages.join(", ") || "—" : "—"
+                              }, undefined, false, undefined, this),
+                              /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("td", {
+                                className: "px-4 py-2.5 text-slate-400 text-xs",
+                                children: inCRM ? crm.crm_client_types.join(", ") || "—" : "—"
+                              }, undefined, false, undefined, this),
+                              /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("td", {
+                                className: "px-4 py-2.5 text-slate-400 text-xs",
+                                children: inCRM ? crm.crm_languages || "—" : "—"
+                              }, undefined, false, undefined, this),
+                              /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("td", {
+                                className: "px-4 py-2.5",
+                                children: inCRM && /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("button", {
+                                  onClick: () => setExpandedPrac(isExpanded ? null : p.name),
+                                  className: "text-xs text-purple-400 hover:text-purple-300 transition-colors",
+                                  children: isExpanded ? "▲ hide" : "▼ more"
+                                }, undefined, false, undefined, this)
+                              }, undefined, false, undefined, this)
+                            ]
+                          }, undefined, true, undefined, this),
+                          isExpanded && crm && /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("tr", {
+                            className: "bg-slate-900/60",
+                            children: /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("td", {
+                              colSpan: 8,
+                              className: "px-6 py-3",
+                              children: /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("div", {
+                                className: "grid grid-cols-2 gap-4 text-xs",
+                                children: [
+                                  /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("div", {
+                                    children: [
+                                      /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("p", {
+                                        className: "text-slate-400 font-semibold mb-1",
+                                        children: "CRM Role"
+                                      }, undefined, false, undefined, this),
+                                      /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("p", {
+                                        className: "text-slate-200",
+                                        children: crm.crm_role.join(", ") || "—"
+                                      }, undefined, false, undefined, this)
+                                    ]
+                                  }, undefined, true, undefined, this),
+                                  /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("div", {
+                                    children: [
+                                      /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("p", {
+                                        className: "text-slate-400 font-semibold mb-1",
+                                        children: "Pronouns"
+                                      }, undefined, false, undefined, this),
+                                      /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("p", {
+                                        className: "text-slate-200",
+                                        children: crm.crm_pronouns || "—"
+                                      }, undefined, false, undefined, this)
+                                    ]
+                                  }, undefined, true, undefined, this),
+                                  crm.crm_short_bio && /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("div", {
+                                    className: "col-span-2",
+                                    children: [
+                                      /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("p", {
+                                        className: "text-slate-400 font-semibold mb-1",
+                                        children: "Short Bio (CRM)"
+                                      }, undefined, false, undefined, this),
+                                      /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("p", {
+                                        className: "text-slate-200 leading-relaxed",
+                                        children: crm.crm_short_bio
+                                      }, undefined, false, undefined, this)
+                                    ]
+                                  }, undefined, true, undefined, this),
+                                  crmMod > 0 && /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("div", {
+                                    className: "col-span-2",
+                                    children: [
+                                      /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("p", {
+                                        className: "text-slate-400 font-semibold mb-1",
+                                        children: [
+                                          "Modalities in CRM (",
+                                          crmMod,
+                                          ")"
+                                        ]
+                                      }, undefined, true, undefined, this),
+                                      /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("p", {
+                                        className: "text-slate-300",
+                                        children: crm.crm_modalities.join(" · ")
+                                      }, undefined, false, undefined, this)
+                                    ]
+                                  }, undefined, true, undefined, this)
+                                ]
+                              }, undefined, true, undefined, this)
+                            }, undefined, false, undefined, this)
+                          }, undefined, false, undefined, this)
+                        ]
+                      }, p.name, true, undefined, this);
+                    })
+                  }, undefined, false, undefined, this)
+                ]
+              }, undefined, true, undefined, this)
+            }, undefined, false, undefined, this),
+            /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("p", {
+              className: "text-slate-500 text-xs mt-3",
+              children: "Last CRM sync: 20 Jul 2026. Presentations are live-synced. Yellow = CRM has different data, ready to pull."
+            }, undefined, false, undefined, this)
+          ]
+        }, undefined, true, undefined, this)
+      ]
+    }, undefined, true, undefined, this);
+  }
+
   // app.tsx
   var import_client = __toESM(require_client(), 1);
-  var jsx_dev_runtime13 = __toESM(require_jsx_dev_runtime(), 1);
+  var jsx_dev_runtime14 = __toESM(require_jsx_dev_runtime(), 1);
   var DATA_PATH = "/tasklet/agent/home/practitioners_data.json";
-  var ErrorBoundary = ({ children }) => /* @__PURE__ */ jsx_dev_runtime13.jsxDEV(jsx_dev_runtime13.Fragment, {
+  var ErrorBoundary = ({ children }) => /* @__PURE__ */ jsx_dev_runtime14.jsxDEV(jsx_dev_runtime14.Fragment, {
     children
   }, undefined, false, undefined, this);
   function AppMain() {
-    const [tab, setTab] = import_react15.useState("find");
-    const [practitioners, setPractitioners] = import_react15.useState(PRACTITIONERS_DATA);
-    const [emailConfig, setEmailConfig] = import_react15.useState(loadEmailTemplateConfig);
-    const [saveStatus, setSaveStatus] = import_react15.useState(null);
-    const [availabilityDate, setAvailabilityDate] = import_react15.useState(AVAILABILITY_LAST_UPDATED);
-    import_react15.default.useEffect(() => {
+    const [tab, setTab] = import_react16.useState("find");
+    const [practitioners, setPractitioners] = import_react16.useState(PRACTITIONERS_DATA);
+    const [emailConfig, setEmailConfig] = import_react16.useState(loadEmailTemplateConfig);
+    const [saveStatus, setSaveStatus] = import_react16.useState(null);
+    const [availabilityDate, setAvailabilityDate] = import_react16.useState(AVAILABILITY_LAST_UPDATED);
+    import_react16.default.useEffect(() => {
       window.tasklet.readFileFromDisk("/tasklet/agent/home/apps/practitioner-availability/availability_meta.json").then((raw) => {
         try {
           const meta = JSON.parse(raw);
@@ -28966,7 +29375,7 @@ Fridays at 2pm (Fortnightly: Starting 6th Jun)`
       setSaveStatus(msg);
       setTimeout(() => setSaveStatus(null), 3000);
     };
-    const saveToDisk = import_react15.useCallback(async (updated) => {
+    const saveToDisk = import_react16.useCallback(async (updated) => {
       try {
         await window.tasklet.writeFileToDisk(DATA_PATH, JSON.stringify(updated, null, 2));
         await window.tasklet.runCommand(`cd /tasklet/agent/home && python3 -c "
@@ -29000,18 +29409,18 @@ print('TS regenerated')
         showStatus("❌ Save failed");
       }
     }, []);
-    const handleUpdate = import_react15.useCallback((updated) => {
+    const handleUpdate = import_react16.useCallback((updated) => {
       setPractitioners((prev) => {
         const next = prev.map((p) => p.name === updated.name ? updated : p);
         saveToDisk(next);
         return next;
       });
     }, [saveToDisk]);
-    const handleBulkUpdate = import_react15.useCallback((updated) => {
+    const handleBulkUpdate = import_react16.useCallback((updated) => {
       setPractitioners(updated);
       saveToDisk(updated);
     }, [saveToDisk]);
-    const handleConfigChange = import_react15.useCallback((config) => {
+    const handleConfigChange = import_react16.useCallback((config) => {
       setEmailConfig(config);
       saveEmailTemplateConfig(config);
     }, []);
@@ -29026,27 +29435,27 @@ print('TS regenerated')
       { key: "email", label: "\uD83D\uDCE7 Email Template" },
       { key: "audit", label: "\uD83D\uDDC2️ Audit Log" }
     ];
-    return /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("div", {
+    return /* @__PURE__ */ jsx_dev_runtime14.jsxDEV("div", {
       className: "min-h-screen bg-gray-50",
       children: [
-        /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("div", {
+        /* @__PURE__ */ jsx_dev_runtime14.jsxDEV("div", {
           style: { background: "linear-gradient(135deg, #2C244C 0%, #8D5273 100%)" },
           className: "text-white shadow-lg",
-          children: /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("div", {
+          children: /* @__PURE__ */ jsx_dev_runtime14.jsxDEV("div", {
             className: "max-w-7xl mx-auto px-6 py-10 flex flex-col items-center",
             children: [
-              /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("img", {
+              /* @__PURE__ */ jsx_dev_runtime14.jsxDEV("img", {
                 src: "/logo.svg",
                 alt: "PsychologyCare",
                 style: { height: 72, width: "auto", marginBottom: 10 }
               }, undefined, false, undefined, this),
-              /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("p", {
+              /* @__PURE__ */ jsx_dev_runtime14.jsxDEV("p", {
                 style: { color: "#d8d0ec", fontSize: 14, letterSpacing: "0.12em", textTransform: "uppercase", fontFamily: "'Poppins', sans-serif", fontWeight: 400 },
                 children: "Practitioner Matching & Client Intake"
               }, undefined, false, undefined, this),
-              /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("div", {
+              /* @__PURE__ */ jsx_dev_runtime14.jsxDEV("div", {
                 style: { marginTop: 10 },
-                children: /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("span", {
+                children: /* @__PURE__ */ jsx_dev_runtime14.jsxDEV("span", {
                   style: {
                     display: "inline-flex",
                     alignItems: "center",
@@ -29070,12 +29479,12 @@ print('TS regenerated')
             ]
           }, undefined, true, undefined, this)
         }, undefined, false, undefined, this),
-        /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("div", {
+        /* @__PURE__ */ jsx_dev_runtime14.jsxDEV("div", {
           className: "bg-white border-b sticky top-0 z-40 shadow-sm",
           style: { borderColor: "#e8e4f0" },
-          children: /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("div", {
+          children: /* @__PURE__ */ jsx_dev_runtime14.jsxDEV("div", {
             className: "max-w-7xl mx-auto px-4 flex gap-4 items-center",
-            children: tabs.map((t) => /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("button", {
+            children: tabs.map((t) => /* @__PURE__ */ jsx_dev_runtime14.jsxDEV("button", {
               onClick: () => setTab(t.key),
               className: "px-4 py-3 font-medium text-sm border-b-2 transition-all",
               style: tab === t.key ? { color: "#2C244C", borderColor: "#2C244C" } : { color: "#666", borderColor: "transparent" },
@@ -29091,37 +29500,52 @@ print('TS regenerated')
             }, t.key, false, undefined, this))
           }, undefined, false, undefined, this)
         }, undefined, false, undefined, this),
-        /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("div", {
+        /* @__PURE__ */ jsx_dev_runtime14.jsxDEV("div", {
           className: "max-w-7xl mx-auto px-4 py-8",
-          children: /* @__PURE__ */ jsx_dev_runtime13.jsxDEV(ErrorBoundary, {
+          children: /* @__PURE__ */ jsx_dev_runtime14.jsxDEV(ErrorBoundary, {
             children: [
-              tab === "find" && /* @__PURE__ */ jsx_dev_runtime13.jsxDEV(FindPractitioner, {
+              tab === "find" && /* @__PURE__ */ jsx_dev_runtime14.jsxDEV(FindPractitioner, {
                 practitioners
               }, undefined, false, undefined, this),
-              tab === "directory" && /* @__PURE__ */ jsx_dev_runtime13.jsxDEV(Directory, {
+              tab === "directory" && /* @__PURE__ */ jsx_dev_runtime14.jsxDEV(Directory, {
                 practitioners
               }, undefined, false, undefined, this),
-              tab === "manage" && /* @__PURE__ */ jsx_dev_runtime13.jsxDEV(ManageAvailability_default, {
+              tab === "manage" && /* @__PURE__ */ jsx_dev_runtime14.jsxDEV(ManageAvailability_default, {
                 practitioners,
                 onUpdate: handleUpdate
               }, undefined, false, undefined, this),
-              tab === "snapshot" && /* @__PURE__ */ jsx_dev_runtime13.jsxDEV(AvailabilitySnapshot_default, {
+              tab === "snapshot" && /* @__PURE__ */ jsx_dev_runtime14.jsxDEV(AvailabilitySnapshot_default, {
                 practitioners
               }, undefined, false, undefined, this),
-              tab === "intake" && /* @__PURE__ */ jsx_dev_runtime13.jsxDEV(IntakeTab, {}, undefined, false, undefined, this),
-              tab === "referral" && /* @__PURE__ */ jsx_dev_runtime13.jsxDEV(ReferralNetwork_default, {
+              tab === "intake" && /* @__PURE__ */ jsx_dev_runtime14.jsxDEV(IntakeTab, {}, undefined, false, undefined, this),
+              tab === "referral" && /* @__PURE__ */ jsx_dev_runtime14.jsxDEV(ReferralNetwork_default, {
                 practitioners
               }, undefined, false, undefined, this),
-              tab === "taxonomy" && /* @__PURE__ */ jsx_dev_runtime13.jsxDEV(TaxonomyTab_default, {
+              tab === "taxonomy" && /* @__PURE__ */ jsx_dev_runtime14.jsxDEV(TaxonomyTab_default, {
                 practitioners,
                 onBulkUpdate: handleBulkUpdate
               }, undefined, false, undefined, this),
-              tab === "email" && /* @__PURE__ */ jsx_dev_runtime13.jsxDEV(EmailTemplateTab_default, {
+              tab === "email" && /* @__PURE__ */ jsx_dev_runtime14.jsxDEV(EmailTemplateTab_default, {
                 config: emailConfig,
                 onConfigChange: handleConfigChange
               }, undefined, false, undefined, this),
-              tab === "audit" && /* @__PURE__ */ jsx_dev_runtime13.jsxDEV(AuditTab, {}, undefined, false, undefined, this),
-              saveStatus && /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("div", {
+              tab === "audit" && /* @__PURE__ */ jsx_dev_runtime14.jsxDEV(AuditTab, {}, undefined, false, undefined, this),
+              tab === "crm" && /* @__PURE__ */ jsx_dev_runtime14.jsxDEV("div", {
+                className: "bg-slate-900 rounded-2xl p-6 min-h-[60vh]",
+                children: [
+                  /* @__PURE__ */ jsx_dev_runtime14.jsxDEV("h2", {
+                    className: "text-xl font-bold text-white mb-1",
+                    style: { fontFamily: "'Poppins', sans-serif" },
+                    children: "\uD83D\uDD17 CRM Sync — Field Sources"
+                  }, undefined, false, undefined, this),
+                  /* @__PURE__ */ jsx_dev_runtime14.jsxDEV("p", {
+                    className: "text-slate-400 text-sm mb-6",
+                    children: "Shows which app fields are synced from Zoho CRM and which are managed manually. Use this to plan future CRM mapping."
+                  }, undefined, false, undefined, this),
+                  /* @__PURE__ */ jsx_dev_runtime14.jsxDEV(CRMSyncTab, {}, undefined, false, undefined, this)
+                ]
+              }, undefined, true, undefined, this),
+              saveStatus && /* @__PURE__ */ jsx_dev_runtime14.jsxDEV("div", {
                 style: {
                   position: "fixed",
                   bottom: 24,
@@ -29140,15 +29564,15 @@ print('TS regenerated')
             ]
           }, undefined, true, undefined, this)
         }, undefined, false, undefined, this),
-        /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("footer", {
+        /* @__PURE__ */ jsx_dev_runtime14.jsxDEV("footer", {
           className: "bg-gray-900 text-gray-300 mt-16 py-8",
-          children: /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("div", {
+          children: /* @__PURE__ */ jsx_dev_runtime14.jsxDEV("div", {
             className: "max-w-7xl mx-auto px-4 text-center text-sm",
             children: [
-              /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("p", {
+              /* @__PURE__ */ jsx_dev_runtime14.jsxDEV("p", {
                 children: "PsychologyCare VIC · Melbourne"
               }, undefined, false, undefined, this),
-              /* @__PURE__ */ jsx_dev_runtime13.jsxDEV("p", {
+              /* @__PURE__ */ jsx_dev_runtime14.jsxDEV("p", {
                 className: "mt-2 text-gray-500",
                 children: "For professional inquiries: info@psychologycare.com.au"
               }, undefined, false, undefined, this)
@@ -29159,10 +29583,10 @@ print('TS regenerated')
     }, undefined, true, undefined, this);
   }
   function AppContent() {
-    return /* @__PURE__ */ jsx_dev_runtime13.jsxDEV(ErrorBoundary, {
-      children: /* @__PURE__ */ jsx_dev_runtime13.jsxDEV(AppMain, {}, undefined, false, undefined, this)
+    return /* @__PURE__ */ jsx_dev_runtime14.jsxDEV(ErrorBoundary, {
+      children: /* @__PURE__ */ jsx_dev_runtime14.jsxDEV(AppMain, {}, undefined, false, undefined, this)
     }, undefined, false, undefined, this);
   }
   var root = import_client.createRoot(document.getElementById("root"));
-  root.render(/* @__PURE__ */ jsx_dev_runtime13.jsxDEV(AppContent, {}, undefined, false, undefined, this));
+  root.render(/* @__PURE__ */ jsx_dev_runtime14.jsxDEV(AppContent, {}, undefined, false, undefined, this));
 })();
