@@ -119,6 +119,7 @@ print('TS regenerated')
     { key: "taxonomy", label: "🏷️ Taxonomy" },
     { key: "email", label: "📧 Email Template" },
     { key: "audit", label: "🗂️ Audit Log" },
+    { key: "crm", label: "🔗 CRM Sync" },
   ] as const;
 
   return (
