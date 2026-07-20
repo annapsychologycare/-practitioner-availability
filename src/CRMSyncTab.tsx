@@ -1633,7 +1633,7 @@ const crmData: Record<string, CRMRecord> = {
       "Psychologist"
     ]
   },
-  "Christine Deftereos": {
+  "Dr Christine Deftereos": {
     "in_crm": true,
     "crm_presentations": [
       "Academic Pressure & Performance Stress",
