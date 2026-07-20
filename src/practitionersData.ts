@@ -4187,6 +4187,8 @@ export const PRACTITIONERS_DATA = [
     "client_gender_accepted": "Any"
   }
 ];
+export const AVAILABILITY_LAST_UPDATED = "20 Jul 2026 at 12:08pm";
+
 export const practitioners: Practitioner[] = [
   {
     "id": 1,

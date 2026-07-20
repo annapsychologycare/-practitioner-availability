@@ -8,7 +8,7 @@ import TaxonomyTab from "./TaxonomyTab";
 import EmailTemplateTab from "./EmailTemplateTab";
 import ReferralNetwork from "./ReferralNetwork";
 import AuditTab from "./AuditTab";
-import { CRMSyncTab } from "./CRMSyncTab";
+import CRMSyncTab from "./CRMSyncTab";
 import { createRoot } from "react-dom/client";
 import { PRACTITIONERS_DATA, AVAILABILITY_LAST_UPDATED as AVAILABILITY_LAST_UPDATED_STATIC } from "./practitionersData";
 import { loadEmailTemplateConfig, saveEmailTemplateConfig, EmailTemplateConfig } from "./emailTemplateConfig";
