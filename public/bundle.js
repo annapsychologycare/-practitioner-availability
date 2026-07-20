@@ -29433,7 +29433,8 @@ print('TS regenerated')
       { key: "referral", label: "\uD83D\uDD17 Referral Network" },
       { key: "taxonomy", label: "\uD83C\uDFF7️ Taxonomy" },
       { key: "email", label: "\uD83D\uDCE7 Email Template" },
-      { key: "audit", label: "\uD83D\uDDC2️ Audit Log" }
+      { key: "audit", label: "\uD83D\uDDC2️ Audit Log" },
+      { key: "crm", label: "\uD83D\uDD17 CRM Sync" }
     ];
     return /* @__PURE__ */ jsx_dev_runtime14.jsxDEV("div", {
       className: "min-h-screen bg-gray-50",
