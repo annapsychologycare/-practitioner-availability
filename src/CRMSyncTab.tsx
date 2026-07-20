@@ -1,27 +1,23 @@
 import React, { useState } from "react";
-import { PRACTITIONERS_DATA } from "./practitionersData";
+import { practitioners } from "./practitionersData";
 
-// ── Field mapping definitions ──────────────────────────────────────────────
 const FIELD_SOURCES = [
-  { field: "Presentations (Clinical Interests)", appKey: "presentations", crmField: "Clinical_Interests", source: "crm", note: "✅ Live — synced from CRM" },
-  { field: "Modalities", appKey: "modalities", crmField: "Modalities", source: "available", note: "🟡 Available in CRM — not yet synced" },
-  { field: "Bio", appKey: "bio", crmField: "Bio", source: "available", note: "🟡 Available in CRM — not yet synced" },
-  { field: "Short Bio", appKey: "short_bio", crmField: "Short_Bio", source: "available", note: "🟡 Available in CRM — not yet synced" },
-  { field: "Ages Accepted", appKey: "ages_accepted", crmField: "Ages", source: "available", note: "🟡 Available in CRM — not yet synced" },
-  { field: "Session Types (Individual/Couples)", appKey: "session_types", crmField: "Client_Types", source: "available", note: "🟡 Available in CRM — not yet synced" },
-  { field: "Languages", appKey: "languages", crmField: "Languages_I_am_fluent_in", source: "available", note: "🟡 Available in CRM — not yet synced" },
-  { field: "Pronouns", appKey: "pronouns", crmField: "Pronouns", source: "available", note: "🟡 Available in CRM — not yet synced" },
+  { field: "Presentations (Clinical Interests)", appKey: "presentations", crmField: "Clinical_Interests", source: "crm", note: "✅ Synced from CRM" },
+  { field: "Modalities", appKey: "modalities", crmField: "Modalities", source: "crm", note: "✅ Synced from CRM" },
+  { field: "Bio", appKey: "bio", crmField: "Bio_for_Website", source: "crm", note: "✅ Synced from CRM" },
+  { field: "Short Bio", appKey: "short_bio", crmField: "Short_Bio", source: "crm", note: "✅ Synced from CRM" },
+  { field: "Ages Accepted", appKey: "age_range", crmField: "Ages_of_Clients_I_like_to_see", source: "crm", note: "✅ Synced from CRM" },
+  { field: "Client Types", appKey: "client_types", crmField: "Client_Types_that_I_like_to_see", source: "crm", note: "✅ Synced from CRM" },
+  { field: "Languages", appKey: "languages", crmField: "Languages_I_am_fluent_in", source: "crm", note: "✅ Synced from CRM" },
+  { field: "Pronouns", appKey: "pronouns", crmField: "Pronouns", source: "crm", note: "✅ Synced from CRM" },
   { field: "Email", appKey: "email", crmField: "Email", source: "available", note: "🟡 Available in CRM — not yet synced" },
-  { field: "Role / Modality type", appKey: "role", crmField: "Modality", source: "available", note: "🟡 Available in CRM — not yet synced" },
   { field: "Locations", appKey: "locations", crmField: "—", source: "manual", note: "🔵 Manual — set in app config" },
   { field: "Availability", appKey: "availability", crmField: "—", source: "manual", note: "🔵 Manual — CSV import from Zanda" },
   { field: "Photo", appKey: "photo_url", crmField: "—", source: "manual", note: "🔵 Manual — uploaded directly" },
   { field: "Client Gender Accepted", appKey: "client_gender_accepted", crmField: "—", source: "manual", note: "🔵 Manual — set in app config" },
 ];
 
-// ── CRM snapshot data (pulled 20 Jul 2026) ────────────────────────────────
-// name → { presentations, modalities, bio, short_bio, ages, client_types, languages, pronouns, email, role }
-const CRM_DATA: Record<string, {
+type CRMRecord = {
   in_crm: boolean;
   crm_presentations: string[];
   crm_modalities: string[];
@@ -33,244 +29,2522 @@ const CRM_DATA: Record<string, {
   crm_pronouns: string;
   crm_email: string;
   crm_role: string[];
-}> = {
-  "Alex Barry": { in_crm: true, crm_presentations: [], crm_modalities: ["Acceptance and Commitment Therapy (ACT)","Cognitive Behavioural Therapy (CBT)","Dialectical Behaviour Therapy (DBT)","Mindfulness-Based Cognitive Therapy (MBCT)","Narrative Therapy","Schema Therapy","Trauma-Informed Care"], crm_bio: "", crm_short_bio: "", crm_ages: ["18 Yrs +"], crm_client_types: ["Individual"], crm_languages: "English", crm_pronouns: "She/Her", crm_email: "", crm_role: ["Clinical Psychologist"] },
-  "Rebekah Barson": { in_crm: true, crm_presentations: [], crm_modalities: [], crm_bio: "", crm_short_bio: "", crm_ages: ["18 Yrs +"], crm_client_types: ["Couples","Individual"], crm_languages: "English", crm_pronouns: "She/Her", crm_email: "", crm_role: ["Psychologist"] },
-  "Brigid Blanckenberg": { in_crm: true, crm_presentations: [], crm_modalities: ["Acceptance and Commitment Therapy (ACT)","Cognitive Behavioural Therapy (CBT)","Mindfulness-Based Cognitive Therapy (MBCT)"], crm_bio: "", crm_short_bio: "", crm_ages: ["18 Yrs +"], crm_client_types: ["Individual"], crm_languages: "English, Afrikaans", crm_pronouns: "She/Her", crm_email: "", crm_role: ["Psychologist Registrar"] },
-  "Amy Bortz": { in_crm: true, crm_presentations: [], crm_modalities: [], crm_bio: "", crm_short_bio: "", crm_ages: ["18 Yrs +"], crm_client_types: ["Individual"], crm_languages: "English", crm_pronouns: "She/Her", crm_email: "", crm_role: ["Psychologist Registrar"] },
-  "Ruby Bouhadana": { in_crm: true, crm_presentations: [], crm_modalities: ["Acceptance and Commitment Therapy (ACT)","Attachment-Based Therapy","Behavioural Activation (BA)","Cognitive Behavioural Therapy (CBT)","Dialectical Behaviour Therapy (DBT)","Emotion-Focused Therapy (EFT)","Exposure and Response Prevention (ERP)","Internal Family Systems (IFS) / Parts Work (Informed)","Internal Family Systems (IFS) / Parts Work (Level 1 Certified)","Interpersonal Therapy (IPT)","Motivational Interviewing (MI)","Schema Therapy"], crm_bio: "Ruby Bouhadana has a full bio in CRM", crm_short_bio: "A warm clinical psychology registrar integrating IFS, CBT, ACT, schema and mindfulness to support adults toward self-understanding, compassion and emotionally grounded change.", crm_ages: ["18 Yrs +"], crm_client_types: ["Individual"], crm_languages: "English", crm_pronouns: "She/Her", crm_email: "ruby.psychologycare@gmail.com", crm_role: ["Clinical Psychologist"] },
-  "Dr Maddie Brygel": { in_crm: true, crm_presentations: [], crm_modalities: [], crm_bio: "", crm_short_bio: "", crm_ages: ["18 Yrs +"], crm_client_types: ["Individual"], crm_languages: "English", crm_pronouns: "She/Her", crm_email: "", crm_role: ["Clinical Psychologist"] },
-  "Nick Burden": { in_crm: true, crm_presentations: [], crm_modalities: ["Acceptance and Commitment Therapy (ACT)","Motivational Interviewing (MI)"], crm_bio: "", crm_short_bio: "", crm_ages: ["18 Yrs +"], crm_client_types: ["Individual"], crm_languages: "English", crm_pronouns: "He/Him", crm_email: "", crm_role: ["Mental Health Social Worker"] },
-  "Dr Krista De Castella": { in_crm: true, crm_presentations: [], crm_modalities: [], crm_bio: "", crm_short_bio: "", crm_ages: [], crm_client_types: ["Couples"], crm_languages: "", crm_pronouns: "", crm_email: "", crm_role: [] },
-  "Allison Conyer": { in_crm: true, crm_presentations: [], crm_modalities: ["Acceptance and Commitment Therapy (ACT)","Cognitive Behavioural Therapy (CBT)","Emotion-Focused Therapy (EFT)","Gottman Method Couples Therapy"], crm_bio: "", crm_short_bio: "", crm_ages: ["18 Yrs +"], crm_client_types: ["Couples","Family"], crm_languages: "English", crm_pronouns: "She/Her", crm_email: "", crm_role: ["Psychologist"] },
-  "Niloo Danaei": { in_crm: true, crm_presentations: [], crm_modalities: [], crm_bio: "", crm_short_bio: "", crm_ages: ["18 Yrs +"], crm_client_types: ["Individual"], crm_languages: "English, Farsi", crm_pronouns: "She/Her", crm_email: "", crm_role: ["Psychologist Registrar"] },
-  "Dr Christine Deftereos": { in_crm: true, crm_presentations: [], crm_modalities: [], crm_bio: "", crm_short_bio: "", crm_ages: ["18 Yrs +"], crm_client_types: ["Individual"], crm_languages: "English, Greek", crm_pronouns: "She/Her", crm_email: "", crm_role: ["Clinical Psychologist"] },
-  "Oliver Eastwood": { in_crm: false, crm_presentations: [], crm_modalities: [], crm_bio: "", crm_short_bio: "", crm_ages: [], crm_client_types: [], crm_languages: "", crm_pronouns: "", crm_email: "", crm_role: [] },
-  "Meg Edelman": { in_crm: true, crm_presentations: [], crm_modalities: ["Acceptance and Commitment Therapy (ACT)","Cognitive Behavioural Therapy (CBT)","Dialectical Behaviour Therapy (DBT)","Mindfulness-Based Cognitive Therapy (MBCT)","Schema Therapy"], crm_bio: "", crm_short_bio: "", crm_ages: ["18 Yrs +"], crm_client_types: ["Individual"], crm_languages: "English", crm_pronouns: "She/Her", crm_email: "", crm_role: ["Psychologist"] },
-  "Kiira Gavralas": { in_crm: true, crm_presentations: [], crm_modalities: [], crm_bio: "", crm_short_bio: "", crm_ages: ["18 Yrs +"], crm_client_types: ["Individual"], crm_languages: "English", crm_pronouns: "She/Her", crm_email: "", crm_role: ["Psychologist Registrar"] },
-  "Jillian Giannios": { in_crm: false, crm_presentations: [], crm_modalities: [], crm_bio: "", crm_short_bio: "", crm_ages: [], crm_client_types: [], crm_languages: "", crm_pronouns: "", crm_email: "", crm_role: [] },
-  "Ella Graj": { in_crm: false, crm_presentations: [], crm_modalities: [], crm_bio: "", crm_short_bio: "", crm_ages: [], crm_client_types: [], crm_languages: "", crm_pronouns: "", crm_email: "", crm_role: [] },
-  "Cristina Jimenez": { in_crm: true, crm_presentations: [], crm_modalities: [], crm_bio: "", crm_short_bio: "", crm_ages: ["18 Yrs +"], crm_client_types: ["Couples","Individual"], crm_languages: "English, Spanish", crm_pronouns: "She/Her", crm_email: "", crm_role: ["Psychologist"] },
-  "Chiara Killey": { in_crm: true, crm_presentations: [], crm_modalities: ["Acceptance and Commitment Therapy (ACT)","Cognitive Behavioural Therapy (CBT)","Dialectical Behaviour Therapy (DBT)","Schema Therapy"], crm_bio: "", crm_short_bio: "", crm_ages: ["18 Yrs +"], crm_client_types: ["Individual"], crm_languages: "English", crm_pronouns: "She/Her", crm_email: "", crm_role: ["Psychologist Registrar"] },
-  "Nicholas Kleeman": { in_crm: true, crm_presentations: [], crm_modalities: [], crm_bio: "", crm_short_bio: "", crm_ages: ["18 Yrs +"], crm_client_types: ["Individual"], crm_languages: "English", crm_pronouns: "He/Him", crm_email: "", crm_role: ["Psychologist"] },
-  "Ricki Knoetze": { in_crm: true, crm_presentations: [], crm_modalities: [], crm_bio: "", crm_short_bio: "", crm_ages: ["18 Yrs +"], crm_client_types: ["Individual"], crm_languages: "English, Afrikaans", crm_pronouns: "She/Her", crm_email: "", crm_role: ["Psychologist Registrar"] },
-  "Joshua Kugel": { in_crm: true, crm_presentations: [], crm_modalities: [], crm_bio: "", crm_short_bio: "", crm_ages: ["18 Yrs +"], crm_client_types: ["Individual"], crm_languages: "English", crm_pronouns: "He/Him", crm_email: "", crm_role: ["Psychologist"] },
-  "Therese Van Maanen": { in_crm: true, crm_presentations: [], crm_modalities: [], crm_bio: "", crm_short_bio: "", crm_ages: ["18 Yrs +"], crm_client_types: ["Couples"], crm_languages: "English", crm_pronouns: "She/Her", crm_email: "", crm_role: ["Psychologist"] },
-  "Belinda Pacella": { in_crm: true, crm_presentations: [], crm_modalities: [], crm_bio: "", crm_short_bio: "", crm_ages: ["18 Yrs +"], crm_client_types: ["Individual"], crm_languages: "English", crm_pronouns: "She/Her", crm_email: "", crm_role: ["Psychologist Registrar"] },
-  "Poorna Selvaraja": { in_crm: true, crm_presentations: [], crm_modalities: [], crm_bio: "", crm_short_bio: "", crm_ages: ["18 Yrs +"], crm_client_types: ["Individual"], crm_languages: "English, Tamil", crm_pronouns: "She/Her", crm_email: "", crm_role: ["Psychologist Registrar"] },
-  "Dr David Spektor": { in_crm: true, crm_presentations: [], crm_modalities: [], crm_bio: "", crm_short_bio: "", crm_ages: [], crm_client_types: [], crm_languages: "", crm_pronouns: "", crm_email: "", crm_role: [] },
-  "Peter Steele": { in_crm: true, crm_presentations: [], crm_modalities: [], crm_bio: "", crm_short_bio: "", crm_ages: ["18 Yrs +"], crm_client_types: ["Individual"], crm_languages: "English", crm_pronouns: "He/Him", crm_email: "", crm_role: ["Psychologist"] },
-  "Stephanie Stewart": { in_crm: false, crm_presentations: [], crm_modalities: [], crm_bio: "", crm_short_bio: "", crm_ages: [], crm_client_types: [], crm_languages: "", crm_pronouns: "", crm_email: "", crm_role: [] },
-  "Clare Tuttleby": { in_crm: true, crm_presentations: [], crm_modalities: [], crm_bio: "", crm_short_bio: "", crm_ages: ["18 Yrs +"], crm_client_types: ["Individual"], crm_languages: "English", crm_pronouns: "She/Her", crm_email: "", crm_role: ["Psychologist"] },
-  "Elizabeth White": { in_crm: true, crm_presentations: [], crm_modalities: [], crm_bio: "", crm_short_bio: "", crm_ages: ["18 Yrs +"], crm_client_types: ["Individual"], crm_languages: "English", crm_pronouns: "She/Her", crm_email: "", crm_role: ["Clinical Psychologist"] },
-  "Karen Pereira York": { in_crm: true, crm_presentations: [], crm_modalities: [], crm_bio: "", crm_short_bio: "", crm_ages: ["18 Yrs +"], crm_client_types: ["Individual"], crm_languages: "English, Portuguese", crm_pronouns: "She/Her", crm_email: "", crm_role: ["Psychologist Registrar"] },
 };
 
-// Populate crm_presentations from the live PRACTITIONERS_DATA (already synced)
-PRACTITIONERS_DATA.forEach((p: any) => {
-  if (CRM_DATA[p.name]) {
-    CRM_DATA[p.name].crm_presentations = p.presentations || [];
+const crmData: Record<string, CRMRecord> = {
+  "Ruby Bouhadana": {
+    "in_crm": true,
+    "crm_presentations": [
+      "Adjustment Disorder",
+      "Anxiety - Anticipatory",
+      "Anxiety - Exam & Academic",
+      "Anxiety - Generalised (GAD)",
+      "Anxiety - Social Anxiety Disorder",
+      "Attachment Difficulties",
+      "Attention-Deficit/Hyperactivity Disorder (ADHD) — Diagnosed & Managed",
+      "Autism Spectrum Disorder (ASD) — Diagnosed & Managed",
+      "Body Image Concerns",
+      "Bullying & Peer Difficulties",
+      "Burnout — Carer / Family",
+      "Burnout — Work-Related",
+      "Complex Post-Traumatic Stress Disorder (C-PTSD)",
+      "Coping Skills",
+      "Depersonalisation / Derealisation",
+      "Depression — Major Depressive Disorder",
+      "Depression — Persistent Depressive Disorder (Dysthymia)",
+      "Emotional Dysregulation",
+      "Emotional Regulation & Behavioural Difficulties",
+      "Existential Concerns",
+      "Family Conflict",
+      "Fear of Failure",
+      "Grief & Loss - Complicated / Prolonged",
+      "Grief & Loss - General Bereavement",
+      "Identity Exploration — Gender / Sexual Orientation / Cultural / Spiritual",
+      "Identity Issues",
+      "Imposter Syndrome",
+      "Insomnia & Sleep Difficulties",
+      "Interpersonal Difficulties",
+      "Intimacy & Trust Difficulties",
+      "Learning Difficulties",
+      "Life Transitions",
+      "Loneliness & Isolation",
+      "Low Confidence & Self-Worth",
+      "Low Mood",
+      "Low Self-Esteem",
+      "Neurodivergence — General / Late Diagnosis",
+      "Non-Suicidal Self-Injury (NSSI) — Current",
+      "Non-Suicidal Self-Injury (NSSI) — Not Current / In Recovery",
+      "Panic Disorder",
+      "Parenting Difficulties",
+      "Perfectionism",
+      "Personality Disorder — Borderline Personality Disorder (BPD) — Diagnosed & In Treatment",
+      "Personality Disorder — Borderline Personality Disorder (BPD) — Suspected or Actively Impacting",
+      "Personality Patterns — Obsessive / Perfectionistic",
+      "Post-Traumatic Stress Disorder (PTSD)",
+      "Relationship Breakdown & Separation",
+      "Relationship Difficulties",
+      "Rumination",
+      "Shame & Guilt",
+      "Trauma - Childhood",
+      "Trauma - Compassion Fatigue / Vicarious Trauma",
+      "Trauma - Developmental",
+      "Trauma - Intergenerational",
+      "Trauma - Sexual Trauma",
+      "Trauma — Complex",
+      "Trauma — Single Incident",
+      "Women's Health — Perinatal Mental Health (General)",
+      "Women's Health — Postpartum Anxiety",
+      "Women's Health — Premenstrual Dysphoric Disorder (PMDD)",
+      "Women's Health — Premenstrual Syndrome / Hormonal Mood Changes (PMS)",
+      "Work-Related Stress"
+    ],
+    "crm_modalities": [
+      "Acceptance and Commitment Therapy (ACT)",
+      "Attachment-Based Therapy",
+      "Behavioural Activation (BA)",
+      "Cognitive Behavioural Therapy (CBT)",
+      "Dialectical Behaviour Therapy (DBT)",
+      "Emotion-Focused Therapy (EFT)",
+      "Exposure and Response Prevention (ERP)",
+      "Internal Family Systems (IFS) / Parts Work (Informed)",
+      "Internal Family Systems (IFS) / Parts Work (Level 1 Certified)",
+      "Interpersonal Therapy (IPT)",
+      "Motivational Interviewing (MI)",
+      "Schema Therapy"
+    ],
+    "crm_bio": "What I find most meaningful about being a psychologist is the privilege of being alongside people as they move through difficulties towards greater self-understanding, growth, and connection. I believe therapy is a space where change becomes possible, and it’s a role I feel deeply grateful to be in.\n\n\n\nI'm a Registered Psychologist and Clinical Psychology Registrar, and I work with adults navigating a range of mental health challenges, including anxiety, depression, complex trauma, emotional overwhelm and dysregulation, relationship difficulties, self-esteem difficulties, and study/work burnout. Whether someone is feeling stuck, going through a period of transition, or looking to explore themselves more deeply, I aim to offer a space that feels safe, supportive, and grounded.\n\n\n\nMy approach to therapy is collaborative and respectful of each person’s unique story. My therapeutic work often blends emotional exploration with practical strategies, and is informed by evidence-based approaches such as Internal Family Systems, Cognitive Behavioural Therapy, Acceptance and Commitment Therapy, Schema Therapy, and mindfulness-based practices. I’m especially interested in relational and attachment-focused ways of working, and in supporting clients to build a more compassionate relationship with themselves. I value working together to make sense of experiences - past and present - and to find ways forward that feel authentic and meaningful. \n\n\n\nI bring a warm, thoughtful, and calm presence to my work in the therapy room, and I welcome all parts of a person’s experience without judgment. I know that beginning therapy can feel daunting, and I’m always mindful of the trust it takes to share your story. My hope is to offer a space where you feel truly heard, and where we can work together through challenges, toward greater clarity, self-acceptance, and emotional wellbeing.",
+    "crm_short_bio": "A warm clinical psychology registrar integrating IFS, CBT, ACT, schema and mindfulness to support adults toward self-understanding, compassion and emotionally grounded change.",
+    "crm_ages": [
+      "18 Yrs +"
+    ],
+    "crm_client_types": [
+      "Individual"
+    ],
+    "crm_languages": "English",
+    "crm_pronouns": "She/Her",
+    "crm_email": "ruby.psychologycare@gmail.com",
+    "crm_role": [
+      "Clinical Psychologist"
+    ]
+  },
+  "Cristina Jimenez": {
+    "in_crm": true,
+    "crm_presentations": [
+      "Academic Pressure & Performance Stress",
+      "Addiction/Dependence (Alcohol) — Not Current / In Recovery",
+      "Addiction/Dependence (Cannabis) — Not Current / In Recovery",
+      "Addiction/Dependence (Compulsive Shopping) — Not Current / In Recovery",
+      "Addiction/Dependence (Gambling) — Not Current / In Recovery",
+      "Addiction/Dependence (Hypersexuality / Sex Addiction) — Not Current / In Recovery",
+      "Addiction/Dependence (Internet & Technology) — Not Current / In Recovery",
+      "Addiction/Dependence (Other Substances) — Not Current / In Recovery",
+      "Addiction/Dependence (Pornography / Compulsive Sexual Behaviour) — Not Current / In Recovery",
+      "Adjustment Disorder",
+      "Anger & Aggression",
+      "Anxiety - Anticipatory",
+      "Anxiety - Death",
+      "Anxiety - Exam & Academic",
+      "Anxiety - Financial Stress",
+      "Anxiety - Generalised (GAD)",
+      "Anxiety - Health (Illness Anxiety / Hypochondria)",
+      "Anxiety - Perinatal / Postnatal",
+      "Anxiety - Separation",
+      "Anxiety - Social Anxiety Disorder",
+      "Anxiety - Sports Performance",
+      "Attachment Difficulties",
+      "Attention-Deficit/Hyperactivity Disorder (ADHD) — Diagnosed & Managed",
+      "Attention-Deficit/Hyperactivity Disorder (ADHD) — Suspected or Actively Impacting",
+      "Autism Spectrum Disorder (ASD) — Diagnosed & Managed",
+      "Autism Spectrum Disorder (ASD) — Suspected or Actively Impacting",
+      "Behavioural Difficulties (Children & Adolescents)",
+      "Body Image Concerns",
+      "Bullying & Peer Difficulties",
+      "Burnout — Carer / Family",
+      "Burnout — Work-Related",
+      "Chronic Fatigue & Fatigue Syndromes",
+      "Chronic Pain",
+      "Complex Post-Traumatic Stress Disorder (C-PTSD)",
+      "Conduct Disorder",
+      "Coping Skills",
+      "Culturally & Linguistically Diverse (CALD) — Psychological Support",
+      "Depersonalisation / Derealisation",
+      "Depression — Major Depressive Disorder",
+      "Depression — Persistent Depressive Disorder (Dysthymia)",
+      "Disordered Eating - Anorexia Nervosa — Not Current / In Recovery",
+      "Disordered Eating - Avoidant/Restrictive Food Intake Disorder (ARFID)",
+      "Disordered Eating - Binge Eating Disorder — Not Current / In Recovery",
+      "Disordered Eating - Bulimia Nervosa — Not Current / In Recovery",
+      "Disordered Eating - Emotional Eating",
+      "Dissociation / Dissociative Disorders",
+      "Divorce / Post Divorce Adjustment/ Support",
+      "Emotional Dysregulation",
+      "Emotional Regulation & Behavioural Difficulties",
+      "Existential Concerns",
+      "Family Conflict",
+      "Fear of Failure",
+      "Grief & Loss - Complicated / Prolonged",
+      "Grief & Loss - Fertility & Pregnancy Loss",
+      "Grief & Loss - General Bereavement",
+      "Grief & Loss - Termination of Pregnancy",
+      "Identity Issues",
+      "Insomnia & Sleep Difficulties",
+      "Intimacy & Trust Difficulties",
+      "LGBTQIA+ Affirmative Support",
+      "LGBTQIA+ Identity & Queer Experiences",
+      "Life Transitions",
+      "Loneliness & Isolation",
+      "Low Confidence & Self-Worth",
+      "Low Mood",
+      "Low Self-Esteem",
+      "Migrant / Cultural Adjustment",
+      "Neurodivergence — General",
+      "Non-Monogamy & Polyamory",
+      "Non-Suicidal Self-Injury (NSSI) — Not Current / In Recovery",
+      "Obsessive-Compulsive Disorder (OCD) — General",
+      "Obsessive-Compulsive Disorder (OCD) — Intrusive Thoughts",
+      "Obsessive-Compulsive Disorder (OCD) — Relationship OCD (ROCD)",
+      "Panic Disorder",
+      "Parental Separation — Child & Family Adjustment",
+      "Parenting Difficulties",
+      "Perfectionism",
+      "Perinatal / Postnatal Depression",
+      "Phobias — Agoraphobia",
+      "Phobias — Claustrophobia",
+      "Phobias — Needle / Medical",
+      "Phobias — Social",
+      "Post-Traumatic Stress Disorder (PTSD)",
+      "Relationship Breakdown & Separation",
+      "Relationship Difficulties",
+      "Sexual Abuse/ Assault",
+      "Sexual Difficulties & Dysfunction - Female",
+      "Sex and Intimacy",
+      "Shame & Guilt",
+      "Somatic Symptom Disorder",
+      "Spirituality — Non-Religious Exploration (incl. Buddhism & Mystical Experiences)",
+      "Stress Management",
+      "Trauma - Childhood",
+      "Trauma - Compassion Fatigue / Vicarious Trauma",
+      "Trauma - Developmental",
+      "Trauma - Intergenerational",
+      "Trauma - Sexual Trauma",
+      "Trauma — Complex",
+      "Trauma — Single Incident",
+      "Women's Health — Birth Trauma",
+      "Women's Health — Endometriosis & Chronic Pelvic Pain",
+      "Women's Health — Infertility & Assisted Reproduction (IVF)",
+      "Women's Health — Menopause & Perimenopause",
+      "Women's Health — Perinatal Mental Health (General)",
+      "Women's Health — Polycystic Ovary Syndrome (PCOS)",
+      "Women's Health — Postpartum Anxiety",
+      "Women's Health — Postpartum Obsessive-Compulsive Disorder (OCD)",
+      "Women's Health — Premenstrual Dysphoric Disorder (PMDD)",
+      "Women's Health — Premenstrual Syndrome / Hormonal Mood Changes (PMS)",
+      "Work-Related Stress"
+    ],
+    "crm_modalities": [
+      "Acceptance and Commitment Therapy (ACT)",
+      "Acceptance-Based Somatic Work",
+      "Art Therapy",
+      "Attachment-Based Therapy",
+      "Compassion-Focused Therapy (CFT)",
+      "Dance/Movement Therapy",
+      "Existential Therapy",
+      "Gestalt Therapy",
+      "Gottman Method Couples Therapy",
+      "Humanistic / Person-Centred Therapy",
+      "Interpersonal Therapy (IPT)",
+      "Mindfulness-Based Cognitive Therapy (MBCT)",
+      "Mindfulness-Based Stress Reduction (MBSR)",
+      "Polyvagal-Informed Therapy",
+      "Somatic Experiencing",
+      "Somatic Therapy",
+      "Transpersonal Psychology",
+      "Trauma-Informed Care"
+    ],
+    "crm_bio": "Cristina is an ACA-accredited Holistic Counsellor and Psychotherapist with a genuine and compassionate approach to her work. She firmly believes in addressing the mind and body, fostering a deep sense of safety and trust in her clients. Cristina's unwavering warmth, empathy, and presence form the bedrock of every interaction, fostering collaborative partnerships with her clients to facilitate positive change. Fluent in Spanish, she embraces diversity and welcomes individuals from all backgrounds, including the LGBTIQ+ community. \n\nSpecialising in individual counselling for adults, Cristina adeptly addresses various issues, such as depression, anxiety, grief and loss, trauma, interpersonal relationships, sexuality and intimacy, existential challenges, emotional difficulties, and self-exploration.\n\nBeyond her counselling practice, Cristina is a skilled Dance Movement Therapist. Her extensive background as a dancer and movement therapist has refined her ability to tap into the somatic level of the body. She has witnessed the transformative potential of healing trauma through subtle cues and the innate wisdom of the body.\n\nCristina is a Somatic Experiencing® (SE™) Practitioner, having completed the professional training in Somatic Experiencing®. She thoughtfully integrates SE™ principles into her work, supporting clients to gently resolve the effects of stress and trauma by working with the nervous system and the body's natural capacity for healing.",
+    "crm_short_bio": "",
+    "crm_ages": [
+      "16 Yrs +"
+    ],
+    "crm_client_types": [
+      "Individual",
+      "Couples"
+    ],
+    "crm_languages": "English\nSpanish",
+    "crm_pronouns": "She/Her",
+    "crm_email": "cristina.jimenez.gordon@gmail.com",
+    "crm_role": [
+      "Psychotherapist"
+    ]
+  },
+  "Therese Van Maanen": {
+    "in_crm": true,
+    "crm_presentations": [
+      "Adjustment Disorder",
+      "Anger & Aggression",
+      "Anxiety - Anticipatory",
+      "Anxiety - Death",
+      "Anxiety - Exam & Academic",
+      "Anxiety - Financial Stress",
+      "Anxiety - Generalised (GAD)",
+      "Anxiety - Health (Illness Anxiety / Hypochondria)",
+      "Anxiety - Perinatal / Postnatal",
+      "Anxiety - Separation",
+      "Anxiety - Social Anxiety Disorder",
+      "Anxiety - Sports Performance",
+      "Attachment Difficulties",
+      "Body Image Concerns",
+      "Bullying & Peer Difficulties",
+      "Burnout — Carer / Family",
+      "Burnout — Work-Related",
+      "Chronic Illness — Adjustment & Psychological Support",
+      "Clinician & Therapist Wellbeing Support",
+      "Conduct Disorder",
+      "Coping Skills",
+      "Depersonalisation / Derealisation",
+      "Depression — Major Depressive Disorder",
+      "Depression — Persistent Depressive Disorder (Dysthymia)",
+      "Divorce / Post Divorce Adjustment/ Support",
+      "Domestic/ Family Violence",
+      "Emotional Dysregulation",
+      "Emotional Regulation & Behavioural Difficulties",
+      "Existential Concerns",
+      "Family Conflict",
+      "Fear of Failure",
+      "First Responder & Emergency Services Support",
+      "Grief & Loss - Complicated / Prolonged",
+      "Grief & Loss - Fertility & Pregnancy Loss",
+      "Grief & Loss - General Bereavement",
+      "Grief & Loss - Termination of Pregnancy",
+      "Identity Exploration — Gender / Sexual Orientation / Cultural / Spiritual",
+      "Identity Issues",
+      "Insomnia & Sleep Difficulties",
+      "Intimacy & Trust Difficulties",
+      "LGBTQIA+ Affirmative Support",
+      "LGBTQIA+ Identity & Queer Experiences",
+      "Life Transitions",
+      "Loneliness & Isolation",
+      "Low Confidence & Self-Worth",
+      "Low Mood",
+      "Low Self-Esteem",
+      "Non-Monogamy & Polyamory",
+      "Non-Suicidal Self-Injury (NSSI) — Not Current / In Recovery",
+      "Panic Disorder",
+      "Parental Separation — Child & Family Adjustment",
+      "Parenting Difficulties",
+      "Perfectionism",
+      "Perinatal / Postnatal Depression",
+      "Phobias — Social",
+      "Post-Traumatic Stress Disorder (PTSD)",
+      "Relationship Breakdown & Separation",
+      "Relationship Difficulties",
+      "Seasonal Affective Disorder (SAD)",
+      "Sexual Abuse/ Assault",
+      "Sexual Difficulties & Dysfunction - Female",
+      "Sex and Intimacy",
+      "Shame & Guilt",
+      "Somatic Symptom Disorder",
+      "Stress Management",
+      "Trauma — Complex",
+      "Women's Health — Birth Trauma",
+      "Women's Health — Endometriosis & Chronic Pelvic Pain",
+      "Women's Health — Infertility & Assisted Reproduction (IVF)",
+      "Women's Health — Menopause & Perimenopause",
+      "Women's Health — Perinatal Mental Health (General)",
+      "Women's Health — Polycystic Ovary Syndrome (PCOS)",
+      "Women's Health — Postpartum Anxiety",
+      "Women's Health — Postpartum Obsessive-Compulsive Disorder (OCD)",
+      "Women's Health — Premenstrual Dysphoric Disorder (PMDD)",
+      "Women's Health — Premenstrual Syndrome / Hormonal Mood Changes (PMS)",
+      "Work-Related Stress"
+    ],
+    "crm_modalities": [
+      "Acceptance-Based Couples Therapy",
+      "Circle of Security (COS)",
+      "Cognitive Behavioural Therapy (CBT)",
+      "Compassion-Focused Therapy (CFT)",
+      "Humanistic / Person-Centred Therapy",
+      "Interpersonal Therapy (IPT)",
+      "Psychodynamic Therapy"
+    ],
+    "crm_bio": "To paraphrase the novelist Gabriel Garcia Marquez, our arrival in this world foreshadows the many opportunities life will afford us to reimagine ourselves. I  completed the long journey to become a registered psychologist, after an early career in architecture followed by one in the Internet industry when email was still a novelty and social media a twinkle in somebody’s eye.\n\nLife has become increasingly fast-paced, complex, and sometimes overwhelming. As a psychologist, I use my knowledge and expertise to understand and support my clients in making sense of their lived experiences. Doing so unlocks potential, for hope when it’s a struggle and for change when it may seem impossible. I aim to build a secure therapeutic alliance that provides the foundation to explore the barriers to potential, be that in intimate relationships, work, or private internal experiences.\n\nI have a particular interest in the role that our early attachment relationships have on our adult functioning and the intergenerational consequences of attachment styles. I have additional training in The Circle of Security® Parenting™ program which is based on decades of research about supporting and strengthening secure parent-child relationships, and I bring this reflective capacity into my individual therapy work. I work with teenagers, adults, new parents, and couples in both traditional and non-heteronormative relationships.",
+    "crm_short_bio": "A reflective, attachment-focused psychologist drawing on Circle of Security to support teens, adults, new parents and diverse couples toward meaningful change.",
+    "crm_ages": [
+      "18 Yrs +"
+    ],
+    "crm_client_types": [
+      "Couples"
+    ],
+    "crm_languages": "",
+    "crm_pronouns": "",
+    "crm_email": "tvm@meravan.com.au",
+    "crm_role": [
+      "Psycholoist"
+    ]
+  },
+  "Allison Conyer": {
+    "in_crm": true,
+    "crm_presentations": [
+      "Anger & Aggression",
+      "Anxiety - Anticipatory",
+      "Anxiety - Financial Stress",
+      "Anxiety - Generalised (GAD)",
+      "Anxiety - Health (Illness Anxiety / Hypochondria)",
+      "Anxiety - Perinatal / Postnatal",
+      "Anxiety - Separation",
+      "Anxiety - Social Anxiety Disorder",
+      "Attachment Difficulties",
+      "Attention-Deficit/Hyperactivity Disorder (ADHD) — Diagnosed & Managed",
+      "Attention-Deficit/Hyperactivity Disorder (ADHD) — Suspected or Actively Impacting",
+      "Body Image Concerns",
+      "Bullying & Peer Difficulties",
+      "Burnout — Carer / Family",
+      "Burnout — Work-Related",
+      "Chronic Illness — Adjustment & Psychological Support",
+      "Chronic Pain",
+      "Clinician & Therapist Wellbeing Support",
+      "Complex Post-Traumatic Stress Disorder (C-PTSD)",
+      "Conduct Disorder",
+      "Coping Skills",
+      "Depression — Major Depressive Disorder",
+      "Depression — Persistent Depressive Disorder (Dysthymia)",
+      "Disordered Eating - Anorexia Nervosa — Not Current / In Recovery",
+      "Disordered Eating - Avoidant/Restrictive Food Intake Disorder (ARFID)",
+      "Disordered Eating - Binge Eating Disorder — Not Current / In Recovery",
+      "Disordered Eating - Bulimia Nervosa — Not Current / In Recovery",
+      "Disordered Eating - Emotional Eating",
+      "Dissociation / Dissociative Disorders",
+      "Emotional Dysregulation",
+      "Family Conflict",
+      "Fear of Failure",
+      "Grief & Loss - Complicated / Prolonged",
+      "Grief & Loss - Fertility & Pregnancy Loss",
+      "Grief & Loss - General Bereavement",
+      "Grief & Loss - Termination of Pregnancy",
+      "Identity Exploration — Gender / Sexual Orientation / Cultural / Spiritual",
+      "Identity Issues",
+      "Insomnia & Sleep Difficulties",
+      "Interpersonal Difficulties",
+      "Intimacy & Trust Difficulties",
+      "Life Transitions",
+      "Loneliness & Isolation",
+      "Low Confidence & Self-Worth",
+      "Low Mood",
+      "Low Self-Esteem",
+      "Panic Disorder",
+      "Parental Separation — Child & Family Adjustment",
+      "Parenting Difficulties",
+      "Perfectionism",
+      "Perinatal / Postnatal Depression",
+      "Post-Traumatic Stress Disorder (PTSD)",
+      "Relationship Difficulties",
+      "Self-Harm & Risky Behaviours",
+      "Sex and Intimacy",
+      "Shame & Guilt",
+      "Spiritual / Religious Crisis",
+      "Stress Management",
+      "Trauma - Childhood",
+      "Trauma - Compassion Fatigue / Vicarious Trauma",
+      "Trauma - Intergenerational",
+      "Women's Health — Birth Trauma",
+      "Women's Health — Infertility & Assisted Reproduction (IVF)",
+      "Women's Health — Menopause & Perimenopause",
+      "Women's Health — Perinatal Mental Health (General)",
+      "Work-Related Stress"
+    ],
+    "crm_modalities": [
+      "Acceptance and Commitment Therapy (ACT)",
+      "Cognitive Behavioural Therapy (CBT)",
+      "Exposure and Response Prevention (ERP)",
+      "Schema Therapy"
+    ],
+    "crm_bio": "Allison has lived in different countries, travelled extensively, and worked in various contexts with children, adolescents, adults, and seniors. Allison relates well to people of all ages from different cultural and religious backgrounds. She recognises the influence of cultural and familial backgrounds on the emotional and cognitive wellbeing of an individual, in addition to one’s life experience and current circumstances. As a registered Psychologist, she brings a warm, compassionate, and straight-forward approach which is particularly engaging with adolescents.\n\nAllison has counselled individuals managing anxiety, depression, trauma, abuse, low self-esteem, body issues, perfectionism, phobias, workplace stress and burnout, career transition, relationship breakdowns, chronic pain and illness, grief, loss, and death anxiety.\n\nInfluenced by family systems theory, Allison also works with couples and families to support both the individuals and the family unit. She believes that healthy relationships foster healthy individuals and healthy individuals live more content and meaningful lives.\n\nAllison employs an integrative approach to therapy, drawing upon a wide-range of evidence-based therapies such as cognitive behaviour therapy, acceptance and commitment therapy, schema therapy, brief psychodynamic psychotherapy, mindfulness, trauma-informed recovery-based practice, and play therapy. She believes that there is no “therapy-fits-all”; thus, she works collaboratively with each individual client to develop a comfortable, trusting relationship and find the approach that best suits them.",
+    "crm_short_bio": "Allison is a warm, culturally aware psychologist supporting all ages with anxiety, trauma, life transitions and family relationships using integrative evidence-based therapies.",
+    "crm_ages": [
+      "12 Yrs +"
+    ],
+    "crm_client_types": [
+      "Individual",
+      "Couples",
+      "Family"
+    ],
+    "crm_languages": "",
+    "crm_pronouns": "She/Her",
+    "crm_email": "conyerpsych@gmail.com",
+    "crm_role": [
+      "Psychologist"
+    ]
+  },
+  "Chiara Killey": {
+    "in_crm": true,
+    "crm_presentations": [
+      "Academic Pressure & Performance Stress",
+      "Acute Stress Reaction",
+      "Adjustment Disorder",
+      "Anxiety - Anticipatory",
+      "Anxiety - Exam & Academic",
+      "Anxiety - Financial Stress",
+      "Anxiety - Generalised (GAD)",
+      "Anxiety - Health (Illness Anxiety / Hypochondria)",
+      "Anxiety - Perinatal / Postnatal",
+      "Anxiety - Separation",
+      "Anxiety - Social Anxiety Disorder",
+      "Attachment Difficulties",
+      "Attention-Deficit/Hyperactivity Disorder (ADHD) — Diagnosed & Managed",
+      "Attention-Deficit/Hyperactivity Disorder (ADHD) — Suspected or Actively Impacting",
+      "Autism Spectrum Disorder (ASD) — Diagnosed & Managed",
+      "Autism Spectrum Disorder (ASD) — Suspected or Actively Impacting",
+      "Body Image Concerns",
+      "Bullying & Peer Difficulties",
+      "Burnout — Carer / Family",
+      "Burnout — Work-Related",
+      "Chronic Illness — Adjustment & Psychological Support",
+      "Coping Skills",
+      "Depression — Major Depressive Disorder",
+      "Dissociation / Dissociative Disorders",
+      "Divorce / Post Divorce Adjustment/ Support",
+      "Emotional Dysregulation",
+      "Emotional Regulation & Behavioural Difficulties",
+      "Executive Functioning Difficulties",
+      "Existential Concerns",
+      "Family Conflict",
+      "Fear of Failure",
+      "Gender Dysphoria (formerly Gender Identity Disorder)",
+      "Grief & Loss - Complicated / Prolonged",
+      "Grief & Loss - Fertility & Pregnancy Loss",
+      "Grief & Loss - General Bereavement",
+      "Grief & Loss - Termination of Pregnancy",
+      "Identity Exploration — Gender / Sexual Orientation / Cultural / Spiritual",
+      "Identity Issues",
+      "Imposter Syndrome",
+      "Insomnia & Sleep Difficulties",
+      "Interpersonal Difficulties",
+      "Intimacy & Trust Difficulties",
+      "LGBTQIA+ Affirmative Support",
+      "LGBTQIA+ Identity & Queer Experiences",
+      "Life Transitions",
+      "Loneliness & Isolation",
+      "Low Confidence & Self-Worth",
+      "Low Mood",
+      "Low Self-Esteem",
+      "Non-Monogamy & Polyamory",
+      "Panic Disorder",
+      "Parental Separation — Child & Family Adjustment",
+      "Parenting Difficulties",
+      "Perfectionism",
+      "Perinatal / Postnatal Depression",
+      "Phobias — Social",
+      "Post-Traumatic Stress Disorder (PTSD)",
+      "Relationship Breakdown & Separation",
+      "Relationship Difficulties",
+      "Sexual Difficulties & Dysfunction - Male",
+      "Sex and Intimacy",
+      "Shame & Guilt",
+      "Stress Management",
+      "Trauma — Single Incident",
+      "Women's Health — Birth Trauma",
+      "Women's Health — Endometriosis & Chronic Pelvic Pain",
+      "Women's Health — Infertility & Assisted Reproduction (IVF)",
+      "Women's Health — Menopause & Perimenopause",
+      "Women's Health — Perinatal Mental Health (General)",
+      "Women's Health — Polycystic Ovary Syndrome (PCOS)",
+      "Women's Health — Postpartum Anxiety",
+      "Women's Health — Postpartum Obsessive-Compulsive Disorder (OCD)",
+      "Women's Health — Premenstrual Dysphoric Disorder (PMDD)",
+      "Women's Health — Premenstrual Syndrome / Hormonal Mood Changes (PMS)",
+      "Work-Related Stress"
+    ],
+    "crm_modalities": [
+      "Acceptance and Commitment Therapy (ACT)",
+      "Cognitive Behavioural Therapy (CBT)",
+      "Dialectical Behaviour Therapy (DBT)",
+      "Schema Therapy"
+    ],
+    "crm_bio": "I am a registered psychologist who holds a Bachelor of Psychology with Honours from Monash University and Master of Clinical Psychology from the University of Melbourne. I have a naturally warm and relaxed personal style, which I hope will make you feel at ease in our early sessions. I hold a strong focus on self-compassion, resilience and empathy for others, as I believe that all of our behaviours are a product of us doing our best with the tools we have available to us at the time. This is where I believe the value of psychology truly lies, in being able to examine those tools and find the ones which are serving us and the ones which may no longer be useful.\n\nI work with adolescents and adults experiencing and array of difficulties across the mental health spectrum. I have a special interest in working with adolescents (age 12+), young adults and their families, as I believe that adolescence and early adulthood hold unique developmental challenges, as well as great formative importance. I hope to be able to help young people and families navigate these challenges, find understanding in each other and ways to cope with distress.\n\nI draw upon multiple treatment modalities including Cognitive and Behavioural Therapy (CBT), Acceptance and Commitment Therapy (ACT), Family-Inclusive Therapeutic Approaches, Interpersonal Therapy and Dialectical Behavioural Therapy (DBT). This allows me to tailor the approach we take to what is most suitable for your needs.  My prior experience includes working with clients at headspace centres, in hospital settings and in university clinics.\n\nThroughout our time together, rest assured that I understand and respect the trust you are putting in me to explore your vulnerabilities with you. I believe it is a genuine honour to be welcomed into your life in this way, and I will create a safe and respectful space for you to explore whatever it is that you need to help you to meet your own goals.",
+    "crm_short_bio": "Chiara is a neurodivergent, neuro-affirming clinical psychologist supporting adults with autism, ADHD and diverse needs using collaborative, family-inclusive, evidence-based therapies.",
+    "crm_ages": [
+      "18 Yrs +"
+    ],
+    "crm_client_types": [
+      "Individual"
+    ],
+    "crm_languages": "",
+    "crm_pronouns": "She/Her",
+    "crm_email": "chiara.killey@gmail.com",
+    "crm_role": [
+      "Clinical Psychologist"
+    ]
+  },
+  "Belinda Pacella": {
+    "in_crm": true,
+    "crm_presentations": [
+      "Academic Pressure & Performance Stress",
+      "Acute Stress Reaction",
+      "Adjustment Disorder",
+      "Anxiety - Anticipatory",
+      "Anxiety - Exam & Academic",
+      "Anxiety - Financial Stress",
+      "Anxiety - Generalised (GAD)",
+      "Anxiety - Health (Illness Anxiety / Hypochondria)",
+      "Anxiety - Perinatal / Postnatal",
+      "Anxiety - Separation",
+      "Anxiety - Social Anxiety Disorder",
+      "Anxiety - Sports Performance",
+      "Attachment Difficulties",
+      "Bullying & Peer Difficulties",
+      "Burnout — Carer / Family",
+      "Burnout — Work-Related",
+      "Coping Skills",
+      "Cultural Adjustment",
+      "Culturally & Linguistically Diverse (CALD) — Psychological Support",
+      "Depersonalisation / Derealisation",
+      "Depression — Major Depressive Disorder",
+      "Depression — Persistent Depressive Disorder (Dysthymia)",
+      "Dissociation / Dissociative Disorders",
+      "Divorce / Post Divorce Adjustment/ Support",
+      "Existential Concerns",
+      "Family Conflict",
+      "Fear of Failure",
+      "Grief & Loss - Complicated / Prolonged",
+      "Grief & Loss - Fertility & Pregnancy Loss",
+      "Grief & Loss - General Bereavement",
+      "Grief & Loss - Termination of Pregnancy",
+      "Identity Issues",
+      "Imposter Syndrome",
+      "Insomnia & Sleep Difficulties",
+      "Interpersonal Difficulties",
+      "Intimacy & Trust Difficulties",
+      "LGBTQIA+ Affirmative Support",
+      "LGBTQIA+ Identity & Queer Experiences",
+      "Life Transitions",
+      "Loneliness & Isolation",
+      "Low Confidence & Self-Worth",
+      "Low Mood",
+      "Low Self-Esteem",
+      "Panic Disorder",
+      "Parental Separation — Child & Family Adjustment",
+      "Parenting Difficulties",
+      "Perfectionism",
+      "Perinatal / Postnatal Depression",
+      "Personality Patterns — Obsessive / Perfectionistic",
+      "Phobias — Agoraphobia",
+      "Phobias — Claustrophobia",
+      "Phobias — Needle / Medical",
+      "Phobias — Social",
+      "Relationship Breakdown & Separation",
+      "Relationship Difficulties",
+      "Rumination",
+      "Sex and Intimacy",
+      "Shame & Guilt",
+      "Stress Management",
+      "Trauma - Compassion Fatigue / Vicarious Trauma",
+      "Women's Health — Birth Trauma",
+      "Women's Health — Endometriosis & Chronic Pelvic Pain",
+      "Women's Health — Infertility & Assisted Reproduction (IVF)",
+      "Women's Health — Menopause & Perimenopause",
+      "Women's Health — Perinatal Mental Health (General)",
+      "Women's Health — Polycystic Ovary Syndrome (PCOS)",
+      "Women's Health — Postpartum Anxiety",
+      "Women's Health — Postpartum Obsessive-Compulsive Disorder (OCD)",
+      "Women's Health — Premenstrual Dysphoric Disorder (PMDD)",
+      "Women's Health — Premenstrual Syndrome / Hormonal Mood Changes (PMS)",
+      "Work-Related Stress"
+    ],
+    "crm_modalities": [
+      "Acceptance and Commitment Therapy (ACT)",
+      "Cognitive Behavioural Therapy (CBT)",
+      "Eye Movement Desensitisation and Reprocessing (EMDR)",
+      "Intensive Short-Term Dynamic Psychotherapy (ISTDP)",
+      "Internal Family Systems (IFS) / Parts Work (Informed)",
+      "Motivational Interviewing (MI)",
+      "Polyvagal-Informed Therapy",
+      "Schema Therapy",
+      "Trauma-Informed Care"
+    ],
+    "crm_bio": "Belinda completed her Master of Clinical Psychology at the University of Melbourne, and has experience working with adults and adolescents experiencing a range of emotional difficulties. She values building an authentic therapeutic relationship where people feel safe to explore parts of their inner world in a non-judgemental and empathic space. \n\nBelinda aims to work collaboratively with her clients to help them develop a deeper understanding of themselves and underlying patterns that may be causing emotional suffering. She adopts an integrative approach mainly informed by Intensive Short Term Dynamic Psychotherapy (ISTDP). ISTDP is an evidence-based therapy that understands emotional suffering as arising from the use of defensive mechanisms that work out of our awareness to create barriers to authentically connecting with ourselves and our core emotions. By bringing awareness to these unconscious emotional processes, unhelpful defensive patterns can be understood and let go of, to make space for adaptive emotional processes to develop. She also draws upon Cognitive Behavioural Therapy (CBT) and Acceptance and Commitment Therapy (ACT), adopting a tailored approach that is guided by each client’s unique needs. Belinda is most passionate about working with her clients to achieve emotional wellbeing, with the aim of lasting change.",
+    "crm_short_bio": "Belinda is a collaborative clinical psychologist and supervisor using relational, emotion-focused ISTDP to foster deep self-understanding, emotional resilience and lasting change.",
+    "crm_ages": [
+      "18 Yrs +"
+    ],
+    "crm_client_types": [
+      "Individual"
+    ],
+    "crm_languages": "",
+    "crm_pronouns": "She/Her",
+    "crm_email": "belindapacellapsychology@gmail.com",
+    "crm_role": [
+      "Clinical Psychologist"
+    ]
+  },
+  "Rebekah Barson": {
+    "in_crm": true,
+    "crm_presentations": [
+      "Addiction/Dependence (Alcohol) — Not Current / In Recovery",
+      "Addiction/Dependence (Cannabis) — Not Current / In Recovery",
+      "Addiction/Dependence (Compulsive Shopping) — Not Current / In Recovery",
+      "Addiction/Dependence (Gambling) — Not Current / In Recovery",
+      "Addiction/Dependence (Hypersexuality / Sex Addiction) — Not Current / In Recovery",
+      "Addiction/Dependence (Internet & Technology) — Not Current / In Recovery",
+      "Addiction/Dependence (Other Substances) — Not Current / In Recovery",
+      "Adjustment Disorder",
+      "Adoption, Foster Care & Out-of-Home Care",
+      "Anxiety - Anticipatory",
+      "Anxiety - Death",
+      "Anxiety - Exam & Academic",
+      "Anxiety - Financial Stress",
+      "Anxiety - Generalised (GAD)",
+      "Anxiety - Health (Illness Anxiety / Hypochondria)",
+      "Anxiety - Perinatal / Postnatal",
+      "Anxiety - Separation",
+      "Anxiety - Social Anxiety Disorder",
+      "Anxiety - Sports Performance",
+      "Attachment Difficulties",
+      "Body Image Concerns",
+      "Bullying & Peer Difficulties",
+      "Burnout — Carer / Family",
+      "Burnout — Work-Related",
+      "Chronic Illness — Adjustment & Psychological Support",
+      "Domestic/ Family Violence",
+      "Family Conflict",
+      "Fear of Failure",
+      "First Responder & Emergency Services Support",
+      "Grief & Loss - Complicated / Prolonged",
+      "Grief & Loss - Fertility & Pregnancy Loss",
+      "Grief & Loss - General Bereavement",
+      "Grief & Loss - Termination of Pregnancy",
+      "Identity Exploration — Gender / Sexual Orientation / Cultural / Spiritual",
+      "Identity Issues",
+      "Insomnia & Sleep Difficulties",
+      "Interpersonal Difficulties",
+      "Intimacy & Trust Difficulties",
+      "LGBTQIA+ Affirmative Support",
+      "LGBTQIA+ Identity & Queer Experiences",
+      "Life Transitions",
+      "Loneliness & Isolation",
+      "Low Confidence & Self-Worth",
+      "Low Mood",
+      "Low Self-Esteem",
+      "Narcissistic Abuse — Trauma & Recovery",
+      "Non-Monogamy & Polyamory",
+      "Panic Disorder",
+      "Parental Separation — Child & Family Adjustment",
+      "Parenting Difficulties",
+      "Perfectionism",
+      "Perinatal / Postnatal Depression",
+      "Phobias — Social",
+      "Post-Traumatic Stress Disorder (PTSD)",
+      "Postural Orthostatic Tachycardia Syndrome (POTS) — Psychological Support",
+      "Relationship Breakdown & Separation",
+      "Relationship Difficulties",
+      "Rumination",
+      "Sexual Abuse/ Assault",
+      "Sexual Difficulties & Dysfunction - Female",
+      "Sex and Intimacy",
+      "Shame & Guilt",
+      "Stress Management",
+      "Trauma - Childhood",
+      "Trauma - Compassion Fatigue / Vicarious Trauma",
+      "Trauma - Developmental",
+      "Trauma - Intergenerational",
+      "Trauma - Sexual Trauma",
+      "Trauma — Complex",
+      "Trauma — Single Incident",
+      "Women's Health — Birth Trauma",
+      "Women's Health — Endometriosis & Chronic Pelvic Pain",
+      "Women's Health — Infertility & Assisted Reproduction (IVF)",
+      "Women's Health — Menopause & Perimenopause",
+      "Women's Health — Perinatal Mental Health (General)",
+      "Women's Health — Polycystic Ovary Syndrome (PCOS)",
+      "Women's Health — Postpartum Anxiety",
+      "Women's Health — Postpartum Obsessive-Compulsive Disorder (OCD)",
+      "Women's Health — Premenstrual Dysphoric Disorder (PMDD)",
+      "Women's Health — Premenstrual Syndrome / Hormonal Mood Changes (PMS)",
+      "Work-Related Stress"
+    ],
+    "crm_modalities": [
+      "Acceptance and Commitment Therapy (ACT)",
+      "Emotion-Focused Therapy (EFT)",
+      "Gottman Method Couples Therapy",
+      "Humanistic / Person-Centred Therapy",
+      "Internal Family Systems (IFS) / Parts Work (Informed)",
+      "Interpersonal Therapy (IPT)",
+      "Polyvagal-Informed Therapy",
+      "Psychoanalytic Psychotherapy",
+      "Psychodynamic Therapy",
+      "Somatic Therapy",
+      "Transpersonal Psychology",
+      "Trauma-Informed Care"
+    ],
+    "crm_bio": "Rebekah is a clinical Mental Health Social Worker, who has additional training in Psychotherapy (Victorian Association of Psychoanalytic Psychotherapists), Relationship Counselling (Relationships Australia) and Acceptance and Commitment Therapy (ACT mindfully), who works with both individuals and couples.\n\nRebekah seeks to support her clients to discover the value of greater emotional awareness, and more flexible expression and management of emotions. Through the process of therapy, clients have the opportunity to develop a deeper ability for reflection, a greater sense of self awareness and resilience, towards creating meaning and wellbeing in life.\n\nRebekah has a compassionate and thoughtful approach to the emotional care and support of her clients, and provides a therapeutic space that is safe, supportive, and strengthening. Using a collaborative and strength based approach, Rebekah believes that change and healing is possible.",
+    "crm_short_bio": "Rebekah is a relationship-focused mental health social worker using counselling, psychotherapy and ACT to help individuals and couples strengthen connection and wellbeing.",
+    "crm_ages": [
+      "18 Yrs +"
+    ],
+    "crm_client_types": [
+      "Individual",
+      "Couples"
+    ],
+    "crm_languages": "",
+    "crm_pronouns": "She/Her",
+    "crm_email": "rebekahbarson@gmail.com",
+    "crm_role": [
+      "Mental Health Social Worker"
+    ]
+  },
+  "Ricki Knoetze": {
+    "in_crm": true,
+    "crm_presentations": [
+      "Adjustment Disorder",
+      "Anxiety - Anticipatory",
+      "Anxiety - Exam & Academic",
+      "Anxiety - Financial Stress",
+      "Anxiety - Generalised (GAD)",
+      "Anxiety - Health (Illness Anxiety / Hypochondria)",
+      "Anxiety - Perinatal / Postnatal",
+      "Anxiety - Separation",
+      "Anxiety - Social Anxiety Disorder",
+      "Anxiety - Sports Performance",
+      "Attachment Difficulties",
+      "Attention-Deficit/Hyperactivity Disorder (ADHD) — Diagnosed & Managed",
+      "Attention-Deficit/Hyperactivity Disorder (ADHD) — Suspected or Actively Impacting",
+      "Burnout — Carer / Family",
+      "Burnout — Work-Related",
+      "Coping Skills",
+      "Depression — Major Depressive Disorder",
+      "Depression — Persistent Depressive Disorder (Dysthymia)",
+      "Emotional Dysregulation",
+      "Emotional Regulation & Behavioural Difficulties",
+      "Family Conflict",
+      "Fear of Failure",
+      "Grief & Loss - Complicated / Prolonged",
+      "Grief & Loss - Fertility & Pregnancy Loss",
+      "Grief & Loss - General Bereavement",
+      "Grief & Loss - Termination of Pregnancy",
+      "Identity Issues",
+      "Insomnia & Sleep Difficulties",
+      "Interpersonal Difficulties",
+      "Intimacy & Trust Difficulties",
+      "LGBTQIA+ Affirmative Support",
+      "LGBTQIA+ Identity & Queer Experiences",
+      "Life Transitions",
+      "Low Confidence & Self-Worth",
+      "Low Mood",
+      "Low Self-Esteem",
+      "Obsessive-Compulsive Disorder (OCD) — General",
+      "Obsessive-Compulsive Disorder (OCD) — Intrusive Thoughts",
+      "Obsessive-Compulsive Disorder (OCD) — Relationship OCD (ROCD)",
+      "Panic Disorder",
+      "Parenting Difficulties",
+      "Perfectionism",
+      "Perinatal / Postnatal Depression",
+      "Relationship Breakdown & Separation",
+      "Relationship Difficulties",
+      "Rumination",
+      "Self-Harm & Risky Behaviours",
+      "Sex and Intimacy",
+      "Shame & Guilt",
+      "Stress Management",
+      "Women's Health — Endometriosis & Chronic Pelvic Pain",
+      "Women's Health — Perinatal Mental Health (General)",
+      "Work-Related Stress"
+    ],
+    "crm_modalities": [
+      "Acceptance and Commitment Therapy (ACT)",
+      "Cognitive Behavioural Therapy (CBT)",
+      "Psychodynamic Therapy",
+      "Somatic Therapy",
+      "Trauma-Informed Care"
+    ],
+    "crm_bio": "Ricki is a warm and welcoming psychologist who creates a safe space for clients to explore, understand and navigate the challenges they are experiencing. Ricki has a compassionate and non-judgemental approach, which helps her create the strong therapeutic relationships that form the basis of effective therapy. She draws from evidence-based therapies, including cognitive behaviour therapy, acceptance and commitment therapy, and psychodynamic approaches, depending on the unique needs and goals of each client. She has worked in university-based and private practice with adolescents and adults experiencing anxiety, depression, trauma, OCD, ADHD, grief and interpersonal issues. Ricki is passionate about empowering clients to better manage their distress, enhance their wellbeing and move toward their life goals.",
+    "crm_short_bio": "Ricki is a warm, non-judgemental psychologist using CBT, ACT and psychodynamic therapies to support adolescents and adults with anxiety, depression, trauma and ADHD.",
+    "crm_ages": [
+      "18 Yrs +"
+    ],
+    "crm_client_types": [
+      "Individual"
+    ],
+    "crm_languages": "",
+    "crm_pronouns": "",
+    "crm_email": "r_knoetze@hotmail.com",
+    "crm_role": [
+      "Psycholoist"
+    ]
+  },
+  "Poorna Selvaraja": {
+    "in_crm": true,
+    "crm_presentations": [
+      "Academic Pressure & Performance Stress",
+      "Adjustment Disorder",
+      "Anger & Aggression",
+      "Anxiety - Anticipatory",
+      "Anxiety - Death",
+      "Anxiety - Exam & Academic",
+      "Anxiety - Financial Stress",
+      "Anxiety - Generalised (GAD)",
+      "Anxiety - Health (Illness Anxiety / Hypochondria)",
+      "Anxiety - Perinatal / Postnatal",
+      "Anxiety - Separation",
+      "Anxiety - Social Anxiety Disorder",
+      "Anxiety - Sports Performance",
+      "Attachment Difficulties",
+      "Bullying & Peer Difficulties",
+      "Burnout — Carer / Family",
+      "Burnout — Work-Related",
+      "Coping Skills",
+      "Cultural Identity & Acculturation",
+      "Cultural Adjustment",
+      "Culturally & Linguistically Diverse (CALD) — Psychological Support",
+      "Depersonalisation / Derealisation",
+      "Depression — Major Depressive Disorder",
+      "Depression — Persistent Depressive Disorder (Dysthymia)",
+      "Dissociation / Dissociative Disorders",
+      "Domestic/ Family Violence",
+      "Emotional Dysregulation",
+      "Existential Concerns",
+      "Fear of Failure",
+      "Gender Dysphoria (formerly Gender Identity Disorder)",
+      "Identity Exploration — Gender / Sexual Orientation / Cultural / Spiritual",
+      "Identity Issues",
+      "Immigration difficulties",
+      "Insomnia & Sleep Difficulties",
+      "Intimacy & Trust Difficulties",
+      "LGBTQIA+ Affirmative Support",
+      "LGBTQIA+ Identity & Queer Experiences",
+      "Life Transitions",
+      "Loneliness & Isolation",
+      "Low Confidence & Self-Worth",
+      "Low Mood",
+      "Low Self-Esteem",
+      "Migrant / Cultural Adjustment",
+      "Panic Disorder",
+      "Parenting Difficulties",
+      "Perfectionism",
+      "Perinatal / Postnatal Depression",
+      "Phobias — Social",
+      "Post-Traumatic Stress Disorder (PTSD)",
+      "Refugee, Migrant & Asylum Seeker Support",
+      "Relationship Breakdown & Separation",
+      "Relationship Difficulties",
+      "Rumination",
+      "Seasonal Affective Disorder (SAD)",
+      "Sex and Intimacy",
+      "Shame & Guilt",
+      "Stress Management",
+      "Trauma - Childhood",
+      "Trauma - Compassion Fatigue / Vicarious Trauma",
+      "Trauma - Developmental",
+      "Trauma - Intergenerational",
+      "Trauma - Sexual Trauma",
+      "Trauma — Complex",
+      "Trauma — Single Incident",
+      "Women's Health — Premenstrual Syndrome / Hormonal Mood Changes (PMS)",
+      "Work-Related Stress"
+    ],
+    "crm_modalities": [
+      "Acceptance and Commitment Therapy (ACT)",
+      "Cognitive Behavioural Therapy (CBT)",
+      "Internal Family Systems (IFS) / Parts Work (Informed)",
+      "Psychodynamic Therapy",
+      "Schema Therapy",
+      "Trauma-Focused CBT (TF-CBT)",
+      "Trauma-Informed Care"
+    ],
+    "crm_bio": "Poorna is a Clinical psychologist with a Master of Clinical Psychology Degree. She works with a wide range of psychological, cultural and emotional challenges. Her warm and humorous style of engaging with clients allows for an easy and collaborative approach to alleviating challenges faced by individuals.\n\nPoorna has developed expertise in working with people experiencing anxiety, depression, mood and personality disorders, relationship difficulties, trauma, complex trauma (gender-based violence, migrant, asylum seeker and refugee contexts), life stressors and cultural adjustment related challenges. She is trained in several therapeutic approaches including CBT, Schema Therapy and Psychodynamic Therapy. Through Poorna’s attentive and supportive approach to dealing with psychological difficulties, she aims to compassionately confront behaviours and thought patterns that prevent clients from fully and positively engaging with their lives.\n\nPoorna completed her undergraduate studies in the United States, and graduate degree in Melbourne, Australia. Prior to pursuing her Masters, she worked in a variety of clinical and non-clinical settings across South America, the Middle East, South and Southeast Asia. Throughout this time, Poorna worked with people experiencing adversity in vastly different societies and communities. This allowed her the opportunity to recognise the importance of drawing on cultural and community-based value systems when considering the psychological or emotional challenges that we face. She seeks to support each individual client to develop a deeper understanding of themselves that resonates with their unique systemic values, enabling holistic healing so clients may fully connect with themselves, and others.\n\nPoorna greatly values the therapeutic alliance between client and therapist. Therefore she works hard to foster an environment where this positive alliance can be nurtured and strengthened to benefit the client in other aspects of their lives.",
+    "crm_short_bio": "Poorna is a warm, culturally attuned clinical psychologist using CBT, schema and psychodynamic therapy to support trauma, identity, adjustment and cross-cultural challenges",
+    "crm_ages": [
+      "18 Yrs +"
+    ],
+    "crm_client_types": [
+      "Individual"
+    ],
+    "crm_languages": "Tamil, English",
+    "crm_pronouns": "",
+    "crm_email": "poornaselvaraja@gmail.com",
+    "crm_role": [
+      "Clinical Psychologist"
+    ]
+  },
+  "Niloo Danaei": {
+    "in_crm": true,
+    "crm_presentations": [
+      "Academic Pressure & Performance Stress",
+      "Acute Stress Reaction",
+      "Adjustment Disorder",
+      "Anger & Aggression",
+      "Anxiety - Anticipatory",
+      "Anxiety - Death",
+      "Anxiety - Exam & Academic",
+      "Anxiety - Financial Stress",
+      "Anxiety - Generalised (GAD)",
+      "Anxiety - Health (Illness Anxiety / Hypochondria)",
+      "Anxiety - Perinatal / Postnatal",
+      "Anxiety - Separation",
+      "Anxiety - Social Anxiety Disorder",
+      "Anxiety - Sports Performance",
+      "Attachment Difficulties",
+      "Attention-Deficit/Hyperactivity Disorder (ADHD) — Diagnosed & Managed",
+      "Attention-Deficit/Hyperactivity Disorder (ADHD) — Suspected or Actively Impacting",
+      "Autism Spectrum Disorder (ASD) — Diagnosed & Managed",
+      "Autism Spectrum Disorder (ASD) — Suspected or Actively Impacting",
+      "Bullying & Peer Difficulties",
+      "Burnout — Carer / Family",
+      "Burnout — Work-Related",
+      "Chronic Fatigue & Fatigue Syndromes",
+      "Chronic Illness — Adjustment & Psychological Support",
+      "Chronic Pain",
+      "Complex Post-Traumatic Stress Disorder (C-PTSD)",
+      "Coping Skills",
+      "Cultural Identity & Acculturation",
+      "Cultural Adjustment",
+      "Culturally & Linguistically Diverse (CALD) — Psychological Support",
+      "Depression — Major Depressive Disorder",
+      "Depression — Persistent Depressive Disorder (Dysthymia)",
+      "Dissociation / Dissociative Disorders",
+      "Emotional Regulation & Behavioural Difficulties",
+      "Existential Concerns",
+      "Family Conflict",
+      "Fear of Failure",
+      "First Responder & Emergency Services Support",
+      "Gender Dysphoria (formerly Gender Identity Disorder)",
+      "Grief & Loss - Complicated / Prolonged",
+      "Grief & Loss - General Bereavement",
+      "Identity Exploration — Gender / Sexual Orientation / Cultural / Spiritual",
+      "Identity Issues",
+      "Immigration difficulties",
+      "Insomnia & Sleep Difficulties",
+      "Interpersonal Difficulties",
+      "Intimacy & Trust Difficulties",
+      "LGBTQIA+ Affirmative Support",
+      "LGBTQIA+ Identity & Queer Experiences",
+      "Learning Difficulties",
+      "Life Transitions",
+      "Loneliness & Isolation",
+      "Low Confidence & Self-Worth",
+      "Low Mood",
+      "Low Self-Esteem",
+      "Migrant / Cultural Adjustment",
+      "Neurodivergence — General",
+      "Non-Monogamy & Polyamory",
+      "Panic Disorder",
+      "Parental Separation — Child & Family Adjustment",
+      "Perfectionism",
+      "Perinatal / Postnatal Depression",
+      "Personality Patterns — Obsessive / Perfectionistic",
+      "Phobias — Social",
+      "Post-Traumatic Stress Disorder (PTSD)",
+      "Refugee, Migrant & Asylum Seeker Support",
+      "Relationship Breakdown & Separation",
+      "Relationship Difficulties",
+      "Sex and Intimacy",
+      "Shame & Guilt",
+      "Stress Management",
+      "Trauma - Childhood",
+      "Trauma - Compassion Fatigue / Vicarious Trauma",
+      "Trauma - Intergenerational",
+      "Trauma — Complex",
+      "Trauma — Single Incident",
+      "Women's Health — Endometriosis & Chronic Pelvic Pain",
+      "Women's Health — Perinatal Mental Health (General)",
+      "Women's Health — Premenstrual Dysphoric Disorder (PMDD)",
+      "Work-Related Stress"
+    ],
+    "crm_modalities": [
+      "Acceptance and Commitment Therapy (ACT)",
+      "Acceptance-Based Somatic Work",
+      "Behavioural Activation (BA)",
+      "Cognitive Behavioural Therapy (CBT)",
+      "Dialectical Behaviour Therapy (DBT)",
+      "Eclectic / Integrative Therapy",
+      "Existential Therapy",
+      "Internal Family Systems (IFS) / Parts Work (Level 1 Certified)",
+      "Interpersonal Therapy (IPT)",
+      "Mindfulness-Based Stress Reduction (MBSR)",
+      "Narrative Exposure Therapy (NET)",
+      "Trauma-Informed Care"
+    ],
+    "crm_bio": "I’m a registered Psychologist and qualified Social Worker with a passion for supporting people on their mental health journey. Over the past decade, I’ve worked in community organisations, government settings, and private practice with people from all walks of life, including First Nations people, culturally and linguistically diverse communities, and the broader Australian community.\nMy style is calm, warm, client-centred and down-to-earth. I aim to create a safe and supportive space where my clients can explore their inner worlds and make sense of the complexities of their lives. I believe in each person’s capacity for healing and growth, and I continuously pursue knowledge and personal growth to improve my practice.\nI am particularly passionate about supporting individuals affected by traumatic experiences, using a trauma-informed lens to guide their healing journey. Additionally, I have substantial experience in assisting individuals dealing with depressive symptoms, anxiety-related issues, loss, grief, and life transitions.\nI hold two Master's degrees, one in Social Work and another in Clinical Psychology. I’m an integrative, IFS-informed Psychologist, drawing on ACT, CBT, DBT, IFS, Polyvagal Theory, and mindfulness. I tailor therapy to each person’s unique needs, as no two journeys are the same.\nBeing a psychologist is a humbling role and a valued part of my life. I feel honoured to walk alongside individuals in their journeys of recovery, healing, growth, and thriving. Outside of my professional role, I also enjoy reading, art, meditation, and spending quality time with loved ones and in nature.",
+    "crm_short_bio": "A trauma-informed clinical psychologist and social worker integrating IFS, ACT, DBT, CBT and mindfulness to support healing from trauma, intense emotions and life transitions.",
+    "crm_ages": [
+      "18 Yrs +"
+    ],
+    "crm_client_types": [
+      "Individual"
+    ],
+    "crm_languages": "English, Farsi, Dari",
+    "crm_pronouns": "She/Her",
+    "crm_email": "niloofar.danaei@gmail.com",
+    "crm_role": [
+      "Clinical Psychologist"
+    ]
+  },
+  "Nicholas Kleeman": {
+    "in_crm": true,
+    "crm_presentations": [
+      "Academic Pressure & Performance Stress",
+      "Acute Stress Reaction",
+      "Addiction/Dependence (Alcohol) — Not Current / In Recovery",
+      "Addiction/Dependence (Cannabis) — Not Current / In Recovery",
+      "Addiction/Dependence (Compulsive Shopping) — Current / Active",
+      "Addiction/Dependence (Compulsive Shopping) — Not Current / In Recovery",
+      "Addiction/Dependence (Gambling) — Not Current / In Recovery",
+      "Addiction/Dependence (Internet & Technology) — Not Current / In Recovery",
+      "Addiction/Dependence (Other Substances) — Not Current / In Recovery",
+      "Addiction/Dependence (Pornography / Compulsive Sexual Behaviour) — Not Current / In Recovery",
+      "Adjustment Disorder",
+      "Anger & Aggression",
+      "Anxiety - Anticipatory",
+      "Anxiety - Exam & Academic",
+      "Anxiety - Financial Stress",
+      "Anxiety - Generalised (GAD)",
+      "Anxiety - Health (Illness Anxiety / Hypochondria)",
+      "Anxiety - Separation",
+      "Anxiety - Social Anxiety Disorder",
+      "Anxiety - Sports Performance",
+      "Attachment Difficulties",
+      "Attention-Deficit/Hyperactivity Disorder (ADHD) — Diagnosed & Managed",
+      "Attention-Deficit/Hyperactivity Disorder (ADHD) — Suspected or Actively Impacting",
+      "Body Image Concerns",
+      "Bullying & Peer Difficulties",
+      "Burnout — Carer / Family",
+      "Burnout — Work-Related",
+      "Chronic Illness — Adjustment & Psychological Support",
+      "Chronic Pain",
+      "Coping Skills",
+      "Cultural Identity & Acculturation",
+      "Cultural Adjustment",
+      "Depersonalisation / Derealisation",
+      "Depression — Major Depressive Disorder",
+      "Depression — Persistent Depressive Disorder (Dysthymia)",
+      "Disordered Eating - Emotional Eating",
+      "Divorce / Post Divorce Adjustment/ Support",
+      "Emotional Regulation & Behavioural Difficulties",
+      "Erectile Dysfunction (ED)",
+      "Family Conflict",
+      "Fear of Failure",
+      "Gaming Disorder",
+      "Grief & Loss - Complicated / Prolonged",
+      "Grief & Loss - General Bereavement",
+      "Identity Exploration — Gender / Sexual Orientation / Cultural / Spiritual",
+      "Identity Issues",
+      "Interpersonal Difficulties",
+      "Intimacy & Trust Difficulties",
+      "LGBTQIA+ Affirmative Support",
+      "LGBTQIA+ Identity & Queer Experiences",
+      "Learning Difficulties",
+      "Life Transitions",
+      "Loneliness & Isolation",
+      "Low Confidence & Self-Worth",
+      "Low Mood",
+      "Low Self-Esteem",
+      "Migrant / Cultural Adjustment",
+      "Neurodivergence — General",
+      "Parental Separation — Child & Family Adjustment",
+      "Perfectionism",
+      "Phobias — Social",
+      "Refugee, Migrant & Asylum Seeker Support",
+      "Relationship Breakdown & Separation",
+      "Relationship Difficulties",
+      "Rumination",
+      "School Refusal",
+      "Sexual Difficulties & Dysfunction - Male",
+      "Sex and Intimacy",
+      "Shame & Guilt",
+      "Stress Management",
+      "Work-Related Stress"
+    ],
+    "crm_modalities": [
+      "Acceptance and Commitment Therapy (ACT)",
+      "Acceptance-Based Couples Therapy",
+      "Acceptance-Based Somatic Work",
+      "Attachment-Based Therapy",
+      "Behavioural Activation (BA)",
+      "Cognitive Behavioural Therapy (CBT)",
+      "Compassion-Focused Therapy (CFT)",
+      "Existential Therapy",
+      "Humanistic / Person-Centred Therapy",
+      "Internal Family Systems (IFS) / Parts Work (Informed)",
+      "Interpersonal Therapy (IPT)",
+      "Mindfulness-Based Cognitive Therapy (MBCT)",
+      "Mindfulness-Based Stress Reduction (MBSR)",
+      "Motivational Interviewing (MI)",
+      "Psychedelic-Assisted Psychotherapy (research/emerging)",
+      "Trauma-Informed Care"
+    ],
+    "crm_bio": "Nick is a registered clinical psychology registrar with a genuine compassion towards each individual’s unique mental health experience. Nick has a warm and approachable therapeutic style. He views the development of a collaborative, trusting, and non-judgemental therapeutic relationship as a central container for supporting each individual’s unique healing journey.\n\nAs an integrative psychologist, Nick practices using a number of therapeutic approaches including acceptance and commitment therapy (ACT), solution focused therapy (SFT), mindfulness approaches, and cognitive behaviour therapy (CBT) and uses a trauma-informed approach across all his therapeutic work. When he is not working at Psychology Care he facilitates group therapy programs with adults.\n\nPrior to training as a psychologist, Nick worked extensively with adolescents in the schooling system, specifically he facilitated conversations with adolescents aiming to reduce the stigma associated with mental ill health with the youth mental health organisation batyr.  \n\nNick has worked with adults and adolescents experiencing a range of mental health difficulties including depression, anxiety, grief, health related adjustment, and relational issues. Nick provides a safe and inclusive therapy space for people of all backgrounds and has experiencing working with people from LGBTIQ+ and CALD communities. He has an empathetic and strengths-based approach when working with neurodivergence and has particular interest working with individuals with ADHD.\n\nOutside of work, Nick spends his time in nature, surfing, learning Spanish, and spending quality time with family and friends.",
+    "crm_short_bio": "Nick is a warm, trauma-informed clinical psychologist using ACT, mindfulness, CBT and SFT to support diverse adults and adolescents, including neurodivergent clients.",
+    "crm_ages": [
+      "16 Yrs +"
+    ],
+    "crm_client_types": [
+      "Individual"
+    ],
+    "crm_languages": "",
+    "crm_pronouns": "He/Him",
+    "crm_email": "nicholaskleeman@gmail.com",
+    "crm_role": [
+      "Clinical Psychologist"
+    ]
+  },
+  "Meg Edelman": {
+    "in_crm": true,
+    "crm_presentations": [
+      "Academic Pressure & Performance Stress",
+      "Adjustment Disorder",
+      "Adoption, Foster Care & Out-of-Home Care",
+      "Anger & Aggression",
+      "Anxiety - Generalised (GAD)",
+      "Anxiety - Health (Illness Anxiety / Hypochondria)",
+      "Anxiety - Separation",
+      "Attachment Difficulties",
+      "Bullying & Peer Difficulties",
+      "Burnout — Carer / Family",
+      "Burnout — Work-Related",
+      "Chronic Illness — Adjustment & Psychological Support",
+      "Coping Skills",
+      "Family Conflict",
+      "Fear of Failure",
+      "Grief & Loss - Complicated / Prolonged",
+      "Grief & Loss - General Bereavement",
+      "Intimacy & Trust Difficulties",
+      "Life Transitions",
+      "Low Confidence & Self-Worth",
+      "Parental Separation — Child & Family Adjustment",
+      "Parenting Difficulties",
+      "Perfectionism",
+      "Relationship Breakdown & Separation",
+      "Relationship Difficulties",
+      "Stress Management",
+      "Trauma — Complex",
+      "Trauma — Single Incident",
+      "Work-Related Stress"
+    ],
+    "crm_modalities": [
+      "Acceptance and Commitment Therapy (ACT)",
+      "Attachment-Based Therapy",
+      "Cognitive Behavioural Therapy (CBT)",
+      "Intensive Short-Term Dynamic Psychotherapy (ISTDP)",
+      "Psychodynamic Therapy"
+    ],
+    "crm_bio": "Being human is both beautiful and complex. Life presents us with challenges, losses, and uncertainties that can leave us feeling stuck, overwhelmed, or disconnected from ourselves and others. We all have a unique story, and many of us have developed ways of coping that may have helped us through difficult circumstances but no longer serve us in the present. Therapy offers an opportunity to better understand these patterns, and move towards a life that feels more authentic and fulfilling.\n\nI work collaboratively with individuals to understand the emotional challenges they are facing and the patterns that may be contributing to their distress. Through thoughtful exploration and reflection, we can begin to uncover longstanding ways of thinking, feeling, and relating that may be keeping you stuck. By getting to the root of these difficulties, therapy can create the conditions for meaningful and lasting change.\n\nIn therapy, I bring a curious, compassionate, and open-minded presence. I strive to balance warmth with honesty, creating a space that feels safe enough for exploration while supporting genuine growth and self-understanding.\n\nMy therapeutic approach is grounded in psychodynamic, relational, and emotion-focused frameworks, with a particular emphasis on Intensive Short-Term Dynamic Psychotherapy (ISTDP). This approach focuses on increasing self-awareness, deepening emotional understanding, and addressing the underlying causes of psychological distress. Together, we work to identify and move beyond longstanding patterns, resolve internal conflicts, and foster greater emotional freedom and resilience at a pace that feels both supportive and empowering.\n\nAbove all, I believe that the therapeutic relationship is central to the healing process. I am committed to cultivating a collaborative and trusting relationship built on safety, empathy, and respect, where you feel genuinely understood and supported in creating meaningful change.",
+    "crm_short_bio": "Meg is a warm, person-centred psychologist using integrative cognitive, behavioural and psychodynamic therapies to support stress, anxiety, depression, trauma and life changes.",
+    "crm_ages": [
+      "18 Yrs +"
+    ],
+    "crm_client_types": [
+      "Individual"
+    ],
+    "crm_languages": "",
+    "crm_pronouns": "She/Her",
+    "crm_email": "meg.psychologycare@gmail.com",
+    "crm_role": [
+      "Psychologist"
+    ]
+  },
+  "Amy Bortz": {
+    "in_crm": true,
+    "crm_presentations": [
+      "Academic Pressure & Performance Stress",
+      "Adjustment Disorder",
+      "Anxiety - Anticipatory",
+      "Anxiety - Financial Stress",
+      "Anxiety - Generalised (GAD)",
+      "Anxiety - Health (Illness Anxiety / Hypochondria)",
+      "Anxiety - Perinatal / Postnatal",
+      "Anxiety - Separation",
+      "Anxiety - Social Anxiety Disorder",
+      "Attachment Difficulties",
+      "Body Dysmorphic Disorder (BDD)",
+      "Body Image Concerns",
+      "Burnout — Carer / Family",
+      "Burnout — Work-Related",
+      "Chronic Illness — Adjustment & Psychological Support",
+      "Chronic Pain",
+      "Coping Skills",
+      "Depression — Major Depressive Disorder",
+      "Depression — Persistent Depressive Disorder (Dysthymia)",
+      "Disordered Eating - Anorexia Nervosa — Current / Recent Diagnosis",
+      "Disordered Eating - Anorexia Nervosa — Not Current / In Recovery",
+      "Disordered Eating - Avoidant/Restrictive Food Intake Disorder (ARFID)",
+      "Disordered Eating - Binge Eating Disorder — Current / Recent",
+      "Disordered Eating - Binge Eating Disorder — Not Current / In Recovery",
+      "Disordered Eating - Bulimia Nervosa — Current / Recent Diagnosis",
+      "Disordered Eating - Bulimia Nervosa — Not Current / In Recovery",
+      "Disordered Eating - Emotional Eating",
+      "Disordered Eating - Not Otherwise Specified (NOS)",
+      "Divorce / Post Divorce Adjustment/ Support",
+      "Domestic/ Family Violence",
+      "Emotional Dysregulation",
+      "Emotional Regulation & Behavioural Difficulties",
+      "Family Conflict",
+      "Fear of Failure",
+      "Gender Dysphoria (formerly Gender Identity Disorder)",
+      "Grief & Loss - Fertility & Pregnancy Loss",
+      "Grief & Loss - General Bereavement",
+      "Identity Exploration — Gender / Sexual Orientation / Cultural / Spiritual",
+      "Intimacy & Trust Difficulties",
+      "LGBTQIA+ Affirmative Support",
+      "LGBTQIA+ Identity & Queer Experiences",
+      "Non-Monogamy & Polyamory",
+      "Panic Disorder",
+      "Parental Separation — Child & Family Adjustment",
+      "Perfectionism",
+      "Perinatal / Postnatal Depression",
+      "Personality Patterns — Obsessive / Perfectionistic",
+      "Phobias — Agoraphobia",
+      "Phobias — Social",
+      "Relationship Breakdown & Separation",
+      "Relationship Difficulties",
+      "School Refusal",
+      "Sexual Abuse/ Assault",
+      "Sexual Difficulties & Dysfunction - Female",
+      "Sex and Intimacy",
+      "Shame & Guilt",
+      "Stress Management",
+      "Trauma - Compassion Fatigue / Vicarious Trauma",
+      "Trauma - Sexual Trauma",
+      "Women's Health — Endometriosis & Chronic Pelvic Pain",
+      "Women's Health — Menopause & Perimenopause",
+      "Women's Health — Polycystic Ovary Syndrome (PCOS)",
+      "Women's Health — Premenstrual Syndrome / Hormonal Mood Changes (PMS)",
+      "Work-Related Stress"
+    ],
+    "crm_modalities": [
+      "Acceptance and Commitment Therapy (ACT)",
+      "Attachment-Based Therapy",
+      "Behavioural Activation (BA)",
+      "Cognitive Behavioural Therapy (CBT)",
+      "Compassion-Focused Therapy (CFT)",
+      "Dialectical Behaviour Therapy (DBT)",
+      "Exposure and Response Prevention (ERP)",
+      "Mindfulness-Based Cognitive Therapy (MBCT)",
+      "Mindfulness-Based Stress Reduction (MBSR)",
+      "Motivational Interviewing (MI)",
+      "Schema Therapy",
+      "Trauma-Informed Care"
+    ],
+    "crm_bio": "Amy (she/her) is a compassionate and LGBTQIAP+ friendly clinician who works with clients aged 16+. She received her full clinical training (Bachelor of Arts with Major in Psychology; Honours in Psychology; and Master of Clinical Psychology) from the University of Melbourne.\n\nWhilst Amy works with various presentations, she holds particular experience working with individuals with mood disorders (including depression, anxiety, stress management and anger), relationship difficulties (romantic or other), and eating disorders, body image and self-esteem/self-worth difficulties. Amy prefers a more flexible 'bag of tricks' approach to therapy therapy (rather than a structured approach), and combines skills from various therapies, including Schema Therapy, Acceptance and Commitment Therapy (ACT), Cognitive Behavioural Therapy (CBT), Mindfulness, Dialectical Behaviour Therapy (DBT) and Compassion-Focused Therapy (CFT). Amy's clients have appreciated the personality she brings, along with the non-judgmental, safe space she naturally provides.\n\nAmy loves being a psychologist due to its seamless blend of both science and art. Amy’s commitment to her clients is that she stays informed on the science of psychology through ongoing professional development and learning; an aspect of her role that she thoroughly enjoys. Amy also places great importance on the art of psychology; she understands that therapy is not a ‘one size fits all’ approach and requires the art of flexibility. Through providing a collaborative, non-judgemental, and warm atmosphere, Amy aims to ensure that each person’s therapy will suit their own personality, individual goals, and circumstances in order to help provide them with the best possible outcomes.\n\nBroadly, Amy is obsessed with her new 6yo rescue kelpie x staffy, Naia; she loves movement, being an endurance runner (spending a lot of time outside in general); and travels as much as possible",
+    "crm_short_bio": "Amy is a warm, LGBTQIAP+ friendly clinical psychologist supporting clients 16+ with mood, relationship and eating difficulties using flexible, evidence-based therapies.",
+    "crm_ages": [
+      "16 Yrs +"
+    ],
+    "crm_client_types": [
+      "Individual"
+    ],
+    "crm_languages": "English",
+    "crm_pronouns": "She/Her",
+    "crm_email": "amy.bortz1@gmail.com",
+    "crm_role": [
+      "Clinical Psychologist"
+    ]
+  },
+  "Karen Pereira York": {
+    "in_crm": true,
+    "crm_presentations": [
+      "Addiction/Dependence (Alcohol) — Not Current / In Recovery",
+      "Addiction/Dependence (Cannabis) — Not Current / In Recovery",
+      "Anxiety - Generalised (GAD)",
+      "Anxiety - Health (Illness Anxiety / Hypochondria)",
+      "Anxiety - Perinatal / Postnatal",
+      "Anxiety - Separation",
+      "Anxiety - Social Anxiety Disorder",
+      "Attachment Difficulties",
+      "Body Image Concerns",
+      "Bullying & Peer Difficulties",
+      "Burnout — Carer / Family",
+      "Chronic Illness — Adjustment & Psychological Support",
+      "Complex Post-Traumatic Stress Disorder (C-PTSD)",
+      "Coping Skills",
+      "Cultural Identity & Acculturation",
+      "Cultural Adjustment",
+      "Disordered Eating - Anorexia Nervosa — Not Current / In Recovery",
+      "Disordered Eating - Avoidant/Restrictive Food Intake Disorder (ARFID)",
+      "Disordered Eating - Binge Eating Disorder — Not Current / In Recovery",
+      "Disordered Eating - Bulimia Nervosa — Not Current / In Recovery",
+      "Disordered Eating - Emotional Eating",
+      "Divorce / Post Divorce Adjustment/ Support",
+      "Emotional Regulation & Behavioural Difficulties",
+      "Family Conflict",
+      "First Responder & Emergency Services Support",
+      "Grief & Loss - Complicated / Prolonged",
+      "Grief & Loss - Fertility & Pregnancy Loss",
+      "Grief & Loss - General Bereavement",
+      "Grief & Loss - Termination of Pregnancy",
+      "Identity Issues",
+      "Insomnia & Sleep Difficulties",
+      "Interpersonal Difficulties",
+      "Intimacy & Trust Difficulties",
+      "Life Transitions",
+      "Loneliness & Isolation",
+      "Low Confidence & Self-Worth",
+      "Low Mood",
+      "Low Self-Esteem",
+      "Migrant / Cultural Adjustment",
+      "Neurodivergence — General / Late Diagnosis",
+      "Parental Separation — Child & Family Adjustment",
+      "Parenting Difficulties",
+      "Perfectionism",
+      "Perinatal / Postnatal Depression",
+      "Post-Traumatic Stress Disorder (PTSD)",
+      "Refugee, Migrant & Asylum Seeker Support",
+      "Relationship Breakdown & Separation",
+      "Relationship Difficulties",
+      "Rumination",
+      "Sexual Difficulties & Dysfunction - Female",
+      "Sex and Intimacy",
+      "Shame & Guilt",
+      "Stress Management",
+      "Trauma - Childhood",
+      "Trauma - Sexual Trauma",
+      "Women's Health — Birth Trauma",
+      "Women's Health — Infertility & Assisted Reproduction (IVF)",
+      "Women's Health — Menopause & Perimenopause",
+      "Women's Health — Perinatal Mental Health (General)",
+      "Women's Health — Premenstrual Syndrome / Hormonal Mood Changes (PMS)",
+      "Work-Related Stress"
+    ],
+    "crm_modalities": [
+      "Compassion-Focused Therapy (CFT)",
+      "Eclectic / Integrative Therapy",
+      "Eye Movement Desensitisation and Reprocessing (EMDR)",
+      "Humanistic / Person-Centred Therapy",
+      "Internal Family Systems (IFS) / Parts Work (Informed)",
+      "Interpersonal Therapy (IPT)",
+      "Psychodynamic Therapy"
+    ],
+    "crm_bio": "",
+    "crm_short_bio": "Karen is a psychodynamic clinical psychologist integrating EMDR to support trauma, identity, grief and life transitions with culturally attuned, exploratory therapy.",
+    "crm_ages": [
+      "25 Yrs +",
+      "40 Yrs+",
+      "50 Yrs+"
+    ],
+    "crm_client_types": [
+      "Individual"
+    ],
+    "crm_languages": "English",
+    "crm_pronouns": "She/Her",
+    "crm_email": "karen.psychologycare@gmail.com",
+    "crm_role": [
+      "Clinical Psychologist"
+    ]
+  },
+  "Alex Barry": {
+    "in_crm": true,
+    "crm_presentations": [
+      "Anxiety - Generalised (GAD)",
+      "Anxiety - Perinatal / Postnatal",
+      "Anxiety - Social Anxiety Disorder",
+      "Attachment Difficulties",
+      "Complex Post-Traumatic Stress Disorder (C-PTSD)",
+      "Domestic/ Family Violence",
+      "Identity Exploration — Gender / Sexual Orientation / Cultural / Spiritual",
+      "Identity Issues",
+      "Perinatal / Postnatal Depression",
+      "Post-Traumatic Stress Disorder (PTSD)",
+      "Relationship Breakdown & Separation",
+      "Relationship Difficulties",
+      "Sexual Abuse/ Assault",
+      "Sexual Difficulties & Dysfunction - Female",
+      "Sex and Intimacy",
+      "Trauma - Childhood",
+      "Trauma - Sexual Trauma",
+      "Trauma — Complex",
+      "Trauma — Single Incident",
+      "Women's Health — Menopause & Perimenopause",
+      "Women's Health — Perinatal Mental Health (General)"
+    ],
+    "crm_modalities": [
+      "Acceptance and Commitment Therapy (ACT)",
+      "Cognitive Behavioural Therapy (CBT)",
+      "Eye Movement Desensitisation and Reprocessing (EMDR)",
+      "Internal Family Systems (IFS) / Parts Work (Informed)",
+      "Mindful Self-Compassion (MSC)",
+      "Schema Therapy",
+      "Trauma-Informed Care"
+    ],
+    "crm_bio": "Alex is a registered psychologist with experience providing assessment and psychological support to people within government, community and private sectors of mental health. \n\nAlex has experience working with young and older adults who are seeking support for the impacts of sexual trauma, abuse and neglect, family and intimate partner violence, relationship and intimacy issues, negative thoughts, feelings and bodily sensations, loss of self confidence/esteem and; feelings of anxiety, including panic and excessive worry. Alex’s therapeutic approach is integrative in nature and focused on the needs and strengths of each individual, drawing on a range of interventions including EMDR, cognitive behavioural therapy, schema therapy, internal family systems, mindfulness and somatic based practice.\n\nAlex understands the importance of creating a safe, compassionate and non-judgemental therapeutic space for people to explore inner thoughts and experiences. Alex practices from a place that is deeply person-centred, neuro-affirming, sex positive, and LGBTQIA+ inclusive.\n\nAlex is passionate about normalising the distress we may experience in response to our environment and internal worlds, and reducing the blame we place on ourselves for how we adapt in these moments. Alex has particular interest in supporting women in the context of sexual health and well-being, life changes, stages and adjustments.",
+    "crm_short_bio": "Trauma-informed psychologist supporting adults across sectors with integrative EMDR, CBT, schema, and somatic therapies in neuroaffirming, sex-positive, LGBTQIA+ inclusive practice.",
+    "crm_ages": [
+      "18 Yrs +"
+    ],
+    "crm_client_types": [
+      "Individual"
+    ],
+    "crm_languages": "English",
+    "crm_pronouns": "She/Her",
+    "crm_email": "alex.psychologycare@gmail.com",
+    "crm_role": [
+      "Psychologist"
+    ]
+  },
+  "Dr Maddie Brygel": {
+    "in_crm": true,
+    "crm_presentations": [
+      "Academic Pressure & Performance Stress",
+      "Acquired Brain Injury (ABI) — Adjustment & Psychological Support",
+      "Acute Stress Reaction",
+      "Addiction/Dependence (Alcohol) — Current / Active",
+      "Addiction/Dependence (Alcohol) — Not Current / In Recovery",
+      "Addiction/Dependence (Cannabis) — Current / Active",
+      "Addiction/Dependence (Cannabis) — Not Current / In Recovery",
+      "Addiction/Dependence (Compulsive Shopping) — Current / Active",
+      "Addiction/Dependence (Compulsive Shopping) — Not Current / In Recovery",
+      "Addiction/Dependence (Gambling) — Current / Active",
+      "Addiction/Dependence (Gambling) — Not Current / In Recovery",
+      "Addiction/Dependence (Hypersexuality / Sex Addiction) — Current / Active",
+      "Addiction/Dependence (Hypersexuality / Sex Addiction) — Not Current / In Recovery",
+      "Addiction/Dependence (Internet & Technology) — Current / Active",
+      "Addiction/Dependence (Internet & Technology) — Not Current / In Recovery",
+      "Addiction/Dependence (Other Substances) — Not Current / In Recovery",
+      "Addiction/Dependence (Pornography / Compulsive Sexual Behaviour) — Current / Active",
+      "Addiction/Dependence (Pornography / Compulsive Sexual Behaviour) — Not Current / In Recovery",
+      "Adjustment Disorder",
+      "Adoption, Foster Care & Out-of-Home Care",
+      "Anger & Aggression",
+      "Anxiety - Anticipatory",
+      "Anxiety - Death",
+      "Anxiety - Exam & Academic",
+      "Anxiety - Financial Stress",
+      "Anxiety - Generalised (GAD)",
+      "Anxiety - Health (Illness Anxiety / Hypochondria)",
+      "Anxiety - Perinatal / Postnatal",
+      "Anxiety - Separation",
+      "Anxiety - Social Anxiety Disorder",
+      "Anxiety - Sports Performance",
+      "Attachment Difficulties",
+      "Behavioural Difficulties (Children & Adolescents)",
+      "Body Dysmorphic Disorder (BDD)",
+      "Body Image Concerns",
+      "Bullying & Peer Difficulties",
+      "Burnout — Carer / Family",
+      "Burnout — Work-Related",
+      "Chronic Fatigue & Fatigue Syndromes",
+      "Chronic Illness — Adjustment & Psychological Support",
+      "Chronic Pain",
+      "Clinician & Therapist Wellbeing Support",
+      "Complex Post-Traumatic Stress Disorder (C-PTSD)",
+      "Conduct Disorder",
+      "Coping Skills",
+      "Depersonalisation / Derealisation",
+      "Depression — Major Depressive Disorder",
+      "Depression — Persistent Depressive Disorder (Dysthymia)",
+      "Disordered Eating - Anorexia Nervosa — Not Current / In Recovery",
+      "Disordered Eating - Avoidant/Restrictive Food Intake Disorder (ARFID)",
+      "Disordered Eating - Binge Eating Disorder — Not Current / In Recovery",
+      "Disordered Eating - Bulimia Nervosa — Not Current / In Recovery",
+      "Disordered Eating - Emotional Eating",
+      "Dissociation / Dissociative Disorders",
+      "Emotional Dysregulation",
+      "Emotional Regulation & Behavioural Difficulties",
+      "Executive Functioning Difficulties",
+      "Existential Concerns",
+      "Family Conflict",
+      "Fear of Failure",
+      "First Responder & Emergency Services Support",
+      "Gaming Disorder",
+      "Grief & Loss - Complicated / Prolonged",
+      "Grief & Loss - Fertility & Pregnancy Loss",
+      "Grief & Loss - General Bereavement",
+      "Grief & Loss - Termination of Pregnancy",
+      "Identity Exploration — Gender / Sexual Orientation / Cultural / Spiritual",
+      "Identity Issues",
+      "Imposter Syndrome",
+      "Insomnia & Sleep Difficulties",
+      "Intimacy & Trust Difficulties",
+      "Life Transitions",
+      "Loneliness & Isolation",
+      "Low Confidence & Self-Worth",
+      "Low Mood",
+      "Low Self-Esteem",
+      "Non-Monogamy & Polyamory",
+      "Non-Suicidal Self-Injury (NSSI) — Not Current / In Recovery",
+      "Obsessive-Compulsive Disorder (OCD) — Contamination",
+      "Obsessive-Compulsive Disorder (OCD) — General",
+      "Obsessive-Compulsive Disorder (OCD) — Harm",
+      "Obsessive-Compulsive Disorder (OCD) — Intrusive Thoughts",
+      "Obsessive-Compulsive Disorder (OCD) — Pure O",
+      "Obsessive-Compulsive Disorder (OCD) — Relationship OCD (ROCD)",
+      "Obsessive-Compulsive Disorder (OCD) — Religious / Scrupulosity",
+      "Panic Disorder",
+      "Parental Separation — Child & Family Adjustment",
+      "Perfectionism",
+      "Perinatal / Postnatal Depression",
+      "Personality Disorder — Narcissistic Personality Disorder (NPD)",
+      "Personality Disorder — Other",
+      "Personality Patterns — Obsessive / Perfectionistic",
+      "Phobias — Social",
+      "Post-Traumatic Stress Disorder (PTSD)",
+      "Relationship Breakdown & Separation",
+      "Relationship Difficulties",
+      "Rumination",
+      "Seasonal Affective Disorder (SAD)",
+      "Shame & Guilt",
+      "Somatic Symptom Disorder",
+      "Stress Management",
+      "Suicidal Ideation — Not Current",
+      "Trauma - Childhood",
+      "Trauma - Compassion Fatigue / Vicarious Trauma",
+      "Women's Health — Endometriosis & Chronic Pelvic Pain",
+      "Women's Health — Infertility & Assisted Reproduction (IVF)",
+      "Women's Health — Perinatal Mental Health (General)",
+      "Women's Health — Polycystic Ovary Syndrome (PCOS)",
+      "Work-Related Stress"
+    ],
+    "crm_modalities": [
+      "Acceptance and Commitment Therapy (ACT)",
+      "Attachment-Based Therapy",
+      "Behavioural Activation (BA)",
+      "Circle of Security (COS)",
+      "Cognitive Behavioural Therapy (CBT)",
+      "Cognitive Processing Therapy (CPT)",
+      "Dialectical Behaviour Therapy (DBT)",
+      "Emotion-Focused Therapy (EFT)",
+      "Existential Therapy",
+      "Family Systems Therapy",
+      "Humanistic / Person-Centred Therapy",
+      "Internal Family Systems (IFS) / Parts Work (Informed)",
+      "Narrative Therapy",
+      "Schema Therapy",
+      "Solution-Focused Brief Therapy (SFBT)",
+      "Trauma-Focused CBT (TF-CBT)",
+      "Trauma-Informed Care"
+    ],
+    "crm_bio": "https://psychologycare.com.au/dr-maddie-brygel-psychologist/",
+    "crm_short_bio": "A psychologist trained in both clinical and forensic psychology, lecturer, and researcher supporting adults with anxiety, depression, trauma, grief, addiction and women’s mental health",
+    "crm_ages": [
+      "18 Yrs +",
+      "21 Yrs +",
+      "25 Yrs +",
+      "30 Yrs+",
+      "40 Yrs+",
+      "50 Yrs+",
+      "60 Yrs+",
+      "70 Yrs+",
+      "80 Yrs+"
+    ],
+    "crm_client_types": [
+      "Individuals"
+    ],
+    "crm_languages": "",
+    "crm_pronouns": "She/Her",
+    "crm_email": "maddie.psychologycare@gmail.com",
+    "crm_role": [
+      "Clinical Psychology Registra",
+      "Psychologist"
+    ]
+  },
+  "Christine Deftereos": {
+    "in_crm": true,
+    "crm_presentations": [
+      "Academic Pressure & Performance Stress",
+      "Acquired Brain Injury (ABI) — Adjustment & Psychological Support",
+      "Acute Stress Reaction",
+      "Addiction/Dependence (Alcohol) — Current / Active",
+      "Addiction/Dependence (Alcohol) — Not Current / In Recovery",
+      "Addiction/Dependence (Cannabis) — Current / Active",
+      "Addiction/Dependence (Cannabis) — Not Current / In Recovery",
+      "Addiction/Dependence (Compulsive Shopping) — Current / Active",
+      "Addiction/Dependence (Compulsive Shopping) — Not Current / In Recovery",
+      "Addiction/Dependence (Gambling) — Current / Active",
+      "Addiction/Dependence (Gambling) — Not Current / In Recovery",
+      "Addiction/Dependence (Hypersexuality / Sex Addiction) — Current / Active",
+      "Addiction/Dependence (Hypersexuality / Sex Addiction) — Not Current / In Recovery",
+      "Addiction/Dependence (Internet & Technology) — Current / Active",
+      "Addiction/Dependence (Internet & Technology) — Not Current / In Recovery",
+      "Addiction/Dependence (Other Substances) — Current / Active",
+      "Addiction/Dependence (Other Substances) — Not Current / In Recovery",
+      "Addiction/Dependence (Pornography / Compulsive Sexual Behaviour) — Current / Active",
+      "Addiction/Dependence (Pornography / Compulsive Sexual Behaviour) — Not Current / In Recovery",
+      "Adjustment Disorder",
+      "Adoption, Foster Care & Out-of-Home Care",
+      "Anger & Aggression",
+      "Anxiety - Anticipatory",
+      "Anxiety - Death",
+      "Anxiety - Exam & Academic",
+      "Anxiety - Financial Stress",
+      "Anxiety - Generalised (GAD)",
+      "Anxiety - Health (Illness Anxiety / Hypochondria)",
+      "Anxiety - Perinatal / Postnatal",
+      "Anxiety - Separation",
+      "Anxiety - Social Anxiety Disorder",
+      "Anxiety - Sports Performance",
+      "Attachment Difficulties",
+      "Attention-Deficit/Hyperactivity Disorder (ADHD) — Diagnosed & Managed",
+      "Attention-Deficit/Hyperactivity Disorder (ADHD) — Suspected or Actively Impacting",
+      "Autism Spectrum Disorder (ASD) — Diagnosed & Managed",
+      "Autism Spectrum Disorder (ASD) — Suspected or Actively Impacting",
+      "Behavioural Difficulties (Children & Adolescents)",
+      "Bipolar Disorder — Active / Recent Episode",
+      "Bipolar Disorder — Diagnosed & Stable",
+      "Body Dysmorphic Disorder (BDD)",
+      "Body Image Concerns",
+      "Bullying & Peer Difficulties",
+      "Burnout — Carer / Family",
+      "Burnout — Work-Related",
+      "Chronic Fatigue & Fatigue Syndromes",
+      "Chronic Illness — Adjustment & Psychological Support",
+      "Chronic Pain",
+      "Clinician & Therapist Wellbeing Support",
+      "Complex Post-Traumatic Stress Disorder (C-PTSD)",
+      "Conduct Disorder",
+      "Coping Skills",
+      "Cultural Identity & Acculturation",
+      "Culturally & Linguistically Diverse (CALD) — Psychological Support",
+      "Depersonalisation / Derealisation",
+      "Depression — Major Depressive Disorder",
+      "Depression — Persistent Depressive Disorder (Dysthymia)",
+      "Diabetes & Chronic Condition Self-Management",
+      "Disordered Eating - Anorexia Nervosa — Current / Recent Diagnosis",
+      "Disordered Eating - Anorexia Nervosa — Not Current / In Recovery",
+      "Disordered Eating - Avoidant/Restrictive Food Intake Disorder (ARFID)",
+      "Disordered Eating - Binge Eating Disorder — Current / Recent",
+      "Disordered Eating - Binge Eating Disorder — Not Current / In Recovery",
+      "Disordered Eating - Bulimia Nervosa — Current / Recent Diagnosis",
+      "Disordered Eating - Bulimia Nervosa — Not Current / In Recovery",
+      "Disordered Eating - Emotional Eating",
+      "Disordered Eating - Not Otherwise Specified (NOS)",
+      "Disordered Eating - Sub-clinical",
+      "Dissociation / Dissociative Disorders",
+      "Emotional Dysregulation",
+      "Emotional Regulation & Behavioural Difficulties",
+      "Erectile Dysfunction (ED)",
+      "Executive Functioning Difficulties",
+      "Existential Concerns",
+      "Family Conflict",
+      "Fear of Failure",
+      "First Responder & Emergency Services Support",
+      "Gaming Disorder",
+      "Gender Dysphoria (formerly Gender Identity Disorder)",
+      "Grief & Loss - Complicated / Prolonged",
+      "Grief & Loss - Fertility & Pregnancy Loss",
+      "Grief & Loss - General Bereavement",
+      "Grief & Loss - Termination of Pregnancy",
+      "Hoarding Disorder",
+      "Identity Exploration — Gender / Sexual Orientation / Cultural / Spiritual",
+      "Identity Issues",
+      "Imposter Syndrome",
+      "Insomnia & Sleep Difficulties",
+      "Intellectual Disability",
+      "Interpersonal Difficulties",
+      "Intimacy & Trust Difficulties",
+      "Kleptomania (Compulsive Stealing)",
+      "LGBTQIA+ Affirmative Support",
+      "LGBTQIA+ Identity & Queer Experiences",
+      "Learning Difficulties",
+      "Life Transitions",
+      "Loneliness & Isolation",
+      "Low Confidence & Self-Worth",
+      "Low Mood",
+      "Low Self-Esteem",
+      "Narcissistic Abuse — Trauma & Recovery",
+      "Neurodivergence — General / Late Diagnosis",
+      "Non-Monogamy & Polyamory",
+      "Non-Suicidal Self-Injury (NSSI) — Current",
+      "Non-Suicidal Self-Injury (NSSI) — Not Current / In Recovery",
+      "Obsessive-Compulsive Disorder (OCD) — Contamination",
+      "Obsessive-Compulsive Disorder (OCD) — General",
+      "Obsessive-Compulsive Disorder (OCD) — Harm",
+      "Obsessive-Compulsive Disorder (OCD) — Intrusive Thoughts",
+      "Obsessive-Compulsive Disorder (OCD) — Pure O",
+      "Obsessive-Compulsive Disorder (OCD) — Relationship OCD (ROCD)",
+      "Obsessive-Compulsive Disorder (OCD) — Religious / Scrupulosity",
+      "Panic Disorder",
+      "Parental Separation — Child & Family Adjustment",
+      "Parenting Difficulties",
+      "Pathological Demand Avoidance (PDA)",
+      "Perfectionism",
+      "Perinatal / Postnatal Depression",
+      "Personality Disorder — Borderline Personality Disorder (BPD) — Diagnosed & In Treatment",
+      "Personality Disorder — Borderline Personality Disorder (BPD) — Suspected or Actively Impacting",
+      "Personality Disorder — Emotionally Unstable Personality Disorder (EUPD)",
+      "Personality Disorder — Narcissistic Personality Disorder (NPD)",
+      "Personality Disorder — Other",
+      "Personality Patterns — Obsessive / Perfectionistic",
+      "Phobias — Agoraphobia",
+      "Phobias — Claustrophobia",
+      "Phobias — Emetophobia (Fear of Vomiting)",
+      "Phobias — Needle / Medical",
+      "Phobias — Social",
+      "Phobias — Specific (e.g. Heights, Animals, Flying)",
+      "Post-Traumatic Stress Disorder (PTSD)",
+      "Postural Orthostatic Tachycardia Syndrome (POTS) — Psychological Support",
+      "Pyromania (Compulsive Fire-Setting)",
+      "Refugee, Migrant & Asylum Seeker Support",
+      "Rejection Sensitive Dysphoria (RSD)",
+      "Relationship Breakdown & Separation",
+      "Relationship Difficulties",
+      "Rumination",
+      "Schizophrenia & Psychosis",
+      "School Refusal",
+      "Seasonal Affective Disorder (SAD)",
+      "Selective Mutism",
+      "Self-Harm & Risky Behaviours",
+      "Sexual Difficulties & Dysfunction",
+      "Shame & Guilt",
+      "Somatic Symptom Disorder",
+      "Spiritual / Religious Crisis",
+      "Spirituality — Non-Religious Exploration (incl. Buddhism & Mystical Experiences)",
+      "Stress Management",
+      "Suicidal Ideation — Current or Actively Impacting",
+      "Suicidal Ideation — Not Current",
+      "Tics & Tourette Syndrome",
+      "Trauma - Childhood",
+      "Trauma - Compassion Fatigue / Vicarious Trauma",
+      "Trauma - Developmental",
+      "Trauma - Intergenerational",
+      "Trauma - Sexual Trauma",
+      "Trauma — Complex",
+      "Trauma — Single Incident",
+      "Women's Health — Birth Trauma",
+      "Women's Health — Endometriosis & Chronic Pelvic Pain",
+      "Women's Health — Infertility & Assisted Reproduction (IVF)",
+      "Women's Health — Menopause & Perimenopause",
+      "Women's Health — Perinatal Mental Health (General)",
+      "Women's Health — Polycystic Ovary Syndrome (PCOS)",
+      "Women's Health — Postpartum Anxiety",
+      "Women's Health — Postpartum Obsessive-Compulsive Disorder (OCD)",
+      "Women's Health — Premenstrual Dysphoric Disorder (PMDD)",
+      "Women's Health — Premenstrual Syndrome / Hormonal Mood Changes (PMS)",
+      "Work-Related Stress"
+    ],
+    "crm_modalities": [
+      "Acceptance and Commitment Therapy (ACT)",
+      "Compassion-Focused Therapy (CFT)",
+      "EMDR (Eye Movement Desensitisation and Reprocessing)",
+      "Psychodynamic Therapy",
+      "Schema Therapy",
+      "Trauma-Focused CBT (TF-CBT)",
+      "Trauma-Informed Care"
+    ],
+    "crm_bio": "I am a Psychoanalyst and Trauma Psychotherapist working in private practice and hold specialized accreditations in working with Complex Trauma, Acute Stress, Post Traumatic Stress Disorders and Intergenerational Trauma and EMDR. I have clinical experience in working with survivors of sexual assault, childhood abuse and neglect, family and domestic violence, dissociative states and disorders, substance misuse, disordered eating, body dysmoprhia, depression and anxiety amongst other clinical presentations. \n\nI am committed to providing best practice trauma informed care in a confidential, sensitive and validating therapeutic space, with an emphasis on ‘learning to find meaningful ways to live with our stories.’ My primary ethical commitment is to provide a safe non-judgmental space for ‘bearing witness,’ for truth telling,’ and in sharing your ‘lived experiences’ via free association and the formation of a safe therapeutic alliance. I hold space for my clients to explore ways of being and living, and their relationships with others with sensitivity and compassion.",
+    "crm_short_bio": "Christine is a trauma specialist psychotherapist and psychoanalyst offering EMDR and depth therapy to help survivors reclaim and live with their stories.​",
+    "crm_ages": [
+      "5 Yrs +"
+    ],
+    "crm_client_types": [
+      "Individual"
+    ],
+    "crm_languages": "English, Greek",
+    "crm_pronouns": "She/Her",
+    "crm_email": "christine.deftereos@gmail.com",
+    "crm_role": [
+      "Accredited Mental Health Social Worker",
+      "Psychoanalyst",
+      "Psychotherapist"
+    ]
+  },
+  "Kiira Gavralas": {
+    "in_crm": true,
+    "crm_presentations": [
+      "Anger & Aggression",
+      "Anxiety - Generalised (GAD)",
+      "Anxiety - Perinatal / Postnatal",
+      "Anxiety - Separation",
+      "Anxiety - Social Anxiety Disorder",
+      "Attachment Difficulties",
+      "Depression — Major Depressive Disorder",
+      "Depression — Persistent Depressive Disorder (Dysthymia)",
+      "Emotional Dysregulation",
+      "Emotional Regulation & Behavioural Difficulties",
+      "Family Conflict",
+      "Grief & Loss - Complicated / Prolonged",
+      "Grief & Loss - Fertility & Pregnancy Loss",
+      "Grief & Loss - General Bereavement",
+      "Grief & Loss - Termination of Pregnancy",
+      "Interpersonal Difficulties",
+      "Intimacy & Trust Difficulties",
+      "Life Transitions",
+      "Low Confidence & Self-Worth",
+      "Low Mood",
+      "Low Self-Esteem",
+      "Parenting Difficulties",
+      "Perinatal / Postnatal Depression",
+      "Post-Traumatic Stress Disorder (PTSD)",
+      "Relationship Breakdown & Separation",
+      "Relationship Difficulties",
+      "Rumination",
+      "Somatic Symptom Disorder",
+      "Trauma - Childhood",
+      "Trauma - Developmental",
+      "Trauma - Intergenerational",
+      "Trauma — Complex",
+      "Trauma — Single Incident",
+      "Women's Health — Birth Trauma",
+      "Women's Health — Menopause & Perimenopause",
+      "Women's Health — Perinatal Mental Health (General)",
+      "Women's Health — Postpartum Anxiety",
+      "Women's Health — Postpartum Obsessive-Compulsive Disorder (OCD)",
+      "Work-Related Stress"
+    ],
+    "crm_modalities": [
+      "Acceptance and Commitment Therapy (ACT)",
+      "Attachment-Based Therapy",
+      "Child & Adolescent Therapy",
+      "Circle of Security (COS)",
+      "Cognitive Behavioural Therapy (CBT)",
+      "Dialectical Behaviour Therapy (DBT)",
+      "EMDR (Eye Movement Desensitisation and Reprocessing)",
+      "Intensive Short-Term Dynamic Psychotherapy (ISTDP)",
+      "Internal Family Systems (IFS) / Parts Work (Informed)",
+      "Psychodynamic Therapy"
+    ],
+    "crm_bio": "My therapeutic style is genuine, compassionate, and non-judgemental, but also challenging enough to foster growth and change. I focus on building a therapeutic relationship where clients feel safe to share, reflect and process emotional experiences in session, while navigating life’s difficult events. I feel privileged to be invited into people’s emotional worlds and sit alongside them throughout their journey of understanding themselves better, so that they can move toward a life filled with more satisfaction and ease.\n\nI believe that our relationships with ourselves and others are at the heart of our wellbeing, and my work is predominantly informed by psychodynamic, relational, and emotion-focused frameworks, mostly drawing from Intensive Short-Term Dynamic Psychotherapy and models grounded in attachment theory. This means that therapy involves working collaboratively to understand emotional patterns that shape how we think, behave, and relate to others. Together, we bring curiosity and compassion to how these (often unconscious) patterns may have developed. By bringing awareness to this, clients are empowered to shift automatic responses that may be contributing to current difficulties, and to foster more adaptive and lasting ways of managing emotional distress. This way of working can be helpful for emotional difficulties including depressive symptoms, anxiety symptoms, trauma symptoms, grief and loss, emotion regulation difficulties, relationship difficulties and physical/somatic complaints.\n\nI have worked consistently across both public and private settings in my career, working with infants, children, adolescents, adults, and families. I have a particular interest in supporting both women and men through the transition to parenthood. This transition is often a time where we think about how we were parented, and how we may like to parent similarly, or differently. Often, it becomes a meaningful opportunity for parents to courageously break intergenerational cy",
+    "crm_short_bio": "A genuine, relational psychologist using psychodynamic, attachment-informed ISTDP to help clients understand emotional patterns, ease distress and navigate parenthood transitions.",
+    "crm_ages": [
+      "14 Yrs +"
+    ],
+    "crm_client_types": [
+      "Individual"
+    ],
+    "crm_languages": "English",
+    "crm_pronouns": "She/Her",
+    "crm_email": "kiira.gavralas@gmail.com",
+    "crm_role": [
+      "Clinical Psychologist"
+    ]
+  },
+  "Joshua Kugel": {
+    "in_crm": true,
+    "crm_presentations": [
+      "Academic Pressure & Performance Stress",
+      "Addiction/Dependence (Alcohol) — Current / Active",
+      "Addiction/Dependence (Alcohol) — Not Current / In Recovery",
+      "Addiction/Dependence (Cannabis) — Current / Active",
+      "Addiction/Dependence (Cannabis) — Not Current / In Recovery",
+      "Addiction/Dependence (Compulsive Shopping) — Current / Active",
+      "Addiction/Dependence (Compulsive Shopping) — Not Current / In Recovery",
+      "Addiction/Dependence (Gambling) — Current / Active",
+      "Addiction/Dependence (Gambling) — Not Current / In Recovery",
+      "Addiction/Dependence (Hypersexuality / Sex Addiction) — Current / Active",
+      "Addiction/Dependence (Hypersexuality / Sex Addiction) — Not Current / In Recovery",
+      "Addiction/Dependence (Internet & Technology) — Current / Active",
+      "Addiction/Dependence (Internet & Technology) — Not Current / In Recovery",
+      "Addiction/Dependence (Other Substances) — Current / Active",
+      "Addiction/Dependence (Other Substances) — Not Current / In Recovery",
+      "Addiction/Dependence (Pornography / Compulsive Sexual Behaviour) — Current / Active",
+      "Addiction/Dependence (Pornography / Compulsive Sexual Behaviour) — Not Current / In Recovery",
+      "Adjustment Disorder",
+      "Anger & Aggression",
+      "Anxiety - Anticipatory",
+      "Anxiety - Exam & Academic",
+      "Anxiety - Financial Stress",
+      "Anxiety - Generalised (GAD)",
+      "Anxiety - Social Anxiety Disorder",
+      "Coping Skills",
+      "Depression — Major Depressive Disorder",
+      "Depression — Persistent Depressive Disorder (Dysthymia)",
+      "Emotional Dysregulation",
+      "Emotional Regulation & Behavioural Difficulties",
+      "Executive Functioning Difficulties",
+      "Existential Concerns",
+      "Family Conflict",
+      "Fear of Failure",
+      "Gaming Disorder",
+      "Insomnia & Sleep Difficulties",
+      "Interpersonal Difficulties",
+      "Life Transitions",
+      "Loneliness & Isolation",
+      "Low Confidence & Self-Worth",
+      "Low Mood",
+      "Low Self-Esteem",
+      "Neurodivergence — General / Late Diagnosis",
+      "Obsessive-Compulsive Disorder (OCD) — Contamination",
+      "Obsessive-Compulsive Disorder (OCD) — General",
+      "Obsessive-Compulsive Disorder (OCD) — Intrusive Thoughts",
+      "Obsessive-Compulsive Disorder (OCD) — Pure O",
+      "Obsessive-Compulsive Disorder (OCD) — Relationship OCD (ROCD)",
+      "Obsessive-Compulsive Disorder (OCD) — Religious / Scrupulosity",
+      "Perfectionism",
+      "Phobias — Agoraphobia",
+      "Phobias — Claustrophobia",
+      "Phobias — Emetophobia (Fear of Vomiting)",
+      "Phobias — Needle / Medical",
+      "Phobias — Social",
+      "Phobias — Specific (e.g. Heights, Animals, Flying)",
+      "Relationship Breakdown & Separation",
+      "Relationship Difficulties",
+      "Rumination",
+      "Seasonal Affective Disorder (SAD)",
+      "Spiritual / Religious Crisis",
+      "Spirituality — Non-Religious Exploration (incl. Buddhism & Mystical Experiences)",
+      "Stress Management",
+      "Work-Related Stress"
+    ],
+    "crm_modalities": [
+      "Acceptance and Commitment Therapy (ACT)",
+      "Behavioural Activation (BA)",
+      "Cognitive Behavioural Therapy (CBT)",
+      "Gottman Method Couples Therapy",
+      "Humanistic / Person-Centred Therapy",
+      "Integrative / Eclectic Therapy",
+      "Person-Centred / Humanistic Therapy",
+      "Psychedelic-Assisted Psychotherapy (research/emerging)"
+    ],
+    "crm_bio": "With a PhD (Clinical Psychology) and an active role in academic research, Josh has a strong grounding in psychological science. He also believes that what ultimately makes therapy effective, is an authentic, honest, heart-to-heart connection between therapist and patient.\n\nJosh is a non-judgemental, warm therapist who approaches therapy with humility and deep respect for people’s own capacity for healing and growth. He offers an environment where clients feel deeply heard and accepted; where it becomes possible to reconnect with parts of themselves that may have long been forgotten or buried. He supports clients to clarify what truly matters to them and to develop the awareness and skills needed to align their life with their values.\n\nJosh is lit up by seeing adults and adolescents flourish – developing self-understanding and clarity, becoming more fully themselves, and living rich and meaningful lives. He empowers clients by taking a holistic and integrative approach to therapy, drawing on a range of evidence-based modalities and tailoring therapy to the needs and preferences of each unique person.\n\nJosh has worked in both public and private sectors, and has experience with trauma, neurodiversity, depression, anxiety, parent-child relationships, OCD, grief and loss, perfectionism, and personality disorders.",
+    "crm_short_bio": "Josh is a warm, research-active clinical psychologist supporting adolescents and adults with integrative, values-based therapy for trauma, neurodiversity and emotional difficulties.",
+    "crm_ages": [
+      "10 yrs +"
+    ],
+    "crm_client_types": [
+      "Individuals"
+    ],
+    "crm_languages": "English",
+    "crm_pronouns": "He/Him",
+    "crm_email": "joshua.psychologycare@gmail.com",
+    "crm_role": [
+      "Psychologist"
+    ]
+  },
+  "Brigid Blanckenberg": {
+    "in_crm": true,
+    "crm_presentations": [
+      "Acute Stress Reaction",
+      "Adjustment Disorder",
+      "Anxiety - Anticipatory",
+      "Anxiety - Exam & Academic",
+      "Anxiety - Financial Stress",
+      "Anxiety - Generalised (GAD)",
+      "Anxiety - Health (Illness Anxiety / Hypochondria)",
+      "Anxiety - Social Anxiety Disorder",
+      "Clinician & Therapist Wellbeing Support",
+      "Depression — Major Depressive Disorder",
+      "Family Conflict",
+      "Fear of Failure",
+      "Identity Issues",
+      "Low Confidence & Self-Worth",
+      "Low Self-Esteem",
+      "Phobias — Specific (e.g. Heights, Animals, Flying)",
+      "Post-Traumatic Stress Disorder (PTSD)",
+      "Relationship Breakdown & Separation",
+      "Stress Management",
+      "Trauma - Compassion Fatigue / Vicarious Trauma",
+      "Trauma — Complex",
+      "Trauma — Single Incident",
+      "Work-Related Stress"
+    ],
+    "crm_modalities": [
+      "Acceptance and Commitment Therapy (ACT)",
+      "EMDR (Eye Movement Desensitisation and Reprocessing)",
+      "Internal Family Systems (IFS) / Parts Work (Level 1 Certified)"
+    ],
+    "crm_bio": "Brigid Blanckenberg is a Clinical Psychologist who offers a calm and reflective space for clients to explore their inner worlds and make meaningful changes in their lives.  She values the therapeutic relationship as a foundation for healing and works collaboratively with each client to understand their experiences with curiosity, care, and respect.\n\nDrawing from an attachment-informed perspective, Brigid is attuned to how early experiences shape present patterns—particularly within relationships—and supports clients to develop new ways of relating to themselves and others. Using an integrative approach, Brigid is an accredited EMDR therapist and Internal Family Systems therapist (Level 1), and she also draws upon Schema Therapy, Cognitive Behavioural Therapy (CBT) and Acceptance and Commitment Therapy (ACT) to meet individual client needs.\n\nWith a background as a yoga teacher and long-term meditator, Brigid also weaves mindfulness and somatic awareness into her practice, helping clients cultivate self-compassion, acceptance, and inner balance.\n\nBrigid has experience supporting adults and adolescents across community and private settings with a wide range of concerns including anxiety, mood difficulties, stress, PTSD, complex trauma, relationship issues, self-esteem, life transitions, grief, identity, and body image. She also has a strong commitment to working inclusively with members of the LGBTIQ+ community.",
+    "crm_short_bio": "Brigid Blanckenberg\nBrigid is a warm and reflective therapist who offers a calm, supportive space for clients to explore life’s challenges and create meaningful change. Her approach is grounded in trauma-informed Schema Therapy and EMDR, supported by CBT, ACT, and mindfulness-based techniques. With a background in yoga and meditation, she brings a gentle, body-aware presence to her work. Brigid supports adults and adolescents with anxiety, mood difficulties, trauma, relationships, and self-esteem, and is passionate about working inclusively with the LGBTIQ+ community.",
+    "crm_ages": [
+      "18 Yrs +"
+    ],
+    "crm_client_types": [
+      "Individual"
+    ],
+    "crm_languages": "English",
+    "crm_pronouns": "She/Her",
+    "crm_email": "bblanckenberg@gmail.com",
+    "crm_role": [
+      "Clinical Psychologist"
+    ]
+  },
+  "Peter Steele": {
+    "in_crm": true,
+    "crm_presentations": [
+      "Adjustment Disorder",
+      "Anger & Aggression",
+      "Anxiety - Generalised (GAD)",
+      "Anxiety - Health (Illness Anxiety / Hypochondria)",
+      "Bullying & Peer Difficulties",
+      "Burnout — Carer / Family",
+      "Burnout — Work-Related",
+      "Coping Skills",
+      "Depression — Persistent Depressive Disorder (Dysthymia)",
+      "Fear of Failure",
+      "Grief & Loss - Complicated / Prolonged",
+      "Grief & Loss - General Bereavement",
+      "Identity Exploration — Gender / Sexual Orientation / Cultural / Spiritual",
+      "Identity Issues",
+      "Interpersonal Difficulties",
+      "LGBTQIA+ Affirmative Support",
+      "LGBTQIA+ Identity & Queer Experiences",
+      "Life Transitions",
+      "Low Confidence & Self-Worth",
+      "Low Mood",
+      "Low Self-Esteem",
+      "Obsessive-Compulsive Disorder (OCD) — General",
+      "Panic Disorder",
+      "Perfectionism",
+      "Phobias — Social",
+      "Relationship Difficulties",
+      "School Refusal",
+      "Sexual Difficulties & Dysfunction",
+      "Stress Management",
+      "Trauma - Childhood",
+      "Trauma — Complex",
+      "Trauma — Single Incident",
+      "Work-Related Stress"
+    ],
+    "crm_modalities": [
+      "Acceptance and Commitment Therapy (ACT)",
+      "Cognitive Behavioural Therapy (CBT)",
+      "Exposure and Response Prevention (ERP)",
+      "Narrative Exposure Therapy (NET)"
+    ],
+    "crm_bio": "Pete is a registered Clinical Psychologist who completed his Master of Psychology training at the University of Melbourne. He has significant experience working with adults and adolescents across the public and private sectors. When he is not working at Psychology Care, Pete supervises and teaches trainee psychologists at Swinburne University.\n\nPete has experience treating a wide range of mental health challenges, including but not limited to: anxiety, depression, trauma-related difficulties, body-image concerns, self-esteem, OCD, life transitions, grief and loss, difficulties with interpersonal relationships, difficulties coping with strong emotions and problem behaviours. \n\nCentral to everything Pete does is the therapeutic relationship he grows with his clients. Pete has a warm and empathetic style and is easy to talk to. He believes that a collaborative, teamwork-based approach is the one most likely to result in improvements to symptoms and general wellbeing.\n\nPete strives to provide a safe and inclusive therapeutic space for people of all backgrounds and has significant experience working with people from LGBTIQ+ and CALD communities.\n\nPete practices using Cognitive Behaviour Therapy (CBT) and Acceptance and Commitment Therapy (ACT) and uses a trauma-informed approach across all his therapeutic work. Outside of the therapy room Pete is passionate about music, food and spending time with friends.",
+    "crm_short_bio": "Pete is a warm, trauma-informed clinical psychologist using CBT and ACT to support diverse adults and adolescents, including LGBTIQ+ and CALD communities.",
+    "crm_ages": [
+      "12 Yrs +"
+    ],
+    "crm_client_types": [
+      "Individual"
+    ],
+    "crm_languages": "",
+    "crm_pronouns": "He/Him",
+    "crm_email": "petergilfillansteele@gmail.com",
+    "crm_role": [
+      "Clinical Psychologist"
+    ]
+  },
+  "Clare Tuttleby": {
+    "in_crm": true,
+    "crm_presentations": [
+      "Anxiety - Generalised (GAD)",
+      "Anxiety - Health (Illness Anxiety / Hypochondria)",
+      "Anxiety - Perinatal / Postnatal",
+      "Anxiety - Social Anxiety Disorder",
+      "Attachment Difficulties",
+      "Attention-Deficit/Hyperactivity Disorder (ADHD) — Diagnosed & Managed",
+      "Body Image Concerns",
+      "Burnout — Work-Related",
+      "Chronic Pain",
+      "Depression — Major Depressive Disorder",
+      "Grief & Loss - Fertility & Pregnancy Loss",
+      "Interpersonal Difficulties",
+      "Low Confidence & Self-Worth",
+      "Low Self-Esteem",
+      "Panic Disorder",
+      "Perfectionism",
+      "Shame & Guilt"
+    ],
+    "crm_modalities": [
+      "Acceptance and Commitment Therapy (ACT)",
+      "Compassion-Focused Therapy (CFT)",
+      "Mindfulness-Based Cognitive Therapy (MBCT)",
+      "Schema Therapy",
+      "Solution-Focused Brief Therapy (SFBT)"
+    ],
+    "crm_bio": "Clare’s approach is warm, collaborative, and client-centred, focusing on helping individuals gain a deeper understanding of themselves and their struggles. She creates a safe, non-judgmental space, tailoring her approach to meet each client’s unique needs, empowering them to build resilience, challenge unhelpful patterns, and foster lasting change.\n\nWith a Master of Educational and Developmental Psychology, Clare is passionate about supporting individuals through life’s transitions and challenges, drawing on a solid foundation of psychological development. Her approach integrates evidence-based modalities, including Acceptance and Commitment Therapy (ACT), Schema Therapy and Mindfulness-Based practices, to help clients develop psychological flexibility and adopt effective coping strategies.\n\nClare has experience working with clients facing a variety of difficulties, including anxiety, mood-related concerns, perinatal mental health, grief and loss related to infertility and reproductive health treatments, pelvic and chronic health conditions, as well as challenges linked to stress, burnout, low self-esteem, perfectionism, and life or career transitions.",
+    "crm_short_bio": "Clare is a warm, client-centred psychologist supporting life transitions, anxiety, perinatal and health challenges using CBT, ACT and mindfulness-based approaches.",
+    "crm_ages": [
+      "18 Yrs +"
+    ],
+    "crm_client_types": [
+      "Individual"
+    ],
+    "crm_languages": "English",
+    "crm_pronouns": "She/Her",
+    "crm_email": "Clare.psychologycare@gmail.com",
+    "crm_role": [
+      "Psychologist"
+    ]
+  },
+  "Nick Burden": {
+    "in_crm": true,
+    "crm_presentations": [
+      "Academic Pressure & Performance Stress",
+      "Acute Stress Reaction",
+      "Adjustment Disorder",
+      "Anxiety - Anticipatory",
+      "Anxiety - Death",
+      "Anxiety - Generalised (GAD)",
+      "Anxiety - Health (Illness Anxiety / Hypochondria)",
+      "Anxiety - Social Anxiety Disorder",
+      "Attachment Difficulties",
+      "Burnout — Carer / Family",
+      "Burnout — Work-Related",
+      "Depression — Major Depressive Disorder",
+      "Depression — Persistent Depressive Disorder (Dysthymia)",
+      "Erectile Dysfunction (ED)",
+      "Existential Concerns",
+      "Family Conflict",
+      "Fear of Failure",
+      "Grief & Loss - Complicated / Prolonged",
+      "Grief & Loss - General Bereavement",
+      "Identity Issues",
+      "Imposter Syndrome",
+      "Interpersonal Difficulties",
+      "Intimacy & Trust Difficulties",
+      "Life Transitions",
+      "Loneliness & Isolation",
+      "Low Confidence & Self-Worth",
+      "Low Mood",
+      "Low Self-Esteem",
+      "Panic Disorder",
+      "Perfectionism",
+      "Relationship Difficulties",
+      "Rumination",
+      "Sexual Difficulties & Dysfunction",
+      "Shame & Guilt",
+      "Somatic Symptom Disorder",
+      "Stress Management",
+      "Work-Related Stress"
+    ],
+    "crm_modalities": [
+      "Emotion-Focused Therapy (EFT)",
+      "Intensive Short-Term Dynamic Psychotherapy (ISTDP)"
+    ],
+    "crm_bio": "Pain is part of being human, the price we pay for loving and wanting to love. \n \nEven the most fortunate of us have been wounded.  And the feelings which tell us about our hurts are so very human too.  As painful as they can be, our feelings give texture and meaning to life, give us direction and help us to connect with ourselves and others. \n \nSadly, many of us have learned very early on and without meaning to that we should hide or ignore or punish these feelings, and when we do this we can cause further suffering which shows up as anxiety, depression, relationship difficulties and a whole host of other mental health difficulties. \n \nBut if we can turn towards our painful feelings, listen to what they have to tell us and feel them deeply rather than avoiding them in unhelpful ways, then we can find healing on the other side and live a life with more freedom and connection.\n \nWhat is hurt in relationship must be healed in relationship, and I see my role as your therapist as walking with you step by step as you begin to welcome these exiled feelings back home, in whatever stage of the journey you are on.\n\nMy therapy approach is primarily informed by Intensive Short Term Dynamic Psychotherapy (ISTDP), an evidence-based emotion-focussed therapy which uses the therapy relationship to help people to stop avoiding their feelings in unhelpful ways which lead to anxiety, depression, somatic complaints and relationship difficulties.  However, as an integrative therapist I draw on other therapies when appropriate to suit the needs of the individual, including Cognitive Behavioural Therapy (CBT) and Internal Family Systems Therapy (IFS).  \n\nI have a developing interest and training in the new research around psychedelic assisted therapies and I have also received training in ‘bad trip integration’ - helping people to integrate negative experiences of psychedelics.  I have a background in Social Psychology and Cultural History research and I am fascinated by what we can learn",
+    "crm_short_bio": "An integrative ISTDP, CBT and IFS therapist helping clients face painful feelings, heal relational wounds and integrate difficult psychedelic experiences.",
+    "crm_ages": [
+      "18 Yrs +"
+    ],
+    "crm_client_types": [
+      "Individual"
+    ],
+    "crm_languages": "English",
+    "crm_pronouns": "He/Him",
+    "crm_email": "nicholasburdenpsychologist@gmail.com",
+    "crm_role": [
+      "Clinical Psychologist"
+    ]
+  },
+  "David Spektor": {
+    "in_crm": true,
+    "crm_presentations": [],
+    "crm_modalities": [],
+    "crm_bio": "",
+    "crm_short_bio": "",
+    "crm_ages": [
+      "18 Yrs +"
+    ],
+    "crm_client_types": [
+      "Individual"
+    ],
+    "crm_languages": "",
+    "crm_pronouns": "",
+    "crm_email": "drdavidspektor@hotmail.com",
+    "crm_role": [
+      "Clinical Psychologist"
+    ]
+  },
+  "Elizabeth White": {
+    "in_crm": true,
+    "crm_presentations": [
+      "Academic Pressure & Performance Stress",
+      "Acute Stress Reaction",
+      "Adjustment Disorder",
+      "Anxiety - Anticipatory",
+      "Anxiety - Death",
+      "Anxiety - Exam & Academic",
+      "Anxiety - Financial Stress",
+      "Anxiety - Generalised (GAD)",
+      "Anxiety - Health (Illness Anxiety / Hypochondria)",
+      "Anxiety - Separation",
+      "Attachment Difficulties",
+      "Bipolar Disorder — Active / Recent Episode",
+      "Bipolar Disorder — Diagnosed & Stable",
+      "Burnout — Carer / Family",
+      "Burnout — Work-Related",
+      "Chronic Illness — Adjustment & Psychological Support",
+      "Complex Post-Traumatic Stress Disorder (C-PTSD)",
+      "Depersonalisation / Derealisation",
+      "Depression — Major Depressive Disorder",
+      "Depression — Persistent Depressive Disorder (Dysthymia)",
+      "Diabetes & Chronic Condition Self-Management",
+      "Disordered Eating - Emotional Eating",
+      "Disordered Eating - Sub-clinical",
+      "Dissociation / Dissociative Disorders",
+      "Emotional Dysregulation",
+      "Emotional Regulation & Behavioural Difficulties",
+      "Existential Concerns",
+      "Family Conflict",
+      "Fear of Failure",
+      "Grief & Loss - Complicated / Prolonged",
+      "Grief & Loss - Fertility & Pregnancy Loss",
+      "Grief & Loss - General Bereavement",
+      "Grief & Loss - Termination of Pregnancy",
+      "Identity Exploration — Gender / Sexual Orientation / Cultural / Spiritual",
+      "Identity Issues",
+      "Imposter Syndrome",
+      "Insomnia & Sleep Difficulties",
+      "Interpersonal Difficulties",
+      "Intimacy & Trust Difficulties",
+      "Life Transitions",
+      "Loneliness & Isolation",
+      "Low Confidence & Self-Worth",
+      "Low Mood",
+      "Low Self-Esteem",
+      "Narcissistic Abuse — Trauma & Recovery",
+      "Panic Disorder",
+      "Perfectionism",
+      "Personality Disorder — Borderline Personality Disorder (BPD) — Diagnosed & In Treatment",
+      "Personality Disorder — Narcissistic Personality Disorder (NPD)",
+      "Personality Disorder — Other",
+      "Personality Patterns — Obsessive / Perfectionistic",
+      "Phobias — Agoraphobia",
+      "Postural Orthostatic Tachycardia Syndrome (POTS) — Psychological Support",
+      "Rejection Sensitive Dysphoria (RSD)",
+      "Relationship Breakdown & Separation",
+      "Relationship Difficulties",
+      "Rumination",
+      "Shame & Guilt",
+      "Somatic Symptom Disorder",
+      "Stress Management",
+      "Suicidal Ideation — Not Current",
+      "Trauma - Childhood",
+      "Trauma - Compassion Fatigue / Vicarious Trauma",
+      "Trauma - Developmental",
+      "Trauma - Intergenerational",
+      "Trauma - Sexual Trauma",
+      "Trauma — Complex",
+      "Women's Health — Menopause & Perimenopause",
+      "Women's Health — Polycystic Ovary Syndrome (PCOS)",
+      "Women's Health — Postpartum Anxiety",
+      "Women's Health — Premenstrual Syndrome / Hormonal Mood Changes (PMS)",
+      "Work-Related Stress"
+    ],
+    "crm_modalities": [
+      "Attachment-Based Therapy",
+      "Cognitive Behavioural Therapy (CBT)",
+      "Existential Therapy",
+      "Interpersonal Therapy (IPT)",
+      "Motivational Interviewing (MI)",
+      "Psychodynamic Therapy",
+      "Supportive Therapy",
+      "Trauma-Focused CBT (TF-CBT)",
+      "Trauma-Informed Care"
+    ],
+    "crm_bio": "I am a Clinical Psychologist, having trained in psychology as a mature age student at Monash University & University of Melbourne. Previously working in pharmacy, research and teaching, I am always engaged in on-going professional training in interpersonal/psychodynamic psychotherapies, currently ANZAP’s Conversational Model. I also draw from my training in Acceptance and Commitment Therapy (ACT) and Cognitive-Behavioural Therapy (CBT). My focus is always on what appears to best suit the client; however, I may be better suited when working with clients ready to focus on interpersonal relationships and emotional coping rather than just coping strategies.\n\nMy psychology experience includes working with adults in public and private hospitals, and with older people in residential aged care and community-based public mental health. I also provide input to a telephone peer support service for health professionals. I have a particular interest in working with people with chronic depression and/or physical symptoms that are related to mental or emotional stress, as well as people adjusting to the many challenging stages of our lifespan (e.g., mid-life, retirement).\n\nRegular therapy sessions can be a brief or a longer-term investment, depending on the person’s level of curiosity and needs. The therapeutic focus is on helping us listen to what our anxieties, emotions and interactions with other people tell us about what is important to us. What we may believe are annoyances or weaknesses may be rich information and growth experiences. Working with a therapist is about using the therapeutic relationship to help us feel someone else is there as we, bravely and patiently, make room for uncomfortable experiences and process whatever we come to therapy to process: suffering, sense of self, relationship to others, or general growth across the lifespan.",
+    "crm_short_bio": "A mature-age clinical psychologist using ISTDP, Conversational Model, ACT and CBT to support adults through chronic depression, stress-related symptoms and life transitions.",
+    "crm_ages": [
+      "25 Yrs +",
+      "30 Yrs+",
+      "40 Yrs+",
+      "50 Yrs+",
+      "60 Yrs+",
+      "70 Yrs+",
+      "80 Yrs+"
+    ],
+    "crm_client_types": [
+      "Individuals"
+    ],
+    "crm_languages": "English",
+    "crm_pronouns": "She/Her",
+    "crm_email": "elizabethpsychologycare@gmail.com",
+    "crm_role": [
+      "Clinical Psychologist",
+      "Psychotherapist"
+    ]
+  },
+  "Dr Krista De Castella": {
+    "in_crm": true,
+    "crm_presentations": [],
+    "crm_modalities": [],
+    "crm_bio": "For as long as I can remember, I've been intrigued by the things we believe and how they can shape our experience — whether that's beliefs about ourselves and others, or even the world and our place in it. I'm a clinical psychologist, licensed also as a therapist (LMFT) in California. I completed a PhD in Psychology at the Australian National University and a Master's in Clinical Psychology at San Francisco State University. While living in the U.S. I also spent two years as a visiting researcher in Stanford's Clinically Applied Affective Neuroscience Lab (CAAN) researching the implications of mindfulness meditation for anxiety disorders and emotion regulation. \n\nIn my clinical work, I’ve taught meditation and mindfulness (MBSR) to individuals and groups; provided nature-based therapy for neurodiverse kids; and worked with adolescents, couples and adults in San Francisco and Australia. In 2024, I also had the opportunity to join Monash University's Clinical Psychedelic Research team, working as a psychedelic-assisted therapist providing MDMA-assisted therapy for PTSD and psilocybin-assisted therapy for treatment-resistant depression. \n\nI'm primarily influenced by Internal Family Systems, Hakomi, psychodynamic, humanistic,  and attachment theory frameworks in this work and believe strongly in the importance of a warm, open and authentic therapeutic relationship.  \n\nOutside of clinical work, I'm an avid martial arts practitioner and have spent over a decade training in the Japanese Soto Zen meditation tradition in which I am an ordained Zen priest. I have a personal interest in Buddhist and transpersonal psychology, ethics, and non-ordinary states of consciousness.  ",
+    "crm_short_bio": "A clinical psychologist and psychedelic-assisted therapist integrating IFS, mindfulness and attachment-based approaches to support values-led healing, growth and non-ordinary states.",
+    "crm_ages": [
+      "16 Yrs +"
+    ],
+    "crm_client_types": [
+      "Individual",
+      "Couples"
+    ],
+    "crm_languages": "English",
+    "crm_pronouns": "She/Her",
+    "crm_email": "krista1@gmail.com",
+    "crm_role": [
+      "Clinical Psychologist",
+      "Psychotherapist"
+    ]
+  },
+  "Oliver Eastwood": {
+    "in_crm": false,
+    "crm_presentations": [],
+    "crm_modalities": [],
+    "crm_bio": "",
+    "crm_short_bio": "",
+    "crm_ages": [],
+    "crm_client_types": [],
+    "crm_languages": "",
+    "crm_pronouns": "",
+    "crm_email": "",
+    "crm_role": []
+  },
+  "Jillian Giannios": {
+    "in_crm": false,
+    "crm_presentations": [],
+    "crm_modalities": [],
+    "crm_bio": "",
+    "crm_short_bio": "",
+    "crm_ages": [],
+    "crm_client_types": [],
+    "crm_languages": "",
+    "crm_pronouns": "",
+    "crm_email": "",
+    "crm_role": []
+  },
+  "Ella Graj": {
+    "in_crm": false,
+    "crm_presentations": [],
+    "crm_modalities": [],
+    "crm_bio": "",
+    "crm_short_bio": "",
+    "crm_ages": [],
+    "crm_client_types": [],
+    "crm_languages": "",
+    "crm_pronouns": "",
+    "crm_email": "",
+    "crm_role": []
+  },
+  "Stephanie Stewart": {
+    "in_crm": false,
+    "crm_presentations": [],
+    "crm_modalities": [],
+    "crm_bio": "",
+    "crm_short_bio": "",
+    "crm_ages": [],
+    "crm_client_types": [],
+    "crm_languages": "",
+    "crm_pronouns": "",
+    "crm_email": "",
+    "crm_role": []
   }
-});
+};
 
-// ── Helper badges ─────────────────────────────────────────────────────────
-function Badge({ type, label }: { type: "crm" | "available" | "manual" | "missing"; label: string }) {
-  const styles: Record<string, string> = {
-    crm: "bg-green-900 text-green-200 border border-green-700",
-    available: "bg-yellow-900 text-yellow-200 border border-yellow-700",
-    manual: "bg-blue-900 text-blue-200 border border-blue-700",
-    missing: "bg-red-900 text-red-200 border border-red-700",
+export default function CRMSyncTab() {
+  const [expanded, setExpanded] = useState<string | null>(null);
+
+  const sourceBadge = (source: string) => {
+    if (source === "crm") return <span style={{background:"#1a3d1a",color:"#6ddb6d",borderRadius:4,padding:"2px 8px",fontSize:12,fontWeight:600}}>✅ CRM</span>;
+    if (source === "available") return <span style={{background:"#3d3200",color:"#ffd84d",borderRadius:4,padding:"2px 8px",fontSize:12,fontWeight:600}}>🟡 Available</span>;
+    return <span style={{background:"#1a2a3d",color:"#7eb8f7",borderRadius:4,padding:"2px 8px",fontSize:12,fontWeight:600}}>🔵 Manual</span>;
   };
-  return (
-    <span className={`inline-block px-2 py-0.5 rounded text-xs font-medium ${styles[type]}`}>
-      {label}
-    </span>
-  );
-}
-
-function CountCell({ app, crm, fieldSynced }: { app: number; crm: number; fieldSynced: boolean }) {
-  if (!fieldSynced) {
-    return (
-      <td className="px-3 py-2 text-center text-sm">
-        <span className="text-slate-400">{app}</span>
-        {crm > 0 && <span className="text-yellow-400 ml-1">→{crm}</span>}
-      </td>
-    );
-  }
-  const match = app === crm;
-  return (
-    <td className="px-3 py-2 text-center text-sm">
-      <span className={match ? "text-green-400 font-semibold" : "text-yellow-400"}>{app}</span>
-    </td>
-  );
-}
-
-// ── Main component ────────────────────────────────────────────────────────
-export function CRMSyncTab() {
-  const [activeSection, setActiveSection] = useState<"fields" | "practitioners">("fields");
-  const [expandedPrac, setExpandedPrac] = useState<string | null>(null);
 
   return (
-    <div className="space-y-6">
-      {/* Section switcher */}
-      <div className="flex gap-2">
-        <button
-          onClick={() => setActiveSection("fields")}
-          className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${activeSection === "fields" ? "bg-purple-700 text-white" : "bg-slate-700 text-slate-300 hover:bg-slate-600"}`}
-        >
-          📋 Field Sources
-        </button>
-        <button
-          onClick={() => setActiveSection("practitioners")}
-          className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${activeSection === "practitioners" ? "bg-purple-700 text-white" : "bg-slate-700 text-slate-300 hover:bg-slate-600"}`}
-        >
-          👥 Practitioner Sync Status
-        </button>
+    <div style={{padding:"24px",maxWidth:1000,margin:"0 auto",color:"#e8e0ef"}}>
+      <h2 style={{color:"#CDA8BA",marginBottom:4}}>🔗 CRM Sync</h2>
+      <p style={{color:"#aaa",marginBottom:24,fontSize:14}}>Shows which fields are synced from Zoho CRM and which are managed manually.</p>
+
+      {/* Field Sources Table */}
+      <h3 style={{color:"#CDA8BA",marginBottom:12}}>📋 Field Sources</h3>
+      <div style={{overflowX:"auto",marginBottom:36}}>
+        <table style={{width:"100%",borderCollapse:"collapse",fontSize:14}}>
+          <thead>
+            <tr style={{background:"#2C244C"}}>
+              <th style={{padding:"10px 12px",textAlign:"left",color:"#CDA8BA",borderBottom:"1px solid #3d3060"}}>App Field</th>
+              <th style={{padding:"10px 12px",textAlign:"left",color:"#CDA8BA",borderBottom:"1px solid #3d3060"}}>CRM Field</th>
+              <th style={{padding:"10px 12px",textAlign:"left",color:"#CDA8BA",borderBottom:"1px solid #3d3060"}}>Status</th>
+              <th style={{padding:"10px 12px",textAlign:"left",color:"#CDA8BA",borderBottom:"1px solid #3d3060"}}>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            {FIELD_SOURCES.map((row, i) => (
+              <tr key={row.field} style={{background: i % 2 === 0 ? "#1e1830" : "#231d38"}}>
+                <td style={{padding:"9px 12px",fontWeight:500}}>{row.field}</td>
+                <td style={{padding:"9px 12px",color:"#bbb",fontFamily:"monospace",fontSize:12}}>{row.crmField}</td>
+                <td style={{padding:"9px 12px"}}>{sourceBadge(row.source)}</td>
+                <td style={{padding:"9px 12px",color:"#aaa",fontSize:13}}>{row.note}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
 
-      {activeSection === "fields" && (
-        <div>
-          <div className="flex gap-4 mb-4 flex-wrap">
-            <div className="flex items-center gap-2 text-sm"><span className="w-3 h-3 rounded-full bg-green-500 inline-block"></span><span className="text-slate-300">Currently synced from CRM</span></div>
-            <div className="flex items-center gap-2 text-sm"><span className="w-3 h-3 rounded-full bg-yellow-500 inline-block"></span><span className="text-slate-300">Available in CRM — not yet synced</span></div>
-            <div className="flex items-center gap-2 text-sm"><span className="w-3 h-3 rounded-full bg-blue-500 inline-block"></span><span className="text-slate-300">Manual only (no CRM field)</span></div>
-          </div>
-          <div className="overflow-x-auto rounded-xl border border-slate-700">
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="bg-slate-800 text-slate-300 text-left">
-                  <th className="px-4 py-3 font-semibold">App Field</th>
-                  <th className="px-4 py-3 font-semibold">CRM Field</th>
-                  <th className="px-4 py-3 font-semibold">Status</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-slate-700/50">
-                {FIELD_SOURCES.map((f) => (
-                  <tr key={f.field} className="bg-slate-800/40 hover:bg-slate-700/30 transition-colors">
-                    <td className="px-4 py-3 text-slate-100 font-medium">{f.field}</td>
-                    <td className="px-4 py-3 text-slate-400 font-mono text-xs">{f.crmField}</td>
-                    <td className="px-4 py-3">
-                      <Badge
-                        type={f.source as any}
-                        label={f.source === "crm" ? "✅ Synced" : f.source === "available" ? "🟡 Available" : "🔵 Manual"}
-                      />
-                      <span className="ml-2 text-slate-400 text-xs">{f.note.replace(/^[^\s]+\s/, "")}</span>
+      {/* Per-practitioner sync status */}
+      <h3 style={{color:"#CDA8BA",marginBottom:12}}>👥 Practitioner Sync Status</h3>
+      <div style={{overflowX:"auto"}}>
+        <table style={{width:"100%",borderCollapse:"collapse",fontSize:13}}>
+          <thead>
+            <tr style={{background:"#2C244C"}}>
+              <th style={{padding:"10px 12px",textAlign:"left",color:"#CDA8BA",borderBottom:"1px solid #3d3060"}}>Practitioner</th>
+              <th style={{padding:"10px 12px",textAlign:"center",color:"#CDA8BA",borderBottom:"1px solid #3d3060"}}>CRM</th>
+              <th style={{padding:"10px 12px",textAlign:"center",color:"#CDA8BA",borderBottom:"1px solid #3d3060"}}>Presentations</th>
+              <th style={{padding:"10px 12px",textAlign:"center",color:"#CDA8BA",borderBottom:"1px solid #3d3060"}}>Modalities</th>
+              <th style={{padding:"10px 12px",textAlign:"left",color:"#CDA8BA",borderBottom:"1px solid #3d3060"}}>Ages</th>
+              <th style={{padding:"10px 12px",textAlign:"left",color:"#CDA8BA",borderBottom:"1px solid #3d3060"}}>Client Types</th>
+              <th style={{padding:"10px 12px",textAlign:"left",color:"#CDA8BA",borderBottom:"1px solid #3d3060"}}>Languages</th>
+              <th style={{padding:"10px 12px",textAlign:"left",color:"#CDA8BA",borderBottom:"1px solid #3d3060"}}>Pronouns</th>
+              <th style={{padding:"10px 12px",textAlign:"center",color:"#CDA8BA",borderBottom:"1px solid #3d3060"}}>Bio</th>
+              <th style={{padding:"10px 12px",textAlign:"center",color:"#CDA8BA",borderBottom:"1px solid #3d3060"}}></th>
+            </tr>
+          </thead>
+          <tbody>
+            {practitioners.map((p, i) => {
+              const crm = crmData[p.name];
+              const isExpanded = expanded === p.name;
+              const appModCount = Array.isArray(p.modalities) ? p.modalities.length : 0;
+              const appPresCount = Array.isArray(p.presentations) ? p.presentations.length : 0;
+              const crmPresCount = crm ? crm.crm_presentations.length : 0;
+              const crmModCount = crm ? crm.crm_modalities.length : 0;
+              const hasBio = crm && crm.crm_bio && crm.crm_bio.length > 10;
+              const hasShortBio = crm && crm.crm_short_bio && crm.crm_short_bio.length > 5;
+
+              return (
+                <React.Fragment key={p.name}>
+                  <tr style={{background: i % 2 === 0 ? "#1e1830" : "#231d38"}}>
+                    <td style={{padding:"8px 12px",fontWeight:500}}>{p.name}</td>
+                    <td style={{padding:"8px 12px",textAlign:"center"}}>
+                      {crm?.in_crm ? <span style={{color:"#6ddb6d"}}>✅</span> : <span style={{color:"#f07070"}}>❌</span>}
+                    </td>
+                    <td style={{padding:"8px 12px",textAlign:"center",color: appPresCount > 0 ? "#6ddb6d" : "#f07070"}}>
+                      {appPresCount}
+                    </td>
+                    <td style={{padding:"8px 12px",textAlign:"center",color: appModCount > 0 ? "#6ddb6d" : "#aaa"}}>
+                      {appModCount > 0 ? appModCount : "—"}
+                    </td>
+                    <td style={{padding:"8px 12px",fontSize:12,color:"#ccc"}}>
+                      {crm?.crm_ages?.join(", ") || "—"}
+                    </td>
+                    <td style={{padding:"8px 12px",fontSize:12,color:"#ccc"}}>
+                      {crm?.crm_client_types?.join(", ") || "—"}
+                    </td>
+                    <td style={{padding:"8px 12px",fontSize:12,color:"#ccc"}}>
+                      {crm?.crm_languages || "—"}
+                    </td>
+                    <td style={{padding:"8px 12px",fontSize:12,color:"#ccc"}}>
+                      {crm?.crm_pronouns || "—"}
+                    </td>
+                    <td style={{padding:"8px 12px",textAlign:"center"}}>
+                      {hasBio ? <span style={{color:"#6ddb6d"}} title="Has bio">✅</span> : hasShortBio ? <span style={{color:"#ffd84d"}} title="Short bio only">📝</span> : <span style={{color:"#888"}}>—</span>}
+                    </td>
+                    <td style={{padding:"8px 12px",textAlign:"center"}}>
+                      <button
+                        onClick={() => setExpanded(isExpanded ? null : p.name)}
+                        style={{background:"none",border:"1px solid #3d3060",color:"#CDA8BA",borderRadius:4,padding:"3px 10px",cursor:"pointer",fontSize:12}}
+                      >
+                        {isExpanded ? "▲" : "▼"}
+                      </button>
                     </td>
                   </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-          <div className="mt-4 p-4 bg-yellow-950/40 border border-yellow-700/40 rounded-xl text-sm text-yellow-200">
-            <strong>💡 Ready to sync:</strong> Modalities, Bio, Short Bio, Ages, Session Types, Languages, Pronouns and Email are all populated in Zoho CRM and ready to pull into the app. Ask me to sync any of these fields.
-          </div>
-        </div>
-      )}
-
-      {activeSection === "practitioners" && (
-        <div>
-          <div className="overflow-x-auto rounded-xl border border-slate-700">
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="bg-slate-800 text-slate-300 text-left">
-                  <th className="px-4 py-3 font-semibold">Practitioner</th>
-                  <th className="px-4 py-3 font-semibold text-center">In CRM?</th>
-                  <th className="px-4 py-3 font-semibold text-center">Presentations</th>
-                  <th className="px-4 py-3 font-semibold text-center">Modalities</th>
-                  <th className="px-4 py-3 font-semibold">CRM Ages</th>
-                  <th className="px-4 py-3 font-semibold">CRM Session Types</th>
-                  <th className="px-4 py-3 font-semibold">Languages</th>
-                  <th className="px-4 py-3 font-semibold">Details</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-slate-700/50">
-                {PRACTITIONERS_DATA.map((p: any) => {
-                  const crm = CRM_DATA[p.name];
-                  const inCRM = crm?.in_crm ?? false;
-                  const appPres = (p.presentations || []).length;
-                  const crmPres = (crm?.crm_presentations || []).length;
-                  const appMod = (p.modalities || []).length;
-                  const crmMod = (crm?.crm_modalities || []).length;
-                  const isExpanded = expandedPrac === p.name;
-
-                  return (
-                    <React.Fragment key={p.name}>
-                      <tr className={`${inCRM ? "bg-slate-800/40" : "bg-red-950/20"} hover:bg-slate-700/30 transition-colors`}>
-                        <td className="px-4 py-2.5 font-medium text-slate-100">{p.name}</td>
-                        <td className="px-4 py-2.5 text-center">
-                          {inCRM
-                            ? <span className="text-green-400 text-base">✅</span>
-                            : <Badge type="missing" label="Not in CRM" />}
-                        </td>
-                        {/* Presentations — currently synced */}
-                        <td className="px-4 py-2.5 text-center">
-                          <span className="text-green-400 font-semibold">{appPres}</span>
-                          <span className="text-slate-500 text-xs ml-1">synced</span>
-                        </td>
-                        {/* Modalities — available but not synced */}
-                        <td className="px-4 py-2.5 text-center">
-                          <span className="text-slate-300">{appMod}</span>
-                          {inCRM && crmMod > 0 && crmMod !== appMod && (
-                            <span className="text-yellow-400 text-xs ml-1">({crmMod} in CRM)</span>
-                          )}
-                        </td>
-                        <td className="px-4 py-2.5 text-slate-400 text-xs">
-                          {inCRM ? (crm.crm_ages.join(", ") || "—") : "—"}
-                        </td>
-                        <td className="px-4 py-2.5 text-slate-400 text-xs">
-                          {inCRM ? (crm.crm_client_types.join(", ") || "—") : "—"}
-                        </td>
-                        <td className="px-4 py-2.5 text-slate-400 text-xs">
-                          {inCRM ? (crm.crm_languages || "—") : "—"}
-                        </td>
-                        <td className="px-4 py-2.5">
-                          {inCRM && (
-                            <button
-                              onClick={() => setExpandedPrac(isExpanded ? null : p.name)}
-                              className="text-xs text-purple-400 hover:text-purple-300 transition-colors"
-                            >
-                              {isExpanded ? "▲ hide" : "▼ more"}
-                            </button>
-                          )}
-                        </td>
-                      </tr>
-                      {isExpanded && crm && (
-                        <tr className="bg-slate-900/60">
-                          <td colSpan={8} className="px-6 py-3">
-                            <div className="grid grid-cols-2 gap-4 text-xs">
-                              <div>
-                                <p className="text-slate-400 font-semibold mb-1">CRM Role</p>
-                                <p className="text-slate-200">{crm.crm_role.join(", ") || "—"}</p>
-                              </div>
-                              <div>
-                                <p className="text-slate-400 font-semibold mb-1">Pronouns</p>
-                                <p className="text-slate-200">{crm.crm_pronouns || "—"}</p>
-                              </div>
-                              {crm.crm_short_bio && (
-                                <div className="col-span-2">
-                                  <p className="text-slate-400 font-semibold mb-1">Short Bio (CRM)</p>
-                                  <p className="text-slate-200 leading-relaxed">{crm.crm_short_bio}</p>
-                                </div>
-                              )}
-                              {crmMod > 0 && (
-                                <div className="col-span-2">
-                                  <p className="text-slate-400 font-semibold mb-1">Modalities in CRM ({crmMod})</p>
-                                  <p className="text-slate-300">{crm.crm_modalities.join(" · ")}</p>
-                                </div>
-                              )}
-                            </div>
-                          </td>
-                        </tr>
-                      )}
-                    </React.Fragment>
-                  );
-                })}
-              </tbody>
-            </table>
-          </div>
-          <p className="text-slate-500 text-xs mt-3">Last CRM sync: 20 Jul 2026. Presentations are live-synced. Yellow = CRM has different data, ready to pull.</p>
-        </div>
-      )}
+                  {isExpanded && crm && (
+                    <tr style={{background:"#1a1528"}}>
+                      <td colSpan={10} style={{padding:"12px 24px"}}>
+                        <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:16}}>
+                          <div>
+                            <strong style={{color:"#CDA8BA"}}>Short Bio:</strong>
+                            <p style={{color:"#ccc",fontSize:13,marginTop:4}}>{crm.crm_short_bio || <em style={{color:"#888"}}>Not set</em>}</p>
+                          </div>
+                          <div>
+                            <strong style={{color:"#CDA8BA"}}>Role:</strong>
+                            <p style={{color:"#ccc",fontSize:13,marginTop:4}}>{crm.crm_role.join(", ") || "—"}</p>
+                          </div>
+                          <div>
+                            <strong style={{color:"#CDA8BA"}}>Modalities ({crm.crm_modalities.length}):</strong>
+                            <ul style={{color:"#ccc",fontSize:12,marginTop:4,paddingLeft:16}}>
+                              {crm.crm_modalities.length > 0 ? crm.crm_modalities.map(m => <li key={m}>{m}</li>) : <li style={{color:"#888"}}>None in CRM</li>}
+                            </ul>
+                          </div>
+                          <div>
+                            <strong style={{color:"#CDA8BA"}}>Presentations ({crmPresCount} in CRM / {appPresCount} in app):</strong>
+                            <ul style={{color:"#ccc",fontSize:12,marginTop:4,paddingLeft:16,maxHeight:120,overflowY:"auto"}}>
+                              {crm.crm_presentations.length > 0 ? crm.crm_presentations.map(p => <li key={p}>{p}</li>) : <li style={{color:"#888"}}>None in CRM</li>}
+                            </ul>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                  )}
+                </React.Fragment>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }
