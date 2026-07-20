@@ -1463,7 +1463,7 @@ export const PRACTITIONERS_DATA = [
   {
     "id": 7,
     "name": "Dr Christine Deftereos",
-    "title": "Clinical Psychotherapist & Mental Health Social Worker",
+    "title": "Accredited Mental Health Social Worker, Psychoanalyst, Psychotherapist",
     "fees": "B/H: $235\nA/H: $275",
     "medicare_rebate": "89.50",
     "gender": "Female",
@@ -5705,7 +5705,7 @@ export const practitioners: Practitioner[] = [
   {
     "id": 7,
     "name": "Dr Christine Deftereos",
-    "title": "Clinical Psychotherapist & Mental Health Social Worker",
+    "title": "Accredited Mental Health Social Worker, Psychoanalyst, Psychotherapist",
     "fees": "B/H: $235\nA/H: $275",
     "medicare_rebate": "89.50",
     "gender": "Female",

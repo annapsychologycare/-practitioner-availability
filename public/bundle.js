@@ -28493,7 +28493,7 @@ Thursdays at 11:30am (Fortnightly: Starting 27th Aug)`,
     {
       id: 7,
       name: "Dr Christine Deftereos",
-      title: "Clinical Psychotherapist & Mental Health Social Worker",
+      title: "Accredited Mental Health Social Worker, Psychoanalyst, Psychotherapist",
       fees: `B/H: $235
 A/H: $275`,
       medicare_rebate: "89.50",
@@ -33183,7 +33183,7 @@ Thursdays at 11:30am (Fortnightly: Starting 27th Aug)`,
     {
       id: 7,
       name: "Dr Christine Deftereos",
-      title: "Clinical Psychotherapist & Mental Health Social Worker",
+      title: "Accredited Mental Health Social Worker, Psychoanalyst, Psychotherapist",
       fees: `B/H: $235
 A/H: $275`,
       medicare_rebate: "89.50",
