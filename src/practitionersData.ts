@@ -550,9 +550,9 @@ export const PRACTITIONERS_DATA = [
   {
     "id": 27,
     "name": "Ruby Bouhadana",
-    "title": "Psychologist",
+    "title": "Clinical Psychologist",
     "fees": "B/H: $235\nA/H: $275",
-    "medicare_rebate": "101.55",
+    "medicare_rebate": "149.05",
     "gender": "Female",
     "alert": "",
     "presentations": [
@@ -627,7 +627,7 @@ export const PRACTITIONERS_DATA = [
     ],
     "client_types": "Individual",
     "age_range": "18 Yrs +",
-    "therapist_type": "Clinical Psychology Registrar",
+    "therapist_type": "Clinical Psychologist",
     "additional_info": "I am happy to work with LGBTQIA+ clients, although if gender/sexuality related issues are the primary concern please discuss with me prior to booking",
     "qualifications": "Bachelor of Arts and Bachelor of Arts (Honours) majoring in psychology at the University of Melbourne.\n Masters of Clinical Psychology at the University of Sydney.",
     "bio": "What I find most meaningful about being a psychologist is the privilege of being alongside people as they move through difficulties towards greater self-understanding, growth, and connection. I believe therapy is a space where change becomes possible, and it’s a role I feel deeply grateful to be in.\n\n\n\nI'm a Registered Psychologist and Clinical Psychology Registrar, and I work with adults navigating a range of mental health challenges, including anxiety, depression, complex trauma, emotional overwhelm and dysregulation, relationship difficulties, self-esteem difficulties, and study/work burnout. Whether someone is feeling stuck, going through a period of transition, or looking to explore themselves more deeply, I aim to offer a space that feels safe, supportive, and grounded.\n\n\n\nMy approach to therapy is collaborative and respectful of each person’s unique story. My therapeutic work often blends emotional exploration with practical strategies, and is informed by evidence-based approaches such as Internal Family Systems, Cognitive Behavioural Therapy, Acceptance and Commitment Therapy, Schema Therapy, and mindfulness-based practices. I’m especially interested in relational and attachment-focused ways of working, and in supporting clients to build a more compassionate relationship with themselves. I value working together to make sense of experiences - past and present - and to find ways forward that feel authentic and meaningful. \n\n\n\nI bring a warm, thoughtful, and calm presence to my work in the therapy room, and I welcome all parts of a person’s experience without judgment. I know that beginning therapy can feel daunting, and I’m always mindful of the trust it takes to share your story. My hope is to offer a space where you feel truly heard, and where we can work together through challenges, toward greater clarity, self-acceptance, and emotional wellbeing.",
