@@ -293,7 +293,8 @@ function scoreMatch(p: Practitioner, filters: Filters): number {
     return -1;
   }
 
-  if (filters.clientType && p.client_types && !p.client_types.toLowerCase().includes(filters.clientType.toLowerCase())) {
+  const clientTypesStr = Array.isArray(p.client_types) ? p.client_types.join(" ") : (p.client_types || "");
+  if (filters.clientType && p.client_types && !clientTypesStr.toLowerCase().includes(filters.clientType.toLowerCase())) {
     return -1;
   }
 
@@ -393,7 +394,8 @@ function scoreMatch(p: Practitioner, filters: Filters): number {
 
   // Gate: client type (Individual / Couples)
   if (filters.gateClientType && p.client_types) {
-    if (!p.client_types.toLowerCase().includes(filters.gateClientType.toLowerCase())) return -1;
+    const gateClientTypesStr = Array.isArray(p.client_types) ? p.client_types.join(" ") : (p.client_types || "");
+    if (!gateClientTypesStr.toLowerCase().includes(filters.gateClientType.toLowerCase())) return -1;
   }
 
   // Gate: age bracket
