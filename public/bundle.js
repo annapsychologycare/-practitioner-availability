@@ -18587,7 +18587,8 @@ Please note: There are inherent confidentiality risks in communicating by email.
     if (filters.clientAge.trim()) {
       const age = parseInt(filters.clientAge.trim(), 10);
       if (!isNaN(age) && p.age_range) {
-        const nums = p.age_range.match(/\d+/g);
+        const ageRangeStr = Array.isArray(p.age_range) ? p.age_range.join(" ") : p.age_range || "";
+        const nums = ageRangeStr.match(/\d+/g);
         if (nums && nums.length > 0) {
           const minAge = Math.min(...nums.map(Number));
           if (age < minAge)
@@ -18601,7 +18602,8 @@ Please note: There are inherent confidentiality risks in communicating by email.
         return -1;
     }
     if (filters.gateAgeRep !== null && p.age_range) {
-      const nums = p.age_range.match(/\d+/g);
+      const ageRangeStr2 = Array.isArray(p.age_range) ? p.age_range.join(" ") : p.age_range || "";
+      const nums = ageRangeStr2.match(/\d+/g);
       if (nums && nums.length > 0) {
         const minAge = Math.min(...nums.map(Number));
         if (filters.gateAgeRep < minAge)
