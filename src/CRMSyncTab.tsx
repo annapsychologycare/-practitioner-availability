@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { practitioners } from "./practitionersData";
+import { PRACTITIONERS_DATA as practitioners } from "./practitionersData";
 
 const FIELD_SOURCES = [
   { field: "Presentations (Clinical Interests)", appKey: "presentations", crmField: "Clinical_Interests", source: "crm", note: "✅ Synced from CRM" },
@@ -2351,58 +2351,6 @@ const crmData: Record<string, CRMRecord> = {
       "Clinical Psychologist",
       "Psychotherapist"
     ]
-  },
-  "Oliver Eastwood": {
-    "in_crm": false,
-    "crm_presentations": [],
-    "crm_modalities": [],
-    "crm_bio": "",
-    "crm_short_bio": "",
-    "crm_ages": [],
-    "crm_client_types": [],
-    "crm_languages": "",
-    "crm_pronouns": "",
-    "crm_email": "",
-    "crm_role": []
-  },
-  "Jillian Giannios": {
-    "in_crm": false,
-    "crm_presentations": [],
-    "crm_modalities": [],
-    "crm_bio": "",
-    "crm_short_bio": "",
-    "crm_ages": [],
-    "crm_client_types": [],
-    "crm_languages": "",
-    "crm_pronouns": "",
-    "crm_email": "",
-    "crm_role": []
-  },
-  "Ella Graj": {
-    "in_crm": false,
-    "crm_presentations": [],
-    "crm_modalities": [],
-    "crm_bio": "",
-    "crm_short_bio": "",
-    "crm_ages": [],
-    "crm_client_types": [],
-    "crm_languages": "",
-    "crm_pronouns": "",
-    "crm_email": "",
-    "crm_role": []
-  },
-  "Stephanie Stewart": {
-    "in_crm": false,
-    "crm_presentations": [],
-    "crm_modalities": [],
-    "crm_bio": "",
-    "crm_short_bio": "",
-    "crm_ages": [],
-    "crm_client_types": [],
-    "crm_languages": "",
-    "crm_pronouns": "",
-    "crm_email": "",
-    "crm_role": []
   }
 };
 

@@ -31049,58 +31049,6 @@ Outside of clinical work, I'm an avid martial arts practitioner and have spent o
         "Clinical Psychologist",
         "Psychotherapist"
       ]
-    },
-    "Oliver Eastwood": {
-      in_crm: false,
-      crm_presentations: [],
-      crm_modalities: [],
-      crm_bio: "",
-      crm_short_bio: "",
-      crm_ages: [],
-      crm_client_types: [],
-      crm_languages: "",
-      crm_pronouns: "",
-      crm_email: "",
-      crm_role: []
-    },
-    "Jillian Giannios": {
-      in_crm: false,
-      crm_presentations: [],
-      crm_modalities: [],
-      crm_bio: "",
-      crm_short_bio: "",
-      crm_ages: [],
-      crm_client_types: [],
-      crm_languages: "",
-      crm_pronouns: "",
-      crm_email: "",
-      crm_role: []
-    },
-    "Ella Graj": {
-      in_crm: false,
-      crm_presentations: [],
-      crm_modalities: [],
-      crm_bio: "",
-      crm_short_bio: "",
-      crm_ages: [],
-      crm_client_types: [],
-      crm_languages: "",
-      crm_pronouns: "",
-      crm_email: "",
-      crm_role: []
-    },
-    "Stephanie Stewart": {
-      in_crm: false,
-      crm_presentations: [],
-      crm_modalities: [],
-      crm_bio: "",
-      crm_short_bio: "",
-      crm_ages: [],
-      crm_client_types: [],
-      crm_languages: "",
-      crm_pronouns: "",
-      crm_email: "",
-      crm_role: []
     }
   };
   function CRMSyncTab() {
