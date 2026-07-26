@@ -20355,7 +20355,7 @@ Please note: There are inherent confidentiality risks in communicating by email.
   var import_react8 = __toESM(require_react(), 1);
 
   // practitionersData.ts
-  var PRACTITIONERS_DATA = [
+  var practitionersData = [
     {
       id: 1,
       name: "Alex Barry",
@@ -20504,7 +20504,7 @@ Alex is passionate about normalising the distress we may experience in response 
     {
       id: 25,
       name: "Rebekah Barson",
-      title: "Mental Health Social Worker and Couples Counsellor",
+      title: "Accredited Mental Health Social Worker",
       fees: `B/H: $235
 A/H: $275
 
@@ -21139,7 +21139,7 @@ I bring a warm, thoughtful, and calm presence to my work in the therapy room, an
     {
       id: 17,
       name: "Dr Maddie Brygel",
-      title: "Psychologist",
+      title: "Clinical Psychology Registra, Psychologist",
       fees: `B/H: $235
 A/H: $275`,
       medicare_rebate: "101.55",
@@ -21289,7 +21289,7 @@ A/H: $275`,
         "70 Yrs+",
         "80 Yrs+"
       ],
-      therapist_type: "Clinical Psychology Registrar",
+      therapist_type: "Clinical Psychology Registra",
       additional_info: "",
       qualifications: "",
       bio: "https://psychologycare.com.au/dr-maddie-brygel-psychologist/",
@@ -21583,7 +21583,7 @@ Tuesdays at 10am (Fortnightly: Starting 18th Aug)`,
     {
       id: 16,
       name: "Dr Krista De Castella",
-      title: "Clinical Psychologist",
+      title: "Clinical Psychologist, Psychotherapist",
       fees: "90 Min Appt: $335 ",
       medicare_rebate: "149.05",
       gender: "Female",
@@ -22883,7 +22883,7 @@ Modalities:
     {
       id: 9,
       name: "Cristina Jimenez",
-      title: "Counsellor, Psychotherapist and Couples Therapist",
+      title: "Psychotherapist",
       fees: `B/H: $170
 A/H: $190
 
@@ -23781,7 +23781,7 @@ Josh has worked in both public and private sectors, and has experience with trau
     {
       id: 29,
       name: "Therese Van Maanen",
-      title: "Psychologist & Couples Counsellor",
+      title: "Psychologist",
       fees: `B/H: $235
 A/H: $275
 
@@ -24042,13 +24042,9 @@ A/H: $315`,
       ],
       modalities: [
         "Acceptance and Commitment Therapy (ACT)",
-        "Cognitive Behavioural Therapy (CBT)",
-        "Eye Movement Desensitisation and Reprocessing (EMDR)",
+        "Acceptance-Based Somatic Work",
+        "Attachment-Based Therapy",
         "Intensive Short-Term Dynamic Psychotherapy (ISTDP)",
-        "Internal Family Systems (IFS) / Parts Work (Informed)",
-        "Motivational Interviewing (MI)",
-        "Polyvagal-Informed Therapy",
-        "Schema Therapy",
         "Trauma-Informed Care"
       ],
       client_types: [
@@ -24302,7 +24298,7 @@ Tuesdays at 8:30am (Fortnightly: Starting 11th Aug)`,
     },
     {
       name: "Dr David Spektor",
-      title: "Clinical Psychologist, Psychotherapist, Supervisor & Director",
+      title: "Clinical Psychologist",
       gender: "Male",
       acceptingNewClients: "No",
       fee: 305,
@@ -24730,7 +24726,7 @@ Tuesdays at 3:30pm (Fortnightly: Starting 29th Sep)`,
     {
       id: 10,
       name: "Elizabeth White",
-      title: "Clinical Psychologist",
+      title: "Clinical Psychologist, Psychotherapist",
       fees: `B/H: $275
 A/H: $315`,
       medicare_rebate: "149.05",
@@ -25138,6 +25134,7 @@ Thursdays at 1pm (Fortnightly: Starting 6th Aug)`,
       client_gender_accepted: "Any"
     }
   ];
+  var PRACTITIONERS_DATA = practitionersData;
   var AVAILABILITY_LAST_UPDATED = "24 Jul 2026 at 9:16am";
 
   // components/IntakeTab.tsx

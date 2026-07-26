@@ -1,4 +1,7 @@
-export const PRACTITIONERS_DATA = [
+// Auto-generated — do not edit. Run import_availability.py to update.
+import type { Practitioner } from "./types";
+
+export const practitionersData: Practitioner[] = [
   {
     "id": 1,
     "name": "Alex Barry",
@@ -140,7 +143,7 @@ export const PRACTITIONERS_DATA = [
   {
     "id": 25,
     "name": "Rebekah Barson",
-    "title": "Mental Health Social Worker and Couples Counsellor",
+    "title": "Accredited Mental Health Social Worker",
     "fees": "B/H: $235\nA/H: $275\n\nCouples: $275",
     "medicare_rebate": "89.50",
     "gender": "Female",
@@ -710,7 +713,7 @@ export const PRACTITIONERS_DATA = [
   {
     "id": 17,
     "name": "Dr Maddie Brygel",
-    "title": "Psychologist",
+    "title": "Clinical Psychology Registra, Psychologist",
     "fees": "B/H: $235\nA/H: $275",
     "medicare_rebate": "101.55",
     "gender": "Female",
@@ -859,7 +862,7 @@ export const PRACTITIONERS_DATA = [
       "70 Yrs+",
       "80 Yrs+"
     ],
-    "therapist_type": "Clinical Psychology Registrar",
+    "therapist_type": "Clinical Psychology Registra",
     "additional_info": "",
     "qualifications": "",
     "bio": "https://psychologycare.com.au/dr-maddie-brygel-psychologist/",
@@ -1127,7 +1130,7 @@ export const PRACTITIONERS_DATA = [
   {
     "id": 16,
     "name": "Dr Krista De Castella",
-    "title": "Clinical Psychologist",
+    "title": "Clinical Psychologist, Psychotherapist",
     "fees": "90 Min Appt: $335 ",
     "medicare_rebate": "149.05",
     "gender": "Female",
@@ -2275,7 +2278,7 @@ export const PRACTITIONERS_DATA = [
   {
     "id": 9,
     "name": "Cristina Jimenez",
-    "title": "Counsellor, Psychotherapist and Couples Therapist",
+    "title": "Psychotherapist",
     "fees": "B/H: $170\nA/H: $190\n\n\nCouples: $275",
     "medicare_rebate": "No rebate applicable. No MHCP or referral required.",
     "gender": "Female",
@@ -3120,7 +3123,7 @@ export const PRACTITIONERS_DATA = [
   {
     "id": 29,
     "name": "Therese Van Maanen",
-    "title": "Psychologist & Couples Counsellor",
+    "title": "Psychologist",
     "fees": "B/H: $235\nA/H: $275\n\nCouples: $275",
     "medicare_rebate": "101.55\n\nNo rebate for couples",
     "gender": "Female",
@@ -3367,13 +3370,9 @@ export const PRACTITIONERS_DATA = [
     ],
     "modalities": [
       "Acceptance and Commitment Therapy (ACT)",
-      "Cognitive Behavioural Therapy (CBT)",
-      "Eye Movement Desensitisation and Reprocessing (EMDR)",
+      "Acceptance-Based Somatic Work",
+      "Attachment-Based Therapy",
       "Intensive Short-Term Dynamic Psychotherapy (ISTDP)",
-      "Internal Family Systems (IFS) / Parts Work (Informed)",
-      "Motivational Interviewing (MI)",
-      "Polyvagal-Informed Therapy",
-      "Schema Therapy",
       "Trauma-Informed Care"
     ],
     "client_types": [
@@ -3610,7 +3609,7 @@ export const PRACTITIONERS_DATA = [
   },
   {
     "name": "Dr David Spektor",
-    "title": "Clinical Psychologist, Psychotherapist, Supervisor & Director",
+    "title": "Clinical Psychologist",
     "gender": "Male",
     "acceptingNewClients": "No",
     "fee": 305,
@@ -3977,7 +3976,7 @@ export const PRACTITIONERS_DATA = [
   {
     "id": 10,
     "name": "Elizabeth White",
-    "title": "Clinical Psychologist",
+    "title": "Clinical Psychologist, Psychotherapist",
     "fees": "B/H: $275\nA/H: $315",
     "medicare_rebate": "149.05",
     "gender": "Female",
@@ -4326,5 +4325,6 @@ export const PRACTITIONERS_DATA = [
     "client_gender_accepted": "Any"
   }
 ];
-export const practitionersData = PRACTITIONERS_DATA;
+
+export const PRACTITIONERS_DATA = practitionersData;
 export const AVAILABILITY_LAST_UPDATED = "24 Jul 2026 at 9:16am";
