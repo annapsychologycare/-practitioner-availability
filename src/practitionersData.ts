@@ -1988,7 +1988,7 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/kiira-gavralas/",
     "locations": [
       {
-        "availability": "Tuesdays at 8am (Weekly: Starting 4th Aug)\nTuesdays at 11:45am (Fortnightly: Starting 4th Aug)\nTuesdays at 10:30am (Fortnightly: Starting 28th July)\nTuesdays at 9:15am (Fortnightly: Starting 11th Aug)",
+        "availability": "Tuesdays at 8am (Weekly: Starting 4th Aug)\nTuesdays at 11:45am (Fortnightly: Starting 4th Aug)\nTuesdays at 10:30am (Fortnightly: Starting 28th July)\nTuesdays at 9:15am (Fortnightly: Starting 28th July)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Telehealth"
@@ -2000,7 +2000,7 @@ export const PRACTITIONERS_DATA = [
       "Tuesdays at 8am (Weekly: Starting 4th Aug) — Telehealth",
       "Tuesdays at 11:45am (Fortnightly: Starting 4th Aug) — Telehealth",
       "Tuesdays at 10:30am (Fortnightly: Starting 28th July) — Telehealth",
-      "Tuesdays at 9:15am (Fortnightly: Starting 11th Aug) — Telehealth"
+      "Tuesdays at 9:15am (Fortnightly: Starting 28th July) — Telehealth"
     ],
     "weekly_availability": [],
     "fortnightly_availability": [],
@@ -2170,7 +2170,7 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/cristina-jimenez/",
     "locations": [
       {
-        "availability": "Tuesdays at 10am (Weekly: Starting 28th July)\nTuesdays at 11am (Weekly: Starting 28th July)\nTuesdays at 12pm (Weekly: Starting 28th July)\nTuesdays at 4:30pm (Fortnightly: Starting 18th Aug)\nTuesdays at 5:30pm (Fortnightly: Starting 25th Aug)\nTuesdays at 3:30pm (Fortnightly: Starting 4th Aug)\nTuesdays at 9am (Fortnightly: Starting 11th Aug)",
+        "availability": "Tuesdays at 10am (Weekly: Starting 28th July)\nTuesdays at 11am (Weekly: Starting 28th July)\nTuesdays at 12pm (Weekly: Starting 28th July)\nTuesdays at 4:30pm (Fortnightly: Starting 18th Aug)\nTuesdays at 5:30pm (Fortnightly: Starting 25th Aug)\nTuesdays at 3:30pm (Fortnightly: Starting 4th Aug)\nTuesdays at 9am (Fortnightly: Starting 28th July)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
@@ -2184,7 +2184,7 @@ export const PRACTITIONERS_DATA = [
       "Tuesdays at 4:30pm (Fortnightly: Starting 18th Aug) — Greville St, Prahran",
       "Tuesdays at 5:30pm (Fortnightly: Starting 25th Aug) — Greville St, Prahran",
       "Tuesdays at 3:30pm (Fortnightly: Starting 4th Aug) — Greville St, Prahran",
-      "Tuesdays at 9am (Fortnightly: Starting 11th Aug) — Greville St, Prahran"
+      "Tuesdays at 9am (Fortnightly: Starting 28th July) — Greville St, Prahran"
     ],
     "short_bio": "Cristina is a compassionate, Spanish-speaking holistic counsellor and dance movement therapist supporting adults with trauma, emotional challenges and self-exploration through somatic, LGBTIQ+ inclusive care.",
     "weekly_availability": [
@@ -3290,7 +3290,7 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/poorna-selvaraja/",
     "locations": [
       {
-        "availability": "Mondays at 10am (Fortnightly: Starting 31st Aug)\nMondays at 2pm (Fortnightly: Starting 10th Aug)\nTuesdays at 8:30am (Fortnightly: Starting 11th Aug)\nMondays at 11am (Fortnightly: Starting 10th Aug)",
+        "availability": "Mondays at 10am (Fortnightly: Starting 31st Aug)\nMondays at 2pm (Fortnightly: Starting 27th July)\nTuesdays at 8:30am (Fortnightly: Starting 11th Aug)\nMondays at 11am (Fortnightly: Starting 27th July)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
@@ -3299,9 +3299,9 @@ export const PRACTITIONERS_DATA = [
     "last_updated": "2026-07-19",
     "availability": [
       "Mondays at 10am (Fortnightly: Starting 31st Aug) — Greville St, Prahran",
-      "Mondays at 2pm (Fortnightly: Starting 10th Aug) — Greville St, Prahran",
+      "Mondays at 2pm (Fortnightly: Starting 27th July) — Greville St, Prahran",
       "Tuesdays at 8:30am (Fortnightly: Starting 11th Aug) — Greville St, Prahran",
-      "Mondays at 11am (Fortnightly: Starting 10th Aug) — Greville St, Prahran"
+      "Mondays at 11am (Fortnightly: Starting 27th July) — Greville St, Prahran"
     ],
     "short_bio": "Poorna is a warm, culturally attuned clinical psychologist using CBT, schema and psychodynamic therapy to support trauma, identity, adjustment and cross-cultural challenges",
     "weekly_availability": [],
@@ -3564,7 +3564,7 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/clare-tuttleby/",
     "locations": [
       {
-        "availability": "Tuesdays at 2:30pm (Weekly: Starting 28th July)\nTuesdays at 3:30pm (Fortnightly: Starting 15th Sept)\nMondays at 5:30pm (Fortnightly: Starting 7th Sept)",
+        "availability": "Tuesdays at 2:30pm (Weekly: Starting 28th July)\nTuesdays at 3:30pm (Fortnightly: Starting 15th Sept)\nMondays at 5:30pm (Fortnightly: Starting 27th July)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
@@ -3586,7 +3586,7 @@ export const PRACTITIONERS_DATA = [
     "availability": [
       "Tuesdays at 2:30pm (Weekly: Starting 28th July) — Greville St, Prahran",
       "Tuesdays at 3:30pm (Fortnightly: Starting 15th Sept) — Greville St, Prahran",
-      "Mondays at 5:30pm (Fortnightly: Starting 7th Sept) — Greville St, Prahran",
+      "Mondays at 5:30pm (Fortnightly: Starting 27th July) — Greville St, Prahran",
       "Tuesdays at 11am (Fortnightly: Starting 28th July) — Telehealth"
     ],
     "short_bio": "Clare is a warm, client-centred psychologist supporting life transitions, anxiety, perinatal and health challenges using CBT, ACT and mindfulness-based approaches.",
@@ -3950,4 +3950,4 @@ export const PRACTITIONERS_DATA = [
   }
 ];
 export const practitionersData = PRACTITIONERS_DATA;
-export const AVAILABILITY_LAST_UPDATED = "27 July 2026 7:31pm";
+export const AVAILABILITY_LAST_UPDATED = "27 July 2026 9:57am";
