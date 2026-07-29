@@ -1847,14 +1847,14 @@ export const PRACTITIONERS_DATA = [
     "locations": [
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "Thursdays at 12pm (Weekly: Starting 6th Aug)\nTuesdays at 12pm (Fortnightly: Starting 11th Aug)\nTuesdays at 1pm (Fortnightly: Starting 1st Sept)\nWednesdays at 1pm (Fortnightly: Starting 12th Aug)\nWednesdays at 12pm (Fortnightly: Starting 12th Aug)",
+        "availability": "Thursdays at 12pm (Fortnightly: Starting 13th Aug)\nTuesdays at 12pm (Fortnightly: Starting 11th Aug)\nTuesdays at 1pm (Fortnightly: Starting 1st Sept)\nWednesdays at 1pm (Fortnightly: Starting 12th Aug)\nWednesdays at 12pm (Fortnightly: Starting 12th Aug)",
         "weekly_availability": [],
         "fortnightly_availability": []
       }
     ],
     "last_updated": "2026-07-19",
     "availability": [
-      "Thursdays at 12pm (Weekly: Starting 6th Aug) — Burke Rd, Camberwell",
+      "Thursdays at 12pm (Fortnightly: Starting 13th Aug) — Burke Rd, Camberwell",
       "Tuesdays at 12pm (Fortnightly: Starting 11th Aug) — Burke Rd, Camberwell",
       "Tuesdays at 1pm (Fortnightly: Starting 1st Sept) — Burke Rd, Camberwell",
       "Wednesdays at 1pm (Fortnightly: Starting 12th Aug) — Burke Rd, Camberwell",
@@ -2499,7 +2499,7 @@ export const PRACTITIONERS_DATA = [
       },
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "Thursdays at 8am (Fortnightly: Starting 30th July)\nThursdays at 12pm (Fortnightly: Starting 20th Aug)\nWednesdays at 8am (Fortnightly: Starting 12th Aug)",
+        "availability": "Thursdays at 8am (Fortnightly: Starting 13th Aug)\nThursdays at 12pm (Fortnightly: Starting 20th Aug)\nWednesdays at 8am (Fortnightly: Starting 12th Aug)",
         "weekly_availability": [],
         "fortnightly_availability": []
       }
@@ -2508,7 +2508,7 @@ export const PRACTITIONERS_DATA = [
     "availability": [
       "Tuesdays at 10am (Weekly: Starting 4th Aug) — Greville St, Prahran",
       "Tuesdays at 1pm (Fortnightly: Starting 4th Aug) — Greville St, Prahran",
-      "Thursdays at 8am (Fortnightly: Starting 30th July) — Burke Rd, Camberwell",
+      "Thursdays at 8am (Fortnightly: Starting 13th Aug) — Burke Rd, Camberwell",
       "Thursdays at 12pm (Fortnightly: Starting 20th Aug) — Burke Rd, Camberwell",
       "Wednesdays at 8am (Fortnightly: Starting 12th Aug) — Burke Rd, Camberwell"
     ],
@@ -2670,7 +2670,7 @@ export const PRACTITIONERS_DATA = [
         "location": "Greville St, Prahran"
       },
       {
-        "availability": "Wednesdays at 1pm (Weekly: Starting 29th July)\nWednesdays at 12pm (Weekly: Starting 29th July)",
+        "availability": "Wednesdays at 1pm (Weekly: Starting 5th Aug)\nWednesdays at 12pm (Weekly: Starting 5th Aug)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Telehealth"
@@ -2690,8 +2690,8 @@ export const PRACTITIONERS_DATA = [
     ],
     "last_updated": "2026-07-19",
     "availability": [
-      "Wednesdays at 1pm (Weekly: Starting 29th July) — Telehealth",
-      "Wednesdays at 12pm (Weekly: Starting 29th July) — Telehealth"
+      "Wednesdays at 1pm (Weekly: Starting 5th Aug) — Telehealth",
+      "Wednesdays at 12pm (Weekly: Starting 5th Aug) — Telehealth"
     ],
     "short_bio": "Ricki is a warm, non-judgemental psychologist using CBT, ACT and psychodynamic therapies to support adolescents and adults with anxiety, depression, trauma and ADHD.",
     "weekly_availability": [],
@@ -3891,7 +3891,7 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/karen-pereira-york/",
     "locations": [
       {
-        "availability": "Thursdays at 12pm (Weekly: Starting 30th July)\nThursdays at 10:30am (Fortnightly: Starting 6th Aug)\nMondays at 1pm (Fortnightly: Starting 3rd Aug)\nThursdays at 9:30am (Fortnightly: Starting 30th July)",
+        "availability": "Thursdays at 12pm (Weekly: Starting 30th July)\nThursdays at 10:30am (Fortnightly: Starting 6th Aug)\nMondays at 1pm (Fortnightly: Starting 3rd Aug)\nThursdays at 9:30am (Fortnightly: Starting 13th Aug)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
@@ -3902,7 +3902,7 @@ export const PRACTITIONERS_DATA = [
       "Thursdays at 12pm (Weekly: Starting 30th July) — Greville St, Prahran",
       "Thursdays at 10:30am (Fortnightly: Starting 6th Aug) — Greville St, Prahran",
       "Mondays at 1pm (Fortnightly: Starting 3rd Aug) — Greville St, Prahran",
-      "Thursdays at 9:30am (Fortnightly: Starting 30th July) — Greville St, Prahran"
+      "Thursdays at 9:30am (Fortnightly: Starting 13th Aug) — Greville St, Prahran"
     ],
     "short_bio": "Karen is a psychodynamic clinical psychologist integrating EMDR to support trauma, identity, grief and life transitions with culturally attuned, exploratory therapy.",
     "weekly_availability": [
@@ -3943,4 +3943,4 @@ export const PRACTITIONERS_DATA = [
   }
 ];
 export const practitionersData = PRACTITIONERS_DATA;
-export const AVAILABILITY_LAST_UPDATED = "29 July 2026 6:01am";
+export const AVAILABILITY_LAST_UPDATED = "30 July 2026 6:00am";

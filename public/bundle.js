@@ -22373,7 +22373,7 @@ Above all, I believe that the therapeutic relationship is central to the healing
       locations: [
         {
           location: "Burke Rd, Camberwell",
-          availability: `Thursdays at 12pm (Weekly: Starting 6th Aug)
+          availability: `Thursdays at 12pm (Fortnightly: Starting 13th Aug)
 Tuesdays at 12pm (Fortnightly: Starting 11th Aug)
 Tuesdays at 1pm (Fortnightly: Starting 1st Sept)
 Wednesdays at 1pm (Fortnightly: Starting 12th Aug)
@@ -22384,7 +22384,7 @@ Wednesdays at 12pm (Fortnightly: Starting 12th Aug)`,
       ],
       last_updated: "2026-07-19",
       availability: [
-        "Thursdays at 12pm (Weekly: Starting 6th Aug) — Burke Rd, Camberwell",
+        "Thursdays at 12pm (Fortnightly: Starting 13th Aug) — Burke Rd, Camberwell",
         "Tuesdays at 12pm (Fortnightly: Starting 11th Aug) — Burke Rd, Camberwell",
         "Tuesdays at 1pm (Fortnightly: Starting 1st Sept) — Burke Rd, Camberwell",
         "Wednesdays at 1pm (Fortnightly: Starting 12th Aug) — Burke Rd, Camberwell",
@@ -23075,7 +23075,7 @@ Tuesdays at 1pm (Fortnightly: Starting 4th Aug)`,
         },
         {
           location: "Burke Rd, Camberwell",
-          availability: `Thursdays at 8am (Fortnightly: Starting 30th July)
+          availability: `Thursdays at 8am (Fortnightly: Starting 13th Aug)
 Thursdays at 12pm (Fortnightly: Starting 20th Aug)
 Wednesdays at 8am (Fortnightly: Starting 12th Aug)`,
           weekly_availability: [],
@@ -23086,7 +23086,7 @@ Wednesdays at 8am (Fortnightly: Starting 12th Aug)`,
       availability: [
         "Tuesdays at 10am (Weekly: Starting 4th Aug) — Greville St, Prahran",
         "Tuesdays at 1pm (Fortnightly: Starting 4th Aug) — Greville St, Prahran",
-        "Thursdays at 8am (Fortnightly: Starting 30th July) — Burke Rd, Camberwell",
+        "Thursdays at 8am (Fortnightly: Starting 13th Aug) — Burke Rd, Camberwell",
         "Thursdays at 12pm (Fortnightly: Starting 20th Aug) — Burke Rd, Camberwell",
         "Wednesdays at 8am (Fortnightly: Starting 12th Aug) — Burke Rd, Camberwell"
       ],
@@ -23251,8 +23251,8 @@ A/H: $275`,
           location: "Greville St, Prahran"
         },
         {
-          availability: `Wednesdays at 1pm (Weekly: Starting 29th July)
-Wednesdays at 12pm (Weekly: Starting 29th July)`,
+          availability: `Wednesdays at 1pm (Weekly: Starting 5th Aug)
+Wednesdays at 12pm (Weekly: Starting 5th Aug)`,
           weekly_availability: [],
           fortnightly_availability: [],
           location: "Telehealth"
@@ -23272,8 +23272,8 @@ Wednesdays at 12pm (Weekly: Starting 29th July)`,
       ],
       last_updated: "2026-07-19",
       availability: [
-        "Wednesdays at 1pm (Weekly: Starting 29th July) — Telehealth",
-        "Wednesdays at 12pm (Weekly: Starting 29th July) — Telehealth"
+        "Wednesdays at 1pm (Weekly: Starting 5th Aug) — Telehealth",
+        "Wednesdays at 12pm (Weekly: Starting 5th Aug) — Telehealth"
       ],
       short_bio: "Ricki is a warm, non-judgemental psychologist using CBT, ACT and psychodynamic therapies to support adolescents and adults with anxiety, depression, trauma and ADHD.",
       weekly_availability: [],
@@ -24598,7 +24598,7 @@ Ages:
           availability: `Thursdays at 12pm (Weekly: Starting 30th July)
 Thursdays at 10:30am (Fortnightly: Starting 6th Aug)
 Mondays at 1pm (Fortnightly: Starting 3rd Aug)
-Thursdays at 9:30am (Fortnightly: Starting 30th July)`,
+Thursdays at 9:30am (Fortnightly: Starting 13th Aug)`,
           weekly_availability: [],
           fortnightly_availability: [],
           location: "Greville St, Prahran"
@@ -24609,7 +24609,7 @@ Thursdays at 9:30am (Fortnightly: Starting 30th July)`,
         "Thursdays at 12pm (Weekly: Starting 30th July) — Greville St, Prahran",
         "Thursdays at 10:30am (Fortnightly: Starting 6th Aug) — Greville St, Prahran",
         "Mondays at 1pm (Fortnightly: Starting 3rd Aug) — Greville St, Prahran",
-        "Thursdays at 9:30am (Fortnightly: Starting 30th July) — Greville St, Prahran"
+        "Thursdays at 9:30am (Fortnightly: Starting 13th Aug) — Greville St, Prahran"
       ],
       short_bio: "Karen is a psychodynamic clinical psychologist integrating EMDR to support trauma, identity, grief and life transitions with culturally attuned, exploratory therapy.",
       weekly_availability: [
@@ -24649,7 +24649,7 @@ Thursdays at 9:30am (Fortnightly: Starting 30th July)`,
       client_gender_accepted: "Any"
     }
   ];
-  var AVAILABILITY_LAST_UPDATED = "29 July 2026 6:01am";
+  var AVAILABILITY_LAST_UPDATED = "30 July 2026 6:00am";
 
   // components/IntakeTab.tsx
   var jsx_dev_runtime6 = __toESM(require_jsx_dev_runtime(), 1);
