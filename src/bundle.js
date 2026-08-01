@@ -20903,8 +20903,7 @@ Broadly, Amy is obsessed with her new 6yo rescue kelpie x staffy, Naia; she love
       locations: [
         {
           location: "Burke Rd, Camberwell",
-          availability: `Fridays at 10am (Weekly: Starting 7th Aug)
-Fridays at 8am (Weekly: Starting 7th Aug)
+          availability: `Fridays at 8am (Weekly: Starting 7th Aug)
 Mondays at 11:30am (Fortnightly: Starting 3rd Aug)
 Fridays at 1pm (Fortnightly: Starting 7th Aug)
 Mondays at 9am (Fortnightly: Starting 10th Aug)
@@ -20922,7 +20921,6 @@ Fridays at 11am (Fortnightly: Starting 7th Aug)`,
       ],
       last_updated: "2026-07-19",
       availability: [
-        "Fridays at 10am (Weekly: Starting 7th Aug) — Burke Rd, Camberwell",
         "Fridays at 8am (Weekly: Starting 7th Aug) — Burke Rd, Camberwell",
         "Mondays at 11:30am (Fortnightly: Starting 3rd Aug) — Burke Rd, Camberwell",
         "Fridays at 1pm (Fortnightly: Starting 7th Aug) — Burke Rd, Camberwell",
@@ -22235,7 +22233,6 @@ I am committed to providing best practice trauma informed care in a confidential
         {
           location: "Greville St, Prahran",
           availability: `Tuesdays at 8am (Fortnightly: Starting 4th Aug)
-Saturdays at 2pm (Fortnightly: Starting 1st Aug)
 Mondays at 11am (Fortnightly: Starting 3rd Aug)`,
           weekly_availability: [],
           fortnightly_availability: []
@@ -22244,7 +22241,6 @@ Mondays at 11am (Fortnightly: Starting 3rd Aug)`,
       last_updated: "2026-07-19",
       availability: [
         "Tuesdays at 8am (Fortnightly: Starting 4th Aug) — Greville St, Prahran",
-        "Saturdays at 2pm (Fortnightly: Starting 1st Aug) — Greville St, Prahran",
         "Mondays at 11am (Fortnightly: Starting 3rd Aug) — Greville St, Prahran"
       ],
       short_bio: "Christine is a trauma specialist psychotherapist and psychoanalyst offering EMDR and depth therapy to help survivors reclaim and live with their stories.​",
@@ -24667,7 +24663,7 @@ Thursdays at 9:30am (Fortnightly: Starting 13th Aug)`,
       client_gender_accepted: "Any"
     }
   ];
-  var AVAILABILITY_LAST_UPDATED = "1 Aug 2026 6:01am";
+  var AVAILABILITY_LAST_UPDATED = "2 Aug 2026 6:00am";
 
   // components/IntakeTab.tsx
   var jsx_dev_runtime6 = __toESM(require_jsx_dev_runtime(), 1);

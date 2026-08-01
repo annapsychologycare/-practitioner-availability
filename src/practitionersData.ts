@@ -493,7 +493,7 @@ export const PRACTITIONERS_DATA = [
     "locations": [
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "Fridays at 10am (Weekly: Starting 7th Aug)\nFridays at 8am (Weekly: Starting 7th Aug)\nMondays at 11:30am (Fortnightly: Starting 3rd Aug)\nFridays at 1pm (Fortnightly: Starting 7th Aug)\nMondays at 9am (Fortnightly: Starting 10th Aug)\nFridays at 2pm (Fortnightly: Starting 7th Aug)\nFridays at 11am (Fortnightly: Starting 7th Aug)",
+        "availability": "Fridays at 8am (Weekly: Starting 7th Aug)\nMondays at 11:30am (Fortnightly: Starting 3rd Aug)\nFridays at 1pm (Fortnightly: Starting 7th Aug)\nMondays at 9am (Fortnightly: Starting 10th Aug)\nFridays at 2pm (Fortnightly: Starting 7th Aug)\nFridays at 11am (Fortnightly: Starting 7th Aug)",
         "weekly_availability": [],
         "fortnightly_availability": []
       },
@@ -506,7 +506,6 @@ export const PRACTITIONERS_DATA = [
     ],
     "last_updated": "2026-07-19",
     "availability": [
-      "Fridays at 10am (Weekly: Starting 7th Aug) — Burke Rd, Camberwell",
       "Fridays at 8am (Weekly: Starting 7th Aug) — Burke Rd, Camberwell",
       "Mondays at 11:30am (Fortnightly: Starting 3rd Aug) — Burke Rd, Camberwell",
       "Fridays at 1pm (Fortnightly: Starting 7th Aug) — Burke Rd, Camberwell",
@@ -1720,7 +1719,7 @@ export const PRACTITIONERS_DATA = [
     "locations": [
       {
         "location": "Greville St, Prahran",
-        "availability": "Tuesdays at 8am (Fortnightly: Starting 4th Aug)\nSaturdays at 2pm (Fortnightly: Starting 1st Aug)\nMondays at 11am (Fortnightly: Starting 3rd Aug)",
+        "availability": "Tuesdays at 8am (Fortnightly: Starting 4th Aug)\nMondays at 11am (Fortnightly: Starting 3rd Aug)",
         "weekly_availability": [],
         "fortnightly_availability": []
       }
@@ -1728,7 +1727,6 @@ export const PRACTITIONERS_DATA = [
     "last_updated": "2026-07-19",
     "availability": [
       "Tuesdays at 8am (Fortnightly: Starting 4th Aug) — Greville St, Prahran",
-      "Saturdays at 2pm (Fortnightly: Starting 1st Aug) — Greville St, Prahran",
       "Mondays at 11am (Fortnightly: Starting 3rd Aug) — Greville St, Prahran"
     ],
     "short_bio": "Christine is a trauma specialist psychotherapist and psychoanalyst offering EMDR and depth therapy to help survivors reclaim and live with their stories.​",
@@ -3954,4 +3952,4 @@ export const PRACTITIONERS_DATA = [
   }
 ];
 export const practitionersData = PRACTITIONERS_DATA;
-export const AVAILABILITY_LAST_UPDATED = "1 Aug 2026 6:01am";
+export const AVAILABILITY_LAST_UPDATED = "2 Aug 2026 6:00am";
