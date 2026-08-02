@@ -20808,17 +20808,19 @@ Tuesdays at 3:30pm (Fortnightly: Starting 11th Aug)`,
         },
         {
           location: "Greville St, Prahran",
-          availability: `Thursdays at 2:30pm (Fortnightly: Starting 13th Aug)
+          availability: `Wednesdays at 10am (Fortnightly: Starting 5th Aug)
+Thursdays at 2:30pm (Fortnightly: Starting 13th Aug)
 Wednesdays at 1pm (Fortnightly: Starting 5th Aug)`
         }
       ],
       location_notes: {},
       last_updated: "2026-07-19",
       availability: [
-        "Tuesdays at 2:30pm (Fortnightly: Starting 11th Aug) — Burke Rd, Camberwell",
-        "Tuesdays at 3:30pm (Fortnightly: Starting 11th Aug) — Burke Rd, Camberwell",
+        "Wednesdays at 10am (Fortnightly: Starting 5th Aug) — Greville St, Prahran",
         "Thursdays at 2:30pm (Fortnightly: Starting 13th Aug) — Greville St, Prahran",
-        "Wednesdays at 1pm (Fortnightly: Starting 5th Aug) — Greville St, Prahran"
+        "Wednesdays at 1pm (Fortnightly: Starting 5th Aug) — Greville St, Prahran",
+        "Tuesdays at 2:30pm (Fortnightly: Starting 11th Aug) — Burke Rd, Camberwell",
+        "Tuesdays at 3:30pm (Fortnightly: Starting 11th Aug) — Burke Rd, Camberwell"
       ],
       client_gender_accepted: "Any",
       shortBio: `Brigid Blanckenberg
@@ -25101,7 +25103,7 @@ Thursdays at 9:30am (Fortnightly: Starting 13th Aug)`,
       ]
     }
   ];
-  var AVAILABILITY_LAST_UPDATED = "2 Aug 2026 6:00am";
+  var AVAILABILITY_LAST_UPDATED = "3 Aug 2026 6:01am";
 
   // components/IntakeTab.tsx
   var jsx_dev_runtime6 = __toESM(require_jsx_dev_runtime(), 1);
