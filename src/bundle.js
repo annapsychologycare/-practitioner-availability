@@ -20965,7 +20965,7 @@ Broadly, Amy is obsessed with her new 6yo rescue kelpie x staffy, Naia; she love
         {
           location: "Burke Rd, Camberwell",
           availability: `Fridays at 8am (Weekly: Starting 7th Aug)
-Mondays at 11:30am (Fortnightly: Starting 3rd Aug)
+Mondays at 11:30am (Fortnightly: Starting 17th Aug)
 Fridays at 1pm (Fortnightly: Starting 7th Aug)
 Mondays at 9am (Fortnightly: Starting 10th Aug)
 Fridays at 2pm (Fortnightly: Starting 7th Aug)
@@ -20983,7 +20983,7 @@ Fridays at 11am (Fortnightly: Starting 7th Aug)`,
       last_updated: "2026-07-19",
       availability: [
         "Fridays at 8am (Weekly: Starting 7th Aug) — Burke Rd, Camberwell",
-        "Mondays at 11:30am (Fortnightly: Starting 3rd Aug) — Burke Rd, Camberwell",
+        "Mondays at 11:30am (Fortnightly: Starting 17th Aug) — Burke Rd, Camberwell",
         "Fridays at 1pm (Fortnightly: Starting 7th Aug) — Burke Rd, Camberwell",
         "Mondays at 9am (Fortnightly: Starting 10th Aug) — Burke Rd, Camberwell",
         "Fridays at 2pm (Fortnightly: Starting 7th Aug) — Burke Rd, Camberwell",
@@ -21412,7 +21412,7 @@ A/H: $275`,
 Thursdays at 10am (Fortnightly: Starting 13th Aug)
 Fridays at 11am (Fortnightly: Starting 14th Aug)
 Thursdays at 11am (Fortnightly: Starting 13th Aug)
-Mondays at 11am (Fortnightly: Starting 3rd Aug)`,
+Mondays at 11am (Fortnightly: Starting 17th Aug)`,
           weekly_availability: [],
           fortnightly_availability: [],
           location: "Greville St, Prahran"
@@ -21462,7 +21462,7 @@ Mondays at 11am (Fortnightly: Starting 3rd Aug)`,
         "Thursdays at 10am (Fortnightly: Starting 13th Aug) — Greville St, Prahran",
         "Fridays at 11am (Fortnightly: Starting 14th Aug) — Greville St, Prahran",
         "Thursdays at 11am (Fortnightly: Starting 13th Aug) — Greville St, Prahran",
-        "Mondays at 11am (Fortnightly: Starting 3rd Aug) — Greville St, Prahran"
+        "Mondays at 11am (Fortnightly: Starting 17th Aug) — Greville St, Prahran"
       ],
       short_bio: "A psychologist trained in both clinical and forensic psychology, lecturer, and researcher supporting adults with anxiety, depression, trauma, grief, addiction and women’s mental health",
       weekly_availability: [
@@ -22103,7 +22103,7 @@ Being a psychologist is a humbling role and a valued part of my life. I feel hon
           location: "Telehealth"
         },
         {
-          availability: `Mondays at 11:30am (Fortnightly: Starting 10th Aug)
+          availability: `Thursdays at 1:30pm (Fortnightly: Starting 6th Aug)
 Thursdays at 10am (Fortnightly: Starting 20th Aug)
 Thursdays at 9am (Fortnightly: Starting 20th Aug)`,
           weekly_availability: [],
@@ -22113,7 +22113,7 @@ Thursdays at 9am (Fortnightly: Starting 20th Aug)`,
       ],
       last_updated: "2026-07-19",
       availability: [
-        "Mondays at 11:30am (Fortnightly: Starting 10th Aug) — Burke Rd, Camberwell",
+        "Thursdays at 1:30pm (Fortnightly: Starting 6th Aug) — Burke Rd, Camberwell",
         "Thursdays at 10am (Fortnightly: Starting 20th Aug) — Burke Rd, Camberwell",
         "Thursdays at 9am (Fortnightly: Starting 20th Aug) — Burke Rd, Camberwell"
       ],
@@ -22426,17 +22426,13 @@ I am committed to providing best practice trauma informed care in a confidential
       locations: [
         {
           location: "Greville St, Prahran",
-          availability: `Tuesdays at 8am (Fortnightly: Starting 4th Aug)
-Mondays at 11am (Fortnightly: Starting 3rd Aug)`,
+          availability: "",
           weekly_availability: [],
           fortnightly_availability: []
         }
       ],
       last_updated: "2026-07-19",
-      availability: [
-        "Tuesdays at 8am (Fortnightly: Starting 4th Aug) — Greville St, Prahran",
-        "Mondays at 11am (Fortnightly: Starting 3rd Aug) — Greville St, Prahran"
-      ],
+      availability: [],
       short_bio: "Christine is a trauma specialist psychotherapist and psychoanalyst offering EMDR and depth therapy to help survivors reclaim and live with their stories.​",
       weekly_availability: [
         {
@@ -22740,7 +22736,7 @@ I have worked consistently across both public and private settings in my career,
       link_to_bio: "https://psychologycare.com.au/kiira-gavralas/",
       locations: [
         {
-          availability: `Tuesdays at 8am (Weekly: Starting 4th Aug)
+          availability: `Tuesdays at 8am (Weekly: Starting 11th Aug)
 Tuesdays at 11:45am (Fortnightly: Starting 4th Aug)
 Tuesdays at 9:15am (Fortnightly: Starting 11th Aug)`,
           weekly_availability: [],
@@ -22751,7 +22747,7 @@ Tuesdays at 9:15am (Fortnightly: Starting 11th Aug)`,
       last_updated: "2026-07-19",
       short_bio: "A genuine, relational psychologist using psychodynamic, attachment-informed ISTDP to help clients understand emotional patterns, ease distress and navigate parenthood transitions.",
       availability: [
-        "Tuesdays at 8am (Weekly: Starting 4th Aug) — Telehealth",
+        "Tuesdays at 8am (Weekly: Starting 11th Aug) — Telehealth",
         "Tuesdays at 11:45am (Fortnightly: Starting 4th Aug) — Telehealth",
         "Tuesdays at 9:15am (Fortnightly: Starting 11th Aug) — Telehealth"
       ],
@@ -23143,7 +23139,7 @@ Throughout our time together, rest assured that I understand and respect the tru
       link_to_bio: "https://psychologycare.com.au/chiara-killey/",
       locations: [
         {
-          availability: `Saturdays at 12pm (Weekly: Starting 15th Aug)
+          availability: `Saturdays at 12pm (Fortnightly: Starting 22nd Aug)
 Saturdays at 10am (Fortnightly: Starting 8th Aug)`,
           weekly_availability: [],
           fortnightly_availability: [],
@@ -23152,7 +23148,7 @@ Saturdays at 10am (Fortnightly: Starting 8th Aug)`,
       ],
       last_updated: "2026-07-19",
       availability: [
-        "Saturdays at 12pm (Weekly: Starting 15th Aug) — Telehealth",
+        "Saturdays at 12pm (Fortnightly: Starting 22nd Aug) — Telehealth",
         "Saturdays at 10am (Fortnightly: Starting 8th Aug) — Telehealth"
       ],
       short_bio: "Chiara is a neurodivergent, neuro-affirming clinical psychologist supporting adults with autism, ADHD and diverse needs using collaborative, family-inclusive, evidence-based therapies.",
@@ -25035,7 +25031,7 @@ Ages:
 Wednesdays at 5:30pm (Fortnightly: Starting 5th Aug)
 Mondays at 12pm (Fortnightly: Starting 10th Aug)
 Thursdays at 10:30am (Fortnightly: Starting 6th Aug)
-Mondays at 1pm (Fortnightly: Starting 3rd Aug)
+Mondays at 1pm (Fortnightly: Starting 17th Aug)
 Thursdays at 9:30am (Fortnightly: Starting 13th Aug)`,
           weekly_availability: [],
           fortnightly_availability: [],
@@ -25048,7 +25044,7 @@ Thursdays at 9:30am (Fortnightly: Starting 13th Aug)`,
         "Wednesdays at 5:30pm (Fortnightly: Starting 5th Aug) — Greville St, Prahran",
         "Mondays at 12pm (Fortnightly: Starting 10th Aug) — Greville St, Prahran",
         "Thursdays at 10:30am (Fortnightly: Starting 6th Aug) — Greville St, Prahran",
-        "Mondays at 1pm (Fortnightly: Starting 3rd Aug) — Greville St, Prahran",
+        "Mondays at 1pm (Fortnightly: Starting 17th Aug) — Greville St, Prahran",
         "Thursdays at 9:30am (Fortnightly: Starting 13th Aug) — Greville St, Prahran"
       ],
       short_bio: "Karen is a psychodynamic clinical psychologist integrating EMDR to support trauma, identity, grief and life transitions with culturally attuned, exploratory therapy.",
@@ -25103,7 +25099,7 @@ Thursdays at 9:30am (Fortnightly: Starting 13th Aug)`,
       ]
     }
   ];
-  var AVAILABILITY_LAST_UPDATED = "3 Aug 2026 6:01am";
+  var AVAILABILITY_LAST_UPDATED = "4 Aug 2026 6:01am";
 
   // components/IntakeTab.tsx
   var jsx_dev_runtime6 = __toESM(require_jsx_dev_runtime(), 1);
