@@ -21257,7 +21257,7 @@ I bring a warm, thoughtful, and calm presence to my work in the therapy room, an
 A/H: $275`,
       medicare_rebate: "101.55",
       gender: "Female",
-      alert: "Anna 27/05- No complex clients for a while per 86373",
+      alert: "Anna 27/05- No complex clients for a while per 86373 | Telehealth only: 10 Aug – 28 Aug (returns to in-person from 1 Sep)",
       presentations: [
         "Academic Pressure & Performance Stress",
         "Acquired Brain Injury (ABI) — Adjustment & Psychological Support",
