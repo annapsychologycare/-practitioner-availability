@@ -4384,4 +4384,4 @@ export const PRACTITIONERS_DATA = [
   }
 ];
 export const practitionersData = PRACTITIONERS_DATA;
-export const AVAILABILITY_LAST_UPDATED = "5 Aug 2026 5:24pm";
+export const AVAILABILITY_LAST_UPDATED = "6 Aug 2026 6:01am";

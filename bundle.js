@@ -25086,7 +25086,7 @@ Thursdays at 9:30am (Fortnightly: Starting 13th Aug)`,
       ]
     }
   ];
-  var AVAILABILITY_LAST_UPDATED = "5 Aug 2026 5:24pm";
+  var AVAILABILITY_LAST_UPDATED = "6 Aug 2026 6:01am";
 
   // components/IntakeTab.tsx
   var jsx_dev_runtime6 = __toESM(require_jsx_dev_runtime(), 1);
