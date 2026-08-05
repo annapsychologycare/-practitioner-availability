@@ -10,6 +10,7 @@ export interface PractitionerEmailData {
   link_to_bio: string;
   short_bio?: string;
   working_hours?: string;
+  alert?: string;
   location_notes?: Record<string, string>;
   photo_url?: string;
 }
@@ -161,6 +162,12 @@ function buildPractitionerCard(p: PractitionerEmailData, config: EmailTemplateCo
         ${p.working_hours ? `<div style="font-size:12px;color:${c.title_color};line-height:1.6;">🕐 ${p.working_hours}</div>` : ""}
       </div>` : ""}
 
+      <!-- Alert note (client-facing: only text after | separator) -->
+      ${p.alert && p.alert.includes('|') ? `
+      <div style="padding:10px 24px;background:#fff8e1;border-bottom:1px solid #ffe082;">
+        <div style="font-size:12px;color:#7a5a00;line-height:1.6;">⚠️ ${p.alert.split('|').slice(1).join('|').trim()}</div>
+      </div>` : ""}
+
       <!-- Availability -->
       ${availHtml}
 
@@ -188,8 +195,7 @@ export function buildEmailHtml(
   note: string,
   senderName: string,
   practitioners: PractitionerEmailData[],
-  config: EmailTemplateConfig = DEFAULT_EMAIL_TEMPLATE_CONFIG,
-  forCopy = false
+  config: EmailTemplateConfig = DEFAULT_EMAIL_TEMPLATE_CONFIG
 ): string {
   const c = config.colors;
   const sig = config.signature;
@@ -232,12 +238,9 @@ export function buildEmailHtml(
       </div>
     </div>`;
 
-  const outerOpen = forCopy
-    ? `<div style="font-family:Arial,Helvetica,sans-serif;background:#fff;width:100%;"><div style="width:100%;background:#fff;">`
-    : `<div style="font-family:Arial,Helvetica,sans-serif;background:#f0eef7;padding:28px 12px;"><div style="max-width:600px;margin:0 auto;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 4px 24px rgba(44,36,76,0.13);">`;
-
   return `
-    ${outerOpen}
+    <div style="font-family:Arial,Helvetica,sans-serif;background:#f0eef7;padding:28px 12px;">
+      <div style="max-width:600px;margin:0 auto;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 4px 24px rgba(44,36,76,0.13);">
 
         <!-- Top accent bar -->
         <div style="height:5px;background:linear-gradient(90deg,${c.header_bar_start} 0%,${c.header_bar_mid} 60%,${c.header_bar_end} 100%);"></div>

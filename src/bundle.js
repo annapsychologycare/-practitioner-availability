@@ -17593,6 +17593,12 @@ Please note: There are inherent confidentiality risks in communicating by email.
         ${p.working_hours ? `<div style="font-size:12px;color:${c.title_color};line-height:1.6;">\uD83D\uDD50 ${p.working_hours}</div>` : ""}
       </div>` : ""}
 
+      <!-- Alert note (client-facing: only text after | separator) -->
+      ${p.alert && p.alert.includes("|") ? `
+      <div style="padding:10px 24px;background:#fff8e1;border-bottom:1px solid #ffe082;">
+        <div style="font-size:12px;color:#7a5a00;line-height:1.6;">⚠️ ${p.alert.split("|").slice(1).join("|").trim()}</div>
+      </div>` : ""}
+
       <!-- Availability -->
       ${availHtml}
 
