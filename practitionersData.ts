@@ -1841,6 +1841,7 @@ export const PRACTITIONERS_DATA = [
       "Seasonal Affective Disorder (SAD)",
       "Selective Mutism",
       "Self-Harm & Risky Behaviours",
+      "Sexual Abuse/ Assault",
       "Sexual Difficulties & Dysfunction",
       "Shame & Guilt",
       "Somatic Symptom Disorder",
