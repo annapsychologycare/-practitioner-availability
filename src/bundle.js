@@ -20431,13 +20431,13 @@ Alex is passionate about normalising the distress we may experience in response 
       link_to_bio: "https://psychologycare.com.au/alex-barry/",
       locations: [
         {
-          availability: "",
+          availability: "Thursdays at 7pm (Fortnightly: Starting 13th Aug)",
           weekly_availability: [],
           fortnightly_availability: [],
           location: "Greville St, Prahran"
         },
         {
-          availability: "Wednesdays at 1:30pm (Fortnightly: Starting 5th Aug)",
+          availability: "Wednesdays at 1:30pm (Fortnightly: Starting 19th Aug)",
           weekly_availability: [],
           fortnightly_availability: [],
           location: "Telehealth"
@@ -20451,7 +20451,8 @@ Alex is passionate about normalising the distress we may experience in response 
       ],
       last_updated: "2026-07-19",
       availability: [
-        "Wednesdays at 1:30pm (Fortnightly: Starting 5th Aug) — Telehealth"
+        "Thursdays at 7pm (Fortnightly: Starting 13th Aug) — Greville St, Prahran",
+        "Wednesdays at 1:30pm (Fortnightly: Starting 19th Aug) — Telehealth"
       ],
       short_bio: "Trauma-informed psychologist supporting adults across sectors with integrative EMDR, CBT, schema, and somatic therapies in neuroaffirming, sex-positive, LGBTQIA+ inclusive practice.",
       weekly_availability: [],
@@ -20528,10 +20529,8 @@ Alex is passionate about normalising the distress we may experience in response 
       name: "Rebekah Barson",
       title: "Accredited Mental Health Social Worker",
       fees: `B/H: $235
-A/H: $275
-
-Couples: $275`,
-      medicare_rebate: "89.50",
+A/H: $275`,
+      medicare_rebate: "89.5",
       gender: "Female",
       alert: "",
       presentations: [
@@ -20676,7 +20675,7 @@ Rebekah has a compassionate and thoughtful approach to the emotional care and su
         {
           location: "Burke Rd, Camberwell",
           availability: `Mondays at 4pm (Fortnightly: Starting 17th Aug)
-Saturdays at 9am (Fortnightly: Starting 8th Aug)`,
+Saturdays at 9am (Fortnightly: Starting 22nd Aug)`,
           weekly_availability: [],
           fortnightly_availability: []
         }
@@ -20684,7 +20683,7 @@ Saturdays at 9am (Fortnightly: Starting 8th Aug)`,
       last_updated: "2026-07-19",
       availability: [
         "Mondays at 4pm (Fortnightly: Starting 17th Aug) — Burke Rd, Camberwell",
-        "Saturdays at 9am (Fortnightly: Starting 8th Aug) — Burke Rd, Camberwell"
+        "Saturdays at 9am (Fortnightly: Starting 22nd Aug) — Burke Rd, Camberwell"
       ],
       short_bio: "Rebekah is a relationship-focused mental health social worker using counselling, psychotherapy and ACT to help individuals and couples strengthen connection and wellbeing.",
       weekly_availability: [],
@@ -20782,12 +20781,13 @@ Saturdays at 9am (Fortnightly: Starting 8th Aug)`,
       ],
       modalities: [
         "Acceptance and Commitment Therapy (ACT)",
-        "EMDR (Eye Movement Desensitisation and Reprocessing)",
+        "Eye Movement Desensitisation and Reprocessing (EMDR)",
         "Internal Family Systems (IFS) / Parts Work (Level 1 Certified)"
       ],
       billing_types: "Medicare Rebate, NDIS, Self Funded, Third Party",
       style: "Active Listener, Animal Lover, Calm, Creative, Sensitive and Gentle",
-      fees: "",
+      fees: `B/H: $275
+A/H: $315`,
       medicare_rebate: "149.05",
       bio: `Brigid Blanckenberg is a Clinical Psychologist who offers a calm and reflective space for clients to explore their inner worlds and make meaningful changes in their lives.  She values the therapeutic relationship as a foundation for healing and works collaboratively with each client to understand their experiences with curiosity, care, and respect.
 
@@ -20809,26 +20809,22 @@ Brigid is a warm and reflective therapist who offers a calm, supportive space fo
       locations: [
         {
           location: "Burke Rd, Camberwell",
-          availability: `Tuesdays at 2:30pm (Fortnightly: Starting 11th Aug)
-Tuesdays at 3:30pm (Fortnightly: Starting 11th Aug)`,
+          availability: "Tuesdays at 2:30pm (Fortnightly: Starting 22nd Sept)",
           weekly_availability: [],
           fortnightly_availability: []
         },
         {
           location: "Greville St, Prahran",
-          availability: `Wednesdays at 10am (Fortnightly: Starting 5th Aug)
-Thursdays at 2:30pm (Fortnightly: Starting 13th Aug)
-Wednesdays at 1pm (Fortnightly: Starting 5th Aug)`
+          availability: `Wednesdays at 10am (Fortnightly: Starting 30th Sept)
+Wednesdays at 1pm (Fortnightly: Starting 30th Sept)`
         }
       ],
       location_notes: {},
       last_updated: "2026-07-19",
       availability: [
-        "Wednesdays at 10am (Fortnightly: Starting 5th Aug) — Greville St, Prahran",
-        "Thursdays at 2:30pm (Fortnightly: Starting 13th Aug) — Greville St, Prahran",
-        "Wednesdays at 1pm (Fortnightly: Starting 5th Aug) — Greville St, Prahran",
-        "Tuesdays at 2:30pm (Fortnightly: Starting 11th Aug) — Burke Rd, Camberwell",
-        "Tuesdays at 3:30pm (Fortnightly: Starting 11th Aug) — Burke Rd, Camberwell"
+        "Wednesdays at 10am (Fortnightly: Starting 30th Sept) — Greville St, Prahran",
+        "Wednesdays at 1pm (Fortnightly: Starting 30th Sept) — Greville St, Prahran",
+        "Tuesdays at 2:30pm (Fortnightly: Starting 22nd Sept) — Burke Rd, Camberwell"
       ],
       client_gender_accepted: "Any",
       shortBio: `Brigid Blanckenberg
@@ -20972,12 +20968,11 @@ Broadly, Amy is obsessed with her new 6yo rescue kelpie x staffy, Naia; she love
       locations: [
         {
           location: "Burke Rd, Camberwell",
-          availability: `Fridays at 8am (Weekly: Starting 7th Aug)
-Mondays at 11:30am (Fortnightly: Starting 17th Aug)
-Fridays at 1pm (Fortnightly: Starting 7th Aug)
-Mondays at 9am (Fortnightly: Starting 10th Aug)
-Fridays at 2pm (Fortnightly: Starting 7th Aug)
-Fridays at 11am (Fortnightly: Starting 7th Aug)`,
+          availability: `Mondays at 11:30am (Fortnightly: Starting 17th Aug)
+Fridays at 1pm (Fortnightly: Starting 21st Aug)
+Mondays at 9am (Fortnightly: Starting 24th Aug)
+Fridays at 2pm (Fortnightly: Starting 21st Aug)
+Fridays at 11am (Fortnightly: Starting 21st Aug)`,
           weekly_availability: [],
           fortnightly_availability: []
         },
@@ -20990,12 +20985,11 @@ Fridays at 11am (Fortnightly: Starting 7th Aug)`,
       ],
       last_updated: "2026-07-19",
       availability: [
-        "Fridays at 8am (Weekly: Starting 7th Aug) — Burke Rd, Camberwell",
         "Mondays at 11:30am (Fortnightly: Starting 17th Aug) — Burke Rd, Camberwell",
-        "Fridays at 1pm (Fortnightly: Starting 7th Aug) — Burke Rd, Camberwell",
-        "Mondays at 9am (Fortnightly: Starting 10th Aug) — Burke Rd, Camberwell",
-        "Fridays at 2pm (Fortnightly: Starting 7th Aug) — Burke Rd, Camberwell",
-        "Fridays at 11am (Fortnightly: Starting 7th Aug) — Burke Rd, Camberwell"
+        "Fridays at 1pm (Fortnightly: Starting 21st Aug) — Burke Rd, Camberwell",
+        "Mondays at 9am (Fortnightly: Starting 24th Aug) — Burke Rd, Camberwell",
+        "Fridays at 2pm (Fortnightly: Starting 21st Aug) — Burke Rd, Camberwell",
+        "Fridays at 11am (Fortnightly: Starting 21st Aug) — Burke Rd, Camberwell"
       ],
       short_bio: "Amy is a warm, LGBTQIAP+ friendly clinical psychologist supporting clients 16+ with mood, relationship and eating difficulties using flexible, evidence-based therapies.",
       weekly_availability: [
@@ -21069,8 +21063,8 @@ Fridays at 11am (Fortnightly: Starting 7th Aug)`,
       id: 27,
       name: "Ruby Bouhadana",
       title: "Clinical Psychologist",
-      fees: `B/H: $235
-A/H: $275`,
+      fees: `B/H: $275
+A/H: $315`,
       medicare_rebate: "149.05",
       gender: "Female",
       alert: "",
@@ -21188,7 +21182,7 @@ I bring a warm, thoughtful, and calm presence to my work in the therapy room, an
       locations: [
         {
           location: "Burke Rd, Camberwell",
-          availability: "Tuesdays at 1pm (Fortnightly: Starting 1st Sept)",
+          availability: "",
           weekly_availability: [],
           fortnightly_availability: [
             {
@@ -21200,9 +21194,7 @@ I bring a warm, thoughtful, and calm presence to my work in the therapy room, an
         }
       ],
       last_updated: "2026-07-19",
-      availability: [
-        "Tuesdays at 1pm (Fortnightly: Starting 1st Sept) — Burke Rd, Camberwell"
-      ],
+      availability: [],
       short_bio: "A warm clinical psychology registrar integrating IFS, CBT, ACT, schema and mindfulness to support adults toward self-understanding, compassion and emotionally grounded change.",
       weekly_availability: [],
       fortnightly_availability: [
@@ -21257,7 +21249,7 @@ I bring a warm, thoughtful, and calm presence to my work in the therapy room, an
 A/H: $275`,
       medicare_rebate: "101.55",
       gender: "Female",
-      alert: "Anna 27/05- No complex clients for a while per 86373 | Telehealth only: 10 Aug – 28 Aug (returns to in-person from 1 Sep)",
+      alert: "Anna 27/05- No complex clients for a while per 86373",
       presentations: [
         "Academic Pressure & Performance Stress",
         "Acquired Brain Injury (ABI) — Adjustment & Psychological Support",
@@ -21416,10 +21408,9 @@ A/H: $275`,
       link_to_bio: "https://psychologycare.com.au/dr-maddie-brygel-psychologist/",
       locations: [
         {
-          availability: `Mondays at 9am (Fortnightly: Starting 10th Aug)
-Thursdays at 10am (Fortnightly: Starting 13th Aug)
+          availability: `Fridays at 8am (Fortnightly: Starting 21st Aug)
+Mondays at 9am (Fortnightly: Starting 21st Sept)
 Fridays at 11am (Fortnightly: Starting 14th Aug)
-Thursdays at 11am (Fortnightly: Starting 13th Aug)
 Mondays at 11am (Fortnightly: Starting 17th Aug)`,
           weekly_availability: [],
           fortnightly_availability: [],
@@ -21466,10 +21457,9 @@ Mondays at 11am (Fortnightly: Starting 17th Aug)`,
       ],
       last_updated: "2026-07-19",
       availability: [
-        "Mondays at 9am (Fortnightly: Starting 10th Aug) — Greville St, Prahran",
-        "Thursdays at 10am (Fortnightly: Starting 13th Aug) — Greville St, Prahran",
+        "Fridays at 8am (Fortnightly: Starting 21st Aug) — Greville St, Prahran",
+        "Mondays at 9am (Fortnightly: Starting 21st Sept) — Greville St, Prahran",
         "Fridays at 11am (Fortnightly: Starting 14th Aug) — Greville St, Prahran",
-        "Thursdays at 11am (Fortnightly: Starting 13th Aug) — Greville St, Prahran",
         "Mondays at 11am (Fortnightly: Starting 17th Aug) — Greville St, Prahran"
       ],
       short_bio: "A psychologist trained in both clinical and forensic psychology, lecturer, and researcher supporting adults with anxiety, depression, trauma, grief, addiction and women’s mental health",
@@ -21574,9 +21564,7 @@ Mondays at 11am (Fortnightly: Starting 17th Aug)`,
       name: "Nick Burden",
       title: "Clinical Psychologist",
       fees: `B/H: $275
-A/H: $315
-
-Supervision: $235`,
+A/H: $315`,
       medicare_rebate: "149.05",
       gender: "Male",
       alert: "",
@@ -21668,8 +21656,7 @@ I have a developing interest and training in the new research around psychedelic
         },
         {
           location: "Burke Rd, Camberwell",
-          availability: `Wednesdays at 12pm (Fortnightly: Starting 19th Aug)
-Thursdays at 9am (Fortnightly: Starting 13th Aug)
+          availability: `Thursdays at 9am (Fortnightly: Starting 13th Aug)
 Tuesdays at 2:30pm (Fortnightly: Starting 18th Aug)`,
           weekly_availability: [],
           fortnightly_availability: []
@@ -21677,7 +21664,6 @@ Tuesdays at 2:30pm (Fortnightly: Starting 18th Aug)`,
       ],
       last_updated: "2026-07-19",
       availability: [
-        "Wednesdays at 12pm (Fortnightly: Starting 19th Aug) — Burke Rd, Camberwell",
         "Thursdays at 9am (Fortnightly: Starting 13th Aug) — Burke Rd, Camberwell",
         "Tuesdays at 2:30pm (Fortnightly: Starting 18th Aug) — Burke Rd, Camberwell"
       ],
@@ -21729,19 +21715,15 @@ Tuesdays at 2:30pm (Fortnightly: Starting 18th Aug)`,
       id: 16,
       name: "Dr Krista De Castella",
       title: "Clinical Psychologist, Psychotherapist",
-      fees: "90 Min Appt: $335 ",
+      fees: `B/H: $275
+A/H: $315`,
       medicare_rebate: "149.05",
       gender: "Female",
       alert: ",",
       presentations: "ADD and ADHD; Agoraphobia; Anxiety; Asperger Syndrome; Attachment Disorder; Autism Spectrum Disorders (ASD); Avoidant Personality Disorder; Burnout; Career transition; Complex Trauma; Fear of Failure; General Adaptation Disorder (Adjustment Disorder); Generalized Anxiety Disorder (GAD); Imposter Syndrome; Intermittent Explosive Disorder (Uncontrolled Anger); LGBTIQA+; Life Transitions; Low self esteem; Non-Monogomy/ Polyamory; Pain Management; Panic Disorder & Panic Attacks; Perfectionism; Pregnancy and Postnatal Depression Anxiety; Relationship breakdown; Sexual problems; Social anxiety disorder / Social Phobia; Stress; Trauma",
       modalities: [
-        "Psychodynamic Therapy",
-        "Humanistic / Person-Centred Therapy",
-        "Attachment-Based Therapy",
         "Eye Movement Desensitisation and Reprocessing (EMDR)",
-        "Internal Family Systems (IFS) / Parts Work - Certified Level 1",
-        "Psychedelic-Assisted Psychotherapy (research/emerging)",
-        "Transpersonal Psychology"
+        "Internal Family Systems (IFS) / Parts Work (Level 1 Certified)"
       ],
       client_types: [
         "Individual",
@@ -21812,12 +21794,8 @@ Outside of clinical work, I'm an avid martial arts practitioner and have spent o
       name: "Allison Conyer",
       title: "Psychologist",
       fees: `B/H: $235
-A/H: $275
-
-Couples: $275`,
-      medicare_rebate: `101.55
-
-No rebate for couples`,
+A/H: $275`,
+      medicare_rebate: "101.55",
       gender: "Female",
       alert: "",
       presentations: [
@@ -22111,20 +22089,14 @@ Being a psychologist is a humbling role and a valued part of my life. I feel hon
           location: "Telehealth"
         },
         {
-          availability: `Thursdays at 1:30pm (Fortnightly: Starting 6th Aug)
-Thursdays at 10am (Fortnightly: Starting 20th Aug)
-Thursdays at 9am (Fortnightly: Starting 20th Aug)`,
+          availability: "",
           weekly_availability: [],
           fortnightly_availability: [],
           location: "Burke Rd, Camberwell"
         }
       ],
       last_updated: "2026-07-19",
-      availability: [
-        "Thursdays at 1:30pm (Fortnightly: Starting 6th Aug) — Burke Rd, Camberwell",
-        "Thursdays at 10am (Fortnightly: Starting 20th Aug) — Burke Rd, Camberwell",
-        "Thursdays at 9am (Fortnightly: Starting 20th Aug) — Burke Rd, Camberwell"
-      ],
+      availability: [],
       short_bio: "A trauma-informed clinical psychologist and social worker integrating IFS, ACT, DBT, CBT and mindfulness to support healing from trauma, intense emotions and life transitions.",
       weekly_availability: [
         {
@@ -22198,7 +22170,7 @@ Thursdays at 9am (Fortnightly: Starting 20th Aug)`,
       title: "Accredited Mental Health Social Worker, Psychoanalyst, Psychotherapist",
       fees: `B/H: $235
 A/H: $275`,
-      medicare_rebate: "89.50",
+      medicare_rebate: "89.5",
       gender: "Female",
       alert: "",
       presentations: [
@@ -22271,6 +22243,7 @@ A/H: $275`,
         "Disordered Eating - Not Otherwise Specified (NOS)",
         "Disordered Eating - Sub-clinical",
         "Dissociation / Dissociative Disorders",
+        "Domestic/ Family Violence",
         "Emotional Dysregulation",
         "Emotional Regulation & Behavioural Difficulties",
         "Erectile Dysfunction (ED)",
@@ -22345,6 +22318,8 @@ A/H: $275`,
         "Seasonal Affective Disorder (SAD)",
         "Selective Mutism",
         "Self-Harm & Risky Behaviours",
+        "Sexual Abuse/ Assault",
+        "Sex and Intimacy",
         "Sexual Difficulties & Dysfunction",
         "Shame & Guilt",
         "Somatic Symptom Disorder",
@@ -22376,7 +22351,7 @@ A/H: $275`,
       modalities: [
         "Acceptance and Commitment Therapy (ACT)",
         "Compassion-Focused Therapy (CFT)",
-        "EMDR (Eye Movement Desensitisation and Reprocessing)",
+        "Eye Movement Desensitisation and Reprocessing (EMDR)",
         "Psychodynamic Therapy",
         "Schema Therapy",
         "Trauma-Focused CBT (TF-CBT)",
@@ -22434,14 +22409,14 @@ I am committed to providing best practice trauma informed care in a confidential
       locations: [
         {
           location: "Greville St, Prahran",
-          availability: "Tuesdays at 9am (Fortnightly: Starting 11th Aug)",
+          availability: "Saturdays at 4pm (Fortnightly: Starting 22nd Aug)",
           weekly_availability: [],
           fortnightly_availability: []
         }
       ],
       last_updated: "2026-07-19",
       availability: [
-        "Tuesdays at 9am (Fortnightly: Starting 11th Aug) — Greville St, Prahran"
+        "Saturdays at 4pm (Fortnightly: Starting 22nd Aug) — Greville St, Prahran"
       ],
       short_bio: "Christine is a trauma specialist psychotherapist and psychoanalyst offering EMDR and depth therapy to help survivors reclaim and live with their stories.​",
       weekly_availability: [
@@ -22719,7 +22694,7 @@ Only seeing clients she has seen before. No new clients.`,
         "Circle of Security (COS)",
         "Cognitive Behavioural Therapy (CBT)",
         "Dialectical Behaviour Therapy (DBT)",
-        "EMDR (Eye Movement Desensitisation and Reprocessing)",
+        "Eye Movement Desensitisation and Reprocessing (EMDR)",
         "Intensive Short-Term Dynamic Psychotherapy (ISTDP)",
         "Internal Family Systems (IFS) / Parts Work (Informed)",
         "Psychodynamic Therapy"
@@ -22790,10 +22765,7 @@ Tuesdays at 9:15am (Fortnightly: Starting 11th Aug)`,
       name: "Cristina Jimenez",
       title: "Psychotherapist",
       fees: `B/H: $170
-A/H: $190
-
-
-Couples: $275`,
+A/H: $190`,
       medicare_rebate: "No rebate applicable. No MHCP or referral required.",
       gender: "Female",
       alert: "",
@@ -22948,8 +22920,10 @@ Beyond her counselling practice, Cristina is a skilled Dance Movement Therapist.
 Cristina is a Somatic Experiencing® (SE™) Practitioner, having completed the professional training in Somatic Experiencing®. She thoughtfully integrates SE™ principles into her work, supporting clients to gently resolve the effects of stress and trauma by working with the nervous system and the body's natural capacity for healing.`,
       pronouns: "She/Her",
       billing_types: "Self Funded, Third Party, WorkSafe, EAP",
-      languages: `English
-Spanish`,
+      languages: [
+        `English
+Spanish`
+      ],
       spare_time: "Dance, sing, DJ, laugh, nature adventures, hang out with my cats and beloveds, read, write, garden, cook, workshops, and being creative in weird and wonderful ways",
       pap_clinician: "",
       after_hours: "Yes",
@@ -22959,7 +22933,7 @@ Spanish`,
         {
           availability: `Tuesdays at 10am (Weekly: Starting 11th Aug)
 Tuesdays at 11am (Weekly: Starting 11th Aug)
-Tuesdays at 12pm (Weekly: Starting 11th Aug)
+Tuesdays at 12pm (Weekly: Starting 1st Sept)
 Tuesdays at 4:30pm (Fortnightly: Starting 18th Aug)
 Tuesdays at 5:30pm (Fortnightly: Starting 25th Aug)
 Tuesdays at 9am (Fortnightly: Starting 11th Aug)`,
@@ -22972,7 +22946,7 @@ Tuesdays at 9am (Fortnightly: Starting 11th Aug)`,
       availability: [
         "Tuesdays at 10am (Weekly: Starting 11th Aug) — Greville St, Prahran",
         "Tuesdays at 11am (Weekly: Starting 11th Aug) — Greville St, Prahran",
-        "Tuesdays at 12pm (Weekly: Starting 11th Aug) — Greville St, Prahran",
+        "Tuesdays at 12pm (Weekly: Starting 1st Sept) — Greville St, Prahran",
         "Tuesdays at 4:30pm (Fortnightly: Starting 18th Aug) — Greville St, Prahran",
         "Tuesdays at 5:30pm (Fortnightly: Starting 25th Aug) — Greville St, Prahran",
         "Tuesdays at 9am (Fortnightly: Starting 11th Aug) — Greville St, Prahran"
@@ -23041,7 +23015,7 @@ Tuesdays at 9am (Fortnightly: Starting 11th Aug)`,
       title: "Clinical Psychologist",
       fees: `B/H: $275
 A/H: $315`,
-      medicare_rebate: "101.55",
+      medicare_rebate: "149.05",
       gender: "Female",
       alert: "Telehealth Only from 1st June 2026 until Chiara advises otherwise. ADULT Female  client only. Not too complex due to being a Saturday",
       presentations: [
@@ -23153,18 +23127,14 @@ Throughout our time together, rest assured that I understand and respect the tru
       link_to_bio: "https://psychologycare.com.au/chiara-killey/",
       locations: [
         {
-          availability: `Saturdays at 12pm (Fortnightly: Starting 22nd Aug)
-Saturdays at 10am (Fortnightly: Starting 8th Aug)`,
+          availability: "",
           weekly_availability: [],
           fortnightly_availability: [],
           location: "Telehealth"
         }
       ],
       last_updated: "2026-07-19",
-      availability: [
-        "Saturdays at 12pm (Fortnightly: Starting 22nd Aug) — Telehealth",
-        "Saturdays at 10am (Fortnightly: Starting 8th Aug) — Telehealth"
-      ],
+      availability: [],
       short_bio: "Chiara is a neurodivergent, neuro-affirming clinical psychologist supporting adults with autism, ADHD and diverse needs using collaborative, family-inclusive, evidence-based therapies.",
       weekly_availability: [],
       fortnightly_availability: [
@@ -23331,7 +23301,7 @@ Outside of work, Nick spends his time in nature, surfing, learning Spanish, and 
       locations: [
         {
           availability: `Tuesdays at 1pm (Weekly: Starting 1st Sept)
-Tuesdays at 10am (Fortnightly: Starting 11th Aug)`,
+Tuesdays at 11am (Fortnightly: Starting 11th Aug)`,
           weekly_availability: [],
           fortnightly_availability: [],
           location: "Greville St, Prahran"
@@ -23344,8 +23314,8 @@ Tuesdays at 10am (Fortnightly: Starting 11th Aug)`,
         },
         {
           location: "Burke Rd, Camberwell",
-          availability: `Wednesdays at 12pm (Weekly: Starting 5th Aug)
-Fridays at 9am (Fortnightly: Starting 14th Aug)
+          availability: `Fridays at 9am (Weekly: Starting 14th Aug)
+Wednesdays at 12pm (Weekly: Starting 12th Aug)
 Thursdays at 8am (Fortnightly: Starting 13th Aug)
 Thursdays at 12pm (Fortnightly: Starting 20th Aug)
 Wednesdays at 8am (Fortnightly: Starting 12th Aug)`,
@@ -23355,13 +23325,13 @@ Wednesdays at 8am (Fortnightly: Starting 12th Aug)`,
       ],
       last_updated: "2026-07-19",
       availability: [
-        "Tuesdays at 1pm (Weekly: Starting 1st Sept) — Greville St, Prahran",
-        "Tuesdays at 10am (Fortnightly: Starting 11th Aug) — Greville St, Prahran",
-        "Wednesdays at 12pm (Weekly: Starting 5th Aug) — Burke Rd, Camberwell",
-        "Fridays at 9am (Fortnightly: Starting 14th Aug) — Burke Rd, Camberwell",
+        "Fridays at 9am (Weekly: Starting 14th Aug) — Burke Rd, Camberwell",
+        "Wednesdays at 12pm (Weekly: Starting 12th Aug) — Burke Rd, Camberwell",
         "Thursdays at 8am (Fortnightly: Starting 13th Aug) — Burke Rd, Camberwell",
         "Thursdays at 12pm (Fortnightly: Starting 20th Aug) — Burke Rd, Camberwell",
-        "Wednesdays at 8am (Fortnightly: Starting 12th Aug) — Burke Rd, Camberwell"
+        "Wednesdays at 8am (Fortnightly: Starting 12th Aug) — Burke Rd, Camberwell",
+        "Tuesdays at 1pm (Weekly: Starting 1st Sept) — Greville St, Prahran",
+        "Tuesdays at 11am (Fortnightly: Starting 11th Aug) — Greville St, Prahran"
       ],
       short_bio: "Nick is a warm, trauma-informed clinical psychologist using ACT, mindfulness, CBT and SFT to support diverse adults and adolescents, including neurodivergent clients.",
       weekly_availability: [
@@ -23545,8 +23515,8 @@ A/H: $275`,
           location: "Greville St, Prahran"
         },
         {
-          availability: `Wednesdays at 1pm (Weekly: Starting 5th Aug)
-Wednesdays at 12pm (Weekly: Starting 5th Aug)`,
+          availability: `Wednesdays at 1pm (Weekly: Starting 12th Aug)
+Wednesdays at 12pm (Weekly: Starting 12th Aug)`,
           weekly_availability: [],
           fortnightly_availability: [],
           location: "Telehealth"
@@ -23566,8 +23536,8 @@ Wednesdays at 12pm (Weekly: Starting 5th Aug)`,
       ],
       last_updated: "2026-07-19",
       availability: [
-        "Wednesdays at 1pm (Weekly: Starting 5th Aug) — Telehealth",
-        "Wednesdays at 12pm (Weekly: Starting 5th Aug) — Telehealth"
+        "Wednesdays at 1pm (Weekly: Starting 12th Aug) — Telehealth",
+        "Wednesdays at 12pm (Weekly: Starting 12th Aug) — Telehealth"
       ],
       short_bio: "Ricki is a warm, non-judgemental psychologist using CBT, ACT and psychodynamic therapies to support adolescents and adults with anxiety, depression, trauma and ADHD.",
       weekly_availability: [],
@@ -23602,15 +23572,14 @@ Wednesdays at 12pm (Weekly: Starting 5th Aug)`,
       clientTypes: [
         "Individual"
       ],
-      therapistType: "Psycholoist"
+      therapistType: "Registered Psychologist"
     },
     {
       id: 13,
       name: "Joshua Kugel",
       title: "Psychologist",
       fees: `B/H: $235
-A/H: $275
-`,
+A/H: $275`,
       medicare_rebate: "101.55",
       gender: "Male",
       alert: "",
@@ -23718,7 +23687,11 @@ Josh has worked in both public and private sectors, and has experience with trau
       locations: [
         {
           location: "Burke Rd, Camberwell",
-          availability: "Wednesdays at 2:30pm (Fortnightly: Starting 16th Sept)",
+          availability: `Thursdays at 7:30pm (Weekly: Starting 17th Sept)
+Thursdays at 6:30pm (Weekly: Starting 17th Sept)
+Thursdays at 3:30pm (Weekly: Starting 17th Sept)
+Thursdays at 2:30pm (Weekly: Starting 17th Sept)
+Thursdays at 4:30pm (Fortnightly: Starting 24th Sept)`,
           weekly_availability: [],
           fortnightly_availability: []
         },
@@ -23732,7 +23705,11 @@ Josh has worked in both public and private sectors, and has experience with trau
       last_updated: "2026-07-19",
       short_bio: "Josh is a warm, research-active clinical psychologist supporting adolescents and adults with integrative, values-based therapy for trauma, neurodiversity and emotional difficulties.",
       availability: [
-        "Wednesdays at 2:30pm (Fortnightly: Starting 16th Sept) — Burke Rd, Camberwell"
+        "Thursdays at 7:30pm (Weekly: Starting 17th Sept) — Burke Rd, Camberwell",
+        "Thursdays at 6:30pm (Weekly: Starting 17th Sept) — Burke Rd, Camberwell",
+        "Thursdays at 3:30pm (Weekly: Starting 17th Sept) — Burke Rd, Camberwell",
+        "Thursdays at 2:30pm (Weekly: Starting 17th Sept) — Burke Rd, Camberwell",
+        "Thursdays at 4:30pm (Fortnightly: Starting 24th Sept) — Burke Rd, Camberwell"
       ],
       weekly_availability: [],
       fortnightly_availability: [],
@@ -23771,12 +23748,8 @@ Josh has worked in both public and private sectors, and has experience with trau
       name: "Therese Van Maanen",
       title: "Psychologist",
       fees: `B/H: $235
-A/H: $275
-
-Couples: $275`,
-      medicare_rebate: `101.55
-
-No rebate for couples`,
+A/H: $275`,
+      medicare_rebate: "101.55",
       gender: "Female",
       alert: ". Couples clients must be referred to TVM for her intake (after ours), then we can book in",
       presentations: [
@@ -23891,11 +23864,11 @@ I have a particular interest in the role that our early attachment relationships
       link_to_bio: "https://psychologycare.com.au/therese-van-maanen/",
       locations: [
         {
-          availability: `Thursdays at 3:15pm (Weekly: Starting 6th Aug)
-Thursdays at 2pm (Weekly: Starting 6th Aug)
-Thursdays at 10:15am (Weekly: Starting 6th Aug)
-Thursdays at 11:30am (Weekly: Starting 6th Aug)
-Thursdays at 12:45pm (Fortnightly: Starting 6th Aug)`,
+          availability: `Thursdays at 3:15pm (Weekly: Starting 20th Aug)
+Thursdays at 2pm (Weekly: Starting 20th Aug)
+Thursdays at 10:15am (Weekly: Starting 13th Aug)
+Thursdays at 11:30am (Weekly: Starting 13th Aug)
+Thursdays at 12:45pm (Fortnightly: Starting 20th Aug)`,
           weekly_availability: [],
           fortnightly_availability: [],
           location: "Victoria St, St Kilda"
@@ -23903,11 +23876,11 @@ Thursdays at 12:45pm (Fortnightly: Starting 6th Aug)`,
       ],
       last_updated: "2026-07-19",
       availability: [
-        "Thursdays at 3:15pm (Weekly: Starting 6th Aug) — Victoria St, St Kilda",
-        "Thursdays at 2pm (Weekly: Starting 6th Aug) — Victoria St, St Kilda",
-        "Thursdays at 10:15am (Weekly: Starting 6th Aug) — Victoria St, St Kilda",
-        "Thursdays at 11:30am (Weekly: Starting 6th Aug) — Victoria St, St Kilda",
-        "Thursdays at 12:45pm (Fortnightly: Starting 6th Aug) — Victoria St, St Kilda"
+        "Thursdays at 3:15pm (Weekly: Starting 20th Aug) — Victoria St, St Kilda",
+        "Thursdays at 2pm (Weekly: Starting 20th Aug) — Victoria St, St Kilda",
+        "Thursdays at 10:15am (Weekly: Starting 13th Aug) — Victoria St, St Kilda",
+        "Thursdays at 11:30am (Weekly: Starting 13th Aug) — Victoria St, St Kilda",
+        "Thursdays at 12:45pm (Fortnightly: Starting 20th Aug) — Victoria St, St Kilda"
       ],
       short_bio: "A reflective, attachment-focused psychologist drawing on Circle of Security to support teens, adults, new parents and diverse couples toward meaningful change.",
       weekly_availability: [
@@ -23952,7 +23925,7 @@ Thursdays at 12:45pm (Fortnightly: Starting 6th Aug)`,
       clientTypes: [
         "Couples"
       ],
-      therapistType: "Psycholoist",
+      therapistType: "Registered Psychologist",
       genderOfClientsSeen: [
         "Female",
         "Gender Fluid",
@@ -24076,8 +24049,7 @@ Belinda aims to work collaboratively with her clients to help them develop a dee
       link_to_bio: "https://psychologycare.com.au/belinda-pacella/",
       locations: [
         {
-          availability: `Thursdays at 1pm (Weekly: Starting 6th Aug)
-Thursdays at 9am (Fortnightly: Starting 10th Sept)`,
+          availability: "Thursdays at 1pm (Weekly: Starting 13th Aug)",
           weekly_availability: [],
           fortnightly_availability: [],
           location: "Greville St, Prahran"
@@ -24085,8 +24057,7 @@ Thursdays at 9am (Fortnightly: Starting 10th Sept)`,
       ],
       last_updated: "2026-07-19",
       availability: [
-        "Thursdays at 1pm (Weekly: Starting 6th Aug) — Greville St, Prahran",
-        "Thursdays at 9am (Fortnightly: Starting 10th Sept) — Greville St, Prahran"
+        "Thursdays at 1pm (Weekly: Starting 13th Aug) — Greville St, Prahran"
       ],
       short_bio: "Belinda is a collaborative clinical psychologist and supervisor using relational, emotion-focused ISTDP to foster deep self-understanding, emotional resilience and lasting change.",
       weekly_availability: [
@@ -24405,7 +24376,8 @@ My passion remains in individual psychological therapy, especially using ISTDP, 
       style: "A parent",
       photo_url: "https://pc-prac-availability.netlify.app/photos/dr-david-spektor_thumb.jpg",
       photo_b64: "data:image/jpeg;base64,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",
-      fees: "",
+      fees: `B/H: $275
+A/H: $315`,
       medicare_rebate: "149.05",
       working_hours: "",
       additional_info: "",
@@ -24501,7 +24473,7 @@ Pete practices using Cognitive Behaviour Therapy (CBT) and Acceptance and Commit
       link_to_bio: "https://psychologycare.com.au/pete-steele/",
       locations: [
         {
-          availability: "Wednesdays at 11am (Fortnightly: Starting 12th Aug)",
+          availability: "",
           weekly_availability: [],
           fortnightly_availability: [],
           location: "Greville St, Prahran"
@@ -24514,9 +24486,7 @@ Pete practices using Cognitive Behaviour Therapy (CBT) and Acceptance and Commit
         }
       ],
       last_updated: "2026-07-19",
-      availability: [
-        "Wednesdays at 11am (Fortnightly: Starting 12th Aug) — Greville St, Prahran"
-      ],
+      availability: [],
       short_bio: "Pete is a warm, trauma-informed clinical psychologist using CBT and ACT to support diverse adults and adolescents, including LGBTIQ+ and CALD communities.",
       weekly_availability: [],
       fortnightly_availability: [
@@ -24619,7 +24589,7 @@ Clare has experience working with clients facing a variety of difficulties, incl
         {
           availability: `Tuesdays at 2:30pm (Weekly: Starting 8th Sept)
 Tuesdays at 3:30pm (Fortnightly: Starting 15th Sept)
-Mondays at 5:30pm (Fortnightly: Starting 7th Sept)`,
+Mondays at 5:30pm (Fortnightly: Starting 21st Sept)`,
           weekly_availability: [],
           fortnightly_availability: [],
           location: "Greville St, Prahran"
@@ -24641,7 +24611,7 @@ Mondays at 5:30pm (Fortnightly: Starting 7th Sept)`,
       availability: [
         "Tuesdays at 2:30pm (Weekly: Starting 8th Sept) — Greville St, Prahran",
         "Tuesdays at 3:30pm (Fortnightly: Starting 15th Sept) — Greville St, Prahran",
-        "Mondays at 5:30pm (Fortnightly: Starting 7th Sept) — Greville St, Prahran",
+        "Mondays at 5:30pm (Fortnightly: Starting 21st Sept) — Greville St, Prahran",
         "Tuesdays at 11am (Fortnightly: Starting 8th Sept) — Telehealth"
       ],
       short_bio: "Clare is a warm, client-centred psychologist supporting life transitions, anxiety, perinatal and health challenges using CBT, ACT and mindfulness-based approaches.",
@@ -24802,9 +24772,10 @@ Regular therapy sessions can be a brief or a longer-term investment, depending o
       locations: [
         {
           availability: `Wednesdays at 10am (Weekly: Starting 12th Aug)
-Thursdays at 10am (Fortnightly: Starting 6th Aug)
-Wednesdays at 9am (Fortnightly: Starting 12th Aug)
-Fridays at 9am (Fortnightly: Starting 7th Aug)`,
+Fridays at 9am (Fortnightly: Starting 11th Sept)
+Fridays at 11am (Fortnightly: Starting 18th Sept)
+Thursdays at 10am (Fortnightly: Starting 1st Oct)
+Wednesdays at 9am (Fortnightly: Starting 12th Aug)`,
           weekly_availability: [],
           fortnightly_availability: [],
           location: "Greville St, Prahran"
@@ -24819,9 +24790,10 @@ Fridays at 9am (Fortnightly: Starting 7th Aug)`,
       last_updated: "2026-07-19",
       availability: [
         "Wednesdays at 10am (Weekly: Starting 12th Aug) — Greville St, Prahran",
-        "Thursdays at 10am (Fortnightly: Starting 6th Aug) — Greville St, Prahran",
-        "Wednesdays at 9am (Fortnightly: Starting 12th Aug) — Greville St, Prahran",
-        "Fridays at 9am (Fortnightly: Starting 7th Aug) — Greville St, Prahran"
+        "Fridays at 9am (Fortnightly: Starting 11th Sept) — Greville St, Prahran",
+        "Fridays at 11am (Fortnightly: Starting 18th Sept) — Greville St, Prahran",
+        "Thursdays at 10am (Fortnightly: Starting 1st Oct) — Greville St, Prahran",
+        "Wednesdays at 9am (Fortnightly: Starting 12th Aug) — Greville St, Prahran"
       ],
       short_bio: "A mature-age clinical psychologist using ISTDP, Conversational Model, ACT and CBT to support adults through chronic depression, stress-related symptoms and life transitions.",
       weekly_availability: [
@@ -25039,10 +25011,10 @@ Ages:
       link_to_bio: "https://psychologycare.com.au/karen-pereira-york/",
       locations: [
         {
-          availability: `Thursdays at 12pm (Weekly: Starting 6th Aug)
-Wednesdays at 5:30pm (Fortnightly: Starting 5th Aug)
+          availability: `Thursdays at 12pm (Weekly: Starting 13th Aug)
+Wednesdays at 5:30pm (Fortnightly: Starting 19th Aug)
 Mondays at 12pm (Fortnightly: Starting 10th Aug)
-Thursdays at 10:30am (Fortnightly: Starting 6th Aug)
+Thursdays at 10:30am (Fortnightly: Starting 20th Aug)
 Mondays at 1pm (Fortnightly: Starting 17th Aug)
 Thursdays at 9:30am (Fortnightly: Starting 13th Aug)`,
           weekly_availability: [],
@@ -25052,10 +25024,10 @@ Thursdays at 9:30am (Fortnightly: Starting 13th Aug)`,
       ],
       last_updated: "2026-07-19",
       availability: [
-        "Thursdays at 12pm (Weekly: Starting 6th Aug) — Greville St, Prahran",
-        "Wednesdays at 5:30pm (Fortnightly: Starting 5th Aug) — Greville St, Prahran",
+        "Thursdays at 12pm (Weekly: Starting 13th Aug) — Greville St, Prahran",
+        "Wednesdays at 5:30pm (Fortnightly: Starting 19th Aug) — Greville St, Prahran",
         "Mondays at 12pm (Fortnightly: Starting 10th Aug) — Greville St, Prahran",
-        "Thursdays at 10:30am (Fortnightly: Starting 6th Aug) — Greville St, Prahran",
+        "Thursdays at 10:30am (Fortnightly: Starting 20th Aug) — Greville St, Prahran",
         "Mondays at 1pm (Fortnightly: Starting 17th Aug) — Greville St, Prahran",
         "Thursdays at 9:30am (Fortnightly: Starting 13th Aug) — Greville St, Prahran"
       ],
@@ -25111,7 +25083,7 @@ Thursdays at 9:30am (Fortnightly: Starting 13th Aug)`,
       ]
     }
   ];
-  var AVAILABILITY_LAST_UPDATED = "5 Aug 2026 6:01am";
+  var AVAILABILITY_LAST_UPDATED = "10 Aug 2026 6:00am";
 
   // components/IntakeTab.tsx
   var jsx_dev_runtime6 = __toESM(require_jsx_dev_runtime(), 1);
