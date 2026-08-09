@@ -21723,13 +21723,8 @@ A/H: $315`,
       alert: ",",
       presentations: "ADD and ADHD; Agoraphobia; Anxiety; Asperger Syndrome; Attachment Disorder; Autism Spectrum Disorders (ASD); Avoidant Personality Disorder; Burnout; Career transition; Complex Trauma; Fear of Failure; General Adaptation Disorder (Adjustment Disorder); Generalized Anxiety Disorder (GAD); Imposter Syndrome; Intermittent Explosive Disorder (Uncontrolled Anger); LGBTIQA+; Life Transitions; Low self esteem; Non-Monogomy/ Polyamory; Pain Management; Panic Disorder & Panic Attacks; Perfectionism; Pregnancy and Postnatal Depression Anxiety; Relationship breakdown; Sexual problems; Social anxiety disorder / Social Phobia; Stress; Trauma",
       modalities: [
-        "Psychodynamic Therapy",
-        "Humanistic / Person-Centred Therapy",
-        "Attachment-Based Therapy",
         "Eye Movement Desensitisation and Reprocessing (EMDR)",
-        "Internal Family Systems (IFS) / Parts Work - Certified Level 1",
-        "Psychedelic-Assisted Psychotherapy (research/emerging)",
-        "Transpersonal Psychology"
+        "Internal Family Systems (IFS) / Parts Work (Level 1 Certified)"
       ],
       client_types: [
         "Individual",
