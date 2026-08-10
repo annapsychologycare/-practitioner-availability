@@ -61,7 +61,7 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/alex-barry/",
     "locations": [
       {
-        "availability": "Thursdays at 7pm (Fortnightly: Starting 13th Aug)",
+        "availability": "",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
@@ -81,7 +81,6 @@ export const PRACTITIONERS_DATA = [
     ],
     "last_updated": "2026-07-19",
     "availability": [
-      "Thursdays at 7pm (Fortnightly: Starting 13th Aug) — Greville St, Prahran",
       "Wednesdays at 1:30pm (Fortnightly: Starting 19th Aug) — Telehealth"
     ],
     "short_bio": "Trauma-informed psychologist supporting adults across sectors with integrative EMDR, CBT, schema, and somatic therapies in neuroaffirming, sex-positive, LGBTQIA+ inclusive practice.",
@@ -971,7 +970,7 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/dr-maddie-brygel-psychologist/",
     "locations": [
       {
-        "availability": "Fridays at 8am (Fortnightly: Starting 21st Aug)\nMondays at 9am (Fortnightly: Starting 21st Sept)\nMondays at 11am (Fortnightly: Starting 17th Aug)",
+        "availability": "Fridays at 8am (Fortnightly: Starting 21st Aug)\nMondays at 9am (Fortnightly: Starting 21st Sept)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
@@ -1018,8 +1017,7 @@ export const PRACTITIONERS_DATA = [
     "last_updated": "2026-07-19",
     "availability": [
       "Fridays at 8am (Fortnightly: Starting 21st Aug) — Greville St, Prahran",
-      "Mondays at 9am (Fortnightly: Starting 21st Sept) — Greville St, Prahran",
-      "Mondays at 11am (Fortnightly: Starting 17th Aug) — Greville St, Prahran"
+      "Mondays at 9am (Fortnightly: Starting 21st Sept) — Greville St, Prahran"
     ],
     "short_bio": "A psychologist trained in both clinical and forensic psychology, lecturer, and researcher supporting adults with anxiety, depression, trauma, grief, addiction and women’s mental health",
     "weekly_availability": [
@@ -2736,7 +2734,7 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/nicholas-kleeman/",
     "locations": [
       {
-        "availability": "Tuesdays at 1pm (Fortnightly: Starting 8th Sept)",
+        "availability": "",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
@@ -2749,7 +2747,7 @@ export const PRACTITIONERS_DATA = [
       },
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "Fridays at 9am (Weekly: Starting 14th Aug)\nWednesdays at 9am (Fortnightly: Starting 19th Aug)\nFridays at 1pm (Fortnightly: Starting 14th Aug)\nThursdays at 8am (Fortnightly: Starting 27th Aug)\nThursdays at 12pm (Fortnightly: Starting 20th Aug)\nWednesdays at 8am (Fortnightly: Starting 12th Aug)",
+        "availability": "Fridays at 9am (Weekly: Starting 14th Aug)\nWednesdays at 1pm (Fortnightly: Starting 12th Aug)\nWednesdays at 9am (Fortnightly: Starting 19th Aug)\nFridays at 1pm (Fortnightly: Starting 14th Aug)\nThursdays at 8am (Fortnightly: Starting 27th Aug)\nThursdays at 12pm (Fortnightly: Starting 20th Aug)\nWednesdays at 8am (Fortnightly: Starting 12th Aug)",
         "weekly_availability": [],
         "fortnightly_availability": []
       }
@@ -2757,12 +2755,12 @@ export const PRACTITIONERS_DATA = [
     "last_updated": "2026-07-19",
     "availability": [
       "Fridays at 9am (Weekly: Starting 14th Aug) — Burke Rd, Camberwell",
+      "Wednesdays at 1pm (Fortnightly: Starting 12th Aug) — Burke Rd, Camberwell",
       "Wednesdays at 9am (Fortnightly: Starting 19th Aug) — Burke Rd, Camberwell",
       "Fridays at 1pm (Fortnightly: Starting 14th Aug) — Burke Rd, Camberwell",
       "Thursdays at 8am (Fortnightly: Starting 27th Aug) — Burke Rd, Camberwell",
       "Thursdays at 12pm (Fortnightly: Starting 20th Aug) — Burke Rd, Camberwell",
-      "Wednesdays at 8am (Fortnightly: Starting 12th Aug) — Burke Rd, Camberwell",
-      "Tuesdays at 1pm (Fortnightly: Starting 8th Sept) — Greville St, Prahran"
+      "Wednesdays at 8am (Fortnightly: Starting 12th Aug) — Burke Rd, Camberwell"
     ],
     "short_bio": "Nick is a warm, trauma-informed clinical psychologist using ACT, mindfulness, CBT and SFT to support diverse adults and adolescents, including neurodivergent clients.",
     "weekly_availability": [
@@ -4476,4 +4474,4 @@ export const PRACTITIONERS_DATA = [
   }
 ];
 export const practitionersData = PRACTITIONERS_DATA;
-export const AVAILABILITY_LAST_UPDATED = "10 Aug 2026 1:43pm";
+export const AVAILABILITY_LAST_UPDATED = "11 Aug 2026 6:01am";

@@ -20431,7 +20431,7 @@ Alex is passionate about normalising the distress we may experience in response 
       link_to_bio: "https://psychologycare.com.au/alex-barry/",
       locations: [
         {
-          availability: "Thursdays at 7pm (Fortnightly: Starting 13th Aug)",
+          availability: "",
           weekly_availability: [],
           fortnightly_availability: [],
           location: "Greville St, Prahran"
@@ -20451,7 +20451,6 @@ Alex is passionate about normalising the distress we may experience in response 
       ],
       last_updated: "2026-07-19",
       availability: [
-        "Thursdays at 7pm (Fortnightly: Starting 13th Aug) — Greville St, Prahran",
         "Wednesdays at 1:30pm (Fortnightly: Starting 19th Aug) — Telehealth"
       ],
       short_bio: "Trauma-informed psychologist supporting adults across sectors with integrative EMDR, CBT, schema, and somatic therapies in neuroaffirming, sex-positive, LGBTQIA+ inclusive practice.",
@@ -21405,8 +21404,7 @@ A/H: $275`,
       locations: [
         {
           availability: `Fridays at 8am (Fortnightly: Starting 21st Aug)
-Mondays at 9am (Fortnightly: Starting 21st Sept)
-Mondays at 11am (Fortnightly: Starting 17th Aug)`,
+Mondays at 9am (Fortnightly: Starting 21st Sept)`,
           weekly_availability: [],
           fortnightly_availability: [],
           location: "Greville St, Prahran"
@@ -21453,8 +21451,7 @@ Mondays at 11am (Fortnightly: Starting 17th Aug)`,
       last_updated: "2026-07-19",
       availability: [
         "Fridays at 8am (Fortnightly: Starting 21st Aug) — Greville St, Prahran",
-        "Mondays at 9am (Fortnightly: Starting 21st Sept) — Greville St, Prahran",
-        "Mondays at 11am (Fortnightly: Starting 17th Aug) — Greville St, Prahran"
+        "Mondays at 9am (Fortnightly: Starting 21st Sept) — Greville St, Prahran"
       ],
       short_bio: "A psychologist trained in both clinical and forensic psychology, lecturer, and researcher supporting adults with anxiety, depression, trauma, grief, addiction and women’s mental health",
       weekly_availability: [
@@ -23306,7 +23303,7 @@ Outside of work, Nick spends his time in nature, surfing, learning Spanish, and 
       link_to_bio: "https://psychologycare.com.au/nicholas-kleeman/",
       locations: [
         {
-          availability: "Tuesdays at 1pm (Fortnightly: Starting 8th Sept)",
+          availability: "",
           weekly_availability: [],
           fortnightly_availability: [],
           location: "Greville St, Prahran"
@@ -23320,6 +23317,7 @@ Outside of work, Nick spends his time in nature, surfing, learning Spanish, and 
         {
           location: "Burke Rd, Camberwell",
           availability: `Fridays at 9am (Weekly: Starting 14th Aug)
+Wednesdays at 1pm (Fortnightly: Starting 12th Aug)
 Wednesdays at 9am (Fortnightly: Starting 19th Aug)
 Fridays at 1pm (Fortnightly: Starting 14th Aug)
 Thursdays at 8am (Fortnightly: Starting 27th Aug)
@@ -23332,12 +23330,12 @@ Wednesdays at 8am (Fortnightly: Starting 12th Aug)`,
       last_updated: "2026-07-19",
       availability: [
         "Fridays at 9am (Weekly: Starting 14th Aug) — Burke Rd, Camberwell",
+        "Wednesdays at 1pm (Fortnightly: Starting 12th Aug) — Burke Rd, Camberwell",
         "Wednesdays at 9am (Fortnightly: Starting 19th Aug) — Burke Rd, Camberwell",
         "Fridays at 1pm (Fortnightly: Starting 14th Aug) — Burke Rd, Camberwell",
         "Thursdays at 8am (Fortnightly: Starting 27th Aug) — Burke Rd, Camberwell",
         "Thursdays at 12pm (Fortnightly: Starting 20th Aug) — Burke Rd, Camberwell",
-        "Wednesdays at 8am (Fortnightly: Starting 12th Aug) — Burke Rd, Camberwell",
-        "Tuesdays at 1pm (Fortnightly: Starting 8th Sept) — Greville St, Prahran"
+        "Wednesdays at 8am (Fortnightly: Starting 12th Aug) — Burke Rd, Camberwell"
       ],
       short_bio: "Nick is a warm, trauma-informed clinical psychologist using ACT, mindfulness, CBT and SFT to support diverse adults and adolescents, including neurodivergent clients.",
       weekly_availability: [
@@ -25181,7 +25179,7 @@ Thursdays at 9:30am (Fortnightly: Starting 13th Aug)`,
       ]
     }
   ];
-  var AVAILABILITY_LAST_UPDATED = "10 Aug 2026 1:43pm";
+  var AVAILABILITY_LAST_UPDATED = "11 Aug 2026 6:01am";
 
   // components/IntakeTab.tsx
   var jsx_dev_runtime6 = __toESM(require_jsx_dev_runtime(), 1);
