@@ -34,7 +34,7 @@ export const PRACTITIONERS_DATA = [
       "Acceptance and Commitment Therapy (ACT)",
       "Cognitive Behavioural Therapy (CBT)",
       "Eye Movement Desensitisation and Reprocessing (EMDR)",
-      "Internal Family Systems (IFS) / Parts Work (Informed)",
+      "Internal Family Systems (IFS) / Parts Work - Informed",
       "Mindful Self-Compassion (MSC)",
       "Schema Therapy",
       "Trauma-Informed Care"
@@ -250,7 +250,7 @@ export const PRACTITIONERS_DATA = [
       "Emotion-Focused Therapy (EFT)",
       "Gottman Method Couples Therapy",
       "Humanistic / Person-Centred Therapy",
-      "Internal Family Systems (IFS) / Parts Work (Informed)",
+      "Internal Family Systems (IFS) / Parts Work - Informed",
       "Interpersonal Therapy (IPT)",
       "Polyvagal-Informed Therapy",
       "Psychoanalytic Psychotherapy",
@@ -388,7 +388,7 @@ export const PRACTITIONERS_DATA = [
     "modalities": [
       "Acceptance and Commitment Therapy (ACT)",
       "Eye Movement Desensitisation and Reprocessing (EMDR)",
-      "Internal Family Systems (IFS) / Parts Work (Level 1 Certified)"
+      "Internal Family Systems (IFS) / Parts Work - Certified Level 1"
     ],
     "billing_types": "Medicare Rebate, NDIS, Self Funded, Third Party",
     "style": "Active Listener, Animal Lover, Calm, Creative, Sensitive and Gentle",
@@ -719,8 +719,8 @@ export const PRACTITIONERS_DATA = [
       "Dialectical Behaviour Therapy (DBT)",
       "Emotion-Focused Therapy (EFT)",
       "Exposure and Response Prevention (ERP)",
-      "Internal Family Systems (IFS) / Parts Work (Informed)",
-      "Internal Family Systems (IFS) / Parts Work (Level 1 Certified)",
+      "Internal Family Systems (IFS) / Parts Work - Informed",
+      "Internal Family Systems (IFS) / Parts Work - Certified Level 1",
       "Interpersonal Therapy (IPT)",
       "Motivational Interviewing (MI)",
       "Schema Therapy"
@@ -938,7 +938,7 @@ export const PRACTITIONERS_DATA = [
       "Existential Therapy",
       "Family Systems Therapy",
       "Humanistic / Person-Centred Therapy",
-      "Internal Family Systems (IFS) / Parts Work (Informed)",
+      "Internal Family Systems (IFS) / Parts Work - Informed",
       "Narrative Therapy",
       "Schema Therapy",
       "Solution-Focused Brief Therapy (SFBT)",
@@ -1266,7 +1266,7 @@ export const PRACTITIONERS_DATA = [
     "presentations": "ADD and ADHD; Agoraphobia; Anxiety; Asperger Syndrome; Attachment Disorder; Autism Spectrum Disorders (ASD); Avoidant Personality Disorder; Burnout; Career transition; Complex Trauma; Fear of Failure; General Adaptation Disorder (Adjustment Disorder); Generalized Anxiety Disorder (GAD); Imposter Syndrome; Intermittent Explosive Disorder (Uncontrolled Anger); LGBTIQA+; Life Transitions; Low self esteem; Non-Monogomy/ Polyamory; Pain Management; Panic Disorder & Panic Attacks; Perfectionism; Pregnancy and Postnatal Depression Anxiety; Relationship breakdown; Sexual problems; Social anxiety disorder / Social Phobia; Stress; Trauma",
     "modalities": [
       "Eye Movement Desensitisation and Reprocessing (EMDR)",
-      "Internal Family Systems (IFS) / Parts Work (Level 1 Certified)"
+      "Internal Family Systems (IFS) / Parts Work - Certified Level 1"
     ],
     "client_types": [
       "Individual",
@@ -1575,7 +1575,7 @@ export const PRACTITIONERS_DATA = [
       "Acceptance and Commitment Therapy (ACT)",
       "Dialectical Behaviour Therapy (DBT)",
       "Eclectic / Integrative Therapy",
-      "Internal Family Systems (IFS) / Parts Work (Level 1 Certified)",
+      "Internal Family Systems (IFS) / Parts Work - Certified Level 1",
       "Mindfulness-Based Stress Reduction (MBSR)",
       "Trauma-Informed Care"
     ],
@@ -2168,7 +2168,7 @@ export const PRACTITIONERS_DATA = [
       "Dialectical Behaviour Therapy (DBT)",
       "Eye Movement Desensitisation and Reprocessing (EMDR)",
       "Intensive Short-Term Dynamic Psychotherapy (ISTDP)",
-      "Internal Family Systems (IFS) / Parts Work (Informed)",
+      "Internal Family Systems (IFS) / Parts Work - Informed",
       "Psychodynamic Therapy"
     ],
     "client_types": [
@@ -2705,7 +2705,7 @@ export const PRACTITIONERS_DATA = [
       "Compassion-Focused Therapy (CFT)",
       "Existential Therapy",
       "Humanistic / Person-Centred Therapy",
-      "Internal Family Systems (IFS) / Parts Work (Informed)",
+      "Internal Family Systems (IFS) / Parts Work - Informed",
       "Interpersonal Therapy (IPT)",
       "Mindfulness-Based Cognitive Therapy (MBCT)",
       "Mindfulness-Based Stress Reduction (MBSR)",
@@ -3603,7 +3603,7 @@ export const PRACTITIONERS_DATA = [
     "modalities": [
       "Acceptance and Commitment Therapy (ACT)",
       "Cognitive Behavioural Therapy (CBT)",
-      "Internal Family Systems (IFS) / Parts Work (Informed)",
+      "Internal Family Systems (IFS) / Parts Work - Informed",
       "Psychodynamic Therapy",
       "Schema Therapy",
       "Trauma-Focused CBT (TF-CBT)",
@@ -4285,7 +4285,7 @@ export const PRACTITIONERS_DATA = [
       "Eclectic / Integrative Therapy",
       "Eye Movement Desensitisation and Reprocessing (EMDR)",
       "Humanistic / Person-Centred Therapy",
-      "Internal Family Systems (IFS) / Parts Work (Informed)",
+      "Internal Family Systems (IFS) / Parts Work - Informed",
       "Interpersonal Therapy (IPT)",
       "Psychodynamic Therapy"
     ],
