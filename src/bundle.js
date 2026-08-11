@@ -18647,34 +18647,29 @@ Please note: There are inherent confidentiality risks in communicating by email.
     }
     return score;
   }
-  function filterOutMonthly(text) {
-    const lines = Array.isArray(text) ? text : text.split(`
-`);
-    return lines.filter((line) => !/\(Monthly:/i.test(line)).join(`
-`).trim();
-  }
   function parseAvailabilityColumns(text) {
     const weekly = [];
     const fortnightly = [];
+    const monthly = [];
     if (!text || Array.isArray(text) && text.length === 0)
-      return { weekly, fortnightly };
+      return { weekly, fortnightly, monthly };
     const lines = (Array.isArray(text) ? text : text.split(`
 `)).map((l) => l.replace(/^\*\s*/, "").trim()).filter(Boolean);
     for (const line of lines) {
-      if (/\(Monthly:/i.test(line))
-        continue;
       if (/\(Weekly:/i.test(line))
         weekly.push(line);
       else if (/\(Fortnightly:/i.test(line))
         fortnightly.push(line);
+      else if (/\(Monthly:/i.test(line))
+        monthly.push(line);
     }
-    return { weekly, fortnightly };
+    return { weekly, fortnightly, monthly };
   }
   var PractitionerCard = ({ p, locationFilter, isSelected, onToggleSelect }) => {
     const [expanded, setExpanded] = import_react5.useState(false);
     const [copied, setCopied] = import_react5.useState(false);
     const safeLocs = p.locations || [];
-    const displayLocs = (locationFilter.length > 0 ? safeLocs.filter((l) => locationFilter.some((f) => (l.location || "").toLowerCase().includes(f.toLowerCase()))) : safeLocs).map((l) => ({ ...l, availability: l.availability ? filterOutMonthly(l.availability) : "" }));
+    const displayLocs = locationFilter.length > 0 ? safeLocs.filter((l) => locationFilter.some((f) => (l.location || "").toLowerCase().includes(f.toLowerCase()))) : safeLocs;
     const hasAvail = displayLocs.some((l) => l.availability && l.availability.trim());
     const copyAvailability = () => {
       const lines = [p.name + " -- " + p.title];
@@ -18879,8 +18874,8 @@ Please note: There are inherent confidentiality risks in communicating by email.
                 className: "text-sm text-base-content/40 italic",
                 children: "No availability listed"
               }, undefined, false, undefined, this) : displayLocs.map((loc, i) => {
-                const { weekly, fortnightly } = parseAvailabilityColumns(loc.availability || "");
-                const hasLocAvail = weekly.length > 0 || fortnightly.length > 0;
+                const { weekly, fortnightly, monthly } = parseAvailabilityColumns(loc.availability || "");
+                const hasLocAvail = weekly.length > 0 || fortnightly.length > 0 || monthly.length > 0;
                 return /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("div", {
                   className: displayLocs.length > 1 ? "mb-3" : "",
                   children: [
@@ -18895,7 +18890,7 @@ Please note: There are inherent confidentiality risks in communicating by email.
                       className: "text-sm text-base-content/40 italic",
                       children: "No availability listed"
                     }, undefined, false, undefined, this) : /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("div", {
-                      className: "grid grid-cols-2 gap-2",
+                      className: "grid grid-cols-3 gap-2",
                       children: [
                         /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("div", {
                           className: "rounded-lg p-2",
@@ -18947,6 +18942,43 @@ Please note: There are inherent confidentiality risks in communicating by email.
                               className: "space-y-1",
                               children: fortnightly.map((line, j) => {
                                 const label = line.replace(/\s*\(Fortnightly:.*\)/i, "").trim();
+                                const startMatch = line.match(/Starting ([^)]+)/i);
+                                return /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("li", {
+                                  className: "text-xs text-base-content leading-snug",
+                                  children: [
+                                    /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("span", {
+                                      className: "font-medium",
+                                      children: label
+                                    }, undefined, false, undefined, this),
+                                    startMatch && /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("span", {
+                                      className: "text-base-content/50 block",
+                                      children: [
+                                        "from ",
+                                        startMatch[1]
+                                      ]
+                                    }, undefined, true, undefined, this)
+                                  ]
+                                }, j, true, undefined, this);
+                              })
+                            }, undefined, false, undefined, this) : /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("div", {
+                              className: "text-xs text-base-content/30 italic",
+                              children: "—"
+                            }, undefined, false, undefined, this)
+                          ]
+                        }, undefined, true, undefined, this),
+                        /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("div", {
+                          className: "rounded-lg p-2",
+                          style: { backgroundColor: "rgba(141,82,115,0.08)" },
+                          children: [
+                            /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("div", {
+                              className: "text-xs font-bold mb-1",
+                              style: { color: "#8D5273" },
+                              children: "● Monthly"
+                            }, undefined, false, undefined, this),
+                            monthly.length > 0 ? /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("ul", {
+                              className: "space-y-1",
+                              children: monthly.map((line, j) => {
+                                const label = line.replace(/\s*\(Monthly:.*\)/i, "").trim();
                                 const startMatch = line.match(/Starting ([^)]+)/i);
                                 return /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("li", {
                                   className: "text-xs text-base-content leading-snug",
@@ -19560,7 +19592,7 @@ Please note: There are inherent confidentiality risks in communicating by email.
                       }, undefined, false, undefined, this),
                       /* @__PURE__ */ jsx_dev_runtime3.jsxDEV(MultiSelectDropdown, {
                         label: "Availability Type",
-                        options: ["Weekly", "Fortnightly"],
+                        options: ["Weekly", "Fortnightly", "Monthly"],
                         selected: selectedAvailabilityTypes,
                         onChange: setSelectedAvailabilityTypes,
                         placeholder: "Any type"
@@ -20431,7 +20463,7 @@ Alex is passionate about normalising the distress we may experience in response 
       link_to_bio: "https://psychologycare.com.au/alex-barry/",
       locations: [
         {
-          availability: "Thursdays at 7pm (Fortnightly: Starting 13th Aug)",
+          availability: "",
           weekly_availability: [],
           fortnightly_availability: [],
           location: "Greville St, Prahran"
@@ -20451,7 +20483,6 @@ Alex is passionate about normalising the distress we may experience in response 
       ],
       last_updated: "2026-07-19",
       availability: [
-        "Thursdays at 7pm (Fortnightly: Starting 13th Aug) — Greville St, Prahran",
         "Wednesdays at 1:30pm (Fortnightly: Starting 19th Aug) — Telehealth"
       ],
       short_bio: "Trauma-informed psychologist supporting adults across sectors with integrative EMDR, CBT, schema, and somatic therapies in neuroaffirming, sex-positive, LGBTQIA+ inclusive practice.",
@@ -20968,10 +20999,8 @@ Broadly, Amy is obsessed with her new 6yo rescue kelpie x staffy, Naia; she love
       locations: [
         {
           location: "Burke Rd, Camberwell",
-          availability: `Mondays at 11:30am (Fortnightly: Starting 17th Aug)
-Fridays at 1pm (Fortnightly: Starting 21st Aug)
+          availability: `Fridays at 1pm (Fortnightly: Starting 21st Aug)
 Mondays at 9am (Fortnightly: Starting 24th Aug)
-Fridays at 2pm (Fortnightly: Starting 21st Aug)
 Fridays at 11am (Fortnightly: Starting 21st Aug)`,
           weekly_availability: [],
           fortnightly_availability: []
@@ -20985,10 +21014,8 @@ Fridays at 11am (Fortnightly: Starting 21st Aug)`,
       ],
       last_updated: "2026-07-19",
       availability: [
-        "Mondays at 11:30am (Fortnightly: Starting 17th Aug) — Burke Rd, Camberwell",
         "Fridays at 1pm (Fortnightly: Starting 21st Aug) — Burke Rd, Camberwell",
         "Mondays at 9am (Fortnightly: Starting 24th Aug) — Burke Rd, Camberwell",
-        "Fridays at 2pm (Fortnightly: Starting 21st Aug) — Burke Rd, Camberwell",
         "Fridays at 11am (Fortnightly: Starting 21st Aug) — Burke Rd, Camberwell"
       ],
       short_bio: "Amy is a warm, LGBTQIAP+ friendly clinical psychologist supporting clients 16+ with mood, relationship and eating difficulties using flexible, evidence-based therapies.",
@@ -21409,9 +21436,7 @@ A/H: $275`,
       locations: [
         {
           availability: `Fridays at 8am (Fortnightly: Starting 21st Aug)
-Mondays at 9am (Fortnightly: Starting 21st Sept)
-Fridays at 11am (Fortnightly: Starting 14th Aug)
-Mondays at 11am (Fortnightly: Starting 17th Aug)`,
+Mondays at 9am (Fortnightly: Starting 21st Sept)`,
           weekly_availability: [],
           fortnightly_availability: [],
           location: "Greville St, Prahran"
@@ -21458,9 +21483,7 @@ Mondays at 11am (Fortnightly: Starting 17th Aug)`,
       last_updated: "2026-07-19",
       availability: [
         "Fridays at 8am (Fortnightly: Starting 21st Aug) — Greville St, Prahran",
-        "Mondays at 9am (Fortnightly: Starting 21st Sept) — Greville St, Prahran",
-        "Fridays at 11am (Fortnightly: Starting 14th Aug) — Greville St, Prahran",
-        "Mondays at 11am (Fortnightly: Starting 17th Aug) — Greville St, Prahran"
+        "Mondays at 9am (Fortnightly: Starting 21st Sept) — Greville St, Prahran"
       ],
       short_bio: "A psychologist trained in both clinical and forensic psychology, lecturer, and researcher supporting adults with anxiety, depression, trauma, grief, addiction and women’s mental health",
       weekly_availability: [
@@ -21656,16 +21679,20 @@ I have a developing interest and training in the new research around psychedelic
         },
         {
           location: "Burke Rd, Camberwell",
-          availability: `Thursdays at 9am (Fortnightly: Starting 13th Aug)
-Tuesdays at 2:30pm (Fortnightly: Starting 18th Aug)`,
+          availability: `Thursdays at 12pm (Fortnightly: Starting 3rd Sept)
+Thursdays at 1pm (Fortnightly: Starting 27th Aug)
+Thursdays at 9am (Fortnightly: Starting 13th Aug)
+Tuesdays at 2:30pm (Fortnightly: Starting 1st Sept)`,
           weekly_availability: [],
           fortnightly_availability: []
         }
       ],
       last_updated: "2026-07-19",
       availability: [
+        "Thursdays at 12pm (Fortnightly: Starting 3rd Sept) — Burke Rd, Camberwell",
+        "Thursdays at 1pm (Fortnightly: Starting 27th Aug) — Burke Rd, Camberwell",
         "Thursdays at 9am (Fortnightly: Starting 13th Aug) — Burke Rd, Camberwell",
-        "Tuesdays at 2:30pm (Fortnightly: Starting 18th Aug) — Burke Rd, Camberwell"
+        "Tuesdays at 2:30pm (Fortnightly: Starting 1st Sept) — Burke Rd, Camberwell"
       ],
       short_bio: "An integrative ISTDP, CBT and IFS therapist helping clients face painful feelings, heal relational wounds and integrate difficult psychedelic experiences.",
       weekly_availability: [],
@@ -22409,13 +22436,23 @@ I am committed to providing best practice trauma informed care in a confidential
       locations: [
         {
           location: "Greville St, Prahran",
-          availability: "Saturdays at 4pm (Fortnightly: Starting 22nd Aug)",
+          availability: `Mondays at 3pm (Weekly: Starting 17th Aug)
+Fridays at 7:30pm (Fortnightly: Starting 21st Aug)
+Tuesdays at 8am (Fortnightly: Starting 1st Sept)
+Mondays at 4pm (Fortnightly: Starting 24th Aug)
+Saturdays at 11am (Fortnightly: Starting 5th Sept)
+Saturdays at 4pm (Fortnightly: Starting 22nd Aug)`,
           weekly_availability: [],
           fortnightly_availability: []
         }
       ],
       last_updated: "2026-07-19",
       availability: [
+        "Mondays at 3pm (Weekly: Starting 17th Aug) — Greville St, Prahran",
+        "Fridays at 7:30pm (Fortnightly: Starting 21st Aug) — Greville St, Prahran",
+        "Tuesdays at 8am (Fortnightly: Starting 1st Sept) — Greville St, Prahran",
+        "Mondays at 4pm (Fortnightly: Starting 24th Aug) — Greville St, Prahran",
+        "Saturdays at 11am (Fortnightly: Starting 5th Sept) — Greville St, Prahran",
         "Saturdays at 4pm (Fortnightly: Starting 22nd Aug) — Greville St, Prahran"
       ],
       short_bio: "Christine is a trauma specialist psychotherapist and psychoanalyst offering EMDR and depth therapy to help survivors reclaim and live with their stories.​",
@@ -22559,7 +22596,7 @@ Above all, I believe that the therapeutic relationship is central to the healing
           availability: `Tuesdays at 10am (Fortnightly: Starting 1st Sept)
 Thursdays at 10am (Fortnightly: Starting 13th Aug)
 Thursdays at 12pm (Fortnightly: Starting 13th Aug)
-Tuesdays at 12pm (Fortnightly: Starting 11th Aug)
+Tuesdays at 12pm (Fortnightly: Starting 25th Aug)
 Tuesdays at 1pm (Fortnightly: Starting 1st Sept)
 Wednesdays at 1pm (Fortnightly: Starting 12th Aug)
 Wednesdays at 12pm (Fortnightly: Starting 12th Aug)`,
@@ -22572,7 +22609,7 @@ Wednesdays at 12pm (Fortnightly: Starting 12th Aug)`,
         "Tuesdays at 10am (Fortnightly: Starting 1st Sept) — Burke Rd, Camberwell",
         "Thursdays at 10am (Fortnightly: Starting 13th Aug) — Burke Rd, Camberwell",
         "Thursdays at 12pm (Fortnightly: Starting 13th Aug) — Burke Rd, Camberwell",
-        "Tuesdays at 12pm (Fortnightly: Starting 11th Aug) — Burke Rd, Camberwell",
+        "Tuesdays at 12pm (Fortnightly: Starting 25th Aug) — Burke Rd, Camberwell",
         "Tuesdays at 1pm (Fortnightly: Starting 1st Sept) — Burke Rd, Camberwell",
         "Wednesdays at 1pm (Fortnightly: Starting 12th Aug) — Burke Rd, Camberwell",
         "Wednesdays at 12pm (Fortnightly: Starting 12th Aug) — Burke Rd, Camberwell"
@@ -22725,9 +22762,9 @@ I have worked consistently across both public and private settings in my career,
       link_to_bio: "https://psychologycare.com.au/kiira-gavralas/",
       locations: [
         {
-          availability: `Tuesdays at 8am (Weekly: Starting 11th Aug)
-Tuesdays at 11:45am (Fortnightly: Starting 11th Aug)
-Tuesdays at 9:15am (Fortnightly: Starting 11th Aug)`,
+          availability: `Tuesdays at 8am (Weekly: Starting 18th Aug)
+Tuesdays at 11:45am (Fortnightly: Starting 18th Aug)
+Tuesdays at 9:15am (Fortnightly: Starting 25th Aug)`,
           weekly_availability: [],
           fortnightly_availability: [],
           location: "Telehealth"
@@ -22736,9 +22773,9 @@ Tuesdays at 9:15am (Fortnightly: Starting 11th Aug)`,
       last_updated: "2026-07-19",
       short_bio: "A genuine, relational psychologist using psychodynamic, attachment-informed ISTDP to help clients understand emotional patterns, ease distress and navigate parenthood transitions.",
       availability: [
-        "Tuesdays at 8am (Weekly: Starting 11th Aug) — Telehealth",
-        "Tuesdays at 11:45am (Fortnightly: Starting 11th Aug) — Telehealth",
-        "Tuesdays at 9:15am (Fortnightly: Starting 11th Aug) — Telehealth"
+        "Tuesdays at 8am (Weekly: Starting 18th Aug) — Telehealth",
+        "Tuesdays at 11:45am (Fortnightly: Starting 18th Aug) — Telehealth",
+        "Tuesdays at 9:15am (Fortnightly: Starting 25th Aug) — Telehealth"
       ],
       weekly_availability: [],
       fortnightly_availability: [],
@@ -22931,12 +22968,13 @@ Spanish`
       link_to_bio: "https://psychologycare.com.au/cristina-jimenez/",
       locations: [
         {
-          availability: `Tuesdays at 10am (Weekly: Starting 11th Aug)
-Tuesdays at 11am (Weekly: Starting 11th Aug)
+          availability: `Tuesdays at 10am (Weekly: Starting 25th Aug)
+Tuesdays at 11am (Weekly: Starting 18th Aug)
 Tuesdays at 12pm (Weekly: Starting 1st Sept)
+Tuesdays at 3:30pm (Fortnightly: Starting 18th Aug)
 Tuesdays at 4:30pm (Fortnightly: Starting 18th Aug)
 Tuesdays at 5:30pm (Fortnightly: Starting 25th Aug)
-Tuesdays at 9am (Fortnightly: Starting 11th Aug)`,
+Tuesdays at 9am (Fortnightly: Starting 25th Aug)`,
           weekly_availability: [],
           fortnightly_availability: [],
           location: "Greville St, Prahran"
@@ -22944,12 +22982,13 @@ Tuesdays at 9am (Fortnightly: Starting 11th Aug)`,
       ],
       last_updated: "2026-07-19",
       availability: [
-        "Tuesdays at 10am (Weekly: Starting 11th Aug) — Greville St, Prahran",
-        "Tuesdays at 11am (Weekly: Starting 11th Aug) — Greville St, Prahran",
+        "Tuesdays at 10am (Weekly: Starting 25th Aug) — Greville St, Prahran",
+        "Tuesdays at 11am (Weekly: Starting 18th Aug) — Greville St, Prahran",
         "Tuesdays at 12pm (Weekly: Starting 1st Sept) — Greville St, Prahran",
+        "Tuesdays at 3:30pm (Fortnightly: Starting 18th Aug) — Greville St, Prahran",
         "Tuesdays at 4:30pm (Fortnightly: Starting 18th Aug) — Greville St, Prahran",
         "Tuesdays at 5:30pm (Fortnightly: Starting 25th Aug) — Greville St, Prahran",
-        "Tuesdays at 9am (Fortnightly: Starting 11th Aug) — Greville St, Prahran"
+        "Tuesdays at 9am (Fortnightly: Starting 25th Aug) — Greville St, Prahran"
       ],
       short_bio: "Cristina is a compassionate, Spanish-speaking holistic counsellor and dance movement therapist supporting adults with trauma, emotional challenges and self-exploration through somatic, LGBTIQ+ inclusive care.",
       weekly_availability: [
@@ -23300,8 +23339,7 @@ Outside of work, Nick spends his time in nature, surfing, learning Spanish, and 
       link_to_bio: "https://psychologycare.com.au/nicholas-kleeman/",
       locations: [
         {
-          availability: `Tuesdays at 1pm (Weekly: Starting 1st Sept)
-Tuesdays at 11am (Fortnightly: Starting 11th Aug)`,
+          availability: "",
           weekly_availability: [],
           fortnightly_availability: [],
           location: "Greville St, Prahran"
@@ -23315,10 +23353,12 @@ Tuesdays at 11am (Fortnightly: Starting 11th Aug)`,
         {
           location: "Burke Rd, Camberwell",
           availability: `Fridays at 9am (Weekly: Starting 14th Aug)
-Wednesdays at 12pm (Weekly: Starting 12th Aug)
-Thursdays at 8am (Fortnightly: Starting 13th Aug)
+Wednesdays at 1pm (Fortnightly: Starting 12th Aug)
+Wednesdays at 9am (Fortnightly: Starting 19th Aug)
+Fridays at 1pm (Fortnightly: Starting 14th Aug)
+Thursdays at 8am (Fortnightly: Starting 27th Aug)
 Thursdays at 12pm (Fortnightly: Starting 20th Aug)
-Wednesdays at 8am (Fortnightly: Starting 12th Aug)`,
+Wednesdays at 8am (Fortnightly: Starting 26th Aug)`,
           weekly_availability: [],
           fortnightly_availability: []
         }
@@ -23326,12 +23366,12 @@ Wednesdays at 8am (Fortnightly: Starting 12th Aug)`,
       last_updated: "2026-07-19",
       availability: [
         "Fridays at 9am (Weekly: Starting 14th Aug) — Burke Rd, Camberwell",
-        "Wednesdays at 12pm (Weekly: Starting 12th Aug) — Burke Rd, Camberwell",
-        "Thursdays at 8am (Fortnightly: Starting 13th Aug) — Burke Rd, Camberwell",
+        "Wednesdays at 1pm (Fortnightly: Starting 12th Aug) — Burke Rd, Camberwell",
+        "Wednesdays at 9am (Fortnightly: Starting 19th Aug) — Burke Rd, Camberwell",
+        "Fridays at 1pm (Fortnightly: Starting 14th Aug) — Burke Rd, Camberwell",
+        "Thursdays at 8am (Fortnightly: Starting 27th Aug) — Burke Rd, Camberwell",
         "Thursdays at 12pm (Fortnightly: Starting 20th Aug) — Burke Rd, Camberwell",
-        "Wednesdays at 8am (Fortnightly: Starting 12th Aug) — Burke Rd, Camberwell",
-        "Tuesdays at 1pm (Weekly: Starting 1st Sept) — Greville St, Prahran",
-        "Tuesdays at 11am (Fortnightly: Starting 11th Aug) — Greville St, Prahran"
+        "Wednesdays at 8am (Fortnightly: Starting 26th Aug) — Burke Rd, Camberwell"
       ],
       short_bio: "Nick is a warm, trauma-informed clinical psychologist using ACT, mindfulness, CBT and SFT to support diverse adults and adolescents, including neurodivergent clients.",
       weekly_availability: [
@@ -24049,7 +24089,8 @@ Belinda aims to work collaboratively with her clients to help them develop a dee
       link_to_bio: "https://psychologycare.com.au/belinda-pacella/",
       locations: [
         {
-          availability: "Thursdays at 1pm (Weekly: Starting 13th Aug)",
+          availability: `Thursdays at 1pm (Fortnightly: Starting 27th Aug)
+Thursdays at 9am (Fortnightly: Starting 8th Oct)`,
           weekly_availability: [],
           fortnightly_availability: [],
           location: "Greville St, Prahran"
@@ -24057,7 +24098,8 @@ Belinda aims to work collaboratively with her clients to help them develop a dee
       ],
       last_updated: "2026-07-19",
       availability: [
-        "Thursdays at 1pm (Weekly: Starting 13th Aug) — Greville St, Prahran"
+        "Thursdays at 1pm (Fortnightly: Starting 27th Aug) — Greville St, Prahran",
+        "Thursdays at 9am (Fortnightly: Starting 8th Oct) — Greville St, Prahran"
       ],
       short_bio: "Belinda is a collaborative clinical psychologist and supervisor using relational, emotion-focused ISTDP to foster deep self-understanding, emotional resilience and lasting change.",
       weekly_availability: [
@@ -24241,10 +24283,10 @@ Poorna greatly values the therapeutic alliance between client and therapist. The
       link_to_bio: "https://psychologycare.com.au/poorna-selvaraja/",
       locations: [
         {
-          availability: `Mondays at 10am (Fortnightly: Starting 31st Aug)
-Mondays at 2pm (Fortnightly: Starting 10th Aug)
-Tuesdays at 8:30am (Fortnightly: Starting 11th Aug)
-Mondays at 11am (Fortnightly: Starting 10th Aug)`,
+          availability: `Tuesdays at 9:30am (Fortnightly: Starting 18th Aug)
+Mondays at 10am (Fortnightly: Starting 31st Aug)
+Mondays at 2pm (Fortnightly: Starting 24th Aug)
+Tuesdays at 8:30am (Fortnightly: Starting 25th Aug)`,
           weekly_availability: [],
           fortnightly_availability: [],
           location: "Greville St, Prahran"
@@ -24252,10 +24294,10 @@ Mondays at 11am (Fortnightly: Starting 10th Aug)`,
       ],
       last_updated: "2026-07-19",
       availability: [
+        "Tuesdays at 9:30am (Fortnightly: Starting 18th Aug) — Greville St, Prahran",
         "Mondays at 10am (Fortnightly: Starting 31st Aug) — Greville St, Prahran",
-        "Mondays at 2pm (Fortnightly: Starting 10th Aug) — Greville St, Prahran",
-        "Tuesdays at 8:30am (Fortnightly: Starting 11th Aug) — Greville St, Prahran",
-        "Mondays at 11am (Fortnightly: Starting 10th Aug) — Greville St, Prahran"
+        "Mondays at 2pm (Fortnightly: Starting 24th Aug) — Greville St, Prahran",
+        "Tuesdays at 8:30am (Fortnightly: Starting 25th Aug) — Greville St, Prahran"
       ],
       short_bio: "Poorna is a warm, culturally attuned clinical psychologist using CBT, schema and psychodynamic therapy to support trauma, identity, adjustment and cross-cultural challenges",
       weekly_availability: [],
@@ -24331,7 +24373,99 @@ Mondays at 11am (Fortnightly: Starting 10th Aug)`,
       ],
       telehealth: "Yes",
       presentations: "Anxiety; Depression; Relationship Concerns; Grief & Loss; Self-Esteem & Confidence; Life Transitions; Work Stress; Trauma and Post-Traumatic Stress Disorder (PTSD)",
-      modalities: "Psychodynamic Therapy; Internal Family Systems Therapy (IFS); Emotion Focused Therapy (EFT)",
+      modalities: [
+        "P",
+        "s",
+        "y",
+        "c",
+        "h",
+        "o",
+        "d",
+        "y",
+        "n",
+        "a",
+        "m",
+        "i",
+        "c",
+        " ",
+        "T",
+        "h",
+        "e",
+        "r",
+        "a",
+        "p",
+        "y",
+        ";",
+        " ",
+        "I",
+        "n",
+        "t",
+        "e",
+        "r",
+        "n",
+        "a",
+        "l",
+        " ",
+        "F",
+        "a",
+        "m",
+        "i",
+        "l",
+        "y",
+        " ",
+        "S",
+        "y",
+        "s",
+        "t",
+        "e",
+        "m",
+        "s",
+        " ",
+        "T",
+        "h",
+        "e",
+        "r",
+        "a",
+        "p",
+        "y",
+        " ",
+        "(",
+        "I",
+        "F",
+        "S",
+        ")",
+        ";",
+        " ",
+        "E",
+        "m",
+        "o",
+        "t",
+        "i",
+        "o",
+        "n",
+        " ",
+        "F",
+        "o",
+        "c",
+        "u",
+        "s",
+        "e",
+        "d",
+        " ",
+        "T",
+        "h",
+        "e",
+        "r",
+        "a",
+        "p",
+        "y",
+        " ",
+        "(",
+        "E",
+        "F",
+        "T",
+        ")"
+      ],
       availability: [],
       bio: `When I was young, I wanted to be a marine biologist. I was in awe of the mysteries of the ocean and marvelled at the variety of creatures living within it. As I grew older and began to see the world through more adult eyes, I realised that the depth and breadth of human emotion and behaviour was far vaster and more complex than any ocean could ever be. And so, my path was set.
 
@@ -24775,7 +24909,7 @@ Regular therapy sessions can be a brief or a longer-term investment, depending o
 Fridays at 9am (Fortnightly: Starting 11th Sept)
 Fridays at 11am (Fortnightly: Starting 18th Sept)
 Thursdays at 10am (Fortnightly: Starting 1st Oct)
-Wednesdays at 9am (Fortnightly: Starting 12th Aug)`,
+Wednesdays at 9am (Fortnightly: Starting 26th Aug)`,
           weekly_availability: [],
           fortnightly_availability: [],
           location: "Greville St, Prahran"
@@ -24793,7 +24927,7 @@ Wednesdays at 9am (Fortnightly: Starting 12th Aug)`,
         "Fridays at 9am (Fortnightly: Starting 11th Sept) — Greville St, Prahran",
         "Fridays at 11am (Fortnightly: Starting 18th Sept) — Greville St, Prahran",
         "Thursdays at 10am (Fortnightly: Starting 1st Oct) — Greville St, Prahran",
-        "Wednesdays at 9am (Fortnightly: Starting 12th Aug) — Greville St, Prahran"
+        "Wednesdays at 9am (Fortnightly: Starting 26th Aug) — Greville St, Prahran"
       ],
       short_bio: "A mature-age clinical psychologist using ISTDP, Conversational Model, ACT and CBT to support adults through chronic depression, stress-related symptoms and life transitions.",
       weekly_availability: [
@@ -25011,11 +25145,10 @@ Ages:
       link_to_bio: "https://psychologycare.com.au/karen-pereira-york/",
       locations: [
         {
-          availability: `Thursdays at 12pm (Weekly: Starting 13th Aug)
-Wednesdays at 5:30pm (Fortnightly: Starting 19th Aug)
-Mondays at 12pm (Fortnightly: Starting 10th Aug)
+          availability: `Tuesdays at 5:30pm (Weekly: Starting 18th Aug)
+Thursdays at 12pm (Weekly: Starting 13th Aug)
+Mondays at 12pm (Fortnightly: Starting 24th Aug)
 Thursdays at 10:30am (Fortnightly: Starting 20th Aug)
-Mondays at 1pm (Fortnightly: Starting 17th Aug)
 Thursdays at 9:30am (Fortnightly: Starting 13th Aug)`,
           weekly_availability: [],
           fortnightly_availability: [],
@@ -25024,11 +25157,10 @@ Thursdays at 9:30am (Fortnightly: Starting 13th Aug)`,
       ],
       last_updated: "2026-07-19",
       availability: [
+        "Tuesdays at 5:30pm (Weekly: Starting 18th Aug) — Greville St, Prahran",
         "Thursdays at 12pm (Weekly: Starting 13th Aug) — Greville St, Prahran",
-        "Wednesdays at 5:30pm (Fortnightly: Starting 19th Aug) — Greville St, Prahran",
-        "Mondays at 12pm (Fortnightly: Starting 10th Aug) — Greville St, Prahran",
+        "Mondays at 12pm (Fortnightly: Starting 24th Aug) — Greville St, Prahran",
         "Thursdays at 10:30am (Fortnightly: Starting 20th Aug) — Greville St, Prahran",
-        "Mondays at 1pm (Fortnightly: Starting 17th Aug) — Greville St, Prahran",
         "Thursdays at 9:30am (Fortnightly: Starting 13th Aug) — Greville St, Prahran"
       ],
       short_bio: "Karen is a psychodynamic clinical psychologist integrating EMDR to support trauma, identity, grief and life transitions with culturally attuned, exploratory therapy.",
@@ -25083,7 +25215,7 @@ Thursdays at 9:30am (Fortnightly: Starting 13th Aug)`,
       ]
     }
   ];
-  var AVAILABILITY_LAST_UPDATED = "10 Aug 2026 6:00am";
+  var AVAILABILITY_LAST_UPDATED = "12 Aug 2026 6:00am";
 
   // components/IntakeTab.tsx
   var jsx_dev_runtime6 = __toESM(require_jsx_dev_runtime(), 1);

@@ -450,25 +450,18 @@ interface CardProps {
   onToggleSelect: (name: string) => void;
 }
 
-function filterOutMonthly(text: string | string[]): string {
-  const lines = Array.isArray(text) ? text : text.split("\n");
-  return lines
-    .filter(line => !/\(Monthly:/i.test(line))
-    .join("\n")
-    .trim();
-}
-
-function parseAvailabilityColumns(text: string | string[]): { weekly: string[]; fortnightly: string[] } {
+function parseAvailabilityColumns(text: string | string[]): { weekly: string[]; fortnightly: string[]; monthly: string[] } {
   const weekly: string[] = [];
   const fortnightly: string[] = [];
-  if (!text || (Array.isArray(text) && text.length === 0)) return { weekly, fortnightly };
+  const monthly: string[] = [];
+  if (!text || (Array.isArray(text) && text.length === 0)) return { weekly, fortnightly, monthly };
   const lines = (Array.isArray(text) ? text : text.split("\n")).map(l => l.replace(/^\*\s*/, "").trim()).filter(Boolean);
   for (const line of lines) {
-    if (/\(Monthly:/i.test(line)) continue;
     if (/\(Weekly:/i.test(line)) weekly.push(line);
     else if (/\(Fortnightly:/i.test(line)) fortnightly.push(line);
+    else if (/\(Monthly:/i.test(line)) monthly.push(line);
   }
-  return { weekly, fortnightly };
+  return { weekly, fortnightly, monthly };
 }
 
 const PractitionerCard: React.FC<CardProps> = ({ p, locationFilter, isSelected, onToggleSelect }) => {
@@ -479,7 +472,7 @@ const PractitionerCard: React.FC<CardProps> = ({ p, locationFilter, isSelected, 
   const displayLocs = (locationFilter.length > 0
     ? safeLocs.filter(l => locationFilter.some(f => (l.location || "").toLowerCase().includes(f.toLowerCase())))
     : safeLocs
-  ).map(l => ({ ...l, availability: l.availability ? filterOutMonthly(l.availability) : "" }));
+  );
 
   const hasAvail = displayLocs.some(l => l.availability && l.availability.trim());
 
@@ -572,8 +565,8 @@ const PractitionerCard: React.FC<CardProps> = ({ p, locationFilter, isSelected, 
             <div className="text-sm text-base-content/40 italic">No availability listed</div>
           ) : (
             displayLocs.map((loc, i) => {
-              const { weekly, fortnightly } = parseAvailabilityColumns(loc.availability || "");
-              const hasLocAvail = weekly.length > 0 || fortnightly.length > 0;
+              const { weekly, fortnightly, monthly } = parseAvailabilityColumns(loc.availability || "");
+              const hasLocAvail = weekly.length > 0 || fortnightly.length > 0 || monthly.length > 0;
               return (
                 <div key={i} className={displayLocs.length > 1 ? "mb-3" : ""}>
                   {displayLocs.length > 1 && (
@@ -582,7 +575,7 @@ const PractitionerCard: React.FC<CardProps> = ({ p, locationFilter, isSelected, 
                   {!hasLocAvail ? (
                     <div className="text-sm text-base-content/40 italic">No availability listed</div>
                   ) : (
-                    <div className="grid grid-cols-2 gap-2">
+                    <div className="grid grid-cols-3 gap-2">
                       {/* Weekly column */}
                       <div className="rounded-lg p-2" style={{ backgroundColor: "rgba(54,97,136,0.08)" }}>
                         <div className="text-xs font-bold mb-1" style={{ color: "#366188" }}>● Weekly</div>
@@ -610,6 +603,26 @@ const PractitionerCard: React.FC<CardProps> = ({ p, locationFilter, isSelected, 
                           <ul className="space-y-1">
                             {fortnightly.map((line, j) => {
                               const label = line.replace(/\s*\(Fortnightly:.*\)/i, "").trim();
+                              const startMatch = line.match(/Starting ([^)]+)/i);
+                              return (
+                                <li key={j} className="text-xs text-base-content leading-snug">
+                                  <span className="font-medium">{label}</span>
+                                  {startMatch && <span className="text-base-content/50 block">from {startMatch[1]}</span>}
+                                </li>
+                              );
+                            })}
+                          </ul>
+                        ) : (
+                          <div className="text-xs text-base-content/30 italic">—</div>
+                        )}
+                      </div>
+                      {/* Monthly column */}
+                      <div className="rounded-lg p-2" style={{ backgroundColor: "rgba(141,82,115,0.08)" }}>
+                        <div className="text-xs font-bold mb-1" style={{ color: "#8D5273" }}>● Monthly</div>
+                        {monthly.length > 0 ? (
+                          <ul className="space-y-1">
+                            {monthly.map((line, j) => {
+                              const label = line.replace(/\s*\(Monthly:.*\)/i, "").trim();
                               const startMatch = line.match(/Starting ([^)]+)/i);
                               return (
                                 <li key={j} className="text-xs text-base-content leading-snug">
@@ -1001,7 +1014,7 @@ export default function FindPractitioner({ practitioners }: Props) {
             />
             <MultiSelectDropdown
               label="Availability Type"
-              options={["Weekly", "Fortnightly"]}
+              options={["Weekly", "Fortnightly", "Monthly"]}
               selected={selectedAvailabilityTypes}
               onChange={setSelectedAvailabilityTypes}
               placeholder="Any type"
