@@ -34,7 +34,7 @@ export const PRACTITIONERS_DATA = [
       "Acceptance and Commitment Therapy (ACT)",
       "Cognitive Behavioural Therapy (CBT)",
       "Eye Movement Desensitisation and Reprocessing (EMDR)",
-      "Internal Family Systems (IFS) / Parts Work - Informed",
+      "Internal Family Systems (IFS) / Parts Work (Informed)",
       "Mindful Self-Compassion (MSC)",
       "Schema Therapy",
       "Trauma-Informed Care"
@@ -74,18 +74,19 @@ export const PRACTITIONERS_DATA = [
       },
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "Fridays at 1pm (Monthly: Starting 14th Aug)\nMondays at 3:30pm (Monthly: Starting 17th Aug)",
+        "availability": "Fridays at 9am (Fortnightly: Starting 28th Aug)\nFridays at 1pm (Monthly: Starting 11th Sept)\nMondays at 3:30pm (Monthly: Starting 17th Aug)",
         "weekly_availability": [],
         "fortnightly_availability": []
       }
     ],
     "last_updated": "2026-07-19",
     "availability": [
+      "Fridays at 9am (Fortnightly: Starting 28th Aug) — Burke Rd, Camberwell",
+      "Fridays at 1pm (Monthly: Starting 11th Sept) — Burke Rd, Camberwell",
+      "Mondays at 3:30pm (Monthly: Starting 17th Aug) — Burke Rd, Camberwell",
       "Thursdays at 7pm (Fortnightly: Starting 20th Aug) — Greville St, Prahran",
       "Wednesdays at 1:30pm (Fortnightly: Starting 19th Aug) — Telehealth",
-      "Wednesdays at 1:30pm (Monthly: Starting 9th Sept) — Telehealth",
-      "Fridays at 1pm (Monthly: Starting 14th Aug) — Burke Rd, Camberwell",
-      "Mondays at 3:30pm (Monthly: Starting 17th Aug) — Burke Rd, Camberwell"
+      "Wednesdays at 1:30pm (Monthly: Starting 9th Sept) — Telehealth"
     ],
     "short_bio": "Trauma-informed psychologist supporting adults across sectors with integrative EMDR, CBT, schema, and somatic therapies in neuroaffirming, sex-positive, LGBTQIA+ inclusive practice.",
     "weekly_availability": [],
@@ -253,7 +254,7 @@ export const PRACTITIONERS_DATA = [
       "Emotion-Focused Therapy (EFT)",
       "Gottman Method Couples Therapy",
       "Humanistic / Person-Centred Therapy",
-      "Internal Family Systems (IFS) / Parts Work - Informed",
+      "Internal Family Systems (IFS) / Parts Work (Informed)",
       "Interpersonal Therapy (IPT)",
       "Polyvagal-Informed Therapy",
       "Psychoanalytic Psychotherapy",
@@ -284,14 +285,14 @@ export const PRACTITIONERS_DATA = [
     "locations": [
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "Mondays at 11am (Fortnightly: Starting 24th Aug)\nMondays at 4pm (Fortnightly: Starting 17th Aug)\nSaturdays at 9am (Fortnightly: Starting 22nd Aug)",
+        "availability": "Mondays at 11am (Fortnightly: Starting 7th Sept)\nMondays at 4pm (Fortnightly: Starting 17th Aug)\nSaturdays at 9am (Fortnightly: Starting 22nd Aug)",
         "weekly_availability": [],
         "fortnightly_availability": []
       }
     ],
     "last_updated": "2026-07-19",
     "availability": [
-      "Mondays at 11am (Fortnightly: Starting 24th Aug) — Burke Rd, Camberwell",
+      "Mondays at 11am (Fortnightly: Starting 7th Sept) — Burke Rd, Camberwell",
       "Mondays at 4pm (Fortnightly: Starting 17th Aug) — Burke Rd, Camberwell",
       "Saturdays at 9am (Fortnightly: Starting 22nd Aug) — Burke Rd, Camberwell"
     ],
@@ -392,7 +393,7 @@ export const PRACTITIONERS_DATA = [
     "modalities": [
       "Acceptance and Commitment Therapy (ACT)",
       "Eye Movement Desensitisation and Reprocessing (EMDR)",
-      "Internal Family Systems (IFS) / Parts Work - Certified Level 1"
+      "Internal Family Systems (IFS) / Parts Work (Level 1 Certified)"
     ],
     "billing_types": "Medicare Rebate, NDIS, Self Funded, Third Party",
     "style": "Active Listener, Animal Lover, Calm, Creative, Sensitive and Gentle",
@@ -411,7 +412,7 @@ export const PRACTITIONERS_DATA = [
     "locations": [
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "Tuesdays at 5:30pm (Fortnightly: Starting 6th Oct)\nTuesdays at 2:30pm (Fortnightly: Starting 22nd Sept)\nTuesdays at 2:30pm (Monthly: Starting 29th Sept)\nTuesdays at 4:30pm (Monthly: Starting 18th Aug)",
+        "availability": "Tuesdays at 4:30pm (Fortnightly: Starting 22nd Sept)\nTuesdays at 5:30pm (Fortnightly: Starting 6th Oct)\nTuesdays at 2:30pm (Fortnightly: Starting 22nd Sept)\nTuesdays at 2:30pm (Monthly: Starting 29th Sept)\nTuesdays at 4:30pm (Monthly: Starting 18th Aug)",
         "weekly_availability": [],
         "fortnightly_availability": []
       },
@@ -423,6 +424,7 @@ export const PRACTITIONERS_DATA = [
     "location_notes": {},
     "last_updated": "2026-07-19",
     "availability": [
+      "Tuesdays at 4:30pm (Fortnightly: Starting 22nd Sept) — Burke Rd, Camberwell",
       "Tuesdays at 5:30pm (Fortnightly: Starting 6th Oct) — Burke Rd, Camberwell",
       "Tuesdays at 2:30pm (Fortnightly: Starting 22nd Sept) — Burke Rd, Camberwell",
       "Tuesdays at 2:30pm (Monthly: Starting 29th Sept) — Burke Rd, Camberwell",
@@ -724,8 +726,8 @@ export const PRACTITIONERS_DATA = [
       "Dialectical Behaviour Therapy (DBT)",
       "Emotion-Focused Therapy (EFT)",
       "Exposure and Response Prevention (ERP)",
-      "Internal Family Systems (IFS) / Parts Work - Informed",
-      "Internal Family Systems (IFS) / Parts Work - Certified Level 1",
+      "Internal Family Systems (IFS) / Parts Work (Informed)",
+      "Internal Family Systems (IFS) / Parts Work (Level 1 Certified)",
       "Interpersonal Therapy (IPT)",
       "Motivational Interviewing (MI)",
       "Schema Therapy"
@@ -945,7 +947,7 @@ export const PRACTITIONERS_DATA = [
       "Existential Therapy",
       "Family Systems Therapy",
       "Humanistic / Person-Centred Therapy",
-      "Internal Family Systems (IFS) / Parts Work - Informed",
+      "Internal Family Systems (IFS) / Parts Work (Informed)",
       "Narrative Therapy",
       "Schema Therapy",
       "Solution-Focused Brief Therapy (SFBT)",
@@ -980,7 +982,7 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/dr-maddie-brygel-psychologist/",
     "locations": [
       {
-        "availability": "Fridays at 1pm (Fortnightly: Starting 4th Sept)\nMondays at 10am (Fortnightly: Starting 17th Aug)\nThursdays at 10am (Fortnightly: Starting 10th Sept)\nFridays at 8am (Fortnightly: Starting 21st Aug)\nMondays at 9am (Fortnightly: Starting 21st Sept)\nMondays at 1pm (Monthly: Starting 17th Aug)\nThursdays at 11am (Monthly: Starting 17th Sept)",
+        "availability": "Mondays at 8am (Fortnightly: Starting 31st Aug)\nMondays at 1pm (Fortnightly: Starting 21st Sept)\nFridays at 1pm (Fortnightly: Starting 4th Sept)\nMondays at 10am (Fortnightly: Starting 17th Aug)\nThursdays at 10am (Fortnightly: Starting 10th Sept)\nFridays at 8am (Fortnightly: Starting 21st Aug)\nMondays at 9am (Fortnightly: Starting 21st Sept)\nMondays at 1pm (Monthly: Starting 17th Aug)\nThursdays at 11am (Monthly: Starting 17th Sept)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
@@ -1026,6 +1028,8 @@ export const PRACTITIONERS_DATA = [
     ],
     "last_updated": "2026-07-19",
     "availability": [
+      "Mondays at 8am (Fortnightly: Starting 31st Aug) — Greville St, Prahran",
+      "Mondays at 1pm (Fortnightly: Starting 21st Sept) — Greville St, Prahran",
       "Fridays at 1pm (Fortnightly: Starting 4th Sept) — Greville St, Prahran",
       "Mondays at 10am (Fortnightly: Starting 17th Aug) — Greville St, Prahran",
       "Thursdays at 10am (Fortnightly: Starting 10th Sept) — Greville St, Prahran",
@@ -1278,7 +1282,7 @@ export const PRACTITIONERS_DATA = [
     "presentations": "ADD and ADHD; Agoraphobia; Anxiety; Asperger Syndrome; Attachment Disorder; Autism Spectrum Disorders (ASD); Avoidant Personality Disorder; Burnout; Career transition; Complex Trauma; Fear of Failure; General Adaptation Disorder (Adjustment Disorder); Generalized Anxiety Disorder (GAD); Imposter Syndrome; Intermittent Explosive Disorder (Uncontrolled Anger); LGBTIQA+; Life Transitions; Low self esteem; Non-Monogomy/ Polyamory; Pain Management; Panic Disorder & Panic Attacks; Perfectionism; Pregnancy and Postnatal Depression Anxiety; Relationship breakdown; Sexual problems; Social anxiety disorder / Social Phobia; Stress; Trauma",
     "modalities": [
       "Eye Movement Desensitisation and Reprocessing (EMDR)",
-      "Internal Family Systems (IFS) / Parts Work - Certified Level 1"
+      "Internal Family Systems (IFS) / Parts Work (Level 1 Certified)"
     ],
     "client_types": [
       "Individual",
@@ -1587,7 +1591,7 @@ export const PRACTITIONERS_DATA = [
       "Acceptance and Commitment Therapy (ACT)",
       "Dialectical Behaviour Therapy (DBT)",
       "Eclectic / Integrative Therapy",
-      "Internal Family Systems (IFS) / Parts Work - Certified Level 1",
+      "Internal Family Systems (IFS) / Parts Work (Level 1 Certified)",
       "Mindfulness-Based Stress Reduction (MBSR)",
       "Trauma-Informed Care"
     ],
@@ -2190,7 +2194,7 @@ export const PRACTITIONERS_DATA = [
       "Dialectical Behaviour Therapy (DBT)",
       "Eye Movement Desensitisation and Reprocessing (EMDR)",
       "Intensive Short-Term Dynamic Psychotherapy (ISTDP)",
-      "Internal Family Systems (IFS) / Parts Work - Informed",
+      "Internal Family Systems (IFS) / Parts Work (Informed)",
       "Psychodynamic Therapy"
     ],
     "client_types": [
@@ -2596,7 +2600,7 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/chiara-killey/",
     "locations": [
       {
-        "availability": "Saturdays at 12pm (Monthly: Starting 15th Aug)",
+        "availability": "Saturdays at 12pm (Monthly: Starting 10th Oct)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Telehealth"
@@ -2604,7 +2608,7 @@ export const PRACTITIONERS_DATA = [
     ],
     "last_updated": "2026-07-19",
     "availability": [
-      "Saturdays at 12pm (Monthly: Starting 15th Aug) — Telehealth"
+      "Saturdays at 12pm (Monthly: Starting 10th Oct) — Telehealth"
     ],
     "short_bio": "Chiara is a neurodivergent, neuro-affirming clinical psychologist supporting adults with autism, ADHD and diverse needs using collaborative, family-inclusive, evidence-based therapies.",
     "weekly_availability": [],
@@ -2730,7 +2734,7 @@ export const PRACTITIONERS_DATA = [
       "Compassion-Focused Therapy (CFT)",
       "Existential Therapy",
       "Humanistic / Person-Centred Therapy",
-      "Internal Family Systems (IFS) / Parts Work - Informed",
+      "Internal Family Systems (IFS) / Parts Work (Informed)",
       "Interpersonal Therapy (IPT)",
       "Mindfulness-Based Cognitive Therapy (MBCT)",
       "Mindfulness-Based Stress Reduction (MBSR)",
@@ -2771,7 +2775,7 @@ export const PRACTITIONERS_DATA = [
       },
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "Wednesdays at 9am (Weekly: Starting 19th Aug)\nFridays at 9am (Weekly: Starting 21st Aug)\nThursdays at 8am (Fortnightly: Starting 27th Aug)\nWednesdays at 1pm (Fortnightly: Starting 26th Aug)\nFridays at 1pm (Fortnightly: Starting 14th Aug)\nThursdays at 12pm (Fortnightly: Starting 20th Aug)\nWednesdays at 8am (Fortnightly: Starting 26th Aug)\nFridays at 10am (Monthly: Starting 11th Sept)",
+        "availability": "Wednesdays at 9am (Weekly: Starting 19th Aug)\nFridays at 9am (Weekly: Starting 21st Aug)\nThursdays at 8am (Fortnightly: Starting 27th Aug)\nWednesdays at 1pm (Fortnightly: Starting 26th Aug)\nFridays at 1pm (Fortnightly: Starting 28th Aug)\nThursdays at 12pm (Fortnightly: Starting 20th Aug)\nWednesdays at 8am (Fortnightly: Starting 26th Aug)\nFridays at 10am (Monthly: Starting 11th Sept)",
         "weekly_availability": [],
         "fortnightly_availability": []
       }
@@ -2782,7 +2786,7 @@ export const PRACTITIONERS_DATA = [
       "Fridays at 9am (Weekly: Starting 21st Aug) — Burke Rd, Camberwell",
       "Thursdays at 8am (Fortnightly: Starting 27th Aug) — Burke Rd, Camberwell",
       "Wednesdays at 1pm (Fortnightly: Starting 26th Aug) — Burke Rd, Camberwell",
-      "Fridays at 1pm (Fortnightly: Starting 14th Aug) — Burke Rd, Camberwell",
+      "Fridays at 1pm (Fortnightly: Starting 28th Aug) — Burke Rd, Camberwell",
       "Thursdays at 12pm (Fortnightly: Starting 20th Aug) — Burke Rd, Camberwell",
       "Wednesdays at 8am (Fortnightly: Starting 26th Aug) — Burke Rd, Camberwell",
       "Fridays at 10am (Monthly: Starting 11th Sept) — Burke Rd, Camberwell",
@@ -3630,7 +3634,7 @@ export const PRACTITIONERS_DATA = [
     "modalities": [
       "Acceptance and Commitment Therapy (ACT)",
       "Cognitive Behavioural Therapy (CBT)",
-      "Internal Family Systems (IFS) / Parts Work - Informed",
+      "Internal Family Systems (IFS) / Parts Work (Informed)",
       "Psychodynamic Therapy",
       "Schema Therapy",
       "Trauma-Focused CBT (TF-CBT)",
@@ -3740,7 +3744,7 @@ export const PRACTITIONERS_DATA = [
     "medicareRebate": 149.05,
     "locations": [
       {
-        "availability": "",
+        "availability": "Mondays at 11am (Monthly: Starting 31st Aug)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
@@ -3841,7 +3845,9 @@ export const PRACTITIONERS_DATA = [
       "T",
       ")"
     ],
-    "availability": [],
+    "availability": [
+      "Mondays at 11am (Monthly: Starting 31st Aug) — Greville St, Prahran"
+    ],
     "bio": "When I was young, I wanted to be a marine biologist. I was in awe of the mysteries of the ocean and marvelled at the variety of creatures living within it. As I grew older and began to see the world through more adult eyes, I realised that the depth and breadth of human emotion and behaviour was far vaster and more complex than any ocean could ever be. And so, my path was set.\n\nAfter many years of study and work, I am now a Senior Clinical Psychologist having worked in the UK, New Zealand and finally Australia. I have many years of experience working in the public sector with severe and enduring mental health issues, and also with mild to moderate mental health issues that most of us experience at some point in our lifetime.\n\nI am an integrative Doctor of Clinical Psychology and as such, I draw upon a wide variety of models of therapy such as Intensive Short Term Dynamic Psychotherapy (ISTDP) and Cognitive Behavioural Therapy (CBT), as well as others. This enables me to tailor treatments to the unique needs of each individual I see.\n\nHowever, as research has proven over and over again, the most important ingredient to effective treatment in psychological therapy is the therapeutic relationship itself. As such, I strive to form an authentic relationship with every client I see, and with an empathic understanding at its core. The sharing of vulnerability opens the door to intimacy, and it is my role to provide a safe and validating space that allows this process to occur.\n\nI have developed many areas of interest throughout my career, I have been invited to speak and keynote speak at a number of national and international conferences, and have worked on the Clinical Psychology Program at the University of Melbourne for the past 8 years. Finally, I am fortunate to be a supervisor and mentor to many psychologists, whether they be seasoned professionals or just starting out on their journey as a psychologist.\n\nMy passion remains in individual psychological therapy, especially using ISTDP, as well as research into the promising new arena of psychedelic sciences, and how this can be applied to the psychotherapeutic space once legalised.",
     "qualifications": "BSc (Hons) ClinPsyD",
     "pronouns": "He/him",
@@ -4230,7 +4236,7 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/elizabeth-white/",
     "locations": [
       {
-        "availability": "Wednesdays at 10am (Weekly: Starting 26th Aug)\nFridays at 9am (Fortnightly: Starting 11th Sept)\nFridays at 11am (Fortnightly: Starting 18th Sept)\nThursdays at 10am (Fortnightly: Starting 1st Oct)\nWednesdays at 9am (Fortnightly: Starting 26th Aug)\nThursdays at 10am (Monthly: Starting 8th Oct)",
+        "availability": "Wednesdays at 10am (Weekly: Starting 26th Aug)\nFridays at 9am (Fortnightly: Starting 11th Sept)\nFridays at 11am (Fortnightly: Starting 18th Sept)\nThursdays at 10am (Fortnightly: Starting 1st Oct)\nWednesdays at 9am (Fortnightly: Starting 26th Aug)\nWednesdays at 8am (Monthly: Starting 9th Sept)\nThursdays at 10am (Monthly: Starting 8th Oct)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
@@ -4249,6 +4255,7 @@ export const PRACTITIONERS_DATA = [
       "Fridays at 11am (Fortnightly: Starting 18th Sept) — Greville St, Prahran",
       "Thursdays at 10am (Fortnightly: Starting 1st Oct) — Greville St, Prahran",
       "Wednesdays at 9am (Fortnightly: Starting 26th Aug) — Greville St, Prahran",
+      "Wednesdays at 8am (Monthly: Starting 9th Sept) — Greville St, Prahran",
       "Thursdays at 10am (Monthly: Starting 8th Oct) — Greville St, Prahran"
     ],
     "short_bio": "A mature-age clinical psychologist using ISTDP, Conversational Model, ACT and CBT to support adults through chronic depression, stress-related symptoms and life transitions.",
@@ -4407,7 +4414,7 @@ export const PRACTITIONERS_DATA = [
       "Eclectic / Integrative Therapy",
       "Eye Movement Desensitisation and Reprocessing (EMDR)",
       "Humanistic / Person-Centred Therapy",
-      "Internal Family Systems (IFS) / Parts Work - Informed",
+      "Internal Family Systems (IFS) / Parts Work (Informed)",
       "Interpersonal Therapy (IPT)",
       "Psychodynamic Therapy"
     ],
@@ -4504,4 +4511,4 @@ export const PRACTITIONERS_DATA = [
   }
 ];
 export const practitionersData = PRACTITIONERS_DATA;
-export const AVAILABILITY_LAST_UPDATED = "14 Aug 2026 6:01am";
+export const AVAILABILITY_LAST_UPDATED = "17 Aug 2026 6:01am";
