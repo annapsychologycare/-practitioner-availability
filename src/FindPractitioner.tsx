@@ -448,6 +448,7 @@ interface CardProps {
   locationFilter: string[];
   isSelected: boolean;
   onToggleSelect: (name: string) => void;
+  includeMonthly: boolean;
 }
 
 function parseAvailabilityColumns(text: string | string[]): { weekly: string[]; fortnightly: string[]; monthly: string[] } {
@@ -464,7 +465,7 @@ function parseAvailabilityColumns(text: string | string[]): { weekly: string[]; 
   return { weekly, fortnightly, monthly };
 }
 
-const PractitionerCard: React.FC<CardProps> = ({ p, locationFilter, isSelected, onToggleSelect }) => {
+const PractitionerCard: React.FC<CardProps> = ({ p, locationFilter, isSelected, onToggleSelect, includeMonthly }) => {
   const [expanded, setExpanded] = useState(false);
   const [copied, setCopied] = useState(false);
 
@@ -575,7 +576,7 @@ const PractitionerCard: React.FC<CardProps> = ({ p, locationFilter, isSelected, 
                   {!hasLocAvail ? (
                     <div className="text-sm text-base-content/40 italic">No availability listed</div>
                   ) : (
-                    <div className="grid grid-cols-3 gap-2">
+                    <div className={`grid gap-2 ${includeMonthly ? "grid-cols-3" : "grid-cols-2"}`}>
                       {/* Weekly column */}
                       <div className="rounded-lg p-2" style={{ backgroundColor: "rgba(54,97,136,0.08)" }}>
                         <div className="text-xs font-bold mb-1" style={{ color: "#366188" }}>● Weekly</div>
@@ -616,26 +617,28 @@ const PractitionerCard: React.FC<CardProps> = ({ p, locationFilter, isSelected, 
                           <div className="text-xs text-base-content/30 italic">—</div>
                         )}
                       </div>
-                      {/* Monthly column */}
-                      <div className="rounded-lg p-2" style={{ backgroundColor: "rgba(141,82,115,0.08)" }}>
-                        <div className="text-xs font-bold mb-1" style={{ color: "#8D5273" }}>● Monthly</div>
-                        {monthly.length > 0 ? (
-                          <ul className="space-y-1">
-                            {monthly.map((line, j) => {
-                              const label = line.replace(/\s*\(Monthly:.*\)/i, "").trim();
-                              const startMatch = line.match(/Starting ([^)]+)/i);
-                              return (
-                                <li key={j} className="text-xs text-base-content leading-snug">
-                                  <span className="font-medium">{label}</span>
-                                  {startMatch && <span className="text-base-content/50 block">from {startMatch[1]}</span>}
-                                </li>
-                              );
-                            })}
-                          </ul>
-                        ) : (
-                          <div className="text-xs text-base-content/30 italic">—</div>
-                        )}
-                      </div>
+                      {/* Monthly column — only shown when includeMonthly is true */}
+                      {includeMonthly && (
+                        <div className="rounded-lg p-2" style={{ backgroundColor: "rgba(141,82,115,0.08)" }}>
+                          <div className="text-xs font-bold mb-1" style={{ color: "#8D5273" }}>● Monthly</div>
+                          {monthly.length > 0 ? (
+                            <ul className="space-y-1">
+                              {monthly.map((line, j) => {
+                                const label = line.replace(/\s*\(Monthly:.*\)/i, "").trim();
+                                const startMatch = line.match(/Starting ([^)]+)/i);
+                                return (
+                                  <li key={j} className="text-xs text-base-content leading-snug">
+                                    <span className="font-medium">{label}</span>
+                                    {startMatch && <span className="text-base-content/50 block">from {startMatch[1]}</span>}
+                                  </li>
+                                );
+                              })}
+                            </ul>
+                          ) : (
+                            <div className="text-xs text-base-content/30 italic">—</div>
+                          )}
+                        </div>
+                      )}
                     </div>
                   )}
                 </div>
@@ -697,6 +700,8 @@ export default function FindPractitioner({ practitioners }: Props) {
   const [gateClientGender, setGateClientGender] = useState("");
 
 
+  const [includeMonthly, setIncludeMonthly] = useState(false);
+
   const gateComplete = !!gateClientType && !!gateAgeBracket && !!gateClientGender;
 
   const AGE_BRACKET_MAP: Record<string, number> = {
@@ -754,6 +759,17 @@ export default function FindPractitioner({ practitioners }: Props) {
     setClientAge(""); setSelectedPractitionerNames([]); setSelectedAvailabilityTypes([]); setSelectedDays([]); setDaysMatchAll(false);
   };
 
+  const resetAll = () => {
+    setGateClientType("");
+    setGateAgeBracket("");
+    setGateClientGender("");
+    setIncludeMonthly(false);
+    clearFilters();
+    setSelectedNames([]);
+    setShowSendModal(false);
+    setSentSuccess(false);
+  };
+
   const hasFilters = !!(keyword || selectedLocations.length || gender || clientType || therapistType || afterHours || hasAvailability || selectedPresentations.length || selectedModalities.length || selectedStyles.length || selectedBillingTypes.length || clientAge || selectedPractitionerNames.length || selectedAvailabilityTypes.length || selectedDays.length);
 
   const toggleSelect = (name: string) => {
@@ -784,9 +800,19 @@ export default function FindPractitioner({ practitioners }: Props) {
 
       {/* ── Mandatory Gate ── */}
       <div className="rounded-xl mb-5 px-6 py-5" style={{ backgroundColor: "#f0edf5" }}>
-        <div className="flex items-center gap-2 mb-4">
-          <span className="text-xs font-bold uppercase tracking-widest px-2.5 py-1 rounded text-white" style={{ backgroundColor: "#2C244C" }}>Required</span>
-          <span className="font-semibold text-base" style={{ color: "#2C244C" }}>Tell us about the client first</span>
+        <div className="flex items-center justify-between gap-2 mb-4">
+          <div className="flex items-center gap-2">
+            <span className="text-xs font-bold uppercase tracking-widest px-2.5 py-1 rounded text-white" style={{ backgroundColor: "#2C244C" }}>Required</span>
+            <span className="font-semibold text-base" style={{ color: "#2C244C" }}>Tell us about the client first</span>
+          </div>
+          <button
+            onClick={resetAll}
+            className="btn btn-sm gap-1.5 font-semibold"
+            style={{ backgroundColor: "#8D5273", color: "white", borderColor: "#8D5273" }}
+            title="Clear everything and start a new client enquiry"
+          >
+            🔄 Clear All — Start New Enquiry
+          </button>
         </div>
 
         {/* Row 1: Session type + Client's age side by side */}
@@ -849,6 +875,35 @@ export default function FindPractitioner({ practitioners }: Props) {
               ⚠️ Alex Barry, Chiara Killey and Clare Tuttleby accept female clients only.
             </div>
           )}
+        </div>
+
+        {/* Monthly availability toggle */}
+        <div className="mt-4 pt-4" style={{ borderTop: "1px solid #CDA8BA" }}>
+          <div className="text-xs font-semibold mb-2" style={{ color: "#2C244C" }}>
+            Include monthly availability?{" "}
+            <span className="font-normal" style={{ color: "#8D5273" }}>Only for low risk or approved clients</span>
+          </div>
+          <div className="flex gap-2 flex-wrap items-center">
+            <button
+              onClick={() => setIncludeMonthly(false)}
+              className="px-4 py-1.5 rounded-full text-sm font-medium border transition-all"
+              style={!includeMonthly
+                ? { backgroundColor: "#2C244C", color: "white", borderColor: "#2C244C" }
+                : { backgroundColor: "white", color: "#2C244C", borderColor: "#CDA8BA" }}>
+              No (default)
+            </button>
+            <button
+              onClick={() => setIncludeMonthly(true)}
+              className="px-4 py-1.5 rounded-full text-sm font-medium border transition-all"
+              style={includeMonthly
+                ? { backgroundColor: "#8D5273", color: "white", borderColor: "#8D5273" }
+                : { backgroundColor: "white", color: "#2C244C", borderColor: "#CDA8BA" }}>
+              ✓ Yes — include monthly slots
+            </button>
+            {includeMonthly && (
+              <span className="text-xs" style={{ color: "#8D5273" }}>Monthly availability will be shown on all cards</span>
+            )}
+          </div>
         </div>
       </div>
 
@@ -1096,6 +1151,7 @@ export default function FindPractitioner({ practitioners }: Props) {
                 locationFilter={selectedLocations}
                 isSelected={selectedNames.includes(item.p.name)}
                 onToggleSelect={toggleSelect}
+                includeMonthly={includeMonthly}
               />
             </div>
           ))}
