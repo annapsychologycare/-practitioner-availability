@@ -18550,9 +18550,8 @@ Please note: There are inherent confidentiality risks in communicating by email.
         if (!availStr.trim())
           return false;
         if (!filters.includeMonthly) {
-          const lines = availStr.split(`
-`).map((s) => s.toLowerCase());
-          return lines.some((line) => line.startsWith("weekly") || line.startsWith("fortnightly"));
+          const lower = availStr.toLowerCase();
+          return lower.includes("(weekly") || lower.includes("(fortnightly");
         }
         return true;
       });

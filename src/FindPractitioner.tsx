@@ -324,8 +324,8 @@ function scoreMatch(p: Practitioner, filters: Filters): number {
       if (!availStr.trim()) return false;
       // If monthly is excluded, only count weekly or fortnightly slots
       if (!filters.includeMonthly) {
-        const lines = availStr.split("\n").map(s => s.toLowerCase());
-        return lines.some(line => line.startsWith("weekly") || line.startsWith("fortnightly"));
+        const lower = availStr.toLowerCase();
+        return lower.includes("(weekly") || lower.includes("(fortnightly");
       }
       return true;
     });
