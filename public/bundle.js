@@ -18665,7 +18665,7 @@ Please note: There are inherent confidentiality risks in communicating by email.
     }
     return { weekly, fortnightly, monthly };
   }
-  var PractitionerCard = ({ p, locationFilter, isSelected, onToggleSelect }) => {
+  var PractitionerCard = ({ p, locationFilter, isSelected, onToggleSelect, includeMonthly }) => {
     const [expanded, setExpanded] = import_react5.useState(false);
     const [copied, setCopied] = import_react5.useState(false);
     const safeLocs = p.locations || [];
@@ -18890,7 +18890,7 @@ Please note: There are inherent confidentiality risks in communicating by email.
                       className: "text-sm text-base-content/40 italic",
                       children: "No availability listed"
                     }, undefined, false, undefined, this) : /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("div", {
-                      className: "grid grid-cols-3 gap-2",
+                      className: `grid gap-2 ${includeMonthly ? "grid-cols-3" : "grid-cols-2"}`,
                       children: [
                         /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("div", {
                           className: "rounded-lg p-2",
@@ -18966,7 +18966,7 @@ Please note: There are inherent confidentiality risks in communicating by email.
                             }, undefined, false, undefined, this)
                           ]
                         }, undefined, true, undefined, this),
-                        /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("div", {
+                        includeMonthly && /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("div", {
                           className: "rounded-lg p-2",
                           style: { backgroundColor: "rgba(141,82,115,0.08)" },
                           children: [
@@ -19094,6 +19094,7 @@ Please note: There are inherent confidentiality risks in communicating by email.
     const [gateClientType, setGateClientType] = import_react5.useState("");
     const [gateAgeBracket, setGateAgeBracket] = import_react5.useState("");
     const [gateClientGender, setGateClientGender] = import_react5.useState("");
+    const [includeMonthly, setIncludeMonthly] = import_react5.useState(false);
     const gateComplete = !!gateClientType && !!gateAgeBracket && !!gateClientGender;
     const AGE_BRACKET_MAP = {
       "Under 12": 10,
@@ -19154,6 +19155,16 @@ Please note: There are inherent confidentiality risks in communicating by email.
       setSelectedDays([]);
       setDaysMatchAll(false);
     };
+    const resetAll = () => {
+      setGateClientType("");
+      setGateAgeBracket("");
+      setGateClientGender("");
+      setIncludeMonthly(false);
+      clearFilters();
+      setSelectedNames([]);
+      setShowSendModal(false);
+      setSentSuccess(false);
+    };
     const hasFilters = !!(keyword || selectedLocations.length || gender || clientType || therapistType || afterHours || hasAvailability || selectedPresentations.length || selectedModalities.length || selectedStyles.length || selectedBillingTypes.length || clientAge || selectedPractitionerNames.length || selectedAvailabilityTypes.length || selectedDays.length);
     const toggleSelect = (name) => {
       setSelectedNames((prev) => prev.includes(name) ? prev.filter((n) => n !== name) : [...prev, name]);
@@ -19179,17 +19190,29 @@ Please note: There are inherent confidentiality risks in communicating by email.
           style: { backgroundColor: "#f0edf5" },
           children: [
             /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("div", {
-              className: "flex items-center gap-2 mb-4",
+              className: "flex items-center justify-between gap-2 mb-4",
               children: [
-                /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("span", {
-                  className: "text-xs font-bold uppercase tracking-widest px-2.5 py-1 rounded text-white",
-                  style: { backgroundColor: "#2C244C" },
-                  children: "Required"
-                }, undefined, false, undefined, this),
-                /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("span", {
-                  className: "font-semibold text-base",
-                  style: { color: "#2C244C" },
-                  children: "Tell us about the client first"
+                /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("div", {
+                  className: "flex items-center gap-2",
+                  children: [
+                    /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("span", {
+                      className: "text-xs font-bold uppercase tracking-widest px-2.5 py-1 rounded text-white",
+                      style: { backgroundColor: "#2C244C" },
+                      children: "Required"
+                    }, undefined, false, undefined, this),
+                    /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("span", {
+                      className: "font-semibold text-base",
+                      style: { color: "#2C244C" },
+                      children: "Tell us about the client first"
+                    }, undefined, false, undefined, this)
+                  ]
+                }, undefined, true, undefined, this),
+                /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("button", {
+                  onClick: resetAll,
+                  className: "btn btn-sm gap-1.5 font-semibold",
+                  style: { backgroundColor: "#8D5273", color: "white", borderColor: "#8D5273" },
+                  title: "Clear everything and start a new client enquiry",
+                  children: "\uD83D\uDD04 Clear All — Start New Enquiry"
                 }, undefined, false, undefined, this)
               ]
             }, undefined, true, undefined, this),
@@ -19273,6 +19296,47 @@ Please note: There are inherent confidentiality risks in communicating by email.
                   style: { color: "#8D5273" },
                   children: "⚠️ Alex Barry, Chiara Killey and Clare Tuttleby accept female clients only."
                 }, undefined, false, undefined, this)
+              ]
+            }, undefined, true, undefined, this),
+            /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("div", {
+              className: "mt-4 pt-4",
+              style: { borderTop: "1px solid #CDA8BA" },
+              children: [
+                /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("div", {
+                  className: "text-xs font-semibold mb-2",
+                  style: { color: "#2C244C" },
+                  children: [
+                    "Include monthly availability?",
+                    " ",
+                    /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("span", {
+                      className: "font-normal",
+                      style: { color: "#8D5273" },
+                      children: "Only for low risk or approved clients"
+                    }, undefined, false, undefined, this)
+                  ]
+                }, undefined, true, undefined, this),
+                /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("div", {
+                  className: "flex gap-2 flex-wrap items-center",
+                  children: [
+                    /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("button", {
+                      onClick: () => setIncludeMonthly(false),
+                      className: "px-4 py-1.5 rounded-full text-sm font-medium border transition-all",
+                      style: !includeMonthly ? { backgroundColor: "#2C244C", color: "white", borderColor: "#2C244C" } : { backgroundColor: "white", color: "#2C244C", borderColor: "#CDA8BA" },
+                      children: "No (default)"
+                    }, undefined, false, undefined, this),
+                    /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("button", {
+                      onClick: () => setIncludeMonthly(true),
+                      className: "px-4 py-1.5 rounded-full text-sm font-medium border transition-all",
+                      style: includeMonthly ? { backgroundColor: "#8D5273", color: "white", borderColor: "#8D5273" } : { backgroundColor: "white", color: "#2C244C", borderColor: "#CDA8BA" },
+                      children: "✓ Yes — include monthly slots"
+                    }, undefined, false, undefined, this),
+                    includeMonthly && /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("span", {
+                      className: "text-xs",
+                      style: { color: "#8D5273" },
+                      children: "Monthly availability will be shown on all cards"
+                    }, undefined, false, undefined, this)
+                  ]
+                }, undefined, true, undefined, this)
               ]
             }, undefined, true, undefined, this)
           ]
@@ -19758,7 +19822,8 @@ Please note: There are inherent confidentiality risks in communicating by email.
                   p: item.p,
                   locationFilter: selectedLocations,
                   isSelected: selectedNames.includes(item.p.name),
-                  onToggleSelect: toggleSelect
+                  onToggleSelect: toggleSelect,
+                  includeMonthly
                 }, undefined, false, undefined, this)
               }, idx, false, undefined, this))
             }, undefined, false, undefined, this),
@@ -21476,12 +21541,13 @@ A/H: $275`,
       link_to_bio: "https://psychologycare.com.au/dr-maddie-brygel-psychologist/",
       locations: [
         {
-          availability: `Mondays at 8am (Fortnightly: Starting 31st Aug)
+          availability: `Thursdays at 1pm (Fortnightly: Starting 10th Sept)
+Mondays at 8am (Fortnightly: Starting 31st Aug)
 Mondays at 1pm (Fortnightly: Starting 21st Sept)
 Fridays at 1pm (Fortnightly: Starting 4th Sept)
 Mondays at 10am (Fortnightly: Starting 31st Aug)
 Thursdays at 10am (Fortnightly: Starting 10th Sept)
-Fridays at 8am (Fortnightly: Starting 21st Aug)
+Fridays at 8am (Fortnightly: Starting 4th Sept)
 Mondays at 9am (Fortnightly: Starting 21st Sept)
 Thursdays at 8am (Monthly: Starting 8th Oct)
 Mondays at 1pm (Monthly: Starting 14th Sept)
@@ -21531,12 +21597,13 @@ Thursdays at 11am (Monthly: Starting 17th Sept)`,
       ],
       last_updated: "2026-07-19",
       availability: [
+        "Thursdays at 1pm (Fortnightly: Starting 10th Sept) — Greville St, Prahran",
         "Mondays at 8am (Fortnightly: Starting 31st Aug) — Greville St, Prahran",
         "Mondays at 1pm (Fortnightly: Starting 21st Sept) — Greville St, Prahran",
         "Fridays at 1pm (Fortnightly: Starting 4th Sept) — Greville St, Prahran",
         "Mondays at 10am (Fortnightly: Starting 31st Aug) — Greville St, Prahran",
         "Thursdays at 10am (Fortnightly: Starting 10th Sept) — Greville St, Prahran",
-        "Fridays at 8am (Fortnightly: Starting 21st Aug) — Greville St, Prahran",
+        "Fridays at 8am (Fortnightly: Starting 4th Sept) — Greville St, Prahran",
         "Mondays at 9am (Fortnightly: Starting 21st Sept) — Greville St, Prahran",
         "Thursdays at 8am (Monthly: Starting 8th Oct) — Greville St, Prahran",
         "Mondays at 1pm (Monthly: Starting 14th Sept) — Greville St, Prahran",
@@ -21736,7 +21803,8 @@ I have a developing interest and training in the new research around psychedelic
         },
         {
           location: "Burke Rd, Camberwell",
-          availability: `Thursdays at 9am (Fortnightly: Starting 27th Aug)
+          availability: `Wednesdays at 9am (Fortnightly: Starting 26th Aug)
+Thursdays at 9am (Fortnightly: Starting 27th Aug)
 Thursdays at 9am (Monthly: Starting 3rd Sept)
 Wednesdays at 1pm (Monthly: Starting 23rd Sept)`,
           weekly_availability: [],
@@ -21745,6 +21813,7 @@ Wednesdays at 1pm (Monthly: Starting 23rd Sept)`,
       ],
       last_updated: "2026-07-19",
       availability: [
+        "Wednesdays at 9am (Fortnightly: Starting 26th Aug) — Burke Rd, Camberwell",
         "Thursdays at 9am (Fortnightly: Starting 27th Aug) — Burke Rd, Camberwell",
         "Thursdays at 9am (Monthly: Starting 3rd Sept) — Burke Rd, Camberwell",
         "Wednesdays at 1pm (Monthly: Starting 23rd Sept) — Burke Rd, Camberwell"
@@ -23237,6 +23306,7 @@ Throughout our time together, rest assured that I understand and respect the tru
       locations: [
         {
           availability: `Saturdays at 12pm (Weekly: Starting 10th Oct)
+Saturdays at 10am (Fortnightly: Starting 17th Oct)
 Saturdays at 10am (Monthly: Starting 10th Oct)`,
           weekly_availability: [],
           fortnightly_availability: [],
@@ -23246,6 +23316,7 @@ Saturdays at 10am (Monthly: Starting 10th Oct)`,
       last_updated: "2026-07-19",
       availability: [
         "Saturdays at 12pm (Weekly: Starting 10th Oct) — Telehealth",
+        "Saturdays at 10am (Fortnightly: Starting 17th Oct) — Telehealth",
         "Saturdays at 10am (Monthly: Starting 10th Oct) — Telehealth"
       ],
       short_bio: "Chiara is a neurodivergent, neuro-affirming clinical psychologist supporting adults with autism, ADHD and diverse needs using collaborative, family-inclusive, evidence-based therapies.",
@@ -23413,25 +23484,25 @@ Outside of work, Nick spends his time in nature, surfing, learning Spanish, and 
       link_to_bio: "https://psychologycare.com.au/nicholas-kleeman/",
       locations: [
         {
-          availability: `Tuesdays at 1pm (Fortnightly: Starting 1st Sept)
+          availability: `Tuesdays at 4pm (Fortnightly: Starting 1st Sept)
+Tuesdays at 1pm (Fortnightly: Starting 1st Sept)
 Tuesdays at 10am (Monthly: Starting 1st Sept)`,
           weekly_availability: [],
           fortnightly_availability: [],
           location: "Greville St, Prahran"
         },
         {
-          availability: "Tuesdays at 4pm (Fortnightly: Starting 15th Sept)",
+          availability: "",
           weekly_availability: [],
           fortnightly_availability: [],
           location: "Telehealth"
         },
         {
           location: "Burke Rd, Camberwell",
-          availability: `Thursdays at 8am (Weekly: Starting 27th Aug)
-Wednesdays at 9am (Weekly: Starting 26th Aug)
-Fridays at 9am (Weekly: Starting 21st Aug)
+          availability: `Wednesdays at 9am (Weekly: Starting 26th Aug)
+Fridays at 9am (Weekly: Starting 28th Aug)
 Fridays at 1pm (Fortnightly: Starting 28th Aug)
-Thursdays at 12pm (Fortnightly: Starting 20th Aug)
+Thursdays at 12pm (Fortnightly: Starting 3rd Sept)
 Wednesdays at 8am (Fortnightly: Starting 26th Aug)
 Wednesdays at 1pm (Monthly: Starting 26th Aug)
 Fridays at 10am (Monthly: Starting 11th Sept)`,
@@ -23441,15 +23512,14 @@ Fridays at 10am (Monthly: Starting 11th Sept)`,
       ],
       last_updated: "2026-07-19",
       availability: [
-        "Thursdays at 8am (Weekly: Starting 27th Aug) — Burke Rd, Camberwell",
         "Wednesdays at 9am (Weekly: Starting 26th Aug) — Burke Rd, Camberwell",
-        "Fridays at 9am (Weekly: Starting 21st Aug) — Burke Rd, Camberwell",
+        "Fridays at 9am (Weekly: Starting 28th Aug) — Burke Rd, Camberwell",
         "Fridays at 1pm (Fortnightly: Starting 28th Aug) — Burke Rd, Camberwell",
-        "Thursdays at 12pm (Fortnightly: Starting 20th Aug) — Burke Rd, Camberwell",
+        "Thursdays at 12pm (Fortnightly: Starting 3rd Sept) — Burke Rd, Camberwell",
         "Wednesdays at 8am (Fortnightly: Starting 26th Aug) — Burke Rd, Camberwell",
         "Wednesdays at 1pm (Monthly: Starting 26th Aug) — Burke Rd, Camberwell",
         "Fridays at 10am (Monthly: Starting 11th Sept) — Burke Rd, Camberwell",
-        "Tuesdays at 4pm (Fortnightly: Starting 15th Sept) — Telehealth",
+        "Tuesdays at 4pm (Fortnightly: Starting 1st Sept) — Greville St, Prahran",
         "Tuesdays at 1pm (Fortnightly: Starting 1st Sept) — Greville St, Prahran",
         "Tuesdays at 10am (Monthly: Starting 1st Sept) — Greville St, Prahran"
       ],
@@ -23985,11 +24055,11 @@ I have a particular interest in the role that our early attachment relationships
       link_to_bio: "https://psychologycare.com.au/therese-van-maanen/",
       locations: [
         {
-          availability: `Thursdays at 3:15pm (Weekly: Starting 20th Aug)
-Thursdays at 2pm (Weekly: Starting 20th Aug)
+          availability: `Thursdays at 3:15pm (Weekly: Starting 3rd Sept)
+Thursdays at 2pm (Weekly: Starting 3rd Sept)
 Thursdays at 10:15am (Weekly: Starting 27th Aug)
 Thursdays at 11:30am (Weekly: Starting 27th Aug)
-Thursdays at 12:45pm (Fortnightly: Starting 20th Aug)
+Thursdays at 12:45pm (Fortnightly: Starting 3rd Sept)
 Thursdays at 12:45pm (Monthly: Starting 10th Sept)`,
           weekly_availability: [],
           fortnightly_availability: [],
@@ -23998,11 +24068,11 @@ Thursdays at 12:45pm (Monthly: Starting 10th Sept)`,
       ],
       last_updated: "2026-07-19",
       availability: [
-        "Thursdays at 3:15pm (Weekly: Starting 20th Aug) — Victoria St, St Kilda",
-        "Thursdays at 2pm (Weekly: Starting 20th Aug) — Victoria St, St Kilda",
+        "Thursdays at 3:15pm (Weekly: Starting 3rd Sept) — Victoria St, St Kilda",
+        "Thursdays at 2pm (Weekly: Starting 3rd Sept) — Victoria St, St Kilda",
         "Thursdays at 10:15am (Weekly: Starting 27th Aug) — Victoria St, St Kilda",
         "Thursdays at 11:30am (Weekly: Starting 27th Aug) — Victoria St, St Kilda",
-        "Thursdays at 12:45pm (Fortnightly: Starting 20th Aug) — Victoria St, St Kilda",
+        "Thursdays at 12:45pm (Fortnightly: Starting 3rd Sept) — Victoria St, St Kilda",
         "Thursdays at 12:45pm (Monthly: Starting 10th Sept) — Victoria St, St Kilda"
       ],
       short_bio: "A reflective, attachment-focused psychologist drawing on Circle of Security to support teens, adults, new parents and diverse couples toward meaningful change.",
@@ -24462,7 +24532,7 @@ Mondays at 11am (Monthly: Starting 28th Sept)`,
       medicareRebate: 149.05,
       locations: [
         {
-          availability: "Mondays at 11am (Monthly: Starting 31st Aug)",
+          availability: "",
           weekly_availability: [],
           fortnightly_availability: [],
           location: "Greville St, Prahran"
@@ -24563,9 +24633,7 @@ Mondays at 11am (Monthly: Starting 28th Sept)`,
         "T",
         ")"
       ],
-      availability: [
-        "Mondays at 11am (Monthly: Starting 31st Aug) — Greville St, Prahran"
-      ],
+      availability: [],
       bio: `When I was young, I wanted to be a marine biologist. I was in awe of the mysteries of the ocean and marvelled at the variety of creatures living within it. As I grew older and began to see the world through more adult eyes, I realised that the depth and breadth of human emotion and behaviour was far vaster and more complex than any ocean could ever be. And so, my path was set.
 
 After many years of study and work, I am now a Senior Clinical Psychologist having worked in the UK, New Zealand and finally Australia. I have many years of experience working in the public sector with severe and enduring mental health issues, and also with mild to moderate mental health issues that most of us experience at some point in our lifetime.
@@ -25256,7 +25324,7 @@ Ages:
       link_to_bio: "https://psychologycare.com.au/karen-pereira-york/",
       locations: [
         {
-          availability: `Thursdays at 12pm (Weekly: Starting 20th Aug)
+          availability: `Thursdays at 12pm (Weekly: Starting 3rd Sept)
 Mondays at 8:30am (Fortnightly: Starting 14th Sept)
 Thursdays at 10:30am (Fortnightly: Starting 3rd Sept)
 Thursdays at 9:30am (Fortnightly: Starting 10th Sept)
@@ -25271,7 +25339,7 @@ Tuesdays at 4:30pm (Monthly: Starting 8th Sept)`,
       ],
       last_updated: "2026-07-19",
       availability: [
-        "Thursdays at 12pm (Weekly: Starting 20th Aug) — Greville St, Prahran",
+        "Thursdays at 12pm (Weekly: Starting 3rd Sept) — Greville St, Prahran",
         "Mondays at 8:30am (Fortnightly: Starting 14th Sept) — Greville St, Prahran",
         "Thursdays at 10:30am (Fortnightly: Starting 3rd Sept) — Greville St, Prahran",
         "Thursdays at 9:30am (Fortnightly: Starting 10th Sept) — Greville St, Prahran",
@@ -25332,7 +25400,7 @@ Tuesdays at 4:30pm (Monthly: Starting 8th Sept)`,
       ]
     }
   ];
-  var AVAILABILITY_LAST_UPDATED = "20 Aug 2026 6:01am";
+  var AVAILABILITY_LAST_UPDATED = "21 Aug 2026 6:00am";
 
   // components/IntakeTab.tsx
   var jsx_dev_runtime6 = __toESM(require_jsx_dev_runtime(), 1);
