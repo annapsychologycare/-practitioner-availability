@@ -18665,7 +18665,7 @@ Please note: There are inherent confidentiality risks in communicating by email.
     }
     return { weekly, fortnightly, monthly };
   }
-  var PractitionerCard = ({ p, locationFilter, isSelected, onToggleSelect }) => {
+  var PractitionerCard = ({ p, locationFilter, isSelected, onToggleSelect, includeMonthly }) => {
     const [expanded, setExpanded] = import_react5.useState(false);
     const [copied, setCopied] = import_react5.useState(false);
     const safeLocs = p.locations || [];
@@ -18890,7 +18890,7 @@ Please note: There are inherent confidentiality risks in communicating by email.
                       className: "text-sm text-base-content/40 italic",
                       children: "No availability listed"
                     }, undefined, false, undefined, this) : /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("div", {
-                      className: "grid grid-cols-3 gap-2",
+                      className: `grid gap-2 ${includeMonthly ? "grid-cols-3" : "grid-cols-2"}`,
                       children: [
                         /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("div", {
                           className: "rounded-lg p-2",
@@ -18966,7 +18966,7 @@ Please note: There are inherent confidentiality risks in communicating by email.
                             }, undefined, false, undefined, this)
                           ]
                         }, undefined, true, undefined, this),
-                        /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("div", {
+                        includeMonthly && /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("div", {
                           className: "rounded-lg p-2",
                           style: { backgroundColor: "rgba(141,82,115,0.08)" },
                           children: [
@@ -19094,6 +19094,7 @@ Please note: There are inherent confidentiality risks in communicating by email.
     const [gateClientType, setGateClientType] = import_react5.useState("");
     const [gateAgeBracket, setGateAgeBracket] = import_react5.useState("");
     const [gateClientGender, setGateClientGender] = import_react5.useState("");
+    const [includeMonthly, setIncludeMonthly] = import_react5.useState(false);
     const gateComplete = !!gateClientType && !!gateAgeBracket && !!gateClientGender;
     const AGE_BRACKET_MAP = {
       "Under 12": 10,
@@ -19154,6 +19155,16 @@ Please note: There are inherent confidentiality risks in communicating by email.
       setSelectedDays([]);
       setDaysMatchAll(false);
     };
+    const resetAll = () => {
+      setGateClientType("");
+      setGateAgeBracket("");
+      setGateClientGender("");
+      setIncludeMonthly(false);
+      clearFilters();
+      setSelectedNames([]);
+      setShowSendModal(false);
+      setSentSuccess(false);
+    };
     const hasFilters = !!(keyword || selectedLocations.length || gender || clientType || therapistType || afterHours || hasAvailability || selectedPresentations.length || selectedModalities.length || selectedStyles.length || selectedBillingTypes.length || clientAge || selectedPractitionerNames.length || selectedAvailabilityTypes.length || selectedDays.length);
     const toggleSelect = (name) => {
       setSelectedNames((prev) => prev.includes(name) ? prev.filter((n) => n !== name) : [...prev, name]);
@@ -19179,17 +19190,29 @@ Please note: There are inherent confidentiality risks in communicating by email.
           style: { backgroundColor: "#f0edf5" },
           children: [
             /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("div", {
-              className: "flex items-center gap-2 mb-4",
+              className: "flex items-center justify-between gap-2 mb-4",
               children: [
-                /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("span", {
-                  className: "text-xs font-bold uppercase tracking-widest px-2.5 py-1 rounded text-white",
-                  style: { backgroundColor: "#2C244C" },
-                  children: "Required"
-                }, undefined, false, undefined, this),
-                /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("span", {
-                  className: "font-semibold text-base",
-                  style: { color: "#2C244C" },
-                  children: "Tell us about the client first"
+                /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("div", {
+                  className: "flex items-center gap-2",
+                  children: [
+                    /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("span", {
+                      className: "text-xs font-bold uppercase tracking-widest px-2.5 py-1 rounded text-white",
+                      style: { backgroundColor: "#2C244C" },
+                      children: "Required"
+                    }, undefined, false, undefined, this),
+                    /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("span", {
+                      className: "font-semibold text-base",
+                      style: { color: "#2C244C" },
+                      children: "Tell us about the client first"
+                    }, undefined, false, undefined, this)
+                  ]
+                }, undefined, true, undefined, this),
+                /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("button", {
+                  onClick: resetAll,
+                  className: "btn btn-sm gap-1.5 font-semibold",
+                  style: { backgroundColor: "#8D5273", color: "white", borderColor: "#8D5273" },
+                  title: "Clear everything and start a new client enquiry",
+                  children: "\uD83D\uDD04 New Client"
                 }, undefined, false, undefined, this)
               ]
             }, undefined, true, undefined, this),
@@ -19273,6 +19296,47 @@ Please note: There are inherent confidentiality risks in communicating by email.
                   style: { color: "#8D5273" },
                   children: "⚠️ Alex Barry, Chiara Killey and Clare Tuttleby accept female clients only."
                 }, undefined, false, undefined, this)
+              ]
+            }, undefined, true, undefined, this),
+            /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("div", {
+              className: "mt-4 pt-4",
+              style: { borderTop: "1px solid #CDA8BA" },
+              children: [
+                /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("div", {
+                  className: "text-xs font-semibold mb-2",
+                  style: { color: "#2C244C" },
+                  children: [
+                    "Include monthly availability?",
+                    " ",
+                    /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("span", {
+                      className: "font-normal",
+                      style: { color: "#8D5273" },
+                      children: "Only for low risk or approved clients"
+                    }, undefined, false, undefined, this)
+                  ]
+                }, undefined, true, undefined, this),
+                /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("div", {
+                  className: "flex gap-2 flex-wrap items-center",
+                  children: [
+                    /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("button", {
+                      onClick: () => setIncludeMonthly(false),
+                      className: "px-4 py-1.5 rounded-full text-sm font-medium border transition-all",
+                      style: !includeMonthly ? { backgroundColor: "#2C244C", color: "white", borderColor: "#2C244C" } : { backgroundColor: "white", color: "#2C244C", borderColor: "#CDA8BA" },
+                      children: "No (default)"
+                    }, undefined, false, undefined, this),
+                    /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("button", {
+                      onClick: () => setIncludeMonthly(true),
+                      className: "px-4 py-1.5 rounded-full text-sm font-medium border transition-all",
+                      style: includeMonthly ? { backgroundColor: "#8D5273", color: "white", borderColor: "#8D5273" } : { backgroundColor: "white", color: "#2C244C", borderColor: "#CDA8BA" },
+                      children: "✓ Yes — include monthly slots"
+                    }, undefined, false, undefined, this),
+                    includeMonthly && /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("span", {
+                      className: "text-xs",
+                      style: { color: "#8D5273" },
+                      children: "Monthly availability will be shown on all cards"
+                    }, undefined, false, undefined, this)
+                  ]
+                }, undefined, true, undefined, this)
               ]
             }, undefined, true, undefined, this)
           ]
@@ -19758,7 +19822,8 @@ Please note: There are inherent confidentiality risks in communicating by email.
                   p: item.p,
                   locationFilter: selectedLocations,
                   isSelected: selectedNames.includes(item.p.name),
-                  onToggleSelect: toggleSelect
+                  onToggleSelect: toggleSelect,
+                  includeMonthly
                 }, undefined, false, undefined, this)
               }, idx, false, undefined, this))
             }, undefined, false, undefined, this),
