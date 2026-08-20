@@ -17468,23 +17468,29 @@ Please note: There are inherent confidentiality risks in communicating by email.
   }
 
   // utils/emailBuilder.ts
-  function parseAvailability(text) {
+  function parseAvailability(text, includeMonthly = false) {
     const weekly = [];
     const fortnightly = [];
+    const monthly = [];
     if (!text)
-      return { weekly, fortnightly };
+      return { weekly, fortnightly, monthly };
     const lines = Array.isArray(text) ? text.map((l) => l.replace(/^\*\s*/, "").trim()).filter(Boolean) : text.split(`
 `).map((l) => l.replace(/^\*\s*/, "").trim()).filter(Boolean);
     for (const line of lines) {
-      if (/\(Monthly:/i.test(line))
+      if (/\(Monthly:/i.test(line)) {
+        if (!includeMonthly)
+          continue;
+        const cleaned2 = line.replace(/ at /i, " ").replace(/\s*\(Monthly: Starting ([^)]+)\)/i, " · from $1");
+        monthly.push(cleaned2);
         continue;
+      }
       const cleaned = line.replace(/ at /i, " ").replace(/\s*\((Weekly|Fortnightly): Starting ([^)]+)\)/i, " · from $2");
       if (/\(Weekly:/i.test(line))
         weekly.push(cleaned);
       else if (/\(Fortnightly:/i.test(line))
         fortnightly.push(cleaned);
     }
-    return { weekly, fortnightly };
+    return { weekly, fortnightly, monthly };
   }
   function renderSlotLine(slot, type) {
     const dotIdx = slot.indexOf(" · from ");
@@ -17496,11 +17502,11 @@ Please note: There are inherent confidentiality risks in communicating by email.
     }
     return `• ${slot}`;
   }
-  function buildAvailabilitySection(locations, config, locationNotes) {
+  function buildAvailabilitySection(locations, config, locationNotes, includeMonthly = false) {
     const c = config.colors;
     const activeLocs = locations.filter((l) => {
-      const { weekly, fortnightly } = parseAvailability(l.availability || "");
-      return weekly.length > 0 || fortnightly.length > 0;
+      const { weekly, fortnightly, monthly } = parseAvailability(l.availability || "", includeMonthly);
+      return weekly.length > 0 || fortnightly.length > 0 || monthly.length > 0;
     });
     if (activeLocs.length === 0) {
       return `
@@ -17511,13 +17517,14 @@ Please note: There are inherent confidentiality risks in communicating by email.
     }
     let html = "";
     for (const loc of activeLocs) {
-      const { weekly, fortnightly } = parseAvailability(loc.availability);
+      const { weekly, fortnightly, monthly } = parseAvailability(loc.availability, includeMonthly);
       const locLabel = ` — ${loc.location}`;
       const locNoteText = locationNotes?.[loc.location] || "";
       const locChangeNote = locNoteText ? `<div style="font-size:12px;color:#5a3060;background:#f5f0f9;border-left:3px solid ${c.availability_heading};border-radius:4px;padding:8px 12px;margin-bottom:10px;line-height:1.6;"><strong>Please Note:</strong> ${locNoteText.replace(/^Please Note:\s*/i, "")}</div>` : "";
       const weeklySlots = weekly.map((s) => renderSlotLine(s, "weekly"));
       const fortnightlySlots = fortnightly.map((s) => renderSlotLine(s, "fortnightly"));
-      const allSlots = [...weeklySlots, ...fortnightlySlots];
+      const monthlySlots = monthly.map((s) => renderSlotLine(s, "fortnightly"));
+      const allSlots = [...weeklySlots, ...fortnightlySlots, ...monthlySlots];
       html += `
       <div style="padding:16px 24px 0;">
         <div style="font-size:11px;font-weight:700;color:${c.availability_heading};text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">Availability${locLabel}</div>
@@ -17553,9 +17560,9 @@ Please note: There are inherent confidentiality risks in communicating by email.
     }
     return `<span style="font-size:13px;color:#888;font-style:italic;">${first}</span>`;
   }
-  function buildPractitionerCard(p, config) {
+  function buildPractitionerCard(p, config, includeMonthly = false) {
     const c = config.colors;
-    const availHtml = buildAvailabilitySection(p.availabilityLocations || [], config, p.location_notes);
+    const availHtml = buildAvailabilitySection(p.availabilityLocations || [], config, p.location_notes, includeMonthly);
     const feesInline = formatFeesInline(p.fees || "");
     const medicareInline = formatMedicareInline(p.medicare_rebate || "");
     const photoSrc = p.photo_b64 || p.photo_url || null;
@@ -17620,10 +17627,10 @@ Please note: There are inherent confidentiality risks in communicating by email.
       ${profileLink}
     </div>`;
   }
-  function buildEmailHtml(clientName, note, senderName, practitioners, config = DEFAULT_EMAIL_TEMPLATE_CONFIG) {
+  function buildEmailHtml(clientName, note, senderName, practitioners, config = DEFAULT_EMAIL_TEMPLATE_CONFIG, includeMonthly = false) {
     const c = config.colors;
     const sig = config.signature;
-    const cards = practitioners.map((p) => buildPractitionerCard(p, config)).join("");
+    const cards = practitioners.map((p) => buildPractitionerCard(p, config, includeMonthly)).join("");
     const gk = config.good_to_know;
     const goodToKnow = `
     <div style="background:#faf9fd;padding:24px 28px;border-top:2px solid #ede9f5;">
@@ -17693,7 +17700,7 @@ Please note: There are inherent confidentiality risks in communicating by email.
 
   // components/SendClientModal.tsx
   var jsx_dev_runtime = __toESM(require_jsx_dev_runtime(), 1);
-  var SendClientModal = ({ selected, locationFilter, onClose, onSent }) => {
+  var SendClientModal = ({ selected, locationFilter, onClose, onSent, includeMonthly = false }) => {
     const config = import_react3.useMemo(() => loadEmailTemplateConfig(), []);
     const [step, setStep] = import_react3.useState("form");
     const [copied, setCopied] = import_react3.useState(false);
@@ -17724,7 +17731,7 @@ Please note: There are inherent confidentiality risks in communicating by email.
         photo_url: p.photo_url
       };
     }), [selected, locationFilter]);
-    const previewHtml = import_react3.useMemo(() => buildEmailHtml(clientName || "Client", note, senderName, practitionerData, { ...config, intro_text: openingParagraph }), [clientName, note, senderName, practitionerData, config, openingParagraph]);
+    const previewHtml = import_react3.useMemo(() => buildEmailHtml(clientName || "Client", note, senderName, practitionerData, { ...config, intro_text: openingParagraph }, includeMonthly), [clientName, note, senderName, practitionerData, config, openingParagraph, includeMonthly]);
     const handleCopyEmail = async () => {
       try {
         const blob = new Blob([previewHtml], { type: "text/html" });
@@ -19887,7 +19894,8 @@ Please note: There are inherent confidentiality risks in communicating by email.
               selected: selectedPractitioners,
               locationFilter: selectedLocations.length === 1 ? selectedLocations[0] : "",
               onClose: () => setShowSendModal(false),
-              onSent: handleSent
+              onSent: handleSent,
+              includeMonthly
             }, undefined, false, undefined, this)
           ]
         }, undefined, true, undefined, this)

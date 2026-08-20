@@ -1195,6 +1195,7 @@ export default function FindPractitioner({ practitioners }: Props) {
           locationFilter={selectedLocations.length === 1 ? selectedLocations[0] : ""}
           onClose={() => setShowSendModal(false)}
           onSent={handleSent}
+          includeMonthly={includeMonthly}
         />
       )}
 

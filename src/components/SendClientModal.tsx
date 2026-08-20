@@ -10,11 +10,12 @@ interface Props {
   locationFilter: string;
   onClose: () => void;
   onSent: () => void;
+  includeMonthly?: boolean;
 }
 
 // ── Component ────────────────────────────────────────────────────────────────
 
-const SendClientModal: React.FC<Props> = ({ selected, locationFilter, onClose, onSent }) => {
+const SendClientModal: React.FC<Props> = ({ selected, locationFilter, onClose, onSent, includeMonthly = false }) => {
   // Load config from localStorage (reflects any edits made in Email Template tab)
   const config = useMemo(() => loadEmailTemplateConfig(), []);
 
@@ -60,56 +61,38 @@ const SendClientModal: React.FC<Props> = ({ selected, locationFilter, onClose, o
   );
 
   const previewHtml = useMemo(
-    () => buildEmailHtml(clientName || "Client", note, senderName, practitionerData, { ...config, intro_text: openingParagraph }),
-    [clientName, note, senderName, practitionerData, config, openingParagraph]
+    () => buildEmailHtml(clientName || "Client", note, senderName, practitionerData, { ...config, intro_text: openingParagraph }, includeMonthly),
+    [clientName, note, senderName, practitionerData, config, openingParagraph, includeMonthly]
   );
 
-  // Copy HTML: no outer background wrapper, full-width so it fills any email editor (e.g. Zanda)
-  const copyHtml = useMemo(
-    () => buildEmailHtml(clientName || "Client", note, senderName, practitionerData, { ...config, intro_text: openingParagraph }, true),
-    [clientName, note, senderName, practitionerData, config, openingParagraph]
-  );
-
-  const handleCopyEmail = () => {
+  const handleCopyEmail = async () => {
     try {
-      // Use ClipboardItem with text/html for rich-text copy (pastes rendered HTML, not raw tags)
-      if (navigator.clipboard && (window as any).ClipboardItem) {
-        const blob = new Blob([copyHtml], { type: "text/html" });
-        const item = new (window as any).ClipboardItem({ "text/html": blob });
-        navigator.clipboard.write([item]).then(() => {
-          setCopied(true);
-          setTimeout(() => setCopied(false), 3000);
-        }).catch(() => fallbackCopy());
-      } else {
-        fallbackCopy();
-      }
-    } catch (e) {
-      fallbackCopy();
-    }
-  };
-
-  const fallbackCopy = () => {
-    try {
-      // contenteditable approach — copies rendered HTML not raw text
-      const div = document.createElement("div");
-      div.contentEditable = "true";
-      div.innerHTML = previewHtml;
-      div.style.position = "fixed";
-      div.style.left = "-9999px";
-      div.style.top = "0";
-      div.style.opacity = "0";
-      document.body.appendChild(div);
-      const range = document.createRange();
-      range.selectNodeContents(div);
-      const sel = window.getSelection();
-      sel?.removeAllRanges();
-      sel?.addRange(range);
-      document.execCommand("copy");
-      document.body.removeChild(div);
+      // Copy as rich HTML so it pastes correctly into email clients
+      const blob = new Blob([previewHtml], { type: "text/html" });
+      const item = new ClipboardItem({ "text/html": blob });
+      await navigator.clipboard.write([item]);
       setCopied(true);
       setTimeout(() => setCopied(false), 3000);
-    } catch (e) {
-      console.error("Copy failed", e);
+    } catch {
+      // Fallback: use a contenteditable div so execCommand copies rendered HTML
+      try {
+        const div = document.createElement("div");
+        div.contentEditable = "true";
+        div.innerHTML = previewHtml;
+        div.style.cssText = "position:fixed;top:-9999px;left:-9999px;opacity:0;";
+        document.body.appendChild(div);
+        const range = document.createRange();
+        range.selectNodeContents(div);
+        const sel = window.getSelection();
+        sel?.removeAllRanges();
+        sel?.addRange(range);
+        document.execCommand("copy");
+        document.body.removeChild(div);
+        setCopied(true);
+        setTimeout(() => setCopied(false), 3000);
+      } catch (e) {
+        console.error("Copy failed", e);
+      }
     }
   };
 

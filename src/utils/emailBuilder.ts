@@ -15,22 +15,30 @@ export interface PractitionerEmailData {
   photo_url?: string;
 }
 
-export function parseAvailability(text: string | string[]): { weekly: string[]; fortnightly: string[] } {
+export function parseAvailability(text: string | string[], includeMonthly = false): { weekly: string[]; fortnightly: string[]; monthly: string[] } {
   const weekly: string[] = [];
   const fortnightly: string[] = [];
-  if (!text) return { weekly, fortnightly };
+  const monthly: string[] = [];
+  if (!text) return { weekly, fortnightly, monthly };
   const lines = Array.isArray(text)
     ? text.map((l) => l.replace(/^\*\s*/, "").trim()).filter(Boolean)
     : text.split("\n").map((l) => l.replace(/^\*\s*/, "").trim()).filter(Boolean);
   for (const line of lines) {
-    if (/\(Monthly:/i.test(line)) continue;
+    if (/\(Monthly:/i.test(line)) {
+      if (!includeMonthly) continue;
+      const cleaned = line
+        .replace(/ at /i, " ")
+        .replace(/\s*\(Monthly: Starting ([^)]+)\)/i, " · from $1");
+      monthly.push(cleaned);
+      continue;
+    }
     const cleaned = line
       .replace(/ at /i, " ")
       .replace(/\s*\((Weekly|Fortnightly): Starting ([^)]+)\)/i, " · from $2");
     if (/\(Weekly:/i.test(line)) weekly.push(cleaned);
     else if (/\(Fortnightly:/i.test(line)) fortnightly.push(cleaned);
   }
-  return { weekly, fortnightly };
+  return { weekly, fortnightly, monthly };
 }
 
 function renderSlotLine(slot: string, type: "weekly" | "fortnightly"): string {
@@ -49,12 +57,13 @@ function renderSlotLine(slot: string, type: "weekly" | "fortnightly"): string {
 function buildAvailabilitySection(
   locations: Array<{ location: string; availability: string | string[] }>,
   config: EmailTemplateConfig,
-  locationNotes?: Record<string, string>
+  locationNotes?: Record<string, string>,
+  includeMonthly = false
 ): string {
   const c = config.colors;
   const activeLocs = locations.filter((l) => {
-    const { weekly, fortnightly } = parseAvailability(l.availability || "");
-    return weekly.length > 0 || fortnightly.length > 0;
+    const { weekly, fortnightly, monthly } = parseAvailability(l.availability || "", includeMonthly);
+    return weekly.length > 0 || fortnightly.length > 0 || monthly.length > 0;
   });
   if (activeLocs.length === 0) {
     return `
@@ -65,7 +74,7 @@ function buildAvailabilitySection(
   }
   let html = "";
   for (const loc of activeLocs) {
-    const { weekly, fortnightly } = parseAvailability(loc.availability);
+    const { weekly, fortnightly, monthly } = parseAvailability(loc.availability, includeMonthly);
     const locLabel = ` — ${loc.location}`;
     const locNoteText = locationNotes?.[loc.location] || "";
     const locChangeNote = locNoteText
@@ -73,7 +82,8 @@ function buildAvailabilitySection(
       : "";
     const weeklySlots = weekly.map((s) => renderSlotLine(s, "weekly"));
     const fortnightlySlots = fortnightly.map((s) => renderSlotLine(s, "fortnightly"));
-    const allSlots = [...weeklySlots, ...fortnightlySlots];
+    const monthlySlots = monthly.map((s) => renderSlotLine(s, "fortnightly")); // reuse fortnightly style
+    const allSlots = [...weeklySlots, ...fortnightlySlots, ...monthlySlots];
     html += `
       <div style="padding:16px 24px 0;">
         <div style="font-size:11px;font-weight:700;color:${c.availability_heading};text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">Availability${locLabel}</div>
@@ -114,9 +124,9 @@ function formatMedicareInline(rebate: string): string {
   return `<span style="font-size:13px;color:#888;font-style:italic;">${first}</span>`;
 }
 
-function buildPractitionerCard(p: PractitionerEmailData, config: EmailTemplateConfig): string {
+function buildPractitionerCard(p: PractitionerEmailData, config: EmailTemplateConfig, includeMonthly = false): string {
   const c = config.colors;
-  const availHtml = buildAvailabilitySection(p.availabilityLocations || [], config, p.location_notes);
+  const availHtml = buildAvailabilitySection(p.availabilityLocations || [], config, p.location_notes, includeMonthly);
   const feesInline = formatFeesInline(p.fees || "");
   const medicareInline = formatMedicareInline(p.medicare_rebate || "");
 
@@ -195,12 +205,13 @@ export function buildEmailHtml(
   note: string,
   senderName: string,
   practitioners: PractitionerEmailData[],
-  config: EmailTemplateConfig = DEFAULT_EMAIL_TEMPLATE_CONFIG
+  config: EmailTemplateConfig = DEFAULT_EMAIL_TEMPLATE_CONFIG,
+  includeMonthly = false
 ): string {
   const c = config.colors;
   const sig = config.signature;
 
-  const cards = practitioners.map((p) => buildPractitionerCard(p, config)).join("");
+  const cards = practitioners.map((p) => buildPractitionerCard(p, config, includeMonthly)).join("");
 
   const gk = config.good_to_know;
   const goodToKnow = `
