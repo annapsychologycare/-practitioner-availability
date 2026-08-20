@@ -18,6 +18,7 @@ interface Filters {
   therapistType: string;
   afterHours: boolean;
   hasAvailability: boolean;
+  includeMonthly: boolean;
 
   presentations: string[];
   presentationsMatchAll: boolean;
@@ -319,8 +320,14 @@ function scoreMatch(p: Practitioner, filters: Filters): number {
     const hasAvail = relevantLocs.some(l => {
       const avail = l.availability;
       if (!avail) return false;
-      if (Array.isArray(avail)) return avail.length > 0;
-      return (avail as string).trim().length > 0;
+      const availStr = Array.isArray(avail) ? avail.join("\n") : (avail as string);
+      if (!availStr.trim()) return false;
+      // If monthly is excluded, only count weekly or fortnightly slots
+      if (!filters.includeMonthly) {
+        const lines = availStr.split("\n").map(s => s.toLowerCase());
+        return lines.some(line => line.startsWith("weekly") || line.startsWith("fortnightly"));
+      }
+      return true;
     });
     if (!hasAvail) return -1;
   }
@@ -742,7 +749,7 @@ export default function FindPractitioner({ practitioners }: Props) {
   const allPractitionerNames = useMemo(() => practitioners.map(p => p.name).sort(), [practitioners]);
 
   const results = useMemo(() => {
-    const filters: Filters = { keyword, locations: selectedLocations, locationMatchAll, gender, clientType, therapistType, afterHours, hasAvailability, presentations: selectedPresentations, presentationsMatchAll, modalities: selectedModalities, modalitiesMatchAll, styles: selectedStyles, stylesMatchAll, billingTypes: selectedBillingTypes, clientAge, practitionerNames: selectedPractitionerNames, availabilityTypes: selectedAvailabilityTypes, days: selectedDays, daysMatchAll, gateClientType, gateAgeRep, gateExcludeFemaleOnly };
+    const filters: Filters = { keyword, locations: selectedLocations, locationMatchAll, gender, clientType, therapistType, afterHours, hasAvailability, includeMonthly, presentations: selectedPresentations, presentationsMatchAll, modalities: selectedModalities, modalitiesMatchAll, styles: selectedStyles, stylesMatchAll, billingTypes: selectedBillingTypes, clientAge, practitionerNames: selectedPractitionerNames, availabilityTypes: selectedAvailabilityTypes, days: selectedDays, daysMatchAll, gateClientType, gateAgeRep, gateExcludeFemaleOnly };
     return practitioners
       .filter(p => !(p as any).referral_only)
       .map(p => ({ p, score: scoreMatch(p, filters) }))

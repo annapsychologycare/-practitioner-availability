@@ -18545,9 +18545,16 @@ Please note: There are inherent confidentiality risks in communicating by email.
         const avail = l.availability;
         if (!avail)
           return false;
-        if (Array.isArray(avail))
-          return avail.length > 0;
-        return avail.trim().length > 0;
+        const availStr = Array.isArray(avail) ? avail.join(`
+`) : avail;
+        if (!availStr.trim())
+          return false;
+        if (!filters.includeMonthly) {
+          const lines = availStr.split(`
+`).map((s) => s.toLowerCase());
+          return lines.some((line) => line.startsWith("weekly") || line.startsWith("fortnightly"));
+        }
+        return true;
       });
       if (!hasAvail)
         return -1;
@@ -19137,7 +19144,7 @@ Please note: There are inherent confidentiality risks in communicating by email.
     const [sentSuccess, setSentSuccess] = import_react5.useState(false);
     const allPractitionerNames = import_react5.useMemo(() => practitioners.map((p) => p.name).sort(), [practitioners]);
     const results = import_react5.useMemo(() => {
-      const filters = { keyword, locations: selectedLocations, locationMatchAll, gender, clientType, therapistType, afterHours, hasAvailability, presentations: selectedPresentations, presentationsMatchAll, modalities: selectedModalities, modalitiesMatchAll, styles: selectedStyles, stylesMatchAll, billingTypes: selectedBillingTypes, clientAge, practitionerNames: selectedPractitionerNames, availabilityTypes: selectedAvailabilityTypes, days: selectedDays, daysMatchAll, gateClientType, gateAgeRep, gateExcludeFemaleOnly };
+      const filters = { keyword, locations: selectedLocations, locationMatchAll, gender, clientType, therapistType, afterHours, hasAvailability, includeMonthly, presentations: selectedPresentations, presentationsMatchAll, modalities: selectedModalities, modalitiesMatchAll, styles: selectedStyles, stylesMatchAll, billingTypes: selectedBillingTypes, clientAge, practitionerNames: selectedPractitionerNames, availabilityTypes: selectedAvailabilityTypes, days: selectedDays, daysMatchAll, gateClientType, gateAgeRep, gateExcludeFemaleOnly };
       return practitioners.filter((p) => !p.referral_only).map((p) => ({ p, score: scoreMatch(p, filters) })).filter((item) => item.score >= 0).sort((a, b) => b.score - a.score || a.p.name.localeCompare(b.p.name));
     }, [practitioners, keyword, selectedLocations, locationMatchAll, gender, clientType, therapistType, afterHours, hasAvailability, selectedPresentations, presentationsMatchAll, selectedModalities, modalitiesMatchAll, selectedStyles, stylesMatchAll, selectedBillingTypes, clientAge, selectedPractitionerNames, selectedAvailabilityTypes, selectedDays, daysMatchAll, gateClientType, gateAgeRep, gateExcludeFemaleOnly]);
     const clearFilters = () => {
