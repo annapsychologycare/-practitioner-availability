@@ -17523,7 +17523,7 @@ Please note: There are inherent confidentiality risks in communicating by email.
       const locChangeNote = locNoteText ? `<div style="font-size:12px;color:#5a3060;background:#f5f0f9;border-left:3px solid ${c.availability_heading};border-radius:4px;padding:8px 12px;margin-bottom:10px;line-height:1.6;"><strong>Please Note:</strong> ${locNoteText.replace(/^Please Note:\s*/i, "")}</div>` : "";
       const weeklySlots = weekly.map((s) => renderSlotLine(s, "weekly"));
       const fortnightlySlots = fortnightly.map((s) => renderSlotLine(s, "fortnightly"));
-      const monthlySlots = monthly.map((s) => renderSlotLine(s, "fortnightly"));
+      const monthlySlots = monthly.map((s) => renderSlotLine(s, "monthly"));
       const allSlots = [...weeklySlots, ...fortnightlySlots, ...monthlySlots];
       html += `
       <div style="padding:16px 24px 0;">

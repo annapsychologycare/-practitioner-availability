@@ -41,7 +41,7 @@ export function parseAvailability(text: string | string[], includeMonthly = fals
   return { weekly, fortnightly, monthly };
 }
 
-function renderSlotLine(slot: string, type: "weekly" | "fortnightly"): string {
+function renderSlotLine(slot: string, type: "weekly" | "fortnightly" | "monthly"): string {
   const dotIdx = slot.indexOf(" · from ");
   if (dotIdx > -1) {
     const dayTime = slot.substring(0, dotIdx).trim();
@@ -82,7 +82,7 @@ function buildAvailabilitySection(
       : "";
     const weeklySlots = weekly.map((s) => renderSlotLine(s, "weekly"));
     const fortnightlySlots = fortnightly.map((s) => renderSlotLine(s, "fortnightly"));
-    const monthlySlots = monthly.map((s) => renderSlotLine(s, "fortnightly")); // reuse fortnightly style
+    const monthlySlots = monthly.map((s) => renderSlotLine(s, "monthly"));
     const allSlots = [...weeklySlots, ...fortnightlySlots, ...monthlySlots];
     html += `
       <div style="padding:16px 24px 0;">
