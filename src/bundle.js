@@ -20918,7 +20918,7 @@ Mondays at 1pm (Monthly: Starting 7th Sept)`,
       fees: `B/H: $275
 A/H: $315`,
       medicare_rebate: "149.05",
-      bio: `Brigid Blanckenberg is a Clinical Psychologist who offers a calm and reflective space for clients to explore their inner worlds and make meaningful changes in their lives.  She values the therapeutic relationship as a foundation for healing and works collaboratively with each client to understand their experiences with curiosity, care, and respect.
+      bio: `Brigid is a Clinical Psychologist who offers a calm and reflective space for clients to explore their inner worlds and make meaningful changes in their lives.  She values the therapeutic relationship as a foundation for healing and works collaboratively with each client to understand their experiences with curiosity, care, and respect.
 
 Drawing from an attachment-informed perspective, Brigid is attuned to how early experiences shape present patterns—particularly within relationships—and supports clients to develop new ways of relating to themselves and others. Using an integrative approach, Brigid is an accredited EMDR therapist and Internal Family Systems therapist (Level 1), and she also draws upon Schema Therapy, Cognitive Behavioural Therapy (CBT) and Acceptance and Commitment Therapy (ACT) to meet individual client needs.
 
@@ -20964,8 +20964,7 @@ Wednesdays at 9am (Monthly: Starting 23rd Sept)`
         "Wednesdays at 9am (Monthly: Starting 23rd Sept) — Greville St, Prahran"
       ],
       client_gender_accepted: "Any",
-      shortBio: `Brigid Blanckenberg
-Brigid is a warm and reflective therapist who offers a calm, supportive space for clients to explore life’s challenges and create meaningful change. Her approach is grounded in trauma-informed Schema Therapy and EMDR, supported by CBT, ACT, and mindfulness-based techniques. With a background in yoga and meditation, she brings a gentle, body-aware presence to her work. Brigid supports adults and adolescents with anxiety, mood difficulties, trauma, relationships, and self-esteem, and is passionate about working inclusively with the LGBTIQ+ community.`,
+      shortBio: "Brigid is a warm and reflective therapist who offers a calm, supportive space for clients to explore life’s challenges and create meaningful change. Her approach is grounded in trauma-informed Schema Therapy and EMDR, supported by CBT, ACT, and mindfulness-based techniques. With a background in yoga and meditation, she brings a gentle, body-aware presence to her work. Brigid supports adults and adolescents with anxiety, mood difficulties, trauma, relationships, and self-esteem, and is passionate about working inclusively with the LGBTIQ+ community.",
       ageGroups: [
         "18 Yrs +"
       ],
@@ -22878,7 +22877,6 @@ EMDR in-person only — not appropriate for telehealth delivery.`,
         "Circle of Security (COS)",
         "Cognitive Behavioural Therapy (CBT)",
         "Dialectical Behaviour Therapy (DBT)",
-        "Eye Movement Desensitisation and Reprocessing (EMDR)",
         "Intensive Short-Term Dynamic Psychotherapy (ISTDP)",
         "Internal Family Systems (IFS) / Parts Work (Informed)",
         "Psychodynamic Therapy"
@@ -23104,10 +23102,8 @@ Beyond her counselling practice, Cristina is a skilled Dance Movement Therapist.
 Cristina is a Somatic Experiencing® (SE™) Practitioner, having completed the professional training in Somatic Experiencing®. She thoughtfully integrates SE™ principles into her work, supporting clients to gently resolve the effects of stress and trauma by working with the nervous system and the body's natural capacity for healing.`,
       pronouns: "She/Her",
       billing_types: "Self Funded, Third Party, WorkSafe, EAP",
-      languages: [
-        `English
-Spanish`
-      ],
+      languages: `English
+Spanish`,
       spare_time: "Dance, sing, DJ, laugh, nature adventures, hang out with my cats and beloveds, read, write, garden, cook, workshops, and being creative in weird and wonderful ways",
       pap_clinician: "",
       after_hours: "Yes",
