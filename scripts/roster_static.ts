@@ -89,8 +89,6 @@ const ROSTER: Record<string, DayRoster> = {
     '183a': [
       { name: 'Poorna',   hours: '8:30am–3:30pm', room: 'Grey Room' },
       { name: 'Pete',     hours: '8am–3pm',       room: 'Brown Room' },
-      { name: 'Cristina', hours: '8am–2pm',       room: 'Green Room' },
-      { name: 'Cristina', hours: '3:30pm–8:30pm', room: 'Brown Room' },
       { name: 'Karen',    hours: '2:30pm–8:30pm', room: 'Green Room' },
     ],
     '185a': [
