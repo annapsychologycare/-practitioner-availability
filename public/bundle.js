@@ -20949,6 +20949,7 @@ Tuesdays at 2:30pm (Monthly: Starting 29th Sept)`,
           location: "Greville St, Prahran",
           availability: `Wednesdays at 10am (Fortnightly: Starting 30th Sept)
 Wednesdays at 8am (Monthly: Starting 23rd Sept)
+Thursdays at 4:30pm (Monthly: Starting 15th Oct)
 Wednesdays at 9am (Monthly: Starting 23rd Sept)`
         }
       ],
@@ -20961,6 +20962,7 @@ Wednesdays at 9am (Monthly: Starting 23rd Sept)`
         "Tuesdays at 2:30pm (Monthly: Starting 29th Sept) — Burke Rd, Camberwell",
         "Wednesdays at 10am (Fortnightly: Starting 30th Sept) — Greville St, Prahran",
         "Wednesdays at 8am (Monthly: Starting 23rd Sept) — Greville St, Prahran",
+        "Thursdays at 4:30pm (Monthly: Starting 15th Oct) — Greville St, Prahran",
         "Wednesdays at 9am (Monthly: Starting 23rd Sept) — Greville St, Prahran"
       ],
       client_gender_accepted: "Any",
@@ -22243,13 +22245,15 @@ Being a psychologist is a humbling role and a valued part of my life. I feel hon
       link_to_bio: "https://psychologycare.com.au/niloofar-danaei/",
       locations: [
         {
-          availability: "Tuesdays at 10am (Monthly: Starting 29th Sept)",
+          availability: `Tuesdays at 11am (Weekly: Starting 27th Oct)
+Tuesdays at 10am (Monthly: Starting 29th Sept)`,
           weekly_availability: [],
           fortnightly_availability: [],
           location: "Telehealth"
         },
         {
-          availability: "",
+          availability: `Mondays at 8am (Weekly: Starting 26th Oct)
+Mondays at 10am (Fortnightly: Starting 26th Oct)`,
           weekly_availability: [],
           fortnightly_availability: [],
           location: "Burke Rd, Camberwell"
@@ -22257,6 +22261,9 @@ Being a psychologist is a humbling role and a valued part of my life. I feel hon
       ],
       last_updated: "2026-07-19",
       availability: [
+        "Mondays at 8am (Weekly: Starting 26th Oct) — Burke Rd, Camberwell",
+        "Mondays at 10am (Fortnightly: Starting 26th Oct) — Burke Rd, Camberwell",
+        "Tuesdays at 11am (Weekly: Starting 27th Oct) — Telehealth",
         "Tuesdays at 10am (Monthly: Starting 29th Sept) — Telehealth"
       ],
       short_bio: "A trauma-informed clinical psychologist and social worker integrating IFS, ACT, DBT, CBT and mindfulness to support healing from trauma, intense emotions and life transitions.",
@@ -22576,6 +22583,7 @@ Wednesdays at 3:30pm (Fortnightly: Starting 9th Sept)
 Saturdays at 2pm (Fortnightly: Starting 12th Sept)
 Fridays at 7:30pm (Fortnightly: Starting 4th Sept)
 Fridays at 5:30pm (Monthly: Starting 25th Sept)
+Wednesdays at 6:30pm (Monthly: Starting 14th Oct)
 Saturdays at 10am (Monthly: Starting 19th Sept)
 Tuesdays at 9am (Monthly: Starting 15th Sept)
 Tuesdays at 8am (Monthly: Starting 8th Sept)
@@ -22591,6 +22599,7 @@ Mondays at 11am (Monthly: Starting 14th Sept)`,
         "Saturdays at 2pm (Fortnightly: Starting 12th Sept) — Greville St, Prahran",
         "Fridays at 7:30pm (Fortnightly: Starting 4th Sept) — Greville St, Prahran",
         "Fridays at 5:30pm (Monthly: Starting 25th Sept) — Greville St, Prahran",
+        "Wednesdays at 6:30pm (Monthly: Starting 14th Oct) — Greville St, Prahran",
         "Saturdays at 10am (Monthly: Starting 19th Sept) — Greville St, Prahran",
         "Tuesdays at 9am (Monthly: Starting 15th Sept) — Greville St, Prahran",
         "Tuesdays at 8am (Monthly: Starting 8th Sept) — Greville St, Prahran",
@@ -23054,7 +23063,10 @@ Throughout our time together, rest assured that I understand and respect the tru
       link_to_bio: "https://psychologycare.com.au/chiara-killey/",
       locations: [
         {
-          availability: "Saturdays at 10am (Monthly: Starting 10th Oct)",
+          availability: `Saturdays at 12pm (Weekly: Starting 10th Oct)
+Saturdays at 10am (Fortnightly: Starting 17th Oct)
+Saturdays at 1pm (Monthly: Starting 31st Oct)
+Saturdays at 10am (Monthly: Starting 10th Oct)`,
           weekly_availability: [],
           fortnightly_availability: [],
           location: "Telehealth"
@@ -23062,6 +23074,9 @@ Throughout our time together, rest assured that I understand and respect the tru
       ],
       last_updated: "2026-07-19",
       availability: [
+        "Saturdays at 12pm (Weekly: Starting 10th Oct) — Telehealth",
+        "Saturdays at 10am (Fortnightly: Starting 17th Oct) — Telehealth",
+        "Saturdays at 1pm (Monthly: Starting 31st Oct) — Telehealth",
         "Saturdays at 10am (Monthly: Starting 10th Oct) — Telehealth"
       ],
       short_bio: "Chiara is a neurodivergent, neuro-affirming clinical psychologist supporting adults with autism, ADHD and diverse needs using collaborative, family-inclusive, evidence-based therapies.",
@@ -25141,7 +25156,7 @@ Tuesdays at 4:30pm (Monthly: Starting 8th Sept)`,
       ]
     }
   ];
-  var AVAILABILITY_LAST_UPDATED = "27 Aug 2026 6:00am";
+  var AVAILABILITY_LAST_UPDATED = "27 Aug 2026 7:43am";
 
   // components/IntakeTab.tsx
   var jsx_dev_runtime6 = __toESM(require_jsx_dev_runtime(), 1);
