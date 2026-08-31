@@ -2013,7 +2013,7 @@ export const PRACTITIONERS_DATA = [
     "fees": "B/H: $235\nA/H: $275",
     "medicare_rebate": "101.55",
     "gender": "Female",
-    "alert": "Maternity leave from mid-Nov 2026. Return date unknown.|Please note: Meg will be going on maternity leave from mid-November 2026. Availability is limited — please book early or contact us and we can match you with another practitioner.",
+    "alert": "Maternity leave from mid-Nov 2026. Return date unknown.|Please note: Meg will be going on maternity leave from mid-November 2026. If you're looking for ongoing longer-term support, it's worth keeping this in mind when deciding if she is the right match for you.",
     "presentations": [
       "Academic Pressure & Performance Stress",
       "Adjustment Disorder",
