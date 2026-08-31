@@ -22664,7 +22664,7 @@ Mondays at 11am (Monthly: Starting 14th Sept)`,
 A/H: $275`,
       medicare_rebate: "101.55",
       gender: "Female",
-      alert: "",
+      alert: "|Please note: Meg will be going on maternity leave from mid-November 2026. Availability is limited — please book early or contact us and we can match you with another practitioner.",
       presentations: [
         "Academic Pressure & Performance Stress",
         "Adjustment Disorder",
