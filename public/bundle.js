@@ -21321,7 +21321,8 @@ I bring a warm, thoughtful, and calm presence to my work in the therapy room, an
       locations: [
         {
           location: "Burke Rd, Camberwell",
-          availability: `Wednesdays at 8am (Monthly: Starting 16th Sept)
+          availability: `Wednesdays at 10am (Fortnightly: Starting 2nd Sept)
+Wednesdays at 8am (Monthly: Starting 16th Sept)
 Tuesdays at 1pm (Monthly: Starting 29th Sept)`,
           weekly_availability: [],
           fortnightly_availability: [
@@ -21335,6 +21336,7 @@ Tuesdays at 1pm (Monthly: Starting 29th Sept)`,
       ],
       last_updated: "2026-07-19",
       availability: [
+        "Wednesdays at 10am (Fortnightly: Starting 2nd Sept) — Burke Rd, Camberwell",
         "Wednesdays at 8am (Monthly: Starting 16th Sept) — Burke Rd, Camberwell",
         "Tuesdays at 1pm (Monthly: Starting 29th Sept) — Burke Rd, Camberwell"
       ],
@@ -22577,8 +22579,7 @@ Fridays at 5:30pm (Monthly: Starting 25th Sept)
 Wednesdays at 6:30pm (Monthly: Starting 14th Oct)
 Saturdays at 10am (Monthly: Starting 19th Sept)
 Tuesdays at 9am (Monthly: Starting 15th Sept)
-Tuesdays at 8am (Monthly: Starting 8th Sept)
-Mondays at 11am (Monthly: Starting 14th Sept)`,
+Tuesdays at 8am (Monthly: Starting 8th Sept)`,
           weekly_availability: [],
           fortnightly_availability: []
         }
@@ -22593,8 +22594,7 @@ Mondays at 11am (Monthly: Starting 14th Sept)`,
         "Wednesdays at 6:30pm (Monthly: Starting 14th Oct) — Greville St, Prahran",
         "Saturdays at 10am (Monthly: Starting 19th Sept) — Greville St, Prahran",
         "Tuesdays at 9am (Monthly: Starting 15th Sept) — Greville St, Prahran",
-        "Tuesdays at 8am (Monthly: Starting 8th Sept) — Greville St, Prahran",
-        "Mondays at 11am (Monthly: Starting 14th Sept) — Greville St, Prahran"
+        "Tuesdays at 8am (Monthly: Starting 8th Sept) — Greville St, Prahran"
       ],
       short_bio: "Christine is a trauma specialist psychotherapist and psychoanalyst offering EMDR and depth therapy to help survivors reclaim and live with their stories.​",
       weekly_availability: [
@@ -22664,7 +22664,7 @@ Mondays at 11am (Monthly: Starting 14th Sept)`,
 A/H: $275`,
       medicare_rebate: "101.55",
       gender: "Female",
-      alert: "",
+      alert: "Maternity leave from mid-Nov 2026. Return date unknown.|Please note: Meg will be going on maternity leave from mid-November 2026. If you're looking for ongoing longer-term support, it's worth keeping this in mind when deciding if she is the right match for you.",
       presentations: [
         "Academic Pressure & Performance Stress",
         "Adjustment Disorder",
@@ -22735,10 +22735,7 @@ Above all, I believe that the therapeutic relationship is central to the healing
         {
           location: "Burke Rd, Camberwell",
           availability: `Tuesdays at 12pm (Weekly: Starting 1st Sept)
-Thursdays at 1pm (Weekly: Starting 3rd Sept)
-Thursdays at 9am (Fortnightly: Starting 8th Oct)
-Thursdays at 10am (Fortnightly: Starting 10th Sept)
-Tuesdays at 8am (Monthly: Starting 29th Sept)`,
+Thursdays at 1pm (Weekly: Starting 3rd Sept)`,
           weekly_availability: [],
           fortnightly_availability: []
         }
@@ -22746,10 +22743,7 @@ Tuesdays at 8am (Monthly: Starting 29th Sept)`,
       last_updated: "2026-07-19",
       availability: [
         "Tuesdays at 12pm (Weekly: Starting 1st Sept) — Burke Rd, Camberwell",
-        "Thursdays at 1pm (Weekly: Starting 3rd Sept) — Burke Rd, Camberwell",
-        "Thursdays at 9am (Fortnightly: Starting 8th Oct) — Burke Rd, Camberwell",
-        "Thursdays at 10am (Fortnightly: Starting 10th Sept) — Burke Rd, Camberwell",
-        "Tuesdays at 8am (Monthly: Starting 29th Sept) — Burke Rd, Camberwell"
+        "Thursdays at 1pm (Weekly: Starting 3rd Sept) — Burke Rd, Camberwell"
       ],
       short_bio: "Meg is a warm, person-centred psychologist using integrative cognitive, behavioural and psychodynamic therapies to support stress, anxiety, depression, trauma and life changes.",
       weekly_availability: [
@@ -23248,10 +23242,12 @@ Tuesdays at 10am (Monthly: Starting 1st Sept)`,
         },
         {
           location: "Burke Rd, Camberwell",
-          availability: `Wednesdays at 9am (Weekly: Starting 2nd Sept)
-Fridays at 9am (Weekly: Starting 4th Sept)
-Fridays at 1pm (Fortnightly: Starting 11th Sept)
-Thursdays at 12pm (Fortnightly: Starting 3rd Sept)
+          availability: `Fridays at 2:30pm (Weekly: Starting 18th Sept)
+Thursdays at 1:30pm (Weekly: Starting 17th Sept)
+Wednesdays at 9am (Weekly: Starting 2nd Sept)
+Fridays at 9am (Fortnightly: Starting 11th Sept)
+Fridays at 12:30pm (Fortnightly: Starting 11th Sept)
+Thursdays at 11:30am (Fortnightly: Starting 3rd Sept)
 Wednesdays at 1pm (Monthly: Starting 23rd Sept)
 Fridays at 10am (Monthly: Starting 18th Sept)`,
           weekly_availability: [],
@@ -23260,10 +23256,12 @@ Fridays at 10am (Monthly: Starting 18th Sept)`,
       ],
       last_updated: "2026-07-19",
       availability: [
+        "Fridays at 2:30pm (Weekly: Starting 18th Sept) — Burke Rd, Camberwell",
+        "Thursdays at 1:30pm (Weekly: Starting 17th Sept) — Burke Rd, Camberwell",
         "Wednesdays at 9am (Weekly: Starting 2nd Sept) — Burke Rd, Camberwell",
-        "Fridays at 9am (Weekly: Starting 4th Sept) — Burke Rd, Camberwell",
-        "Fridays at 1pm (Fortnightly: Starting 11th Sept) — Burke Rd, Camberwell",
-        "Thursdays at 12pm (Fortnightly: Starting 3rd Sept) — Burke Rd, Camberwell",
+        "Fridays at 9am (Fortnightly: Starting 11th Sept) — Burke Rd, Camberwell",
+        "Fridays at 12:30pm (Fortnightly: Starting 11th Sept) — Burke Rd, Camberwell",
+        "Thursdays at 11:30am (Fortnightly: Starting 3rd Sept) — Burke Rd, Camberwell",
         "Wednesdays at 1pm (Monthly: Starting 23rd Sept) — Burke Rd, Camberwell",
         "Fridays at 10am (Monthly: Starting 18th Sept) — Burke Rd, Camberwell",
         "Tuesdays at 2pm (Fortnightly: Starting 22nd Sept) — Greville St, Prahran",
@@ -23627,8 +23625,7 @@ Josh has worked in both public and private sectors, and has experience with trau
       locations: [
         {
           location: "Burke Rd, Camberwell",
-          availability: `Thursdays at 7:30pm (Weekly: Starting 17th Sept)
-Thursdays at 2:30pm (Weekly: Starting 17th Sept)
+          availability: `Thursdays at 2:30pm (Weekly: Starting 17th Sept)
 Thursdays at 3:30pm (Fortnightly: Starting 24th Sept)
 Wednesdays at 6:15pm (Monthly: Starting 16th Sept)`,
           weekly_availability: [],
@@ -23644,7 +23641,6 @@ Wednesdays at 6:15pm (Monthly: Starting 16th Sept)`,
       last_updated: "2026-07-19",
       short_bio: "Josh is a warm, research-active clinical psychologist supporting adolescents and adults with integrative, values-based therapy for trauma, neurodiversity and emotional difficulties.",
       availability: [
-        "Thursdays at 7:30pm (Weekly: Starting 17th Sept) — Burke Rd, Camberwell",
         "Thursdays at 2:30pm (Weekly: Starting 17th Sept) — Burke Rd, Camberwell",
         "Thursdays at 3:30pm (Fortnightly: Starting 24th Sept) — Burke Rd, Camberwell",
         "Wednesdays at 6:15pm (Monthly: Starting 16th Sept) — Burke Rd, Camberwell"
@@ -25147,7 +25143,7 @@ Tuesdays at 4:30pm (Monthly: Starting 8th Sept)`,
       ]
     }
   ];
-  var AVAILABILITY_LAST_UPDATED = "31 Aug 2026 6:00am";
+  var AVAILABILITY_LAST_UPDATED = "31 Aug 2026 11:56am";
 
   // components/IntakeTab.tsx
   var jsx_dev_runtime6 = __toESM(require_jsx_dev_runtime(), 1);
