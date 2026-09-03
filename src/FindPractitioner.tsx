@@ -251,9 +251,9 @@ const MODALITY_OPTIONS = [
   "Eye Movement Desensitisation and Reprocessing (EMDR)", "Existential Therapy",
   "Exposure and Response Prevention (ERP)", "Family Systems Therapy",
   "Gestalt Therapy", "Gottman Method Couples Therapy", "Humanistic / Person-Centred",
-  "Internal Family Systems (IFS) / Parts Work - Informed",
-  "Internal Family Systems (IFS) / Parts Work - Certified Level 1",
-  "Intensive Short Term Dynamic Psychotherapy (ISTDP)",
+  "Internal Family Systems (IFS) / Parts Work (Informed)",
+  "Internal Family Systems (IFS) / Parts Work (Level 1 Certified)",
+  "Intensive Short-Term Dynamic Psychotherapy (ISTDP)",
   "Interpersonal Therapy (IPT)", "LGBTQIA+ Informed Therapies",
   "Mindfulness", "Mindfulness-Based Cognitive Therapy (MBCT)",
   "Motivational Interviewing (MI)", "Narrative Therapy",
@@ -378,7 +378,12 @@ function scoreMatch(p: Practitioner, filters: Filters): number {
       // Exact match first (case-insensitive)
       if (modArray.some((m: string) => m.toLowerCase() === mod.toLowerCase())) return true;
       // Fuzzy fallback for legacy/short labels
-      const key = mod.toLowerCase().replace(/^emdr.*/, "eye movement").replace(/^humanistic.*/, "humanistic").replace(/^trauma-informed.*/, "trauma");
+      const key = mod.toLowerCase()
+        .replace(/^emdr.*/, "eye movement")
+        .replace(/^humanistic.*/, "humanistic")
+        .replace(/^trauma-informed.*/, "trauma")
+        .replace(/^internal family systems.*/, "internal family systems")
+        .replace(/^intensive short.term dynamic.*/, "intensive short");
       // Only use substring if key is meaningfully long (>15 chars) to avoid false positives
       return key.length > 15 && modText.includes(key);
     };
