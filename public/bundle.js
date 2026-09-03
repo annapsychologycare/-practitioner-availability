@@ -18479,9 +18479,9 @@ Please note: There are inherent confidentiality risks in communicating by email.
     "Gestalt Therapy",
     "Gottman Method Couples Therapy",
     "Humanistic / Person-Centred",
-    "Internal Family Systems (IFS) / Parts Work - Informed",
-    "Internal Family Systems (IFS) / Parts Work - Certified Level 1",
-    "Intensive Short Term Dynamic Psychotherapy (ISTDP)",
+    "Internal Family Systems (IFS) / Parts Work (Informed)",
+    "Internal Family Systems (IFS) / Parts Work (Level 1 Certified)",
+    "Intensive Short-Term Dynamic Psychotherapy (ISTDP)",
     "Interpersonal Therapy (IPT)",
     "LGBTQIA+ Informed Therapies",
     "Mindfulness",
@@ -18596,7 +18596,7 @@ Please note: There are inherent confidentiality risks in communicating by email.
       const modMatchFn = (mod) => {
         if (modArray.some((m) => m.toLowerCase() === mod.toLowerCase()))
           return true;
-        const key = mod.toLowerCase().replace(/^emdr.*/, "eye movement").replace(/^humanistic.*/, "humanistic").replace(/^trauma-informed.*/, "trauma");
+        const key = mod.toLowerCase().replace(/^emdr.*/, "eye movement").replace(/^humanistic.*/, "humanistic").replace(/^trauma-informed.*/, "trauma").replace(/^internal family systems.*/, "internal family systems").replace(/^intensive short.term dynamic.*/, "intensive short");
         return key.length > 15 && modText.includes(key);
       };
       const modMatch = filters.modalitiesMatchAll ? filters.modalities.every(modMatchFn) : filters.modalities.some(modMatchFn);
@@ -20785,7 +20785,8 @@ Rebekah has a compassionate and thoughtful approach to the emotional care and su
       locations: [
         {
           location: "Burke Rd, Camberwell",
-          availability: `Mondays at 11am (Fortnightly: Starting 7th Sept)
+          availability: `Saturdays at 10am (Fortnightly: Starting 12th Sept)
+Mondays at 11am (Fortnightly: Starting 7th Sept)
 Mondays at 4pm (Fortnightly: Starting 14th Sept)
 Mondays at 4pm (Monthly: Starting 19th Oct)
 Mondays at 1pm (Monthly: Starting 7th Sept)`,
@@ -20795,6 +20796,7 @@ Mondays at 1pm (Monthly: Starting 7th Sept)`,
       ],
       last_updated: "2026-07-19",
       availability: [
+        "Saturdays at 10am (Fortnightly: Starting 12th Sept) — Burke Rd, Camberwell",
         "Mondays at 11am (Fortnightly: Starting 7th Sept) — Burke Rd, Camberwell",
         "Mondays at 4pm (Fortnightly: Starting 14th Sept) — Burke Rd, Camberwell",
         "Mondays at 4pm (Monthly: Starting 19th Oct) — Burke Rd, Camberwell",
@@ -21077,10 +21079,9 @@ Broadly, Amy is obsessed with her new 6yo rescue kelpie x staffy, Naia; she love
       locations: [
         {
           location: "Burke Rd, Camberwell",
-          availability: `Fridays at 9am (Weekly: Starting 11th Sept)
-Fridays at 10am (Fortnightly: Starting 4th Sept)
+          availability: `Fridays at 10am (Weekly: Starting 11th Sept)
+Fridays at 9am (Weekly: Starting 11th Sept)
 Mondays at 9am (Fortnightly: Starting 7th Sept)
-Fridays at 10am (Monthly: Starting 25th Sept)
 Mondays at 8am (Monthly: Starting 14th Sept)
 Mondays at 1pm (Monthly: Starting 28th Sept)`,
           weekly_availability: [],
@@ -21095,10 +21096,9 @@ Mondays at 1pm (Monthly: Starting 28th Sept)`,
       ],
       last_updated: "2026-07-19",
       availability: [
+        "Fridays at 10am (Weekly: Starting 11th Sept) — Burke Rd, Camberwell",
         "Fridays at 9am (Weekly: Starting 11th Sept) — Burke Rd, Camberwell",
-        "Fridays at 10am (Fortnightly: Starting 4th Sept) — Burke Rd, Camberwell",
         "Mondays at 9am (Fortnightly: Starting 7th Sept) — Burke Rd, Camberwell",
-        "Fridays at 10am (Monthly: Starting 25th Sept) — Burke Rd, Camberwell",
         "Mondays at 8am (Monthly: Starting 14th Sept) — Burke Rd, Camberwell",
         "Mondays at 1pm (Monthly: Starting 28th Sept) — Burke Rd, Camberwell"
       ],
@@ -21525,12 +21525,10 @@ A/H: $275`,
       link_to_bio: "https://psychologycare.com.au/dr-maddie-brygel-psychologist/",
       locations: [
         {
-          availability: `Fridays at 11am (Fortnightly: Starting 11th Sept)
-Mondays at 9am (Fortnightly: Starting 14th Sept)
+          availability: `Mondays at 9am (Fortnightly: Starting 14th Sept)
 Thursdays at 12pm (Fortnightly: Starting 17th Sept)
 Thursdays at 9am (Fortnightly: Starting 10th Sept)
-Mondays at 8am (Fortnightly: Starting 14th Sept)
-Fridays at 1pm (Fortnightly: Starting 4th Sept)
+Fridays at 1pm (Fortnightly: Starting 18th Sept)
 Mondays at 10am (Monthly: Starting 14th Sept)
 Mondays at 11am (Monthly: Starting 12th Oct)
 Thursdays at 8am (Monthly: Starting 8th Oct)
@@ -21581,12 +21579,10 @@ Thursdays at 11am (Monthly: Starting 17th Sept)`,
       ],
       last_updated: "2026-07-19",
       availability: [
-        "Fridays at 11am (Fortnightly: Starting 11th Sept) — Greville St, Prahran",
         "Mondays at 9am (Fortnightly: Starting 14th Sept) — Greville St, Prahran",
         "Thursdays at 12pm (Fortnightly: Starting 17th Sept) — Greville St, Prahran",
         "Thursdays at 9am (Fortnightly: Starting 10th Sept) — Greville St, Prahran",
-        "Mondays at 8am (Fortnightly: Starting 14th Sept) — Greville St, Prahran",
-        "Fridays at 1pm (Fortnightly: Starting 4th Sept) — Greville St, Prahran",
+        "Fridays at 1pm (Fortnightly: Starting 18th Sept) — Greville St, Prahran",
         "Mondays at 10am (Monthly: Starting 14th Sept) — Greville St, Prahran",
         "Mondays at 11am (Monthly: Starting 12th Oct) — Greville St, Prahran",
         "Thursdays at 8am (Monthly: Starting 8th Oct) — Greville St, Prahran",
@@ -22549,7 +22545,6 @@ I am committed to providing best practice trauma informed care in a confidential
           location: "Greville St, Prahran",
           availability: `Fridays at 2:30pm (Fortnightly: Starting 18th Sept)
 Saturdays at 2pm (Fortnightly: Starting 12th Sept)
-Fridays at 7:30pm (Fortnightly: Starting 4th Sept)
 Fridays at 5:30pm (Monthly: Starting 25th Sept)
 Wednesdays at 6:30pm (Monthly: Starting 14th Oct)
 Saturdays at 10am (Monthly: Starting 19th Sept)
@@ -22563,7 +22558,6 @@ Tuesdays at 8am (Monthly: Starting 8th Sept)`,
       availability: [
         "Fridays at 2:30pm (Fortnightly: Starting 18th Sept) — Greville St, Prahran",
         "Saturdays at 2pm (Fortnightly: Starting 12th Sept) — Greville St, Prahran",
-        "Fridays at 7:30pm (Fortnightly: Starting 4th Sept) — Greville St, Prahran",
         "Fridays at 5:30pm (Monthly: Starting 25th Sept) — Greville St, Prahran",
         "Wednesdays at 6:30pm (Monthly: Starting 14th Oct) — Greville St, Prahran",
         "Saturdays at 10am (Monthly: Starting 19th Sept) — Greville St, Prahran",
@@ -23217,10 +23211,11 @@ Tuesdays at 10am (Monthly: Starting 29th Sept)`,
         },
         {
           location: "Burke Rd, Camberwell",
-          availability: `Fridays at 12:30pm (Weekly: Starting 4th Sept)
+          availability: `Fridays at 12:30pm (Weekly: Starting 11th Sept)
 Fridays at 2:30pm (Weekly: Starting 18th Sept)
 Thursdays at 1:30pm (Weekly: Starting 17th Sept)
 Wednesdays at 9am (Weekly: Starting 16th Sept)
+Thursdays at 9am (Fortnightly: Starting 10th Sept)
 Fridays at 9am (Fortnightly: Starting 11th Sept)
 Thursdays at 11:30am (Fortnightly: Starting 17th Sept)
 Wednesdays at 1pm (Monthly: Starting 23rd Sept)
@@ -23231,10 +23226,11 @@ Fridays at 10am (Monthly: Starting 9th Oct)`,
       ],
       last_updated: "2026-07-19",
       availability: [
-        "Fridays at 12:30pm (Weekly: Starting 4th Sept) — Burke Rd, Camberwell",
+        "Fridays at 12:30pm (Weekly: Starting 11th Sept) — Burke Rd, Camberwell",
         "Fridays at 2:30pm (Weekly: Starting 18th Sept) — Burke Rd, Camberwell",
         "Thursdays at 1:30pm (Weekly: Starting 17th Sept) — Burke Rd, Camberwell",
         "Wednesdays at 9am (Weekly: Starting 16th Sept) — Burke Rd, Camberwell",
+        "Thursdays at 9am (Fortnightly: Starting 10th Sept) — Burke Rd, Camberwell",
         "Fridays at 9am (Fortnightly: Starting 11th Sept) — Burke Rd, Camberwell",
         "Thursdays at 11:30am (Fortnightly: Starting 17th Sept) — Burke Rd, Camberwell",
         "Wednesdays at 1pm (Monthly: Starting 23rd Sept) — Burke Rd, Camberwell",
@@ -24258,97 +24254,9 @@ Mondays at 11am (Monthly: Starting 28th Sept)`,
       telehealth: "Yes",
       presentations: "Anxiety; Depression; Relationship Concerns; Grief & Loss; Self-Esteem & Confidence; Life Transitions; Work Stress; Trauma and Post-Traumatic Stress Disorder (PTSD)",
       modalities: [
-        "P",
-        "s",
-        "y",
-        "c",
-        "h",
-        "o",
-        "d",
-        "y",
-        "n",
-        "a",
-        "m",
-        "i",
-        "c",
-        " ",
-        "T",
-        "h",
-        "e",
-        "r",
-        "a",
-        "p",
-        "y",
-        ";",
-        " ",
-        "I",
-        "n",
-        "t",
-        "e",
-        "r",
-        "n",
-        "a",
-        "l",
-        " ",
-        "F",
-        "a",
-        "m",
-        "i",
-        "l",
-        "y",
-        " ",
-        "S",
-        "y",
-        "s",
-        "t",
-        "e",
-        "m",
-        "s",
-        " ",
-        "T",
-        "h",
-        "e",
-        "r",
-        "a",
-        "p",
-        "y",
-        " ",
-        "(",
-        "I",
-        "F",
-        "S",
-        ")",
-        ";",
-        " ",
-        "E",
-        "m",
-        "o",
-        "t",
-        "i",
-        "o",
-        "n",
-        " ",
-        "F",
-        "o",
-        "c",
-        "u",
-        "s",
-        "e",
-        "d",
-        " ",
-        "T",
-        "h",
-        "e",
-        "r",
-        "a",
-        "p",
-        "y",
-        " ",
-        "(",
-        "E",
-        "F",
-        "T",
-        ")"
+        "Psychodynamic Therapy",
+        "Internal Family Systems Therapy (IFS)",
+        "Emotion Focused Therapy (EFT)"
       ],
       availability: [],
       bio: `When I was young, I wanted to be a marine biologist. I was in awe of the mysteries of the ocean and marvelled at the variety of creatures living within it. As I grew older and began to see the world through more adult eyes, I realised that the depth and breadth of human emotion and behaviour was far vaster and more complex than any ocean could ever be. And so, my path was set.
@@ -25037,7 +24945,8 @@ Ages:
       link_to_bio: "https://psychologycare.com.au/karen-pereira-york/",
       locations: [
         {
-          availability: `Wednesdays at 2pm (Fortnightly: Starting 9th Sept)
+          availability: `Thursdays at 1pm (Fortnightly: Starting 10th Sept)
+Wednesdays at 2pm (Fortnightly: Starting 9th Sept)
 Tuesdays at 3:30pm (Fortnightly: Starting 8th Sept)
 Wednesdays at 1pm (Fortnightly: Starting 16th Sept)
 Thursdays at 12pm (Fortnightly: Starting 10th Sept)
@@ -25054,6 +24963,7 @@ Tuesdays at 4:30pm (Monthly: Starting 8th Sept)`,
       ],
       last_updated: "2026-07-19",
       availability: [
+        "Thursdays at 1pm (Fortnightly: Starting 10th Sept) — Greville St, Prahran",
         "Wednesdays at 2pm (Fortnightly: Starting 9th Sept) — Greville St, Prahran",
         "Tuesdays at 3:30pm (Fortnightly: Starting 8th Sept) — Greville St, Prahran",
         "Wednesdays at 1pm (Fortnightly: Starting 16th Sept) — Greville St, Prahran",
@@ -25117,7 +25027,7 @@ Tuesdays at 4:30pm (Monthly: Starting 8th Sept)`,
       ]
     }
   ];
-  var AVAILABILITY_LAST_UPDATED = "3 Sept 2026 6:00am";
+  var AVAILABILITY_LAST_UPDATED = "4 Sept 2026 6:00am";
 
   // components/IntakeTab.tsx
   var jsx_dev_runtime6 = __toESM(require_jsx_dev_runtime(), 1);
