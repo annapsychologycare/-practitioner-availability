@@ -102,7 +102,10 @@ export default function IntakeTab() {
       } else if (ext === 'pdf') {
         // PDF: send to extract-text function
         const arrayBuffer = await file.arrayBuffer();
-        const base64 = btoa(String.fromCharCode(...new Uint8Array(arrayBuffer)));
+        const bytes = new Uint8Array(arrayBuffer);
+        let binary = '';
+        for (let i = 0; i < bytes.byteLength; i++) binary += String.fromCharCode(bytes[i]);
+        const base64 = btoa(binary);
         const res = await fetch(`${NETLIFY_BASE}/.netlify/functions/extract-text`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -118,7 +121,10 @@ export default function IntakeTab() {
       } else if (ext === 'docx') {
         // DOCX: send to extract-text function
         const arrayBuffer = await file.arrayBuffer();
-        const base64 = btoa(String.fromCharCode(...new Uint8Array(arrayBuffer)));
+        const bytes2 = new Uint8Array(arrayBuffer);
+        let binary2 = '';
+        for (let i = 0; i < bytes2.byteLength; i++) binary2 += String.fromCharCode(bytes2[i]);
+        const base64 = btoa(binary2);
         const res = await fetch(`${NETLIFY_BASE}/.netlify/functions/extract-text`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },

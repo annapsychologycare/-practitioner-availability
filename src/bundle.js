@@ -20785,20 +20785,20 @@ Rebekah has a compassionate and thoughtful approach to the emotional care and su
       locations: [
         {
           location: "Burke Rd, Camberwell",
-          availability: `Mondays at 11am (Fortnightly: Starting 7th Sept)
+          availability: `Saturdays at 10am (Fortnightly: Starting 12th Sept)
 Mondays at 4pm (Fortnightly: Starting 14th Sept)
 Mondays at 4pm (Monthly: Starting 19th Oct)
-Mondays at 1pm (Monthly: Starting 7th Sept)`,
+Mondays at 1pm (Monthly: Starting 5th Oct)`,
           weekly_availability: [],
           fortnightly_availability: []
         }
       ],
       last_updated: "2026-07-19",
       availability: [
-        "Mondays at 11am (Fortnightly: Starting 7th Sept) — Burke Rd, Camberwell",
+        "Saturdays at 10am (Fortnightly: Starting 12th Sept) — Burke Rd, Camberwell",
         "Mondays at 4pm (Fortnightly: Starting 14th Sept) — Burke Rd, Camberwell",
         "Mondays at 4pm (Monthly: Starting 19th Oct) — Burke Rd, Camberwell",
-        "Mondays at 1pm (Monthly: Starting 7th Sept) — Burke Rd, Camberwell"
+        "Mondays at 1pm (Monthly: Starting 5th Oct) — Burke Rd, Camberwell"
       ],
       short_bio: "Rebekah is a relationship-focused mental health social worker using counselling, psychotherapy and ACT to help individuals and couples strengthen connection and wellbeing.",
       weekly_availability: [],
@@ -21077,10 +21077,9 @@ Broadly, Amy is obsessed with her new 6yo rescue kelpie x staffy, Naia; she love
       locations: [
         {
           location: "Burke Rd, Camberwell",
-          availability: `Fridays at 9am (Weekly: Starting 11th Sept)
-Fridays at 10am (Fortnightly: Starting 4th Sept)
-Mondays at 9am (Fortnightly: Starting 7th Sept)
-Fridays at 10am (Monthly: Starting 25th Sept)
+          availability: `Fridays at 10am (Weekly: Starting 11th Sept)
+Fridays at 9am (Weekly: Starting 11th Sept)
+Mondays at 9am (Fortnightly: Starting 21st Sept)
 Mondays at 8am (Monthly: Starting 14th Sept)
 Mondays at 1pm (Monthly: Starting 28th Sept)`,
           weekly_availability: [],
@@ -21095,10 +21094,9 @@ Mondays at 1pm (Monthly: Starting 28th Sept)`,
       ],
       last_updated: "2026-07-19",
       availability: [
+        "Fridays at 10am (Weekly: Starting 11th Sept) — Burke Rd, Camberwell",
         "Fridays at 9am (Weekly: Starting 11th Sept) — Burke Rd, Camberwell",
-        "Fridays at 10am (Fortnightly: Starting 4th Sept) — Burke Rd, Camberwell",
-        "Mondays at 9am (Fortnightly: Starting 7th Sept) — Burke Rd, Camberwell",
-        "Fridays at 10am (Monthly: Starting 25th Sept) — Burke Rd, Camberwell",
+        "Mondays at 9am (Fortnightly: Starting 21st Sept) — Burke Rd, Camberwell",
         "Mondays at 8am (Monthly: Starting 14th Sept) — Burke Rd, Camberwell",
         "Mondays at 1pm (Monthly: Starting 28th Sept) — Burke Rd, Camberwell"
       ],
@@ -21525,12 +21523,9 @@ A/H: $275`,
       link_to_bio: "https://psychologycare.com.au/dr-maddie-brygel-psychologist/",
       locations: [
         {
-          availability: `Fridays at 11am (Fortnightly: Starting 11th Sept)
-Mondays at 9am (Fortnightly: Starting 14th Sept)
-Thursdays at 12pm (Fortnightly: Starting 17th Sept)
+          availability: `Mondays at 9am (Fortnightly: Starting 14th Sept)
 Thursdays at 9am (Fortnightly: Starting 10th Sept)
-Mondays at 8am (Fortnightly: Starting 14th Sept)
-Fridays at 1pm (Fortnightly: Starting 4th Sept)
+Fridays at 1pm (Fortnightly: Starting 18th Sept)
 Mondays at 10am (Monthly: Starting 14th Sept)
 Mondays at 11am (Monthly: Starting 12th Oct)
 Thursdays at 8am (Monthly: Starting 8th Oct)
@@ -21581,12 +21576,9 @@ Thursdays at 11am (Monthly: Starting 17th Sept)`,
       ],
       last_updated: "2026-07-19",
       availability: [
-        "Fridays at 11am (Fortnightly: Starting 11th Sept) — Greville St, Prahran",
         "Mondays at 9am (Fortnightly: Starting 14th Sept) — Greville St, Prahran",
-        "Thursdays at 12pm (Fortnightly: Starting 17th Sept) — Greville St, Prahran",
         "Thursdays at 9am (Fortnightly: Starting 10th Sept) — Greville St, Prahran",
-        "Mondays at 8am (Fortnightly: Starting 14th Sept) — Greville St, Prahran",
-        "Fridays at 1pm (Fortnightly: Starting 4th Sept) — Greville St, Prahran",
+        "Fridays at 1pm (Fortnightly: Starting 18th Sept) — Greville St, Prahran",
         "Mondays at 10am (Monthly: Starting 14th Sept) — Greville St, Prahran",
         "Mondays at 11am (Monthly: Starting 12th Oct) — Greville St, Prahran",
         "Thursdays at 8am (Monthly: Starting 8th Oct) — Greville St, Prahran",
@@ -22547,28 +22539,30 @@ I am committed to providing best practice trauma informed care in a confidential
       locations: [
         {
           location: "Greville St, Prahran",
-          availability: `Fridays at 2:30pm (Fortnightly: Starting 18th Sept)
+          availability: `Saturdays at 1pm (Fortnightly: Starting 12th Sept)
+Fridays at 2:30pm (Fortnightly: Starting 18th Sept)
 Saturdays at 2pm (Fortnightly: Starting 12th Sept)
-Fridays at 7:30pm (Fortnightly: Starting 4th Sept)
+Mondays at 12pm (Monthly: Starting 28th Sept)
 Fridays at 5:30pm (Monthly: Starting 25th Sept)
 Wednesdays at 6:30pm (Monthly: Starting 14th Oct)
 Saturdays at 10am (Monthly: Starting 19th Sept)
 Tuesdays at 9am (Monthly: Starting 15th Sept)
-Tuesdays at 8am (Monthly: Starting 8th Sept)`,
+Tuesdays at 8am (Monthly: Starting 6th Oct)`,
           weekly_availability: [],
           fortnightly_availability: []
         }
       ],
       last_updated: "2026-07-19",
       availability: [
+        "Saturdays at 1pm (Fortnightly: Starting 12th Sept) — Greville St, Prahran",
         "Fridays at 2:30pm (Fortnightly: Starting 18th Sept) — Greville St, Prahran",
         "Saturdays at 2pm (Fortnightly: Starting 12th Sept) — Greville St, Prahran",
-        "Fridays at 7:30pm (Fortnightly: Starting 4th Sept) — Greville St, Prahran",
+        "Mondays at 12pm (Monthly: Starting 28th Sept) — Greville St, Prahran",
         "Fridays at 5:30pm (Monthly: Starting 25th Sept) — Greville St, Prahran",
         "Wednesdays at 6:30pm (Monthly: Starting 14th Oct) — Greville St, Prahran",
         "Saturdays at 10am (Monthly: Starting 19th Sept) — Greville St, Prahran",
         "Tuesdays at 9am (Monthly: Starting 15th Sept) — Greville St, Prahran",
-        "Tuesdays at 8am (Monthly: Starting 8th Sept) — Greville St, Prahran"
+        "Tuesdays at 8am (Monthly: Starting 6th Oct) — Greville St, Prahran"
       ],
       short_bio: "Christine is a trauma specialist psychotherapist and psychoanalyst offering EMDR and depth therapy to help survivors reclaim and live with their stories.​",
       weekly_availability: [
@@ -22867,7 +22861,7 @@ I have worked consistently across both public and private settings in my career,
       link_to_bio: "https://psychologycare.com.au/kiira-gavralas/",
       locations: [
         {
-          availability: `Tuesdays at 9:15am (Fortnightly: Starting 8th Sept)
+          availability: `Tuesdays at 9:15am (Fortnightly: Starting 22nd Sept)
 Tuesdays at 11:45am (Monthly: Starting 22nd Sept)
 Tuesdays at 9:15am (Monthly: Starting 29th Sept)`,
           weekly_availability: [],
@@ -22878,7 +22872,7 @@ Tuesdays at 9:15am (Monthly: Starting 29th Sept)`,
       last_updated: "2026-07-19",
       short_bio: "A genuine, relational psychologist using psychodynamic, attachment-informed ISTDP to help clients understand emotional patterns, ease distress and navigate parenthood transitions.",
       availability: [
-        "Tuesdays at 9:15am (Fortnightly: Starting 8th Sept) — Telehealth",
+        "Tuesdays at 9:15am (Fortnightly: Starting 22nd Sept) — Telehealth",
         "Tuesdays at 11:45am (Monthly: Starting 22nd Sept) — Telehealth",
         "Tuesdays at 9:15am (Monthly: Starting 29th Sept) — Telehealth"
       ],
@@ -23217,10 +23211,11 @@ Tuesdays at 10am (Monthly: Starting 29th Sept)`,
         },
         {
           location: "Burke Rd, Camberwell",
-          availability: `Fridays at 12:30pm (Weekly: Starting 4th Sept)
+          availability: `Fridays at 12:30pm (Weekly: Starting 11th Sept)
 Fridays at 2:30pm (Weekly: Starting 18th Sept)
 Thursdays at 1:30pm (Weekly: Starting 17th Sept)
 Wednesdays at 9am (Weekly: Starting 16th Sept)
+Thursdays at 9am (Fortnightly: Starting 10th Sept)
 Fridays at 9am (Fortnightly: Starting 11th Sept)
 Thursdays at 11:30am (Fortnightly: Starting 17th Sept)
 Wednesdays at 1pm (Monthly: Starting 23rd Sept)
@@ -23231,10 +23226,11 @@ Fridays at 10am (Monthly: Starting 9th Oct)`,
       ],
       last_updated: "2026-07-19",
       availability: [
-        "Fridays at 12:30pm (Weekly: Starting 4th Sept) — Burke Rd, Camberwell",
+        "Fridays at 12:30pm (Weekly: Starting 11th Sept) — Burke Rd, Camberwell",
         "Fridays at 2:30pm (Weekly: Starting 18th Sept) — Burke Rd, Camberwell",
         "Thursdays at 1:30pm (Weekly: Starting 17th Sept) — Burke Rd, Camberwell",
         "Wednesdays at 9am (Weekly: Starting 16th Sept) — Burke Rd, Camberwell",
+        "Thursdays at 9am (Fortnightly: Starting 10th Sept) — Burke Rd, Camberwell",
         "Fridays at 9am (Fortnightly: Starting 11th Sept) — Burke Rd, Camberwell",
         "Thursdays at 11:30am (Fortnightly: Starting 17th Sept) — Burke Rd, Camberwell",
         "Wednesdays at 1pm (Monthly: Starting 23rd Sept) — Burke Rd, Camberwell",
@@ -24156,7 +24152,7 @@ Tuesdays at 11:30am (Fortnightly: Starting 8th Sept)
 Wednesdays at 7pm (Fortnightly: Starting 16th Sept)
 Mondays at 10am (Fortnightly: Starting 14th Sept)
 Mondays at 2pm (Fortnightly: Starting 21st Sept)
-Tuesdays at 8:30am (Fortnightly: Starting 8th Sept)
+Tuesdays at 8:30am (Fortnightly: Starting 6th Oct)
 Tuesdays at 1:30pm (Monthly: Starting 29th Sept)
 Tuesdays at 9:30am (Monthly: Starting 6th Oct)
 Tuesdays at 10:30am (Monthly: Starting 13th Oct)
@@ -24175,7 +24171,7 @@ Mondays at 11am (Monthly: Starting 28th Sept)`,
         "Wednesdays at 7pm (Fortnightly: Starting 16th Sept) — Greville St, Prahran",
         "Mondays at 10am (Fortnightly: Starting 14th Sept) — Greville St, Prahran",
         "Mondays at 2pm (Fortnightly: Starting 21st Sept) — Greville St, Prahran",
-        "Tuesdays at 8:30am (Fortnightly: Starting 8th Sept) — Greville St, Prahran",
+        "Tuesdays at 8:30am (Fortnightly: Starting 6th Oct) — Greville St, Prahran",
         "Tuesdays at 1:30pm (Monthly: Starting 29th Sept) — Greville St, Prahran",
         "Tuesdays at 9:30am (Monthly: Starting 6th Oct) — Greville St, Prahran",
         "Tuesdays at 10:30am (Monthly: Starting 13th Oct) — Greville St, Prahran",
@@ -24249,7 +24245,8 @@ Mondays at 11am (Monthly: Starting 28th Sept)`,
       medicareRebate: 149.05,
       locations: [
         {
-          availability: "",
+          availability: `Wednesdays at 11am (Fortnightly: Starting 16th Sept)
+Thursdays at 2:30pm (Fortnightly: Starting 17th Sept)`,
           weekly_availability: [],
           fortnightly_availability: [],
           location: "Greville St, Prahran"
@@ -24260,9 +24257,12 @@ Mondays at 11am (Monthly: Starting 28th Sept)`,
       modalities: [
         "Psychodynamic Therapy",
         "Internal Family Systems Therapy (IFS)",
-        "Emotion-Focused Therapy (EFT)"
+        "Emotion Focused Therapy (EFT)"
       ],
-      availability: [],
+      availability: [
+        "Wednesdays at 11am (Fortnightly: Starting 16th Sept) — Greville St, Prahran",
+        "Thursdays at 2:30pm (Fortnightly: Starting 17th Sept) — Greville St, Prahran"
+      ],
       bio: `When I was young, I wanted to be a marine biologist. I was in awe of the mysteries of the ocean and marvelled at the variety of creatures living within it. As I grew older and began to see the world through more adult eyes, I realised that the depth and breadth of human emotion and behaviour was far vaster and more complex than any ocean could ever be. And so, my path was set.
 
 After many years of study and work, I am now a Senior Clinical Psychologist having worked in the UK, New Zealand and finally Australia. I have many years of experience working in the public sector with severe and enduring mental health issues, and also with mild to moderate mental health issues that most of us experience at some point in our lifetime.
@@ -24523,10 +24523,11 @@ Clare has experience working with clients facing a variety of difficulties, incl
       link_to_bio: "https://psychologycare.com.au/clare-tuttleby/",
       locations: [
         {
-          availability: `Tuesdays at 2:30pm (Fortnightly: Starting 8th Sept)
+          availability: `Tuesdays at 6:30pm (Fortnightly: Starting 22nd Sept)
+Tuesdays at 2:30pm (Fortnightly: Starting 8th Sept)
 Tuesdays at 3:30pm (Fortnightly: Starting 29th Sept)
-Mondays at 5:30pm (Fortnightly: Starting 7th Sept)
-Mondays at 2:30pm (Monthly: Starting 7th Sept)
+Mondays at 5:30pm (Fortnightly: Starting 21st Sept)
+Mondays at 2:30pm (Monthly: Starting 5th Oct)
 Mondays at 5:30pm (Monthly: Starting 28th Sept)`,
           weekly_availability: [],
           fortnightly_availability: [],
@@ -24547,10 +24548,11 @@ Mondays at 5:30pm (Monthly: Starting 28th Sept)`,
       ],
       last_updated: "2026-07-19",
       availability: [
+        "Tuesdays at 6:30pm (Fortnightly: Starting 22nd Sept) — Greville St, Prahran",
         "Tuesdays at 2:30pm (Fortnightly: Starting 8th Sept) — Greville St, Prahran",
         "Tuesdays at 3:30pm (Fortnightly: Starting 29th Sept) — Greville St, Prahran",
-        "Mondays at 5:30pm (Fortnightly: Starting 7th Sept) — Greville St, Prahran",
-        "Mondays at 2:30pm (Monthly: Starting 7th Sept) — Greville St, Prahran",
+        "Mondays at 5:30pm (Fortnightly: Starting 21st Sept) — Greville St, Prahran",
+        "Mondays at 2:30pm (Monthly: Starting 5th Oct) — Greville St, Prahran",
         "Mondays at 5:30pm (Monthly: Starting 28th Sept) — Greville St, Prahran",
         "Tuesdays at 11am (Fortnightly: Starting 8th Sept) — Telehealth"
       ],
@@ -24949,7 +24951,8 @@ Ages:
       link_to_bio: "https://psychologycare.com.au/karen-pereira-york/",
       locations: [
         {
-          availability: `Wednesdays at 2pm (Fortnightly: Starting 9th Sept)
+          availability: `Thursdays at 1pm (Fortnightly: Starting 10th Sept)
+Wednesdays at 2pm (Fortnightly: Starting 9th Sept)
 Tuesdays at 3:30pm (Fortnightly: Starting 8th Sept)
 Wednesdays at 1pm (Fortnightly: Starting 16th Sept)
 Thursdays at 12pm (Fortnightly: Starting 10th Sept)
@@ -24966,6 +24969,7 @@ Tuesdays at 4:30pm (Monthly: Starting 8th Sept)`,
       ],
       last_updated: "2026-07-19",
       availability: [
+        "Thursdays at 1pm (Fortnightly: Starting 10th Sept) — Greville St, Prahran",
         "Wednesdays at 2pm (Fortnightly: Starting 9th Sept) — Greville St, Prahran",
         "Tuesdays at 3:30pm (Fortnightly: Starting 8th Sept) — Greville St, Prahran",
         "Wednesdays at 1pm (Fortnightly: Starting 16th Sept) — Greville St, Prahran",
@@ -25029,7 +25033,7 @@ Tuesdays at 4:30pm (Monthly: Starting 8th Sept)`,
       ]
     }
   ];
-  var AVAILABILITY_LAST_UPDATED = "3 Sept 2026 6:00am";
+  var AVAILABILITY_LAST_UPDATED = "7 Sept 2026 6:00am";
 
   // components/IntakeTab.tsx
   var jsx_dev_runtime6 = __toESM(require_jsx_dev_runtime(), 1);
@@ -25063,6 +25067,73 @@ Tuesdays at 4:30pm (Monthly: Starting 8th Sept)`,
     const [result, setResult] = import_react8.useState(null);
     const [error, setError] = import_react8.useState("");
     const [copied, setCopied] = import_react8.useState(false);
+    const [extracting, setExtracting] = import_react8.useState(false);
+    const [fileError, setFileError] = import_react8.useState("");
+    const fileInputRef = import_react8.useRef(null);
+    const handleFileUpload = async (file) => {
+      if (!file)
+        return;
+      setFileError("");
+      setExtracting(true);
+      const ext = file.name.split(".").pop()?.toLowerCase();
+      try {
+        if (ext === "txt" || file.type === "text/plain") {
+          const content = await new Promise((resolve, reject) => {
+            const reader = new FileReader;
+            reader.onload = (e) => resolve(e.target?.result);
+            reader.onerror = () => reject(new Error("Failed to read file"));
+            reader.readAsText(file);
+          });
+          setText(content);
+        } else if (ext === "pdf") {
+          const arrayBuffer = await file.arrayBuffer();
+          const bytes = new Uint8Array(arrayBuffer);
+          let binary = "";
+          for (let i = 0;i < bytes.byteLength; i++)
+            binary += String.fromCharCode(bytes[i]);
+          const base64 = btoa(binary);
+          const res = await fetch(`${NETLIFY_BASE}/.netlify/functions/extract-text`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ fileBase64: base64, fileType: "pdf" })
+          });
+          const data = await res.json();
+          if (data.error) {
+            setFileError(`Extraction failed: ${data.error}`);
+          } else {
+            setText(data.text);
+            setIntakeType("form");
+          }
+        } else if (ext === "docx") {
+          const arrayBuffer = await file.arrayBuffer();
+          const bytes2 = new Uint8Array(arrayBuffer);
+          let binary2 = "";
+          for (let i = 0;i < bytes2.byteLength; i++)
+            binary2 += String.fromCharCode(bytes2[i]);
+          const base64 = btoa(binary2);
+          const res = await fetch(`${NETLIFY_BASE}/.netlify/functions/extract-text`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ fileBase64: base64, fileType: "docx" })
+          });
+          const data = await res.json();
+          if (data.error) {
+            setFileError(`Extraction failed: ${data.error}`);
+          } else {
+            setText(data.text);
+            setIntakeType("form");
+          }
+        } else {
+          setFileError("Unsupported file type. Please upload a PDF, DOCX, or TXT file.");
+        }
+      } catch (e) {
+        setFileError(e.message || "Failed to extract text from file");
+      } finally {
+        setExtracting(false);
+        if (fileInputRef.current)
+          fileInputRef.current.value = "";
+      }
+    };
     const handleSubmit = async () => {
       if (!text.trim())
         return;
@@ -25143,23 +25214,59 @@ Tuesdays at 4:30pm (Monthly: Starting 8th Sept)`,
           children: "Paste intake notes, a form response, or a call transcript. Get an instant summary and practitioner match suggestions."
         }, undefined, false, undefined, this),
         /* @__PURE__ */ jsx_dev_runtime6.jsxDEV("div", {
-          style: { display: "flex", gap: 8, marginBottom: 12 },
-          children: ["form", "transcript", "notes"].map((t) => /* @__PURE__ */ jsx_dev_runtime6.jsxDEV("button", {
-            onClick: () => setIntakeType(t),
-            style: {
-              padding: "6px 16px",
-              borderRadius: 20,
-              border: `2px solid ${intakeType === t ? COLORS.mauve : "#ccc"}`,
-              background: intakeType === t ? COLORS.mauve : "white",
-              color: intakeType === t ? "white" : "#555",
-              cursor: "pointer",
-              fontWeight: intakeType === t ? 600 : 400,
-              fontSize: 13,
-              textTransform: "capitalize"
-            },
-            children: t === "form" ? "\uD83D\uDCCB Form" : t === "transcript" ? "\uD83C\uDF99️ Transcript" : "\uD83D\uDCDD Notes"
-          }, t, false, undefined, this))
-        }, undefined, false, undefined, this),
+          style: { display: "flex", gap: 8, marginBottom: 12, flexWrap: "wrap", alignItems: "center" },
+          children: [
+            ["form", "transcript", "notes"].map((t) => /* @__PURE__ */ jsx_dev_runtime6.jsxDEV("button", {
+              onClick: () => setIntakeType(t),
+              style: {
+                padding: "6px 16px",
+                borderRadius: 20,
+                border: `2px solid ${intakeType === t ? COLORS.mauve : "#ccc"}`,
+                background: intakeType === t ? COLORS.mauve : "white",
+                color: intakeType === t ? "white" : "#555",
+                cursor: "pointer",
+                fontWeight: intakeType === t ? 600 : 400,
+                fontSize: 13,
+                textTransform: "capitalize"
+              },
+              children: t === "form" ? "\uD83D\uDCCB Form" : t === "transcript" ? "\uD83C\uDF99️ Transcript" : "\uD83D\uDCDD Notes"
+            }, t, false, undefined, this)),
+            /* @__PURE__ */ jsx_dev_runtime6.jsxDEV("input", {
+              ref: fileInputRef,
+              type: "file",
+              accept: ".pdf,.docx,.txt,text/plain",
+              style: { display: "none" },
+              onChange: (e) => {
+                const file = e.target.files?.[0];
+                if (file)
+                  handleFileUpload(file);
+              }
+            }, undefined, false, undefined, this),
+            /* @__PURE__ */ jsx_dev_runtime6.jsxDEV("button", {
+              onClick: () => fileInputRef.current?.click(),
+              disabled: extracting,
+              style: {
+                padding: "6px 16px",
+                borderRadius: 20,
+                border: `2px solid ${extracting ? "#ccc" : COLORS.coolBlue}`,
+                background: extracting ? "#f0f0f0" : "white",
+                color: extracting ? "#999" : COLORS.coolBlue,
+                cursor: extracting ? "not-allowed" : "pointer",
+                fontWeight: 500,
+                fontSize: 13,
+                marginLeft: 4
+              },
+              children: extracting ? "⏳ Extracting…" : "\uD83D\uDCCE Upload Doc"
+            }, undefined, false, undefined, this)
+          ]
+        }, undefined, true, undefined, this),
+        fileError && /* @__PURE__ */ jsx_dev_runtime6.jsxDEV("div", {
+          style: { marginBottom: 8, fontSize: 12, color: "#c00", fontStyle: "italic" },
+          children: [
+            "⚠️ ",
+            fileError
+          ]
+        }, undefined, true, undefined, this),
         /* @__PURE__ */ jsx_dev_runtime6.jsxDEV("textarea", {
           value: text,
           onChange: (e) => setText(e.target.value),
