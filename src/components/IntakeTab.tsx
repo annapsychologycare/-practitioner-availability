@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { AVAILABILITY_LAST_UPDATED } from '../practitionersData';
 
 const COLORS = {
@@ -56,7 +56,7 @@ interface MatchResult {
   ai_powered: boolean;
 }
 
-const NETLIFY_BASE = 'https://practitioneravailabilitypsychologycar.netlify.app';
+const NETLIFY_BASE = 'https://pc-prac-availability.netlify.app';
 
 const scoreColor = (score: string) => {
   if (score === 'Strong') return '#2e7d32';
@@ -77,41 +77,91 @@ export default function IntakeTab() {
   const [result, setResult] = useState<MatchResult | null>(null);
   const [error, setError] = useState('');
   const [copied, setCopied] = useState(false);
+  const [extracting, setExtracting] = useState(false);
+  const [fileError, setFileError] = useState('');
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
+  const handleFileUpload = async (file: File) => {
+    if (!file) return;
+    setFileError('');
+    setExtracting(true);
+
+    const ext = file.name.split('.').pop()?.toLowerCase();
+
+    try {
+      if (ext === 'txt' || file.type === 'text/plain') {
+        // TXT: read client-side
+        const content = await new Promise<string>((resolve, reject) => {
+          const reader = new FileReader();
+          reader.onload = (e) => resolve(e.target?.result as string);
+          reader.onerror = () => reject(new Error('Failed to read file'));
+          reader.readAsText(file);
+        });
+        setText(content);
+        // Keep current intakeType for TXT
+      } else if (ext === 'pdf') {
+        // PDF: send to extract-text function
+        const arrayBuffer = await file.arrayBuffer();
+        const base64 = btoa(String.fromCharCode(...new Uint8Array(arrayBuffer)));
+        const res = await fetch(`${NETLIFY_BASE}/.netlify/functions/extract-text`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ fileBase64: base64, fileType: 'pdf' }),
+        });
+        const data = await res.json();
+        if (data.error) {
+          setFileError(`Extraction failed: ${data.error}`);
+        } else {
+          setText(data.text);
+          setIntakeType('form');
+        }
+      } else if (ext === 'docx') {
+        // DOCX: send to extract-text function
+        const arrayBuffer = await file.arrayBuffer();
+        const base64 = btoa(String.fromCharCode(...new Uint8Array(arrayBuffer)));
+        const res = await fetch(`${NETLIFY_BASE}/.netlify/functions/extract-text`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ fileBase64: base64, fileType: 'docx' }),
+        });
+        const data = await res.json();
+        if (data.error) {
+          setFileError(`Extraction failed: ${data.error}`);
+        } else {
+          setText(data.text);
+          setIntakeType('form');
+        }
+      } else {
+        setFileError('Unsupported file type. Please upload a PDF, DOCX, or TXT file.');
+      }
+    } catch (e: any) {
+      setFileError(e.message || 'Failed to extract text from file');
+    } finally {
+      setExtracting(false);
+      // Reset input so the same file can be re-uploaded if needed
+      if (fileInputRef.current) fileInputRef.current.value = '';
+    }
+  };
 
   const handleSubmit = async () => {
     if (!text.trim()) return;
     setLoading(true);
     setResult(null);
     setError('');
-    const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 28000);
     try {
-      const res = await fetch('/.netlify/functions/match-intake', {
+      const res = await fetch(`${NETLIFY_BASE}/.netlify/functions/match-intake`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ text, intake_type: intakeType }),
-        signal: controller.signal,
       });
-      clearTimeout(timeoutId);
-      let data: any;
-      try {
-        data = await res.json();
-      } catch {
-        setError(`Server returned an unexpected response (status ${res.status}). Please try again.`);
-        return;
-      }
-      if (!res.ok || data.error) {
-        setError(data?.error || `Request failed (${res.status})`);
+      const data = await res.json();
+      if (data.error) {
+        setError(data.error);
       } else {
         setResult(data);
       }
     } catch (e: any) {
-      clearTimeout(timeoutId);
-      if (e.name === 'AbortError') {
-        setError('Request timed out — the AI took too long to respond. Please try again.');
-      } else {
-        setError(e.message || 'Something went wrong');
-      }
+      setError(e.message || 'Something went wrong');
     } finally {
       setLoading(false);
     }
@@ -162,8 +212,8 @@ export default function IntakeTab() {
         Paste intake notes, a form response, or a call transcript. Get an instant summary and practitioner match suggestions.
       </p>
 
-      {/* Type selector */}
-      <div style={{ display: 'flex', gap: 8, marginBottom: 12 }}>
+      {/* Type selector + Upload button */}
+      <div style={{ display: 'flex', gap: 8, marginBottom: 12, flexWrap: 'wrap', alignItems: 'center' }}>
         {(['form', 'transcript', 'notes'] as const).map(t => (
           <button
             key={t}
@@ -183,7 +233,45 @@ export default function IntakeTab() {
             {t === 'form' ? '📋 Form' : t === 'transcript' ? '🎙️ Transcript' : '📝 Notes'}
           </button>
         ))}
+
+        {/* Hidden file input */}
+        <input
+          ref={fileInputRef}
+          type="file"
+          accept=".pdf,.docx,.txt,text/plain"
+          style={{ display: 'none' }}
+          onChange={e => {
+            const file = e.target.files?.[0];
+            if (file) handleFileUpload(file);
+          }}
+        />
+
+        {/* Upload button */}
+        <button
+          onClick={() => fileInputRef.current?.click()}
+          disabled={extracting}
+          style={{
+            padding: '6px 16px',
+            borderRadius: 20,
+            border: `2px solid ${extracting ? '#ccc' : COLORS.coolBlue}`,
+            background: extracting ? '#f0f0f0' : 'white',
+            color: extracting ? '#999' : COLORS.coolBlue,
+            cursor: extracting ? 'not-allowed' : 'pointer',
+            fontWeight: 500,
+            fontSize: 13,
+            marginLeft: 4,
+          }}
+        >
+          {extracting ? '⏳ Extracting…' : '📎 Upload Doc'}
+        </button>
       </div>
+
+      {/* File error */}
+      {fileError && (
+        <div style={{ marginBottom: 8, fontSize: 12, color: '#c00', fontStyle: 'italic' }}>
+          ⚠️ {fileError}
+        </div>
+      )}
 
       {/* Text area */}
       <textarea
@@ -271,9 +359,9 @@ export default function IntakeTab() {
             </div>
             {result.ai_display_summary ? (
               <AISummaryDisplay text={result.ai_display_summary} />
-            ) : result.summary ? (
+            ) : (
               <SummaryDisplay summary={result.summary} />
-            ) : null}
+            )}
           </div>
 
           {/* Matches section */}
@@ -283,14 +371,14 @@ export default function IntakeTab() {
           </p>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
-            {(result.matches || []).map((match, i) => (
+            {result.matches.map((match, i) => (
               <MatchCard key={i} match={match} rank={i + 1} />
             ))}
           </div>
 
           {/* Email Intro section */}
           {result.email_intro && (
-            <EmailIntroBox intro={result.email_intro} clientName={result.summary?.client_name ?? null} />
+            <EmailIntroBox intro={result.email_intro} clientName={result.summary.client_name} />
           )}
         </div>
       )}
@@ -372,7 +460,6 @@ function AISummaryDisplay({ text }: { text: string }) {
           }
 
           // Key: Value lines in the header block (e.g. "Client: Daniel", "Funding: Self-managed NDIS")
-          // Only match if the key part has no more than 5 words
           const kvMatch = trimmed.match(/^([A-Za-z][A-Za-z\s]{1,40}?):\s+(.+)$/);
           if (kvMatch && !trimmed.startsWith('•') && !trimmed.startsWith('-') && kvMatch[1].split(' ').length <= 5) {
             return (
@@ -402,8 +489,7 @@ function AISummaryDisplay({ text }: { text: string }) {
   );
 }
 
-function SummaryDisplay({ summary }: { summary: IntakeSummary | null | undefined }) {
-  if (!summary) return null;
+function SummaryDisplay({ summary }: { summary: IntakeSummary }) {
   const riskFields = [
     summary.risk_suicidality ? `Suicidality: ${summary.risk_suicidality}` : null,
     summary.risk_selfharm ? `Self-harm: ${summary.risk_selfharm}` : null,
@@ -537,7 +623,7 @@ function EmailIntroBox({ intro, clientName }: { intro: string; clientName: strin
   );
 }
 
-function MatchCard({ match, rank }: { match: PractitionerMatch; rank: number }) {
+const MatchCard: React.FC<{ match: PractitionerMatch; rank: number }> = ({ match, rank }) => {
   const photoFilename = match.photo_url ? match.photo_url.split('/').pop() : null;
   const localPhoto = photoFilename ? `/photos/${photoFilename}` : null;
 
@@ -643,10 +729,9 @@ function MatchCard({ match, rank }: { match: PractitionerMatch; rank: number }) 
       </div>
     </div>
   );
-}
+};
 
-function buildSummaryText(s: IntakeSummary | null | undefined): string {
-  if (!s) return '';
+function buildSummaryText(s: IntakeSummary): string {
   const lines: string[] = [];
   lines.push('👤 CLIENT');
   if (s.client_name) lines.push(`  Name: ${s.client_name}`);
