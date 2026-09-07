@@ -20472,7 +20472,7 @@ Please note: There are inherent confidentiality risks in communicating by email.
   var import_react8 = __toESM(require_react(), 1);
 
   // practitionersData.ts
-  var PRACTITIONERS_DATA = [
+  var practitionersData = [
     {
       id: 1,
       name: "Alex Barry",
@@ -25033,6 +25033,7 @@ Tuesdays at 4:30pm (Monthly: Starting 8th Sept)`,
       ]
     }
   ];
+  var PRACTITIONERS_DATA = practitionersData;
   var AVAILABILITY_LAST_UPDATED = "7 Sept 2026 6:00am";
 
   // components/IntakeTab.tsx
@@ -31870,37 +31871,23 @@ Outside of clinical work, I'm an avid martial arts practitioner and have spent o
     const saveToDisk = import_react16.useCallback(async (updated) => {
       try {
         await window.tasklet.writeFileToDisk(DATA_PATH, JSON.stringify(updated, null, 2));
-        await window.tasklet.runCommand(`cd /tasklet/agent/home && python3 -c "
-import json, subprocess
-with open('practitioners_data.json') as f:
-    data = json.load(f)
-# Regenerate practitionersData.ts
-lines = ['// Auto-generated — do not edit. Run import_availability.py to update.']
-lines.append('import type { Practitioner } from "./types";')
-lines.append('')
-lines.append('export const practitionersData: Practitioner[] = ' + json.dumps(data, indent=2) + ';')
-lines.append('')
-lines.append('export const PRACTITIONERS_DATA = practitionersData;')
-# Preserve existing AVAILABILITY_LAST_UPDATED if set
-try:
-    with open('apps/practitioner-availability/practitionersData.ts') as tf:
-        for tline in tf:
-            if 'AVAILABILITY_LAST_UPDATED' in tline:
-                lines.append(tline.strip())
-                break
-        else:
-            lines.append('export const AVAILABILITY_LAST_UPDATED = "(unsaved)";')
-except Exception:
-    lines.append('export const AVAILABILITY_LAST_UPDATED = "(unsaved)";')
-with open('apps/practitioner-availability/practitionersData.ts', 'w') as f:
-    f.write('\\n'.join(lines))
-print('TS regenerated')
-"`);
+        const TS_PATH = "/tasklet/agent/home/apps/practitioner-availability/practitionersData.ts";
+        const tsContent = [
+          "// Auto-generated — do not edit. Run import_availability.py to update.",
+          'import type { Practitioner } from "./types";',
+          "",
+          `export const practitionersData: Practitioner[] = ${JSON.stringify(updated, null, 2)};`,
+          "",
+          "export const PRACTITIONERS_DATA = practitionersData;",
+          `export const AVAILABILITY_LAST_UPDATED = "${availabilityDate}";`
+        ].join(`
+`);
+        await window.tasklet.writeFileToDisk(TS_PATH, tsContent);
         showStatus("✅ Saved");
       } catch (e) {
         showStatus("❌ Save failed");
       }
-    }, []);
+    }, [availabilityDate]);
     const handleUpdate = import_react16.useCallback((updated) => {
       setPractitioners((prev) => {
         const next = prev.map((p) => p.name === updated.name ? updated : p);

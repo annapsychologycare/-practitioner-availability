@@ -56,40 +56,27 @@ function AppMain() {
 
   const saveToDisk = useCallback(async (updated: Practitioner[]) => {
     try {
+      // 1. Write JSON source of truth
       await window.tasklet.writeFileToDisk(DATA_PATH, JSON.stringify(updated, null, 2));
-      await window.tasklet.runCommand(
-        `cd /tasklet/agent/home && python3 -c "
-import json, subprocess
-with open('practitioners_data.json') as f:
-    data = json.load(f)
-# Regenerate practitionersData.ts
-lines = ['// Auto-generated — do not edit. Run import_availability.py to update.']
-lines.append('import type { Practitioner } from \"./types\";')
-lines.append('')
-lines.append('export const practitionersData: Practitioner[] = ' + json.dumps(data, indent=2) + ';')
-lines.append('')
-lines.append('export const PRACTITIONERS_DATA = practitionersData;')
-# Preserve existing AVAILABILITY_LAST_UPDATED if set
-try:
-    with open('apps/practitioner-availability/practitionersData.ts') as tf:
-        for tline in tf:
-            if 'AVAILABILITY_LAST_UPDATED' in tline:
-                lines.append(tline.strip())
-                break
-        else:
-            lines.append('export const AVAILABILITY_LAST_UPDATED = \"(unsaved)\";')
-except Exception:
-    lines.append('export const AVAILABILITY_LAST_UPDATED = \"(unsaved)\";')
-with open('apps/practitioner-availability/practitionersData.ts', 'w') as f:
-    f.write('\\n'.join(lines))
-print('TS regenerated')
-"`
-      );
+
+      // 2. Regenerate practitionersData.ts in JS (no shell/Python needed)
+      const TS_PATH = "/tasklet/agent/home/apps/practitioner-availability/practitionersData.ts";
+      const tsContent = [
+        "// Auto-generated — do not edit. Run import_availability.py to update.",
+        'import type { Practitioner } from "./types";',
+        "",
+        `export const practitionersData: Practitioner[] = ${JSON.stringify(updated, null, 2)};`,
+        "",
+        "export const PRACTITIONERS_DATA = practitionersData;",
+        `export const AVAILABILITY_LAST_UPDATED = "${availabilityDate}";`,
+      ].join("\n");
+      await window.tasklet.writeFileToDisk(TS_PATH, tsContent);
+
       showStatus("✅ Saved");
     } catch (e) {
       showStatus("❌ Save failed");
     }
-  }, []);
+  }, [availabilityDate]);
 
   const handleUpdate = useCallback((updated: Practitioner) => {
     setPractitioners(prev => {
