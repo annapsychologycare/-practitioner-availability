@@ -1,6 +1,4 @@
-// Auto-generated — do not edit manually.
-export const AVAILABILITY_LAST_UPDATED = '7 Sept 2026 6:00am';
-export const practitionersData = [
+export const PRACTITIONERS_DATA = [
   {
     "id": 1,
     "name": "Alex Barry",
@@ -63,13 +61,13 @@ export const practitionersData = [
     "link_to_bio": "https://psychologycare.com.au/alex-barry/",
     "locations": [
       {
-        "availability": "Thursdays at 3:30pm (Fortnightly: Starting 10th Sept)",
+        "availability": "",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
       },
       {
-        "availability": "Wednesdays at 1:30pm (Fortnightly: Starting 16th Sept)",
+        "availability": "",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Telehealth"
@@ -82,10 +80,7 @@ export const practitionersData = [
       }
     ],
     "last_updated": "2026-07-19",
-    "availability": [
-      "Thursdays at 3:30pm (Fortnightly: Starting 10th Sept) — Greville St, Prahran",
-      "Wednesdays at 1:30pm (Fortnightly: Starting 16th Sept) — Telehealth"
-    ],
+    "availability": [],
     "short_bio": "Trauma-informed psychologist supporting adults across sectors with integrative EMDR, CBT, schema, and somatic therapies in neuroaffirming, sex-positive, LGBTQIA+ inclusive practice.",
     "weekly_availability": [],
     "fortnightly_availability": [
@@ -552,7 +547,7 @@ export const practitionersData = [
     "locations": [
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "Fridays at 10am (Weekly: Starting 11th Sept)\nFridays at 9am (Weekly: Starting 11th Sept)\nMondays at 9am (Fortnightly: Starting 21st Sept)\nMondays at 8am (Monthly: Starting 14th Sept)\nMondays at 1pm (Monthly: Starting 28th Sept)",
+        "availability": "Fridays at 9am (Weekly: Starting 11th Sept)\nFridays at 10am (Fortnightly: Starting 18th Sept)\nMondays at 9am (Fortnightly: Starting 21st Sept)\nFridays at 10am (Monthly: Starting 25th Sept)\nMondays at 8am (Monthly: Starting 14th Sept)\nMondays at 1pm (Monthly: Starting 26th Oct)",
         "weekly_availability": [],
         "fortnightly_availability": []
       },
@@ -565,11 +560,12 @@ export const practitionersData = [
     ],
     "last_updated": "2026-07-19",
     "availability": [
-      "Fridays at 10am (Weekly: Starting 11th Sept) — Burke Rd, Camberwell",
       "Fridays at 9am (Weekly: Starting 11th Sept) — Burke Rd, Camberwell",
+      "Fridays at 10am (Fortnightly: Starting 18th Sept) — Burke Rd, Camberwell",
       "Mondays at 9am (Fortnightly: Starting 21st Sept) — Burke Rd, Camberwell",
+      "Fridays at 10am (Monthly: Starting 25th Sept) — Burke Rd, Camberwell",
       "Mondays at 8am (Monthly: Starting 14th Sept) — Burke Rd, Camberwell",
-      "Mondays at 1pm (Monthly: Starting 28th Sept) — Burke Rd, Camberwell"
+      "Mondays at 1pm (Monthly: Starting 26th Oct) — Burke Rd, Camberwell"
     ],
     "short_bio": "Amy is a warm, LGBTQIAP+ friendly clinical psychologist supporting clients 16+ with mood, relationship and eating difficulties using flexible, evidence-based therapies.",
     "weekly_availability": [
@@ -977,7 +973,7 @@ export const practitionersData = [
     "link_to_bio": "https://psychologycare.com.au/dr-maddie-brygel-psychologist/",
     "locations": [
       {
-        "availability": "Mondays at 9am (Fortnightly: Starting 14th Sept)\nThursdays at 9am (Fortnightly: Starting 10th Sept)\nFridays at 1pm (Fortnightly: Starting 18th Sept)\nMondays at 10am (Monthly: Starting 14th Sept)\nMondays at 11am (Monthly: Starting 12th Oct)\nThursdays at 8am (Monthly: Starting 8th Oct)\nMondays at 1pm (Monthly: Starting 14th Sept)\nThursdays at 11am (Monthly: Starting 17th Sept)",
+        "availability": "Mondays at 8am (Fortnightly: Starting 19th Oct)\nMondays at 9am (Fortnightly: Starting 14th Sept)\nThursdays at 9am (Fortnightly: Starting 24th Sept)\nFridays at 1pm (Fortnightly: Starting 18th Sept)\nFridays at 8am (Monthly: Starting 2nd Oct)\nMondays at 10am (Monthly: Starting 14th Sept)\nMondays at 11am (Monthly: Starting 12th Oct)\nThursdays at 8am (Monthly: Starting 8th Oct)\nMondays at 1pm (Monthly: Starting 12th Oct)\nThursdays at 11am (Monthly: Starting 17th Sept)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
@@ -1023,13 +1019,15 @@ export const practitionersData = [
     ],
     "last_updated": "2026-07-19",
     "availability": [
+      "Mondays at 8am (Fortnightly: Starting 19th Oct) — Greville St, Prahran",
       "Mondays at 9am (Fortnightly: Starting 14th Sept) — Greville St, Prahran",
-      "Thursdays at 9am (Fortnightly: Starting 10th Sept) — Greville St, Prahran",
+      "Thursdays at 9am (Fortnightly: Starting 24th Sept) — Greville St, Prahran",
       "Fridays at 1pm (Fortnightly: Starting 18th Sept) — Greville St, Prahran",
+      "Fridays at 8am (Monthly: Starting 2nd Oct) — Greville St, Prahran",
       "Mondays at 10am (Monthly: Starting 14th Sept) — Greville St, Prahran",
       "Mondays at 11am (Monthly: Starting 12th Oct) — Greville St, Prahran",
       "Thursdays at 8am (Monthly: Starting 8th Oct) — Greville St, Prahran",
-      "Mondays at 1pm (Monthly: Starting 14th Sept) — Greville St, Prahran",
+      "Mondays at 1pm (Monthly: Starting 12th Oct) — Greville St, Prahran",
       "Thursdays at 11am (Monthly: Starting 17th Sept) — Greville St, Prahran"
     ],
     "short_bio": "A psychologist trained in both clinical and forensic psychology, lecturer, and researcher supporting adults with anxiety, depression, trauma, grief, addiction and women’s mental health",
@@ -1209,14 +1207,13 @@ export const practitionersData = [
       },
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "Wednesdays at 9am (Fortnightly: Starting 23rd Sept)\nThursdays at 9am (Monthly: Starting 1st Oct)",
+        "availability": "Thursdays at 9am (Monthly: Starting 1st Oct)",
         "weekly_availability": [],
         "fortnightly_availability": []
       }
     ],
     "last_updated": "2026-07-19",
     "availability": [
-      "Wednesdays at 9am (Fortnightly: Starting 23rd Sept) — Burke Rd, Camberwell",
       "Thursdays at 9am (Monthly: Starting 1st Oct) — Burke Rd, Camberwell"
     ],
     "short_bio": "An integrative ISTDP, CBT and IFS therapist helping clients face painful feelings, heal relational wounds and integrate difficult psychedelic experiences.",
@@ -1914,21 +1911,21 @@ export const practitionersData = [
     "locations": [
       {
         "location": "Greville St, Prahran",
-        "availability": "Saturdays at 1pm (Fortnightly: Starting 12th Sept)\nFridays at 2:30pm (Fortnightly: Starting 18th Sept)\nSaturdays at 2pm (Fortnightly: Starting 12th Sept)\nMondays at 12pm (Monthly: Starting 28th Sept)\nFridays at 5:30pm (Monthly: Starting 25th Sept)\nWednesdays at 6:30pm (Monthly: Starting 14th Oct)\nSaturdays at 10am (Monthly: Starting 19th Sept)\nTuesdays at 9am (Monthly: Starting 15th Sept)\nTuesdays at 8am (Monthly: Starting 6th Oct)",
+        "availability": "Saturdays at 1pm (Fortnightly: Starting 26th Sept)\nFridays at 2:30pm (Fortnightly: Starting 18th Sept)\nSaturdays at 2pm (Fortnightly: Starting 12th Sept)\nMondays at 12pm (Monthly: Starting 28th Sept)\nFridays at 5:30pm (Monthly: Starting 25th Sept)\nWednesdays at 6:30pm (Monthly: Starting 14th Oct)\nSaturdays at 10am (Monthly: Starting 19th Sept)\nTuesdays at 9am (Monthly: Starting 13th Oct)\nTuesdays at 8am (Monthly: Starting 6th Oct)",
         "weekly_availability": [],
         "fortnightly_availability": []
       }
     ],
     "last_updated": "2026-07-19",
     "availability": [
-      "Saturdays at 1pm (Fortnightly: Starting 12th Sept) — Greville St, Prahran",
+      "Saturdays at 1pm (Fortnightly: Starting 26th Sept) — Greville St, Prahran",
       "Fridays at 2:30pm (Fortnightly: Starting 18th Sept) — Greville St, Prahran",
       "Saturdays at 2pm (Fortnightly: Starting 12th Sept) — Greville St, Prahran",
       "Mondays at 12pm (Monthly: Starting 28th Sept) — Greville St, Prahran",
       "Fridays at 5:30pm (Monthly: Starting 25th Sept) — Greville St, Prahran",
       "Wednesdays at 6:30pm (Monthly: Starting 14th Oct) — Greville St, Prahran",
       "Saturdays at 10am (Monthly: Starting 19th Sept) — Greville St, Prahran",
-      "Tuesdays at 9am (Monthly: Starting 15th Sept) — Greville St, Prahran",
+      "Tuesdays at 9am (Monthly: Starting 13th Oct) — Greville St, Prahran",
       "Tuesdays at 8am (Monthly: Starting 6th Oct) — Greville St, Prahran"
     ],
     "short_bio": "Christine is a trauma specialist psychotherapist and psychoanalyst offering EMDR and depth therapy to help survivors reclaim and live with their stories.​",
@@ -2058,14 +2055,14 @@ export const practitionersData = [
     "locations": [
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "Tuesdays at 12pm (Weekly: Starting 8th Sept)\nThursdays at 1pm (Weekly: Starting 10th Sept)",
+        "availability": "Tuesdays at 12pm (Weekly: Starting 15th Sept)\nThursdays at 1pm (Weekly: Starting 10th Sept)",
         "weekly_availability": [],
         "fortnightly_availability": []
       }
     ],
     "last_updated": "2026-07-19",
     "availability": [
-      "Tuesdays at 12pm (Weekly: Starting 8th Sept) — Burke Rd, Camberwell",
+      "Tuesdays at 12pm (Weekly: Starting 15th Sept) — Burke Rd, Camberwell",
       "Thursdays at 1pm (Weekly: Starting 10th Sept) — Burke Rd, Camberwell"
     ],
     "short_bio": "Meg is a warm, person-centred psychologist using integrative cognitive, behavioural and psychodynamic therapies to support stress, anxiety, depression, trauma and life changes.",
@@ -2518,7 +2515,7 @@ export const practitionersData = [
     "link_to_bio": "https://psychologycare.com.au/nicholas-kleeman/",
     "locations": [
       {
-        "availability": "Tuesdays at 11am (Fortnightly: Starting 15th Sept)\nTuesdays at 2pm (Fortnightly: Starting 6th Oct)\nTuesdays at 1pm (Fortnightly: Starting 15th Sept)\nTuesdays at 10am (Monthly: Starting 29th Sept)",
+        "availability": "Tuesdays at 11am (Fortnightly: Starting 29th Sept)\nTuesdays at 2pm (Fortnightly: Starting 6th Oct)\nTuesdays at 10am (Monthly: Starting 29th Sept)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
@@ -2531,25 +2528,24 @@ export const practitionersData = [
       },
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "Fridays at 12:30pm (Weekly: Starting 11th Sept)\nFridays at 2:30pm (Weekly: Starting 18th Sept)\nThursdays at 1:30pm (Weekly: Starting 17th Sept)\nWednesdays at 9am (Weekly: Starting 16th Sept)\nThursdays at 9am (Fortnightly: Starting 10th Sept)\nFridays at 9am (Fortnightly: Starting 11th Sept)\nThursdays at 11:30am (Fortnightly: Starting 17th Sept)\nWednesdays at 1pm (Monthly: Starting 23rd Sept)\nFridays at 10am (Monthly: Starting 9th Oct)",
+        "availability": "Fridays at 12:30pm (Weekly: Starting 18th Sept)\nFridays at 2:30pm (Weekly: Starting 18th Sept)\nThursdays at 1:30pm (Weekly: Starting 17th Sept)\nWednesdays at 9am (Weekly: Starting 16th Sept)\nThursdays at 9am (Fortnightly: Starting 24th Sept)\nFridays at 9am (Fortnightly: Starting 11th Sept)\nThursdays at 11:30am (Fortnightly: Starting 17th Sept)\nWednesdays at 1pm (Monthly: Starting 23rd Sept)\nFridays at 10am (Monthly: Starting 9th Oct)",
         "weekly_availability": [],
         "fortnightly_availability": []
       }
     ],
     "last_updated": "2026-07-19",
     "availability": [
-      "Fridays at 12:30pm (Weekly: Starting 11th Sept) — Burke Rd, Camberwell",
+      "Fridays at 12:30pm (Weekly: Starting 18th Sept) — Burke Rd, Camberwell",
       "Fridays at 2:30pm (Weekly: Starting 18th Sept) — Burke Rd, Camberwell",
       "Thursdays at 1:30pm (Weekly: Starting 17th Sept) — Burke Rd, Camberwell",
       "Wednesdays at 9am (Weekly: Starting 16th Sept) — Burke Rd, Camberwell",
-      "Thursdays at 9am (Fortnightly: Starting 10th Sept) — Burke Rd, Camberwell",
+      "Thursdays at 9am (Fortnightly: Starting 24th Sept) — Burke Rd, Camberwell",
       "Fridays at 9am (Fortnightly: Starting 11th Sept) — Burke Rd, Camberwell",
       "Thursdays at 11:30am (Fortnightly: Starting 17th Sept) — Burke Rd, Camberwell",
       "Wednesdays at 1pm (Monthly: Starting 23rd Sept) — Burke Rd, Camberwell",
       "Fridays at 10am (Monthly: Starting 9th Oct) — Burke Rd, Camberwell",
-      "Tuesdays at 11am (Fortnightly: Starting 15th Sept) — Greville St, Prahran",
+      "Tuesdays at 11am (Fortnightly: Starting 29th Sept) — Greville St, Prahran",
       "Tuesdays at 2pm (Fortnightly: Starting 6th Oct) — Greville St, Prahran",
-      "Tuesdays at 1pm (Fortnightly: Starting 15th Sept) — Greville St, Prahran",
       "Tuesdays at 10am (Monthly: Starting 29th Sept) — Greville St, Prahran"
     ],
     "short_bio": "Nick is a warm, trauma-informed clinical psychologist using ACT, mindfulness, CBT and SFT to support diverse adults and adolescents, including neurodivergent clients.",
@@ -2725,7 +2721,7 @@ export const practitionersData = [
     "link_to_bio": "https://psychologycare.com.au/ricki-knoetze/",
     "locations": [
       {
-        "availability": "Mondays at 3:30pm (Monthly: Starting 21st Sept)\nMondays at 5pm (Monthly: Starting 5th Oct)",
+        "availability": "Mondays at 3:30pm (Monthly: Starting 19th Oct)\nMondays at 5pm (Monthly: Starting 5th Oct)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
@@ -2753,7 +2749,7 @@ export const practitionersData = [
     "availability": [
       "Wednesdays at 12pm (Weekly: Starting 9th Sept) — Telehealth",
       "Wednesdays at 1pm (Fortnightly: Starting 9th Sept) — Telehealth",
-      "Mondays at 3:30pm (Monthly: Starting 21st Sept) — Greville St, Prahran",
+      "Mondays at 3:30pm (Monthly: Starting 19th Oct) — Greville St, Prahran",
       "Mondays at 5pm (Monthly: Starting 5th Oct) — Greville St, Prahran"
     ],
     "short_bio": "Ricki is a warm, non-judgemental psychologist using CBT, ACT and psychodynamic therapies to support adolescents and adults with anxiety, depression, trauma and ADHD.",
@@ -2897,7 +2893,7 @@ export const practitionersData = [
     "locations": [
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "Thursdays at 2:30pm (Weekly: Starting 17th Sept)\nThursdays at 3:30pm (Fortnightly: Starting 24th Sept)\nWednesdays at 6:15pm (Monthly: Starting 16th Sept)",
+        "availability": "Tuesdays at 1pm (Weekly: Starting 15th Sept)\nTuesdays at 12pm (Weekly: Starting 15th Sept)\nTuesdays at 10am (Weekly: Starting 15th Sept)\nTuesdays at 9am (Weekly: Starting 15th Sept)\nTuesdays at 8am (Weekly: Starting 15th Sept)\nThursdays at 2:30pm (Weekly: Starting 17th Sept)\nThursdays at 3:30pm (Fortnightly: Starting 24th Sept)\nWednesdays at 6:30pm (Monthly: Starting 16th Sept)",
         "weekly_availability": [],
         "fortnightly_availability": []
       },
@@ -2911,9 +2907,14 @@ export const practitionersData = [
     "last_updated": "2026-07-19",
     "short_bio": "Josh is a warm, research-active clinical psychologist supporting adolescents and adults with integrative, values-based therapy for trauma, neurodiversity and emotional difficulties.",
     "availability": [
+      "Tuesdays at 1pm (Weekly: Starting 15th Sept) — Burke Rd, Camberwell",
+      "Tuesdays at 12pm (Weekly: Starting 15th Sept) — Burke Rd, Camberwell",
+      "Tuesdays at 10am (Weekly: Starting 15th Sept) — Burke Rd, Camberwell",
+      "Tuesdays at 9am (Weekly: Starting 15th Sept) — Burke Rd, Camberwell",
+      "Tuesdays at 8am (Weekly: Starting 15th Sept) — Burke Rd, Camberwell",
       "Thursdays at 2:30pm (Weekly: Starting 17th Sept) — Burke Rd, Camberwell",
       "Thursdays at 3:30pm (Fortnightly: Starting 24th Sept) — Burke Rd, Camberwell",
-      "Wednesdays at 6:15pm (Monthly: Starting 16th Sept) — Burke Rd, Camberwell"
+      "Wednesdays at 6:30pm (Monthly: Starting 16th Sept) — Burke Rd, Camberwell"
     ],
     "weekly_availability": [],
     "fortnightly_availability": [],
@@ -3422,7 +3423,7 @@ export const practitionersData = [
     "link_to_bio": "https://psychologycare.com.au/poorna-selvaraja/",
     "locations": [
       {
-        "availability": "Wednesdays at 3:30pm (Fortnightly: Starting 9th Sept)\nTuesdays at 11:30am (Fortnightly: Starting 8th Sept)\nWednesdays at 7pm (Fortnightly: Starting 16th Sept)\nMondays at 10am (Fortnightly: Starting 14th Sept)\nMondays at 2pm (Fortnightly: Starting 21st Sept)\nTuesdays at 8:30am (Fortnightly: Starting 6th Oct)\nTuesdays at 1:30pm (Monthly: Starting 29th Sept)\nTuesdays at 9:30am (Monthly: Starting 6th Oct)\nTuesdays at 10:30am (Monthly: Starting 13th Oct)\nWednesdays at 7pm (Monthly: Starting 9th Sept)\nTuesdays at 8:30am (Monthly: Starting 15th Sept)\nMondays at 11am (Monthly: Starting 28th Sept)",
+        "availability": "Wednesdays at 3:30pm (Fortnightly: Starting 9th Sept)\nTuesdays at 11:30am (Fortnightly: Starting 22nd Sept)\nWednesdays at 7pm (Fortnightly: Starting 16th Sept)\nMondays at 10am (Fortnightly: Starting 14th Sept)\nMondays at 2pm (Fortnightly: Starting 21st Sept)\nTuesdays at 8:30am (Fortnightly: Starting 6th Oct)\nTuesdays at 1:30pm (Monthly: Starting 29th Sept)\nTuesdays at 9:30am (Monthly: Starting 6th Oct)\nTuesdays at 10:30am (Monthly: Starting 13th Oct)\nWednesdays at 7pm (Monthly: Starting 9th Sept)\nTuesdays at 8:30am (Monthly: Starting 15th Sept)\nMondays at 11am (Monthly: Starting 28th Sept)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
@@ -3431,7 +3432,7 @@ export const practitionersData = [
     "last_updated": "2026-07-19",
     "availability": [
       "Wednesdays at 3:30pm (Fortnightly: Starting 9th Sept) — Greville St, Prahran",
-      "Tuesdays at 11:30am (Fortnightly: Starting 8th Sept) — Greville St, Prahran",
+      "Tuesdays at 11:30am (Fortnightly: Starting 22nd Sept) — Greville St, Prahran",
       "Wednesdays at 7pm (Fortnightly: Starting 16th Sept) — Greville St, Prahran",
       "Mondays at 10am (Fortnightly: Starting 14th Sept) — Greville St, Prahran",
       "Mondays at 2pm (Fortnightly: Starting 21st Sept) — Greville St, Prahran",
@@ -3509,7 +3510,7 @@ export const practitionersData = [
     "medicareRebate": 149.05,
     "locations": [
       {
-        "availability": "Wednesdays at 11am (Fortnightly: Starting 16th Sept)\nThursdays at 2:30pm (Fortnightly: Starting 17th Sept)",
+        "availability": "",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
@@ -3522,10 +3523,7 @@ export const practitionersData = [
       "Internal Family Systems Therapy (IFS)",
       "Emotion Focused Therapy (EFT)"
     ],
-    "availability": [
-      "Wednesdays at 11am (Fortnightly: Starting 16th Sept) — Greville St, Prahran",
-      "Thursdays at 2:30pm (Fortnightly: Starting 17th Sept) — Greville St, Prahran"
-    ],
+    "availability": [],
     "bio": "When I was young, I wanted to be a marine biologist. I was in awe of the mysteries of the ocean and marvelled at the variety of creatures living within it. As I grew older and began to see the world through more adult eyes, I realised that the depth and breadth of human emotion and behaviour was far vaster and more complex than any ocean could ever be. And so, my path was set.\n\nAfter many years of study and work, I am now a Senior Clinical Psychologist having worked in the UK, New Zealand and finally Australia. I have many years of experience working in the public sector with severe and enduring mental health issues, and also with mild to moderate mental health issues that most of us experience at some point in our lifetime.\n\nI am an integrative Doctor of Clinical Psychology and as such, I draw upon a wide variety of models of therapy such as Intensive Short Term Dynamic Psychotherapy (ISTDP) and Cognitive Behavioural Therapy (CBT), as well as others. This enables me to tailor treatments to the unique needs of each individual I see.\n\nHowever, as research has proven over and over again, the most important ingredient to effective treatment in psychological therapy is the therapeutic relationship itself. As such, I strive to form an authentic relationship with every client I see, and with an empathic understanding at its core. The sharing of vulnerability opens the door to intimacy, and it is my role to provide a safe and validating space that allows this process to occur.\n\nI have developed many areas of interest throughout my career, I have been invited to speak and keynote speak at a number of national and international conferences, and have worked on the Clinical Psychology Program at the University of Melbourne for the past 8 years. Finally, I am fortunate to be a supervisor and mentor to many psychologists, whether they be seasoned professionals or just starting out on their journey as a psychologist.\n\nMy passion remains in individual psychological therapy, especially using ISTDP, as well as research into the promising new arena of psychedelic sciences, and how this can be applied to the psychotherapeutic space once legalised.",
     "qualifications": "BSc (Hons) ClinPsyD",
     "pronouns": "He/him",
@@ -3646,7 +3644,7 @@ export const practitionersData = [
     "link_to_bio": "https://psychologycare.com.au/pete-steele/",
     "locations": [
       {
-        "availability": "Tuesdays at 1pm (Monthly: Starting 8th Sept)\nWednesdays at 11am (Monthly: Starting 16th Sept)\nTuesdays at 8am (Monthly: Starting 29th Sept)",
+        "availability": "Tuesdays at 1pm (Monthly: Starting 6th Oct)\nWednesdays at 11am (Monthly: Starting 16th Sept)\nTuesdays at 8am (Monthly: Starting 29th Sept)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
@@ -3660,7 +3658,7 @@ export const practitionersData = [
     ],
     "last_updated": "2026-07-19",
     "availability": [
-      "Tuesdays at 1pm (Monthly: Starting 8th Sept) — Greville St, Prahran",
+      "Tuesdays at 1pm (Monthly: Starting 6th Oct) — Greville St, Prahran",
       "Wednesdays at 11am (Monthly: Starting 16th Sept) — Greville St, Prahran",
       "Tuesdays at 8am (Monthly: Starting 29th Sept) — Greville St, Prahran"
     ],
@@ -3755,13 +3753,13 @@ export const practitionersData = [
     "link_to_bio": "https://psychologycare.com.au/clare-tuttleby/",
     "locations": [
       {
-        "availability": "Tuesdays at 6:30pm (Fortnightly: Starting 22nd Sept)\nTuesdays at 2:30pm (Fortnightly: Starting 8th Sept)\nTuesdays at 3:30pm (Fortnightly: Starting 29th Sept)\nMondays at 5:30pm (Fortnightly: Starting 21st Sept)\nMondays at 2:30pm (Monthly: Starting 5th Oct)\nMondays at 5:30pm (Monthly: Starting 28th Sept)",
+        "availability": "Tuesdays at 6:30pm (Fortnightly: Starting 22nd Sept)\nTuesdays at 2:30pm (Fortnightly: Starting 22nd Sept)\nTuesdays at 3:30pm (Fortnightly: Starting 29th Sept)\nMondays at 5:30pm (Fortnightly: Starting 21st Sept)\nMondays at 3:30pm (Monthly: Starting 5th Oct)\nMondays at 2:30pm (Monthly: Starting 5th Oct)\nMondays at 5:30pm (Monthly: Starting 28th Sept)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
       },
       {
-        "availability": "Tuesdays at 11am (Fortnightly: Starting 8th Sept)",
+        "availability": "Tuesdays at 11am (Fortnightly: Starting 22nd Sept)",
         "weekly_availability": [],
         "fortnightly_availability": [
           {
@@ -3776,12 +3774,13 @@ export const practitionersData = [
     "last_updated": "2026-07-19",
     "availability": [
       "Tuesdays at 6:30pm (Fortnightly: Starting 22nd Sept) — Greville St, Prahran",
-      "Tuesdays at 2:30pm (Fortnightly: Starting 8th Sept) — Greville St, Prahran",
+      "Tuesdays at 2:30pm (Fortnightly: Starting 22nd Sept) — Greville St, Prahran",
       "Tuesdays at 3:30pm (Fortnightly: Starting 29th Sept) — Greville St, Prahran",
       "Mondays at 5:30pm (Fortnightly: Starting 21st Sept) — Greville St, Prahran",
+      "Mondays at 3:30pm (Monthly: Starting 5th Oct) — Greville St, Prahran",
       "Mondays at 2:30pm (Monthly: Starting 5th Oct) — Greville St, Prahran",
       "Mondays at 5:30pm (Monthly: Starting 28th Sept) — Greville St, Prahran",
-      "Tuesdays at 11am (Fortnightly: Starting 8th Sept) — Telehealth"
+      "Tuesdays at 11am (Fortnightly: Starting 22nd Sept) — Telehealth"
     ],
     "short_bio": "Clare is a warm, client-centred psychologist supporting life transitions, anxiety, perinatal and health challenges using CBT, ACT and mindfulness-based approaches.",
     "weekly_availability": [],
@@ -3921,7 +3920,7 @@ export const practitionersData = [
     "link_to_bio": "https://psychologycare.com.au/elizabeth-white/",
     "locations": [
       {
-        "availability": "Wednesdays at 9am (Weekly: Starting 9th Sept)\nThursdays at 9am (Weekly: Starting 10th Sept)\nFridays at 9am (Fortnightly: Starting 25th Sept)\nThursdays at 10am (Monthly: Starting 8th Oct)",
+        "availability": "Wednesdays at 9am (Weekly: Starting 16th Sept)\nThursdays at 9am (Weekly: Starting 10th Sept)\nFridays at 10am (Fortnightly: Starting 18th Sept)\nFridays at 9am (Fortnightly: Starting 25th Sept)\nThursdays at 10am (Monthly: Starting 8th Oct)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
@@ -3935,8 +3934,9 @@ export const practitionersData = [
     ],
     "last_updated": "2026-07-19",
     "availability": [
-      "Wednesdays at 9am (Weekly: Starting 9th Sept) — Greville St, Prahran",
+      "Wednesdays at 9am (Weekly: Starting 16th Sept) — Greville St, Prahran",
       "Thursdays at 9am (Weekly: Starting 10th Sept) — Greville St, Prahran",
+      "Fridays at 10am (Fortnightly: Starting 18th Sept) — Greville St, Prahran",
       "Fridays at 9am (Fortnightly: Starting 25th Sept) — Greville St, Prahran",
       "Thursdays at 10am (Monthly: Starting 8th Oct) — Greville St, Prahran"
     ],
@@ -4124,7 +4124,7 @@ export const practitionersData = [
     "link_to_bio": "https://psychologycare.com.au/karen-pereira-york/",
     "locations": [
       {
-        "availability": "Thursdays at 1pm (Fortnightly: Starting 10th Sept)\nWednesdays at 2pm (Fortnightly: Starting 9th Sept)\nTuesdays at 3:30pm (Fortnightly: Starting 8th Sept)\nWednesdays at 1pm (Fortnightly: Starting 16th Sept)\nThursdays at 12pm (Fortnightly: Starting 10th Sept)\nThursdays at 10:30am (Fortnightly: Starting 17th Sept)\nThursdays at 9:30am (Fortnightly: Starting 10th Sept)\nTuesdays at 2:30pm (Monthly: Starting 8th Sept)\nThursdays at 8:30am (Monthly: Starting 1st Oct)\nTuesdays at 6:30pm (Monthly: Starting 29th Sept)\nTuesdays at 4:30pm (Monthly: Starting 8th Sept)",
+        "availability": "Thursdays at 1pm (Fortnightly: Starting 10th Sept)\nWednesdays at 2pm (Fortnightly: Starting 9th Sept)\nTuesdays at 3:30pm (Fortnightly: Starting 22nd Sept)\nWednesdays at 1pm (Fortnightly: Starting 16th Sept)\nThursdays at 12pm (Fortnightly: Starting 10th Sept)\nThursdays at 10:30am (Fortnightly: Starting 17th Sept)\nThursdays at 9:30am (Fortnightly: Starting 10th Sept)\nTuesdays at 2:30pm (Monthly: Starting 6th Oct)\nThursdays at 8:30am (Monthly: Starting 1st Oct)\nTuesdays at 6:30pm (Monthly: Starting 29th Sept)\nTuesdays at 4:30pm (Monthly: Starting 6th Oct)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
@@ -4134,15 +4134,15 @@ export const practitionersData = [
     "availability": [
       "Thursdays at 1pm (Fortnightly: Starting 10th Sept) — Greville St, Prahran",
       "Wednesdays at 2pm (Fortnightly: Starting 9th Sept) — Greville St, Prahran",
-      "Tuesdays at 3:30pm (Fortnightly: Starting 8th Sept) — Greville St, Prahran",
+      "Tuesdays at 3:30pm (Fortnightly: Starting 22nd Sept) — Greville St, Prahran",
       "Wednesdays at 1pm (Fortnightly: Starting 16th Sept) — Greville St, Prahran",
       "Thursdays at 12pm (Fortnightly: Starting 10th Sept) — Greville St, Prahran",
       "Thursdays at 10:30am (Fortnightly: Starting 17th Sept) — Greville St, Prahran",
       "Thursdays at 9:30am (Fortnightly: Starting 10th Sept) — Greville St, Prahran",
-      "Tuesdays at 2:30pm (Monthly: Starting 8th Sept) — Greville St, Prahran",
+      "Tuesdays at 2:30pm (Monthly: Starting 6th Oct) — Greville St, Prahran",
       "Thursdays at 8:30am (Monthly: Starting 1st Oct) — Greville St, Prahran",
       "Tuesdays at 6:30pm (Monthly: Starting 29th Sept) — Greville St, Prahran",
-      "Tuesdays at 4:30pm (Monthly: Starting 8th Sept) — Greville St, Prahran"
+      "Tuesdays at 4:30pm (Monthly: Starting 6th Oct) — Greville St, Prahran"
     ],
     "short_bio": "Karen is a psychodynamic clinical psychologist integrating EMDR to support trauma, identity, grief and life transitions with culturally attuned, exploratory therapy.",
     "weekly_availability": [
@@ -4196,4 +4196,5 @@ export const practitionersData = [
     ]
   }
 ];
-export const PRACTITIONERS_DATA = practitionersData;
+export const practitionersData = PRACTITIONERS_DATA;
+export const AVAILABILITY_LAST_UPDATED = "8 Sept 2026 6:01am";
