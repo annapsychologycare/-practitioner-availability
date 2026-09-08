@@ -1,4 +1,6 @@
-export const PRACTITIONERS_DATA = [
+// Auto-generated — do not edit manually.
+export const AVAILABILITY_LAST_UPDATED = '8 Sept 2026 12:46pm';
+export const practitionersData = [
   {
     "id": 1,
     "name": "Alex Barry",
@@ -2770,7 +2772,7 @@ export const PRACTITIONERS_DATA = [
       }
     ],
     "style": "A parent",
-    "working_hours": "Working Days: Mondays in Prahran and Saturdays in Camberwell",
+    "working_hours": "Working Days: Mondays in Prahran, Wednesdays - Telehealth Only, Saturdays in Camberwell",
     "location_notes": {
       "Wattletree Rd, Malvern": "Please Note: As of 9th June 2026 Ricki's Saturday appointments will be moving from our Malvern Clinic to our new Clinic on Burke Road, Camberwell."
     },
@@ -4195,5 +4197,4 @@ export const PRACTITIONERS_DATA = [
     ]
   }
 ];
-export const practitionersData = PRACTITIONERS_DATA;
-export const AVAILABILITY_LAST_UPDATED = "8 Sept 2026 12:46pm";
+export const PRACTITIONERS_DATA = practitionersData;
