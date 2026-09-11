@@ -19136,6 +19136,8 @@ Please note: There are inherent confidentiality risks in communicating by email.
         weekly.push(cleaned);
       else if (/\(Fortnightly:/i.test(line))
         fortnightly.push(cleaned);
+      else
+        weekly.push(line);
     }
     return { weekly, fortnightly, monthly };
   }
@@ -19347,7 +19349,7 @@ Please note: There are inherent confidentiality risks in communicating by email.
 
   // components/SendClientModal.tsx
   var jsx_dev_runtime = __toESM(require_jsx_dev_runtime(), 1);
-  var SendClientModal = ({ selected, locationFilter, onClose, onSent, includeMonthly = false }) => {
+  var SendClientModal = ({ selected, locationFilter, onClose, onSent, includeMonthly = false, sessionType = "Individual" }) => {
     const config = import_react3.useMemo(() => loadEmailTemplateConfig(), []);
     const [step, setStep] = import_react3.useState("form");
     const [copied, setCopied] = import_react3.useState(false);
@@ -19360,7 +19362,22 @@ Please note: There are inherent confidentiality risks in communicating by email.
     const [sending, setSending] = import_react3.useState(false);
     const [error, setError] = import_react3.useState("");
     const practitionerData = import_react3.useMemo(() => selected.map((p) => {
-      const locs = locationFilter ? p.locations.filter((l) => l.location.toLowerCase().includes(locationFilter.toLowerCase())) : p.locations;
+      let locs;
+      if (sessionType === "Supervision") {
+        const supAvail = p.supervision_availability || [];
+        locs = supAvail.map((entry) => {
+          const lines = [];
+          for (const d of entry.days || []) {
+            for (const t of d.times || []) {
+              lines.push(`${d.day}s at ${t}`);
+            }
+          }
+          return { location: entry.location || "Telehealth", availability: lines.join(`
+`) };
+        });
+      } else {
+        locs = locationFilter ? p.locations.filter((l) => l.location.toLowerCase().includes(locationFilter.toLowerCase())) : p.locations;
+      }
       return {
         name: p.name,
         title: p.title,
@@ -19377,7 +19394,7 @@ Please note: There are inherent confidentiality risks in communicating by email.
         location_notes: p.location_notes,
         photo_url: p.photo_url
       };
-    }), [selected, locationFilter]);
+    }), [selected, locationFilter, sessionType]);
     const previewHtml = import_react3.useMemo(() => buildEmailHtml(clientName || "Client", note, senderName, practitionerData, { ...config, intro_text: openingParagraph }, includeMonthly), [clientName, note, senderName, practitionerData, config, openingParagraph, includeMonthly]);
     const handleCopyEmail = async () => {
       try {
@@ -21598,7 +21615,8 @@ Please note: There are inherent confidentiality risks in communicating by email.
               locationFilter: selectedLocations.length === 1 ? selectedLocations[0] : "",
               onClose: () => setShowSendModal(false),
               onSent: handleSent,
-              includeMonthly
+              includeMonthly,
+              sessionType: gateClientType
             }, undefined, false, undefined, this)
           ]
         }, undefined, true, undefined, this)

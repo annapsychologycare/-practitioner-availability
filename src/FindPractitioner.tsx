@@ -1234,6 +1234,7 @@ export default function FindPractitioner({ practitioners }: Props) {
           onClose={() => setShowSendModal(false)}
           onSent={handleSent}
           includeMonthly={includeMonthly}
+          sessionType={gateClientType}
         />
       )}
 

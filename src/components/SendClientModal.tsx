@@ -11,11 +11,12 @@ interface Props {
   onClose: () => void;
   onSent: () => void;
   includeMonthly?: boolean;
+  sessionType?: string;
 }
 
 // ── Component ────────────────────────────────────────────────────────────────
 
-const SendClientModal: React.FC<Props> = ({ selected, locationFilter, onClose, onSent, includeMonthly = false }) => {
+const SendClientModal: React.FC<Props> = ({ selected, locationFilter, onClose, onSent, includeMonthly = false, sessionType = "Individual" }) => {
   // Load config from localStorage (reflects any edits made in Email Template tab)
   const config = useMemo(() => loadEmailTemplateConfig(), []);
 
@@ -33,11 +34,27 @@ const SendClientModal: React.FC<Props> = ({ selected, locationFilter, onClose, o
   const practitionerData = useMemo(
     () =>
       selected.map((p) => {
-        const locs = locationFilter
-          ? p.locations.filter((l) =>
-              l.location.toLowerCase().includes(locationFilter.toLowerCase())
-            )
-          : p.locations;
+        // For supervision sessions, use supervision_availability instead of regular locations
+        let locs;
+        if (sessionType === "Supervision") {
+          const supAvail: any[] = (p as any).supervision_availability || [];
+          // Convert days/times format into the availability string format the email builder expects
+          locs = supAvail.map((entry: any) => {
+            const lines: string[] = [];
+            for (const d of entry.days || []) {
+              for (const t of d.times || []) {
+                lines.push(`${d.day}s at ${t}`);
+              }
+            }
+            return { location: entry.location || "Telehealth", availability: lines.join("\n") };
+          });
+        } else {
+          locs = locationFilter
+            ? p.locations.filter((l) =>
+                l.location.toLowerCase().includes(locationFilter.toLowerCase())
+              )
+            : p.locations;
+        }
         return {
           name: p.name,
           title: p.title,
@@ -47,7 +64,7 @@ const SendClientModal: React.FC<Props> = ({ selected, locationFilter, onClose, o
           availabilityLocations: locs,
           link_to_bio: p.link_to_bio,
           after_hours: hasAfterHoursAvailability(
-            locs.map((l) => ({ availability: l.availability }))
+            locs.map((l: any) => ({ availability: l.availability }))
           ),
           accepts_couples: p.accepts_couples,
           alert: p.alert,
@@ -57,7 +74,7 @@ const SendClientModal: React.FC<Props> = ({ selected, locationFilter, onClose, o
           photo_url: (p as any).photo_url,
         };
       }),
-    [selected, locationFilter]
+    [selected, locationFilter, sessionType]
   );
 
   const previewHtml = useMemo(

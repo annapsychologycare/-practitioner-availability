@@ -37,6 +37,7 @@ export function parseAvailability(text: string | string[], includeMonthly = fals
       .replace(/\s*\((Weekly|Fortnightly): Starting ([^)]+)\)/i, " · from $2");
     if (/\(Weekly:/i.test(line)) weekly.push(cleaned);
     else if (/\(Fortnightly:/i.test(line)) fortnightly.push(cleaned);
+    else weekly.push(line); // plain lines (e.g. supervision slots) treated as weekly
   }
   return { weekly, fortnightly, monthly };
 }
