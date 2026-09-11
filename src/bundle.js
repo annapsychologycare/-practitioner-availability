@@ -20262,22 +20262,27 @@ Please note: There are inherent confidentiality risks in communicating by email.
         }
       }
     }
-    if (filters.gateClientType && p.client_types) {
-      const gateClientTypesStr = Array.isArray(p.client_types) ? p.client_types.join(" ") : p.client_types || "";
-      if (!gateClientTypesStr.toLowerCase().includes(filters.gateClientType.toLowerCase()))
+    if (filters.gateClientType === "Supervision") {
+      if (!(p.supervision_availability?.length > 0))
         return -1;
-    }
-    if (filters.gateAgeRep !== null && p.age_range) {
-      const ageRangeStr2 = Array.isArray(p.age_range) ? p.age_range.join(" ") : p.age_range || "";
-      const nums = ageRangeStr2.match(/\d+/g);
-      if (nums && nums.length > 0) {
-        const minAge = Math.min(...nums.map(Number));
-        if (filters.gateAgeRep < minAge)
+    } else {
+      if (filters.gateClientType && p.client_types) {
+        const gateClientTypesStr = Array.isArray(p.client_types) ? p.client_types.join(" ") : p.client_types || "";
+        if (!gateClientTypesStr.toLowerCase().includes(filters.gateClientType.toLowerCase()))
           return -1;
       }
-    }
-    if (filters.gateExcludeFemaleOnly && p.client_gender_accepted === "Female Only") {
-      return -1;
+      if (filters.gateAgeRep !== null && p.age_range) {
+        const ageRangeStr2 = Array.isArray(p.age_range) ? p.age_range.join(" ") : p.age_range || "";
+        const nums = ageRangeStr2.match(/\d+/g);
+        if (nums && nums.length > 0) {
+          const minAge = Math.min(...nums.map(Number));
+          if (filters.gateAgeRep < minAge)
+            return -1;
+        }
+      }
+      if (filters.gateExcludeFemaleOnly && p.client_gender_accepted === "Female Only") {
+        return -1;
+      }
     }
     if (filters.practitionerNames.length > 0) {
       if (!filters.practitionerNames.includes(p.name))
@@ -20325,7 +20330,7 @@ Please note: There are inherent confidentiality risks in communicating by email.
     }
     return { weekly, fortnightly, monthly };
   }
-  var PractitionerCard = ({ p, locationFilter, isSelected, onToggleSelect, includeMonthly }) => {
+  var PractitionerCard = ({ p, locationFilter, isSelected, onToggleSelect, includeMonthly, gateClientType }) => {
     const [expanded, setExpanded] = import_react5.useState(false);
     const [copied, setCopied] = import_react5.useState(false);
     const safeLocs = p.locations || [];
@@ -20530,7 +20535,45 @@ Please note: There are inherent confidentiality risks in communicating by email.
                   }, undefined, false, undefined, this)
                 ]
               }, undefined, true, undefined, this),
-              displayLocs.length === 0 ? /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("div", {
+              gateClientType === "Supervision" ? p.supervision_availability?.length > 0 ? /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("div", {
+                className: "mt-2",
+                children: /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("div", {
+                  className: "rounded-lg p-2",
+                  style: { backgroundColor: "rgba(54,97,136,0.08)" },
+                  children: [
+                    /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("div", {
+                      className: "text-xs font-bold mb-1",
+                      style: { color: "#366188" },
+                      children: "\uD83C\uDF93 Supervision Slots (Weekly · Telehealth)"
+                    }, undefined, false, undefined, this),
+                    p.supervision_availability.map((loc, li) => /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("div", {
+                      children: [
+                        p.supervision_availability.length > 1 && /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("div", {
+                          className: "text-xs text-base-content/50 mb-1",
+                          children: [
+                            "\uD83D\uDCCD ",
+                            loc.location
+                          ]
+                        }, undefined, true, undefined, this),
+                        loc.days.map((d, di) => /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("div", {
+                          className: "text-xs",
+                          children: [
+                            /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("span", {
+                              className: "font-medium",
+                              children: d.day
+                            }, undefined, false, undefined, this),
+                            ": ",
+                            d.times.join(", ")
+                          ]
+                        }, di, true, undefined, this))
+                      ]
+                    }, li, true, undefined, this))
+                  ]
+                }, undefined, true, undefined, this)
+              }, undefined, false, undefined, this) : /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("div", {
+                className: "text-sm text-base-content/40 italic",
+                children: "No supervision availability listed"
+              }, undefined, false, undefined, this) : displayLocs.length === 0 ? /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("div", {
                 className: "text-sm text-base-content/40 italic",
                 children: "No availability listed"
               }, undefined, false, undefined, this) : displayLocs.map((loc, i) => {
@@ -20755,7 +20798,7 @@ Please note: There are inherent confidentiality risks in communicating by email.
     const [gateAgeBracket, setGateAgeBracket] = import_react5.useState("");
     const [gateClientGender, setGateClientGender] = import_react5.useState("");
     const [includeMonthly, setIncludeMonthly] = import_react5.useState(false);
-    const gateComplete = !!gateClientType && !!gateAgeBracket && !!gateClientGender;
+    const gateComplete = !!gateClientType && (gateClientType === "Supervision" || !!gateAgeBracket && !!gateClientGender);
     const AGE_BRACKET_MAP = {
       "Under 12": 10,
       "12–15": 12,
@@ -20894,16 +20937,22 @@ Please note: There are inherent confidentiality risks in communicating by email.
                     }, undefined, true, undefined, this),
                     /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("div", {
                       className: "flex gap-2 flex-wrap",
-                      children: ["Individual", "Couples"].map((opt) => /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("button", {
-                        onClick: () => setGateClientType(opt),
+                      children: ["Individual", "Couples", "Supervision"].map((opt) => /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("button", {
+                        onClick: () => {
+                          setGateClientType(opt);
+                          if (opt === "Supervision") {
+                            setGateAgeBracket("");
+                            setGateClientGender("");
+                          }
+                        },
                         className: "px-4 py-1.5 rounded-full text-sm font-medium border transition-all",
                         style: gateClientType === opt ? { backgroundColor: "#2C244C", color: "white", borderColor: "#2C244C" } : { backgroundColor: "white", color: "#2C244C", borderColor: "#CDA8BA" },
-                        children: opt === "Individual" ? "\uD83D\uDC64 Individual" : "\uD83D\uDC65 Couples"
+                        children: opt === "Individual" ? "\uD83D\uDC64 Individual" : opt === "Couples" ? "\uD83D\uDC65 Couples" : "\uD83C\uDF93 Supervision"
                       }, opt, false, undefined, this))
                     }, undefined, false, undefined, this)
                   ]
                 }, undefined, true, undefined, this),
-                /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("div", {
+                gateClientType !== "Supervision" && /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("div", {
                   children: [
                     /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("div", {
                       className: "text-xs font-semibold mb-2",
@@ -20929,7 +20978,7 @@ Please note: There are inherent confidentiality risks in communicating by email.
                 }, undefined, true, undefined, this)
               ]
             }, undefined, true, undefined, this),
-            /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("div", {
+            gateClientType !== "Supervision" && /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("div", {
               children: [
                 /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("div", {
                   className: "text-xs font-semibold mb-2",
@@ -21483,7 +21532,8 @@ Please note: There are inherent confidentiality risks in communicating by email.
                   locationFilter: selectedLocations,
                   isSelected: selectedNames.includes(item.p.name),
                   onToggleSelect: toggleSelect,
-                  includeMonthly
+                  includeMonthly,
+                  gateClientType
                 }, undefined, false, undefined, this)
               }, idx, false, undefined, this))
             }, undefined, false, undefined, this),
@@ -23442,6 +23492,14 @@ Thursdays at 9am (Monthly: Starting 1st Oct)`,
       ],
       short_bio: "An integrative ISTDP, CBT and IFS therapist helping clients face painful feelings, heal relational wounds and integrate difficult psychedelic experiences.",
       weekly_availability: [],
+      supervision_availability: [
+        {
+          location: "Telehealth",
+          days: [
+            { day: "Monday", times: ["9am", "10am", "11am"] }
+          ]
+        }
+      ],
       fortnightly_availability: [
         {
           location: "Wattletree Rd, Malvern",

@@ -405,25 +405,30 @@ function scoreMatch(p: Practitioner, filters: Filters): number {
     }
   }
 
-  // Gate: client type (Individual / Couples)
-  if (filters.gateClientType && p.client_types) {
-    const gateClientTypesStr = Array.isArray(p.client_types) ? p.client_types.join(" ") : (p.client_types || "");
-    if (!gateClientTypesStr.toLowerCase().includes(filters.gateClientType.toLowerCase())) return -1;
-  }
-
-  // Gate: age bracket
-  if (filters.gateAgeRep !== null && p.age_range) {
-    const ageRangeStr2 = Array.isArray(p.age_range) ? p.age_range.join(" ") : (p.age_range || "");
-    const nums = ageRangeStr2.match(/\d+/g);
-    if (nums && nums.length > 0) {
-      const minAge = Math.min(...nums.map(Number));
-      if (filters.gateAgeRep < minAge) return -1;
+  // Gate: supervision — only show practitioners with supervision_availability
+  if (filters.gateClientType === "Supervision") {
+    if (!((p as any).supervision_availability?.length > 0)) return -1;
+  } else {
+    // Gate: client type (Individual / Couples)
+    if (filters.gateClientType && p.client_types) {
+      const gateClientTypesStr = Array.isArray(p.client_types) ? p.client_types.join(" ") : (p.client_types || "");
+      if (!gateClientTypesStr.toLowerCase().includes(filters.gateClientType.toLowerCase())) return -1;
     }
-  }
 
-  // Gate: client gender — exclude female-only practitioners if client is not female
-  if (filters.gateExcludeFemaleOnly && (p as any).client_gender_accepted === "Female Only") {
-    return -1;
+    // Gate: age bracket
+    if (filters.gateAgeRep !== null && p.age_range) {
+      const ageRangeStr2 = Array.isArray(p.age_range) ? p.age_range.join(" ") : (p.age_range || "");
+      const nums = ageRangeStr2.match(/\d+/g);
+      if (nums && nums.length > 0) {
+        const minAge = Math.min(...nums.map(Number));
+        if (filters.gateAgeRep < minAge) return -1;
+      }
+    }
+
+    // Gate: client gender — exclude female-only practitioners if client is not female
+    if (filters.gateExcludeFemaleOnly && (p as any).client_gender_accepted === "Female Only") {
+      return -1;
+    }
   }
 
   if (filters.practitionerNames.length > 0) {
@@ -461,6 +466,7 @@ interface CardProps {
   isSelected: boolean;
   onToggleSelect: (name: string) => void;
   includeMonthly: boolean;
+  gateClientType: string;
 }
 
 function parseAvailabilityColumns(text: string | string[]): { weekly: string[]; fortnightly: string[]; monthly: string[] } {
@@ -477,7 +483,7 @@ function parseAvailabilityColumns(text: string | string[]): { weekly: string[]; 
   return { weekly, fortnightly, monthly };
 }
 
-const PractitionerCard: React.FC<CardProps> = ({ p, locationFilter, isSelected, onToggleSelect, includeMonthly }) => {
+const PractitionerCard: React.FC<CardProps> = ({ p, locationFilter, isSelected, onToggleSelect, includeMonthly, gateClientType }) => {
   const [expanded, setExpanded] = useState(false);
   const [copied, setCopied] = useState(false);
 
@@ -574,7 +580,27 @@ const PractitionerCard: React.FC<CardProps> = ({ p, locationFilter, isSelected, 
               </button>
             )}
           </div>
-          {displayLocs.length === 0 ? (
+          {gateClientType === "Supervision" ? (
+            (p as any).supervision_availability?.length > 0 ? (
+              <div className="mt-2">
+                <div className="rounded-lg p-2" style={{ backgroundColor: "rgba(54,97,136,0.08)" }}>
+                  <div className="text-xs font-bold mb-1" style={{ color: "#366188" }}>🎓 Supervision Slots (Weekly · Telehealth)</div>
+                  {(p as any).supervision_availability.map((loc: any, li: number) => (
+                    <div key={li}>
+                      {(p as any).supervision_availability.length > 1 && <div className="text-xs text-base-content/50 mb-1">📍 {loc.location}</div>}
+                      {loc.days.map((d: any, di: number) => (
+                        <div key={di} className="text-xs">
+                          <span className="font-medium">{d.day}</span>: {d.times.join(", ")}
+                        </div>
+                      ))}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ) : (
+              <div className="text-sm text-base-content/40 italic">No supervision availability listed</div>
+            )
+          ) : displayLocs.length === 0 ? (
             <div className="text-sm text-base-content/40 italic">No availability listed</div>
           ) : (
             displayLocs.map((loc, i) => {
@@ -714,7 +740,7 @@ export default function FindPractitioner({ practitioners }: Props) {
 
   const [includeMonthly, setIncludeMonthly] = useState(false);
 
-  const gateComplete = !!gateClientType && !!gateAgeBracket && !!gateClientGender;
+  const gateComplete = !!gateClientType && (gateClientType === "Supervision" || (!!gateAgeBracket && !!gateClientGender));
 
   const AGE_BRACKET_MAP: Record<string, number> = {
     "Under 12": 10,
@@ -835,20 +861,19 @@ export default function FindPractitioner({ practitioners }: Props) {
               Session type {gateClientType && <span className="text-green-600 ml-1">✓</span>}
             </div>
             <div className="flex gap-2 flex-wrap">
-              {["Individual", "Couples"].map(opt => (
-                <button key={opt} onClick={() => setGateClientType(opt)}
+              {["Individual", "Couples", "Supervision"].map(opt => (
+                <button key={opt} onClick={() => { setGateClientType(opt); if (opt === "Supervision") { setGateAgeBracket(""); setGateClientGender(""); } }}
                   className="px-4 py-1.5 rounded-full text-sm font-medium border transition-all"
                   style={gateClientType === opt
                     ? { backgroundColor: "#2C244C", color: "white", borderColor: "#2C244C" }
                     : { backgroundColor: "white", color: "#2C244C", borderColor: "#CDA8BA" }}>
-                  {opt === "Individual" ? "👤 Individual" : "👥 Couples"}
+                  {opt === "Individual" ? "👤 Individual" : opt === "Couples" ? "👥 Couples" : "🎓 Supervision"}
                 </button>
               ))}
             </div>
           </div>
 
-          {/* Q2: Client age */}
-          <div>
+          {gateClientType !== "Supervision" && (<div>
             <div className="text-xs font-semibold mb-2" style={{ color: "#2C244C" }}>
               Client's age {gateAgeBracket && <span className="text-green-600 ml-1">✓</span>}
             </div>
@@ -863,11 +888,11 @@ export default function FindPractitioner({ practitioners }: Props) {
                 </button>
               ))}
             </div>
-          </div>
+          </div>)}
         </div>
 
         {/* Row 2: Client gender */}
-        <div>
+        {gateClientType !== "Supervision" && (<div>
           <div className="text-xs font-semibold mb-2" style={{ color: "#2C244C" }}>
             Client's gender {gateClientGender && <span className="text-green-600 ml-1">✓</span>}
           </div>
@@ -887,7 +912,7 @@ export default function FindPractitioner({ practitioners }: Props) {
               ⚠️ Alex Barry, Chiara Killey and Clare Tuttleby accept female clients only.
             </div>
           )}
-        </div>
+        </div>)}
 
         {/* Monthly availability toggle */}
         <div className="mt-4 pt-4" style={{ borderTop: "1px solid #CDA8BA" }}>
@@ -1164,6 +1189,7 @@ export default function FindPractitioner({ practitioners }: Props) {
                 isSelected={selectedNames.includes(item.p.name)}
                 onToggleSelect={toggleSelect}
                 includeMonthly={includeMonthly}
+                gateClientType={gateClientType}
               />
             </div>
           ))}
