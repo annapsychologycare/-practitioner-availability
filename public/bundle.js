@@ -19136,6 +19136,8 @@ Please note: There are inherent confidentiality risks in communicating by email.
         weekly.push(cleaned);
       else if (/\(Fortnightly:/i.test(line))
         fortnightly.push(cleaned);
+      else
+        weekly.push(line);
     }
     return { weekly, fortnightly, monthly };
   }
@@ -19347,7 +19349,7 @@ Please note: There are inherent confidentiality risks in communicating by email.
 
   // components/SendClientModal.tsx
   var jsx_dev_runtime = __toESM(require_jsx_dev_runtime(), 1);
-  var SendClientModal = ({ selected, locationFilter, onClose, onSent, includeMonthly = false }) => {
+  var SendClientModal = ({ selected, locationFilter, onClose, onSent, includeMonthly = false, sessionType = "Individual" }) => {
     const config = import_react3.useMemo(() => loadEmailTemplateConfig(), []);
     const [step, setStep] = import_react3.useState("form");
     const [copied, setCopied] = import_react3.useState(false);
@@ -19360,7 +19362,22 @@ Please note: There are inherent confidentiality risks in communicating by email.
     const [sending, setSending] = import_react3.useState(false);
     const [error, setError] = import_react3.useState("");
     const practitionerData = import_react3.useMemo(() => selected.map((p) => {
-      const locs = locationFilter ? p.locations.filter((l) => l.location.toLowerCase().includes(locationFilter.toLowerCase())) : p.locations;
+      let locs;
+      if (sessionType === "Supervision") {
+        const supAvail = p.supervision_availability || [];
+        locs = supAvail.map((entry) => {
+          const lines = [];
+          for (const d of entry.days || []) {
+            for (const t of d.times || []) {
+              lines.push(`${d.day}s at ${t}`);
+            }
+          }
+          return { location: entry.location || "Telehealth", availability: lines.join(`
+`) };
+        });
+      } else {
+        locs = locationFilter ? p.locations.filter((l) => l.location.toLowerCase().includes(locationFilter.toLowerCase())) : p.locations;
+      }
       return {
         name: p.name,
         title: p.title,
@@ -19377,7 +19394,7 @@ Please note: There are inherent confidentiality risks in communicating by email.
         location_notes: p.location_notes,
         photo_url: p.photo_url
       };
-    }), [selected, locationFilter]);
+    }), [selected, locationFilter, sessionType]);
     const previewHtml = import_react3.useMemo(() => buildEmailHtml(clientName || "Client", note, senderName, practitionerData, { ...config, intro_text: openingParagraph }, includeMonthly), [clientName, note, senderName, practitionerData, config, openingParagraph, includeMonthly]);
     const handleCopyEmail = async () => {
       try {
@@ -20262,22 +20279,27 @@ Please note: There are inherent confidentiality risks in communicating by email.
         }
       }
     }
-    if (filters.gateClientType && p.client_types) {
-      const gateClientTypesStr = Array.isArray(p.client_types) ? p.client_types.join(" ") : p.client_types || "";
-      if (!gateClientTypesStr.toLowerCase().includes(filters.gateClientType.toLowerCase()))
+    if (filters.gateClientType === "Supervision") {
+      if (!(p.supervision_availability?.length > 0))
         return -1;
-    }
-    if (filters.gateAgeRep !== null && p.age_range) {
-      const ageRangeStr2 = Array.isArray(p.age_range) ? p.age_range.join(" ") : p.age_range || "";
-      const nums = ageRangeStr2.match(/\d+/g);
-      if (nums && nums.length > 0) {
-        const minAge = Math.min(...nums.map(Number));
-        if (filters.gateAgeRep < minAge)
+    } else {
+      if (filters.gateClientType && p.client_types) {
+        const gateClientTypesStr = Array.isArray(p.client_types) ? p.client_types.join(" ") : p.client_types || "";
+        if (!gateClientTypesStr.toLowerCase().includes(filters.gateClientType.toLowerCase()))
           return -1;
       }
-    }
-    if (filters.gateExcludeFemaleOnly && p.client_gender_accepted === "Female Only") {
-      return -1;
+      if (filters.gateAgeRep !== null && p.age_range) {
+        const ageRangeStr2 = Array.isArray(p.age_range) ? p.age_range.join(" ") : p.age_range || "";
+        const nums = ageRangeStr2.match(/\d+/g);
+        if (nums && nums.length > 0) {
+          const minAge = Math.min(...nums.map(Number));
+          if (filters.gateAgeRep < minAge)
+            return -1;
+        }
+      }
+      if (filters.gateExcludeFemaleOnly && p.client_gender_accepted === "Female Only") {
+        return -1;
+      }
     }
     if (filters.practitionerNames.length > 0) {
       if (!filters.practitionerNames.includes(p.name))
@@ -20325,7 +20347,7 @@ Please note: There are inherent confidentiality risks in communicating by email.
     }
     return { weekly, fortnightly, monthly };
   }
-  var PractitionerCard = ({ p, locationFilter, isSelected, onToggleSelect, includeMonthly }) => {
+  var PractitionerCard = ({ p, locationFilter, isSelected, onToggleSelect, includeMonthly, gateClientType }) => {
     const [expanded, setExpanded] = import_react5.useState(false);
     const [copied, setCopied] = import_react5.useState(false);
     const safeLocs = p.locations || [];
@@ -20530,7 +20552,45 @@ Please note: There are inherent confidentiality risks in communicating by email.
                   }, undefined, false, undefined, this)
                 ]
               }, undefined, true, undefined, this),
-              displayLocs.length === 0 ? /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("div", {
+              gateClientType === "Supervision" ? p.supervision_availability?.length > 0 ? /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("div", {
+                className: "mt-2",
+                children: /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("div", {
+                  className: "rounded-lg p-2",
+                  style: { backgroundColor: "rgba(54,97,136,0.08)" },
+                  children: [
+                    /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("div", {
+                      className: "text-xs font-bold mb-1",
+                      style: { color: "#366188" },
+                      children: "\uD83C\uDF93 Supervision Slots (Weekly · Telehealth)"
+                    }, undefined, false, undefined, this),
+                    p.supervision_availability.map((loc, li) => /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("div", {
+                      children: [
+                        p.supervision_availability.length > 1 && /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("div", {
+                          className: "text-xs text-base-content/50 mb-1",
+                          children: [
+                            "\uD83D\uDCCD ",
+                            loc.location
+                          ]
+                        }, undefined, true, undefined, this),
+                        loc.days.map((d, di) => /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("div", {
+                          className: "text-xs",
+                          children: [
+                            /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("span", {
+                              className: "font-medium",
+                              children: d.day
+                            }, undefined, false, undefined, this),
+                            ": ",
+                            d.times.join(", ")
+                          ]
+                        }, di, true, undefined, this))
+                      ]
+                    }, li, true, undefined, this))
+                  ]
+                }, undefined, true, undefined, this)
+              }, undefined, false, undefined, this) : /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("div", {
+                className: "text-sm text-base-content/40 italic",
+                children: "No supervision availability listed"
+              }, undefined, false, undefined, this) : displayLocs.length === 0 ? /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("div", {
                 className: "text-sm text-base-content/40 italic",
                 children: "No availability listed"
               }, undefined, false, undefined, this) : displayLocs.map((loc, i) => {
@@ -20755,7 +20815,7 @@ Please note: There are inherent confidentiality risks in communicating by email.
     const [gateAgeBracket, setGateAgeBracket] = import_react5.useState("");
     const [gateClientGender, setGateClientGender] = import_react5.useState("");
     const [includeMonthly, setIncludeMonthly] = import_react5.useState(false);
-    const gateComplete = !!gateClientType && !!gateAgeBracket && !!gateClientGender;
+    const gateComplete = !!gateClientType && (gateClientType === "Supervision" || !!gateAgeBracket && !!gateClientGender);
     const AGE_BRACKET_MAP = {
       "Under 12": 10,
       "12–15": 12,
@@ -20894,16 +20954,22 @@ Please note: There are inherent confidentiality risks in communicating by email.
                     }, undefined, true, undefined, this),
                     /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("div", {
                       className: "flex gap-2 flex-wrap",
-                      children: ["Individual", "Couples"].map((opt) => /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("button", {
-                        onClick: () => setGateClientType(opt),
+                      children: ["Individual", "Couples", "Supervision"].map((opt) => /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("button", {
+                        onClick: () => {
+                          setGateClientType(opt);
+                          if (opt === "Supervision") {
+                            setGateAgeBracket("");
+                            setGateClientGender("");
+                          }
+                        },
                         className: "px-4 py-1.5 rounded-full text-sm font-medium border transition-all",
                         style: gateClientType === opt ? { backgroundColor: "#2C244C", color: "white", borderColor: "#2C244C" } : { backgroundColor: "white", color: "#2C244C", borderColor: "#CDA8BA" },
-                        children: opt === "Individual" ? "\uD83D\uDC64 Individual" : "\uD83D\uDC65 Couples"
+                        children: opt === "Individual" ? "\uD83D\uDC64 Individual" : opt === "Couples" ? "\uD83D\uDC65 Couples" : "\uD83C\uDF93 Supervision"
                       }, opt, false, undefined, this))
                     }, undefined, false, undefined, this)
                   ]
                 }, undefined, true, undefined, this),
-                /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("div", {
+                gateClientType !== "Supervision" && /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("div", {
                   children: [
                     /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("div", {
                       className: "text-xs font-semibold mb-2",
@@ -20929,7 +20995,7 @@ Please note: There are inherent confidentiality risks in communicating by email.
                 }, undefined, true, undefined, this)
               ]
             }, undefined, true, undefined, this),
-            /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("div", {
+            gateClientType !== "Supervision" && /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("div", {
               children: [
                 /* @__PURE__ */ jsx_dev_runtime3.jsxDEV("div", {
                   className: "text-xs font-semibold mb-2",
@@ -21483,7 +21549,8 @@ Please note: There are inherent confidentiality risks in communicating by email.
                   locationFilter: selectedLocations,
                   isSelected: selectedNames.includes(item.p.name),
                   onToggleSelect: toggleSelect,
-                  includeMonthly
+                  includeMonthly,
+                  gateClientType
                 }, undefined, false, undefined, this)
               }, idx, false, undefined, this))
             }, undefined, false, undefined, this),
@@ -21548,7 +21615,8 @@ Please note: There are inherent confidentiality risks in communicating by email.
               locationFilter: selectedLocations.length === 1 ? selectedLocations[0] : "",
               onClose: () => setShowSendModal(false),
               onSent: handleSent,
-              includeMonthly
+              includeMonthly,
+              sessionType: gateClientType
             }, undefined, false, undefined, this)
           ]
         }, undefined, true, undefined, this)
@@ -22429,7 +22497,7 @@ Rebekah has a compassionate and thoughtful approach to the emotional care and su
       locations: [
         {
           location: "Burke Rd, Camberwell",
-          availability: `Saturdays at 10am (Fortnightly: Starting 12th Sept)
+          availability: `Saturdays at 10am (Fortnightly: Starting 26th Sept)
 Mondays at 4pm (Fortnightly: Starting 28th Sept)
 Mondays at 4pm (Monthly: Starting 19th Oct)
 Mondays at 1pm (Monthly: Starting 5th Oct)`,
@@ -22439,7 +22507,7 @@ Mondays at 1pm (Monthly: Starting 5th Oct)`,
       ],
       last_updated: "2026-07-19",
       availability: [
-        "Saturdays at 10am (Fortnightly: Starting 12th Sept) — Burke Rd, Camberwell",
+        "Saturdays at 10am (Fortnightly: Starting 26th Sept) — Burke Rd, Camberwell",
         "Mondays at 4pm (Fortnightly: Starting 28th Sept) — Burke Rd, Camberwell",
         "Mondays at 4pm (Monthly: Starting 19th Oct) — Burke Rd, Camberwell",
         "Mondays at 1pm (Monthly: Starting 5th Oct) — Burke Rd, Camberwell"
@@ -22725,7 +22793,7 @@ Broadly, Amy is obsessed with her new 6yo rescue kelpie x staffy, Naia; she love
 Mondays at 9am (Fortnightly: Starting 5th Oct)
 Fridays at 9am (Monthly: Starting 23rd Oct)
 Fridays at 10am (Monthly: Starting 23rd Oct)
-Mondays at 8am (Monthly: Starting 14th Sept)
+Mondays at 8am (Monthly: Starting 12th Oct)
 Mondays at 1pm (Monthly: Starting 26th Oct)`,
           weekly_availability: [],
           fortnightly_availability: []
@@ -22743,7 +22811,7 @@ Mondays at 1pm (Monthly: Starting 26th Oct)`,
         "Mondays at 9am (Fortnightly: Starting 5th Oct) — Burke Rd, Camberwell",
         "Fridays at 9am (Monthly: Starting 23rd Oct) — Burke Rd, Camberwell",
         "Fridays at 10am (Monthly: Starting 23rd Oct) — Burke Rd, Camberwell",
-        "Mondays at 8am (Monthly: Starting 14th Sept) — Burke Rd, Camberwell",
+        "Mondays at 8am (Monthly: Starting 12th Oct) — Burke Rd, Camberwell",
         "Mondays at 1pm (Monthly: Starting 26th Oct) — Burke Rd, Camberwell"
       ],
       short_bio: "Amy is a warm, LGBTQIAP+ friendly clinical psychologist supporting clients 16+ with mood, relationship and eating difficulties using flexible, evidence-based therapies.",
@@ -22937,10 +23005,10 @@ I bring a warm, thoughtful, and calm presence to my work in the therapy room, an
       locations: [
         {
           location: "Burke Rd, Camberwell",
-          availability: `Wednesdays at 10am (Fortnightly: Starting 16th Sept)
+          availability: `Tuesdays at 1pm (Fortnightly: Starting 29th Sept)
+Wednesdays at 10am (Fortnightly: Starting 16th Sept)
 Tuesdays at 12pm (Monthly: Starting 29th Sept)
-Wednesdays at 8am (Monthly: Starting 16th Sept)
-Tuesdays at 1pm (Monthly: Starting 29th Sept)`,
+Wednesdays at 8am (Monthly: Starting 16th Sept)`,
           weekly_availability: [],
           fortnightly_availability: [
             {
@@ -22953,10 +23021,10 @@ Tuesdays at 1pm (Monthly: Starting 29th Sept)`,
       ],
       last_updated: "2026-07-19",
       availability: [
+        "Tuesdays at 1pm (Fortnightly: Starting 29th Sept) — Burke Rd, Camberwell",
         "Wednesdays at 10am (Fortnightly: Starting 16th Sept) — Burke Rd, Camberwell",
         "Tuesdays at 12pm (Monthly: Starting 29th Sept) — Burke Rd, Camberwell",
-        "Wednesdays at 8am (Monthly: Starting 16th Sept) — Burke Rd, Camberwell",
-        "Tuesdays at 1pm (Monthly: Starting 29th Sept) — Burke Rd, Camberwell"
+        "Wednesdays at 8am (Monthly: Starting 16th Sept) — Burke Rd, Camberwell"
       ],
       short_bio: "A warm clinical psychology registrar integrating IFS, CBT, ACT, schema and mindfulness to support adults toward self-understanding, compassion and emotionally grounded change.",
       weekly_availability: [],
@@ -23173,7 +23241,7 @@ A/H: $275`,
         {
           availability: `Thursdays at 1pm (Fortnightly: Starting 24th Sept)
 Mondays at 8am (Fortnightly: Starting 19th Oct)
-Mondays at 9am (Fortnightly: Starting 14th Sept)
+Mondays at 9am (Fortnightly: Starting 28th Sept)
 Thursdays at 9am (Fortnightly: Starting 24th Sept)
 Fridays at 8am (Monthly: Starting 2nd Oct)
 Thursdays at 8am (Monthly: Starting 8th Oct)
@@ -23226,7 +23294,7 @@ Thursdays at 11am (Monthly: Starting 17th Sept)`,
       availability: [
         "Thursdays at 1pm (Fortnightly: Starting 24th Sept) — Greville St, Prahran",
         "Mondays at 8am (Fortnightly: Starting 19th Oct) — Greville St, Prahran",
-        "Mondays at 9am (Fortnightly: Starting 14th Sept) — Greville St, Prahran",
+        "Mondays at 9am (Fortnightly: Starting 28th Sept) — Greville St, Prahran",
         "Thursdays at 9am (Fortnightly: Starting 24th Sept) — Greville St, Prahran",
         "Fridays at 8am (Monthly: Starting 2nd Oct) — Greville St, Prahran",
         "Thursdays at 8am (Monthly: Starting 8th Oct) — Greville St, Prahran",
@@ -23442,6 +23510,21 @@ Thursdays at 9am (Monthly: Starting 1st Oct)`,
       ],
       short_bio: "An integrative ISTDP, CBT and IFS therapist helping clients face painful feelings, heal relational wounds and integrate difficult psychedelic experiences.",
       weekly_availability: [],
+      supervision_availability: [
+        {
+          location: "Telehealth",
+          days: [
+            {
+              day: "Monday",
+              times: [
+                "9am",
+                "10am",
+                "11am"
+              ]
+            }
+          ]
+        }
+      ],
       fortnightly_availability: [
         {
           location: "Wattletree Rd, Malvern",
@@ -23675,7 +23758,7 @@ Allison employs an integrative approach to therapy, drawing upon a wide-range of
       link_to_bio: "https://psychologycare.com.au/allison-conyer/",
       locations: [
         {
-          availability: "Thursdays at 12pm (Monthly: Starting 8th Oct)",
+          availability: "",
           weekly_availability: [],
           fortnightly_availability: [
             {
@@ -23694,9 +23777,7 @@ Allison employs an integrative approach to therapy, drawing upon a wide-range of
         }
       ],
       last_updated: "2026-07-19",
-      availability: [
-        "Thursdays at 12pm (Monthly: Starting 8th Oct) — Greville St, Prahran"
-      ],
+      availability: [],
       short_bio: "Allison is a warm, culturally aware psychologist supporting all ages with anxiety, trauma, life transitions and family relationships using integrative evidence-based therapies.",
       weekly_availability: [],
       fortnightly_availability: [],
@@ -24187,6 +24268,8 @@ I am committed to providing best practice trauma informed care in a confidential
         {
           location: "Greville St, Prahran",
           availability: `Fridays at 8:30pm (Weekly: Starting 18th Sept)
+Saturdays at 11am (Fortnightly: Starting 19th Sept)
+Fridays at 5:30pm (Fortnightly: Starting 18th Sept)
 Saturdays at 1pm (Fortnightly: Starting 26th Sept)
 Mondays at 12pm (Monthly: Starting 28th Sept)
 Fridays at 5:30pm (Monthly: Starting 25th Sept)
@@ -24201,6 +24284,8 @@ Tuesdays at 8am (Monthly: Starting 6th Oct)`,
       last_updated: "2026-07-19",
       availability: [
         "Fridays at 8:30pm (Weekly: Starting 18th Sept) — Greville St, Prahran",
+        "Saturdays at 11am (Fortnightly: Starting 19th Sept) — Greville St, Prahran",
+        "Fridays at 5:30pm (Fortnightly: Starting 18th Sept) — Greville St, Prahran",
         "Saturdays at 1pm (Fortnightly: Starting 26th Sept) — Greville St, Prahran",
         "Mondays at 12pm (Monthly: Starting 28th Sept) — Greville St, Prahran",
         "Fridays at 5:30pm (Monthly: Starting 25th Sept) — Greville St, Prahran",
@@ -25807,7 +25892,7 @@ Tuesdays at 1:30pm (Monthly: Starting 29th Sept)
 Tuesdays at 9:30am (Monthly: Starting 6th Oct)
 Tuesdays at 10:30am (Monthly: Starting 13th Oct)
 Wednesdays at 7pm (Monthly: Starting 7th Oct)
-Tuesdays at 8:30am (Monthly: Starting 15th Sept)
+Tuesdays at 8:30am (Monthly: Starting 13th Oct)
 Mondays at 11am (Monthly: Starting 28th Sept)`,
           weekly_availability: [],
           fortnightly_availability: [],
@@ -25825,7 +25910,7 @@ Mondays at 11am (Monthly: Starting 28th Sept)`,
         "Tuesdays at 9:30am (Monthly: Starting 6th Oct) — Greville St, Prahran",
         "Tuesdays at 10:30am (Monthly: Starting 13th Oct) — Greville St, Prahran",
         "Wednesdays at 7pm (Monthly: Starting 7th Oct) — Greville St, Prahran",
-        "Tuesdays at 8:30am (Monthly: Starting 15th Sept) — Greville St, Prahran",
+        "Tuesdays at 8:30am (Monthly: Starting 13th Oct) — Greville St, Prahran",
         "Mondays at 11am (Monthly: Starting 28th Sept) — Greville St, Prahran"
       ],
       short_bio: "Poorna is a warm, culturally attuned clinical psychologist using CBT, schema and psychodynamic therapy to support trauma, identity, adjustment and cross-cultural challenges",
@@ -26048,7 +26133,9 @@ Pete practices using Cognitive Behaviour Therapy (CBT) and Acceptance and Commit
       link_to_bio: "https://psychologycare.com.au/pete-steele/",
       locations: [
         {
-          availability: `Tuesdays at 1pm (Monthly: Starting 6th Oct)
+          availability: `Tuesdays at 10am (Fortnightly: Starting 13th Oct)
+Tuesdays at 9am (Fortnightly: Starting 6th Oct)
+Tuesdays at 1pm (Monthly: Starting 6th Oct)
 Wednesdays at 11am (Monthly: Starting 16th Sept)
 Tuesdays at 8am (Monthly: Starting 29th Sept)`,
           weekly_availability: [],
@@ -26064,6 +26151,8 @@ Tuesdays at 8am (Monthly: Starting 29th Sept)`,
       ],
       last_updated: "2026-07-19",
       availability: [
+        "Tuesdays at 10am (Fortnightly: Starting 13th Oct) — Greville St, Prahran",
+        "Tuesdays at 9am (Fortnightly: Starting 6th Oct) — Greville St, Prahran",
         "Tuesdays at 1pm (Monthly: Starting 6th Oct) — Greville St, Prahran",
         "Wednesdays at 11am (Monthly: Starting 16th Sept) — Greville St, Prahran",
         "Tuesdays at 8am (Monthly: Starting 29th Sept) — Greville St, Prahran"
@@ -26602,8 +26691,6 @@ Ages:
         {
           availability: `Mondays at 10:30am (Fortnightly: Starting 21st Sept)
 Thursdays at 1pm (Fortnightly: Starting 24th Sept)
-Tuesdays at 3:30pm (Fortnightly: Starting 22nd Sept)
-Wednesdays at 1pm (Fortnightly: Starting 16th Sept)
 Thursdays at 12pm (Fortnightly: Starting 24th Sept)
 Thursdays at 10:30am (Fortnightly: Starting 17th Sept)
 Thursdays at 9:30am (Fortnightly: Starting 24th Sept)
@@ -26620,8 +26707,6 @@ Tuesdays at 4:30pm (Monthly: Starting 6th Oct)`,
       availability: [
         "Mondays at 10:30am (Fortnightly: Starting 21st Sept) — Greville St, Prahran",
         "Thursdays at 1pm (Fortnightly: Starting 24th Sept) — Greville St, Prahran",
-        "Tuesdays at 3:30pm (Fortnightly: Starting 22nd Sept) — Greville St, Prahran",
-        "Wednesdays at 1pm (Fortnightly: Starting 16th Sept) — Greville St, Prahran",
         "Thursdays at 12pm (Fortnightly: Starting 24th Sept) — Greville St, Prahran",
         "Thursdays at 10:30am (Fortnightly: Starting 17th Sept) — Greville St, Prahran",
         "Thursdays at 9:30am (Fortnightly: Starting 24th Sept) — Greville St, Prahran",
@@ -26682,7 +26767,7 @@ Tuesdays at 4:30pm (Monthly: Starting 6th Oct)`,
       ]
     }
   ];
-  var AVAILABILITY_LAST_UPDATED = "11 Sept 2026 6:02am";
+  var AVAILABILITY_LAST_UPDATED = "14 Sept 2026 6:00am";
 
   // components/IntakeTab.tsx
   var jsx_dev_runtime6 = __toESM(require_jsx_dev_runtime(), 1);
