@@ -33600,18 +33600,6 @@ Outside of clinical work, I'm an avid martial arts practitioner and have spent o
     const saveToDisk = import_react16.useCallback(async (updated) => {
       try {
         await window.tasklet.writeFileToDisk(DATA_PATH, JSON.stringify(updated, null, 2));
-        const TS_PATH = "/tasklet/agent/home/apps/practitioner-availability/practitionersData.ts";
-        const tsContent = [
-          "// Auto-generated — do not edit. Run import_availability.py to update.",
-          'import type { Practitioner } from "./types";',
-          "",
-          `export const practitionersData: Practitioner[] = ${JSON.stringify(updated, null, 2)};`,
-          "",
-          "export const PRACTITIONERS_DATA = practitionersData;",
-          `export const AVAILABILITY_LAST_UPDATED = "${availabilityDate}";`
-        ].join(`
-`);
-        await window.tasklet.writeFileToDisk(TS_PATH, tsContent);
         showStatus("✅ Saved");
       } catch (e) {
         showStatus("❌ Save failed");
