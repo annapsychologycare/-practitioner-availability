@@ -33582,8 +33582,9 @@ Outside of clinical work, I'm an avid martial arts practitioner and have spent o
     5009709: "Fortnightly",
     5145600: "Monthly"
   };
-  function toMelbDate(d) {
-    return d.toLocaleDateString("en-CA", { timeZone: "Australia/Melbourne" });
+  function toMelbDate(d, endOfDay = false) {
+    const date = d.toLocaleDateString("en-CA", { timeZone: "Australia/Melbourne" });
+    return endOfDay ? `${date}T23:59:59` : `${date}T00:00:00`;
   }
   function addDays(d, n) {
     const r = new Date(d);
@@ -33680,7 +33681,7 @@ Outside of clinical work, I'm an avid martial arts practitioner and have spent o
         const today = new Date;
         const melbToday = toMelbDate(today);
         const dateFrom = toMelbDate(addDays(today, 1));
-        const dateTo = toMelbDate(addDays(today, 56));
+        const dateTo = toMelbDate(addDays(today, 56), true);
         const allAvailAppts = [];
         for (const [clientId, freqType] of Object.entries(AVAILABILITY_CLIENTS)) {
           if (freqType === "Monthly" && !includeMonthly)

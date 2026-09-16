@@ -41,8 +41,9 @@ type Props = { practitioners: Practitioner[] };
 
 // ── Helpers ────────────────────────────────────────────────────────────────
 
-function toMelbDate(d: Date): string {
-  return d.toLocaleDateString("en-CA", { timeZone: "Australia/Melbourne" });
+function toMelbDate(d: Date, endOfDay = false): string {
+  const date = d.toLocaleDateString("en-CA", { timeZone: "Australia/Melbourne" });
+  return endOfDay ? `${date}T23:59:59` : `${date}T00:00:00`;
 }
 
 function addDays(d: Date, n: number): Date {
@@ -147,8 +148,8 @@ const AdHocAvailabilityTab: React.FC<Props> = ({ practitioners }) => {
     try {
       const today = new Date();
       const melbToday = toMelbDate(today);
-      const dateFrom = toMelbDate(addDays(today, 1)); // tomorrow
-      const dateTo   = toMelbDate(addDays(today, 56)); // 8 weeks out
+      const dateFrom = toMelbDate(addDays(today, 1));          // tomorrow 00:00:00
+      const dateTo   = toMelbDate(addDays(today, 56), true);  // 8 weeks out 23:59:59
 
       // ── 1. Fetch all recurring availability appointments ───────────────
 
