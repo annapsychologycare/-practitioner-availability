@@ -1,6 +1,6 @@
 /**
  * Zanda API Availability Importer
- * Fetches pending availability appointments from tomorrow for the next 6 weeks (Melbourne time)
+ * Fetches pending availability appointments from tomorrow through 1 Nov 2026 (Melbourne time)
  * and updates practitioners_data.json + practitionersData.ts
  *
  * Usage: bun -i import_availability_api.ts
@@ -180,9 +180,7 @@ const melbDateStr = new Date().toLocaleDateString('en-CA', { timeZone: MELB_TZ }
 const melbToday = new Date(melbDateStr + 'T00:00:00'); // midnight local
 const tomorrow = new Date(melbToday);
 tomorrow.setDate(tomorrow.getDate() + 1); // start from next day (exclude today)
-const sixWeeksOut = new Date(tomorrow);
-sixWeeksOut.setDate(sixWeeksOut.getDate() + 42); // 6 weeks out from tomorrow
-sixWeeksOut.setHours(23, 59, 59, 0);
+const sixWeeksOut = new Date('2026-11-01T23:59:59'); // extended to 1 Nov 2026
 
 const dateFrom = toMelbDateTimeStr(tomorrow);
 const dateTo = toMelbDateTimeStr(sixWeeksOut);
@@ -350,8 +348,17 @@ const melbNowStr = now.toLocaleString('en-AU', {
 
 writeFileSync(MASTER_JSON, JSON.stringify(practitioners, null, 2));
 
+// Merge photo_b64 from sidecar (photos are stored separately to keep main JSON small)
+const PHOTOS_PATH = '/tasklet/agent/home/practitioners_photos.json';
+let photos: Record<string, string> = {};
+try { photos = JSON.parse(readFileSync(PHOTOS_PATH, 'utf8')); } catch {}
+const practitionersWithPhotos = practitioners.map((p: any) => ({
+  ...p,
+  photo_b64: photos[p.name] ?? p.photo_b64 ?? null,
+}));
+
 const tsContent =
-  `export const PRACTITIONERS_DATA = ${JSON.stringify(practitioners, null, 2)};\n` +
+  `export const PRACTITIONERS_DATA = ${JSON.stringify(practitionersWithPhotos, null, 2)};\n` +
   `export const practitionersData = PRACTITIONERS_DATA;\n` +
   `export const AVAILABILITY_LAST_UPDATED = "${melbNowStr}";\n`;
 

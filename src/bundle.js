@@ -33599,7 +33599,11 @@ Outside of clinical work, I'm an avid martial arts practitioner and have spent o
     };
     const saveToDisk = import_react16.useCallback(async (updated) => {
       try {
-        await window.tasklet.writeFileToDisk(DATA_PATH, JSON.stringify(updated, null, 2));
+        const stripped = updated.map((p) => {
+          const { photo_b64, ...rest } = p;
+          return rest;
+        });
+        await window.tasklet.writeFileToDisk(DATA_PATH, JSON.stringify(stripped, null, 2));
         showStatus("✅ Saved");
       } catch (e) {
         showStatus("❌ Save failed");

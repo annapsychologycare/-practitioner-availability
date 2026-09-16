@@ -56,8 +56,14 @@ function AppMain() {
 
   const saveToDisk = useCallback(async (updated: Practitioner[]) => {
     try {
-      // Write JSON source of truth (TS file is regenerated at bundle build time)
-      await window.tasklet.writeFileToDisk(DATA_PATH, JSON.stringify(updated, null, 2));
+      // Strip photo_b64 before writing — photos are stored in a separate sidecar file
+      // (practitioners_photos.json) and merged back by the import script at bundle time.
+      // This keeps the save payload small enough for writeFileToDisk.
+      const stripped = updated.map(p => {
+        const { photo_b64, ...rest } = p as any;
+        return rest;
+      });
+      await window.tasklet.writeFileToDisk(DATA_PATH, JSON.stringify(stripped, null, 2));
       showStatus("✅ Saved");
     } catch (e) {
       showStatus("❌ Save failed");
