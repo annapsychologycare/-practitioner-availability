@@ -1436,7 +1436,7 @@ See https://react.dev/link/invalid-hook-call for tips about how to debug and fix
         return dispatcher;
       }
       typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart === "function" && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(Error());
-      var React14 = require_react(), Internals = {
+      var React15 = require_react(), Internals = {
         d: {
           f: noop,
           r: function() {
@@ -1452,7 +1452,7 @@ See https://react.dev/link/invalid-hook-call for tips about how to debug and fix
         },
         p: 0,
         findDOMNode: null
-      }, REACT_PORTAL_TYPE = Symbol.for("react.portal"), REACT_RECOVERABLE_TYPE = Symbol.for("react.recoverable"), REACT_OPTIMISTIC_KEY = Symbol.for("react.optimistic_key"), ReactSharedInternals = React14.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE;
+      }, REACT_PORTAL_TYPE = Symbol.for("react.portal"), REACT_RECOVERABLE_TYPE = Symbol.for("react.recoverable"), REACT_OPTIMISTIC_KEY = Symbol.for("react.optimistic_key"), ReactSharedInternals = React15.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE;
       typeof Map === "function" && Map.prototype != null && typeof Map.prototype.forEach === "function" && typeof Set === "function" && Set.prototype != null && typeof Set.prototype.clear === "function" && typeof Set.prototype.forEach === "function" || console.error("React depends on Map and Set built-in types. Make sure that you load a polyfill in older browsers. https://reactjs.org/link/react-polyfills");
       exports.__DOM_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE = Internals;
       exports.browser = function(reason) {
@@ -2993,7 +2993,7 @@ Error generating stack: ` + x.message + `
         node.defaultValue !== "" + value && (node.defaultValue = "" + value);
       }
       function validateOptionProps(element, props) {
-        props.value == null && (typeof props.children === "object" && props.children !== null ? React14.Children.forEach(props.children, function(child) {
+        props.value == null && (typeof props.children === "object" && props.children !== null ? React15.Children.forEach(props.children, function(child) {
           child == null || typeof child === "string" || typeof child === "number" || typeof child === "bigint" || didWarnInvalidChild || (didWarnInvalidChild = true, console.error("Cannot infer the option value of complex children. Pass a `value` prop or use a plain string as children to <option>."));
         }) : props.dangerouslySetInnerHTML == null || didWarnInvalidInnerHTML || (didWarnInvalidInnerHTML = true, console.error("Pass a `value` prop if you set dangerouslyInnerHTML so React knows which value should be selected.")));
         props.selected == null || didWarnSelectedSetOnOption || (console.error("Use the `defaultValue` or `value` props on <select> instead of setting `selected` on <option>."), didWarnSelectedSetOnOption = true);
@@ -15726,11 +15726,11 @@ Check the render method of %s.`, getComponentNameFromFiber(current) || "Unknown"
         container[internalContainerInstanceKey] && (container._reactRootContainer ? console.error("You are calling ReactDOMClient.createRoot() on a container that was previously passed to ReactDOM.render(). This is not supported.") : console.error("You are calling ReactDOMClient.createRoot() on a container that has already been passed to createRoot() before. Instead, call root.render() on the existing root instead if you want to update it."));
       }
       typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart === "function" && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(Error());
-      var Scheduler = require_scheduler(), React14 = require_react(), ReactDOM = require_react_dom(), searchTarget = null, searchBoundary = null, assign = Object.assign, REACT_LEGACY_ELEMENT_TYPE = Symbol.for("react.element"), REACT_ELEMENT_TYPE = Symbol.for("react.transitional.element"), REACT_PORTAL_TYPE = Symbol.for("react.portal"), REACT_FRAGMENT_TYPE = Symbol.for("react.fragment"), REACT_STRICT_MODE_TYPE = Symbol.for("react.strict_mode"), REACT_PROFILER_TYPE = Symbol.for("react.profiler"), REACT_CONSUMER_TYPE = Symbol.for("react.consumer"), REACT_CONTEXT_TYPE = Symbol.for("react.context"), REACT_FORWARD_REF_TYPE = Symbol.for("react.forward_ref"), REACT_SUSPENSE_TYPE = Symbol.for("react.suspense"), REACT_SUSPENSE_LIST_TYPE = Symbol.for("react.suspense_list"), REACT_MEMO_TYPE = Symbol.for("react.memo"), REACT_LAZY_TYPE = Symbol.for("react.lazy");
+      var Scheduler = require_scheduler(), React15 = require_react(), ReactDOM = require_react_dom(), searchTarget = null, searchBoundary = null, assign = Object.assign, REACT_LEGACY_ELEMENT_TYPE = Symbol.for("react.element"), REACT_ELEMENT_TYPE = Symbol.for("react.transitional.element"), REACT_PORTAL_TYPE = Symbol.for("react.portal"), REACT_FRAGMENT_TYPE = Symbol.for("react.fragment"), REACT_STRICT_MODE_TYPE = Symbol.for("react.strict_mode"), REACT_PROFILER_TYPE = Symbol.for("react.profiler"), REACT_CONSUMER_TYPE = Symbol.for("react.consumer"), REACT_CONTEXT_TYPE = Symbol.for("react.context"), REACT_FORWARD_REF_TYPE = Symbol.for("react.forward_ref"), REACT_SUSPENSE_TYPE = Symbol.for("react.suspense"), REACT_SUSPENSE_LIST_TYPE = Symbol.for("react.suspense_list"), REACT_MEMO_TYPE = Symbol.for("react.memo"), REACT_LAZY_TYPE = Symbol.for("react.lazy");
       Symbol.for("react.scope");
       var REACT_ACTIVITY_TYPE = Symbol.for("react.activity"), REACT_LEGACY_HIDDEN_TYPE = Symbol.for("react.legacy_hidden");
       Symbol.for("react.tracing_marker");
-      var REACT_MEMO_CACHE_SENTINEL = Symbol.for("react.memo_cache_sentinel"), REACT_VIEW_TRANSITION_TYPE = Symbol.for("react.view_transition"), REACT_RECOVERABLE_TYPE = Symbol.for("react.recoverable"), MAYBE_ITERATOR_SYMBOL = Symbol.iterator, REACT_CLIENT_REFERENCE = Symbol.for("react.client.reference"), isArrayImpl = Array.isArray, ReactSharedInternals = React14.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, ReactDOMSharedInternals = ReactDOM.__DOM_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, NotPending = Object.freeze({
+      var REACT_MEMO_CACHE_SENTINEL = Symbol.for("react.memo_cache_sentinel"), REACT_VIEW_TRANSITION_TYPE = Symbol.for("react.view_transition"), REACT_RECOVERABLE_TYPE = Symbol.for("react.recoverable"), MAYBE_ITERATOR_SYMBOL = Symbol.iterator, REACT_CLIENT_REFERENCE = Symbol.for("react.client.reference"), isArrayImpl = Array.isArray, ReactSharedInternals = React15.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, ReactDOMSharedInternals = ReactDOM.__DOM_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, NotPending = Object.freeze({
         pending: false,
         data: null,
         method: null,
@@ -18660,7 +18660,7 @@ Check the top-level render call using <` + componentName2 + ">.");
         }
       };
       (function() {
-        var isomorphicReactPackageVersion = React14.version;
+        var isomorphicReactPackageVersion = React15.version;
         if (isomorphicReactPackageVersion !== "19.3.0")
           throw Error(`Incompatible React versions: The "react" and "react-dom" packages must have the exact same version. Instead got:
   - react:      ` + (isomorphicReactPackageVersion + `
@@ -18760,7 +18760,7 @@ You might need to use a local HTTP server (instead of file://): https://react.de
   });
 
   // app.tsx
-  var import_react16 = __toESM(require_react(), 1);
+  var import_react17 = __toESM(require_react(), 1);
 
   // FindPractitioner.tsx
   var import_react5 = __toESM(require_react(), 1);
@@ -33571,20 +33571,459 @@ Outside of clinical work, I'm an avid martial arts practitioner and have spent o
     }, undefined, true, undefined, this);
   }
 
+  // AdHocAvailabilityTab.tsx
+  var import_react16 = __toESM(require_react(), 1);
+  var jsx_dev_runtime14 = __toESM(require_jsx_dev_runtime(), 1);
+  var BRAND3 = "#2C244C";
+  var ZANDA_CONN = "conn_xv49yqpd5marmz16g37p";
+  var ZANDA_BASE = "https://zandaapi.zandahealth.com";
+  var AVAILABILITY_CLIENTS = {
+    4756809: "Weekly",
+    5009709: "Fortnightly",
+    5145600: "Monthly"
+  };
+  function toMelbDate(d) {
+    return d.toLocaleDateString("en-CA", { timeZone: "Australia/Melbourne" });
+  }
+  function addDays(d, n) {
+    const r = new Date(d);
+    r.setDate(r.getDate() + n);
+    return r;
+  }
+  function formatDateLabel(iso) {
+    const d = new Date(iso + "T12:00:00");
+    return d.toLocaleDateString("en-AU", { weekday: "short", day: "numeric", month: "short" });
+  }
+  function formatTime(timeStr) {
+    const [h, m] = timeStr.split(":").map(Number);
+    const suffix = h >= 12 ? "pm" : "am";
+    const hr = h > 12 ? h - 12 : h === 0 ? 12 : h;
+    return m ? `${hr}:${String(m).padStart(2, "0")}${suffix}` : `${hr}${suffix}`;
+  }
+  function mapLocation(apiLoc, pracName) {
+    const l = apiLoc.toLowerCase();
+    if (pracName === "Amy Bortz" && l.includes("online"))
+      return "Burke Rd, Camberwell";
+    if (pracName === "Nicholas Kleeman" && l.includes("online"))
+      return "185A Greville St, Prahran";
+    if (l.includes("online") || l.includes("telehealth"))
+      return "Telehealth";
+    if (l.includes("camberwell") || l.includes("burke"))
+      return "Burke Rd, Camberwell";
+    if (l.includes("183"))
+      return "183A Greville St, Prahran";
+    if (l.includes("185") || l.includes("greville"))
+      return "185A Greville St, Prahran";
+    return apiLoc;
+  }
+  var KIND_COLORS = {
+    Weekly: { bg: "#d1fae5", text: "#065f46", label: "Weekly" },
+    Fortnightly: { bg: "#ede9fe", text: "#4c1d95", label: "Fortnightly" },
+    Monthly: { bg: "#dbeafe", text: "#1e3a8a", label: "Monthly" },
+    Cancelled: { bg: "#fef9c3", text: "#92400e", label: "Cancellation" }
+  };
+  async function zandaGet(path) {
+    const res = await window.tasklet.invokeTool({
+      connectionId: ZANDA_CONN,
+      toolName: "remote_http_call",
+      args: {
+        url: ZANDA_BASE + path,
+        method: "GET",
+        extraHeaders: {
+          Accept: "application/vnd.zandaapi+json",
+          "X-Time-Zone": "Australia/Melbourne"
+        }
+      }
+    });
+    if (!res.ok)
+      throw new Error(res.error ?? "API error");
+    const raw = typeof res.body === "string" ? JSON.parse(res.body) : res.body;
+    return raw.body ?? raw;
+  }
+  async function fetchAppointmentsForClient(clientId, dateFrom, dateTo) {
+    const items = [];
+    let cursor = "";
+    while (true) {
+      const qs = new URLSearchParams({
+        clientId: String(clientId),
+        dateFrom,
+        dateTo,
+        pageSize: "200",
+        ...cursor ? { cursor } : {}
+      });
+      const res = await zandaGet(`/api/v1/appointments?${qs}`);
+      const batch = (res.items ?? []).map((i) => i.data ?? i);
+      items.push(...batch);
+      if (!res.hasNextPage)
+        break;
+      cursor = res.nextCursor ?? "";
+      if (!cursor)
+        break;
+    }
+    return items;
+  }
+  var AdHocAvailabilityTab = ({ practitioners }) => {
+    const [selectedPrac, setSelectedPrac] = import_react16.useState("");
+    const [includeMonthly, setIncludeMonthly] = import_react16.useState(false);
+    const [loading, setLoading] = import_react16.useState(false);
+    const [error, setError] = import_react16.useState(null);
+    const [slots, setSlots] = import_react16.useState(null);
+    const [lastRun, setLastRun] = import_react16.useState(null);
+    const prac = practitioners.find((p) => p.name === selectedPrac) ?? null;
+    const run = import_react16.useCallback(async () => {
+      if (!selectedPrac)
+        return;
+      setLoading(true);
+      setError(null);
+      setSlots(null);
+      try {
+        const today = new Date;
+        const melbToday = toMelbDate(today);
+        const dateFrom = toMelbDate(addDays(today, 1));
+        const dateTo = toMelbDate(addDays(today, 56));
+        const allAvailAppts = [];
+        for (const [clientId, freqType] of Object.entries(AVAILABILITY_CLIENTS)) {
+          if (freqType === "Monthly" && !includeMonthly)
+            continue;
+          const appts = await fetchAppointmentsForClient(Number(clientId), dateFrom, dateTo);
+          for (const a of appts)
+            allAvailAppts.push({ ...a, _freqType: freqType });
+        }
+        const pracAvailSlots = allAvailAppts.filter((a) => {
+          const name = a.practitioner?.name ?? "";
+          return name === selectedPrac && a.attendanceState === "Pending" && a.isActive !== false;
+        });
+        const recurringSlotKeys = new Set;
+        const recurringSlots = pracAvailSlots.map((a) => {
+          const date = a.startDate?.substring(0, 10) ?? "";
+          const time = formatTime(a.startTime ?? "00:00:00");
+          const location = mapLocation(a.location?.name ?? "", selectedPrac);
+          const key = `${date}|${time}`;
+          recurringSlotKeys.add(key);
+          return {
+            date,
+            dateLabel: formatDateLabel(date),
+            time,
+            location,
+            kind: a._freqType,
+            appointmentId: a.id
+          };
+        });
+        let cancelledSlots = [];
+        try {
+          const pracsRes = await zandaGet("/api/v1/practitioners?pageSize=100");
+          const pracList = (pracsRes.items ?? []).map((i) => i.data ?? i);
+          const zandaPrac = pracList.find((p) => (p.name ?? "").toLowerCase().includes(selectedPrac.split(" ").pop()?.toLowerCase() ?? ""));
+          if (zandaPrac?.id) {
+            const qs = new URLSearchParams({
+              practitionerId: String(zandaPrac.id),
+              dateFrom,
+              dateTo,
+              pageSize: "200"
+            });
+            try {
+              const apptRes = await zandaGet(`/api/v1/appointments?${qs}`);
+              const appts = (apptRes.items ?? []).map((i) => i.data ?? i);
+              const availClientIds = new Set(Object.keys(AVAILABILITY_CLIENTS).map(Number));
+              const cxlAppts = appts.filter((a) => a.attendanceState === "Cancelled" && !availClientIds.has(a.client?.id) && a.practitioner?.name === selectedPrac);
+              cancelledSlots = cxlAppts.map((a) => {
+                const date = a.startDate?.substring(0, 10) ?? "";
+                const time = formatTime(a.startTime ?? "00:00:00");
+                return {
+                  date,
+                  dateLabel: formatDateLabel(date),
+                  time,
+                  location: mapLocation(a.location?.name ?? "", selectedPrac),
+                  kind: "Cancelled",
+                  appointmentId: a.id
+                };
+              });
+            } catch {}
+          }
+        } catch {}
+        const combined = [
+          ...recurringSlots,
+          ...cancelledSlots.filter((c) => !recurringSlotKeys.has(`${c.date}|${c.time}`))
+        ].sort((a, b) => a.date.localeCompare(b.date) || a.time.localeCompare(b.time));
+        setSlots(combined);
+        setLastRun(new Date().toLocaleTimeString("en-AU", { timeZone: "Australia/Melbourne", hour: "2-digit", minute: "2-digit" }));
+      } catch (err) {
+        setError(err.message ?? "Unknown error");
+      } finally {
+        setLoading(false);
+      }
+    }, [selectedPrac, includeMonthly]);
+    const copyText = () => {
+      if (!slots)
+        return;
+      const lines = slots.map((s) => `${s.dateLabel}  ${s.time}  ${s.location}  [${s.kind}]`);
+      navigator.clipboard.writeText(lines.join(`
+`));
+    };
+    const grouped = slots ? slots.reduce((acc, s) => {
+      if (!acc[s.date])
+        acc[s.date] = [];
+      acc[s.date].push(s);
+      return acc;
+    }, {}) : {};
+    const weeklyCount = slots?.filter((s) => s.kind === "Weekly").length ?? 0;
+    const fortnightlyCount = slots?.filter((s) => s.kind === "Fortnightly").length ?? 0;
+    const monthlyCount = slots?.filter((s) => s.kind === "Monthly").length ?? 0;
+    const cancelledCount = slots?.filter((s) => s.kind === "Cancelled").length ?? 0;
+    return /* @__PURE__ */ jsx_dev_runtime14.jsxDEV("div", {
+      style: { fontFamily: "'Poppins', sans-serif" },
+      children: [
+        /* @__PURE__ */ jsx_dev_runtime14.jsxDEV("h2", {
+          style: { color: BRAND3, fontSize: 20, fontWeight: 700, marginBottom: 4 },
+          children: "\uD83D\uDDD3️ Ad-hoc Availability"
+        }, undefined, false, undefined, this),
+        /* @__PURE__ */ jsx_dev_runtime14.jsxDEV("p", {
+          style: { color: "#666", fontSize: 13, marginBottom: 24 },
+          children: "Shows upcoming available slots for a practitioner — recurring openings plus any client cancellations. Use for waitlist and ad-hoc bookings."
+        }, undefined, false, undefined, this),
+        /* @__PURE__ */ jsx_dev_runtime14.jsxDEV("div", {
+          style: { display: "flex", gap: 16, alignItems: "flex-end", flexWrap: "wrap", marginBottom: 24 },
+          children: [
+            /* @__PURE__ */ jsx_dev_runtime14.jsxDEV("div", {
+              children: [
+                /* @__PURE__ */ jsx_dev_runtime14.jsxDEV("label", {
+                  style: { display: "block", fontSize: 12, fontWeight: 600, color: BRAND3, marginBottom: 4 },
+                  children: "Practitioner"
+                }, undefined, false, undefined, this),
+                /* @__PURE__ */ jsx_dev_runtime14.jsxDEV("select", {
+                  value: selectedPrac,
+                  onChange: (e) => {
+                    setSelectedPrac(e.target.value);
+                    setSlots(null);
+                  },
+                  style: {
+                    border: "1.5px solid #ccc",
+                    borderRadius: 8,
+                    padding: "8px 12px",
+                    fontSize: 14,
+                    minWidth: 240,
+                    background: "#fff",
+                    color: BRAND3
+                  },
+                  children: [
+                    /* @__PURE__ */ jsx_dev_runtime14.jsxDEV("option", {
+                      value: "",
+                      children: "— Select practitioner —"
+                    }, undefined, false, undefined, this),
+                    [...practitioners].filter((p) => p.acceptingNewClients !== false && p.name !== "Cristina Jimenez").sort((a, b) => a.name.localeCompare(b.name)).map((p) => /* @__PURE__ */ jsx_dev_runtime14.jsxDEV("option", {
+                      value: p.name,
+                      children: p.name
+                    }, p.name, false, undefined, this))
+                  ]
+                }, undefined, true, undefined, this)
+              ]
+            }, undefined, true, undefined, this),
+            /* @__PURE__ */ jsx_dev_runtime14.jsxDEV("label", {
+              style: { display: "flex", alignItems: "center", gap: 8, fontSize: 13, color: "#444", cursor: "pointer" },
+              children: [
+                /* @__PURE__ */ jsx_dev_runtime14.jsxDEV("input", {
+                  type: "checkbox",
+                  checked: includeMonthly,
+                  onChange: (e) => setIncludeMonthly(e.target.checked),
+                  style: { width: 16, height: 16, accentColor: BRAND3 }
+                }, undefined, false, undefined, this),
+                "Include monthly slots"
+              ]
+            }, undefined, true, undefined, this),
+            /* @__PURE__ */ jsx_dev_runtime14.jsxDEV("button", {
+              onClick: run,
+              disabled: !selectedPrac || loading,
+              style: {
+                background: selectedPrac && !loading ? BRAND3 : "#ccc",
+                color: "#fff",
+                border: "none",
+                borderRadius: 8,
+                padding: "10px 24px",
+                fontSize: 14,
+                fontWeight: 600,
+                cursor: selectedPrac && !loading ? "pointer" : "not-allowed"
+              },
+              children: loading ? "Loading…" : "Fetch Availability"
+            }, undefined, false, undefined, this)
+          ]
+        }, undefined, true, undefined, this),
+        prac?.alert && /* @__PURE__ */ jsx_dev_runtime14.jsxDEV("div", {
+          style: {
+            background: "#fef9c3",
+            border: "1px solid #fbbf24",
+            borderRadius: 8,
+            padding: "10px 16px",
+            marginBottom: 16,
+            fontSize: 13,
+            color: "#92400e"
+          },
+          children: [
+            "⚠️ ",
+            prac.alert.includes("|") ? prac.alert.split("|")[1].trim() : prac.alert
+          ]
+        }, undefined, true, undefined, this),
+        error && /* @__PURE__ */ jsx_dev_runtime14.jsxDEV("div", {
+          style: { background: "#fee2e2", border: "1px solid #ef4444", borderRadius: 8, padding: "10px 16px", color: "#b91c1c", fontSize: 13, marginBottom: 16 },
+          children: [
+            "❌ ",
+            error
+          ]
+        }, undefined, true, undefined, this),
+        loading && /* @__PURE__ */ jsx_dev_runtime14.jsxDEV("div", {
+          style: { textAlign: "center", padding: 40, color: "#666", fontSize: 14 },
+          children: [
+            /* @__PURE__ */ jsx_dev_runtime14.jsxDEV("div", {
+              style: { fontSize: 28, marginBottom: 8 },
+              children: "⏳"
+            }, undefined, false, undefined, this),
+            "Fetching availability from Zanda…"
+          ]
+        }, undefined, true, undefined, this),
+        slots && !loading && /* @__PURE__ */ jsx_dev_runtime14.jsxDEV(jsx_dev_runtime14.Fragment, {
+          children: [
+            /* @__PURE__ */ jsx_dev_runtime14.jsxDEV("div", {
+              style: {
+                background: "#f5f3ff",
+                border: `1.5px solid #e0d7f5`,
+                borderRadius: 10,
+                padding: "12px 20px",
+                marginBottom: 20,
+                display: "flex",
+                gap: 24,
+                alignItems: "center",
+                flexWrap: "wrap"
+              },
+              children: [
+                /* @__PURE__ */ jsx_dev_runtime14.jsxDEV("span", {
+                  style: { fontWeight: 700, color: BRAND3, fontSize: 15 },
+                  children: [
+                    slots.length,
+                    " available slot",
+                    slots.length !== 1 ? "s" : ""
+                  ]
+                }, undefined, true, undefined, this),
+                weeklyCount > 0 && /* @__PURE__ */ jsx_dev_runtime14.jsxDEV("span", {
+                  style: { fontSize: 13, background: "#d1fae5", color: "#065f46", borderRadius: 12, padding: "2px 10px" },
+                  children: [
+                    "\uD83D\uDFE2 ",
+                    weeklyCount,
+                    " weekly"
+                  ]
+                }, undefined, true, undefined, this),
+                fortnightlyCount > 0 && /* @__PURE__ */ jsx_dev_runtime14.jsxDEV("span", {
+                  style: { fontSize: 13, background: "#ede9fe", color: "#4c1d95", borderRadius: 12, padding: "2px 10px" },
+                  children: [
+                    "\uD83D\uDFE3 ",
+                    fortnightlyCount,
+                    " fortnightly"
+                  ]
+                }, undefined, true, undefined, this),
+                monthlyCount > 0 && /* @__PURE__ */ jsx_dev_runtime14.jsxDEV("span", {
+                  style: { fontSize: 13, background: "#dbeafe", color: "#1e3a8a", borderRadius: 12, padding: "2px 10px" },
+                  children: [
+                    "\uD83D\uDD35 ",
+                    monthlyCount,
+                    " monthly"
+                  ]
+                }, undefined, true, undefined, this),
+                cancelledCount > 0 && /* @__PURE__ */ jsx_dev_runtime14.jsxDEV("span", {
+                  style: { fontSize: 13, background: "#fef9c3", color: "#92400e", borderRadius: 12, padding: "2px 10px" },
+                  children: [
+                    "⭐ ",
+                    cancelledCount,
+                    " cancellation",
+                    cancelledCount !== 1 ? "s" : ""
+                  ]
+                }, undefined, true, undefined, this),
+                /* @__PURE__ */ jsx_dev_runtime14.jsxDEV("span", {
+                  style: { marginLeft: "auto", fontSize: 12, color: "#999" },
+                  children: [
+                    "as of ",
+                    lastRun,
+                    " today"
+                  ]
+                }, undefined, true, undefined, this),
+                /* @__PURE__ */ jsx_dev_runtime14.jsxDEV("button", {
+                  onClick: copyText,
+                  style: { background: "#e9e4f5", border: "none", borderRadius: 6, padding: "6px 14px", fontSize: 12, color: BRAND3, cursor: "pointer", fontWeight: 600 },
+                  children: "\uD83D\uDCCB Copy"
+                }, undefined, false, undefined, this)
+              ]
+            }, undefined, true, undefined, this),
+            slots.length === 0 ? /* @__PURE__ */ jsx_dev_runtime14.jsxDEV("div", {
+              style: { textAlign: "center", padding: 40, color: "#888", fontSize: 14 },
+              children: "No available slots found in the next 8 weeks."
+            }, undefined, false, undefined, this) : /* @__PURE__ */ jsx_dev_runtime14.jsxDEV("div", {
+              style: { display: "flex", flexDirection: "column", gap: 16 },
+              children: Object.entries(grouped).sort().map(([date, daySlots]) => /* @__PURE__ */ jsx_dev_runtime14.jsxDEV("div", {
+                style: { borderRadius: 10, overflow: "hidden", border: "1.5px solid #e8e4f0" },
+                children: [
+                  /* @__PURE__ */ jsx_dev_runtime14.jsxDEV("div", {
+                    style: { background: BRAND3, color: "#fff", padding: "8px 16px", fontWeight: 600, fontSize: 14 },
+                    children: formatDateLabel(date)
+                  }, undefined, false, undefined, this),
+                  /* @__PURE__ */ jsx_dev_runtime14.jsxDEV("div", {
+                    children: daySlots.map((s, i) => {
+                      const c = KIND_COLORS[s.kind];
+                      return /* @__PURE__ */ jsx_dev_runtime14.jsxDEV("div", {
+                        style: {
+                          display: "flex",
+                          alignItems: "center",
+                          gap: 12,
+                          padding: "10px 16px",
+                          borderBottom: i < daySlots.length - 1 ? "1px solid #f0ecf8" : "none",
+                          background: i % 2 === 0 ? "#fff" : "#faf9fd"
+                        },
+                        children: [
+                          /* @__PURE__ */ jsx_dev_runtime14.jsxDEV("span", {
+                            style: {
+                              background: c.bg,
+                              color: c.text,
+                              borderRadius: 10,
+                              padding: "2px 10px",
+                              fontSize: 11,
+                              fontWeight: 700,
+                              minWidth: 90,
+                              textAlign: "center"
+                            },
+                            children: c.label
+                          }, undefined, false, undefined, this),
+                          /* @__PURE__ */ jsx_dev_runtime14.jsxDEV("span", {
+                            style: { fontWeight: 700, color: BRAND3, fontSize: 15, minWidth: 60 },
+                            children: s.time
+                          }, undefined, false, undefined, this),
+                          /* @__PURE__ */ jsx_dev_runtime14.jsxDEV("span", {
+                            style: { color: "#555", fontSize: 13 },
+                            children: s.location
+                          }, undefined, false, undefined, this)
+                        ]
+                      }, i, true, undefined, this);
+                    })
+                  }, undefined, false, undefined, this)
+                ]
+              }, date, true, undefined, this))
+            }, undefined, false, undefined, this)
+          ]
+        }, undefined, true, undefined, this)
+      ]
+    }, undefined, true, undefined, this);
+  };
+  var AdHocAvailabilityTab_default = AdHocAvailabilityTab;
+
   // app.tsx
   var import_client = __toESM(require_client(), 1);
-  var jsx_dev_runtime14 = __toESM(require_jsx_dev_runtime(), 1);
+  var jsx_dev_runtime15 = __toESM(require_jsx_dev_runtime(), 1);
   var DATA_PATH = "/tasklet/agent/home/practitioners_data.json";
-  var ErrorBoundary = ({ children }) => /* @__PURE__ */ jsx_dev_runtime14.jsxDEV(jsx_dev_runtime14.Fragment, {
+  var ErrorBoundary = ({ children }) => /* @__PURE__ */ jsx_dev_runtime15.jsxDEV(jsx_dev_runtime15.Fragment, {
     children
   }, undefined, false, undefined, this);
   function AppMain() {
-    const [tab, setTab] = import_react16.useState("find");
-    const [practitioners, setPractitioners] = import_react16.useState(PRACTITIONERS_DATA);
-    const [emailConfig, setEmailConfig] = import_react16.useState(loadEmailTemplateConfig);
-    const [saveStatus, setSaveStatus] = import_react16.useState(null);
-    const [availabilityDate, setAvailabilityDate] = import_react16.useState(AVAILABILITY_LAST_UPDATED);
-    import_react16.default.useEffect(() => {
+    const [tab, setTab] = import_react17.useState("find");
+    const [practitioners, setPractitioners] = import_react17.useState(PRACTITIONERS_DATA);
+    const [emailConfig, setEmailConfig] = import_react17.useState(loadEmailTemplateConfig);
+    const [saveStatus, setSaveStatus] = import_react17.useState(null);
+    const [availabilityDate, setAvailabilityDate] = import_react17.useState(AVAILABILITY_LAST_UPDATED);
+    import_react17.default.useEffect(() => {
       window.tasklet.readFileFromDisk("/tasklet/agent/home/apps/practitioner-availability/availability_meta.json").then((raw) => {
         try {
           const meta = JSON.parse(raw);
@@ -33597,7 +34036,7 @@ Outside of clinical work, I'm an avid martial arts practitioner and have spent o
       setSaveStatus(msg);
       setTimeout(() => setSaveStatus(null), 3000);
     };
-    const saveToDisk = import_react16.useCallback(async (updated) => {
+    const saveToDisk = import_react17.useCallback(async (updated) => {
       try {
         const stripped = updated.map((p) => {
           const { photo_b64, ...rest } = p;
@@ -33609,18 +34048,18 @@ Outside of clinical work, I'm an avid martial arts practitioner and have spent o
         showStatus("❌ Save failed");
       }
     }, [availabilityDate]);
-    const handleUpdate = import_react16.useCallback((updated) => {
+    const handleUpdate = import_react17.useCallback((updated) => {
       setPractitioners((prev) => {
         const next = prev.map((p) => p.name === updated.name ? updated : p);
         saveToDisk(next);
         return next;
       });
     }, [saveToDisk]);
-    const handleBulkUpdate = import_react16.useCallback((updated) => {
+    const handleBulkUpdate = import_react17.useCallback((updated) => {
       setPractitioners(updated);
       saveToDisk(updated);
     }, [saveToDisk]);
-    const handleConfigChange = import_react16.useCallback((config) => {
+    const handleConfigChange = import_react17.useCallback((config) => {
       setEmailConfig(config);
       saveEmailTemplateConfig(config);
     }, []);
@@ -33631,32 +34070,33 @@ Outside of clinical work, I'm an avid martial arts practitioner and have spent o
       { key: "snapshot", label: "\uD83D\uDCCB Availability Snapshot" },
       { key: "intake", label: "\uD83D\uDCDD Intake" },
       { key: "referral", label: "\uD83D\uDD17 Referral Network" },
+      { key: "adhoc", label: "\uD83D\uDDD3️ Ad-hoc Availability" },
       { key: "taxonomy", label: "\uD83C\uDFF7️ Taxonomy" },
       { key: "email", label: "\uD83D\uDCE7 Email Template" },
       { key: "audit", label: "\uD83D\uDDC2️ Audit Log" },
       { key: "crm", label: "\uD83D\uDD17 CRM Sync" }
     ];
-    return /* @__PURE__ */ jsx_dev_runtime14.jsxDEV("div", {
+    return /* @__PURE__ */ jsx_dev_runtime15.jsxDEV("div", {
       className: "min-h-screen bg-gray-50",
       children: [
-        /* @__PURE__ */ jsx_dev_runtime14.jsxDEV("div", {
+        /* @__PURE__ */ jsx_dev_runtime15.jsxDEV("div", {
           style: { background: "linear-gradient(135deg, #2C244C 0%, #8D5273 100%)" },
           className: "text-white shadow-lg",
-          children: /* @__PURE__ */ jsx_dev_runtime14.jsxDEV("div", {
+          children: /* @__PURE__ */ jsx_dev_runtime15.jsxDEV("div", {
             className: "max-w-7xl mx-auto px-6 py-10 flex flex-col items-center",
             children: [
-              /* @__PURE__ */ jsx_dev_runtime14.jsxDEV("img", {
+              /* @__PURE__ */ jsx_dev_runtime15.jsxDEV("img", {
                 src: "/logo.svg",
                 alt: "PsychologyCare",
                 style: { height: 72, width: "auto", marginBottom: 10 }
               }, undefined, false, undefined, this),
-              /* @__PURE__ */ jsx_dev_runtime14.jsxDEV("p", {
+              /* @__PURE__ */ jsx_dev_runtime15.jsxDEV("p", {
                 style: { color: "#d8d0ec", fontSize: 14, letterSpacing: "0.12em", textTransform: "uppercase", fontFamily: "'Poppins', sans-serif", fontWeight: 400 },
                 children: "Practitioner Matching & Client Intake"
               }, undefined, false, undefined, this),
-              /* @__PURE__ */ jsx_dev_runtime14.jsxDEV("div", {
+              /* @__PURE__ */ jsx_dev_runtime15.jsxDEV("div", {
                 style: { marginTop: 10 },
-                children: /* @__PURE__ */ jsx_dev_runtime14.jsxDEV("span", {
+                children: /* @__PURE__ */ jsx_dev_runtime15.jsxDEV("span", {
                   style: {
                     display: "inline-flex",
                     alignItems: "center",
@@ -33680,12 +34120,12 @@ Outside of clinical work, I'm an avid martial arts practitioner and have spent o
             ]
           }, undefined, true, undefined, this)
         }, undefined, false, undefined, this),
-        /* @__PURE__ */ jsx_dev_runtime14.jsxDEV("div", {
+        /* @__PURE__ */ jsx_dev_runtime15.jsxDEV("div", {
           className: "bg-white border-b sticky top-0 z-40 shadow-sm",
           style: { borderColor: "#e8e4f0" },
-          children: /* @__PURE__ */ jsx_dev_runtime14.jsxDEV("div", {
+          children: /* @__PURE__ */ jsx_dev_runtime15.jsxDEV("div", {
             className: "max-w-7xl mx-auto px-4 flex gap-4 items-center",
-            children: tabs.map((t) => /* @__PURE__ */ jsx_dev_runtime14.jsxDEV("button", {
+            children: tabs.map((t) => /* @__PURE__ */ jsx_dev_runtime15.jsxDEV("button", {
               onClick: () => setTab(t.key),
               className: "px-4 py-3 font-medium text-sm border-b-2 transition-all",
               style: tab === t.key ? { color: "#2C244C", borderColor: "#2C244C" } : { color: "#666", borderColor: "transparent" },
@@ -33701,52 +34141,55 @@ Outside of clinical work, I'm an avid martial arts practitioner and have spent o
             }, t.key, false, undefined, this))
           }, undefined, false, undefined, this)
         }, undefined, false, undefined, this),
-        /* @__PURE__ */ jsx_dev_runtime14.jsxDEV("div", {
+        /* @__PURE__ */ jsx_dev_runtime15.jsxDEV("div", {
           className: "max-w-7xl mx-auto px-4 py-8",
-          children: /* @__PURE__ */ jsx_dev_runtime14.jsxDEV(ErrorBoundary, {
+          children: /* @__PURE__ */ jsx_dev_runtime15.jsxDEV(ErrorBoundary, {
             children: [
-              tab === "find" && /* @__PURE__ */ jsx_dev_runtime14.jsxDEV(FindPractitioner, {
+              tab === "find" && /* @__PURE__ */ jsx_dev_runtime15.jsxDEV(FindPractitioner, {
                 practitioners
               }, undefined, false, undefined, this),
-              tab === "directory" && /* @__PURE__ */ jsx_dev_runtime14.jsxDEV(Directory, {
+              tab === "directory" && /* @__PURE__ */ jsx_dev_runtime15.jsxDEV(Directory, {
                 practitioners
               }, undefined, false, undefined, this),
-              tab === "manage" && /* @__PURE__ */ jsx_dev_runtime14.jsxDEV(ManageAvailability_default, {
+              tab === "manage" && /* @__PURE__ */ jsx_dev_runtime15.jsxDEV(ManageAvailability_default, {
                 practitioners,
                 onUpdate: handleUpdate
               }, undefined, false, undefined, this),
-              tab === "snapshot" && /* @__PURE__ */ jsx_dev_runtime14.jsxDEV(AvailabilitySnapshot_default, {
+              tab === "snapshot" && /* @__PURE__ */ jsx_dev_runtime15.jsxDEV(AvailabilitySnapshot_default, {
                 practitioners
               }, undefined, false, undefined, this),
-              tab === "intake" && /* @__PURE__ */ jsx_dev_runtime14.jsxDEV(IntakeTab, {}, undefined, false, undefined, this),
-              tab === "referral" && /* @__PURE__ */ jsx_dev_runtime14.jsxDEV(ReferralNetwork_default, {
+              tab === "intake" && /* @__PURE__ */ jsx_dev_runtime15.jsxDEV(IntakeTab, {}, undefined, false, undefined, this),
+              tab === "referral" && /* @__PURE__ */ jsx_dev_runtime15.jsxDEV(ReferralNetwork_default, {
                 practitioners
               }, undefined, false, undefined, this),
-              tab === "taxonomy" && /* @__PURE__ */ jsx_dev_runtime14.jsxDEV(TaxonomyTab_default, {
+              tab === "adhoc" && /* @__PURE__ */ jsx_dev_runtime15.jsxDEV(AdHocAvailabilityTab_default, {
+                practitioners
+              }, undefined, false, undefined, this),
+              tab === "taxonomy" && /* @__PURE__ */ jsx_dev_runtime15.jsxDEV(TaxonomyTab_default, {
                 practitioners,
                 onBulkUpdate: handleBulkUpdate
               }, undefined, false, undefined, this),
-              tab === "email" && /* @__PURE__ */ jsx_dev_runtime14.jsxDEV(EmailTemplateTab_default, {
+              tab === "email" && /* @__PURE__ */ jsx_dev_runtime15.jsxDEV(EmailTemplateTab_default, {
                 config: emailConfig,
                 onConfigChange: handleConfigChange
               }, undefined, false, undefined, this),
-              tab === "audit" && /* @__PURE__ */ jsx_dev_runtime14.jsxDEV(AuditTab, {}, undefined, false, undefined, this),
-              tab === "crm" && /* @__PURE__ */ jsx_dev_runtime14.jsxDEV("div", {
+              tab === "audit" && /* @__PURE__ */ jsx_dev_runtime15.jsxDEV(AuditTab, {}, undefined, false, undefined, this),
+              tab === "crm" && /* @__PURE__ */ jsx_dev_runtime15.jsxDEV("div", {
                 className: "bg-slate-900 rounded-2xl p-6 min-h-[60vh]",
                 children: [
-                  /* @__PURE__ */ jsx_dev_runtime14.jsxDEV("h2", {
+                  /* @__PURE__ */ jsx_dev_runtime15.jsxDEV("h2", {
                     className: "text-xl font-bold text-white mb-1",
                     style: { fontFamily: "'Poppins', sans-serif" },
                     children: "\uD83D\uDD17 CRM Sync — Field Sources"
                   }, undefined, false, undefined, this),
-                  /* @__PURE__ */ jsx_dev_runtime14.jsxDEV("p", {
+                  /* @__PURE__ */ jsx_dev_runtime15.jsxDEV("p", {
                     className: "text-slate-400 text-sm mb-6",
                     children: "Shows which app fields are synced from Zoho CRM and which are managed manually. Use this to plan future CRM mapping."
                   }, undefined, false, undefined, this),
-                  /* @__PURE__ */ jsx_dev_runtime14.jsxDEV(CRMSyncTab, {}, undefined, false, undefined, this)
+                  /* @__PURE__ */ jsx_dev_runtime15.jsxDEV(CRMSyncTab, {}, undefined, false, undefined, this)
                 ]
               }, undefined, true, undefined, this),
-              saveStatus && /* @__PURE__ */ jsx_dev_runtime14.jsxDEV("div", {
+              saveStatus && /* @__PURE__ */ jsx_dev_runtime15.jsxDEV("div", {
                 style: {
                   position: "fixed",
                   bottom: 24,
@@ -33765,15 +34208,15 @@ Outside of clinical work, I'm an avid martial arts practitioner and have spent o
             ]
           }, undefined, true, undefined, this)
         }, undefined, false, undefined, this),
-        /* @__PURE__ */ jsx_dev_runtime14.jsxDEV("footer", {
+        /* @__PURE__ */ jsx_dev_runtime15.jsxDEV("footer", {
           className: "bg-gray-900 text-gray-300 mt-16 py-8",
-          children: /* @__PURE__ */ jsx_dev_runtime14.jsxDEV("div", {
+          children: /* @__PURE__ */ jsx_dev_runtime15.jsxDEV("div", {
             className: "max-w-7xl mx-auto px-4 text-center text-sm",
             children: [
-              /* @__PURE__ */ jsx_dev_runtime14.jsxDEV("p", {
+              /* @__PURE__ */ jsx_dev_runtime15.jsxDEV("p", {
                 children: "PsychologyCare VIC · Melbourne"
               }, undefined, false, undefined, this),
-              /* @__PURE__ */ jsx_dev_runtime14.jsxDEV("p", {
+              /* @__PURE__ */ jsx_dev_runtime15.jsxDEV("p", {
                 className: "mt-2 text-gray-500",
                 children: "For professional inquiries: info@psychologycare.com.au"
               }, undefined, false, undefined, this)
@@ -33784,10 +34227,10 @@ Outside of clinical work, I'm an avid martial arts practitioner and have spent o
     }, undefined, true, undefined, this);
   }
   function AppContent() {
-    return /* @__PURE__ */ jsx_dev_runtime14.jsxDEV(ErrorBoundary, {
-      children: /* @__PURE__ */ jsx_dev_runtime14.jsxDEV(AppMain, {}, undefined, false, undefined, this)
+    return /* @__PURE__ */ jsx_dev_runtime15.jsxDEV(ErrorBoundary, {
+      children: /* @__PURE__ */ jsx_dev_runtime15.jsxDEV(AppMain, {}, undefined, false, undefined, this)
     }, undefined, false, undefined, this);
   }
   var root = import_client.createRoot(document.getElementById("root"));
-  root.render(/* @__PURE__ */ jsx_dev_runtime14.jsxDEV(AppContent, {}, undefined, false, undefined, this));
+  root.render(/* @__PURE__ */ jsx_dev_runtime15.jsxDEV(AppContent, {}, undefined, false, undefined, this));
 })();

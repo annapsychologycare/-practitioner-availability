@@ -9,6 +9,7 @@ import EmailTemplateTab from "./EmailTemplateTab";
 import ReferralNetwork from "./ReferralNetwork";
 import AuditTab from "./AuditTab";
 import CRMSyncTab from "./CRMSyncTab";
+import AdHocAvailabilityTab from "./AdHocAvailabilityTab";
 import { createRoot } from "react-dom/client";
 import { PRACTITIONERS_DATA, AVAILABILITY_LAST_UPDATED as AVAILABILITY_LAST_UPDATED_STATIC } from "./practitionersData";
 import { loadEmailTemplateConfig, saveEmailTemplateConfig, EmailTemplateConfig } from "./emailTemplateConfig";
@@ -28,7 +29,7 @@ function getCompareNames(): string[] | null {
   return names.length >= 1 ? names : null;
 }
 
-type Tab = "find" | "directory" | "manage" | "snapshot" | "intake" | "referral" | "taxonomy" | "email" | "audit" | "crm";
+type Tab = "find" | "directory" | "manage" | "snapshot" | "intake" | "referral" | "adhoc" | "taxonomy" | "email" | "audit" | "crm";
 
 function AppMain() {
   const [tab, setTab] = useState<Tab>("find");
@@ -95,6 +96,7 @@ function AppMain() {
     { key: "snapshot", label: "📋 Availability Snapshot" },
     { key: "intake", label: "📝 Intake" },
     { key: "referral", label: "🔗 Referral Network" },
+    { key: "adhoc", label: "🗓️ Ad-hoc Availability" },
     { key: "taxonomy", label: "🏷️ Taxonomy" },
     { key: "email", label: "📧 Email Template" },
     { key: "audit", label: "🗂️ Audit Log" },
@@ -155,6 +157,7 @@ function AppMain() {
           {tab === "snapshot" && <AvailabilitySnapshot practitioners={practitioners} />}
           {tab === "intake" && <IntakeTab />}
           {tab === "referral" && <ReferralNetwork practitioners={practitioners} />}
+          {tab === "adhoc" && <AdHocAvailabilityTab practitioners={practitioners} />}
           {tab === "taxonomy" && <TaxonomyTab practitioners={practitioners} onBulkUpdate={handleBulkUpdate} />}
           {tab === "email" && <EmailTemplateTab config={emailConfig} onConfigChange={handleConfigChange} />}
           {tab === "audit" && <AuditTab />}
