@@ -409,12 +409,14 @@ export const PRACTITIONERS_DATA = [
       },
       {
         "location": "Greville St, Prahran",
-        "availability": ""
+        "availability": "Thursdays at 2:30pm (Fortnightly: Starting 1st Oct)"
       }
     ],
     "location_notes": {},
     "last_updated": "2026-07-19",
-    "availability": [],
+    "availability": [
+      "Thursdays at 2:30pm (Fortnightly: Starting 1st Oct) — Greville St, Prahran"
+    ],
     "client_gender_accepted": "Any",
     "shortBio": "Brigid is a warm and reflective therapist who offers a calm, supportive space for clients to explore life’s challenges and create meaningful change. Her approach is grounded in trauma-informed Schema Therapy and EMDR, supported by CBT, ACT, and mindfulness-based techniques. With a background in yoga and meditation, she brings a gentle, body-aware presence to her work. Brigid supports adults and adolescents with anxiety, mood difficulties, trauma, relationships, and self-esteem, and is passionate about working inclusively with the LGBTIQ+ community.",
     "ageGroups": [
@@ -972,7 +974,7 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/dr-maddie-brygel-psychologist/",
     "locations": [
       {
-        "availability": "Thursdays at 11am (Fortnightly: Starting 1st Oct)\nFridays at 10am (Fortnightly: Starting 9th Oct)\nMondays at 8am (Fortnightly: Starting 19th Oct)\nMondays at 9am (Fortnightly: Starting 28th Sept)\nThursdays at 9am (Fortnightly: Starting 24th Sept)\nMondays at 1pm (Monthly: Starting 12th Oct)\nFridays at 8am (Monthly: Starting 2nd Oct)\nThursdays at 8am (Monthly: Starting 8th Oct)",
+        "availability": "Thursdays at 11am (Fortnightly: Starting 1st Oct)\nFridays at 10am (Fortnightly: Starting 9th Oct)\nMondays at 8am (Fortnightly: Starting 19th Oct)\nMondays at 9am (Fortnightly: Starting 28th Sept)\nThursdays at 9am (Monthly: Starting 1st Oct)\nMondays at 1pm (Monthly: Starting 12th Oct)\nFridays at 8am (Monthly: Starting 2nd Oct)\nThursdays at 8am (Monthly: Starting 8th Oct)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
@@ -1022,7 +1024,7 @@ export const PRACTITIONERS_DATA = [
       "Fridays at 10am (Fortnightly: Starting 9th Oct) — Greville St, Prahran",
       "Mondays at 8am (Fortnightly: Starting 19th Oct) — Greville St, Prahran",
       "Mondays at 9am (Fortnightly: Starting 28th Sept) — Greville St, Prahran",
-      "Thursdays at 9am (Fortnightly: Starting 24th Sept) — Greville St, Prahran",
+      "Thursdays at 9am (Monthly: Starting 1st Oct) — Greville St, Prahran",
       "Mondays at 1pm (Monthly: Starting 12th Oct) — Greville St, Prahran",
       "Fridays at 8am (Monthly: Starting 2nd Oct) — Greville St, Prahran",
       "Thursdays at 8am (Monthly: Starting 8th Oct) — Greville St, Prahran"
@@ -1627,7 +1629,7 @@ export const PRACTITIONERS_DATA = [
         "location": "Telehealth"
       },
       {
-        "availability": "",
+        "availability": "Mondays at 8am (Weekly: Starting 2nd Nov)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Burke Rd, Camberwell"
@@ -1635,6 +1637,7 @@ export const PRACTITIONERS_DATA = [
     ],
     "last_updated": "2026-07-19",
     "availability": [
+      "Mondays at 8am (Weekly: Starting 2nd Nov) — Burke Rd, Camberwell",
       "Tuesdays at 10am (Monthly: Starting 29th Sept) — Telehealth"
     ],
     "short_bio": "A trauma-informed clinical psychologist and social worker integrating IFS, ACT, DBT, CBT and mindfulness to support healing from trauma, intense emotions and life transitions.",
@@ -1920,16 +1923,17 @@ export const PRACTITIONERS_DATA = [
     "locations": [
       {
         "location": "Greville St, Prahran",
-        "availability": "Fridays at 8:30pm (Weekly: Starting 18th Sept)\nSaturdays at 11am (Fortnightly: Starting 3rd Oct)\nSaturdays at 1pm (Fortnightly: Starting 26th Sept)\nFridays at 4:30pm (Monthly: Starting 2nd Oct)\nMondays at 12pm (Monthly: Starting 28th Sept)\nFridays at 5:30pm (Monthly: Starting 23rd Oct)\nWednesdays at 6:30pm (Monthly: Starting 14th Oct)\nSaturdays at 10am (Monthly: Starting 19th Sept)\nTuesdays at 9am (Monthly: Starting 13th Oct)\nTuesdays at 8am (Monthly: Starting 6th Oct)",
+        "availability": "Fridays at 8:30pm (Weekly: Starting 25th Sept)\nSaturdays at 11am (Fortnightly: Starting 3rd Oct)\nSaturdays at 1pm (Fortnightly: Starting 26th Sept)\nTuesdays at 12pm (Monthly: Starting 13th Oct)\nFridays at 4:30pm (Monthly: Starting 2nd Oct)\nMondays at 12pm (Monthly: Starting 28th Sept)\nFridays at 5:30pm (Monthly: Starting 23rd Oct)\nWednesdays at 6:30pm (Monthly: Starting 14th Oct)\nSaturdays at 10am (Monthly: Starting 19th Sept)\nTuesdays at 9am (Monthly: Starting 13th Oct)\nTuesdays at 8am (Monthly: Starting 6th Oct)",
         "weekly_availability": [],
         "fortnightly_availability": []
       }
     ],
     "last_updated": "2026-07-19",
     "availability": [
-      "Fridays at 8:30pm (Weekly: Starting 18th Sept) — Greville St, Prahran",
+      "Fridays at 8:30pm (Weekly: Starting 25th Sept) — Greville St, Prahran",
       "Saturdays at 11am (Fortnightly: Starting 3rd Oct) — Greville St, Prahran",
       "Saturdays at 1pm (Fortnightly: Starting 26th Sept) — Greville St, Prahran",
+      "Tuesdays at 12pm (Monthly: Starting 13th Oct) — Greville St, Prahran",
       "Fridays at 4:30pm (Monthly: Starting 2nd Oct) — Greville St, Prahran",
       "Mondays at 12pm (Monthly: Starting 28th Sept) — Greville St, Prahran",
       "Fridays at 5:30pm (Monthly: Starting 23rd Oct) — Greville St, Prahran",
@@ -4202,4 +4206,4 @@ export const PRACTITIONERS_DATA = [
   }
 ];
 export const practitionersData = PRACTITIONERS_DATA;
-export const AVAILABILITY_LAST_UPDATED = "17 Sept 2026 6:01am";
+export const AVAILABILITY_LAST_UPDATED = "18 Sept 2026 6:01am";
