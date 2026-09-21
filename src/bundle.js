@@ -33710,7 +33710,7 @@ Outside of clinical work, I'm an avid martial arts practitioner and have spent o
         });
         let cancelledSlots = [];
         try {
-          const pracsRes = await zandaGet("/api/v1/practitioners?pageSize=100");
+          const pracsRes = await zandaGet("/api/v1/practitioners?pageSize=50");
           const pracList = (pracsRes.items ?? []).map((i) => i.data ?? i);
           const zandaPrac = pracList.find((p) => (p.name ?? "").toLowerCase().includes(selectedPrac.split(" ").pop()?.toLowerCase() ?? ""));
           if (zandaPrac?.id) {
