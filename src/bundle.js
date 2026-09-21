@@ -33632,7 +33632,12 @@ Outside of clinical work, I'm an avid martial arts practitioner and have spent o
     if (!res.ok)
       throw new Error(res.error ?? "API error");
     const raw = typeof res.body === "string" ? JSON.parse(res.body) : res.body;
-    return raw.body ?? raw;
+    const data = raw.body ?? raw;
+    if (data?.status >= 400) {
+      const errs = data?.errors ? Object.entries(data.errors).map(([k, v]) => `${k}: ${v.join(", ")}`).join("; ") : "";
+      throw new Error(`Zanda API error: ${data?.title ?? "Unknown error"}${errs ? ` — ${errs}` : ""}`);
+    }
+    return data;
   }
   async function fetchAppointmentsForClient(clientId, dateFrom, dateTo) {
     const items = [];
@@ -33642,7 +33647,7 @@ Outside of clinical work, I'm an avid martial arts practitioner and have spent o
         clientId: String(clientId),
         dateFrom,
         dateTo,
-        pageSize: "100",
+        pageSize: "50",
         ...cursor ? { cursor } : {}
       });
       const res = await zandaGet(`/api/v1/appointments?${qs}`);
@@ -33717,7 +33722,7 @@ Outside of clinical work, I'm an avid martial arts practitioner and have spent o
                   practitionerId: String(zandaPrac.id),
                   dateFrom,
                   dateTo,
-                  pageSize: "100",
+                  pageSize: "50",
                   ...cxlCursor ? { cursor: cxlCursor } : {}
                 });
                 const apptRes = await zandaGet(`/api/v1/appointments?${qs}`);
