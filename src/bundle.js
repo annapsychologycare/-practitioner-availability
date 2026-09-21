@@ -33642,7 +33642,7 @@ Outside of clinical work, I'm an avid martial arts practitioner and have spent o
         clientId: String(clientId),
         dateFrom,
         dateTo,
-        pageSize: "200",
+        pageSize: "100",
         ...cursor ? { cursor } : {}
       });
       const res = await zandaGet(`/api/v1/appointments?${qs}`);
@@ -33709,15 +33709,27 @@ Outside of clinical work, I'm an avid martial arts practitioner and have spent o
           const pracList = (pracsRes.items ?? []).map((i) => i.data ?? i);
           const zandaPrac = pracList.find((p) => (p.name ?? "").toLowerCase().includes(selectedPrac.split(" ").pop()?.toLowerCase() ?? ""));
           if (zandaPrac?.id) {
-            const qs = new URLSearchParams({
-              practitionerId: String(zandaPrac.id),
-              dateFrom,
-              dateTo,
-              pageSize: "200"
-            });
             try {
-              const apptRes = await zandaGet(`/api/v1/appointments?${qs}`);
-              const appts = (apptRes.items ?? []).map((i) => i.data ?? i);
+              const allAppts = [];
+              let cxlCursor = "";
+              while (true) {
+                const qs = new URLSearchParams({
+                  practitionerId: String(zandaPrac.id),
+                  dateFrom,
+                  dateTo,
+                  pageSize: "100",
+                  ...cxlCursor ? { cursor: cxlCursor } : {}
+                });
+                const apptRes = await zandaGet(`/api/v1/appointments?${qs}`);
+                const batch = (apptRes.items ?? []).map((i) => i.data ?? i);
+                allAppts.push(...batch);
+                if (!apptRes.hasNextPage)
+                  break;
+                cxlCursor = apptRes.nextCursor ?? "";
+                if (!cxlCursor)
+                  break;
+              }
+              const appts = allAppts;
               const availClientIds = new Set(Object.keys(AVAILABILITY_CLIENTS).map(Number));
               const cxlAppts = appts.filter((a) => a.attendanceState === "Cancelled" && !availClientIds.has(a.client?.id) && a.practitioner?.name === selectedPrac);
               cancelledSlots = cxlAppts.map((a) => {
@@ -33732,7 +33744,7 @@ Outside of clinical work, I'm an avid martial arts practitioner and have spent o
                   appointmentId: a.id
                 };
               });
-            } catch {}
+            } catch (e) {}
           }
         } catch {}
         const combined = [
