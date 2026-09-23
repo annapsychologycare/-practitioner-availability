@@ -2562,7 +2562,7 @@ export const PRACTITIONERS_DATA = [
       "Tuesdays at 11am (Fortnightly: Starting 29th Sept) — Greville St, Prahran",
       "Tuesdays at 4pm (Monthly: Starting 6th Oct) — Greville St, Prahran"
     ],
-    "short_bio": "Nick is a warm, trauma-informed clinical psychologist using ACT, mindfulness, CBT and SFT to support diverse adults and adolescents, including neurodivergent clients.",
+    "short_bio": "An integrative ISTDP and CBT therapist helping clients face painful feelings, heal relational wounds and integrate difficult psychedelic experiences.",
     "weekly_availability": [
       {
         "location": "Wattletree Rd, Malvern",
@@ -2622,7 +2622,7 @@ export const PRACTITIONERS_DATA = [
     },
     "photo_url": "https://pc-prac-availability.netlify.app/photos/nicholas-kleeman_thumb.jpg",
     "client_gender_accepted": "Any",
-    "shortBio": "Nick is a warm, trauma-informed clinical psychologist using ACT, mindfulness, CBT and SFT to support diverse adults and adolescents, including neurodivergent clients.",
+    "shortBio": "An integrative ISTDP and CBT therapist helping clients face painful feelings, heal relational wounds and integrate difficult psychedelic experiences.",
     "ageGroups": [
       "16 Yrs +"
     ],
