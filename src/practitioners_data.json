@@ -2898,13 +2898,13 @@
     "last_updated": "2026-07-19",
     "short_bio": "Josh is a warm, research-active clinical psychologist supporting adolescents and adults with integrative, values-based therapy for trauma, neurodiversity and emotional difficulties.",
     "availability": [
-      "Tuesdays at 12pm (Weekly: Starting 29th Sept) — Burke Rd, Camberwell",
-      "Tuesdays at 1pm (Weekly: Starting 29th Sept) — Burke Rd, Camberwell",
-      "Tuesdays at 10am (Weekly: Starting 29th Sept) — Burke Rd, Camberwell",
-      "Tuesdays at 9am (Weekly: Starting 6th Oct) — Burke Rd, Camberwell",
-      "Tuesdays at 8am (Weekly: Starting 6th Oct) — Burke Rd, Camberwell",
       "Thursdays at 2:30pm (Weekly: Starting 1st Oct) — Burke Rd, Camberwell",
-      "Wednesdays at 6:30pm (Monthly: Starting 14th Oct) — Burke Rd, Camberwell"
+      "Wednesdays at 6:30pm (Monthly: Starting 14th Oct) — Burke Rd, Camberwell",
+      "Tuesdays at 4pm (Weekly: Starting 6th Oct) — Burke Rd, Camberwell",
+      "Tuesdays at 5pm (Weekly: Starting 6th Oct) — Burke Rd, Camberwell",
+      "Tuesdays at 6pm (Weekly: Starting 6th Oct) — Burke Rd, Camberwell",
+      "Tuesdays at 7pm (Weekly: Starting 6th Oct) — Burke Rd, Camberwell",
+      "Tuesdays at 8pm (Weekly: Starting 6th Oct) — Burke Rd, Camberwell"
     ],
     "weekly_availability": [],
     "fortnightly_availability": [],
@@ -2912,7 +2912,7 @@
     "location_notes": {
       "Wattletree Rd, Malvern": "Please Note: As of 9th June 2026 Joshua will also be available at our new Clinic on Burke Road, Camberwell."
     },
-    "working_hours": "Working Days: Tuesdays 8am to 2PM, Wednesdays & Thursdays 2:30PM to 8:30PM in Camberwell",
+    "working_hours": "Working Days: Tuesdays 4PM to 9PM, Wednesdays & Thursdays 2:30PM to 8:30PM in Camberwell",
     "photo_url": "https://pc-prac-availability.netlify.app/photos/joshua-kugel_thumb.jpg",
     "client_gender_accepted": "Any",
     "shortBio": "Josh is a warm, research-active clinical psychologist supporting adolescents and adults with integrative, values-based therapy for trauma, neurodiversity and emotional difficulties.",
