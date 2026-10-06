@@ -1727,7 +1727,7 @@ export const PRACTITIONERS_DATA = [
     "fees": "B/H: $235\nA/H: $275",
     "medicare_rebate": "89.5",
     "gender": "Female",
-    "alert": "",
+    "alert": "| Please note: Christine is an Accredited Mental Health Social Worker (AMHSW) with the AASW, rather than a psychologist. She is an eligible Medicare provider under a Mental Health Treatment Plan. If you intend to use private health insurance, please check with your insurer prior to booking, as not all funds provide rebates for Mental Health Social Work services.",
     "presentations": [
       "Academic Pressure & Performance Stress",
       "Acquired Brain Injury (ABI) — Adjustment & Psychological Support",
