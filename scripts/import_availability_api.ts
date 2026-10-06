@@ -1,6 +1,6 @@
 /**
  * Zanda API Availability Importer
- * Fetches pending availability appointments from tomorrow through 1 Nov 2026 (Melbourne time)
+ * Fetches pending availability appointments from tomorrow through 8 weeks out (Melbourne time)
  * and updates practitioners_data.json + practitionersData.ts
  *
  * Usage: bun -i import_availability_api.ts
@@ -22,12 +22,12 @@ const AVAILABILITY_CLIENTS: Record<number, string> = {
 };
 
 // File paths
-const MASTER_JSON = '/tasklet/agent/home/practitioners_data.json';
-const TASKLET_TS = '/tasklet/agent/home/apps/practitioner-availability/practitionersData.ts';
-const DEPLOY_TS = '/tasklet/agent/home/deploy/src/practitionersData.ts';
-const META = '/tasklet/agent/home/apps/practitioner-availability/availability_meta.json';
-const AUDIT_LOG = '/tasklet/agent/home/audit_log.json';
-const BACKUP_DIR = '/tasklet/agent/home/backups';
+const MASTER_JSON = '/tasklet/threads/a_cwa98xzh47ey9rcvmmh4/work/practitioners_data.json';
+const TASKLET_TS = '/tasklet/threads/a_cwa98xzh47ey9rcvmmh4/work/apps/practitioner-availability/practitionersData.ts';
+const DEPLOY_TS = '/tasklet/threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/practitionersData.ts';
+const META = '/tasklet/threads/a_cwa98xzh47ey9rcvmmh4/work/apps/practitioner-availability/availability_meta.json';
+const AUDIT_LOG = '/tasklet/threads/a_cwa98xzh47ey9rcvmmh4/work/audit_log.json';
+const BACKUP_DIR = '/tasklet/threads/a_cwa98xzh47ey9rcvmmh4/work/backups';
 
 // ─── Name mapping (Zanda API name → App display name) ──────────────────────
 const NAME_MAP: Record<string, string> = {
@@ -177,13 +177,12 @@ async function fetchAllForClient(clientId: number, dateFrom: string, dateTo: str
 const now = new Date();
 // Use Melbourne date as base so "tomorrow" means tomorrow in Melbourne time
 const melbDateStr = new Date().toLocaleDateString('en-CA', { timeZone: MELB_TZ }); // YYYY-MM-DD
-const melbToday = new Date(melbDateStr + 'T00:00:00'); // midnight local
-const tomorrow = new Date(melbToday);
-tomorrow.setDate(tomorrow.getDate() + 1); // start from next day (exclude today)
-const sixWeeksOut = new Date('2026-11-01T23:59:59'); // extended to 1 Nov 2026
-
-const dateFrom = toMelbDateTimeStr(tomorrow);
-const dateTo = toMelbDateTimeStr(sixWeeksOut);
+const tomorrowDate = new Date(melbDateStr + 'T00:00:00Z');
+tomorrowDate.setUTCDate(tomorrowDate.getUTCDate() + 1); // start from next day (exclude today)
+const dateFrom = `${tomorrowDate.toISOString().slice(0, 10)}T00:00:00`;
+const eightWeeksOut = new Date(melbDateStr + 'T00:00:00Z');
+eightWeeksOut.setUTCDate(eightWeeksOut.getUTCDate() + 56); // 8 weeks from today (Melbourne)
+const dateTo = `${eightWeeksOut.toISOString().slice(0, 10)}T23:59:59`;
 
 console.error(`Fetching appointments from ${dateFrom} to ${dateTo} (Melbourne time)...`);
 
@@ -349,7 +348,7 @@ const melbNowStr = now.toLocaleString('en-AU', {
 writeFileSync(MASTER_JSON, JSON.stringify(practitioners, null, 2));
 
 // Merge photo_b64 from sidecar (photos are stored separately to keep main JSON small)
-const PHOTOS_PATH = '/tasklet/agent/home/practitioners_photos.json';
+const PHOTOS_PATH = '/tasklet/threads/a_cwa98xzh47ey9rcvmmh4/work/practitioners_photos.json';
 let photos: Record<string, string> = {};
 try { photos = JSON.parse(readFileSync(PHOTOS_PATH, 'utf8')); } catch {}
 const practitionersWithPhotos = practitioners.map((p: any) => ({
