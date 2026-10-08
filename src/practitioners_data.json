@@ -562,7 +562,7 @@
     "locations": [
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "Fridays at 2pm (Fortnightly: Starting 16th Oct)\nMondays at 10am (Fortnightly: Starting 30th Nov)\nFridays at 9am (Fortnightly: Starting 16th Oct)\nMondays at 9am (Fortnightly: Starting 19th Oct)\nFridays at 10am (Monthly: Starting 9th Oct)\nFridays at 9am (Monthly: Starting 23rd Oct)\nMondays at 8am (Monthly: Starting 12th Oct)\nMondays at 1pm (Monthly: Starting 26th Oct)",
+        "availability": "Fridays at 2pm (Fortnightly: Starting 16th Oct)\nMondays at 10am (Fortnightly: Starting 30th Nov)\nFridays at 9am (Fortnightly: Starting 16th Oct)\nMondays at 9am (Fortnightly: Starting 19th Oct)\nFridays at 10am (Monthly: Starting 23rd Oct)\nFridays at 9am (Monthly: Starting 23rd Oct)\nMondays at 8am (Monthly: Starting 12th Oct)\nMondays at 1pm (Monthly: Starting 26th Oct)",
         "weekly_availability": [],
         "fortnightly_availability": []
       },
@@ -579,7 +579,7 @@
       "Mondays at 10am (Fortnightly: Starting 30th Nov) — Burke Rd, Camberwell",
       "Fridays at 9am (Fortnightly: Starting 16th Oct) — Burke Rd, Camberwell",
       "Mondays at 9am (Fortnightly: Starting 19th Oct) — Burke Rd, Camberwell",
-      "Fridays at 10am (Monthly: Starting 9th Oct) — Burke Rd, Camberwell",
+      "Fridays at 10am (Monthly: Starting 23rd Oct) — Burke Rd, Camberwell",
       "Fridays at 9am (Monthly: Starting 23rd Oct) — Burke Rd, Camberwell",
       "Mondays at 8am (Monthly: Starting 12th Oct) — Burke Rd, Camberwell",
       "Mondays at 1pm (Monthly: Starting 26th Oct) — Burke Rd, Camberwell"
@@ -2545,18 +2545,17 @@
       },
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "Fridays at 12:30pm (Weekly: Starting 9th Oct)\nWednesdays at 9am (Weekly: Starting 14th Oct)\nThursdays at 8am (Fortnightly: Starting 22nd Oct)\nThursdays at 11:30am (Fortnightly: Starting 22nd Oct)\nFridays at 2:30pm (Fortnightly: Starting 9th Oct)\nThursdays at 10am (Fortnightly: Starting 15th Oct)\nThursdays at 9am (Fortnightly: Starting 22nd Oct)\nThursdays at 12:30pm (Monthly: Starting 15th Oct)\nWednesdays at 1pm (Monthly: Starting 4th Nov)",
+        "availability": "Fridays at 12:30pm (Weekly: Starting 16th Oct)\nWednesdays at 9am (Weekly: Starting 14th Oct)\nThursdays at 8am (Fortnightly: Starting 22nd Oct)\nFridays at 2:30pm (Fortnightly: Starting 23rd Oct)\nThursdays at 10am (Fortnightly: Starting 15th Oct)\nThursdays at 9am (Fortnightly: Starting 22nd Oct)\nThursdays at 12:30pm (Monthly: Starting 15th Oct)\nWednesdays at 1pm (Monthly: Starting 4th Nov)",
         "weekly_availability": [],
         "fortnightly_availability": []
       }
     ],
     "last_updated": "2026-07-19",
     "availability": [
-      "Fridays at 12:30pm (Weekly: Starting 9th Oct) — Burke Rd, Camberwell",
+      "Fridays at 12:30pm (Weekly: Starting 16th Oct) — Burke Rd, Camberwell",
       "Wednesdays at 9am (Weekly: Starting 14th Oct) — Burke Rd, Camberwell",
       "Thursdays at 8am (Fortnightly: Starting 22nd Oct) — Burke Rd, Camberwell",
-      "Thursdays at 11:30am (Fortnightly: Starting 22nd Oct) — Burke Rd, Camberwell",
-      "Fridays at 2:30pm (Fortnightly: Starting 9th Oct) — Burke Rd, Camberwell",
+      "Fridays at 2:30pm (Fortnightly: Starting 23rd Oct) — Burke Rd, Camberwell",
       "Thursdays at 10am (Fortnightly: Starting 15th Oct) — Burke Rd, Camberwell",
       "Thursdays at 9am (Fortnightly: Starting 22nd Oct) — Burke Rd, Camberwell",
       "Thursdays at 12:30pm (Monthly: Starting 15th Oct) — Burke Rd, Camberwell",
@@ -2910,7 +2909,7 @@
     "locations": [
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "Tuesdays at 8pm (Weekly: Starting 13th Oct)\nTuesdays at 7pm (Weekly: Starting 13th Oct)\nTuesdays at 6pm (Weekly: Starting 13th Oct)\nTuesdays at 5pm (Weekly: Starting 13th Oct)\nThursdays at 6:30pm (Weekly: Starting 15th Oct)\nWednesdays at 7:30pm (Fortnightly: Starting 14th Oct)\nTuesdays at 4pm (Fortnightly: Starting 20th Oct)\nWednesdays at 2:30pm (Fortnightly: Starting 14th Oct)",
+        "availability": "Tuesdays at 8pm (Weekly: Starting 13th Oct)\nTuesdays at 7pm (Weekly: Starting 13th Oct)\nTuesdays at 6pm (Weekly: Starting 13th Oct)\nTuesdays at 5pm (Weekly: Starting 13th Oct)\nThursdays at 6:30pm (Weekly: Starting 15th Oct)\nWednesdays at 7:30pm (Fortnightly: Starting 14th Oct)\nTuesdays at 4pm (Fortnightly: Starting 20th Oct)\nWednesdays at 2:30pm (Monthly: Starting 28th Oct)",
         "weekly_availability": [],
         "fortnightly_availability": []
       },
@@ -2919,6 +2918,10 @@
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
+      },
+      {
+        "location": "Telehealth",
+        "availability": "Wednesdays at 2:30pm (Fortnightly: Starting 4th Nov)\nWednesdays at 2:30pm (Monthly: Starting 25th Nov)"
       }
     ],
     "last_updated": "2026-07-19",
@@ -2931,7 +2934,9 @@
       "Thursdays at 6:30pm (Weekly: Starting 15th Oct) — Burke Rd, Camberwell",
       "Wednesdays at 7:30pm (Fortnightly: Starting 14th Oct) — Burke Rd, Camberwell",
       "Tuesdays at 4pm (Fortnightly: Starting 20th Oct) — Burke Rd, Camberwell",
-      "Wednesdays at 2:30pm (Fortnightly: Starting 14th Oct) — Burke Rd, Camberwell"
+      "Wednesdays at 2:30pm (Monthly: Starting 28th Oct) — Burke Rd, Camberwell",
+      "Wednesdays at 2:30pm (Fortnightly: Starting 4th Nov) — Telehealth",
+      "Wednesdays at 2:30pm (Monthly: Starting 25th Nov) — Telehealth"
     ],
     "weekly_availability": [],
     "fortnightly_availability": [],
@@ -3081,7 +3086,7 @@
     "link_to_bio": "https://psychologycare.com.au/therese-van-maanen/",
     "locations": [
       {
-        "availability": "Thursdays at 2pm (Weekly: Starting 22nd Oct)\nThursdays at 3:15pm (Weekly: Starting 15th Oct)\nThursdays at 2pm (Fortnightly: Starting 15th Oct)\nThursdays at 12:45pm (Fortnightly: Starting 15th Oct)\nThursdays at 12:45pm (Monthly: Starting 5th Nov)",
+        "availability": "Thursdays at 2pm (Weekly: Starting 22nd Oct)\nThursdays at 3:15pm (Weekly: Starting 15th Oct)\nThursdays at 12:45pm (Fortnightly: Starting 15th Oct)\nThursdays at 12:45pm (Monthly: Starting 5th Nov)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Victoria St, St Kilda"
@@ -3091,7 +3096,6 @@
     "availability": [
       "Thursdays at 2pm (Weekly: Starting 22nd Oct) — Victoria St, St Kilda",
       "Thursdays at 3:15pm (Weekly: Starting 15th Oct) — Victoria St, St Kilda",
-      "Thursdays at 2pm (Fortnightly: Starting 15th Oct) — Victoria St, St Kilda",
       "Thursdays at 12:45pm (Fortnightly: Starting 15th Oct) — Victoria St, St Kilda",
       "Thursdays at 12:45pm (Monthly: Starting 5th Nov) — Victoria St, St Kilda"
     ],
@@ -3442,7 +3446,7 @@
     "link_to_bio": "https://psychologycare.com.au/poorna-selvaraja/",
     "locations": [
       {
-        "availability": "Tuesdays at 9:30am (Fortnightly: Starting 27th Oct)\nTuesdays at 2:30pm (Fortnightly: Starting 20th Oct)\nMondays at 9am (Fortnightly: Starting 12th Oct)\nTuesdays at 11:30am (Fortnightly: Starting 3rd Nov)\nMondays at 10am (Fortnightly: Starting 12th Oct)\nTuesdays at 1:30pm (Monthly: Starting 27th Oct)\nTuesdays at 9:30am (Monthly: Starting 3rd Nov)\nTuesdays at 10:30am (Monthly: Starting 10th Nov)\nWednesdays at 7pm (Monthly: Starting 4th Nov)\nTuesdays at 8:30am (Monthly: Starting 13th Oct)",
+        "availability": "Tuesdays at 11:30am (Fortnightly: Starting 13th Oct)\nTuesdays at 9:30am (Fortnightly: Starting 27th Oct)\nTuesdays at 2:30pm (Fortnightly: Starting 20th Oct)\nMondays at 10am (Fortnightly: Starting 12th Oct)\nTuesdays at 1:30pm (Monthly: Starting 27th Oct)\nTuesdays at 9:30am (Monthly: Starting 3rd Nov)\nTuesdays at 10:30am (Monthly: Starting 10th Nov)\nWednesdays at 7pm (Monthly: Starting 4th Nov)\nTuesdays at 8:30am (Monthly: Starting 13th Oct)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
@@ -3450,10 +3454,9 @@
     ],
     "last_updated": "2026-07-19",
     "availability": [
+      "Tuesdays at 11:30am (Fortnightly: Starting 13th Oct) — Greville St, Prahran",
       "Tuesdays at 9:30am (Fortnightly: Starting 27th Oct) — Greville St, Prahran",
       "Tuesdays at 2:30pm (Fortnightly: Starting 20th Oct) — Greville St, Prahran",
-      "Mondays at 9am (Fortnightly: Starting 12th Oct) — Greville St, Prahran",
-      "Tuesdays at 11:30am (Fortnightly: Starting 3rd Nov) — Greville St, Prahran",
       "Mondays at 10am (Fortnightly: Starting 12th Oct) — Greville St, Prahran",
       "Tuesdays at 1:30pm (Monthly: Starting 27th Oct) — Greville St, Prahran",
       "Tuesdays at 9:30am (Monthly: Starting 3rd Nov) — Greville St, Prahran",
@@ -3935,7 +3938,7 @@
     "link_to_bio": "https://psychologycare.com.au/elizabeth-white/",
     "locations": [
       {
-        "availability": "Thursdays at 9am (Weekly: Starting 15th Oct)\nWednesdays at 9am (Weekly: Starting 14th Oct)\nWednesdays at 10am (Fortnightly: Starting 14th Oct)\nWednesdays at 1pm (Fortnightly: Starting 14th Oct)\nThursdays at 8am (Fortnightly: Starting 12th Nov)\nFridays at 11am (Fortnightly: Starting 9th Oct)\nMondays at 5:30pm (Monthly: Starting 9th Nov)\nMondays at 4:30pm (Monthly: Starting 19th Oct)",
+        "availability": "Thursdays at 9am (Weekly: Starting 15th Oct)\nWednesdays at 9am (Weekly: Starting 14th Oct)\nThursdays at 10am (Fortnightly: Starting 22nd Oct)\nWednesdays at 10am (Fortnightly: Starting 14th Oct)\nWednesdays at 1pm (Fortnightly: Starting 14th Oct)\nThursdays at 8am (Fortnightly: Starting 12th Nov)\nFridays at 11am (Fortnightly: Starting 6th Nov)\nMondays at 5:30pm (Monthly: Starting 9th Nov)\nMondays at 4:30pm (Monthly: Starting 19th Oct)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
@@ -3951,10 +3954,11 @@
     "availability": [
       "Thursdays at 9am (Weekly: Starting 15th Oct) — Greville St, Prahran",
       "Wednesdays at 9am (Weekly: Starting 14th Oct) — Greville St, Prahran",
+      "Thursdays at 10am (Fortnightly: Starting 22nd Oct) — Greville St, Prahran",
       "Wednesdays at 10am (Fortnightly: Starting 14th Oct) — Greville St, Prahran",
       "Wednesdays at 1pm (Fortnightly: Starting 14th Oct) — Greville St, Prahran",
       "Thursdays at 8am (Fortnightly: Starting 12th Nov) — Greville St, Prahran",
-      "Fridays at 11am (Fortnightly: Starting 9th Oct) — Greville St, Prahran",
+      "Fridays at 11am (Fortnightly: Starting 6th Nov) — Greville St, Prahran",
       "Mondays at 5:30pm (Monthly: Starting 9th Nov) — Greville St, Prahran",
       "Mondays at 4:30pm (Monthly: Starting 19th Oct) — Greville St, Prahran"
     ],
@@ -4142,7 +4146,7 @@
     "link_to_bio": "https://psychologycare.com.au/karen-pereira-york/",
     "locations": [
       {
-        "availability": "Mondays at 9:30am (Fortnightly: Starting 12th Oct)\nWednesdays at 3:30pm (Fortnightly: Starting 14th Oct)\nMondays at 10:30am (Fortnightly: Starting 19th Oct)\nThursdays at 1pm (Fortnightly: Starting 22nd Oct)\nThursdays at 10:30am (Fortnightly: Starting 15th Oct)\nTuesdays at 2:30pm (Monthly: Starting 1st Dec)\nThursdays at 8:30am (Monthly: Starting 29th Oct)\nTuesdays at 6:30pm (Monthly: Starting 27th Oct)\nTuesdays at 4:30pm (Monthly: Starting 1st Dec)",
+        "availability": "Thursdays at 9:30am (Fortnightly: Starting 22nd Oct)\nMondays at 9:30am (Fortnightly: Starting 12th Oct)\nWednesdays at 3:30pm (Fortnightly: Starting 14th Oct)\nMondays at 10:30am (Fortnightly: Starting 19th Oct)\nThursdays at 1pm (Fortnightly: Starting 22nd Oct)\nThursdays at 10:30am (Fortnightly: Starting 29th Oct)\nTuesdays at 2:30pm (Monthly: Starting 1st Dec)\nThursdays at 8:30am (Monthly: Starting 29th Oct)\nTuesdays at 6:30pm (Monthly: Starting 27th Oct)\nTuesdays at 4:30pm (Monthly: Starting 1st Dec)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
@@ -4150,11 +4154,12 @@
     ],
     "last_updated": "2026-07-19",
     "availability": [
+      "Thursdays at 9:30am (Fortnightly: Starting 22nd Oct) — Greville St, Prahran",
       "Mondays at 9:30am (Fortnightly: Starting 12th Oct) — Greville St, Prahran",
       "Wednesdays at 3:30pm (Fortnightly: Starting 14th Oct) — Greville St, Prahran",
       "Mondays at 10:30am (Fortnightly: Starting 19th Oct) — Greville St, Prahran",
       "Thursdays at 1pm (Fortnightly: Starting 22nd Oct) — Greville St, Prahran",
-      "Thursdays at 10:30am (Fortnightly: Starting 15th Oct) — Greville St, Prahran",
+      "Thursdays at 10:30am (Fortnightly: Starting 29th Oct) — Greville St, Prahran",
       "Tuesdays at 2:30pm (Monthly: Starting 1st Dec) — Greville St, Prahran",
       "Thursdays at 8:30am (Monthly: Starting 29th Oct) — Greville St, Prahran",
       "Tuesdays at 6:30pm (Monthly: Starting 27th Oct) — Greville St, Prahran",
