@@ -8,7 +8,7 @@
  */
 
 import { invokeTool } from '@tasklet/tools/v2';
-import { readFileSync, writeFileSync, copyFileSync, existsSync, mkdirSync } from 'node:fs';
+import { readFileSync, writeFileSync, copyFileSync, existsSync, mkdirSync, unlinkSync } from 'node:fs';
 
 const MELB_TZ = 'Australia/Melbourne';
 const BASE = 'https://zandaapi.zandahealth.com';
@@ -153,22 +153,30 @@ async function apiGet(path: string): Promise<any> {
 }
 
 async function fetchAllForClient(clientId: number, dateFrom: string, dateTo: string): Promise<any[]> {
-  const items: any[] = [];
-  let cursor = '';
+  const checkpoint = `/tmp/zanda_availability_${clientId}_${dateFrom.slice(0,10)}_${dateTo.slice(0,10)}.json`;
+  const saved = existsSync(checkpoint) ? JSON.parse(readFileSync(checkpoint, 'utf8')) : null;
+  const items: any[] = saved?.items ?? [];
+  let cursor = saved?.cursor ?? '';
+  if (saved?.complete) return items;
   while (true) {
     const qs = new URLSearchParams({
       clientId: String(clientId),
       dateFrom,
       dateTo,
-      pageSize: '100',
+      pageSize: '50',
       ...(cursor ? { cursor } : {}),
     });
     const res = await apiGet(`/api/v1/appointments?${qs}`);
     const batch = (res.items ?? []).map((i: any) => i.data ?? i);
     items.push(...batch);
-    if (!res.hasNextPage) break;
-    cursor = res.nextCursor ?? '';
-    if (!cursor) break;
+    if (!res.hasNextPage) {
+      writeFileSync(checkpoint, JSON.stringify({items, cursor, complete:true}));
+      break;
+    }
+    const nextCursor = res.nextCursor ?? '';
+    if (!nextCursor || nextCursor === cursor) throw new Error('Zanda pagination is incomplete; availability was not updated.');
+    cursor = nextCursor;
+    writeFileSync(checkpoint, JSON.stringify({items, cursor, complete:false}));
   }
   return items;
 }
@@ -392,4 +400,8 @@ const summary = {
   slots: summarySlots,
 };
 
+for (const clientId of Object.keys(AVAILABILITY_CLIENTS)) {
+  const checkpoint = `/tmp/zanda_availability_${clientId}_${dateFrom.slice(0,10)}_${dateTo.slice(0,10)}.json`;
+  if (existsSync(checkpoint)) unlinkSync(checkpoint);
+}
 console.log(JSON.stringify(summary, null, 2));

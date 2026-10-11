@@ -22277,7 +22277,8 @@ Wednesdays at 1:30pm (Monthly: Starting 2nd Dec)`,
 Fridays at 11am (Fortnightly: Starting 6th Nov)
 Fridays at 9am (Fortnightly: Starting 6th Nov)
 Mondays at 6:30pm (Monthly: Starting 9th Nov)
-Tuesdays at 5:30pm (Monthly: Starting 10th Nov)`,
+Tuesdays at 5:30pm (Monthly: Starting 10th Nov)
+Mondays at 4:30pm (Monthly: Starting 7th Dec)`,
           weekly_availability: [],
           fortnightly_availability: []
         }
@@ -22289,6 +22290,7 @@ Tuesdays at 5:30pm (Monthly: Starting 10th Nov)`,
         "Fridays at 9am (Fortnightly: Starting 6th Nov) — Burke Rd, Camberwell",
         "Mondays at 6:30pm (Monthly: Starting 9th Nov) — Burke Rd, Camberwell",
         "Tuesdays at 5:30pm (Monthly: Starting 10th Nov) — Burke Rd, Camberwell",
+        "Mondays at 4:30pm (Monthly: Starting 7th Dec) — Burke Rd, Camberwell",
         "Thursdays at 7pm (Fortnightly: Starting 12th Nov) — Greville St, Prahran",
         "Wednesdays at 1:30pm (Fortnightly: Starting 11th Nov) — Telehealth",
         "Wednesdays at 1:30pm (Monthly: Starting 2nd Dec) — Telehealth"
@@ -22711,6 +22713,9 @@ A/H: $315`,
         "Anxiety - Separation",
         "Anxiety - Social Anxiety Disorder",
         "Attachment Difficulties",
+        "Attention-Deficit/Hyperactivity Disorder (ADHD) — Suspected or Actively Impacting",
+        "Autism Spectrum Disorder (ASD) — Diagnosed & Managed",
+        "Autism Spectrum Disorder (ASD) — Suspected or Actively Impacting",
         "Body Dysmorphic Disorder (BDD)",
         "Body Image Concerns",
         "Burnout — Carer / Family",
@@ -22814,13 +22819,12 @@ Broadly, Amy is obsessed with her new 6yo rescue kelpie x staffy, Naia; she love
       locations: [
         {
           location: "Burke Rd, Camberwell",
-          availability: `Fridays at 2pm (Fortnightly: Starting 16th Oct)
-Mondays at 10am (Fortnightly: Starting 30th Nov)
+          availability: `Mondays at 10am (Fortnightly: Starting 30th Nov)
 Fridays at 9am (Fortnightly: Starting 16th Oct)
 Mondays at 9am (Fortnightly: Starting 19th Oct)
 Fridays at 10am (Monthly: Starting 23rd Oct)
 Fridays at 9am (Monthly: Starting 23rd Oct)
-Mondays at 8am (Monthly: Starting 12th Oct)
+Mondays at 8am (Monthly: Starting 9th Nov)
 Mondays at 1pm (Monthly: Starting 26th Oct)`,
           weekly_availability: [],
           fortnightly_availability: []
@@ -22834,13 +22838,12 @@ Mondays at 1pm (Monthly: Starting 26th Oct)`,
       ],
       last_updated: "2026-07-19",
       availability: [
-        "Fridays at 2pm (Fortnightly: Starting 16th Oct) — Burke Rd, Camberwell",
         "Mondays at 10am (Fortnightly: Starting 30th Nov) — Burke Rd, Camberwell",
         "Fridays at 9am (Fortnightly: Starting 16th Oct) — Burke Rd, Camberwell",
         "Mondays at 9am (Fortnightly: Starting 19th Oct) — Burke Rd, Camberwell",
         "Fridays at 10am (Monthly: Starting 23rd Oct) — Burke Rd, Camberwell",
         "Fridays at 9am (Monthly: Starting 23rd Oct) — Burke Rd, Camberwell",
-        "Mondays at 8am (Monthly: Starting 12th Oct) — Burke Rd, Camberwell",
+        "Mondays at 8am (Monthly: Starting 9th Nov) — Burke Rd, Camberwell",
         "Mondays at 1pm (Monthly: Starting 26th Oct) — Burke Rd, Camberwell"
       ],
       short_bio: "Amy is a warm, LGBTQIAP+ friendly clinical psychologist supporting clients 16+ with mood, relationship and eating difficulties using flexible, evidence-based therapies.",
@@ -23500,9 +23503,9 @@ But if we can turn towards our painful feelings, listen to what they have to tel
  
 What is hurt in relationship must be healed in relationship, and I see my role as your therapist as walking with you step by step as you begin to welcome these exiled feelings back home, in whatever stage of the journey you are on.
 
-My therapy approach is primarily informed by Intensive Short Term Dynamic Psychotherapy (ISTDP), an evidence-based emotion-focussed therapy which uses the therapy relationship to help people to stop avoiding their feelings in unhelpful ways which lead to anxiety, depression, somatic complaints and relationship difficulties.  However, as an integrative therapist I draw on other therapies when appropriate to suit the needs of the individual, including Cognitive Behavioural Therapy (CBT) and Internal Family Systems Therapy (IFS).  
+My therapy approach is primarily informed by Intensive Short Term Dynamic Psychotherapy (ISTDP), an evidence-based emotion-focussed therapy which uses the therapy relationship to help people to stop avoiding their feelings in unhelpful ways which lead to anxiety, depression, somatic complaints and relationship difficulties.  However, as an integrative therapist I draw on a range of evidence-based therapies when appropriate to suit the needs of the individual. 
 
-I have a developing interest and training in the new research around psychedelic assisted therapies and I have also received training in ‘bad trip integration’ - helping people to integrate negative experiences of psychedelics.  I have a background in Social Psychology and Cultural History research and I am fascinated by what we can learn`,
+I have a developing interest and training in the new research around psychedelic assisted therapies and I have also received training in ‘bad trip integration’ - helping people to integrate negative experiences of psychedelics.  I have a background in Social Psychology and Cultural History research and I am fascinated by what we can learn about human suffering and wellbeing from our early human ancestors and`,
       pronouns: "He/Him",
       billing_types: "Medicare Rebate, NDIS, Self Funded, Third Party",
       languages: [
@@ -23531,7 +23534,7 @@ I have a developing interest and training in the new research around psychedelic
       availability: [
         "Wednesdays at 1pm (Monthly: Starting 18th Nov) — Burke Rd, Camberwell"
       ],
-      short_bio: "An integrative ISTDP, CBT and IFS therapist helping clients face painful feelings, heal relational wounds and integrate difficult psychedelic experiences.",
+      short_bio: "An integrative ISTDP, and CBT therapist helping clients face painful feelings, heal relational wounds and integrate difficult psychedelic experiences.",
       weekly_availability: [],
       fortnightly_availability: [
         {
@@ -24300,7 +24303,7 @@ I am committed to providing best practice trauma informed care in a confidential
 Wednesdays at 5:30pm (Fortnightly: Starting 28th Oct)
 Fridays at 5:30pm (Fortnightly: Starting 23rd Oct)
 Saturdays at 1pm (Fortnightly: Starting 24th Oct)
-Mondays at 10am (Monthly: Starting 12th Oct)
+Mondays at 10am (Monthly: Starting 9th Nov)
 Saturdays at 10am (Monthly: Starting 17th Oct)
 Tuesdays at 8am (Monthly: Starting 3rd Nov)`,
           weekly_availability: [],
@@ -24313,7 +24316,7 @@ Tuesdays at 8am (Monthly: Starting 3rd Nov)`,
         "Wednesdays at 5:30pm (Fortnightly: Starting 28th Oct) — Greville St, Prahran",
         "Fridays at 5:30pm (Fortnightly: Starting 23rd Oct) — Greville St, Prahran",
         "Saturdays at 1pm (Fortnightly: Starting 24th Oct) — Greville St, Prahran",
-        "Mondays at 10am (Monthly: Starting 12th Oct) — Greville St, Prahran",
+        "Mondays at 10am (Monthly: Starting 9th Nov) — Greville St, Prahran",
         "Saturdays at 10am (Monthly: Starting 17th Oct) — Greville St, Prahran",
         "Tuesdays at 8am (Monthly: Starting 3rd Nov) — Greville St, Prahran"
       ],
@@ -24764,7 +24767,7 @@ Throughout our time together, rest assured that I understand and respect the tru
           availability: `Saturdays at 12pm (Weekly: Starting 31st Oct)
 Saturdays at 10am (Fortnightly: Starting 31st Oct)
 Saturdays at 1pm (Monthly: Starting 31st Oct)
-Saturdays at 10am (Monthly: Starting 7th Nov)`,
+Saturdays at 10am (Monthly: Starting 5th Dec)`,
           weekly_availability: [],
           fortnightly_availability: [],
           location: "Telehealth"
@@ -24775,7 +24778,7 @@ Saturdays at 10am (Monthly: Starting 7th Nov)`,
         "Saturdays at 12pm (Weekly: Starting 31st Oct) — Telehealth",
         "Saturdays at 10am (Fortnightly: Starting 31st Oct) — Telehealth",
         "Saturdays at 1pm (Monthly: Starting 31st Oct) — Telehealth",
-        "Saturdays at 10am (Monthly: Starting 7th Nov) — Telehealth"
+        "Saturdays at 10am (Monthly: Starting 5th Dec) — Telehealth"
       ],
       short_bio: "Chiara is a neurodivergent, neuro-affirming clinical psychologist supporting adults with autism, ADHD and diverse needs using collaborative, family-inclusive, evidence-based therapies.",
       weekly_availability: [],
@@ -25532,7 +25535,7 @@ I have a particular interest in the role that our early attachment relationships
       locations: [
         {
           availability: `Thursdays at 2pm (Weekly: Starting 22nd Oct)
-Thursdays at 3:15pm (Weekly: Starting 15th Oct)
+Thursdays at 3:15pm (Weekly: Starting 22nd Oct)
 Thursdays at 12:45pm (Fortnightly: Starting 15th Oct)
 Thursdays at 12:45pm (Monthly: Starting 5th Nov)`,
           weekly_availability: [],
@@ -25543,7 +25546,7 @@ Thursdays at 12:45pm (Monthly: Starting 5th Nov)`,
       last_updated: "2026-07-19",
       availability: [
         "Thursdays at 2pm (Weekly: Starting 22nd Oct) — Victoria St, St Kilda",
-        "Thursdays at 3:15pm (Weekly: Starting 15th Oct) — Victoria St, St Kilda",
+        "Thursdays at 3:15pm (Weekly: Starting 22nd Oct) — Victoria St, St Kilda",
         "Thursdays at 12:45pm (Fortnightly: Starting 15th Oct) — Victoria St, St Kilda",
         "Thursdays at 12:45pm (Monthly: Starting 5th Nov) — Victoria St, St Kilda"
       ],
@@ -25908,10 +25911,10 @@ Poorna greatly values the therapeutic alliance between client and therapist. The
       link_to_bio: "https://psychologycare.com.au/poorna-selvaraja/",
       locations: [
         {
-          availability: `Tuesdays at 11:30am (Fortnightly: Starting 13th Oct)
+          availability: `Tuesdays at 11:30am (Fortnightly: Starting 3rd Nov)
 Tuesdays at 9:30am (Fortnightly: Starting 27th Oct)
 Tuesdays at 2:30pm (Fortnightly: Starting 20th Oct)
-Mondays at 10am (Fortnightly: Starting 12th Oct)
+Mondays at 10am (Fortnightly: Starting 26th Oct)
 Tuesdays at 1:30pm (Monthly: Starting 27th Oct)
 Tuesdays at 9:30am (Monthly: Starting 3rd Nov)
 Tuesdays at 10:30am (Monthly: Starting 10th Nov)
@@ -25924,10 +25927,10 @@ Tuesdays at 8:30am (Monthly: Starting 13th Oct)`,
       ],
       last_updated: "2026-07-19",
       availability: [
-        "Tuesdays at 11:30am (Fortnightly: Starting 13th Oct) — Greville St, Prahran",
+        "Tuesdays at 11:30am (Fortnightly: Starting 3rd Nov) — Greville St, Prahran",
         "Tuesdays at 9:30am (Fortnightly: Starting 27th Oct) — Greville St, Prahran",
         "Tuesdays at 2:30pm (Fortnightly: Starting 20th Oct) — Greville St, Prahran",
-        "Mondays at 10am (Fortnightly: Starting 12th Oct) — Greville St, Prahran",
+        "Mondays at 10am (Fortnightly: Starting 26th Oct) — Greville St, Prahran",
         "Tuesdays at 1:30pm (Monthly: Starting 27th Oct) — Greville St, Prahran",
         "Tuesdays at 9:30am (Monthly: Starting 3rd Nov) — Greville St, Prahran",
         "Tuesdays at 10:30am (Monthly: Starting 10th Nov) — Greville St, Prahran",
@@ -26275,7 +26278,7 @@ Clare has experience working with clients facing a variety of difficulties, incl
       locations: [
         {
           availability: `Tuesdays at 2:30pm (Fortnightly: Starting 20th Oct)
-Tuesdays at 2:30pm (Monthly: Starting 13th Oct)
+Tuesdays at 2:30pm (Monthly: Starting 10th Nov)
 Mondays at 3:30pm (Monthly: Starting 19th Oct)
 Mondays at 2:30pm (Monthly: Starting 2nd Nov)`,
           weekly_availability: [],
@@ -26283,7 +26286,7 @@ Mondays at 2:30pm (Monthly: Starting 2nd Nov)`,
           location: "Greville St, Prahran"
         },
         {
-          availability: `Mondays at 11am (Weekly: Starting 12th Oct)
+          availability: `Mondays at 11am (Weekly: Starting 19th Oct)
 Tuesdays at 11am (Fortnightly: Starting 20th Oct)
 Tuesdays at 11am (Monthly: Starting 27th Oct)`,
           weekly_availability: [],
@@ -26299,11 +26302,11 @@ Tuesdays at 11am (Monthly: Starting 27th Oct)`,
       ],
       last_updated: "2026-07-19",
       availability: [
-        "Mondays at 11am (Weekly: Starting 12th Oct) — Telehealth",
+        "Mondays at 11am (Weekly: Starting 19th Oct) — Telehealth",
         "Tuesdays at 11am (Fortnightly: Starting 20th Oct) — Telehealth",
         "Tuesdays at 11am (Monthly: Starting 27th Oct) — Telehealth",
         "Tuesdays at 2:30pm (Fortnightly: Starting 20th Oct) — Greville St, Prahran",
-        "Tuesdays at 2:30pm (Monthly: Starting 13th Oct) — Greville St, Prahran",
+        "Tuesdays at 2:30pm (Monthly: Starting 10th Nov) — Greville St, Prahran",
         "Mondays at 3:30pm (Monthly: Starting 19th Oct) — Greville St, Prahran",
         "Mondays at 2:30pm (Monthly: Starting 2nd Nov) — Greville St, Prahran"
       ],
@@ -26465,11 +26468,12 @@ Regular therapy sessions can be a brief or a longer-term investment, depending o
         {
           availability: `Thursdays at 9am (Weekly: Starting 15th Oct)
 Wednesdays at 9am (Weekly: Starting 14th Oct)
+Mondays at 4:30pm (Fortnightly: Starting 26th Oct)
+Fridays at 11am (Fortnightly: Starting 16th Oct)
 Thursdays at 10am (Fortnightly: Starting 22nd Oct)
 Wednesdays at 10am (Fortnightly: Starting 14th Oct)
 Wednesdays at 1pm (Fortnightly: Starting 14th Oct)
 Thursdays at 8am (Fortnightly: Starting 12th Nov)
-Fridays at 11am (Fortnightly: Starting 6th Nov)
 Mondays at 5:30pm (Monthly: Starting 9th Nov)
 Mondays at 4:30pm (Monthly: Starting 19th Oct)`,
           weekly_availability: [],
@@ -26487,11 +26491,12 @@ Mondays at 4:30pm (Monthly: Starting 19th Oct)`,
       availability: [
         "Thursdays at 9am (Weekly: Starting 15th Oct) — Greville St, Prahran",
         "Wednesdays at 9am (Weekly: Starting 14th Oct) — Greville St, Prahran",
+        "Mondays at 4:30pm (Fortnightly: Starting 26th Oct) — Greville St, Prahran",
+        "Fridays at 11am (Fortnightly: Starting 16th Oct) — Greville St, Prahran",
         "Thursdays at 10am (Fortnightly: Starting 22nd Oct) — Greville St, Prahran",
         "Wednesdays at 10am (Fortnightly: Starting 14th Oct) — Greville St, Prahran",
         "Wednesdays at 1pm (Fortnightly: Starting 14th Oct) — Greville St, Prahran",
         "Thursdays at 8am (Fortnightly: Starting 12th Nov) — Greville St, Prahran",
-        "Fridays at 11am (Fortnightly: Starting 6th Nov) — Greville St, Prahran",
         "Mondays at 5:30pm (Monthly: Starting 9th Nov) — Greville St, Prahran",
         "Mondays at 4:30pm (Monthly: Starting 19th Oct) — Greville St, Prahran"
       ],
@@ -26712,7 +26717,7 @@ Ages:
       locations: [
         {
           availability: `Thursdays at 9:30am (Fortnightly: Starting 22nd Oct)
-Mondays at 9:30am (Fortnightly: Starting 12th Oct)
+Mondays at 9:30am (Fortnightly: Starting 26th Oct)
 Wednesdays at 3:30pm (Fortnightly: Starting 14th Oct)
 Mondays at 10:30am (Fortnightly: Starting 19th Oct)
 Thursdays at 1pm (Fortnightly: Starting 22nd Oct)
@@ -26729,7 +26734,7 @@ Tuesdays at 4:30pm (Monthly: Starting 1st Dec)`,
       last_updated: "2026-07-19",
       availability: [
         "Thursdays at 9:30am (Fortnightly: Starting 22nd Oct) — Greville St, Prahran",
-        "Mondays at 9:30am (Fortnightly: Starting 12th Oct) — Greville St, Prahran",
+        "Mondays at 9:30am (Fortnightly: Starting 26th Oct) — Greville St, Prahran",
         "Wednesdays at 3:30pm (Fortnightly: Starting 14th Oct) — Greville St, Prahran",
         "Mondays at 10:30am (Fortnightly: Starting 19th Oct) — Greville St, Prahran",
         "Thursdays at 1pm (Fortnightly: Starting 22nd Oct) — Greville St, Prahran",
@@ -26791,7 +26796,7 @@ Tuesdays at 4:30pm (Monthly: Starting 1st Dec)`,
       ]
     }
   ];
-  var AVAILABILITY_LAST_UPDATED = "9 Oct 2026 6:01am";
+  var AVAILABILITY_LAST_UPDATED = "12 Oct 2026 6:07am";
 
   // components/IntakeTab.tsx
   var jsx_dev_runtime6 = __toESM(require_jsx_dev_runtime());
