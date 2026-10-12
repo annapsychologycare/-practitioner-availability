@@ -14,11 +14,11 @@ from datetime import datetime
 
 # ─── Paths ─────────────────────────────────────────────────────────────────
 ZOHO_DATA   = '/tmp/zoho_raw_data.json'
-APP_DATA    = '/agent/home/practitioners_data.json'
-APP_TS      = '/agent/home/apps/practitioner-availability/practitionersData.ts'
-DEPLOY_TS   = '/agent/home/deploy/src/practitionersData.ts'
+APP_DATA    = '/tasklet/threads/a_cwa98xzh47ey9rcvmmh4/work/practitioners_data.json'
+APP_TS      = '/tasklet/threads/a_cwa98xzh47ey9rcvmmh4/work/apps/practitioner-availability/practitionersData.ts'
+DEPLOY_TS   = '/tasklet/threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/practitionersData.ts'
 RESULT_FILE = '/tmp/zoho_sync_result.json'
-CACHE_FILE  = '/agent/home/apps/practitioner-availability/.tasklet-build-cache.json'
+CACHE_FILE  = '/tasklet/threads/a_cwa98xzh47ey9rcvmmh4/work/apps/practitioner-availability/.tasklet-build-cache.json'
 
 # ─── Name mapping: Zoho Full_Name → App name ───────────────────────────────
 NAME_MAP = {
@@ -247,10 +247,16 @@ def apply_zoho(practitioner, zoho):
     if style_filtered:
         p['style'] = ", ".join(style_filtered)
 
-    # Alert (only update if Zoho has one; preserve existing if Zoho is null)
-    alert = zoho.get('ALERT')
-    if alert:
-        p['alert'] = alert.strip()
+    # Intake Alert Notes is the CRM source. Only wording AFTER | is client-facing.
+    alert = zoho.get('Intake_Alert_Notes') or zoho.get('ALERT')
+    if isinstance(alert, str) and alert.strip():
+        alert = alert.strip()
+        if '|' in alert:
+            internal, client = alert.split('|', 1)
+            previous_internal = (p.get('alert') or '').split('|', 1)[0].strip()
+            p['alert'] = f"{internal.strip() or previous_internal} | {client.strip()}".strip()
+        elif not p.get('alert'):
+            p['alert'] = alert  # internal only; do not erase an existing client notice
 
     # Update last_updated
     from zoneinfo import ZoneInfo as _ZI2
@@ -330,7 +336,7 @@ def main():
     ts_content = json.dumps(practitioners_out, ensure_ascii=False, indent=2)
 
     # Bump version in app.tsx
-    app_tsx = '/agent/home/apps/practitioner-availability/app.tsx'
+    app_tsx = '/tasklet/threads/a_cwa98xzh47ey9rcvmmh4/work/apps/practitioner-availability/app.tsx'
     try:
         with open(app_tsx, 'r') as f:
             tsx_text = f.read()
@@ -357,8 +363,8 @@ export const AVAILABILITY_LAST_UPDATED: string = (globalThis as any).__AVAILABIL
 """
 
     for path in [
-        '/agent/home/apps/practitioner-availability/practitionersData.ts',
-        '/agent/home/deploy/src/practitionersData.ts'
+        '/tasklet/threads/a_cwa98xzh47ey9rcvmmh4/work/apps/practitioner-availability/practitionersData.ts',
+        '/tasklet/threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/practitionersData.ts'
     ]:
         with open(path, 'w') as f:
             f.write(content)
@@ -390,7 +396,7 @@ export const AVAILABILITY_LAST_UPDATED: string = (globalThis as any).__AVAILABIL
         }, f, indent=2)
 
     # Write to audit log
-    AUDIT_LOG = '/agent/home/audit_log.json'
+    AUDIT_LOG = '/tasklet/threads/a_cwa98xzh47ey9rcvmmh4/work/audit_log.json'
     try:
         import os as _os
         from datetime import datetime as _dt

@@ -2813,7 +2813,7 @@ export const PRACTITIONERS_DATA = [
     "fees": "B/H: $235\nA/H: $275",
     "medicare_rebate": "101.55",
     "gender": "Male",
-    "alert": "",
+    "alert": "| Please note: Josh Kugel will be offering Telehealth appointments only from 30 October to 5 December 2026. During this period, all sessions will be conducted online rather than in person. In-person appointments will resume following this period. Please take this into consideration when deciding whether Josh will be the right practitioner for you, particularly if you prefer face-to-face sessions.",
     "presentations": [
       "Academic Pressure & Performance Stress",
       "Addiction/Dependence (Alcohol) — Current / Active",

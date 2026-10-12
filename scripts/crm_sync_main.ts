@@ -1,5 +1,6 @@
 import { invokeTool } from '@tasklet/tools/v2';
 import { readFile, writeFile } from 'node:fs/promises';
+import { mergeCrmAlert } from './crm_alerts';
 
 // ============================================================
 // STEP 1: Fetch all CRM contacts for PsychologyCare
@@ -24,7 +25,7 @@ const crmContacts: any[] = crmResult?.result?.data || crmResult?.data || [];
 console.log(`Fetched ${crmContacts.length} CRM contacts`);
 
 // Save CRM snapshot
-await writeFile('/tasklet/agent/home/crm_practitioners_snapshot.json', JSON.stringify(crmContacts, null, 2));
+await writeFile('/tasklet/threads/a_cwa98xzh47ey9rcvmmh4/work/crm_practitioners_snapshot.json', JSON.stringify(crmContacts, null, 2));
 console.log('CRM snapshot saved');
 
 // ============================================================
@@ -56,7 +57,7 @@ if (feeSchedResp.ok) {
 // ============================================================
 // STEP 2: Read existing app data
 // ============================================================
-const appDataRaw = await readFile('/tasklet/agent/home/practitioners_data.json', 'utf8');
+const appDataRaw = await readFile('/tasklet/threads/a_cwa98xzh47ey9rcvmmh4/work/practitioners_data.json', 'utf8');
 const appData = JSON.parse(appDataRaw) as any[];
 console.log(`App has ${appData.length} practitioners`);
 
@@ -121,6 +122,13 @@ interface Change {
 function mapCrmToApp(crm: any, existing: any, practName: string, feeMap?: Map<string, { bh: number; ah: number; rebate: number | null }>): { updated: any; changes: Change[] } {
   const changes: Change[] = [];
   const updated = { ...existing };
+  if (typeof crm.Intake_Alert_Notes === 'string' && crm.Intake_Alert_Notes.trim()) {
+    const alert = mergeCrmAlert(existing.alert || '', crm.Intake_Alert_Notes);
+    if (alert !== (existing.alert || '')) {
+      updated.alert = alert;
+      changes.push({ field: 'alert', old: existing.alert, newVal: alert });
+    }
+  }
 
   function applyChange(field: string, newVal: any) {
     const oldVal = existing[field];
@@ -300,11 +308,11 @@ for (const c of crmContacts) {
 // ============================================================
 // STEP 7: Save updated app data
 // ============================================================
-await writeFile('/tasklet/agent/home/practitioners_data.json', JSON.stringify(updatedAppData, null, 2));
+await writeFile('/tasklet/threads/a_cwa98xzh47ey9rcvmmh4/work/practitioners_data.json', JSON.stringify(updatedAppData, null, 2));
 console.log('\n✅ Updated practitioners_data.json');
 
 // Also update deploy copy
-await writeFile('/tasklet/agent/home/deploy/public/practitioners_data.json', JSON.stringify(updatedAppData, null, 2));
+await writeFile('/tasklet/threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/public/practitioners_data.json', JSON.stringify(updatedAppData, null, 2));
 
 // ============================================================
 // STEP 8: Print report
@@ -343,11 +351,11 @@ console.log(`\n\nTotal field changes: ${totalChanges}`);
 console.log('Practitioners with changes:', changedPractitioners.join(', ') || 'None');
 
 // Save detailed report
-await writeFile('/tasklet/agent/home/crm_sync_report_aug2026.json', JSON.stringify({ 
+await writeFile('/tasklet/threads/a_cwa98xzh47ey9rcvmmh4/work/crm_sync_report_aug2026.json', JSON.stringify({ 
   syncDate: '2026-08-02',
   report, 
   newCrmContacts, 
   totalChanges,
   changedPractitioners
 }, null, 2));
-console.log('\nDetailed report saved to /tasklet/agent/home/crm_sync_report_aug2026.json');
+console.log('\nDetailed report saved to /tasklet/threads/a_cwa98xzh47ey9rcvmmh4/work/crm_sync_report_aug2026.json');

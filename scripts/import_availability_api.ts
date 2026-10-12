@@ -8,6 +8,7 @@
  */
 
 import { invokeTool } from '@tasklet/tools/v2';
+import { refreshCrmAlerts } from './crm_alerts';
 import { readFileSync, writeFileSync, copyFileSync, existsSync, mkdirSync, unlinkSync } from 'node:fs';
 
 const MELB_TZ = 'Australia/Melbourne';
@@ -225,6 +226,8 @@ console.error(`Pending appointments: ${pending.length}`);
 
 // 4. Load practitioners
 const practitioners: any[] = JSON.parse(readFileSync(MASTER_JSON, 'utf8'));
+const refreshedAlerts = await refreshCrmAlerts(practitioners);
+console.error(`CRM alerts refreshed: ${refreshedAlerts.join(', ') || 'no changes'}`);
 const appNames = new Set(practitioners.map((p: any) => p.name));
 
 // 5. Build slot data: Map<pracName, Map<location, Map<freqType, Map<dayName, {display: string, date: string}[]>>>>
