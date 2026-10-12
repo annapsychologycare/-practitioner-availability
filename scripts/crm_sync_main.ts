@@ -1,6 +1,6 @@
 import { invokeTool } from '@tasklet/tools/v2';
 import { readFile, writeFile } from 'node:fs/promises';
-import { mergeCrmAlert } from './crm_alerts';
+import { mapCrmNotes } from './crm_alerts';
 
 // ============================================================
 // STEP 1: Fetch all CRM contacts for PsychologyCare
@@ -122,12 +122,9 @@ interface Change {
 function mapCrmToApp(crm: any, existing: any, practName: string, feeMap?: Map<string, { bh: number; ah: number; rebate: number | null }>): { updated: any; changes: Change[] } {
   const changes: Change[] = [];
   const updated = { ...existing };
-  if (typeof crm.Intake_Alert_Notes === 'string' && crm.Intake_Alert_Notes.trim()) {
-    const alert = mergeCrmAlert(existing.alert || '', crm.Intake_Alert_Notes);
-    if (alert !== (existing.alert || '')) {
-      updated.alert = alert;
-      changes.push({ field: 'alert', old: existing.alert, newVal: alert });
-    }
+  for (const [field, newVal] of Object.entries(mapCrmNotes(crm))) {
+    if (newVal !== (existing[field] || '')) changes.push({field, old: existing[field], newVal});
+    updated[field] = newVal;
   }
 
   function applyChange(field: string, newVal: any) {

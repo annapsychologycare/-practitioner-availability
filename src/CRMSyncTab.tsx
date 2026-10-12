@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { PRACTITIONERS_DATA as practitioners } from "./practitionersData";
 
 const FIELD_SOURCES = [
+  { field: "Internal Notes (staff only)", appKey: "alert", crmField: "Intake_Alert_Notes_Internal", source: "crm", note: "✅ CRM only — never included in client emails; blank clears note" },
+  { field: "Client-Facing Notes", appKey: "client_note", crmField: "Intake_Alert_Notes", source: "crm", note: "✅ CRM only — included in client email; blank clears note" },
   { field: "Presentations (Clinical Interests)", appKey: "presentations", crmField: "Clinical_Interests", source: "crm", note: "✅ Synced from CRM" },
   { field: "Modalities", appKey: "modalities", crmField: "Modalities", source: "crm", note: "✅ Synced from CRM" },
   { field: "Bio", appKey: "bio", crmField: "Bio_for_Website", source: "crm", note: "✅ Synced from CRM" },

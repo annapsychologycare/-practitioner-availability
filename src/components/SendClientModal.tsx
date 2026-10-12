@@ -67,7 +67,7 @@ const SendClientModal: React.FC<Props> = ({ selected, locationFilter, onClose, o
             locs.map((l: any) => ({ availability: l.availability }))
           ),
           accepts_couples: p.accepts_couples,
-          alert: p.alert,
+          client_note: p.client_note,
           short_bio: p.short_bio,
           working_hours: (p as any).working_hours,
           location_notes: (p as any).location_notes,

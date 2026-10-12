@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { ChevronDown, ChevronRight } from "lucide-react";
 import { Practitioner, Location } from "./types";
+import MultiSelect from "./components/MultiSelect";
+import { CANONICAL_PRESENTATIONS, CANONICAL_MODALITIES } from "./constants";
 
 interface Props {
   practitioners: Practitioner[];
@@ -98,7 +100,6 @@ function PractitionerEditor({ p, onUpdate, onClose }: { p: Practitioner; onUpdat
   const [religionsGroups, setReligionsGroups] = useState(p.religions_groups || "");
 
   // Alert
-  const [alert, setAlert] = useState(p.alert || "");
 
   // Locations & availability
   const [locations, setLocations] = useState<Location[]>(p.locations.map(l => ({
@@ -147,7 +148,6 @@ function PractitionerEditor({ p, onUpdate, onClose }: { p: Practitioner; onUpdat
       pap_clinician: papClinician,
       religions_groups: religionsGroups,
       style,
-      alert,
       locations,
       last_updated: today,
     };
@@ -171,14 +171,12 @@ function PractitionerEditor({ p, onUpdate, onClose }: { p: Practitioner; onUpdat
         {/* Scrollable content */}
         <div className="overflow-y-auto flex-1 px-6 pb-2">
           {/* Alert/Note */}
-          <Section title="⚠️ Alert / Note (internal only)" defaultOpen={!!alert}>
-            <textarea
-              className="textarea textarea-bordered w-full text-sm"
-              rows={3}
-              value={alert}
-              onChange={e => setAlert(e.target.value)}
-              placeholder="Internal notes, restrictions, etc."
-            />
+          <Section title="⚠️ Notes — managed in Zoho CRM" defaultOpen={!!p.alert || !!p.client_note}>
+            <p className="text-xs mb-3">Update these notes in CRM. Blank CRM fields clear the corresponding app note.</p>
+            <strong>Internal — never included in client emails</strong>
+            <p style={{whiteSpace:'pre-line'}}>{p.alert || 'No internal notes'}</p>
+            <strong>Client-facing — included in client emails</strong>
+            <p style={{whiteSpace:'pre-line'}}>{p.client_note || 'No client-facing notes'}</p>
           </Section>
 
           {/* Basic Info */}
@@ -198,22 +196,24 @@ function PractitionerEditor({ p, onUpdate, onClose }: { p: Practitioner; onUpdat
 
           {/* Clinical */}
           <Section title="Presentations & Modalities" defaultOpen={false}>
-            <TextAreaField
+            <MultiSelect
               label="Presentations"
               value={presentations}
               onChange={setPresentations}
-              rows={4}
-              hint="Separate with semicolons (;)"
-              placeholder="Anxiety; Depression; Trauma..."
+              options={CANONICAL_PRESENTATIONS}
+              placeholder="Search presentations to add…"
+              hint="Search and select from the list, or type a custom entry and press Enter"
             />
-            <TextAreaField
-              label="Modalities"
-              value={modalities}
-              onChange={setModalities}
-              rows={3}
-              hint="Separate with semicolons (;) or slashes (/)"
-              placeholder="CBT / ACT / Schema Therapy..."
-            />
+            <div className="mt-4">
+              <MultiSelect
+                label="Modalities"
+                value={modalities}
+                onChange={setModalities}
+                options={CANONICAL_MODALITIES}
+                placeholder="Search modalities to add…"
+                hint="Search and select from the list, or type a custom entry and press Enter"
+              />
+            </div>
           </Section>
 
           {/* Fees & Billing */}
@@ -234,7 +234,7 @@ function PractitionerEditor({ p, onUpdate, onClose }: { p: Practitioner; onUpdat
             <TextField label="Therapist Style" value={style} onChange={setStyle} placeholder="e.g. Calm, Compassionate, Warm, Direct" />
             <div className="text-xs text-base-content/50 mb-2">Comma-separated personality keywords shown as tags in search</div>
             <TextAreaField label="Short Bio (email/cards)" value={shortBio} onChange={setShortBio} rows={3} placeholder="Brief description for emails..." />
-            <TextField label="Working Days, Hours & Locations" value={workingHours} onChange={setWorkingHours} placeholder="e.g. Mon–Fri, 8am–7pm · Wattletree Rd Malvern & Greville St Prahran" />
+            <TextField label="Working Days, Hours & Locations" value={workingHours} onChange={setWorkingHours} placeholder="e.g. Mon–Fri, 8am–7pm · Burke Rd Camberwell & Greville St Prahran" />
             <TextAreaField label="Full Bio" value={bio} onChange={setBio} rows={6} placeholder="Full practitioner bio..." />
             <TextField label="Qualifications" value={qualifications} onChange={setQualifications} />
             <TextAreaField label="Additional Info" value={additionalInfo} onChange={setAdditionalInfo} rows={3} />
@@ -260,11 +260,10 @@ function PractitionerEditor({ p, onUpdate, onClose }: { p: Practitioner; onUpdat
                   >
                     <option value="">Select location...</option>
                     <option key="greville" value="Greville St, Prahran">Greville St, Prahran</option>
-                    <option key="malvern" value="Wattletree Rd, Malvern">Wattletree Rd, Malvern</option>
                     <option key="camberwell" value="Burke Rd, Camberwell">Burke Rd, Camberwell</option>
                     <option key="stkilda" value="Victoria St, St Kilda">Victoria St, St Kilda</option>
                     <option key="telehealth" value="Telehealth">Telehealth</option>
-                    {loc.location && !["Greville St, Prahran", "Wattletree Rd, Malvern", "Burke Rd, Camberwell", "Victoria St, St Kilda", "Telehealth"].includes(loc.location) && (
+                    {loc.location && !["Greville St, Prahran", "Burke Rd, Camberwell", "Victoria St, St Kilda", "Telehealth"].includes(loc.location) && (
                       <option key="custom" value={loc.location}>{loc.location}</option>
                     )}
                   </select>

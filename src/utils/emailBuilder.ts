@@ -10,7 +10,7 @@ export interface PractitionerEmailData {
   link_to_bio: string;
   short_bio?: string;
   working_hours?: string;
-  alert?: string;
+  client_note?: string;
   location_notes?: Record<string, string>;
   photo_url?: string;
 }
@@ -174,9 +174,9 @@ function buildPractitionerCard(p: PractitionerEmailData, config: EmailTemplateCo
       </div>` : ""}
 
       <!-- Alert note (client-facing: only text after | separator) -->
-      ${p.alert && p.alert.includes('|') ? `
+      ${p.client_note ? `
       <div style="padding:10px 24px;background:#fff8e1;border-bottom:1px solid #ffe082;">
-        <div style="font-size:12px;color:#7a5a00;line-height:1.6;">⚠️ ${p.alert.split('|').slice(1).join('|').trim()}</div>
+        <div style="font-size:12px;color:#7a5a00;line-height:1.6;white-space:pre-line;">⚠️ ${p.client_note.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')}</div>
       </div>` : ""}
 
       <!-- Availability -->

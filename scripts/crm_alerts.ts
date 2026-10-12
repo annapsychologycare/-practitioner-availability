@@ -1,20 +1,15 @@
 import { invokeTool } from '@tasklet/tools/v2';
 
-export function mergeCrmAlert(current: string, crm: unknown): string {
-  if (typeof crm !== 'string' || !crm.trim()) return current || '';
-  const text = crm.trim();
-  // Only explicit text AFTER | is approved for client emails.
-  // Unmarked CRM notes remain internal; preserve any existing client banner.
-  if (text.includes('|')) {
-    const [internal, ...client] = text.split('|');
-    const previousInternal = (current || '').split('|')[0].trim();
-    return `${internal.trim() || previousInternal} | ${client.join('|').trim()}`.trim();
-  }
-  // Do not let an unmarked/older CRM note erase an existing app alert.
-  return current || text;
+export function mapCrmNotes(crm: any): {alert: string; client_note: string} {
+  // CRM is authoritative, including blank fields. Never retain local notes.
+  if (!Object.hasOwn(crm, 'Intake_Alert_Notes') || !Object.hasOwn(crm, 'Intake_Alert_Notes_Internal')) throw new Error('CRM note fields missing from record');
+  return {
+    alert: typeof crm.Intake_Alert_Notes_Internal === 'string' ? crm.Intake_Alert_Notes_Internal.trim() : '',
+    client_note: typeof crm.Intake_Alert_Notes === 'string' ? crm.Intake_Alert_Notes.trim() : '',
+  };
 }
 
-const normalize = (s: string) => s.toLowerCase().replace(/^(dr\.?|mr\.?|ms\.?|mrs\.?)\s+/, '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim();
+const normalize = (s: string) => s.toLowerCase().replace(/^(dr\.?|mr\.?|ms\.?|mrs\.?)\s+/, '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim().replace(/^nicholas burden$/, 'nick burden').replace(/^pete steele$/, 'peter steele');
 export async function refreshCrmAlerts(practitioners: any[]): Promise<string[]> {
   const r = await invokeTool({connectionId:'conn_pdkvmnzjcqdeb3ha13wc',toolName:'zoho_crm-search-objects',args:{
     module:'Contacts',criteria:'(Account_Name:equals:PsychologyCare)'
@@ -36,9 +31,10 @@ export async function refreshCrmAlerts(practitioners: any[]): Promise<string[]> 
   for (const p of practitioners) {
     const matches = records.filter(r => normalize(r.Full_Name || '') === normalize(p.name));
     if (matches.length > 1) throw new Error(`Ambiguous CRM alert match for ${p.name}`);
-    if (!matches.length) continue;
-    const alert = mergeCrmAlert(p.alert || '', matches[0].Intake_Alert_Notes);
-    if (alert !== (p.alert || '')) { p.alert = alert; changed.push(p.name); }
+    if (!matches.length) throw new Error(`No CRM note match for ${p.name}`);
+    const notes = mapCrmNotes(matches[0]);
+    if (notes.alert !== (p.alert || '') || notes.client_note !== (p.client_note || '')) changed.push(p.name);
+    Object.assign(p, notes);
   }
   return changed;
 }

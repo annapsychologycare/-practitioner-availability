@@ -18775,6 +18775,37 @@ You might need to use a local HTTP server (instead of file://): https://react.de
   // app.tsx
   var import_react17 = __toESM(require_react());
 
+  // components/PractitionerNotes.tsx
+  var jsx_runtime = __toESM(require_jsx_runtime());
+  function PractitionerNotes({ practitioner: p }) {
+    return /* @__PURE__ */ jsx_runtime.jsxs(jsx_runtime.Fragment, {
+      children: [
+        p.alert && /* @__PURE__ */ jsx_runtime.jsxs("div", {
+          style: { background: "#00B8C8", color: "white", borderRadius: 10, padding: "8px 14px", fontSize: 13, margin: "8px 0", whiteSpace: "pre-line" },
+          children: [
+            /* @__PURE__ */ jsx_runtime.jsx("strong", {
+              children: "\uD83D\uDD12 Internal note — staff only"
+            }),
+            /* @__PURE__ */ jsx_runtime.jsx("div", {
+              children: p.alert
+            })
+          ]
+        }),
+        p.client_note && /* @__PURE__ */ jsx_runtime.jsxs("div", {
+          style: { background: "#fff8e1", color: "#7a5a00", border: "1px solid #fbbf24", borderRadius: 10, padding: "8px 14px", fontSize: 13, margin: "8px 0", whiteSpace: "pre-line" },
+          children: [
+            /* @__PURE__ */ jsx_runtime.jsx("strong", {
+              children: "⚠️ Client-facing note — included in email"
+            }),
+            /* @__PURE__ */ jsx_runtime.jsx("div", {
+              children: p.client_note
+            })
+          ]
+        })
+      ]
+    });
+  }
+
   // FindPractitioner.tsx
   var import_react5 = __toESM(require_react());
   // node_modules/lucide-react/dist/esm/createLucideIcon.js
@@ -19263,9 +19294,9 @@ Please note: There are inherent confidentiality risks in communicating by email.
       </div>` : ""}
 
       <!-- Alert note (client-facing: only text after | separator) -->
-      ${p.alert && p.alert.includes("|") ? `
+      ${p.client_note ? `
       <div style="padding:10px 24px;background:#fff8e1;border-bottom:1px solid #ffe082;">
-        <div style="font-size:12px;color:#7a5a00;line-height:1.6;">⚠️ ${p.alert.split("|").slice(1).join("|").trim()}</div>
+        <div style="font-size:12px;color:#7a5a00;line-height:1.6;white-space:pre-line;">⚠️ ${p.client_note.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;")}</div>
       </div>` : ""}
 
       <!-- Availability -->
@@ -19361,7 +19392,7 @@ Please note: There are inherent confidentiality risks in communicating by email.
   }
 
   // components/SendClientModal.tsx
-  var jsx_runtime = __toESM(require_jsx_runtime());
+  var jsx_runtime2 = __toESM(require_jsx_runtime());
   var SendClientModal = ({ selected, locationFilter, onClose, onSent, includeMonthly = false, sessionType = "Individual" }) => {
     const config = import_react3.useMemo(() => loadEmailTemplateConfig(), []);
     const [step, setStep] = import_react3.useState("form");
@@ -19401,7 +19432,7 @@ Please note: There are inherent confidentiality risks in communicating by email.
         link_to_bio: p.link_to_bio,
         after_hours: hasAfterHoursAvailability(locs.map((l) => ({ availability: l.availability }))),
         accepts_couples: p.accepts_couples,
-        alert: p.alert,
+        client_note: p.client_note,
         short_bio: p.short_bio,
         working_hours: p.working_hours,
         location_notes: p.location_notes,
@@ -19479,47 +19510,47 @@ Please note: There are inherent confidentiality risks in communicating by email.
       }
     };
     const ccDisplay = ccEmails.split(",").map((e) => e.trim()).filter(Boolean).join(", ");
-    return /* @__PURE__ */ jsx_runtime.jsxs("div", {
+    return /* @__PURE__ */ jsx_runtime2.jsxs("div", {
       className: "modal modal-open",
       children: [
-        /* @__PURE__ */ jsx_runtime.jsxs("div", {
+        /* @__PURE__ */ jsx_runtime2.jsxs("div", {
           className: `modal-box ${step === "preview" ? "max-w-3xl" : "max-w-lg"}`,
           style: { maxHeight: "90vh", overflow: "hidden", display: "flex", flexDirection: "column" },
           children: [
-            /* @__PURE__ */ jsx_runtime.jsxs("div", {
+            /* @__PURE__ */ jsx_runtime2.jsxs("div", {
               className: "flex items-center justify-between mb-4 flex-shrink-0",
               children: [
-                /* @__PURE__ */ jsx_runtime.jsxs("div", {
+                /* @__PURE__ */ jsx_runtime2.jsxs("div", {
                   className: "flex items-center gap-2",
                   children: [
-                    step === "preview" && /* @__PURE__ */ jsx_runtime.jsx("button", {
+                    step === "preview" && /* @__PURE__ */ jsx_runtime2.jsx("button", {
                       onClick: () => setStep("form"),
                       className: "btn btn-ghost btn-sm btn-circle",
-                      children: /* @__PURE__ */ jsx_runtime.jsx(ArrowLeft, {
+                      children: /* @__PURE__ */ jsx_runtime2.jsx(ArrowLeft, {
                         size: 16
                       })
                     }),
-                    /* @__PURE__ */ jsx_runtime.jsx("h3", {
+                    /* @__PURE__ */ jsx_runtime2.jsx("h3", {
                       className: "font-bold text-lg",
                       children: step === "form" ? "Send to Client" : "Preview Email"
                     })
                   ]
                 }),
-                /* @__PURE__ */ jsx_runtime.jsx("button", {
+                /* @__PURE__ */ jsx_runtime2.jsx("button", {
                   onClick: onClose,
                   className: "btn btn-ghost btn-sm btn-circle",
-                  children: /* @__PURE__ */ jsx_runtime.jsx(X, {
+                  children: /* @__PURE__ */ jsx_runtime2.jsx(X, {
                     size: 16
                   })
                 })
               ]
             }),
-            step === "form" ? /* @__PURE__ */ jsx_runtime.jsxs(jsx_runtime.Fragment, {
+            step === "form" ? /* @__PURE__ */ jsx_runtime2.jsxs(jsx_runtime2.Fragment, {
               children: [
-                /* @__PURE__ */ jsx_runtime.jsxs("div", {
+                /* @__PURE__ */ jsx_runtime2.jsxs("div", {
                   className: "mb-4 p-3 bg-base-200 rounded-lg flex-shrink-0",
                   children: [
-                    /* @__PURE__ */ jsx_runtime.jsxs("div", {
+                    /* @__PURE__ */ jsx_runtime2.jsxs("div", {
                       className: "text-xs font-bold text-base-content/50 uppercase tracking-wide mb-2",
                       children: [
                         "Sending ",
@@ -19528,7 +19559,7 @@ Please note: There are inherent confidentiality risks in communicating by email.
                         selected.length !== 1 ? "s" : ""
                       ]
                     }),
-                    selected.map((p, i) => /* @__PURE__ */ jsx_runtime.jsxs("div", {
+                    selected.map((p, i) => /* @__PURE__ */ jsx_runtime2.jsxs("div", {
                       className: "text-sm font-medium text-base-content/80",
                       children: [
                         "• ",
@@ -19539,40 +19570,40 @@ Please note: There are inherent confidentiality risks in communicating by email.
                     }, i))
                   ]
                 }),
-                /* @__PURE__ */ jsx_runtime.jsxs("div", {
+                /* @__PURE__ */ jsx_runtime2.jsxs("div", {
                   className: "space-y-3 flex-shrink-0 overflow-y-auto",
                   style: { maxHeight: "60vh" },
                   children: [
-                    /* @__PURE__ */ jsx_runtime.jsxs("div", {
+                    /* @__PURE__ */ jsx_runtime2.jsxs("div", {
                       children: [
-                        /* @__PURE__ */ jsx_runtime.jsx("label", {
+                        /* @__PURE__ */ jsx_runtime2.jsx("label", {
                           className: "label label-text font-semibold pb-1",
                           children: "Sending As"
                         }),
-                        /* @__PURE__ */ jsx_runtime.jsx("select", {
+                        /* @__PURE__ */ jsx_runtime2.jsx("select", {
                           className: "select select-bordered w-full",
                           value: senderName,
                           onChange: (e) => setSenderName(e.target.value),
-                          children: config.senders.map((name) => /* @__PURE__ */ jsx_runtime.jsx("option", {
+                          children: config.senders.map((name) => /* @__PURE__ */ jsx_runtime2.jsx("option", {
                             value: name,
                             children: name
                           }, name))
                         })
                       ]
                     }),
-                    /* @__PURE__ */ jsx_runtime.jsxs("div", {
+                    /* @__PURE__ */ jsx_runtime2.jsxs("div", {
                       children: [
-                        /* @__PURE__ */ jsx_runtime.jsxs("label", {
+                        /* @__PURE__ */ jsx_runtime2.jsxs("label", {
                           className: "label label-text font-semibold pb-1",
                           children: [
                             "Client Name ",
-                            /* @__PURE__ */ jsx_runtime.jsx("span", {
+                            /* @__PURE__ */ jsx_runtime2.jsx("span", {
                               className: "text-error",
                               children: "*"
                             })
                           ]
                         }),
-                        /* @__PURE__ */ jsx_runtime.jsx("input", {
+                        /* @__PURE__ */ jsx_runtime2.jsx("input", {
                           type: "text",
                           placeholder: "e.g. Sarah Johnson",
                           className: "input input-bordered w-full",
@@ -19581,20 +19612,20 @@ Please note: There are inherent confidentiality risks in communicating by email.
                         })
                       ]
                     }),
-                    /* @__PURE__ */ jsx_runtime.jsxs("div", {
+                    /* @__PURE__ */ jsx_runtime2.jsxs("div", {
                       children: [
-                        /* @__PURE__ */ jsx_runtime.jsxs("label", {
+                        /* @__PURE__ */ jsx_runtime2.jsxs("label", {
                           className: "label label-text font-semibold pb-1",
                           children: [
                             "Client Email",
                             " ",
-                            /* @__PURE__ */ jsx_runtime.jsx("span", {
+                            /* @__PURE__ */ jsx_runtime2.jsx("span", {
                               className: "text-base-content/40 font-normal",
                               children: "(optional)"
                             })
                           ]
                         }),
-                        /* @__PURE__ */ jsx_runtime.jsx("input", {
+                        /* @__PURE__ */ jsx_runtime2.jsx("input", {
                           type: "email",
                           placeholder: "e.g. sarah@email.com",
                           className: "input input-bordered w-full",
@@ -19603,20 +19634,20 @@ Please note: There are inherent confidentiality risks in communicating by email.
                         })
                       ]
                     }),
-                    /* @__PURE__ */ jsx_runtime.jsxs("div", {
+                    /* @__PURE__ */ jsx_runtime2.jsxs("div", {
                       children: [
-                        /* @__PURE__ */ jsx_runtime.jsxs("label", {
+                        /* @__PURE__ */ jsx_runtime2.jsxs("label", {
                           className: "label label-text font-semibold pb-1",
                           children: [
                             "CC",
                             " ",
-                            /* @__PURE__ */ jsx_runtime.jsx("span", {
+                            /* @__PURE__ */ jsx_runtime2.jsx("span", {
                               className: "text-base-content/40 font-normal",
                               children: "(comma-separated)"
                             })
                           ]
                         }),
-                        /* @__PURE__ */ jsx_runtime.jsx("input", {
+                        /* @__PURE__ */ jsx_runtime2.jsx("input", {
                           type: "text",
                           placeholder: "anna@psychologycare.com.au",
                           className: "input input-bordered w-full",
@@ -19625,16 +19656,16 @@ Please note: There are inherent confidentiality risks in communicating by email.
                         })
                       ]
                     }),
-                    /* @__PURE__ */ jsx_runtime.jsxs("div", {
+                    /* @__PURE__ */ jsx_runtime2.jsxs("div", {
                       children: [
-                        /* @__PURE__ */ jsx_runtime.jsxs("div", {
+                        /* @__PURE__ */ jsx_runtime2.jsxs("div", {
                           className: "flex items-center justify-between pb-1",
                           children: [
-                            /* @__PURE__ */ jsx_runtime.jsx("label", {
+                            /* @__PURE__ */ jsx_runtime2.jsx("label", {
                               className: "label label-text font-semibold",
                               children: "Opening Paragraph"
                             }),
-                            openingParagraph !== config.intro_text && /* @__PURE__ */ jsx_runtime.jsx("button", {
+                            openingParagraph !== config.intro_text && /* @__PURE__ */ jsx_runtime2.jsx("button", {
                               type: "button",
                               className: "text-xs text-primary underline",
                               onClick: () => setOpeningParagraph(config.intro_text),
@@ -19642,7 +19673,7 @@ Please note: There are inherent confidentiality risks in communicating by email.
                             })
                           ]
                         }),
-                        /* @__PURE__ */ jsx_runtime.jsx("textarea", {
+                        /* @__PURE__ */ jsx_runtime2.jsx("textarea", {
                           className: "textarea textarea-bordered w-full text-sm",
                           rows: 4,
                           value: openingParagraph,
@@ -19650,20 +19681,20 @@ Please note: There are inherent confidentiality risks in communicating by email.
                         })
                       ]
                     }),
-                    /* @__PURE__ */ jsx_runtime.jsxs("div", {
+                    /* @__PURE__ */ jsx_runtime2.jsxs("div", {
                       children: [
-                        /* @__PURE__ */ jsx_runtime.jsxs("label", {
+                        /* @__PURE__ */ jsx_runtime2.jsxs("label", {
                           className: "label label-text font-semibold pb-1",
                           children: [
                             "Personal Note",
                             " ",
-                            /* @__PURE__ */ jsx_runtime.jsx("span", {
+                            /* @__PURE__ */ jsx_runtime2.jsx("span", {
                               className: "text-base-content/40 font-normal",
                               children: "(optional)"
                             })
                           ]
                         }),
-                        /* @__PURE__ */ jsx_runtime.jsx("textarea", {
+                        /* @__PURE__ */ jsx_runtime2.jsx("textarea", {
                           placeholder: "Add a personal note for this client...",
                           className: "textarea textarea-bordered w-full text-sm",
                           rows: 3,
@@ -19674,25 +19705,25 @@ Please note: There are inherent confidentiality risks in communicating by email.
                     })
                   ]
                 }),
-                error && /* @__PURE__ */ jsx_runtime.jsx("div", {
+                error && /* @__PURE__ */ jsx_runtime2.jsx("div", {
                   className: "alert alert-error text-sm mt-3 py-2 flex-shrink-0",
-                  children: /* @__PURE__ */ jsx_runtime.jsx("span", {
+                  children: /* @__PURE__ */ jsx_runtime2.jsx("span", {
                     children: error
                   })
                 }),
-                /* @__PURE__ */ jsx_runtime.jsxs("div", {
+                /* @__PURE__ */ jsx_runtime2.jsxs("div", {
                   className: "modal-action mt-4 flex-shrink-0",
                   children: [
-                    /* @__PURE__ */ jsx_runtime.jsx("button", {
+                    /* @__PURE__ */ jsx_runtime2.jsx("button", {
                       onClick: onClose,
                       className: "btn btn-ghost",
                       children: "Cancel"
                     }),
-                    /* @__PURE__ */ jsx_runtime.jsxs("button", {
+                    /* @__PURE__ */ jsx_runtime2.jsxs("button", {
                       onClick: handlePreview,
                       className: "btn btn-primary",
                       children: [
-                        /* @__PURE__ */ jsx_runtime.jsx(Eye, {
+                        /* @__PURE__ */ jsx_runtime2.jsx(Eye, {
                           size: 16
                         }),
                         " Preview Email →"
@@ -19701,101 +19732,101 @@ Please note: There are inherent confidentiality risks in communicating by email.
                   ]
                 })
               ]
-            }) : /* @__PURE__ */ jsx_runtime.jsxs(jsx_runtime.Fragment, {
+            }) : /* @__PURE__ */ jsx_runtime2.jsxs(jsx_runtime2.Fragment, {
               children: [
-                /* @__PURE__ */ jsx_runtime.jsxs("div", {
+                /* @__PURE__ */ jsx_runtime2.jsxs("div", {
                   className: "text-sm text-base-content/60 mb-3 flex-shrink-0 space-y-0.5",
                   children: [
-                    clientEmail.trim() && /* @__PURE__ */ jsx_runtime.jsxs("div", {
+                    clientEmail.trim() && /* @__PURE__ */ jsx_runtime2.jsxs("div", {
                       children: [
                         "To: ",
-                        /* @__PURE__ */ jsx_runtime.jsx("strong", {
+                        /* @__PURE__ */ jsx_runtime2.jsx("strong", {
                           children: clientEmail
                         })
                       ]
                     }),
-                    ccDisplay && /* @__PURE__ */ jsx_runtime.jsxs("div", {
+                    ccDisplay && /* @__PURE__ */ jsx_runtime2.jsxs("div", {
                       children: [
                         "CC: ",
-                        /* @__PURE__ */ jsx_runtime.jsx("strong", {
+                        /* @__PURE__ */ jsx_runtime2.jsx("strong", {
                           children: ccDisplay
                         })
                       ]
                     }),
-                    /* @__PURE__ */ jsx_runtime.jsxs("div", {
+                    /* @__PURE__ */ jsx_runtime2.jsxs("div", {
                       children: [
                         "From: ",
-                        /* @__PURE__ */ jsx_runtime.jsx("strong", {
+                        /* @__PURE__ */ jsx_runtime2.jsx("strong", {
                           children: senderName
                         })
                       ]
                     })
                   ]
                 }),
-                /* @__PURE__ */ jsx_runtime.jsx("div", {
+                /* @__PURE__ */ jsx_runtime2.jsx("div", {
                   className: "flex-1 overflow-hidden rounded-lg border border-base-300",
                   style: { minHeight: 0 },
-                  children: /* @__PURE__ */ jsx_runtime.jsx("iframe", {
+                  children: /* @__PURE__ */ jsx_runtime2.jsx("iframe", {
                     srcDoc: previewHtml,
                     style: { width: "100%", height: "100%", border: "none", minHeight: "450px" },
                     title: "Email Preview"
                   })
                 }),
-                error && /* @__PURE__ */ jsx_runtime.jsx("div", {
+                error && /* @__PURE__ */ jsx_runtime2.jsx("div", {
                   className: "alert alert-error text-sm mt-3 py-2 flex-shrink-0",
-                  children: /* @__PURE__ */ jsx_runtime.jsx("span", {
+                  children: /* @__PURE__ */ jsx_runtime2.jsx("span", {
                     children: error
                   })
                 }),
-                /* @__PURE__ */ jsx_runtime.jsxs("div", {
+                /* @__PURE__ */ jsx_runtime2.jsxs("div", {
                   className: "modal-action mt-4 flex-shrink-0",
                   children: [
-                    /* @__PURE__ */ jsx_runtime.jsxs("button", {
+                    /* @__PURE__ */ jsx_runtime2.jsxs("button", {
                       onClick: () => setStep("form"),
                       className: "btn btn-ghost",
                       disabled: sending,
                       children: [
-                        /* @__PURE__ */ jsx_runtime.jsx(ArrowLeft, {
+                        /* @__PURE__ */ jsx_runtime2.jsx(ArrowLeft, {
                           size: 16
                         }),
                         " Back"
                       ]
                     }),
-                    /* @__PURE__ */ jsx_runtime.jsx("button", {
+                    /* @__PURE__ */ jsx_runtime2.jsx("button", {
                       onClick: handleCopyEmail,
                       className: "btn btn-outline",
                       style: { borderColor: "#8D5273", color: copied ? "#47B2AE" : "#8D5273" },
                       title: "Copy email to paste into your PMS",
-                      children: copied ? /* @__PURE__ */ jsx_runtime.jsxs(jsx_runtime.Fragment, {
+                      children: copied ? /* @__PURE__ */ jsx_runtime2.jsxs(jsx_runtime2.Fragment, {
                         children: [
-                          /* @__PURE__ */ jsx_runtime.jsx(ClipboardCheck, {
+                          /* @__PURE__ */ jsx_runtime2.jsx(ClipboardCheck, {
                             size: 16
                           }),
                           " Copied!"
                         ]
-                      }) : /* @__PURE__ */ jsx_runtime.jsxs(jsx_runtime.Fragment, {
+                      }) : /* @__PURE__ */ jsx_runtime2.jsxs(jsx_runtime2.Fragment, {
                         children: [
-                          /* @__PURE__ */ jsx_runtime.jsx(Clipboard, {
+                          /* @__PURE__ */ jsx_runtime2.jsx(Clipboard, {
                             size: 16
                           }),
                           " Copy Email"
                         ]
                       })
                     }),
-                    /* @__PURE__ */ jsx_runtime.jsx("button", {
+                    /* @__PURE__ */ jsx_runtime2.jsx("button", {
                       onClick: handleSend,
                       className: "btn btn-success",
                       disabled: sending,
-                      children: sending ? /* @__PURE__ */ jsx_runtime.jsxs(jsx_runtime.Fragment, {
+                      children: sending ? /* @__PURE__ */ jsx_runtime2.jsxs(jsx_runtime2.Fragment, {
                         children: [
-                          /* @__PURE__ */ jsx_runtime.jsx("span", {
+                          /* @__PURE__ */ jsx_runtime2.jsx("span", {
                             className: "loading loading-spinner loading-sm"
                           }),
                           " Sending..."
                         ]
-                      }) : /* @__PURE__ */ jsx_runtime.jsxs(jsx_runtime.Fragment, {
+                      }) : /* @__PURE__ */ jsx_runtime2.jsxs(jsx_runtime2.Fragment, {
                         children: [
-                          /* @__PURE__ */ jsx_runtime.jsx(Send, {
+                          /* @__PURE__ */ jsx_runtime2.jsx(Send, {
                             size: 16
                           }),
                           " Confirm & Send"
@@ -19808,7 +19839,7 @@ Please note: There are inherent confidentiality risks in communicating by email.
             })
           ]
         }),
-        /* @__PURE__ */ jsx_runtime.jsx("div", {
+        /* @__PURE__ */ jsx_runtime2.jsx("div", {
           className: "modal-backdrop",
           onClick: onClose
         })
@@ -19819,7 +19850,7 @@ Please note: There are inherent confidentiality risks in communicating by email.
 
   // components/MultiSelectDropdown.tsx
   var import_react4 = __toESM(require_react());
-  var jsx_runtime2 = __toESM(require_jsx_runtime());
+  var jsx_runtime3 = __toESM(require_jsx_runtime());
   function MultiSelectDropdown({ label, options, selected, onChange, placeholder }) {
     const [open, setOpen] = import_react4.useState(false);
     const [search, setSearch] = import_react4.useState("");
@@ -19839,38 +19870,38 @@ Please note: There are inherent confidentiality risks in communicating by email.
       else
         onChange([...selected, opt]);
     };
-    return /* @__PURE__ */ jsx_runtime2.jsxs("div", {
+    return /* @__PURE__ */ jsx_runtime3.jsxs("div", {
       ref,
       className: "relative",
       children: [
-        /* @__PURE__ */ jsx_runtime2.jsx("label", {
+        /* @__PURE__ */ jsx_runtime3.jsx("label", {
           className: "label label-text font-semibold pb-1",
           children: label
         }),
-        /* @__PURE__ */ jsx_runtime2.jsxs("button", {
+        /* @__PURE__ */ jsx_runtime3.jsxs("button", {
           type: "button",
           onClick: () => setOpen(!open),
           className: "btn btn-sm w-full justify-between font-normal text-left",
           style: { border: "1px solid #CDA8BA", backgroundColor: "white", minHeight: "2rem", height: "auto", paddingTop: "0.3rem", paddingBottom: "0.3rem" },
           children: [
-            /* @__PURE__ */ jsx_runtime2.jsx("span", {
+            /* @__PURE__ */ jsx_runtime3.jsx("span", {
               className: "truncate text-sm",
               children: selected.length === 0 ? placeholder || `Any ${label.toLowerCase()}` : selected.length === 1 ? selected[0] : `${selected.length} selected`
             }),
-            /* @__PURE__ */ jsx_runtime2.jsx("span", {
+            /* @__PURE__ */ jsx_runtime3.jsx("span", {
               className: "ml-1 text-base-content/50",
               children: open ? "▲" : "▼"
             })
           ]
         }),
-        open && /* @__PURE__ */ jsx_runtime2.jsxs("div", {
+        open && /* @__PURE__ */ jsx_runtime3.jsxs("div", {
           className: "absolute z-50 mt-1 w-full min-w-64 bg-white rounded-lg shadow-lg",
           style: { border: "1px solid #CDA8BA", maxHeight: "280px", overflowY: "auto" },
           children: [
-            /* @__PURE__ */ jsx_runtime2.jsxs("div", {
+            /* @__PURE__ */ jsx_runtime3.jsxs("div", {
               className: "p-2 border-b border-base-200 sticky top-0 bg-base-100",
               children: [
-                /* @__PURE__ */ jsx_runtime2.jsx("input", {
+                /* @__PURE__ */ jsx_runtime3.jsx("input", {
                   type: "text",
                   placeholder: "Search...",
                   className: "input input-bordered input-xs w-full",
@@ -19879,7 +19910,7 @@ Please note: There are inherent confidentiality risks in communicating by email.
                   onClick: (e) => e.stopPropagation(),
                   autoFocus: true
                 }),
-                selected.length > 0 && /* @__PURE__ */ jsx_runtime2.jsxs("button", {
+                selected.length > 0 && /* @__PURE__ */ jsx_runtime3.jsxs("button", {
                   className: "btn btn-ghost btn-xs mt-1 w-full text-xs",
                   onClick: () => onChange([]),
                   children: [
@@ -19890,19 +19921,19 @@ Please note: There are inherent confidentiality risks in communicating by email.
                 })
               ]
             }),
-            filtered.length === 0 ? /* @__PURE__ */ jsx_runtime2.jsx("div", {
+            filtered.length === 0 ? /* @__PURE__ */ jsx_runtime3.jsx("div", {
               className: "p-3 text-sm text-base-content/50 text-center",
               children: "No results"
-            }) : filtered.map((opt) => /* @__PURE__ */ jsx_runtime2.jsxs("label", {
+            }) : filtered.map((opt) => /* @__PURE__ */ jsx_runtime3.jsxs("label", {
               className: "flex items-center gap-2 px-3 py-1.5 hover:bg-base-200 cursor-pointer text-sm",
               children: [
-                /* @__PURE__ */ jsx_runtime2.jsx("input", {
+                /* @__PURE__ */ jsx_runtime3.jsx("input", {
                   type: "checkbox",
                   className: "checkbox checkbox-xs checkbox-primary",
                   checked: selected.includes(opt),
                   onChange: () => toggle(opt)
                 }),
-                /* @__PURE__ */ jsx_runtime2.jsx("span", {
+                /* @__PURE__ */ jsx_runtime3.jsx("span", {
                   children: opt
                 })
               ]
@@ -19914,7 +19945,7 @@ Please note: There are inherent confidentiality risks in communicating by email.
   }
 
   // FindPractitioner.tsx
-  var jsx_runtime3 = __toESM(require_jsx_runtime());
+  var jsx_runtime4 = __toESM(require_jsx_runtime());
   var DAYS_OF_WEEK = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
   var PRESENTATION_OPTIONS = [
     "Academic Pressure & Performance Stress",
@@ -20380,35 +20411,35 @@ Please note: There are inherent confidentiality risks in communicating by email.
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     };
-    return /* @__PURE__ */ jsx_runtime3.jsx("div", {
+    return /* @__PURE__ */ jsx_runtime4.jsx("div", {
       className: "card bg-white shadow-sm border mb-4 transition-all",
       style: { borderColor: isSelected ? "#8D5273" : "#CDA8BA", boxShadow: isSelected ? "0 0 0 1px #8D5273" : undefined },
-      children: /* @__PURE__ */ jsx_runtime3.jsxs("div", {
+      children: /* @__PURE__ */ jsx_runtime4.jsxs("div", {
         className: "card-body p-4",
         children: [
-          /* @__PURE__ */ jsx_runtime3.jsxs("div", {
+          /* @__PURE__ */ jsx_runtime4.jsxs("div", {
             className: "flex flex-wrap gap-2 items-start justify-between",
             children: [
-              /* @__PURE__ */ jsx_runtime3.jsxs("div", {
+              /* @__PURE__ */ jsx_runtime4.jsxs("div", {
                 className: "flex items-start gap-3 flex-1 min-w-0",
                 children: [
-                  /* @__PURE__ */ jsx_runtime3.jsx("input", {
+                  /* @__PURE__ */ jsx_runtime4.jsx("input", {
                     type: "checkbox",
                     className: "checkbox checkbox-primary mt-1 flex-shrink-0",
                     checked: isSelected,
                     onChange: () => onToggleSelect(p.name),
                     title: "Select for sending to client"
                   }),
-                  /* @__PURE__ */ jsx_runtime3.jsxs("div", {
+                  /* @__PURE__ */ jsx_runtime4.jsxs("div", {
                     className: "flex-1 min-w-0",
                     children: [
-                      /* @__PURE__ */ jsx_runtime3.jsxs("div", {
+                      /* @__PURE__ */ jsx_runtime4.jsxs("div", {
                         className: "flex items-center gap-2 flex-wrap",
                         children: [
-                          /* @__PURE__ */ jsx_runtime3.jsx("h3", {
+                          /* @__PURE__ */ jsx_runtime4.jsx("h3", {
                             className: "text-lg font-bold",
                             style: { color: "#2C244C" },
-                            children: p.link_to_bio ? /* @__PURE__ */ jsx_runtime3.jsx("a", {
+                            children: p.link_to_bio ? /* @__PURE__ */ jsx_runtime4.jsx("a", {
                               href: p.link_to_bio,
                               target: "_blank",
                               rel: "noopener noreferrer",
@@ -20416,7 +20447,7 @@ Please note: There are inherent confidentiality risks in communicating by email.
                               children: p.name
                             }) : p.name
                           }),
-                          p.pronouns && /* @__PURE__ */ jsx_runtime3.jsxs("span", {
+                          p.pronouns && /* @__PURE__ */ jsx_runtime4.jsxs("span", {
                             className: "text-xs text-base-content/50",
                             children: [
                               "(",
@@ -20424,24 +20455,24 @@ Please note: There are inherent confidentiality risks in communicating by email.
                               ")"
                             ]
                           }),
-                          p.pap_clinician === "Yes" && /* @__PURE__ */ jsx_runtime3.jsx("span", {
+                          p.pap_clinician === "Yes" && /* @__PURE__ */ jsx_runtime4.jsx("span", {
                             className: "badge badge-sm text-white",
                             style: { backgroundColor: "#8D5273" },
                             children: "PAP"
                           }),
-                          hasAfterHoursAvailability((p.locations || []).map((l) => ({ availability: l.availability }))) && /* @__PURE__ */ jsx_runtime3.jsx("span", {
+                          hasAfterHoursAvailability((p.locations || []).map((l) => ({ availability: l.availability }))) && /* @__PURE__ */ jsx_runtime4.jsx("span", {
                             className: "badge badge-sm text-white",
                             style: { backgroundColor: "#52A3BA" },
                             children: "After Hours"
                           }),
-                          p.accepts_couples && /* @__PURE__ */ jsx_runtime3.jsx("span", {
+                          p.accepts_couples && /* @__PURE__ */ jsx_runtime4.jsx("span", {
                             className: "badge badge-sm text-white",
                             style: { backgroundColor: "#366188" },
                             children: "Couples"
                           })
                         ]
                       }),
-                      /* @__PURE__ */ jsx_runtime3.jsx("p", {
+                      /* @__PURE__ */ jsx_runtime4.jsx("p", {
                         className: "text-sm text-base-content/70 font-medium",
                         children: p.title
                       })
@@ -20449,17 +20480,17 @@ Please note: There are inherent confidentiality risks in communicating by email.
                   })
                 ]
               }),
-              /* @__PURE__ */ jsx_runtime3.jsxs("div", {
+              /* @__PURE__ */ jsx_runtime4.jsxs("div", {
                 className: "flex gap-2 flex-shrink-0",
                 children: [
-                  p.link_to_bio && /* @__PURE__ */ jsx_runtime3.jsx("a", {
+                  p.link_to_bio && /* @__PURE__ */ jsx_runtime4.jsx("a", {
                     href: p.link_to_bio,
                     target: "_blank",
                     rel: "noopener noreferrer",
                     className: "btn btn-ghost btn-xs",
                     children: "Bio"
                   }),
-                  /* @__PURE__ */ jsx_runtime3.jsx("button", {
+                  /* @__PURE__ */ jsx_runtime4.jsx("button", {
                     onClick: () => setExpanded(!expanded),
                     className: "btn btn-ghost btn-xs",
                     children: expanded ? "Less" : "More"
@@ -20468,45 +20499,41 @@ Please note: There are inherent confidentiality risks in communicating by email.
               })
             ]
           }),
-          p.alert && /* @__PURE__ */ jsx_runtime3.jsxs("div", {
-            style: { backgroundColor: "#00B8C8", color: "white", borderRadius: "10px", padding: "8px 14px", fontSize: "13px", fontWeight: 700, boxShadow: "0 2px 8px rgba(0,184,200,0.35)", display: "inline-block" },
-            children: [
-              "\uD83D\uDEA8 ",
-              p.alert
-            ]
+          /* @__PURE__ */ jsx_runtime4.jsx(PractitionerNotes, {
+            practitioner: p
           }),
-          /* @__PURE__ */ jsx_runtime3.jsxs("div", {
+          /* @__PURE__ */ jsx_runtime4.jsxs("div", {
             className: "flex flex-wrap gap-4 text-sm mt-2",
             children: [
-              /* @__PURE__ */ jsx_runtime3.jsxs("div", {
+              /* @__PURE__ */ jsx_runtime4.jsxs("div", {
                 children: [
-                  /* @__PURE__ */ jsx_runtime3.jsx("span", {
+                  /* @__PURE__ */ jsx_runtime4.jsx("span", {
                     className: "font-semibold text-base-content/60",
                     children: "Fees:"
                   }),
                   " ",
-                  /* @__PURE__ */ jsx_runtime3.jsx("span", {
+                  /* @__PURE__ */ jsx_runtime4.jsx("span", {
                     className: "whitespace-pre-line",
                     children: p.fees
                   })
                 ]
               }),
-              /* @__PURE__ */ jsx_runtime3.jsxs("div", {
+              /* @__PURE__ */ jsx_runtime4.jsxs("div", {
                 children: [
-                  /* @__PURE__ */ jsx_runtime3.jsx("span", {
+                  /* @__PURE__ */ jsx_runtime4.jsx("span", {
                     className: "font-semibold text-base-content/60",
                     children: "Medicare:"
                   }),
                   " ",
-                  /* @__PURE__ */ jsx_runtime3.jsx("span", {
+                  /* @__PURE__ */ jsx_runtime4.jsx("span", {
                     className: "whitespace-pre-line",
                     children: p.medicare_rebate
                   })
                 ]
               }),
-              /* @__PURE__ */ jsx_runtime3.jsxs("div", {
+              /* @__PURE__ */ jsx_runtime4.jsxs("div", {
                 children: [
-                  /* @__PURE__ */ jsx_runtime3.jsx("span", {
+                  /* @__PURE__ */ jsx_runtime4.jsx("span", {
                     className: "font-semibold text-base-content/60",
                     children: "Gender:"
                   }),
@@ -20514,9 +20541,9 @@ Please note: There are inherent confidentiality risks in communicating by email.
                   p.gender || "--"
                 ]
               }),
-              /* @__PURE__ */ jsx_runtime3.jsxs("div", {
+              /* @__PURE__ */ jsx_runtime4.jsxs("div", {
                 children: [
-                  /* @__PURE__ */ jsx_runtime3.jsx("span", {
+                  /* @__PURE__ */ jsx_runtime4.jsx("span", {
                     className: "font-semibold text-base-content/60",
                     children: "Ages:"
                   }),
@@ -20524,9 +20551,9 @@ Please note: There are inherent confidentiality risks in communicating by email.
                   p.age_range || "--"
                 ]
               }),
-              /* @__PURE__ */ jsx_runtime3.jsxs("div", {
+              /* @__PURE__ */ jsx_runtime4.jsxs("div", {
                 children: [
-                  /* @__PURE__ */ jsx_runtime3.jsx("span", {
+                  /* @__PURE__ */ jsx_runtime4.jsx("span", {
                     className: "font-semibold text-base-content/60",
                     children: "Clients:"
                   }),
@@ -20536,9 +20563,9 @@ Please note: There are inherent confidentiality risks in communicating by email.
               })
             ]
           }),
-          /* @__PURE__ */ jsx_runtime3.jsx("div", {
+          /* @__PURE__ */ jsx_runtime4.jsx("div", {
             className: "mt-2 flex items-center gap-1 flex-wrap",
-            children: (p.locations || []).map((loc, i) => /* @__PURE__ */ jsx_runtime3.jsxs("span", {
+            children: (p.locations || []).map((loc, i) => /* @__PURE__ */ jsx_runtime4.jsxs("span", {
               className: "badge badge-outline badge-sm",
               children: [
                 "\uD83D\uDCCD",
@@ -20547,48 +20574,48 @@ Please note: There are inherent confidentiality risks in communicating by email.
               ]
             }, i))
           }),
-          /* @__PURE__ */ jsx_runtime3.jsxs("div", {
+          /* @__PURE__ */ jsx_runtime4.jsxs("div", {
             className: "mt-3 rounded-lg p-3",
             style: { backgroundColor: "#F0EEF7" },
             children: [
-              /* @__PURE__ */ jsx_runtime3.jsxs("div", {
+              /* @__PURE__ */ jsx_runtime4.jsxs("div", {
                 className: "flex items-center justify-between mb-2",
                 children: [
-                  /* @__PURE__ */ jsx_runtime3.jsx("span", {
+                  /* @__PURE__ */ jsx_runtime4.jsx("span", {
                     className: "font-semibold text-sm",
                     children: "Availability"
                   }),
-                  hasAvail && /* @__PURE__ */ jsx_runtime3.jsx("button", {
+                  hasAvail && /* @__PURE__ */ jsx_runtime4.jsx("button", {
                     onClick: copyAvailability,
                     className: "btn btn-xs " + (copied ? "btn-success" : "btn-primary"),
                     children: copied ? "Copied!" : "Copy"
                   })
                 ]
               }),
-              gateClientType === "Supervision" ? p.supervision_availability?.length > 0 ? /* @__PURE__ */ jsx_runtime3.jsx("div", {
+              gateClientType === "Supervision" ? p.supervision_availability?.length > 0 ? /* @__PURE__ */ jsx_runtime4.jsx("div", {
                 className: "mt-2",
-                children: /* @__PURE__ */ jsx_runtime3.jsxs("div", {
+                children: /* @__PURE__ */ jsx_runtime4.jsxs("div", {
                   className: "rounded-lg p-2",
                   style: { backgroundColor: "rgba(54,97,136,0.08)" },
                   children: [
-                    /* @__PURE__ */ jsx_runtime3.jsx("div", {
+                    /* @__PURE__ */ jsx_runtime4.jsx("div", {
                       className: "text-xs font-bold mb-1",
                       style: { color: "#366188" },
                       children: "\uD83C\uDF93 Supervision Slots (Weekly · Telehealth)"
                     }),
-                    p.supervision_availability.map((loc, li) => /* @__PURE__ */ jsx_runtime3.jsxs("div", {
+                    p.supervision_availability.map((loc, li) => /* @__PURE__ */ jsx_runtime4.jsxs("div", {
                       children: [
-                        p.supervision_availability.length > 1 && /* @__PURE__ */ jsx_runtime3.jsxs("div", {
+                        p.supervision_availability.length > 1 && /* @__PURE__ */ jsx_runtime4.jsxs("div", {
                           className: "text-xs text-base-content/50 mb-1",
                           children: [
                             "\uD83D\uDCCD ",
                             loc.location
                           ]
                         }),
-                        loc.days.map((d, di) => /* @__PURE__ */ jsx_runtime3.jsxs("div", {
+                        loc.days.map((d, di) => /* @__PURE__ */ jsx_runtime4.jsxs("div", {
                           className: "text-xs",
                           children: [
-                            /* @__PURE__ */ jsx_runtime3.jsx("span", {
+                            /* @__PURE__ */ jsx_runtime4.jsx("span", {
                               className: "font-medium",
                               children: d.day
                             }),
@@ -20600,53 +20627,53 @@ Please note: There are inherent confidentiality risks in communicating by email.
                     }, li))
                   ]
                 })
-              }) : /* @__PURE__ */ jsx_runtime3.jsx("div", {
+              }) : /* @__PURE__ */ jsx_runtime4.jsx("div", {
                 className: "text-sm text-base-content/40 italic",
                 children: "No supervision availability listed"
-              }) : displayLocs.length === 0 ? /* @__PURE__ */ jsx_runtime3.jsx("div", {
+              }) : displayLocs.length === 0 ? /* @__PURE__ */ jsx_runtime4.jsx("div", {
                 className: "text-sm text-base-content/40 italic",
                 children: "No availability listed"
               }) : displayLocs.map((loc, i) => {
                 const { weekly, fortnightly, monthly } = parseAvailabilityColumns(loc.availability || "");
                 const hasLocAvail = weekly.length > 0 || fortnightly.length > 0 || monthly.length > 0;
-                return /* @__PURE__ */ jsx_runtime3.jsxs("div", {
+                return /* @__PURE__ */ jsx_runtime4.jsxs("div", {
                   className: displayLocs.length > 1 ? "mb-3" : "",
                   children: [
-                    displayLocs.length > 1 && /* @__PURE__ */ jsx_runtime3.jsxs("div", {
+                    displayLocs.length > 1 && /* @__PURE__ */ jsx_runtime4.jsxs("div", {
                       className: "text-xs font-semibold text-base-content/50 uppercase tracking-wide mb-2",
                       children: [
                         "\uD83D\uDCCD ",
                         loc.location
                       ]
                     }),
-                    !hasLocAvail ? /* @__PURE__ */ jsx_runtime3.jsx("div", {
+                    !hasLocAvail ? /* @__PURE__ */ jsx_runtime4.jsx("div", {
                       className: "text-sm text-base-content/40 italic",
                       children: "No availability listed"
-                    }) : /* @__PURE__ */ jsx_runtime3.jsxs("div", {
+                    }) : /* @__PURE__ */ jsx_runtime4.jsxs("div", {
                       className: `grid gap-2 ${includeMonthly ? "grid-cols-3" : "grid-cols-2"}`,
                       children: [
-                        /* @__PURE__ */ jsx_runtime3.jsxs("div", {
+                        /* @__PURE__ */ jsx_runtime4.jsxs("div", {
                           className: "rounded-lg p-2",
                           style: { backgroundColor: "rgba(54,97,136,0.08)" },
                           children: [
-                            /* @__PURE__ */ jsx_runtime3.jsx("div", {
+                            /* @__PURE__ */ jsx_runtime4.jsx("div", {
                               className: "text-xs font-bold mb-1",
                               style: { color: "#366188" },
                               children: "● Weekly"
                             }),
-                            weekly.length > 0 ? /* @__PURE__ */ jsx_runtime3.jsx("ul", {
+                            weekly.length > 0 ? /* @__PURE__ */ jsx_runtime4.jsx("ul", {
                               className: "space-y-1",
                               children: weekly.map((line, j) => {
                                 const label = line.replace(/\s*\(Weekly:.*\)/i, "").trim();
                                 const startMatch = line.match(/Starting ([^)]+)/i);
-                                return /* @__PURE__ */ jsx_runtime3.jsxs("li", {
+                                return /* @__PURE__ */ jsx_runtime4.jsxs("li", {
                                   className: "text-xs text-base-content leading-snug",
                                   children: [
-                                    /* @__PURE__ */ jsx_runtime3.jsx("span", {
+                                    /* @__PURE__ */ jsx_runtime4.jsx("span", {
                                       className: "font-medium",
                                       children: label
                                     }),
-                                    startMatch && /* @__PURE__ */ jsx_runtime3.jsxs("span", {
+                                    startMatch && /* @__PURE__ */ jsx_runtime4.jsxs("span", {
                                       className: "text-base-content/50 block",
                                       children: [
                                         "from ",
@@ -20656,34 +20683,34 @@ Please note: There are inherent confidentiality risks in communicating by email.
                                   ]
                                 }, j);
                               })
-                            }) : /* @__PURE__ */ jsx_runtime3.jsx("div", {
+                            }) : /* @__PURE__ */ jsx_runtime4.jsx("div", {
                               className: "text-xs text-base-content/30 italic",
                               children: "—"
                             })
                           ]
                         }),
-                        /* @__PURE__ */ jsx_runtime3.jsxs("div", {
+                        /* @__PURE__ */ jsx_runtime4.jsxs("div", {
                           className: "rounded-lg p-2",
                           style: { backgroundColor: "rgba(82,163,186,0.08)" },
                           children: [
-                            /* @__PURE__ */ jsx_runtime3.jsx("div", {
+                            /* @__PURE__ */ jsx_runtime4.jsx("div", {
                               className: "text-xs font-bold mb-1",
                               style: { color: "#52A3BA" },
                               children: "● Fortnightly"
                             }),
-                            fortnightly.length > 0 ? /* @__PURE__ */ jsx_runtime3.jsx("ul", {
+                            fortnightly.length > 0 ? /* @__PURE__ */ jsx_runtime4.jsx("ul", {
                               className: "space-y-1",
                               children: fortnightly.map((line, j) => {
                                 const label = line.replace(/\s*\(Fortnightly:.*\)/i, "").trim();
                                 const startMatch = line.match(/Starting ([^)]+)/i);
-                                return /* @__PURE__ */ jsx_runtime3.jsxs("li", {
+                                return /* @__PURE__ */ jsx_runtime4.jsxs("li", {
                                   className: "text-xs text-base-content leading-snug",
                                   children: [
-                                    /* @__PURE__ */ jsx_runtime3.jsx("span", {
+                                    /* @__PURE__ */ jsx_runtime4.jsx("span", {
                                       className: "font-medium",
                                       children: label
                                     }),
-                                    startMatch && /* @__PURE__ */ jsx_runtime3.jsxs("span", {
+                                    startMatch && /* @__PURE__ */ jsx_runtime4.jsxs("span", {
                                       className: "text-base-content/50 block",
                                       children: [
                                         "from ",
@@ -20693,34 +20720,34 @@ Please note: There are inherent confidentiality risks in communicating by email.
                                   ]
                                 }, j);
                               })
-                            }) : /* @__PURE__ */ jsx_runtime3.jsx("div", {
+                            }) : /* @__PURE__ */ jsx_runtime4.jsx("div", {
                               className: "text-xs text-base-content/30 italic",
                               children: "—"
                             })
                           ]
                         }),
-                        includeMonthly && /* @__PURE__ */ jsx_runtime3.jsxs("div", {
+                        includeMonthly && /* @__PURE__ */ jsx_runtime4.jsxs("div", {
                           className: "rounded-lg p-2",
                           style: { backgroundColor: "rgba(141,82,115,0.08)" },
                           children: [
-                            /* @__PURE__ */ jsx_runtime3.jsx("div", {
+                            /* @__PURE__ */ jsx_runtime4.jsx("div", {
                               className: "text-xs font-bold mb-1",
                               style: { color: "#8D5273" },
                               children: "● Monthly"
                             }),
-                            monthly.length > 0 ? /* @__PURE__ */ jsx_runtime3.jsx("ul", {
+                            monthly.length > 0 ? /* @__PURE__ */ jsx_runtime4.jsx("ul", {
                               className: "space-y-1",
                               children: monthly.map((line, j) => {
                                 const label = line.replace(/\s*\(Monthly:.*\)/i, "").trim();
                                 const startMatch = line.match(/Starting ([^)]+)/i);
-                                return /* @__PURE__ */ jsx_runtime3.jsxs("li", {
+                                return /* @__PURE__ */ jsx_runtime4.jsxs("li", {
                                   className: "text-xs text-base-content leading-snug",
                                   children: [
-                                    /* @__PURE__ */ jsx_runtime3.jsx("span", {
+                                    /* @__PURE__ */ jsx_runtime4.jsx("span", {
                                       className: "font-medium",
                                       children: label
                                     }),
-                                    startMatch && /* @__PURE__ */ jsx_runtime3.jsxs("span", {
+                                    startMatch && /* @__PURE__ */ jsx_runtime4.jsxs("span", {
                                       className: "text-base-content/50 block",
                                       children: [
                                         "from ",
@@ -20730,7 +20757,7 @@ Please note: There are inherent confidentiality risks in communicating by email.
                                   ]
                                 }, j);
                               })
-                            }) : /* @__PURE__ */ jsx_runtime3.jsx("div", {
+                            }) : /* @__PURE__ */ jsx_runtime4.jsx("div", {
                               className: "text-xs text-base-content/30 italic",
                               children: "—"
                             })
@@ -20743,18 +20770,18 @@ Please note: There are inherent confidentiality risks in communicating by email.
               })
             ]
           }),
-          expanded && /* @__PURE__ */ jsx_runtime3.jsxs("div", {
+          expanded && /* @__PURE__ */ jsx_runtime4.jsxs("div", {
             className: "mt-3 space-y-3 border-t border-base-300 pt-3",
             children: [
-              p.style && /* @__PURE__ */ jsx_runtime3.jsxs("div", {
+              p.style && /* @__PURE__ */ jsx_runtime4.jsxs("div", {
                 children: [
-                  /* @__PURE__ */ jsx_runtime3.jsx("div", {
+                  /* @__PURE__ */ jsx_runtime4.jsx("div", {
                     className: "text-xs font-bold text-base-content/50 uppercase tracking-wide mb-1",
                     children: "Therapist Style"
                   }),
-                  /* @__PURE__ */ jsx_runtime3.jsx("div", {
+                  /* @__PURE__ */ jsx_runtime4.jsx("div", {
                     className: "flex flex-wrap gap-1",
-                    children: p.style.split(",").map((s, i) => /* @__PURE__ */ jsx_runtime3.jsx("span", {
+                    children: p.style.split(",").map((s, i) => /* @__PURE__ */ jsx_runtime4.jsx("span", {
                       className: "badge badge-sm badge-outline",
                       style: { borderColor: "#8D5273", color: "#8D5273" },
                       children: s.trim()
@@ -20762,55 +20789,55 @@ Please note: There are inherent confidentiality risks in communicating by email.
                   })
                 ]
               }),
-              p.presentations && /* @__PURE__ */ jsx_runtime3.jsxs("div", {
+              p.presentations && /* @__PURE__ */ jsx_runtime4.jsxs("div", {
                 children: [
-                  /* @__PURE__ */ jsx_runtime3.jsx("div", {
+                  /* @__PURE__ */ jsx_runtime4.jsx("div", {
                     className: "text-xs font-bold text-base-content/50 uppercase tracking-wide mb-1",
                     children: "Presentations"
                   }),
-                  /* @__PURE__ */ jsx_runtime3.jsx("div", {
+                  /* @__PURE__ */ jsx_runtime4.jsx("div", {
                     className: "text-sm text-base-content/80",
                     children: p.presentations
                   })
                 ]
               }),
-              p.modalities && /* @__PURE__ */ jsx_runtime3.jsxs("div", {
+              p.modalities && /* @__PURE__ */ jsx_runtime4.jsxs("div", {
                 children: [
-                  /* @__PURE__ */ jsx_runtime3.jsx("div", {
+                  /* @__PURE__ */ jsx_runtime4.jsx("div", {
                     className: "text-xs font-bold text-base-content/50 uppercase tracking-wide mb-1",
                     children: "Modalities"
                   }),
-                  /* @__PURE__ */ jsx_runtime3.jsx("div", {
+                  /* @__PURE__ */ jsx_runtime4.jsx("div", {
                     className: "text-sm text-base-content/80",
                     children: p.modalities
                   })
                 ]
               }),
-              p.billing_types && /* @__PURE__ */ jsx_runtime3.jsxs("div", {
+              p.billing_types && /* @__PURE__ */ jsx_runtime4.jsxs("div", {
                 children: [
-                  /* @__PURE__ */ jsx_runtime3.jsx("div", {
+                  /* @__PURE__ */ jsx_runtime4.jsx("div", {
                     className: "text-xs font-bold text-base-content/50 uppercase tracking-wide mb-1",
                     children: "Billing"
                   }),
-                  /* @__PURE__ */ jsx_runtime3.jsx("div", {
+                  /* @__PURE__ */ jsx_runtime4.jsx("div", {
                     className: "text-sm",
                     children: p.billing_types
                   })
                 ]
               }),
-              p.religions_groups && /* @__PURE__ */ jsx_runtime3.jsxs("div", {
+              p.religions_groups && /* @__PURE__ */ jsx_runtime4.jsxs("div", {
                 children: [
-                  /* @__PURE__ */ jsx_runtime3.jsx("div", {
+                  /* @__PURE__ */ jsx_runtime4.jsx("div", {
                     className: "text-xs font-bold text-base-content/50 uppercase tracking-wide mb-1",
                     children: "Cultural / Religious"
                   }),
-                  /* @__PURE__ */ jsx_runtime3.jsx("div", {
+                  /* @__PURE__ */ jsx_runtime4.jsx("div", {
                     className: "text-sm",
                     children: p.religions_groups
                   })
                 ]
               }),
-              p.last_updated && /* @__PURE__ */ jsx_runtime3.jsxs("div", {
+              p.last_updated && /* @__PURE__ */ jsx_runtime4.jsxs("div", {
                 className: "text-xs text-base-content/40",
                 children: [
                   "Last updated: ",
@@ -20909,38 +20936,38 @@ Please note: There are inherent confidentiality risks in communicating by email.
       setSentSuccess(true);
       setTimeout(() => setSentSuccess(false), 4000);
     };
-    return /* @__PURE__ */ jsx_runtime3.jsxs("div", {
+    return /* @__PURE__ */ jsx_runtime4.jsxs("div", {
       className: "pb-24",
       children: [
-        sentSuccess && /* @__PURE__ */ jsx_runtime3.jsx("div", {
+        sentSuccess && /* @__PURE__ */ jsx_runtime4.jsx("div", {
           className: "alert alert-success mb-4",
-          children: /* @__PURE__ */ jsx_runtime3.jsx("span", {
+          children: /* @__PURE__ */ jsx_runtime4.jsx("span", {
             children: "✓ Email sent successfully to the client!"
           })
         }),
-        /* @__PURE__ */ jsx_runtime3.jsxs("div", {
+        /* @__PURE__ */ jsx_runtime4.jsxs("div", {
           className: "rounded-xl mb-5 px-6 py-5",
           style: { backgroundColor: "#f0edf5" },
           children: [
-            /* @__PURE__ */ jsx_runtime3.jsxs("div", {
+            /* @__PURE__ */ jsx_runtime4.jsxs("div", {
               className: "flex items-center justify-between gap-2 mb-4",
               children: [
-                /* @__PURE__ */ jsx_runtime3.jsxs("div", {
+                /* @__PURE__ */ jsx_runtime4.jsxs("div", {
                   className: "flex items-center gap-2",
                   children: [
-                    /* @__PURE__ */ jsx_runtime3.jsx("span", {
+                    /* @__PURE__ */ jsx_runtime4.jsx("span", {
                       className: "text-xs font-bold uppercase tracking-widest px-2.5 py-1 rounded text-white",
                       style: { backgroundColor: "#2C244C" },
                       children: "Required"
                     }),
-                    /* @__PURE__ */ jsx_runtime3.jsx("span", {
+                    /* @__PURE__ */ jsx_runtime4.jsx("span", {
                       className: "font-semibold text-base",
                       style: { color: "#2C244C" },
                       children: "Tell us about the client first"
                     })
                   ]
                 }),
-                /* @__PURE__ */ jsx_runtime3.jsx("button", {
+                /* @__PURE__ */ jsx_runtime4.jsx("button", {
                   onClick: resetAll,
                   className: "btn btn-sm gap-1.5 font-semibold",
                   style: { backgroundColor: "#8D5273", color: "white", borderColor: "#8D5273" },
@@ -20949,25 +20976,25 @@ Please note: There are inherent confidentiality risks in communicating by email.
                 })
               ]
             }),
-            /* @__PURE__ */ jsx_runtime3.jsxs("div", {
+            /* @__PURE__ */ jsx_runtime4.jsxs("div", {
               className: "flex flex-wrap gap-10 mb-5",
               children: [
-                /* @__PURE__ */ jsx_runtime3.jsxs("div", {
+                /* @__PURE__ */ jsx_runtime4.jsxs("div", {
                   children: [
-                    /* @__PURE__ */ jsx_runtime3.jsxs("div", {
+                    /* @__PURE__ */ jsx_runtime4.jsxs("div", {
                       className: "text-xs font-semibold mb-2",
                       style: { color: "#2C244C" },
                       children: [
                         "Session type ",
-                        gateClientType && /* @__PURE__ */ jsx_runtime3.jsx("span", {
+                        gateClientType && /* @__PURE__ */ jsx_runtime4.jsx("span", {
                           className: "text-green-600 ml-1",
                           children: "✓"
                         })
                       ]
                     }),
-                    /* @__PURE__ */ jsx_runtime3.jsx("div", {
+                    /* @__PURE__ */ jsx_runtime4.jsx("div", {
                       className: "flex gap-2 flex-wrap",
-                      children: ["Individual", "Couples", "Supervision"].map((opt) => /* @__PURE__ */ jsx_runtime3.jsx("button", {
+                      children: ["Individual", "Couples", "Supervision"].map((opt) => /* @__PURE__ */ jsx_runtime4.jsx("button", {
                         onClick: () => {
                           setGateClientType(opt);
                           if (opt === "Supervision") {
@@ -20982,22 +21009,22 @@ Please note: There are inherent confidentiality risks in communicating by email.
                     })
                   ]
                 }),
-                gateClientType !== "Supervision" && /* @__PURE__ */ jsx_runtime3.jsxs("div", {
+                gateClientType !== "Supervision" && /* @__PURE__ */ jsx_runtime4.jsxs("div", {
                   children: [
-                    /* @__PURE__ */ jsx_runtime3.jsxs("div", {
+                    /* @__PURE__ */ jsx_runtime4.jsxs("div", {
                       className: "text-xs font-semibold mb-2",
                       style: { color: "#2C244C" },
                       children: [
                         "Client's age ",
-                        gateAgeBracket && /* @__PURE__ */ jsx_runtime3.jsx("span", {
+                        gateAgeBracket && /* @__PURE__ */ jsx_runtime4.jsx("span", {
                           className: "text-green-600 ml-1",
                           children: "✓"
                         })
                       ]
                     }),
-                    /* @__PURE__ */ jsx_runtime3.jsx("div", {
+                    /* @__PURE__ */ jsx_runtime4.jsx("div", {
                       className: "flex gap-2 flex-wrap",
-                      children: ["Under 12", "12–15", "16–17", "18–24", "25+"].map((opt) => /* @__PURE__ */ jsx_runtime3.jsx("button", {
+                      children: ["Under 12", "12–15", "16–17", "18–24", "25+"].map((opt) => /* @__PURE__ */ jsx_runtime4.jsx("button", {
                         onClick: () => setGateAgeBracket(opt),
                         className: "px-4 py-1.5 rounded-full text-sm font-medium border transition-all",
                         style: gateAgeBracket === opt ? { backgroundColor: "#2C244C", color: "white", borderColor: "#2C244C" } : { backgroundColor: "white", color: "#2C244C", borderColor: "#CDA8BA" },
@@ -21008,68 +21035,68 @@ Please note: There are inherent confidentiality risks in communicating by email.
                 })
               ]
             }),
-            gateClientType !== "Supervision" && /* @__PURE__ */ jsx_runtime3.jsxs("div", {
+            gateClientType !== "Supervision" && /* @__PURE__ */ jsx_runtime4.jsxs("div", {
               children: [
-                /* @__PURE__ */ jsx_runtime3.jsxs("div", {
+                /* @__PURE__ */ jsx_runtime4.jsxs("div", {
                   className: "text-xs font-semibold mb-2",
                   style: { color: "#2C244C" },
                   children: [
                     "Client's gender ",
-                    gateClientGender && /* @__PURE__ */ jsx_runtime3.jsx("span", {
+                    gateClientGender && /* @__PURE__ */ jsx_runtime4.jsx("span", {
                       className: "text-green-600 ml-1",
                       children: "✓"
                     })
                   ]
                 }),
-                /* @__PURE__ */ jsx_runtime3.jsx("div", {
+                /* @__PURE__ */ jsx_runtime4.jsx("div", {
                   className: "flex gap-2 flex-wrap",
-                  children: ["Male", "Female", "Non-binary / Other"].map((opt) => /* @__PURE__ */ jsx_runtime3.jsx("button", {
+                  children: ["Male", "Female", "Non-binary / Other"].map((opt) => /* @__PURE__ */ jsx_runtime4.jsx("button", {
                     onClick: () => setGateClientGender(opt),
                     className: "px-4 py-1.5 rounded-full text-sm font-medium border transition-all",
                     style: gateClientGender === opt ? { backgroundColor: "#2C244C", color: "white", borderColor: "#2C244C" } : { backgroundColor: "white", color: "#2C244C", borderColor: "#CDA8BA" },
                     children: opt
                   }, opt))
                 }),
-                (gateClientGender === "Male" || gateClientGender === "Non-binary / Other") && /* @__PURE__ */ jsx_runtime3.jsx("div", {
+                (gateClientGender === "Male" || gateClientGender === "Non-binary / Other") && /* @__PURE__ */ jsx_runtime4.jsx("div", {
                   className: "text-xs mt-2",
                   style: { color: "#8D5273" },
                   children: "⚠️ Alex Barry, Chiara Killey and Clare Tuttleby accept female clients only."
                 })
               ]
             }),
-            /* @__PURE__ */ jsx_runtime3.jsxs("div", {
+            /* @__PURE__ */ jsx_runtime4.jsxs("div", {
               className: "mt-4 pt-4",
               style: { borderTop: "1px solid #CDA8BA" },
               children: [
-                /* @__PURE__ */ jsx_runtime3.jsxs("div", {
+                /* @__PURE__ */ jsx_runtime4.jsxs("div", {
                   className: "text-xs font-semibold mb-2",
                   style: { color: "#2C244C" },
                   children: [
                     "Include monthly availability?",
                     " ",
-                    /* @__PURE__ */ jsx_runtime3.jsx("span", {
+                    /* @__PURE__ */ jsx_runtime4.jsx("span", {
                       className: "font-normal",
                       style: { color: "#8D5273" },
                       children: "Only for low risk or approved clients"
                     })
                   ]
                 }),
-                /* @__PURE__ */ jsx_runtime3.jsxs("div", {
+                /* @__PURE__ */ jsx_runtime4.jsxs("div", {
                   className: "flex gap-2 flex-wrap items-center",
                   children: [
-                    /* @__PURE__ */ jsx_runtime3.jsx("button", {
+                    /* @__PURE__ */ jsx_runtime4.jsx("button", {
                       onClick: () => setIncludeMonthly(false),
                       className: "px-4 py-1.5 rounded-full text-sm font-medium border transition-all",
                       style: !includeMonthly ? { backgroundColor: "#2C244C", color: "white", borderColor: "#2C244C" } : { backgroundColor: "white", color: "#2C244C", borderColor: "#CDA8BA" },
                       children: "No (default)"
                     }),
-                    /* @__PURE__ */ jsx_runtime3.jsx("button", {
+                    /* @__PURE__ */ jsx_runtime4.jsx("button", {
                       onClick: () => setIncludeMonthly(true),
                       className: "px-4 py-1.5 rounded-full text-sm font-medium border transition-all",
                       style: includeMonthly ? { backgroundColor: "#8D5273", color: "white", borderColor: "#8D5273" } : { backgroundColor: "white", color: "#2C244C", borderColor: "#CDA8BA" },
                       children: "✓ Yes — include monthly slots"
                     }),
-                    includeMonthly && /* @__PURE__ */ jsx_runtime3.jsx("span", {
+                    includeMonthly && /* @__PURE__ */ jsx_runtime4.jsx("span", {
                       className: "text-xs",
                       style: { color: "#8D5273" },
                       children: "Monthly availability will be shown on all cards"
@@ -21080,59 +21107,59 @@ Please note: There are inherent confidentiality risks in communicating by email.
             })
           ]
         }),
-        /* @__PURE__ */ jsx_runtime3.jsxs(jsx_runtime3.Fragment, {
+        /* @__PURE__ */ jsx_runtime4.jsxs(jsx_runtime4.Fragment, {
           children: [
-            /* @__PURE__ */ jsx_runtime3.jsx("div", {
+            /* @__PURE__ */ jsx_runtime4.jsx("div", {
               className: "card bg-white shadow-sm border mb-6",
               style: { borderColor: "#CDA8BA" },
-              children: /* @__PURE__ */ jsx_runtime3.jsxs("div", {
+              children: /* @__PURE__ */ jsx_runtime4.jsxs("div", {
                 className: "card-body p-4",
                 children: [
-                  /* @__PURE__ */ jsx_runtime3.jsx("h2", {
+                  /* @__PURE__ */ jsx_runtime4.jsx("h2", {
                     className: "font-bold text-lg mb-3",
                     children: "Search and Filter"
                   }),
-                  /* @__PURE__ */ jsx_runtime3.jsxs("div", {
+                  /* @__PURE__ */ jsx_runtime4.jsxs("div", {
                     className: "mb-3",
                     children: [
-                      /* @__PURE__ */ jsx_runtime3.jsx("label", {
+                      /* @__PURE__ */ jsx_runtime4.jsx("label", {
                         className: "label label-text font-semibold pb-1",
                         children: "Keywords"
                       }),
-                      /* @__PURE__ */ jsx_runtime3.jsx("input", {
+                      /* @__PURE__ */ jsx_runtime4.jsx("input", {
                         type: "text",
                         placeholder: "e.g. trauma, EMDR, anxiety, LGBTQ, eating disorder...",
                         className: "input input-bordered w-full",
                         value: keyword,
                         onChange: (e) => setKeyword(e.target.value)
                       }),
-                      /* @__PURE__ */ jsx_runtime3.jsx("div", {
+                      /* @__PURE__ */ jsx_runtime4.jsx("div", {
                         className: "text-xs text-base-content/50 mt-1",
                         children: "Searches presentations, modalities, name and specialty"
                       })
                     ]
                   }),
-                  /* @__PURE__ */ jsx_runtime3.jsxs("div", {
+                  /* @__PURE__ */ jsx_runtime4.jsxs("div", {
                     className: "grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 mb-3",
                     children: [
-                      /* @__PURE__ */ jsx_runtime3.jsxs("div", {
+                      /* @__PURE__ */ jsx_runtime4.jsxs("div", {
                         children: [
-                          /* @__PURE__ */ jsx_runtime3.jsxs("div", {
+                          /* @__PURE__ */ jsx_runtime4.jsxs("div", {
                             className: "flex items-center justify-between mb-1",
                             children: [
-                              /* @__PURE__ */ jsx_runtime3.jsx("span", {
+                              /* @__PURE__ */ jsx_runtime4.jsx("span", {
                                 className: "text-xs font-bold text-base-content/50 uppercase tracking-wide",
                                 children: "Location"
                               }),
-                              selectedLocations.length > 1 && /* @__PURE__ */ jsx_runtime3.jsxs("div", {
+                              selectedLocations.length > 1 && /* @__PURE__ */ jsx_runtime4.jsxs("div", {
                                 className: "flex rounded overflow-hidden border border-purple-200 text-xs",
                                 children: [
-                                  /* @__PURE__ */ jsx_runtime3.jsx("button", {
+                                  /* @__PURE__ */ jsx_runtime4.jsx("button", {
                                     onClick: () => setLocationMatchAll(false),
                                     className: `px-2 py-0.5 ${!locationMatchAll ? "bg-purple-600 text-white" : "bg-white text-purple-600"}`,
                                     children: "Match any"
                                   }),
-                                  /* @__PURE__ */ jsx_runtime3.jsx("button", {
+                                  /* @__PURE__ */ jsx_runtime4.jsx("button", {
                                     onClick: () => setLocationMatchAll(true),
                                     className: `px-2 py-0.5 ${locationMatchAll ? "bg-purple-600 text-white" : "bg-white text-purple-600"}`,
                                     children: "Match all"
@@ -21141,7 +21168,7 @@ Please note: There are inherent confidentiality risks in communicating by email.
                               })
                             ]
                           }),
-                          /* @__PURE__ */ jsx_runtime3.jsx(MultiSelectDropdown, {
+                          /* @__PURE__ */ jsx_runtime4.jsx(MultiSelectDropdown, {
                             label: "",
                             options: ["Greville St, Prahran", "Burke Rd, Camberwell", "Victoria St, St Kilda", "Telehealth"],
                             selected: selectedLocations,
@@ -21150,26 +21177,26 @@ Please note: There are inherent confidentiality risks in communicating by email.
                           })
                         ]
                       }),
-                      /* @__PURE__ */ jsx_runtime3.jsxs("div", {
+                      /* @__PURE__ */ jsx_runtime4.jsxs("div", {
                         children: [
-                          /* @__PURE__ */ jsx_runtime3.jsx("label", {
+                          /* @__PURE__ */ jsx_runtime4.jsx("label", {
                             className: "label label-text font-semibold pb-1",
                             children: "Gender"
                           }),
-                          /* @__PURE__ */ jsx_runtime3.jsxs("select", {
+                          /* @__PURE__ */ jsx_runtime4.jsxs("select", {
                             className: "select select-bordered w-full select-sm",
                             value: gender,
                             onChange: (e) => setGender(e.target.value),
                             children: [
-                              /* @__PURE__ */ jsx_runtime3.jsx("option", {
+                              /* @__PURE__ */ jsx_runtime4.jsx("option", {
                                 value: "",
                                 children: "Any gender"
                               }),
-                              /* @__PURE__ */ jsx_runtime3.jsx("option", {
+                              /* @__PURE__ */ jsx_runtime4.jsx("option", {
                                 value: "Female",
                                 children: "Female"
                               }),
-                              /* @__PURE__ */ jsx_runtime3.jsx("option", {
+                              /* @__PURE__ */ jsx_runtime4.jsx("option", {
                                 value: "Male",
                                 children: "Male"
                               })
@@ -21177,26 +21204,26 @@ Please note: There are inherent confidentiality risks in communicating by email.
                           })
                         ]
                       }),
-                      /* @__PURE__ */ jsx_runtime3.jsxs("div", {
+                      /* @__PURE__ */ jsx_runtime4.jsxs("div", {
                         children: [
-                          /* @__PURE__ */ jsx_runtime3.jsx("label", {
+                          /* @__PURE__ */ jsx_runtime4.jsx("label", {
                             className: "label label-text font-semibold pb-1",
                             children: "Client Type"
                           }),
-                          /* @__PURE__ */ jsx_runtime3.jsxs("select", {
+                          /* @__PURE__ */ jsx_runtime4.jsxs("select", {
                             className: "select select-bordered w-full select-sm",
                             value: clientType,
                             onChange: (e) => setClientType(e.target.value),
                             children: [
-                              /* @__PURE__ */ jsx_runtime3.jsx("option", {
+                              /* @__PURE__ */ jsx_runtime4.jsx("option", {
                                 value: "",
                                 children: "Any"
                               }),
-                              /* @__PURE__ */ jsx_runtime3.jsx("option", {
+                              /* @__PURE__ */ jsx_runtime4.jsx("option", {
                                 value: "Individual",
                                 children: "Individual"
                               }),
-                              /* @__PURE__ */ jsx_runtime3.jsx("option", {
+                              /* @__PURE__ */ jsx_runtime4.jsx("option", {
                                 value: "Couples",
                                 children: "Couples"
                               })
@@ -21204,38 +21231,38 @@ Please note: There are inherent confidentiality risks in communicating by email.
                           })
                         ]
                       }),
-                      /* @__PURE__ */ jsx_runtime3.jsxs("div", {
+                      /* @__PURE__ */ jsx_runtime4.jsxs("div", {
                         children: [
-                          /* @__PURE__ */ jsx_runtime3.jsx("label", {
+                          /* @__PURE__ */ jsx_runtime4.jsx("label", {
                             className: "label label-text font-semibold pb-1",
                             children: "Therapist Type"
                           }),
-                          /* @__PURE__ */ jsx_runtime3.jsxs("select", {
+                          /* @__PURE__ */ jsx_runtime4.jsxs("select", {
                             className: "select select-bordered w-full select-sm",
                             value: therapistType,
                             onChange: (e) => setTherapistType(e.target.value),
                             children: [
-                              /* @__PURE__ */ jsx_runtime3.jsx("option", {
+                              /* @__PURE__ */ jsx_runtime4.jsx("option", {
                                 value: "",
                                 children: "Any type"
                               }),
-                              /* @__PURE__ */ jsx_runtime3.jsx("option", {
+                              /* @__PURE__ */ jsx_runtime4.jsx("option", {
                                 value: "Clinical Psychologist",
                                 children: "Clinical Psychologist"
                               }),
-                              /* @__PURE__ */ jsx_runtime3.jsx("option", {
+                              /* @__PURE__ */ jsx_runtime4.jsx("option", {
                                 value: "Psychologist",
                                 children: "Psychologist"
                               }),
-                              /* @__PURE__ */ jsx_runtime3.jsx("option", {
+                              /* @__PURE__ */ jsx_runtime4.jsx("option", {
                                 value: "Social Worker",
                                 children: "Social Worker"
                               }),
-                              /* @__PURE__ */ jsx_runtime3.jsx("option", {
+                              /* @__PURE__ */ jsx_runtime4.jsx("option", {
                                 value: "Psychotherapist",
                                 children: "Psychotherapist"
                               }),
-                              /* @__PURE__ */ jsx_runtime3.jsx("option", {
+                              /* @__PURE__ */ jsx_runtime4.jsx("option", {
                                 value: "Counsellor",
                                 children: "Counsellor"
                               })
@@ -21245,27 +21272,27 @@ Please note: There are inherent confidentiality risks in communicating by email.
                       })
                     ]
                   }),
-                  /* @__PURE__ */ jsx_runtime3.jsxs("div", {
+                  /* @__PURE__ */ jsx_runtime4.jsxs("div", {
                     className: "grid grid-cols-1 md:grid-cols-2 gap-3 mb-3",
                     children: [
-                      /* @__PURE__ */ jsx_runtime3.jsxs("div", {
+                      /* @__PURE__ */ jsx_runtime4.jsxs("div", {
                         children: [
-                          /* @__PURE__ */ jsx_runtime3.jsxs("div", {
+                          /* @__PURE__ */ jsx_runtime4.jsxs("div", {
                             className: "flex items-center justify-between mb-1",
                             children: [
-                              /* @__PURE__ */ jsx_runtime3.jsx("span", {
+                              /* @__PURE__ */ jsx_runtime4.jsx("span", {
                                 className: "text-xs font-bold text-base-content/50 uppercase tracking-wide",
                                 children: "Presentations"
                               }),
-                              selectedPresentations.length > 1 && /* @__PURE__ */ jsx_runtime3.jsxs("div", {
+                              selectedPresentations.length > 1 && /* @__PURE__ */ jsx_runtime4.jsxs("div", {
                                 className: "flex rounded overflow-hidden border border-purple-200 text-xs",
                                 children: [
-                                  /* @__PURE__ */ jsx_runtime3.jsx("button", {
+                                  /* @__PURE__ */ jsx_runtime4.jsx("button", {
                                     onClick: () => setPresentationsMatchAll(false),
                                     className: `px-2 py-0.5 ${!presentationsMatchAll ? "bg-purple-600 text-white" : "bg-white text-purple-600"}`,
                                     children: "Match any"
                                   }),
-                                  /* @__PURE__ */ jsx_runtime3.jsx("button", {
+                                  /* @__PURE__ */ jsx_runtime4.jsx("button", {
                                     onClick: () => setPresentationsMatchAll(true),
                                     className: `px-2 py-0.5 ${presentationsMatchAll ? "bg-purple-600 text-white" : "bg-white text-purple-600"}`,
                                     children: "Match all"
@@ -21274,7 +21301,7 @@ Please note: There are inherent confidentiality risks in communicating by email.
                               })
                             ]
                           }),
-                          /* @__PURE__ */ jsx_runtime3.jsx(MultiSelectDropdown, {
+                          /* @__PURE__ */ jsx_runtime4.jsx(MultiSelectDropdown, {
                             label: "",
                             options: PRESENTATION_OPTIONS,
                             selected: selectedPresentations,
@@ -21283,24 +21310,24 @@ Please note: There are inherent confidentiality risks in communicating by email.
                           })
                         ]
                       }),
-                      /* @__PURE__ */ jsx_runtime3.jsxs("div", {
+                      /* @__PURE__ */ jsx_runtime4.jsxs("div", {
                         children: [
-                          /* @__PURE__ */ jsx_runtime3.jsxs("div", {
+                          /* @__PURE__ */ jsx_runtime4.jsxs("div", {
                             className: "flex items-center justify-between mb-1",
                             children: [
-                              /* @__PURE__ */ jsx_runtime3.jsx("span", {
+                              /* @__PURE__ */ jsx_runtime4.jsx("span", {
                                 className: "text-xs font-bold text-base-content/50 uppercase tracking-wide",
                                 children: "Modalities"
                               }),
-                              selectedModalities.length > 1 && /* @__PURE__ */ jsx_runtime3.jsxs("div", {
+                              selectedModalities.length > 1 && /* @__PURE__ */ jsx_runtime4.jsxs("div", {
                                 className: "flex rounded overflow-hidden border border-purple-200 text-xs",
                                 children: [
-                                  /* @__PURE__ */ jsx_runtime3.jsx("button", {
+                                  /* @__PURE__ */ jsx_runtime4.jsx("button", {
                                     onClick: () => setModalitiesMatchAll(false),
                                     className: `px-2 py-0.5 ${!modalitiesMatchAll ? "bg-purple-600 text-white" : "bg-white text-purple-600"}`,
                                     children: "Match any"
                                   }),
-                                  /* @__PURE__ */ jsx_runtime3.jsx("button", {
+                                  /* @__PURE__ */ jsx_runtime4.jsx("button", {
                                     onClick: () => setModalitiesMatchAll(true),
                                     className: `px-2 py-0.5 ${modalitiesMatchAll ? "bg-purple-600 text-white" : "bg-white text-purple-600"}`,
                                     children: "Match all"
@@ -21309,7 +21336,7 @@ Please note: There are inherent confidentiality risks in communicating by email.
                               })
                             ]
                           }),
-                          /* @__PURE__ */ jsx_runtime3.jsx(MultiSelectDropdown, {
+                          /* @__PURE__ */ jsx_runtime4.jsx(MultiSelectDropdown, {
                             label: "",
                             options: MODALITY_OPTIONS,
                             selected: selectedModalities,
@@ -21318,24 +21345,24 @@ Please note: There are inherent confidentiality risks in communicating by email.
                           })
                         ]
                       }),
-                      /* @__PURE__ */ jsx_runtime3.jsxs("div", {
+                      /* @__PURE__ */ jsx_runtime4.jsxs("div", {
                         children: [
-                          /* @__PURE__ */ jsx_runtime3.jsxs("div", {
+                          /* @__PURE__ */ jsx_runtime4.jsxs("div", {
                             className: "flex items-center justify-between mb-1",
                             children: [
-                              /* @__PURE__ */ jsx_runtime3.jsx("span", {
+                              /* @__PURE__ */ jsx_runtime4.jsx("span", {
                                 className: "text-xs font-bold text-base-content/50 uppercase tracking-wide",
                                 children: "Therapist Style"
                               }),
-                              selectedStyles.length > 1 && /* @__PURE__ */ jsx_runtime3.jsxs("div", {
+                              selectedStyles.length > 1 && /* @__PURE__ */ jsx_runtime4.jsxs("div", {
                                 className: "flex rounded overflow-hidden border border-purple-200 text-xs",
                                 children: [
-                                  /* @__PURE__ */ jsx_runtime3.jsx("button", {
+                                  /* @__PURE__ */ jsx_runtime4.jsx("button", {
                                     onClick: () => setStylesMatchAll(false),
                                     className: `px-2 py-0.5 ${!stylesMatchAll ? "bg-purple-600 text-white" : "bg-white text-purple-600"}`,
                                     children: "Match any"
                                   }),
-                                  /* @__PURE__ */ jsx_runtime3.jsx("button", {
+                                  /* @__PURE__ */ jsx_runtime4.jsx("button", {
                                     onClick: () => setStylesMatchAll(true),
                                     className: `px-2 py-0.5 ${stylesMatchAll ? "bg-purple-600 text-white" : "bg-white text-purple-600"}`,
                                     children: "Match all"
@@ -21344,7 +21371,7 @@ Please note: There are inherent confidentiality risks in communicating by email.
                               })
                             ]
                           }),
-                          /* @__PURE__ */ jsx_runtime3.jsx(MultiSelectDropdown, {
+                          /* @__PURE__ */ jsx_runtime4.jsx(MultiSelectDropdown, {
                             label: "",
                             options: STYLE_OPTIONS,
                             selected: selectedStyles,
@@ -21353,7 +21380,7 @@ Please note: There are inherent confidentiality risks in communicating by email.
                           })
                         ]
                       }),
-                      /* @__PURE__ */ jsx_runtime3.jsx(MultiSelectDropdown, {
+                      /* @__PURE__ */ jsx_runtime4.jsx(MultiSelectDropdown, {
                         label: "Billing / Funding",
                         options: BILLING_OPTIONS,
                         selected: selectedBillingTypes,
@@ -21362,16 +21389,16 @@ Please note: There are inherent confidentiality risks in communicating by email.
                       })
                     ]
                   }),
-                  /* @__PURE__ */ jsx_runtime3.jsxs("div", {
+                  /* @__PURE__ */ jsx_runtime4.jsxs("div", {
                     className: "grid grid-cols-1 md:grid-cols-3 gap-3 mb-3",
                     children: [
-                      /* @__PURE__ */ jsx_runtime3.jsxs("div", {
+                      /* @__PURE__ */ jsx_runtime4.jsxs("div", {
                         children: [
-                          /* @__PURE__ */ jsx_runtime3.jsx("label", {
+                          /* @__PURE__ */ jsx_runtime4.jsx("label", {
                             className: "label label-text font-semibold pb-1",
                             children: "Client Age"
                           }),
-                          /* @__PURE__ */ jsx_runtime3.jsx("input", {
+                          /* @__PURE__ */ jsx_runtime4.jsx("input", {
                             type: "number",
                             min: "0",
                             max: "120",
@@ -21380,44 +21407,44 @@ Please note: There are inherent confidentiality risks in communicating by email.
                             value: clientAge,
                             onChange: (e) => setClientAge(e.target.value)
                           }),
-                          /* @__PURE__ */ jsx_runtime3.jsx("div", {
+                          /* @__PURE__ */ jsx_runtime4.jsx("div", {
                             className: "text-xs text-base-content/50 mt-1",
                             children: "Filters to practitioners who accept this age"
                           })
                         ]
                       }),
-                      /* @__PURE__ */ jsx_runtime3.jsx(MultiSelectDropdown, {
+                      /* @__PURE__ */ jsx_runtime4.jsx(MultiSelectDropdown, {
                         label: "Practitioner Name",
                         options: allPractitionerNames,
                         selected: selectedPractitionerNames,
                         onChange: setSelectedPractitionerNames,
                         placeholder: "Any practitioner"
                       }),
-                      /* @__PURE__ */ jsx_runtime3.jsx(MultiSelectDropdown, {
+                      /* @__PURE__ */ jsx_runtime4.jsx(MultiSelectDropdown, {
                         label: "Availability Type",
                         options: ["Weekly", "Fortnightly", "Monthly"],
                         selected: selectedAvailabilityTypes,
                         onChange: setSelectedAvailabilityTypes,
                         placeholder: "Any type"
                       }),
-                      /* @__PURE__ */ jsx_runtime3.jsxs("div", {
+                      /* @__PURE__ */ jsx_runtime4.jsxs("div", {
                         children: [
-                          /* @__PURE__ */ jsx_runtime3.jsxs("div", {
+                          /* @__PURE__ */ jsx_runtime4.jsxs("div", {
                             className: "flex items-center justify-between mb-1",
                             children: [
-                              /* @__PURE__ */ jsx_runtime3.jsx("span", {
+                              /* @__PURE__ */ jsx_runtime4.jsx("span", {
                                 className: "text-xs font-bold text-base-content/50 uppercase tracking-wide",
                                 children: "Day of Week"
                               }),
-                              selectedDays.length > 1 && /* @__PURE__ */ jsx_runtime3.jsxs("div", {
+                              selectedDays.length > 1 && /* @__PURE__ */ jsx_runtime4.jsxs("div", {
                                 className: "flex rounded overflow-hidden border border-purple-200 text-xs",
                                 children: [
-                                  /* @__PURE__ */ jsx_runtime3.jsx("button", {
+                                  /* @__PURE__ */ jsx_runtime4.jsx("button", {
                                     onClick: () => setDaysMatchAll(false),
                                     className: `px-2 py-0.5 ${!daysMatchAll ? "bg-purple-600 text-white" : "bg-white text-purple-600"}`,
                                     children: "Match any"
                                   }),
-                                  /* @__PURE__ */ jsx_runtime3.jsx("button", {
+                                  /* @__PURE__ */ jsx_runtime4.jsx("button", {
                                     onClick: () => setDaysMatchAll(true),
                                     className: `px-2 py-0.5 ${daysMatchAll ? "bg-purple-600 text-white" : "bg-white text-purple-600"}`,
                                     children: "Match all"
@@ -21426,7 +21453,7 @@ Please note: There are inherent confidentiality risks in communicating by email.
                               })
                             ]
                           }),
-                          /* @__PURE__ */ jsx_runtime3.jsx(MultiSelectDropdown, {
+                          /* @__PURE__ */ jsx_runtime4.jsx(MultiSelectDropdown, {
                             label: "",
                             options: DAYS_OF_WEEK,
                             selected: selectedDays,
@@ -21437,40 +21464,40 @@ Please note: There are inherent confidentiality risks in communicating by email.
                       })
                     ]
                   }),
-                  /* @__PURE__ */ jsx_runtime3.jsxs("div", {
+                  /* @__PURE__ */ jsx_runtime4.jsxs("div", {
                     className: "flex flex-wrap gap-4 items-center",
                     children: [
-                      /* @__PURE__ */ jsx_runtime3.jsxs("label", {
+                      /* @__PURE__ */ jsx_runtime4.jsxs("label", {
                         className: "cursor-pointer flex items-center gap-2",
                         children: [
-                          /* @__PURE__ */ jsx_runtime3.jsx("input", {
+                          /* @__PURE__ */ jsx_runtime4.jsx("input", {
                             type: "checkbox",
                             className: "checkbox checkbox-sm checkbox-primary",
                             checked: hasAvailability,
                             onChange: (e) => setHasAvailability(e.target.checked)
                           }),
-                          /* @__PURE__ */ jsx_runtime3.jsx("span", {
+                          /* @__PURE__ */ jsx_runtime4.jsx("span", {
                             className: "text-sm font-medium",
                             children: "Has current availability"
                           })
                         ]
                       }),
-                      /* @__PURE__ */ jsx_runtime3.jsxs("label", {
+                      /* @__PURE__ */ jsx_runtime4.jsxs("label", {
                         className: "cursor-pointer flex items-center gap-2",
                         children: [
-                          /* @__PURE__ */ jsx_runtime3.jsx("input", {
+                          /* @__PURE__ */ jsx_runtime4.jsx("input", {
                             type: "checkbox",
                             className: "checkbox checkbox-sm checkbox-accent",
                             checked: afterHours,
                             onChange: (e) => setAfterHours(e.target.checked)
                           }),
-                          /* @__PURE__ */ jsx_runtime3.jsx("span", {
+                          /* @__PURE__ */ jsx_runtime4.jsx("span", {
                             className: "text-sm font-medium",
                             children: "After hours"
                           })
                         ]
                       }),
-                      hasFilters && /* @__PURE__ */ jsx_runtime3.jsx("button", {
+                      hasFilters && /* @__PURE__ */ jsx_runtime4.jsx("button", {
                         onClick: clearFilters,
                         className: "btn btn-ghost btn-xs ml-auto",
                         children: "Clear filters"
@@ -21480,10 +21507,10 @@ Please note: There are inherent confidentiality risks in communicating by email.
                 ]
               })
             }),
-            /* @__PURE__ */ jsx_runtime3.jsxs("div", {
+            /* @__PURE__ */ jsx_runtime4.jsxs("div", {
               className: "flex items-center justify-between mb-4",
               children: [
-                /* @__PURE__ */ jsx_runtime3.jsxs("h2", {
+                /* @__PURE__ */ jsx_runtime4.jsxs("h2", {
                   className: "font-bold text-lg",
                   children: [
                     results.length,
@@ -21492,24 +21519,24 @@ Please note: There are inherent confidentiality risks in communicating by email.
                     hasFilters ? " matched" : ""
                   ]
                 }),
-                /* @__PURE__ */ jsx_runtime3.jsxs("div", {
+                /* @__PURE__ */ jsx_runtime4.jsxs("div", {
                   className: "flex items-center gap-2",
                   children: [
-                    keyword && /* @__PURE__ */ jsx_runtime3.jsx("div", {
+                    keyword && /* @__PURE__ */ jsx_runtime4.jsx("div", {
                       className: "text-sm text-base-content/60",
                       children: "Sorted by relevance"
                     }),
-                    selectedNames.length > 0 && /* @__PURE__ */ jsx_runtime3.jsxs("div", {
+                    selectedNames.length > 0 && /* @__PURE__ */ jsx_runtime4.jsxs("div", {
                       className: "flex items-center gap-2",
                       children: [
-                        /* @__PURE__ */ jsx_runtime3.jsxs("span", {
+                        /* @__PURE__ */ jsx_runtime4.jsxs("span", {
                           className: "text-sm text-base-content/60",
                           children: [
                             selectedNames.length,
                             " selected"
                           ]
                         }),
-                        /* @__PURE__ */ jsx_runtime3.jsx("button", {
+                        /* @__PURE__ */ jsx_runtime4.jsx("button", {
                           onClick: () => setSelectedNames([]),
                           className: "btn btn-ghost btn-xs",
                           children: "Clear"
@@ -21520,34 +21547,34 @@ Please note: There are inherent confidentiality risks in communicating by email.
                 })
               ]
             }),
-            !gateComplete ? /* @__PURE__ */ jsx_runtime3.jsx("div", {
+            !gateComplete ? /* @__PURE__ */ jsx_runtime4.jsx("div", {
               className: "card bg-white shadow-sm border",
               style: { borderColor: "#CDA8BA" },
-              children: /* @__PURE__ */ jsx_runtime3.jsx("div", {
+              children: /* @__PURE__ */ jsx_runtime4.jsx("div", {
                 className: "card-body text-center py-12",
-                children: /* @__PURE__ */ jsx_runtime3.jsx("p", {
+                children: /* @__PURE__ */ jsx_runtime4.jsx("p", {
                   className: "text-base font-medium",
                   style: { color: "#2C244C" },
                   children: "Complete the required questions above to see matching practitioners"
                 })
               })
-            }) : results.length === 0 ? /* @__PURE__ */ jsx_runtime3.jsx("div", {
+            }) : results.length === 0 ? /* @__PURE__ */ jsx_runtime4.jsx("div", {
               className: "card bg-white shadow-sm border",
               style: { borderColor: "#CDA8BA" },
-              children: /* @__PURE__ */ jsx_runtime3.jsxs("div", {
+              children: /* @__PURE__ */ jsx_runtime4.jsxs("div", {
                 className: "card-body text-center py-12",
                 children: [
-                  /* @__PURE__ */ jsx_runtime3.jsx("p", {
+                  /* @__PURE__ */ jsx_runtime4.jsx("p", {
                     className: "text-lg",
                     style: { color: "#36454F" },
                     children: "No practitioners match your search"
                   }),
-                  /* @__PURE__ */ jsx_runtime3.jsx("p", {
+                  /* @__PURE__ */ jsx_runtime4.jsx("p", {
                     className: "text-sm",
                     style: { color: "#CDA8BA" },
                     children: "Try removing some filters"
                   }),
-                  /* @__PURE__ */ jsx_runtime3.jsx("button", {
+                  /* @__PURE__ */ jsx_runtime4.jsx("button", {
                     onClick: clearFilters,
                     className: "btn btn-sm mt-4 mx-auto text-white",
                     style: { backgroundColor: "#2C244C" },
@@ -21555,9 +21582,9 @@ Please note: There are inherent confidentiality risks in communicating by email.
                   })
                 ]
               })
-            }) : /* @__PURE__ */ jsx_runtime3.jsx("div", {
-              children: results.map((item, idx) => /* @__PURE__ */ jsx_runtime3.jsx("div", {
-                children: /* @__PURE__ */ jsx_runtime3.jsx(PractitionerCard, {
+            }) : /* @__PURE__ */ jsx_runtime4.jsx("div", {
+              children: results.map((item, idx) => /* @__PURE__ */ jsx_runtime4.jsx("div", {
+                children: /* @__PURE__ */ jsx_runtime4.jsx(PractitionerCard, {
                   p: item.p,
                   locationFilter: selectedLocations,
                   isSelected: selectedNames.includes(item.p.name),
@@ -21567,20 +21594,20 @@ Please note: There are inherent confidentiality risks in communicating by email.
                 })
               }, idx))
             }),
-            selectedNames.length > 0 && /* @__PURE__ */ jsx_runtime3.jsx("div", {
+            selectedNames.length > 0 && /* @__PURE__ */ jsx_runtime4.jsx("div", {
               className: "fixed bottom-0 left-0 right-0 z-50 p-4 bg-white shadow-lg",
               style: { borderTop: "2px solid #CDA8BA" },
-              children: /* @__PURE__ */ jsx_runtime3.jsxs("div", {
+              children: /* @__PURE__ */ jsx_runtime4.jsxs("div", {
                 className: "max-w-4xl mx-auto flex items-center justify-between gap-4",
                 children: [
-                  /* @__PURE__ */ jsx_runtime3.jsxs("div", {
+                  /* @__PURE__ */ jsx_runtime4.jsxs("div", {
                     className: "flex items-center gap-2",
                     children: [
-                      /* @__PURE__ */ jsx_runtime3.jsx(SquareCheckBig, {
+                      /* @__PURE__ */ jsx_runtime4.jsx(SquareCheckBig, {
                         size: 18,
                         style: { color: "#8D5273" }
                       }),
-                      /* @__PURE__ */ jsx_runtime3.jsxs("span", {
+                      /* @__PURE__ */ jsx_runtime4.jsxs("span", {
                         className: "font-semibold",
                         children: [
                           selectedNames.length,
@@ -21589,7 +21616,7 @@ Please note: There are inherent confidentiality risks in communicating by email.
                           " selected"
                         ]
                       }),
-                      /* @__PURE__ */ jsx_runtime3.jsxs("span", {
+                      /* @__PURE__ */ jsx_runtime4.jsxs("span", {
                         className: "text-base-content/50 text-sm hidden sm:inline",
                         children: [
                           "— ",
@@ -21598,21 +21625,21 @@ Please note: There are inherent confidentiality risks in communicating by email.
                       })
                     ]
                   }),
-                  /* @__PURE__ */ jsx_runtime3.jsxs("div", {
+                  /* @__PURE__ */ jsx_runtime4.jsxs("div", {
                     className: "flex items-center gap-2",
                     children: [
-                      /* @__PURE__ */ jsx_runtime3.jsx("button", {
+                      /* @__PURE__ */ jsx_runtime4.jsx("button", {
                         onClick: () => setSelectedNames([]),
                         className: "btn btn-ghost btn-sm gap-1",
                         style: { color: "#8D5273" },
                         children: "✕ Clear All"
                       }),
-                      /* @__PURE__ */ jsx_runtime3.jsxs("button", {
+                      /* @__PURE__ */ jsx_runtime4.jsxs("button", {
                         onClick: () => setShowSendModal(true),
                         className: "btn gap-2 text-white",
                         style: { backgroundColor: "#2C244C" },
                         children: [
-                          /* @__PURE__ */ jsx_runtime3.jsx(Send, {
+                          /* @__PURE__ */ jsx_runtime4.jsx(Send, {
                             size: 16
                           }),
                           "Send to Client"
@@ -21623,7 +21650,7 @@ Please note: There are inherent confidentiality risks in communicating by email.
                 ]
               })
             }),
-            showSendModal && /* @__PURE__ */ jsx_runtime3.jsx(SendClientModal_default, {
+            showSendModal && /* @__PURE__ */ jsx_runtime4.jsx(SendClientModal_default, {
               selected: selectedPractitioners,
               locationFilter: selectedLocations.length === 1 ? selectedLocations[0] : "",
               onClose: () => setShowSendModal(false),
@@ -21639,7 +21666,7 @@ Please note: There are inherent confidentiality risks in communicating by email.
 
   // Directory.tsx
   var import_react6 = __toESM(require_react());
-  var jsx_runtime4 = __toESM(require_jsx_runtime());
+  var jsx_runtime5 = __toESM(require_jsx_runtime());
   function Directory({ practitioners }) {
     const [search, setSearch] = import_react6.useState("");
     const [sortBy, setSortBy] = import_react6.useState("name");
@@ -21652,51 +21679,51 @@ Please note: There are inherent confidentiality risks in communicating by email.
         return a.therapist_type.localeCompare(b.therapist_type) || a.name.localeCompare(b.name);
       });
     }, [practitioners, search, sortBy]);
-    return /* @__PURE__ */ jsx_runtime4.jsxs("div", {
+    return /* @__PURE__ */ jsx_runtime5.jsxs("div", {
       children: [
-        selected && /* @__PURE__ */ jsx_runtime4.jsx("div", {
+        selected && /* @__PURE__ */ jsx_runtime5.jsx("div", {
           className: "fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4",
           onClick: () => setSelected(null),
-          children: /* @__PURE__ */ jsx_runtime4.jsxs("div", {
+          children: /* @__PURE__ */ jsx_runtime5.jsxs("div", {
             className: "bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto",
             onClick: (e) => e.stopPropagation(),
             children: [
-              /* @__PURE__ */ jsx_runtime4.jsx("div", {
+              /* @__PURE__ */ jsx_runtime5.jsx("div", {
                 style: { background: "linear-gradient(135deg,#2C244C 0%,#8D5273 100%)", borderRadius: "16px 16px 0 0", padding: "20px 24px" },
-                children: /* @__PURE__ */ jsx_runtime4.jsxs("div", {
+                children: /* @__PURE__ */ jsx_runtime5.jsxs("div", {
                   style: { display: "flex", alignItems: "center", gap: 16 },
                   children: [
-                    selected.photo_url ? /* @__PURE__ */ jsx_runtime4.jsx("img", {
+                    selected.photo_url ? /* @__PURE__ */ jsx_runtime5.jsx("img", {
                       src: `./public/photos/${selected.photo_url.split("/").pop()}`,
                       width: 72,
                       height: 72,
                       style: { borderRadius: "50%", border: "3px solid rgba(255,255,255,0.35)", objectFit: "cover", width: 72, height: 72, flexShrink: 0 }
-                    }) : /* @__PURE__ */ jsx_runtime4.jsx("div", {
+                    }) : /* @__PURE__ */ jsx_runtime5.jsx("div", {
                       style: { width: 72, height: 72, borderRadius: "50%", background: "rgba(255,255,255,0.2)", border: "3px solid rgba(255,255,255,0.35)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 28, color: "#fff", flexShrink: 0 },
                       children: selected.name.charAt(0)
                     }),
-                    /* @__PURE__ */ jsx_runtime4.jsxs("div", {
+                    /* @__PURE__ */ jsx_runtime5.jsxs("div", {
                       style: { flex: 1 },
                       children: [
-                        /* @__PURE__ */ jsx_runtime4.jsx("h3", {
+                        /* @__PURE__ */ jsx_runtime5.jsx("h3", {
                           style: { fontSize: 20, fontWeight: 700, color: "#fff", margin: 0 },
                           children: selected.name
                         }),
-                        /* @__PURE__ */ jsx_runtime4.jsx("p", {
+                        /* @__PURE__ */ jsx_runtime5.jsx("p", {
                           style: { fontSize: 13, color: "#e8d4e4", margin: "2px 0 0" },
                           children: selected.title
                         }),
-                        selected.qualifications && /* @__PURE__ */ jsx_runtime4.jsx("p", {
+                        selected.qualifications && /* @__PURE__ */ jsx_runtime5.jsx("p", {
                           style: { fontSize: 11, color: "rgba(255,255,255,0.6)", margin: "2px 0 0", fontStyle: "italic" },
                           children: selected.qualifications
                         }),
-                        selected.pronouns && /* @__PURE__ */ jsx_runtime4.jsx("p", {
+                        selected.pronouns && /* @__PURE__ */ jsx_runtime5.jsx("p", {
                           style: { fontSize: 11, color: "rgba(255,255,255,0.5)", margin: "2px 0 0" },
                           children: selected.pronouns
                         })
                       ]
                     }),
-                    /* @__PURE__ */ jsx_runtime4.jsx("button", {
+                    /* @__PURE__ */ jsx_runtime5.jsx("button", {
                       onClick: () => setSelected(null),
                       style: { color: "#fff", background: "rgba(255,255,255,0.15)", border: "none", borderRadius: "50%", width: 32, height: 32, cursor: "pointer", fontSize: 16, flexShrink: 0, lineHeight: "32px" },
                       children: "✕"
@@ -21704,46 +21731,42 @@ Please note: There are inherent confidentiality risks in communicating by email.
                   ]
                 })
               }),
-              /* @__PURE__ */ jsx_runtime4.jsxs("div", {
+              /* @__PURE__ */ jsx_runtime5.jsxs("div", {
                 className: "p-6",
                 children: [
-                  selected.alert && /* @__PURE__ */ jsx_runtime4.jsxs("div", {
-                    style: { backgroundColor: "#00B8C8", color: "white", borderRadius: "10px", padding: "8px 14px", fontSize: "13px", fontWeight: 700, boxShadow: "0 2px 8px rgba(0,184,200,0.35)", marginBottom: "16px", display: "inline-block" },
-                    children: [
-                      "\uD83D\uDEA8 ",
-                      selected.alert
-                    ]
+                  /* @__PURE__ */ jsx_runtime5.jsx(PractitionerNotes, {
+                    practitioner: selected
                   }),
-                  /* @__PURE__ */ jsx_runtime4.jsxs("div", {
+                  /* @__PURE__ */ jsx_runtime5.jsxs("div", {
                     className: "grid grid-cols-2 gap-3 mb-4 text-sm",
                     children: [
-                      /* @__PURE__ */ jsx_runtime4.jsxs("div", {
+                      /* @__PURE__ */ jsx_runtime5.jsxs("div", {
                         children: [
-                          /* @__PURE__ */ jsx_runtime4.jsx("span", {
+                          /* @__PURE__ */ jsx_runtime5.jsx("span", {
                             className: "font-semibold",
                             children: "Fees:"
                           }),
-                          /* @__PURE__ */ jsx_runtime4.jsx("div", {
+                          /* @__PURE__ */ jsx_runtime5.jsx("div", {
                             className: "whitespace-pre-line",
                             children: selected.fees
                           })
                         ]
                       }),
-                      /* @__PURE__ */ jsx_runtime4.jsxs("div", {
+                      /* @__PURE__ */ jsx_runtime5.jsxs("div", {
                         children: [
-                          /* @__PURE__ */ jsx_runtime4.jsx("span", {
+                          /* @__PURE__ */ jsx_runtime5.jsx("span", {
                             className: "font-semibold",
                             children: "Medicare:"
                           }),
-                          /* @__PURE__ */ jsx_runtime4.jsx("div", {
+                          /* @__PURE__ */ jsx_runtime5.jsx("div", {
                             className: "whitespace-pre-line",
                             children: selected.medicare_rebate
                           })
                         ]
                       }),
-                      /* @__PURE__ */ jsx_runtime4.jsxs("div", {
+                      /* @__PURE__ */ jsx_runtime5.jsxs("div", {
                         children: [
-                          /* @__PURE__ */ jsx_runtime4.jsx("span", {
+                          /* @__PURE__ */ jsx_runtime5.jsx("span", {
                             className: "font-semibold",
                             children: "Gender:"
                           }),
@@ -21751,9 +21774,9 @@ Please note: There are inherent confidentiality risks in communicating by email.
                           selected.gender || "—"
                         ]
                       }),
-                      /* @__PURE__ */ jsx_runtime4.jsxs("div", {
+                      /* @__PURE__ */ jsx_runtime5.jsxs("div", {
                         children: [
-                          /* @__PURE__ */ jsx_runtime4.jsx("span", {
+                          /* @__PURE__ */ jsx_runtime5.jsx("span", {
                             className: "font-semibold",
                             children: "Ages:"
                           }),
@@ -21761,9 +21784,9 @@ Please note: There are inherent confidentiality risks in communicating by email.
                           selected.age_range || "—"
                         ]
                       }),
-                      /* @__PURE__ */ jsx_runtime4.jsxs("div", {
+                      /* @__PURE__ */ jsx_runtime5.jsxs("div", {
                         children: [
-                          /* @__PURE__ */ jsx_runtime4.jsx("span", {
+                          /* @__PURE__ */ jsx_runtime5.jsx("span", {
                             className: "font-semibold",
                             children: "Clients:"
                           }),
@@ -21771,9 +21794,9 @@ Please note: There are inherent confidentiality risks in communicating by email.
                           selected.client_types || "—"
                         ]
                       }),
-                      /* @__PURE__ */ jsx_runtime4.jsxs("div", {
+                      /* @__PURE__ */ jsx_runtime5.jsxs("div", {
                         children: [
-                          /* @__PURE__ */ jsx_runtime4.jsx("span", {
+                          /* @__PURE__ */ jsx_runtime5.jsx("span", {
                             className: "font-semibold",
                             children: "Languages:"
                           }),
@@ -21781,10 +21804,10 @@ Please note: There are inherent confidentiality risks in communicating by email.
                           selected.languages || "English"
                         ]
                       }),
-                      selected.billing_types && /* @__PURE__ */ jsx_runtime4.jsxs("div", {
+                      selected.billing_types && /* @__PURE__ */ jsx_runtime5.jsxs("div", {
                         className: "col-span-2",
                         children: [
-                          /* @__PURE__ */ jsx_runtime4.jsx("span", {
+                          /* @__PURE__ */ jsx_runtime5.jsx("span", {
                             className: "font-semibold",
                             children: "Billing:"
                           }),
@@ -21792,10 +21815,10 @@ Please note: There are inherent confidentiality risks in communicating by email.
                           selected.billing_types
                         ]
                       }),
-                      selected.after_hours && /* @__PURE__ */ jsx_runtime4.jsxs("div", {
+                      selected.after_hours && /* @__PURE__ */ jsx_runtime5.jsxs("div", {
                         className: "col-span-2",
                         children: [
-                          /* @__PURE__ */ jsx_runtime4.jsx("span", {
+                          /* @__PURE__ */ jsx_runtime5.jsx("span", {
                             className: "font-semibold",
                             children: "After hours:"
                           }),
@@ -21803,10 +21826,10 @@ Please note: There are inherent confidentiality risks in communicating by email.
                           selected.after_hours
                         ]
                       }),
-                      selected.religions_groups && /* @__PURE__ */ jsx_runtime4.jsxs("div", {
+                      selected.religions_groups && /* @__PURE__ */ jsx_runtime5.jsxs("div", {
                         className: "col-span-2",
                         children: [
-                          /* @__PURE__ */ jsx_runtime4.jsx("span", {
+                          /* @__PURE__ */ jsx_runtime5.jsx("span", {
                             className: "font-semibold",
                             children: "Cultural/Religious:"
                           }),
@@ -21816,55 +21839,55 @@ Please note: There are inherent confidentiality risks in communicating by email.
                       })
                     ]
                   }),
-                  /* @__PURE__ */ jsx_runtime4.jsxs("div", {
+                  /* @__PURE__ */ jsx_runtime5.jsxs("div", {
                     className: "space-y-3",
                     children: [
-                      selected.presentations && /* @__PURE__ */ jsx_runtime4.jsxs("div", {
+                      selected.presentations && /* @__PURE__ */ jsx_runtime5.jsxs("div", {
                         children: [
-                          /* @__PURE__ */ jsx_runtime4.jsx("div", {
+                          /* @__PURE__ */ jsx_runtime5.jsx("div", {
                             className: "text-xs font-bold text-base-content/50 uppercase tracking-wide mb-1",
                             children: "Presentations"
                           }),
-                          /* @__PURE__ */ jsx_runtime4.jsx("div", {
+                          /* @__PURE__ */ jsx_runtime5.jsx("div", {
                             className: "text-sm",
                             children: selected.presentations
                           })
                         ]
                       }),
-                      selected.modalities && /* @__PURE__ */ jsx_runtime4.jsxs("div", {
+                      selected.modalities && /* @__PURE__ */ jsx_runtime5.jsxs("div", {
                         children: [
-                          /* @__PURE__ */ jsx_runtime4.jsx("div", {
+                          /* @__PURE__ */ jsx_runtime5.jsx("div", {
                             className: "text-xs font-bold text-base-content/50 uppercase tracking-wide mb-1",
                             children: "Modalities"
                           }),
-                          /* @__PURE__ */ jsx_runtime4.jsx("div", {
+                          /* @__PURE__ */ jsx_runtime5.jsx("div", {
                             className: "text-sm",
                             children: selected.modalities
                           })
                         ]
                       }),
-                      /* @__PURE__ */ jsx_runtime4.jsxs("div", {
+                      /* @__PURE__ */ jsx_runtime5.jsxs("div", {
                         children: [
-                          /* @__PURE__ */ jsx_runtime4.jsx("div", {
+                          /* @__PURE__ */ jsx_runtime5.jsx("div", {
                             className: "text-xs font-bold text-base-content/50 uppercase tracking-wide mb-1",
                             children: "Availability"
                           }),
-                          (selected.locations || []).map((loc, i) => /* @__PURE__ */ jsx_runtime4.jsxs("div", {
+                          (selected.locations || []).map((loc, i) => /* @__PURE__ */ jsx_runtime5.jsxs("div", {
                             className: "mb-2",
                             children: [
-                              /* @__PURE__ */ jsx_runtime4.jsxs("div", {
+                              /* @__PURE__ */ jsx_runtime5.jsxs("div", {
                                 className: "text-xs font-semibold text-base-content/60",
                                 children: [
                                   "\uD83D\uDCCD ",
                                   loc.location
                                 ]
                               }),
-                              loc.availability ? /* @__PURE__ */ jsx_runtime4.jsx("div", {
+                              loc.availability ? /* @__PURE__ */ jsx_runtime5.jsx("div", {
                                 className: "text-sm whitespace-pre-line",
                                 style: { color: "#366188" },
                                 children: Array.isArray(loc.availability) ? loc.availability.join(`
 `) : loc.availability
-                              }) : /* @__PURE__ */ jsx_runtime4.jsx("div", {
+                              }) : /* @__PURE__ */ jsx_runtime5.jsx("div", {
                                 className: "text-sm text-base-content/40 italic",
                                 children: "None listed"
                               })
@@ -21874,22 +21897,22 @@ Please note: There are inherent confidentiality risks in communicating by email.
                       })
                     ]
                   }),
-                  selected.bio && /* @__PURE__ */ jsx_runtime4.jsxs("div", {
+                  selected.bio && /* @__PURE__ */ jsx_runtime5.jsxs("div", {
                     className: "mt-4",
                     children: [
-                      /* @__PURE__ */ jsx_runtime4.jsx("div", {
+                      /* @__PURE__ */ jsx_runtime5.jsx("div", {
                         className: "text-xs font-bold text-base-content/50 uppercase tracking-wide mb-2",
                         children: "About"
                       }),
-                      /* @__PURE__ */ jsx_runtime4.jsx("div", {
+                      /* @__PURE__ */ jsx_runtime5.jsx("div", {
                         className: "text-sm text-base-content/80 whitespace-pre-line leading-relaxed",
                         children: selected.bio
                       })
                     ]
                   }),
-                  selected.link_to_bio && /* @__PURE__ */ jsx_runtime4.jsx("div", {
+                  selected.link_to_bio && /* @__PURE__ */ jsx_runtime5.jsx("div", {
                     className: "mt-4",
-                    children: /* @__PURE__ */ jsx_runtime4.jsx("a", {
+                    children: /* @__PURE__ */ jsx_runtime5.jsx("a", {
                       href: selected.link_to_bio,
                       target: "_blank",
                       rel: "noopener noreferrer",
@@ -21902,32 +21925,32 @@ Please note: There are inherent confidentiality risks in communicating by email.
             ]
           })
         }),
-        /* @__PURE__ */ jsx_runtime4.jsxs("div", {
+        /* @__PURE__ */ jsx_runtime5.jsxs("div", {
           className: "mb-4 flex gap-3 items-center",
           children: [
-            /* @__PURE__ */ jsx_runtime4.jsx("input", {
+            /* @__PURE__ */ jsx_runtime5.jsx("input", {
               type: "text",
               placeholder: "Search by name or type...",
               className: "input input-bordered flex-1",
               value: search,
               onChange: (e) => setSearch(e.target.value)
             }),
-            /* @__PURE__ */ jsx_runtime4.jsxs("select", {
+            /* @__PURE__ */ jsx_runtime5.jsxs("select", {
               className: "select select-bordered select-sm",
               value: sortBy,
               onChange: (e) => setSortBy(e.target.value),
               children: [
-                /* @__PURE__ */ jsx_runtime4.jsx("option", {
+                /* @__PURE__ */ jsx_runtime5.jsx("option", {
                   value: "name",
                   children: "Sort by name"
                 }),
-                /* @__PURE__ */ jsx_runtime4.jsx("option", {
+                /* @__PURE__ */ jsx_runtime5.jsx("option", {
                   value: "type",
                   children: "Sort by type"
                 })
               ]
             }),
-            /* @__PURE__ */ jsx_runtime4.jsxs("div", {
+            /* @__PURE__ */ jsx_runtime5.jsxs("div", {
               className: "text-sm text-base-content/60 whitespace-nowrap",
               children: [
                 filtered.length,
@@ -21936,7 +21959,7 @@ Please note: There are inherent confidentiality risks in communicating by email.
             })
           ]
         }),
-        /* @__PURE__ */ jsx_runtime4.jsx("div", {
+        /* @__PURE__ */ jsx_runtime5.jsx("div", {
           className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3",
           children: filtered.map((p) => {
             const hasAvail = (p.locations || []).some((l) => {
@@ -21946,50 +21969,50 @@ Please note: There are inherent confidentiality risks in communicating by email.
                 return l.availability.length > 0;
               return l.availability.trim().length > 0;
             });
-            return /* @__PURE__ */ jsx_runtime4.jsx("div", {
+            return /* @__PURE__ */ jsx_runtime5.jsx("div", {
               className: "card bg-white shadow-sm cursor-pointer hover:shadow-md transition-all",
               style: { border: "1px solid #CDA8BA" },
               onClick: () => setSelected(p),
-              children: /* @__PURE__ */ jsx_runtime4.jsxs("div", {
+              children: /* @__PURE__ */ jsx_runtime5.jsxs("div", {
                 className: "card-body p-0 overflow-hidden",
                 children: [
-                  /* @__PURE__ */ jsx_runtime4.jsxs("div", {
+                  /* @__PURE__ */ jsx_runtime5.jsxs("div", {
                     style: { background: "linear-gradient(135deg,#2C244C 0%,#8D5273 100%)", padding: "12px 14px", display: "flex", alignItems: "center", gap: 10 },
                     children: [
-                      p.photo_url ? /* @__PURE__ */ jsx_runtime4.jsx("img", {
+                      p.photo_url ? /* @__PURE__ */ jsx_runtime5.jsx("img", {
                         src: `./public/photos/${p.photo_url.split("/").pop()}`,
                         width: 48,
                         height: 48,
                         style: { borderRadius: "50%", border: "2px solid rgba(255,255,255,0.4)", objectFit: "cover", width: 48, height: 48, flexShrink: 0 }
-                      }) : /* @__PURE__ */ jsx_runtime4.jsx("div", {
+                      }) : /* @__PURE__ */ jsx_runtime5.jsx("div", {
                         style: { width: 48, height: 48, borderRadius: "50%", background: "rgba(255,255,255,0.2)", border: "2px solid rgba(255,255,255,0.4)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 20, color: "#fff", flexShrink: 0 },
                         children: p.name.charAt(0)
                       }),
-                      /* @__PURE__ */ jsx_runtime4.jsxs("div", {
+                      /* @__PURE__ */ jsx_runtime5.jsxs("div", {
                         style: { flex: 1, minWidth: 0 },
                         children: [
-                          /* @__PURE__ */ jsx_runtime4.jsx("div", {
+                          /* @__PURE__ */ jsx_runtime5.jsx("div", {
                             style: { fontWeight: 700, color: "#fff", fontSize: 14, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" },
                             children: p.name
                           }),
-                          /* @__PURE__ */ jsx_runtime4.jsx("div", {
+                          /* @__PURE__ */ jsx_runtime5.jsx("div", {
                             style: { fontSize: 11, color: "#e8d4e4" },
                             children: p.title
                           })
                         ]
                       }),
-                      /* @__PURE__ */ jsx_runtime4.jsxs("div", {
+                      /* @__PURE__ */ jsx_runtime5.jsxs("div", {
                         className: "flex flex-col gap-1 items-end",
                         children: [
-                          /* @__PURE__ */ jsx_runtime4.jsx("span", {
+                          /* @__PURE__ */ jsx_runtime5.jsx("span", {
                             className: `badge badge-sm ${hasAvail ? "badge-success" : "badge-ghost"}`,
                             children: hasAvail ? "Available" : "Waitlist"
                           }),
-                          p.accepts_couples && /* @__PURE__ */ jsx_runtime4.jsx("span", {
+                          p.accepts_couples && /* @__PURE__ */ jsx_runtime5.jsx("span", {
                             className: "badge badge-info badge-xs",
                             children: "Couples"
                           }),
-                          p.alert && /* @__PURE__ */ jsx_runtime4.jsx("span", {
+                          p.alert && /* @__PURE__ */ jsx_runtime5.jsx("span", {
                             style: { backgroundColor: "#00B8C8", color: "white", borderRadius: "999px", padding: "1px 8px", fontSize: "11px", fontWeight: 700, marginLeft: "4px" },
                             children: "\uD83D\uDEA8 Note"
                           })
@@ -21997,41 +22020,41 @@ Please note: There are inherent confidentiality risks in communicating by email.
                       })
                     ]
                   }),
-                  /* @__PURE__ */ jsx_runtime4.jsxs("div", {
+                  /* @__PURE__ */ jsx_runtime5.jsxs("div", {
                     style: { padding: "10px 14px 12px" },
                     children: [
-                      /* @__PURE__ */ jsx_runtime4.jsxs("div", {
+                      /* @__PURE__ */ jsx_runtime5.jsxs("div", {
                         className: "flex gap-1 flex-wrap mb-1",
                         children: [
-                          /* @__PURE__ */ jsx_runtime4.jsx("span", {
+                          /* @__PURE__ */ jsx_runtime5.jsx("span", {
                             className: "badge badge-outline badge-xs",
                             children: p.gender || "—"
                           }),
-                          /* @__PURE__ */ jsx_runtime4.jsx("span", {
+                          /* @__PURE__ */ jsx_runtime5.jsx("span", {
                             className: "badge badge-outline badge-xs",
                             children: p.age_range
                           }),
-                          p.pap_clinician === "Yes" && /* @__PURE__ */ jsx_runtime4.jsx("span", {
+                          p.pap_clinician === "Yes" && /* @__PURE__ */ jsx_runtime5.jsx("span", {
                             className: "badge badge-secondary badge-xs",
                             children: "PAP"
                           }),
-                          p.after_hours && /* @__PURE__ */ jsx_runtime4.jsx("span", {
+                          p.after_hours && /* @__PURE__ */ jsx_runtime5.jsx("span", {
                             className: "badge badge-accent badge-xs",
                             children: "AH"
                           })
                         ]
                       }),
-                      /* @__PURE__ */ jsx_runtime4.jsxs("div", {
+                      /* @__PURE__ */ jsx_runtime5.jsxs("div", {
                         className: "flex gap-1 flex-wrap",
                         children: [
-                          (p.locations || []).slice(0, 2).map((l, i) => /* @__PURE__ */ jsx_runtime4.jsxs("span", {
+                          (p.locations || []).slice(0, 2).map((l, i) => /* @__PURE__ */ jsx_runtime5.jsxs("span", {
                             className: "text-xs text-base-content/50 truncate",
                             children: [
                               "\uD83D\uDCCD ",
                               l.location
                             ]
                           }, i)),
-                          (p.locations || []).length > 2 && /* @__PURE__ */ jsx_runtime4.jsxs("span", {
+                          (p.locations || []).length > 2 && /* @__PURE__ */ jsx_runtime5.jsxs("span", {
                             className: "text-xs text-base-content/40",
                             children: [
                               "+",
@@ -22053,7 +22076,7 @@ Please note: There are inherent confidentiality risks in communicating by email.
 
   // AvailabilitySnapshot.tsx
   var import_react7 = __toESM(require_react());
-  var jsx_runtime5 = __toESM(require_jsx_runtime());
+  var jsx_runtime6 = __toESM(require_jsx_runtime());
   function getAvailabilityLines(text, type) {
     if (!text)
       return [];
@@ -22104,14 +22127,14 @@ Please note: There are inherent confidentiality risks in communicating by email.
       { key: "weekly", label: "Weekly" },
       { key: "fortnightly", label: "Fortnightly" }
     ];
-    return /* @__PURE__ */ jsx_runtime5.jsxs("div", {
+    return /* @__PURE__ */ jsx_runtime6.jsxs("div", {
       children: [
-        /* @__PURE__ */ jsx_runtime5.jsxs("div", {
+        /* @__PURE__ */ jsx_runtime6.jsxs("div", {
           className: "flex flex-wrap items-center gap-3 mb-5",
           children: [
-            /* @__PURE__ */ jsx_runtime5.jsx("label", {
+            /* @__PURE__ */ jsx_runtime6.jsx("label", {
               className: "input input-bordered flex items-center gap-2 flex-1 min-w-48",
-              children: /* @__PURE__ */ jsx_runtime5.jsx("input", {
+              children: /* @__PURE__ */ jsx_runtime6.jsx("input", {
                 type: "search",
                 className: "grow",
                 placeholder: "Search practitioner or location…",
@@ -22119,16 +22142,16 @@ Please note: There are inherent confidentiality risks in communicating by email.
                 onChange: (e) => setSearch(e.target.value)
               })
             }),
-            /* @__PURE__ */ jsx_runtime5.jsx("div", {
+            /* @__PURE__ */ jsx_runtime6.jsx("div", {
               className: "join",
-              children: FILTERS.map((f) => /* @__PURE__ */ jsx_runtime5.jsx("button", {
+              children: FILTERS.map((f) => /* @__PURE__ */ jsx_runtime6.jsx("button", {
                 className: "join-item btn btn-sm",
                 style: { backgroundColor: filter === f.key ? "#2C244C" : "white", color: filter === f.key ? "white" : "#36454F", border: filter === f.key ? "none" : "1px solid #CDA8BA" },
                 onClick: () => setFilter(f.key),
                 children: f.label
               }, f.key))
             }),
-            /* @__PURE__ */ jsx_runtime5.jsxs("span", {
+            /* @__PURE__ */ jsx_runtime6.jsxs("span", {
               className: "text-base-content/50 text-sm whitespace-nowrap",
               children: [
                 visible.length,
@@ -22138,42 +22161,42 @@ Please note: There are inherent confidentiality risks in communicating by email.
             })
           ]
         }),
-        visible.length === 0 ? /* @__PURE__ */ jsx_runtime5.jsx("div", {
+        visible.length === 0 ? /* @__PURE__ */ jsx_runtime6.jsx("div", {
           className: "text-center text-base-content/40 py-16 text-sm",
           children: "No availability found matching your filters."
-        }) : /* @__PURE__ */ jsx_runtime5.jsx("div", {
+        }) : /* @__PURE__ */ jsx_runtime6.jsx("div", {
           className: "grid grid-cols-2 gap-3",
-          children: visible.map(({ prac, locs }) => /* @__PURE__ */ jsx_runtime5.jsx("div", {
+          children: visible.map(({ prac, locs }) => /* @__PURE__ */ jsx_runtime6.jsx("div", {
             className: "card bg-white shadow-sm",
             style: { border: "1px solid #CDA8BA" },
-            children: /* @__PURE__ */ jsx_runtime5.jsxs("div", {
+            children: /* @__PURE__ */ jsx_runtime6.jsxs("div", {
               className: "card-body p-4 gap-2",
               children: [
-                /* @__PURE__ */ jsx_runtime5.jsx("h3", {
+                /* @__PURE__ */ jsx_runtime6.jsx("h3", {
                   className: "font-bold text-base text-base-content",
                   children: prac.name
                 }),
-                locs.map((loc) => /* @__PURE__ */ jsx_runtime5.jsxs("div", {
+                locs.map((loc) => /* @__PURE__ */ jsx_runtime6.jsxs("div", {
                   className: "mt-1",
                   children: [
-                    /* @__PURE__ */ jsx_runtime5.jsxs("div", {
+                    /* @__PURE__ */ jsx_runtime6.jsxs("div", {
                       className: "text-xs font-semibold text-base-content/50 uppercase tracking-wide mb-1",
                       children: [
                         "\uD83D\uDCCD ",
                         loc.location
                       ]
                     }),
-                    /* @__PURE__ */ jsx_runtime5.jsx("ul", {
+                    /* @__PURE__ */ jsx_runtime6.jsx("ul", {
                       className: "space-y-1",
                       children: loc.lines.map((line, i) => {
                         const { time, type, date } = formatLine(line);
-                        return /* @__PURE__ */ jsx_runtime5.jsxs("li", {
+                        return /* @__PURE__ */ jsx_runtime6.jsxs("li", {
                           className: "text-sm text-base-content flex items-baseline gap-2",
                           children: [
-                            /* @__PURE__ */ jsx_runtime5.jsx("span", {
+                            /* @__PURE__ */ jsx_runtime6.jsx("span", {
                               children: time
                             }),
-                            type && /* @__PURE__ */ jsx_runtime5.jsxs("span", {
+                            type && /* @__PURE__ */ jsx_runtime6.jsxs("span", {
                               className: "text-xs font-semibold px-1.5 py-0.5 rounded",
                               style: { backgroundColor: type.toLowerCase() === "weekly" ? "rgba(54,97,136,0.12)" : "rgba(82,163,186,0.12)", color: type.toLowerCase() === "weekly" ? "#366188" : "#52A3BA" },
                               children: [
@@ -22209,7 +22232,7 @@ Please note: There are inherent confidentiality risks in communicating by email.
 A/H: $275`,
       medicare_rebate: "101.55",
       gender: "Female",
-      alert: "Currently accepting Female clients only. Prior approval from Alex required for exceptions.",
+      alert: "? Currently accepting Female clients only. Prior approval from Alex required for exceptions.",
       presentations: [
         "Anxiety - Generalised (GAD)",
         "Anxiety - Perinatal / Postnatal",
@@ -22374,7 +22397,8 @@ Mondays at 4:30pm (Monthly: Starting 7th Dec)`,
         "Gender Fluid",
         "Gender Nonconforming",
         "Gender Queer"
-      ]
+      ],
+      client_note: ""
     },
     {
       id: 25,
@@ -22594,7 +22618,8 @@ Mondays at 1pm (Monthly: Starting 30th Nov)`,
         "Male",
         "Non Binary",
         "Transgender"
-      ]
+      ],
+      client_note: ""
     },
     {
       id: 5,
@@ -22609,7 +22634,7 @@ Mondays at 1pm (Monthly: Starting 30th Nov)`,
       client_types: [
         "Individual"
       ],
-      alert: "No new clients until August",
+      alert: "? No new clients until Jan 2027",
       presentations: [
         "Acute Stress Reaction",
         "Adjustment Disorder",
@@ -22702,7 +22727,8 @@ Wednesdays at 8am (Monthly: Starting 18th Nov)`
         "Gender Nonconforming",
         "Gender Queer",
         "Male"
-      ]
+      ],
+      client_note: ""
     },
     {
       id: 3,
@@ -22923,7 +22949,8 @@ Mondays at 1pm (Monthly: Starting 26th Oct)`,
         "Male",
         "Non Binary",
         "Transgender"
-      ]
+      ],
+      client_note: ""
     },
     {
       id: 27,
@@ -23111,7 +23138,8 @@ Wednesdays at 8am (Monthly: Starting 14th Oct)`,
         "Male",
         "Non Binary",
         "Transgender"
-      ]
+      ],
+      client_note: ""
     },
     {
       id: 17,
@@ -23121,7 +23149,7 @@ Wednesdays at 8am (Monthly: Starting 14th Oct)`,
 A/H: $275`,
       medicare_rebate: "101.55",
       gender: "Female",
-      alert: "Anna 27/05- No complex clients for a while per 86373",
+      alert: "",
       presentations: [
         "Academic Pressure & Performance Stress",
         "Acquired Brain Injury (ABI) — Adjustment & Psychological Support",
@@ -23437,7 +23465,8 @@ Mondays at 10am (Monthly: Starting 9th Nov)`,
       genderOfClientsSeen: [
         "Female",
         "Male"
-      ]
+      ],
+      client_note: ""
     },
     {
       id: 19,
@@ -23587,7 +23616,8 @@ I have a developing interest and training in the new research around psychedelic
       genderOfClientsSeen: [
         "Female",
         "Male"
-      ]
+      ],
+      client_note: ""
     },
     {
       id: 16,
@@ -23597,7 +23627,7 @@ I have a developing interest and training in the new research around psychedelic
 A/H: $315`,
       medicare_rebate: "149.05",
       gender: "Female",
-      alert: ",",
+      alert: "",
       presentations: "ADD and ADHD; Agoraphobia; Anxiety; Asperger Syndrome; Attachment Disorder; Autism Spectrum Disorders (ASD); Avoidant Personality Disorder; Burnout; Career transition; Complex Trauma; Fear of Failure; General Adaptation Disorder (Adjustment Disorder); Generalized Anxiety Disorder (GAD); Imposter Syndrome; Intermittent Explosive Disorder (Uncontrolled Anger); LGBTIQA+; Life Transitions; Low self esteem; Non-Monogomy/ Polyamory; Pain Management; Panic Disorder & Panic Attacks; Perfectionism; Pregnancy and Postnatal Depression Anxiety; Relationship breakdown; Sexual problems; Social anxiety disorder / Social Phobia; Stress; Trauma",
       modalities: [
         "Eye Movement Desensitisation and Reprocessing (EMDR)",
@@ -23665,7 +23695,8 @@ Outside of clinical work, I'm an avid martial arts practitioner and have spent o
         "Individual",
         "Couples"
       ],
-      therapistType: "Clinical Psychologist"
+      therapistType: "Clinical Psychologist",
+      client_note: ""
     },
     {
       id: 2,
@@ -23832,7 +23863,8 @@ Allison employs an integrative approach to therapy, drawing upon a wide-range of
         "Male",
         "Non Binary",
         "Transgender"
-      ]
+      ],
+      client_note: ""
     },
     {
       id: 21,
@@ -24063,7 +24095,8 @@ Thursdays at 12:30pm (Monthly: Starting 19th Nov)`,
         "Male",
         "Non Binary",
         "Transgender"
-      ]
+      ],
+      client_note: ""
     },
     {
       id: 7,
@@ -24073,7 +24106,7 @@ Thursdays at 12:30pm (Monthly: Starting 19th Nov)`,
 A/H: $275`,
       medicare_rebate: "89.5",
       gender: "Female",
-      alert: "| Please note: Christine is an Accredited Mental Health Social Worker (AMHSW) with the AASW, rather than a psychologist. She is an eligible Medicare provider under a Mental Health Treatment Plan. If you intend to use private health insurance, please check with your insurer prior to booking, as not all funds provide rebates for Mental Health Social Work services.",
+      alert: "Accredited Mental Health Social Worker - Not Psychologist, so Private health Insurance may not pay. Encourage client to check with Insurer first",
       presentations: [
         "Academic Pressure & Performance Stress",
         "Acquired Brain Injury (ABI) — Adjustment & Psychological Support",
@@ -24389,7 +24422,8 @@ Tuesdays at 8am (Monthly: Starting 3rd Nov)`,
       clientTypes: [
         "Individual"
       ],
-      therapistType: "Accredited Mental Health Social Worker"
+      therapistType: "Accredited Mental Health Social Worker",
+      client_note: "Please note: Christine is an Accredited Mental Health Social Worker (AMHSW) with the AASW, rather than a psychologist. She is an eligible Medicare provider under a Mental Health Treatment Plan. If you intend to use private health insurance, please check with your insurer prior to booking, as not all funds provide rebates for Mental Health Social Work services."
     },
     {
       id: 18,
@@ -24399,7 +24433,7 @@ Tuesdays at 8am (Monthly: Starting 3rd Nov)`,
 A/H: $275`,
       medicare_rebate: "101.55",
       gender: "Female",
-      alert: "Maternity leave from mid-Nov 2026. Return date unknown.|Please note: Meg will be going on maternity leave from mid-November 2026. If you're looking for ongoing longer-term support, it's worth keeping this in mind when deciding if she is the right match for you.",
+      alert: "? Maternity leave from mid-Nov 2026. Return date unknown.",
       presentations: [
         "Academic Pressure & Performance Stress",
         "Adjustment Disorder",
@@ -24533,7 +24567,8 @@ Above all, I believe that the therapeutic relationship is central to the healing
         "Female",
         "Male",
         "Non Binary"
-      ]
+      ],
+      client_note: "Please note: Meg will be going on maternity leave from mid-November 2026. If you're looking for ongoing longer-term support, it's worth keeping this in mind when deciding if she is the right match for you."
     },
     {
       id: 15,
@@ -24543,9 +24578,7 @@ Above all, I believe that the therapeutic relationship is central to the healing
 A/H: $315`,
       medicare_rebate: "149.05",
       gender: "Female",
-      alert: `Currently on Maternity Leave, Expected Return early to Mid July 2026. Please let Kiira know of any clients that reahc out to check in on her return and add to/ update availability in zanda
-Only seeing clients she has seen before. No new clients.
-EMDR in-person only — not appropriate for telehealth delivery.`,
+      alert: "? Kiira is Telehealth Only.  ? EMDR in-person only — not appropriate for telehealth delivery.",
       presentations: [
         "Anger & Aggression",
         "Anxiety - Generalised (GAD)",
@@ -24655,7 +24688,8 @@ Tuesdays at 9:15am (Monthly: Starting 27th Oct)`,
         "Cisgender",
         "Female",
         "Male"
-      ]
+      ],
+      client_note: "Please note: Chiara offers Telehealth appointments only, with no in-person appointments available. Please take this into consideration when deciding whether Chiara will be the right practitioner for you, particularly if you prefer face-to-face sessions."
     },
     {
       id: 6,
@@ -24665,7 +24699,7 @@ Tuesdays at 9:15am (Monthly: Starting 27th Oct)`,
 A/H: $315`,
       medicare_rebate: "149.05",
       gender: "Female",
-      alert: "Telehealth Only from 1st June 2026 until Chiara advises otherwise. ADULT Female  client only. Not too complex due to being a Saturday",
+      alert: "? Telehealth Only from 1st June 2026 until Chiara advises otherwise. ADULT Female client only. Not too complex due to being a Saturday",
       presentations: [
         "Academic Pressure & Performance Stress",
         "Acute Stress Reaction",
@@ -24822,7 +24856,8 @@ Saturdays at 10am (Monthly: Starting 5th Dec)`,
       clientTypes: [
         "Individual"
       ],
-      therapistType: "Clinical Psychologist"
+      therapistType: "Clinical Psychologist",
+      client_note: "Please note: Chiara offers Telehealth appointments only, with no in-person appointments available. Please take this into consideration when deciding whether Chiara will be the right practitioner for you, particularly if you prefer face-to-face sessions."
     },
     {
       id: 20,
@@ -24832,7 +24867,7 @@ Saturdays at 10am (Monthly: Starting 5th Dec)`,
 A/H: $315`,
       medicare_rebate: "149.05",
       gender: "Male",
-      alert: "Per email from NK on 15/04- pause any new clients who have already received a diagnosis of autism or querying an ASD diagnosis as it's not a specialist area I want to work predominantly with at the moment.",
+      alert: "",
       presentations: [
         "Academic Pressure & Performance Stress",
         "Acute Stress Reaction",
@@ -25076,7 +25111,8 @@ Wednesdays at 1pm (Monthly: Starting 4th Nov)`,
         "Male",
         "Non Binary",
         "Transgender"
-      ]
+      ],
+      client_note: ""
     },
     {
       id: 26,
@@ -25086,7 +25122,7 @@ Wednesdays at 1pm (Monthly: Starting 4th Nov)`,
 A/H: $275`,
       medicare_rebate: "101.55",
       gender: "Female",
-      alert: "Ms Elizabeth Maria Knoetze",
+      alert: "? Telehealth Only from Jan 2027. Be sure to discuss with Clients. ?Real Full Name - Ms Elizabeth Maria Knoetze",
       presentations: [
         "Adjustment Disorder",
         "Anxiety - Anticipatory",
@@ -25240,7 +25276,8 @@ Mondays at 3:30pm (Monthly: Starting 19th Oct)`,
       clientTypes: [
         "Individual"
       ],
-      therapistType: "Registered Psychologist"
+      therapistType: "Registered Psychologist",
+      client_note: "Please note: From January 2027 onwards, Ricki will be offering Telehealth appointments only, with no in-person appointments available. Please take this into consideration when deciding whether Ricki will be the right practitioner for you, particularly if you prefer face-to-face sessions."
     },
     {
       id: 13,
@@ -25250,7 +25287,7 @@ Mondays at 3:30pm (Monthly: Starting 19th Oct)`,
 A/H: $275`,
       medicare_rebate: "101.55",
       gender: "Male",
-      alert: "| Please note: Josh Kugel will be offering Telehealth appointments only from 30 October to 5 December 2026. During this period, all sessions will be conducted online rather than in person. In-person appointments will resume following this period. Please take this into consideration when deciding whether Josh will be the right practitioner for you, particularly if you prefer face-to-face sessions.",
+      alert: "Josh Telehealth Only from 30th Oct to 5th Dec. Please discuss with new clients",
       presentations: [
         "Academic Pressure & Performance Stress",
         "Addiction/Dependence (Alcohol) — Current / Active",
@@ -25422,7 +25459,8 @@ Wednesdays at 2:30pm (Monthly: Starting 25th Nov)`
         "Male",
         "Non Binary",
         "Transgender"
-      ]
+      ],
+      client_note: "Please note: Josh Kugel will be offering Telehealth appointments only from 30 October to 5 December 2026. During this period, all sessions will be conducted online rather than in person. In-person appointments will resume following this period. Please take this into consideration when deciding whether Josh will be the right practitioner for you, particularly if you prefer face-to-face sessions."
     },
     {
       id: 29,
@@ -25432,7 +25470,7 @@ Wednesdays at 2:30pm (Monthly: Starting 25th Nov)`
 A/H: $275`,
       medicare_rebate: "101.55",
       gender: "Female",
-      alert: ". Couples clients must be referred to TVM for her intake (after ours), then we can book in",
+      alert: "",
       presentations: [
         "Adjustment Disorder",
         "Anger & Aggression",
@@ -25614,7 +25652,8 @@ Thursdays at 12:45pm (Monthly: Starting 5th Nov)`,
         "Male",
         "Non Binary",
         "Transgender"
-      ]
+      ],
+      client_note: ""
     },
     {
       id: 4,
@@ -25803,7 +25842,8 @@ Thursdays at 9am (Fortnightly: Starting 29th Oct)`,
         "Male",
         "Non Binary",
         "Transgender"
-      ]
+      ],
+      client_note: ""
     },
     {
       id: 24,
@@ -26002,7 +26042,8 @@ Tuesdays at 8:30am (Monthly: Starting 13th Oct)`,
         "Male",
         "Non Binary",
         "Transgender"
-      ]
+      ],
+      client_note: ""
     },
     {
       name: "Dr David Spektor",
@@ -26080,7 +26121,7 @@ A/H: $315`,
       languages: "",
       spare_time: "",
       pap_clinician: "",
-      alert: "Books closed indefinitely — not taking any new clients. No waitlist.",
+      alert: "",
       client_gender_accepted: "Any",
       ageGroups: [
         "18 Yrs +"
@@ -26088,7 +26129,8 @@ A/H: $315`,
       clientTypes: [
         "Individual"
       ],
-      therapistType: "Clinical Psychologist"
+      therapistType: "Clinical Psychologist",
+      client_note: ""
     },
     {
       id: 23,
@@ -26221,7 +26263,8 @@ Tuesdays at 1pm (Monthly: Starting 3rd Nov)`,
         "Cisgender",
         "Non Binary",
         "Transgender"
-      ]
+      ],
+      client_note: ""
     },
     {
       id: 8,
@@ -26231,7 +26274,7 @@ Tuesdays at 1pm (Monthly: Starting 3rd Nov)`,
 A/H: $275`,
       medicare_rebate: "101.55",
       gender: "Female",
-      alert: "Anna 4/9- Mild presentation clients only - No risk or complex presentations. NO MALES",
+      alert: "? Anna 4/9- Mild presentation clients only - No risk or complex presentations. NO MALES",
       presentations: [
         "Anxiety - Generalised (GAD)",
         "Anxiety - Health (Illness Anxiety / Hypochondria)",
@@ -26336,7 +26379,8 @@ Tuesdays at 11am (Monthly: Starting 27th Oct)`,
       clientTypes: [
         "Individual"
       ],
-      therapistType: "Psychologist"
+      therapistType: "Psychologist",
+      client_note: ""
     },
     {
       id: 10,
@@ -26346,9 +26390,7 @@ Tuesdays at 11am (Monthly: Starting 27th Oct)`,
 A/H: $315`,
       medicare_rebate: "149.05",
       gender: "Female",
-      alert: `Anna 16/03- No NDIS or complex clients
-Cannot see clients who I have been working with at Kingston Rehab (Monash Health) at this time while I am still working there.
-Max 2 new clients per week. Thursday Camberwell slots are reserved for clients with mobility difficulties or older clients (Prahran clinic has steps — Camberwell is step-free).`,
+      alert: "? Anna 16/03- No NDIS or complex clients Cannot see clients who I have been working with at Kingston Rehab (Monash Health) at this time while I am still working there. Max 2 new clients per week. Thursday Camberwell slots are reserved for clients with mobility difficulties or older clients (Prahran clinic has steps — Camberwell is step-free).",
       presentations: [
         "Academic Pressure & Performance Stress",
         "Acute Stress Reaction",
@@ -26589,7 +26631,8 @@ Mondays at 4:30pm (Monthly: Starting 19th Oct)`,
         "Gender Queer",
         "Male",
         "Non Binary"
-      ]
+      ],
+      client_note: ""
     },
     {
       id: 14,
@@ -26599,7 +26642,7 @@ Mondays at 4:30pm (Monthly: Starting 19th Oct)`,
 A/H: $315`,
       medicare_rebate: "149.05",
       gender: "Female",
-      alert: ",",
+      alert: "",
       presentations: [
         "Addiction/Dependence (Alcohol) — Not Current / In Recovery",
         "Addiction/Dependence (Cannabis) — Not Current / In Recovery",
@@ -26804,13 +26847,14 @@ Tuesdays at 4:30pm (Monthly: Starting 1st Dec)`,
       genderOfClientsSeen: [
         "Female",
         "Male"
-      ]
+      ],
+      client_note: ""
     }
   ];
   var AVAILABILITY_LAST_UPDATED = "12 Oct 2026 6:07am";
 
   // components/IntakeTab.tsx
-  var jsx_runtime6 = __toESM(require_jsx_runtime());
+  var jsx_runtime7 = __toESM(require_jsx_runtime());
   var COLORS = {
     darkPurple: "#2C244C",
     mauve: "#8D5273",
@@ -26964,17 +27008,17 @@ Tuesdays at 4:30pm (Monthly: Starting 1st Dec)`,
         setTimeout(() => setCopied(false), 2500);
       }
     };
-    return /* @__PURE__ */ jsx_runtime6.jsxs("div", {
+    return /* @__PURE__ */ jsx_runtime7.jsxs("div", {
       style: { maxWidth: 800, margin: "0 auto", padding: "24px 16px" },
       children: [
-        /* @__PURE__ */ jsx_runtime6.jsxs("div", {
+        /* @__PURE__ */ jsx_runtime7.jsxs("div", {
           style: { display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 4 },
           children: [
-            /* @__PURE__ */ jsx_runtime6.jsx("h2", {
+            /* @__PURE__ */ jsx_runtime7.jsx("h2", {
               style: { color: COLORS.darkPurple, margin: 0 },
               children: "\uD83D\uDCDD Intake & Practitioner Matching"
             }),
-            /* @__PURE__ */ jsx_runtime6.jsxs("span", {
+            /* @__PURE__ */ jsx_runtime7.jsxs("span", {
               style: { fontSize: 12, color: "#6b5b8a", background: "#f0eef7", padding: "4px 10px", borderRadius: 20, whiteSpace: "nowrap" },
               children: [
                 "\uD83D\uDCC5 Availability updated ",
@@ -26983,14 +27027,14 @@ Tuesdays at 4:30pm (Monthly: Starting 1st Dec)`,
             })
           ]
         }),
-        /* @__PURE__ */ jsx_runtime6.jsx("p", {
+        /* @__PURE__ */ jsx_runtime7.jsx("p", {
           style: { color: "#666", marginBottom: 24, fontSize: 14 },
           children: "Paste intake notes, a form response, or a call transcript. Get an instant summary and practitioner match suggestions."
         }),
-        /* @__PURE__ */ jsx_runtime6.jsxs("div", {
+        /* @__PURE__ */ jsx_runtime7.jsxs("div", {
           style: { display: "flex", gap: 8, marginBottom: 12, flexWrap: "wrap", alignItems: "center" },
           children: [
-            ["form", "transcript", "notes"].map((t) => /* @__PURE__ */ jsx_runtime6.jsx("button", {
+            ["form", "transcript", "notes"].map((t) => /* @__PURE__ */ jsx_runtime7.jsx("button", {
               onClick: () => setIntakeType(t),
               style: {
                 padding: "6px 16px",
@@ -27005,7 +27049,7 @@ Tuesdays at 4:30pm (Monthly: Starting 1st Dec)`,
               },
               children: t === "form" ? "\uD83D\uDCCB Form" : t === "transcript" ? "\uD83C\uDF99️ Transcript" : "\uD83D\uDCDD Notes"
             }, t)),
-            /* @__PURE__ */ jsx_runtime6.jsx("input", {
+            /* @__PURE__ */ jsx_runtime7.jsx("input", {
               ref: fileInputRef,
               type: "file",
               accept: ".pdf,.docx,.txt,text/plain",
@@ -27016,7 +27060,7 @@ Tuesdays at 4:30pm (Monthly: Starting 1st Dec)`,
                   handleFileUpload(file);
               }
             }),
-            /* @__PURE__ */ jsx_runtime6.jsx("button", {
+            /* @__PURE__ */ jsx_runtime7.jsx("button", {
               onClick: () => fileInputRef.current?.click(),
               disabled: extracting,
               style: {
@@ -27034,14 +27078,14 @@ Tuesdays at 4:30pm (Monthly: Starting 1st Dec)`,
             })
           ]
         }),
-        fileError && /* @__PURE__ */ jsx_runtime6.jsxs("div", {
+        fileError && /* @__PURE__ */ jsx_runtime7.jsxs("div", {
           style: { marginBottom: 8, fontSize: 12, color: "#c00", fontStyle: "italic" },
           children: [
             "⚠️ ",
             fileError
           ]
         }),
-        /* @__PURE__ */ jsx_runtime6.jsx("textarea", {
+        /* @__PURE__ */ jsx_runtime7.jsx("textarea", {
           value: text,
           onChange: (e) => setText(e.target.value),
           placeholder: "Paste intake information here...",
@@ -27058,7 +27102,7 @@ Tuesdays at 4:30pm (Monthly: Starting 1st Dec)`,
             outline: "none"
           }
         }),
-        /* @__PURE__ */ jsx_runtime6.jsx("button", {
+        /* @__PURE__ */ jsx_runtime7.jsx("button", {
           onClick: handleSubmit,
           disabled: loading || !text.trim(),
           style: {
@@ -27074,28 +27118,28 @@ Tuesdays at 4:30pm (Monthly: Starting 1st Dec)`,
           },
           children: loading ? "⏳ Matching..." : "✨ Summarise & Match Practitioners"
         }),
-        loading && /* @__PURE__ */ jsx_runtime6.jsx("p", {
+        loading && /* @__PURE__ */ jsx_runtime7.jsx("p", {
           style: { color: COLORS.mauve, marginTop: 12, fontSize: 13 },
           children: "Matching against practitioner roster…"
         }),
-        error && /* @__PURE__ */ jsx_runtime6.jsxs("div", {
+        error && /* @__PURE__ */ jsx_runtime7.jsxs("div", {
           style: { marginTop: 16, padding: 16, background: "#ffeaea", borderRadius: 8, color: "#c00", fontSize: 13 },
           children: [
-            /* @__PURE__ */ jsx_runtime6.jsx("strong", {
+            /* @__PURE__ */ jsx_runtime7.jsx("strong", {
               children: "⚠️ Matching unavailable"
             }),
-            /* @__PURE__ */ jsx_runtime6.jsx("div", {
+            /* @__PURE__ */ jsx_runtime7.jsx("div", {
               style: { marginTop: 6, color: "#800" },
               children: "Matching service error. Please try again or contact your Tasklet agent."
             }),
-            /* @__PURE__ */ jsx_runtime6.jsxs("details", {
+            /* @__PURE__ */ jsx_runtime7.jsxs("details", {
               style: { marginTop: 8 },
               children: [
-                /* @__PURE__ */ jsx_runtime6.jsx("summary", {
+                /* @__PURE__ */ jsx_runtime7.jsx("summary", {
                   style: { cursor: "pointer", color: "#a00", fontSize: 12 },
                   children: "Technical detail"
                 }),
-                /* @__PURE__ */ jsx_runtime6.jsx("div", {
+                /* @__PURE__ */ jsx_runtime7.jsx("div", {
                   style: { marginTop: 4, fontSize: 12, fontFamily: "monospace" },
                   children: error
                 })
@@ -27103,10 +27147,10 @@ Tuesdays at 4:30pm (Monthly: Starting 1st Dec)`,
             })
           ]
         }),
-        result && /* @__PURE__ */ jsx_runtime6.jsxs("div", {
+        result && /* @__PURE__ */ jsx_runtime7.jsxs("div", {
           style: { marginTop: 32 },
           children: [
-            /* @__PURE__ */ jsx_runtime6.jsxs("div", {
+            /* @__PURE__ */ jsx_runtime7.jsxs("div", {
               style: {
                 background: COLORS.lightLilac,
                 borderRadius: 12,
@@ -27115,14 +27159,14 @@ Tuesdays at 4:30pm (Monthly: Starting 1st Dec)`,
                 borderLeft: `4px solid ${COLORS.mauve}`
               },
               children: [
-                /* @__PURE__ */ jsx_runtime6.jsxs("div", {
+                /* @__PURE__ */ jsx_runtime7.jsxs("div", {
                   style: { display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16 },
                   children: [
-                    /* @__PURE__ */ jsx_runtime6.jsx("h3", {
+                    /* @__PURE__ */ jsx_runtime7.jsx("h3", {
                       style: { margin: 0, color: COLORS.darkPurple, fontSize: 16 },
                       children: "\uD83D\uDCCB Intake Summary"
                     }),
-                    /* @__PURE__ */ jsx_runtime6.jsx("button", {
+                    /* @__PURE__ */ jsx_runtime7.jsx("button", {
                       onClick: handleCopy,
                       style: {
                         padding: "6px 14px",
@@ -27138,29 +27182,29 @@ Tuesdays at 4:30pm (Monthly: Starting 1st Dec)`,
                     })
                   ]
                 }),
-                result.ai_display_summary ? /* @__PURE__ */ jsx_runtime6.jsx(AISummaryDisplay, {
+                result.ai_display_summary ? /* @__PURE__ */ jsx_runtime7.jsx(AISummaryDisplay, {
                   text: result.ai_display_summary
-                }) : /* @__PURE__ */ jsx_runtime6.jsx(SummaryDisplay, {
+                }) : /* @__PURE__ */ jsx_runtime7.jsx(SummaryDisplay, {
                   summary: result.summary
                 })
               ]
             }),
-            /* @__PURE__ */ jsx_runtime6.jsx("h3", {
+            /* @__PURE__ */ jsx_runtime7.jsx("h3", {
               style: { color: COLORS.darkPurple, marginBottom: 4, fontSize: 18 },
               children: "\uD83C\uDFAF Suggested Practitioners"
             }),
-            /* @__PURE__ */ jsx_runtime6.jsx("p", {
+            /* @__PURE__ */ jsx_runtime7.jsx("p", {
               style: { color: "#666", fontSize: 13, marginBottom: 20 },
               children: "Ranked by match strength based on presentations, client preferences, and current availability."
             }),
-            /* @__PURE__ */ jsx_runtime6.jsx("div", {
+            /* @__PURE__ */ jsx_runtime7.jsx("div", {
               style: { display: "flex", flexDirection: "column", gap: 20 },
-              children: result.matches.map((match, i) => /* @__PURE__ */ jsx_runtime6.jsx(MatchCard, {
+              children: result.matches.map((match, i) => /* @__PURE__ */ jsx_runtime7.jsx(MatchCard, {
                 match,
                 rank: i + 1
               }, i))
             }),
-            result.email_intro && /* @__PURE__ */ jsx_runtime6.jsx(EmailIntroBox, {
+            result.email_intro && /* @__PURE__ */ jsx_runtime7.jsx(EmailIntroBox, {
               intro: result.email_intro,
               clientName: result.summary.client_name
             })
@@ -27172,17 +27216,17 @@ Tuesdays at 4:30pm (Monthly: Starting 1st Dec)`,
   function SummaryField({ label, value, highlight }) {
     if (!value || Array.isArray(value) && value.length === 0)
       return null;
-    return /* @__PURE__ */ jsx_runtime6.jsxs("div", {
+    return /* @__PURE__ */ jsx_runtime7.jsxs("div", {
       style: { display: "flex", gap: 8, fontSize: 13, marginBottom: 4 },
       children: [
-        /* @__PURE__ */ jsx_runtime6.jsxs("span", {
+        /* @__PURE__ */ jsx_runtime7.jsxs("span", {
           style: { color: COLORS.mauve, fontWeight: 600, minWidth: 140, flexShrink: 0 },
           children: [
             label,
             ":"
           ]
         }),
-        /* @__PURE__ */ jsx_runtime6.jsx("span", {
+        /* @__PURE__ */ jsx_runtime7.jsx("span", {
           style: { color: highlight ? "#c00" : "#333", fontWeight: highlight ? 600 : 400 },
           children: Array.isArray(value) ? value.join(", ") : value
         })
@@ -27190,10 +27234,10 @@ Tuesdays at 4:30pm (Monthly: Starting 1st Dec)`,
     });
   }
   function SummarySection({ title, children }) {
-    return /* @__PURE__ */ jsx_runtime6.jsxs("div", {
+    return /* @__PURE__ */ jsx_runtime7.jsxs("div", {
       style: { marginBottom: 14 },
       children: [
-        /* @__PURE__ */ jsx_runtime6.jsx("div", {
+        /* @__PURE__ */ jsx_runtime7.jsx("div", {
           style: { fontWeight: 700, color: COLORS.darkPurple, fontSize: 12, textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 6, borderBottom: `1px solid ${COLORS.lightMauve}`, paddingBottom: 3 },
           children: title
         }),
@@ -27204,11 +27248,11 @@ Tuesdays at 4:30pm (Monthly: Starting 1st Dec)`,
   function AISummaryDisplay({ text }) {
     const lines = text.split(`
 `);
-    return /* @__PURE__ */ jsx_runtime6.jsxs("div", {
+    return /* @__PURE__ */ jsx_runtime7.jsxs("div", {
       children: [
-        /* @__PURE__ */ jsx_runtime6.jsx("div", {
+        /* @__PURE__ */ jsx_runtime7.jsx("div", {
           style: { display: "flex", alignItems: "center", gap: 6, marginBottom: 12 },
-          children: /* @__PURE__ */ jsx_runtime6.jsx("span", {
+          children: /* @__PURE__ */ jsx_runtime7.jsx("span", {
             style: {
               background: "linear-gradient(135deg, #7c3aed, #a855f7)",
               color: "white",
@@ -27221,16 +27265,16 @@ Tuesdays at 4:30pm (Monthly: Starting 1st Dec)`,
             children: "✨ AI Summary"
           })
         }),
-        /* @__PURE__ */ jsx_runtime6.jsx("div", {
+        /* @__PURE__ */ jsx_runtime7.jsx("div", {
           style: { fontSize: 13.5, lineHeight: 1.7, color: "#333" },
           children: lines.map((line, i) => {
             const trimmed = line.trim();
             if (!trimmed)
-              return /* @__PURE__ */ jsx_runtime6.jsx("div", {
+              return /* @__PURE__ */ jsx_runtime7.jsx("div", {
                 style: { height: 5 }
               }, i);
             if (/^INTAKE SUMMARY/i.test(trimmed)) {
-              return /* @__PURE__ */ jsx_runtime6.jsx("div", {
+              return /* @__PURE__ */ jsx_runtime7.jsx("div", {
                 style: {
                   fontWeight: 700,
                   color: COLORS.darkPurple,
@@ -27244,7 +27288,7 @@ Tuesdays at 4:30pm (Monthly: Starting 1st Dec)`,
             }
             const isAllCaps = /^[A-Z][A-Z\s\/\-&,\.]+$/.test(trimmed) && trimmed.length > 4 && !/^\d/.test(trimmed);
             if (isAllCaps) {
-              return /* @__PURE__ */ jsx_runtime6.jsx("div", {
+              return /* @__PURE__ */ jsx_runtime7.jsx("div", {
                 style: {
                   fontWeight: 700,
                   color: COLORS.darkPurple,
@@ -27260,17 +27304,17 @@ Tuesdays at 4:30pm (Monthly: Starting 1st Dec)`,
             }
             const kvMatch = trimmed.match(/^([A-Za-z][A-Za-z\s]{1,40}?):\s+(.+)$/);
             if (kvMatch && !trimmed.startsWith("•") && !trimmed.startsWith("-") && kvMatch[1].split(" ").length <= 5) {
-              return /* @__PURE__ */ jsx_runtime6.jsxs("div", {
+              return /* @__PURE__ */ jsx_runtime7.jsxs("div", {
                 style: { display: "flex", gap: 6, marginBottom: 4, flexWrap: "wrap" },
                 children: [
-                  /* @__PURE__ */ jsx_runtime6.jsxs("span", {
+                  /* @__PURE__ */ jsx_runtime7.jsxs("span", {
                     style: { fontWeight: 600, color: COLORS.mauve, minWidth: 190, flexShrink: 0 },
                     children: [
                       kvMatch[1],
                       ":"
                     ]
                   }),
-                  /* @__PURE__ */ jsx_runtime6.jsx("span", {
+                  /* @__PURE__ */ jsx_runtime7.jsx("span", {
                     style: { flex: 1 },
                     children: kvMatch[2]
                   })
@@ -27279,20 +27323,20 @@ Tuesdays at 4:30pm (Monthly: Starting 1st Dec)`,
             }
             if (trimmed.startsWith("•") || trimmed.startsWith("- ") || trimmed.startsWith("-\t")) {
               const content = trimmed.startsWith("•") ? trimmed.slice(1).trim() : trimmed.slice(1).trim();
-              return /* @__PURE__ */ jsx_runtime6.jsxs("div", {
+              return /* @__PURE__ */ jsx_runtime7.jsxs("div", {
                 style: { display: "flex", gap: 7, marginBottom: 4 },
                 children: [
-                  /* @__PURE__ */ jsx_runtime6.jsx("span", {
+                  /* @__PURE__ */ jsx_runtime7.jsx("span", {
                     style: { color: COLORS.mauve, flexShrink: 0, marginTop: 1 },
                     children: "•"
                   }),
-                  /* @__PURE__ */ jsx_runtime6.jsx("span", {
+                  /* @__PURE__ */ jsx_runtime7.jsx("span", {
                     children: content
                   })
                 ]
               }, i);
             }
-            return /* @__PURE__ */ jsx_runtime6.jsx("div", {
+            return /* @__PURE__ */ jsx_runtime7.jsx("div", {
               style: { marginBottom: 4 },
               children: trimmed
             }, i);
@@ -27310,34 +27354,34 @@ Tuesdays at 4:30pm (Monthly: Starting 1st Dec)`,
       summary.risk_other ? `Other: ${summary.risk_other}` : null
     ].filter(Boolean);
     const hasRisk = riskFields.length > 0;
-    return /* @__PURE__ */ jsx_runtime6.jsxs("div", {
+    return /* @__PURE__ */ jsx_runtime7.jsxs("div", {
       children: [
-        /* @__PURE__ */ jsx_runtime6.jsxs(SummarySection, {
+        /* @__PURE__ */ jsx_runtime7.jsxs(SummarySection, {
           title: "\uD83D\uDC64 Client",
           children: [
-            /* @__PURE__ */ jsx_runtime6.jsx(SummaryField, {
+            /* @__PURE__ */ jsx_runtime7.jsx(SummaryField, {
               label: "Name",
               value: summary.client_name
             }),
-            /* @__PURE__ */ jsx_runtime6.jsx(SummaryField, {
+            /* @__PURE__ */ jsx_runtime7.jsx(SummaryField, {
               label: "Age",
               value: summary.age
             }),
-            /* @__PURE__ */ jsx_runtime6.jsx(SummaryField, {
+            /* @__PURE__ */ jsx_runtime7.jsx(SummaryField, {
               label: "Sex",
               value: summary.sex
             }),
-            /* @__PURE__ */ jsx_runtime6.jsx(SummaryField, {
+            /* @__PURE__ */ jsx_runtime7.jsx(SummaryField, {
               label: "Referral source",
               value: summary.referral_source
             })
           ]
         }),
-        summary.presenting_issues?.length > 0 && /* @__PURE__ */ jsx_runtime6.jsx(SummarySection, {
+        summary.presenting_issues?.length > 0 && /* @__PURE__ */ jsx_runtime7.jsx(SummarySection, {
           title: "\uD83C\uDFAF Presenting Issues",
-          children: /* @__PURE__ */ jsx_runtime6.jsx("div", {
+          children: /* @__PURE__ */ jsx_runtime7.jsx("div", {
             style: { fontSize: 13, color: "#333" },
-            children: summary.presenting_issues.map((issue, i) => /* @__PURE__ */ jsx_runtime6.jsxs("div", {
+            children: summary.presenting_issues.map((issue, i) => /* @__PURE__ */ jsx_runtime7.jsxs("div", {
               style: { marginBottom: 2 },
               children: [
                 "• ",
@@ -27346,85 +27390,85 @@ Tuesdays at 4:30pm (Monthly: Starting 1st Dec)`,
             }, i))
           })
         }),
-        /* @__PURE__ */ jsx_runtime6.jsx(SummarySection, {
+        /* @__PURE__ */ jsx_runtime7.jsx(SummarySection, {
           title: "⚠️ Risk",
-          children: hasRisk ? /* @__PURE__ */ jsx_runtime6.jsx("div", {
+          children: hasRisk ? /* @__PURE__ */ jsx_runtime7.jsx("div", {
             style: { background: "#fff3cd", borderRadius: 6, padding: "8px 12px", border: "1px solid #ffc107" },
-            children: riskFields.map((r, i) => /* @__PURE__ */ jsx_runtime6.jsx("div", {
+            children: riskFields.map((r, i) => /* @__PURE__ */ jsx_runtime7.jsx("div", {
               style: { fontSize: 13, color: "#856404", fontWeight: 600, marginBottom: 2 },
               children: r
             }, i))
-          }) : /* @__PURE__ */ jsx_runtime6.jsx("div", {
+          }) : /* @__PURE__ */ jsx_runtime7.jsx("div", {
             style: { fontSize: 13, color: "#2e7d32" },
             children: "✓ Nil identified"
           })
         }),
-        /* @__PURE__ */ jsx_runtime6.jsxs(SummarySection, {
+        /* @__PURE__ */ jsx_runtime7.jsxs(SummarySection, {
           title: "\uD83E\uDDE0 Modalities & Approach",
           children: [
-            /* @__PURE__ */ jsx_runtime6.jsx(SummaryField, {
+            /* @__PURE__ */ jsx_runtime7.jsx(SummaryField, {
               label: "Preferred modalities",
               value: summary.modality_preference || "Not specified"
             }),
-            /* @__PURE__ */ jsx_runtime6.jsx(SummaryField, {
+            /* @__PURE__ */ jsx_runtime7.jsx(SummaryField, {
               label: "Therapy style",
               value: summary.therapy_style
             }),
-            /* @__PURE__ */ jsx_runtime6.jsx(SummaryField, {
+            /* @__PURE__ */ jsx_runtime7.jsx(SummaryField, {
               label: "Clinician gender pref",
               value: summary.gender
             }),
-            /* @__PURE__ */ jsx_runtime6.jsx(SummaryField, {
+            /* @__PURE__ */ jsx_runtime7.jsx(SummaryField, {
               label: "Specific practitioner",
               value: summary.specific_practitioner
             })
           ]
         }),
-        /* @__PURE__ */ jsx_runtime6.jsxs(SummarySection, {
+        /* @__PURE__ */ jsx_runtime7.jsxs(SummarySection, {
           title: "\uD83C\uDFE5 Background",
           children: [
-            /* @__PURE__ */ jsx_runtime6.jsx(SummaryField, {
+            /* @__PURE__ */ jsx_runtime7.jsx(SummaryField, {
               label: "Diagnoses",
               value: summary.diagnosis
             }),
-            /* @__PURE__ */ jsx_runtime6.jsx(SummaryField, {
+            /* @__PURE__ */ jsx_runtime7.jsx(SummaryField, {
               label: "Medication",
               value: summary.medication
             }),
-            /* @__PURE__ */ jsx_runtime6.jsx(SummaryField, {
+            /* @__PURE__ */ jsx_runtime7.jsx(SummaryField, {
               label: "Previous therapy",
               value: summary.previous_therapy
             })
           ]
         }),
-        /* @__PURE__ */ jsx_runtime6.jsxs(SummarySection, {
+        /* @__PURE__ */ jsx_runtime7.jsxs(SummarySection, {
           title: "\uD83D\uDCCD Location & Availability",
           children: [
-            /* @__PURE__ */ jsx_runtime6.jsx(SummaryField, {
+            /* @__PURE__ */ jsx_runtime7.jsx(SummaryField, {
               label: "Location",
               value: summary.location_preference
             }),
-            /* @__PURE__ */ jsx_runtime6.jsx(SummaryField, {
+            /* @__PURE__ */ jsx_runtime7.jsx(SummaryField, {
               label: "Days/times",
               value: summary.timing
             }),
-            /* @__PURE__ */ jsx_runtime6.jsx(SummaryField, {
+            /* @__PURE__ */ jsx_runtime7.jsx(SummaryField, {
               label: "Frequency",
               value: summary.frequency
             })
           ]
         }),
-        /* @__PURE__ */ jsx_runtime6.jsx(SummarySection, {
+        /* @__PURE__ */ jsx_runtime7.jsx(SummarySection, {
           title: "\uD83D\uDCB0 Funding",
-          children: /* @__PURE__ */ jsx_runtime6.jsx(SummaryField, {
+          children: /* @__PURE__ */ jsx_runtime7.jsx(SummaryField, {
             label: "Funding",
             value: summary.funding || "Not discussed",
             highlight: !!summary.funding?.includes("⚠️")
           })
         }),
-        summary.additional_notes && /* @__PURE__ */ jsx_runtime6.jsx(SummarySection, {
+        summary.additional_notes && /* @__PURE__ */ jsx_runtime7.jsx(SummarySection, {
           title: "\uD83D\uDCDD Notes",
-          children: /* @__PURE__ */ jsx_runtime6.jsx(SummaryField, {
+          children: /* @__PURE__ */ jsx_runtime7.jsx(SummaryField, {
             label: "Notes",
             value: summary.additional_notes
           })
@@ -27451,7 +27495,7 @@ Tuesdays at 4:30pm (Monthly: Starting 1st Dec)`,
       setCopied(true);
       setTimeout(() => setCopied(false), 2500);
     };
-    return /* @__PURE__ */ jsx_runtime6.jsxs("div", {
+    return /* @__PURE__ */ jsx_runtime7.jsxs("div", {
       style: {
         marginTop: 32,
         background: "#f0f7ff",
@@ -27460,17 +27504,17 @@ Tuesdays at 4:30pm (Monthly: Starting 1st Dec)`,
         borderLeft: `4px solid ${COLORS.coolBlue}`
       },
       children: [
-        /* @__PURE__ */ jsx_runtime6.jsxs("div", {
+        /* @__PURE__ */ jsx_runtime7.jsxs("div", {
           style: { display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 12 },
           children: [
-            /* @__PURE__ */ jsx_runtime6.jsxs("h3", {
+            /* @__PURE__ */ jsx_runtime7.jsxs("h3", {
               style: { margin: 0, color: COLORS.darkPurple, fontSize: 16 },
               children: [
                 "✉️ Email Intro ",
                 clientName ? `for ${clientName.split(" ")[0]}` : ""
               ]
             }),
-            /* @__PURE__ */ jsx_runtime6.jsx("button", {
+            /* @__PURE__ */ jsx_runtime7.jsx("button", {
               onClick: handleCopy,
               style: {
                 padding: "6px 14px",
@@ -27486,11 +27530,11 @@ Tuesdays at 4:30pm (Monthly: Starting 1st Dec)`,
             })
           ]
         }),
-        /* @__PURE__ */ jsx_runtime6.jsx("p", {
+        /* @__PURE__ */ jsx_runtime7.jsx("p", {
           style: { margin: 0, fontSize: 13, color: "#333", lineHeight: 1.6, fontStyle: "italic" },
           children: intro
         }),
-        /* @__PURE__ */ jsx_runtime6.jsx("p", {
+        /* @__PURE__ */ jsx_runtime7.jsx("p", {
           style: { margin: "8px 0 0", fontSize: 11, color: "#888" },
           children: "Paste this as the opening paragraph of your client email, then add the practitioner details below."
         })
@@ -27502,7 +27546,7 @@ Tuesdays at 4:30pm (Monthly: Starting 1st Dec)`,
     const localPhoto = photoFilename ? `/photos/${photoFilename}` : null;
     const rankEmoji = rank === 1 ? "\uD83E\uDD47" : rank === 2 ? "\uD83E\uDD48" : rank === 3 ? "\uD83E\uDD49" : `${rank}.`;
     const hasAvailability = match.locations?.some((l) => l.availability?.trim());
-    return /* @__PURE__ */ jsx_runtime6.jsxs("div", {
+    return /* @__PURE__ */ jsx_runtime7.jsxs("div", {
       style: {
         borderRadius: 12,
         border: `1px solid ${COLORS.lightMauve}`,
@@ -27510,7 +27554,7 @@ Tuesdays at 4:30pm (Monthly: Starting 1st Dec)`,
         boxShadow: "0 2px 8px rgba(44,36,76,0.08)"
       },
       children: [
-        /* @__PURE__ */ jsx_runtime6.jsxs("div", {
+        /* @__PURE__ */ jsx_runtime7.jsxs("div", {
           style: {
             background: `linear-gradient(135deg, ${COLORS.darkPurple}, ${COLORS.mauve})`,
             padding: "16px 20px",
@@ -27519,7 +27563,7 @@ Tuesdays at 4:30pm (Monthly: Starting 1st Dec)`,
             gap: 16
           },
           children: [
-            localPhoto && /* @__PURE__ */ jsx_runtime6.jsx("img", {
+            localPhoto && /* @__PURE__ */ jsx_runtime7.jsx("img", {
               src: localPhoto,
               alt: match.name,
               style: {
@@ -27534,21 +27578,21 @@ Tuesdays at 4:30pm (Monthly: Starting 1st Dec)`,
                 e.target.style.display = "none";
               }
             }),
-            /* @__PURE__ */ jsx_runtime6.jsxs("div", {
+            /* @__PURE__ */ jsx_runtime7.jsxs("div", {
               style: { flex: 1 },
               children: [
-                /* @__PURE__ */ jsx_runtime6.jsxs("div", {
+                /* @__PURE__ */ jsx_runtime7.jsxs("div", {
                   style: { display: "flex", alignItems: "center", gap: 10 },
                   children: [
-                    /* @__PURE__ */ jsx_runtime6.jsx("span", {
+                    /* @__PURE__ */ jsx_runtime7.jsx("span", {
                       style: { fontSize: 18 },
                       children: rankEmoji
                     }),
-                    /* @__PURE__ */ jsx_runtime6.jsx("span", {
+                    /* @__PURE__ */ jsx_runtime7.jsx("span", {
                       style: { color: "white", fontWeight: 700, fontSize: 17 },
                       children: match.name
                     }),
-                    /* @__PURE__ */ jsx_runtime6.jsxs("span", {
+                    /* @__PURE__ */ jsx_runtime7.jsxs("span", {
                       style: {
                         background: scoreBg(match.match_score),
                         color: scoreColor(match.match_score),
@@ -27564,7 +27608,7 @@ Tuesdays at 4:30pm (Monthly: Starting 1st Dec)`,
                     })
                   ]
                 }),
-                match.title && /* @__PURE__ */ jsx_runtime6.jsx("div", {
+                match.title && /* @__PURE__ */ jsx_runtime7.jsx("div", {
                   style: { color: "rgba(255,255,255,0.8)", fontSize: 13, marginTop: 2 },
                   children: match.title
                 })
@@ -27572,26 +27616,26 @@ Tuesdays at 4:30pm (Monthly: Starting 1st Dec)`,
             })
           ]
         }),
-        /* @__PURE__ */ jsx_runtime6.jsxs("div", {
+        /* @__PURE__ */ jsx_runtime7.jsxs("div", {
           style: { padding: "16px 20px", background: "white" },
           children: [
-            /* @__PURE__ */ jsx_runtime6.jsxs("div", {
+            /* @__PURE__ */ jsx_runtime7.jsxs("div", {
               style: { marginBottom: 14 },
               children: [
-                /* @__PURE__ */ jsx_runtime6.jsx("div", {
+                /* @__PURE__ */ jsx_runtime7.jsx("div", {
                   style: { fontWeight: 600, color: COLORS.darkPurple, fontSize: 13, marginBottom: 6 },
                   children: "Why they're a good match:"
                 }),
-                /* @__PURE__ */ jsx_runtime6.jsx("ul", {
+                /* @__PURE__ */ jsx_runtime7.jsx("ul", {
                   style: { margin: 0, paddingLeft: 18 },
-                  children: match.reasons.map((r, i) => /* @__PURE__ */ jsx_runtime6.jsx("li", {
+                  children: match.reasons.map((r, i) => /* @__PURE__ */ jsx_runtime7.jsx("li", {
                     style: { color: "#444", fontSize: 13, marginBottom: 3 },
                     children: r
                   }, i))
                 })
               ]
             }),
-            /* @__PURE__ */ jsx_runtime6.jsxs("div", {
+            /* @__PURE__ */ jsx_runtime7.jsxs("div", {
               style: {
                 background: hasAvailability ? "#f0f7ff" : "#fdf5f8",
                 borderRadius: 8,
@@ -27599,22 +27643,22 @@ Tuesdays at 4:30pm (Monthly: Starting 1st Dec)`,
                 borderLeft: `3px solid ${hasAvailability ? COLORS.coolBlue : COLORS.lightMauve}`
               },
               children: [
-                /* @__PURE__ */ jsx_runtime6.jsxs("div", {
+                /* @__PURE__ */ jsx_runtime7.jsxs("div", {
                   style: { fontWeight: 600, color: hasAvailability ? COLORS.coolBlue : COLORS.mauve, fontSize: 12, marginBottom: hasAvailability ? 4 : 0 },
                   children: [
                     "\uD83D\uDDD3 ",
                     hasAvailability ? "Current Availability" : "Availability"
                   ]
                 }),
-                hasAvailability ? match.locations?.filter((l) => l.availability?.trim()).map((loc, i) => /* @__PURE__ */ jsx_runtime6.jsxs("div", {
+                hasAvailability ? match.locations?.filter((l) => l.availability?.trim()).map((loc, i) => /* @__PURE__ */ jsx_runtime7.jsxs("div", {
                   style: { marginBottom: i < (match.locations?.length || 0) - 1 ? 6 : 0 },
                   children: [
-                    /* @__PURE__ */ jsx_runtime6.jsx("div", {
+                    /* @__PURE__ */ jsx_runtime7.jsx("div", {
                       style: { fontWeight: 600, color: "#555", fontSize: 12 },
                       children: loc.location
                     }),
                     loc.availability.split(`
-`).filter(Boolean).map((slot, j) => /* @__PURE__ */ jsx_runtime6.jsxs("div", {
+`).filter(Boolean).map((slot, j) => /* @__PURE__ */ jsx_runtime7.jsxs("div", {
                       style: { color: "#444", fontSize: 12, paddingLeft: 8 },
                       children: [
                         "• ",
@@ -27622,16 +27666,16 @@ Tuesdays at 4:30pm (Monthly: Starting 1st Dec)`,
                       ]
                     }, j))
                   ]
-                }, i)) : /* @__PURE__ */ jsx_runtime6.jsx("div", {
+                }, i)) : /* @__PURE__ */ jsx_runtime7.jsx("div", {
                   style: { color: COLORS.mauve, fontSize: 13, fontStyle: "italic" },
                   children: match.availability_note || "Currently fully booked — waitlist only"
                 })
               ]
             }),
-            match.billing_types && match.billing_types.length > 0 && /* @__PURE__ */ jsx_runtime6.jsxs("div", {
+            match.billing_types && match.billing_types.length > 0 && /* @__PURE__ */ jsx_runtime7.jsxs("div", {
               style: { marginTop: 10, fontSize: 12, color: "#666" },
               children: [
-                /* @__PURE__ */ jsx_runtime6.jsx("span", {
+                /* @__PURE__ */ jsx_runtime7.jsx("span", {
                   style: { fontWeight: 600 },
                   children: "Billing: "
                 }),
@@ -27754,7 +27798,7 @@ Tuesdays at 4:30pm (Monthly: Starting 1st Dec)`,
 
   // components/MultiSelect.tsx
   var import_react9 = __toESM(require_react());
-  var jsx_runtime7 = __toESM(require_jsx_runtime());
+  var jsx_runtime8 = __toESM(require_jsx_runtime());
   var MultiSelect = ({
     label,
     value,
@@ -27807,22 +27851,22 @@ Tuesdays at 4:30pm (Monthly: Starting 1st Dec)`,
         remove(selected[selected.length - 1]);
       }
     };
-    return /* @__PURE__ */ jsx_runtime7.jsxs("div", {
+    return /* @__PURE__ */ jsx_runtime8.jsxs("div", {
       ref: containerRef,
       className: "w-full",
       children: [
-        /* @__PURE__ */ jsx_runtime7.jsx("label", {
+        /* @__PURE__ */ jsx_runtime8.jsx("label", {
           className: "label label-text text-xs font-semibold",
           children: label
         }),
-        hint && /* @__PURE__ */ jsx_runtime7.jsx("div", {
+        hint && /* @__PURE__ */ jsx_runtime8.jsx("div", {
           className: "text-xs mb-1",
           style: { color: "#8D5273" },
           children: hint
         }),
-        selected.length > 0 && /* @__PURE__ */ jsx_runtime7.jsx("div", {
+        selected.length > 0 && /* @__PURE__ */ jsx_runtime8.jsx("div", {
           className: "flex flex-wrap gap-1 mb-2",
-          children: selected.map((s) => /* @__PURE__ */ jsx_runtime7.jsxs("span", {
+          children: selected.map((s) => /* @__PURE__ */ jsx_runtime8.jsxs("span", {
             className: "inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium",
             style: {
               backgroundColor: "#F0EEF7",
@@ -27831,7 +27875,7 @@ Tuesdays at 4:30pm (Monthly: Starting 1st Dec)`,
             },
             children: [
               s,
-              /* @__PURE__ */ jsx_runtime7.jsx("button", {
+              /* @__PURE__ */ jsx_runtime8.jsx("button", {
                 type: "button",
                 onClick: () => remove(s),
                 className: "ml-0.5 rounded-full hover:bg-mauve/20 transition-colors leading-none",
@@ -27842,10 +27886,10 @@ Tuesdays at 4:30pm (Monthly: Starting 1st Dec)`,
             ]
           }, s))
         }),
-        /* @__PURE__ */ jsx_runtime7.jsxs("div", {
+        /* @__PURE__ */ jsx_runtime8.jsxs("div", {
           className: "relative",
           children: [
-            /* @__PURE__ */ jsx_runtime7.jsx("input", {
+            /* @__PURE__ */ jsx_runtime8.jsx("input", {
               ref: inputRef,
               type: "text",
               className: "input input-bordered input-sm w-full pr-8",
@@ -27858,7 +27902,7 @@ Tuesdays at 4:30pm (Monthly: Starting 1st Dec)`,
               onKeyDown: handleKeyDown,
               placeholder: selected.length === 0 ? placeholder || "Search to add…" : "Add more…"
             }),
-            search && /* @__PURE__ */ jsx_runtime7.jsx("button", {
+            search && /* @__PURE__ */ jsx_runtime8.jsx("button", {
               type: "button",
               onClick: () => {
                 setSearch("");
@@ -27867,24 +27911,24 @@ Tuesdays at 4:30pm (Monthly: Starting 1st Dec)`,
               className: "absolute right-2 top-1/2 -translate-y-1/2 text-base-content/40 hover:text-base-content",
               children: "×"
             }),
-            open && (filtered.length > 0 || search.trim() && !selected.includes(search.trim())) && /* @__PURE__ */ jsx_runtime7.jsxs("div", {
+            open && (filtered.length > 0 || search.trim() && !selected.includes(search.trim())) && /* @__PURE__ */ jsx_runtime8.jsxs("div", {
               className: "absolute z-50 w-full bg-white border rounded-lg shadow-lg max-h-52 overflow-y-auto mt-1",
               style: { borderColor: "#CDA8BA" },
               children: [
-                search.trim() && !options.includes(search.trim()) && !selected.includes(search.trim()) && /* @__PURE__ */ jsx_runtime7.jsxs("button", {
+                search.trim() && !options.includes(search.trim()) && !selected.includes(search.trim()) && /* @__PURE__ */ jsx_runtime8.jsxs("button", {
                   type: "button",
                   className: "w-full text-left px-3 py-2 text-xs hover:bg-base-100 transition-colors border-b",
                   style: { color: "#8D5273", borderColor: "#F0EEF7" },
                   onClick: () => add(search.trim()),
                   children: [
                     '+ Add custom: "',
-                    /* @__PURE__ */ jsx_runtime7.jsx("strong", {
+                    /* @__PURE__ */ jsx_runtime8.jsx("strong", {
                       children: search.trim()
                     }),
                     '"'
                   ]
                 }),
-                filtered.map((opt) => /* @__PURE__ */ jsx_runtime7.jsx("button", {
+                filtered.map((opt) => /* @__PURE__ */ jsx_runtime8.jsx("button", {
                   type: "button",
                   className: "w-full text-left px-3 py-1.5 text-sm hover:bg-base-100 transition-colors",
                   onMouseDown: (e) => e.preventDefault(),
@@ -27895,7 +27939,7 @@ Tuesdays at 4:30pm (Monthly: Starting 1st Dec)`,
             })
           ]
         }),
-        /* @__PURE__ */ jsx_runtime7.jsxs("div", {
+        /* @__PURE__ */ jsx_runtime8.jsxs("div", {
           className: "text-xs mt-1",
           style: { color: "#8D5273" },
           children: [
@@ -28133,7 +28177,7 @@ Tuesdays at 4:30pm (Monthly: Starting 1st Dec)`,
   ].sort();
 
   // ManageAvailability.tsx
-  var jsx_runtime8 = __toESM(require_jsx_runtime());
+  var jsx_runtime9 = __toESM(require_jsx_runtime());
   function toEditableString(val, sep = "; ") {
     if (!val)
       return "";
@@ -28143,38 +28187,38 @@ Tuesdays at 4:30pm (Monthly: Starting 1st Dec)`,
   }
   var Section = ({ title, defaultOpen = false, children }) => {
     const [open, setOpen] = import_react10.useState(defaultOpen);
-    return /* @__PURE__ */ jsx_runtime8.jsxs("div", {
+    return /* @__PURE__ */ jsx_runtime9.jsxs("div", {
       className: "rounded-xl overflow-hidden mb-3",
       style: { border: "1px solid #CDA8BA" },
       children: [
-        /* @__PURE__ */ jsx_runtime8.jsxs("button", {
+        /* @__PURE__ */ jsx_runtime9.jsxs("button", {
           type: "button",
           className: "w-full flex items-center gap-2 px-4 py-3 transition-colors text-left font-semibold text-sm",
           style: { backgroundColor: "#F0EEF7", color: "#2C244C" },
           onClick: () => setOpen(!open),
           children: [
-            open ? /* @__PURE__ */ jsx_runtime8.jsx(ChevronDown, {
+            open ? /* @__PURE__ */ jsx_runtime9.jsx(ChevronDown, {
               size: 16
-            }) : /* @__PURE__ */ jsx_runtime8.jsx(ChevronRight, {
+            }) : /* @__PURE__ */ jsx_runtime9.jsx(ChevronRight, {
               size: 16
             }),
             title
           ]
         }),
-        open && /* @__PURE__ */ jsx_runtime8.jsx("div", {
+        open && /* @__PURE__ */ jsx_runtime9.jsx("div", {
           className: "p-4 space-y-3",
           children
         })
       ]
     });
   };
-  var TextField = ({ label, value, onChange, placeholder }) => /* @__PURE__ */ jsx_runtime8.jsxs("div", {
+  var TextField = ({ label, value, onChange, placeholder }) => /* @__PURE__ */ jsx_runtime9.jsxs("div", {
     children: [
-      /* @__PURE__ */ jsx_runtime8.jsx("label", {
+      /* @__PURE__ */ jsx_runtime9.jsx("label", {
         className: "label label-text text-xs font-semibold",
         children: label
       }),
-      /* @__PURE__ */ jsx_runtime8.jsx("input", {
+      /* @__PURE__ */ jsx_runtime9.jsx("input", {
         type: "text",
         className: "input input-bordered input-sm w-full",
         value,
@@ -28183,17 +28227,17 @@ Tuesdays at 4:30pm (Monthly: Starting 1st Dec)`,
       })
     ]
   });
-  var TextAreaField = ({ label, value, onChange, rows = 3, placeholder, hint }) => /* @__PURE__ */ jsx_runtime8.jsxs("div", {
+  var TextAreaField = ({ label, value, onChange, rows = 3, placeholder, hint }) => /* @__PURE__ */ jsx_runtime9.jsxs("div", {
     children: [
-      /* @__PURE__ */ jsx_runtime8.jsx("label", {
+      /* @__PURE__ */ jsx_runtime9.jsx("label", {
         className: "label label-text text-xs font-semibold",
         children: label
       }),
-      hint && /* @__PURE__ */ jsx_runtime8.jsx("div", {
+      hint && /* @__PURE__ */ jsx_runtime9.jsx("div", {
         className: "text-xs text-base-content/50 mb-1",
         children: hint
       }),
-      /* @__PURE__ */ jsx_runtime8.jsx("textarea", {
+      /* @__PURE__ */ jsx_runtime9.jsx("textarea", {
         className: "textarea textarea-bordered w-full text-sm",
         rows,
         value,
@@ -28225,7 +28269,6 @@ Tuesdays at 4:30pm (Monthly: Starting 1st Dec)`,
     const [spareTime, setSpareTime] = import_react10.useState(p.spare_time || "");
     const [papClinician, setPapClinician] = import_react10.useState(p.pap_clinician || "");
     const [religionsGroups, setReligionsGroups] = import_react10.useState(p.religions_groups || "");
-    const [alert2, setAlert] = import_react10.useState(p.alert || "");
     const [locations, setLocations] = import_react10.useState(p.locations.map((l) => ({
       ...l,
       availability: Array.isArray(l.availability) ? l.availability.join(`
@@ -28270,7 +28313,6 @@ Tuesdays at 4:30pm (Monthly: Starting 1st Dec)`,
         pap_clinician: papClinician,
         religions_groups: religionsGroups,
         style,
-        alert: alert2,
         locations,
         last_updated: today
       };
@@ -28281,82 +28323,95 @@ Tuesdays at 4:30pm (Monthly: Starting 1st Dec)`,
         onClose();
       }, 1000);
     };
-    return /* @__PURE__ */ jsx_runtime8.jsx("div", {
+    return /* @__PURE__ */ jsx_runtime9.jsx("div", {
       className: "fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4",
-      children: /* @__PURE__ */ jsx_runtime8.jsxs("div", {
+      children: /* @__PURE__ */ jsx_runtime9.jsxs("div", {
         className: "bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[90vh] flex flex-col",
         children: [
-          /* @__PURE__ */ jsx_runtime8.jsxs("div", {
+          /* @__PURE__ */ jsx_runtime9.jsxs("div", {
             className: "p-6 pb-3 flex items-start justify-between flex-shrink-0",
             children: [
-              /* @__PURE__ */ jsx_runtime8.jsxs("div", {
+              /* @__PURE__ */ jsx_runtime9.jsxs("div", {
                 children: [
-                  /* @__PURE__ */ jsx_runtime8.jsx("h3", {
+                  /* @__PURE__ */ jsx_runtime9.jsx("h3", {
                     className: "text-xl font-bold",
                     children: p.name
                   }),
-                  /* @__PURE__ */ jsx_runtime8.jsx("p", {
+                  /* @__PURE__ */ jsx_runtime9.jsx("p", {
                     className: "text-sm text-base-content/60",
                     children: p.title
                   })
                 ]
               }),
-              /* @__PURE__ */ jsx_runtime8.jsx("button", {
+              /* @__PURE__ */ jsx_runtime9.jsx("button", {
                 onClick: onClose,
                 className: "btn btn-ghost btn-sm btn-circle",
                 children: "✕"
               })
             ]
           }),
-          /* @__PURE__ */ jsx_runtime8.jsxs("div", {
+          /* @__PURE__ */ jsx_runtime9.jsxs("div", {
             className: "overflow-y-auto flex-1 px-6 pb-2",
             children: [
-              /* @__PURE__ */ jsx_runtime8.jsx(Section, {
-                title: "⚠️ Alert / Note (internal only)",
-                defaultOpen: !!alert2,
-                children: /* @__PURE__ */ jsx_runtime8.jsx("textarea", {
-                  className: "textarea textarea-bordered w-full text-sm",
-                  rows: 3,
-                  value: alert2,
-                  onChange: (e) => setAlert(e.target.value),
-                  placeholder: "Internal notes, restrictions, etc."
-                })
+              /* @__PURE__ */ jsx_runtime9.jsxs(Section, {
+                title: "⚠️ Notes — managed in Zoho CRM",
+                defaultOpen: !!p.alert || !!p.client_note,
+                children: [
+                  /* @__PURE__ */ jsx_runtime9.jsx("p", {
+                    className: "text-xs mb-3",
+                    children: "Update these notes in CRM. Blank CRM fields clear the corresponding app note."
+                  }),
+                  /* @__PURE__ */ jsx_runtime9.jsx("strong", {
+                    children: "Internal — never included in client emails"
+                  }),
+                  /* @__PURE__ */ jsx_runtime9.jsx("p", {
+                    style: { whiteSpace: "pre-line" },
+                    children: p.alert || "No internal notes"
+                  }),
+                  /* @__PURE__ */ jsx_runtime9.jsx("strong", {
+                    children: "Client-facing — included in client emails"
+                  }),
+                  /* @__PURE__ */ jsx_runtime9.jsx("p", {
+                    style: { whiteSpace: "pre-line" },
+                    children: p.client_note || "No client-facing notes"
+                  })
+                ]
               }),
-              /* @__PURE__ */ jsx_runtime8.jsxs(Section, {
+              /* @__PURE__ */ jsx_runtime9.jsxs(Section, {
                 title: "Basic Info",
                 defaultOpen: false,
                 children: [
-                  /* @__PURE__ */ jsx_runtime8.jsx(TextField, {
+                  /* @__PURE__ */ jsx_runtime9.jsx(TextField, {
                     label: "Title",
                     value: title,
                     onChange: setTitle,
                     placeholder: "e.g. Psychologist"
                   }),
-                  /* @__PURE__ */ jsx_runtime8.jsxs("div", {
+                  /* @__PURE__ */ jsx_runtime9.jsxs("div", {
                     className: "grid grid-cols-2 gap-3",
                     children: [
-                      /* @__PURE__ */ jsx_runtime8.jsx(TextField, {
+                      /* @__PURE__ */ jsx_runtime9.jsx(TextField, {
                         label: "Gender",
                         value: gender,
                         onChange: setGender
                       }),
-                      /* @__PURE__ */ jsx_runtime8.jsx(TextField, {
+                      /* @__PURE__ */ jsx_runtime9.jsx(TextField, {
                         label: "Pronouns",
                         value: pronouns,
                         onChange: setPronouns
                       })
                     ]
                   }),
-                  /* @__PURE__ */ jsx_runtime8.jsxs("div", {
+                  /* @__PURE__ */ jsx_runtime9.jsxs("div", {
                     className: "grid grid-cols-2 gap-3",
                     children: [
-                      /* @__PURE__ */ jsx_runtime8.jsx(TextField, {
+                      /* @__PURE__ */ jsx_runtime9.jsx(TextField, {
                         label: "Age Range",
                         value: ageRange,
                         onChange: setAgeRange,
                         placeholder: "e.g. 18 Yrs +"
                       }),
-                      /* @__PURE__ */ jsx_runtime8.jsx(TextField, {
+                      /* @__PURE__ */ jsx_runtime9.jsx(TextField, {
                         label: "Client Types",
                         value: clientTypes,
                         onChange: setClientTypes,
@@ -28364,24 +28419,24 @@ Tuesdays at 4:30pm (Monthly: Starting 1st Dec)`,
                       })
                     ]
                   }),
-                  /* @__PURE__ */ jsx_runtime8.jsx(TextField, {
+                  /* @__PURE__ */ jsx_runtime9.jsx(TextField, {
                     label: "Therapist Type",
                     value: therapistType,
                     onChange: setTherapistType,
                     placeholder: "e.g. Psychologist"
                   }),
-                  /* @__PURE__ */ jsx_runtime8.jsx(TextField, {
+                  /* @__PURE__ */ jsx_runtime9.jsx(TextField, {
                     label: "Languages",
                     value: languages,
                     onChange: setLanguages
                   })
                 ]
               }),
-              /* @__PURE__ */ jsx_runtime8.jsxs(Section, {
+              /* @__PURE__ */ jsx_runtime9.jsxs(Section, {
                 title: "Presentations & Modalities",
                 defaultOpen: false,
                 children: [
-                  /* @__PURE__ */ jsx_runtime8.jsx(MultiSelect_default, {
+                  /* @__PURE__ */ jsx_runtime9.jsx(MultiSelect_default, {
                     label: "Presentations",
                     value: presentations,
                     onChange: setPresentations,
@@ -28389,9 +28444,9 @@ Tuesdays at 4:30pm (Monthly: Starting 1st Dec)`,
                     placeholder: "Search presentations to add…",
                     hint: "Search and select from the list, or type a custom entry and press Enter"
                   }),
-                  /* @__PURE__ */ jsx_runtime8.jsx("div", {
+                  /* @__PURE__ */ jsx_runtime9.jsx("div", {
                     className: "mt-4",
-                    children: /* @__PURE__ */ jsx_runtime8.jsx(MultiSelect_default, {
+                    children: /* @__PURE__ */ jsx_runtime9.jsx(MultiSelect_default, {
                       label: "Modalities",
                       value: modalities,
                       onChange: setModalities,
@@ -28402,11 +28457,11 @@ Tuesdays at 4:30pm (Monthly: Starting 1st Dec)`,
                   })
                 ]
               }),
-              /* @__PURE__ */ jsx_runtime8.jsxs(Section, {
+              /* @__PURE__ */ jsx_runtime9.jsxs(Section, {
                 title: "Fees & Billing",
                 defaultOpen: false,
                 children: [
-                  /* @__PURE__ */ jsx_runtime8.jsx(TextAreaField, {
+                  /* @__PURE__ */ jsx_runtime9.jsx(TextAreaField, {
                     label: "Fees",
                     value: fees,
                     onChange: setFees,
@@ -28414,13 +28469,13 @@ Tuesdays at 4:30pm (Monthly: Starting 1st Dec)`,
                     placeholder: `B/H: $235
 A/H: $275`
                   }),
-                  /* @__PURE__ */ jsx_runtime8.jsx(TextField, {
+                  /* @__PURE__ */ jsx_runtime9.jsx(TextField, {
                     label: "Medicare Rebate",
                     value: medicareRebate,
                     onChange: setMedicareRebate,
                     placeholder: "e.g. 96.65"
                   }),
-                  /* @__PURE__ */ jsx_runtime8.jsx(TextField, {
+                  /* @__PURE__ */ jsx_runtime9.jsx(TextField, {
                     label: "Billing Types",
                     value: billingTypes,
                     onChange: setBillingTypes,
@@ -28428,139 +28483,139 @@ A/H: $275`
                   })
                 ]
               }),
-              /* @__PURE__ */ jsx_runtime8.jsxs(Section, {
+              /* @__PURE__ */ jsx_runtime9.jsxs(Section, {
                 title: "Profile & Bio",
                 defaultOpen: false,
                 children: [
-                  /* @__PURE__ */ jsx_runtime8.jsx(TextField, {
+                  /* @__PURE__ */ jsx_runtime9.jsx(TextField, {
                     label: "Therapist Style",
                     value: style,
                     onChange: setStyle,
                     placeholder: "e.g. Calm, Compassionate, Warm, Direct"
                   }),
-                  /* @__PURE__ */ jsx_runtime8.jsx("div", {
+                  /* @__PURE__ */ jsx_runtime9.jsx("div", {
                     className: "text-xs text-base-content/50 mb-2",
                     children: "Comma-separated personality keywords shown as tags in search"
                   }),
-                  /* @__PURE__ */ jsx_runtime8.jsx(TextAreaField, {
+                  /* @__PURE__ */ jsx_runtime9.jsx(TextAreaField, {
                     label: "Short Bio (email/cards)",
                     value: shortBio,
                     onChange: setShortBio,
                     rows: 3,
                     placeholder: "Brief description for emails..."
                   }),
-                  /* @__PURE__ */ jsx_runtime8.jsx(TextField, {
+                  /* @__PURE__ */ jsx_runtime9.jsx(TextField, {
                     label: "Working Days, Hours & Locations",
                     value: workingHours,
                     onChange: setWorkingHours,
                     placeholder: "e.g. Mon–Fri, 8am–7pm · Burke Rd Camberwell & Greville St Prahran"
                   }),
-                  /* @__PURE__ */ jsx_runtime8.jsx(TextAreaField, {
+                  /* @__PURE__ */ jsx_runtime9.jsx(TextAreaField, {
                     label: "Full Bio",
                     value: bio,
                     onChange: setBio,
                     rows: 6,
                     placeholder: "Full practitioner bio..."
                   }),
-                  /* @__PURE__ */ jsx_runtime8.jsx(TextField, {
+                  /* @__PURE__ */ jsx_runtime9.jsx(TextField, {
                     label: "Qualifications",
                     value: qualifications,
                     onChange: setQualifications
                   }),
-                  /* @__PURE__ */ jsx_runtime8.jsx(TextAreaField, {
+                  /* @__PURE__ */ jsx_runtime9.jsx(TextAreaField, {
                     label: "Additional Info",
                     value: additionalInfo,
                     onChange: setAdditionalInfo,
                     rows: 3
                   }),
-                  /* @__PURE__ */ jsx_runtime8.jsx(TextField, {
+                  /* @__PURE__ */ jsx_runtime9.jsx(TextField, {
                     label: "Link to Bio",
                     value: linkToBio,
                     onChange: setLinkToBio,
                     placeholder: "https://psychologycare.com.au/..."
                   }),
-                  /* @__PURE__ */ jsx_runtime8.jsx(TextField, {
+                  /* @__PURE__ */ jsx_runtime9.jsx(TextField, {
                     label: "Spare Time / Interests",
                     value: spareTime,
                     onChange: setSpareTime
                   }),
-                  /* @__PURE__ */ jsx_runtime8.jsx(TextField, {
+                  /* @__PURE__ */ jsx_runtime9.jsx(TextField, {
                     label: "PAP Clinician",
                     value: papClinician,
                     onChange: setPapClinician
                   }),
-                  /* @__PURE__ */ jsx_runtime8.jsx(TextField, {
+                  /* @__PURE__ */ jsx_runtime9.jsx(TextField, {
                     label: "Religion / Groups",
                     value: religionsGroups,
                     onChange: setReligionsGroups
                   })
                 ]
               }),
-              /* @__PURE__ */ jsx_runtime8.jsxs(Section, {
+              /* @__PURE__ */ jsx_runtime9.jsxs(Section, {
                 title: "Availability by Location",
                 defaultOpen: true,
                 children: [
-                  /* @__PURE__ */ jsx_runtime8.jsxs("div", {
+                  /* @__PURE__ */ jsx_runtime9.jsxs("div", {
                     className: "text-xs text-base-content/50 mb-2",
                     children: [
                       "Format: ",
-                      /* @__PURE__ */ jsx_runtime8.jsx("span", {
+                      /* @__PURE__ */ jsx_runtime9.jsx("span", {
                         className: "font-mono bg-base-200 px-1 rounded",
                         children: "* Mondays at 9am (Weekly: Starting 25th Feb)"
                       }),
                       " or ",
-                      /* @__PURE__ */ jsx_runtime8.jsx("span", {
+                      /* @__PURE__ */ jsx_runtime9.jsx("span", {
                         className: "font-mono bg-base-200 px-1 rounded",
                         children: "* Tuesdays at 3PM (Fortnightly: Starting 26th Feb)"
                       })
                     ]
                   }),
-                  locations.map((loc, idx) => /* @__PURE__ */ jsx_runtime8.jsxs("div", {
+                  locations.map((loc, idx) => /* @__PURE__ */ jsx_runtime9.jsxs("div", {
                     className: "mb-3 rounded-xl p-4",
                     style: { backgroundColor: "#F0EEF7" },
                     children: [
-                      /* @__PURE__ */ jsx_runtime8.jsxs("div", {
+                      /* @__PURE__ */ jsx_runtime9.jsxs("div", {
                         className: "flex gap-2 mb-2",
                         children: [
-                          /* @__PURE__ */ jsx_runtime8.jsxs("select", {
+                          /* @__PURE__ */ jsx_runtime9.jsxs("select", {
                             className: "select select-bordered select-sm flex-1",
                             value: loc.location,
                             onChange: (e) => updateLocationName(idx, e.target.value),
                             children: [
-                              /* @__PURE__ */ jsx_runtime8.jsx("option", {
+                              /* @__PURE__ */ jsx_runtime9.jsx("option", {
                                 value: "",
                                 children: "Select location..."
                               }),
-                              /* @__PURE__ */ jsx_runtime8.jsx("option", {
+                              /* @__PURE__ */ jsx_runtime9.jsx("option", {
                                 value: "Greville St, Prahran",
                                 children: "Greville St, Prahran"
                               }, "greville"),
-                              /* @__PURE__ */ jsx_runtime8.jsx("option", {
+                              /* @__PURE__ */ jsx_runtime9.jsx("option", {
                                 value: "Burke Rd, Camberwell",
                                 children: "Burke Rd, Camberwell"
                               }, "camberwell"),
-                              /* @__PURE__ */ jsx_runtime8.jsx("option", {
+                              /* @__PURE__ */ jsx_runtime9.jsx("option", {
                                 value: "Victoria St, St Kilda",
                                 children: "Victoria St, St Kilda"
                               }, "stkilda"),
-                              /* @__PURE__ */ jsx_runtime8.jsx("option", {
+                              /* @__PURE__ */ jsx_runtime9.jsx("option", {
                                 value: "Telehealth",
                                 children: "Telehealth"
                               }, "telehealth"),
-                              loc.location && !["Greville St, Prahran", "Burke Rd, Camberwell", "Victoria St, St Kilda", "Telehealth"].includes(loc.location) && /* @__PURE__ */ jsx_runtime8.jsx("option", {
+                              loc.location && !["Greville St, Prahran", "Burke Rd, Camberwell", "Victoria St, St Kilda", "Telehealth"].includes(loc.location) && /* @__PURE__ */ jsx_runtime9.jsx("option", {
                                 value: loc.location,
                                 children: loc.location
                               }, "custom")
                             ]
                           }),
-                          /* @__PURE__ */ jsx_runtime8.jsx("button", {
+                          /* @__PURE__ */ jsx_runtime9.jsx("button", {
                             onClick: () => removeLocation(idx),
                             className: "btn btn-ghost btn-sm btn-circle text-error",
                             children: "✕"
                           })
                         ]
                       }),
-                      /* @__PURE__ */ jsx_runtime8.jsx("textarea", {
+                      /* @__PURE__ */ jsx_runtime9.jsx("textarea", {
                         className: "textarea textarea-bordered w-full text-sm font-mono",
                         rows: 4,
                         value: loc.availability,
@@ -28570,7 +28625,7 @@ A/H: $275`
                       })
                     ]
                   }, idx)),
-                  /* @__PURE__ */ jsx_runtime8.jsx("button", {
+                  /* @__PURE__ */ jsx_runtime9.jsx("button", {
                     onClick: addLocation,
                     className: "btn btn-outline btn-sm",
                     children: "+ Add Location"
@@ -28579,15 +28634,15 @@ A/H: $275`
               })
             ]
           }),
-          /* @__PURE__ */ jsx_runtime8.jsxs("div", {
+          /* @__PURE__ */ jsx_runtime9.jsxs("div", {
             className: "p-6 pt-3 flex gap-3 justify-end flex-shrink-0 border-t border-base-300",
             children: [
-              /* @__PURE__ */ jsx_runtime8.jsx("button", {
+              /* @__PURE__ */ jsx_runtime9.jsx("button", {
                 onClick: onClose,
                 className: "btn btn-ghost",
                 children: "Cancel"
               }),
-              /* @__PURE__ */ jsx_runtime8.jsx("button", {
+              /* @__PURE__ */ jsx_runtime9.jsx("button", {
                 onClick: save,
                 className: `btn ${saved ? "btn-success" : "btn-primary"}`,
                 children: saved ? "✓ Saved!" : "Save Changes"
@@ -28608,24 +28663,24 @@ A/H: $275`
       return lines.length > 0 ? lines[0].trim() + (lines.length > 1 ? ` +${lines.length - 1} more` : "") : "";
     };
     const hasAvailability = (p) => p.locations.some((l) => l.availability && (Array.isArray(l.availability) ? l.availability.length > 0 : l.availability.trim()));
-    return /* @__PURE__ */ jsx_runtime8.jsxs("div", {
+    return /* @__PURE__ */ jsx_runtime9.jsxs("div", {
       children: [
-        editing && /* @__PURE__ */ jsx_runtime8.jsx(PractitionerEditor, {
+        editing && /* @__PURE__ */ jsx_runtime9.jsx(PractitionerEditor, {
           p: editing,
           onUpdate,
           onClose: () => setEditing(null)
         }),
-        /* @__PURE__ */ jsx_runtime8.jsxs("div", {
+        /* @__PURE__ */ jsx_runtime9.jsxs("div", {
           className: "mb-4 flex items-center gap-3",
           children: [
-            /* @__PURE__ */ jsx_runtime8.jsx("input", {
+            /* @__PURE__ */ jsx_runtime9.jsx("input", {
               type: "text",
               placeholder: "Search practitioners...",
               className: "input input-bordered flex-1",
               value: search,
               onChange: (e) => setSearch(e.target.value)
             }),
-            /* @__PURE__ */ jsx_runtime8.jsxs("div", {
+            /* @__PURE__ */ jsx_runtime9.jsxs("div", {
               className: "text-sm text-base-content/60 whitespace-nowrap",
               children: [
                 filtered.filter(hasAvailability).length,
@@ -28636,50 +28691,50 @@ A/H: $275`
             })
           ]
         }),
-        /* @__PURE__ */ jsx_runtime8.jsx("div", {
+        /* @__PURE__ */ jsx_runtime9.jsx("div", {
           className: "grid gap-3",
           children: filtered.map((p) => {
             const avail = hasAvailability(p);
             const summary = getAvailabilitySummary(p);
-            return /* @__PURE__ */ jsx_runtime8.jsx("div", {
+            return /* @__PURE__ */ jsx_runtime9.jsx("div", {
               className: "card bg-white shadow-sm transition-colors",
               style: { border: "1px solid #CDA8BA" },
-              children: /* @__PURE__ */ jsx_runtime8.jsx("div", {
+              children: /* @__PURE__ */ jsx_runtime9.jsx("div", {
                 className: "card-body p-4",
-                children: /* @__PURE__ */ jsx_runtime8.jsxs("div", {
+                children: /* @__PURE__ */ jsx_runtime9.jsxs("div", {
                   className: "flex items-start justify-between gap-3",
                   children: [
-                    /* @__PURE__ */ jsx_runtime8.jsxs("div", {
+                    /* @__PURE__ */ jsx_runtime9.jsxs("div", {
                       className: "flex-1 min-w-0",
                       children: [
-                        /* @__PURE__ */ jsx_runtime8.jsxs("div", {
+                        /* @__PURE__ */ jsx_runtime9.jsxs("div", {
                           className: "flex items-center gap-2 flex-wrap",
                           children: [
-                            /* @__PURE__ */ jsx_runtime8.jsx("span", {
+                            /* @__PURE__ */ jsx_runtime9.jsx("span", {
                               className: "font-bold",
                               children: p.name
                             }),
-                            /* @__PURE__ */ jsx_runtime8.jsx("span", {
+                            /* @__PURE__ */ jsx_runtime9.jsx("span", {
                               className: `badge badge-sm ${avail ? "badge-success" : "badge-ghost"}`,
                               children: avail ? "Has availability" : "No availability"
                             }),
-                            p.alert && /* @__PURE__ */ jsx_runtime8.jsx("span", {
+                            p.alert && /* @__PURE__ */ jsx_runtime9.jsx("span", {
                               style: { backgroundColor: "#00B8C8", color: "white", borderRadius: "999px", padding: "2px 8px", fontSize: "11px", fontWeight: 700 },
                               children: "\uD83D\uDEA8 Note"
                             })
                           ]
                         }),
-                        /* @__PURE__ */ jsx_runtime8.jsx("div", {
+                        /* @__PURE__ */ jsx_runtime9.jsx("div", {
                           className: "text-sm text-base-content/60 mt-0.5",
                           children: p.title
                         }),
-                        summary && /* @__PURE__ */ jsx_runtime8.jsx("div", {
+                        summary && /* @__PURE__ */ jsx_runtime9.jsx("div", {
                           className: "text-sm text-success mt-1 truncate",
                           children: summary
                         }),
-                        /* @__PURE__ */ jsx_runtime8.jsx("div", {
+                        /* @__PURE__ */ jsx_runtime9.jsx("div", {
                           className: "flex gap-1 flex-wrap mt-1",
-                          children: p.locations.map((l, i) => /* @__PURE__ */ jsx_runtime8.jsxs("span", {
+                          children: p.locations.map((l, i) => /* @__PURE__ */ jsx_runtime9.jsxs("span", {
                             className: "badge badge-outline badge-xs",
                             children: [
                               "\uD83D\uDCCD ",
@@ -28687,7 +28742,7 @@ A/H: $275`
                             ]
                           }, i))
                         }),
-                        p.last_updated && /* @__PURE__ */ jsx_runtime8.jsxs("div", {
+                        p.last_updated && /* @__PURE__ */ jsx_runtime9.jsxs("div", {
                           className: "text-xs text-base-content/40 mt-1",
                           children: [
                             "Last updated: ",
@@ -28696,7 +28751,7 @@ A/H: $275`
                         })
                       ]
                     }),
-                    /* @__PURE__ */ jsx_runtime8.jsx("button", {
+                    /* @__PURE__ */ jsx_runtime9.jsx("button", {
                       onClick: () => setEditing(p),
                       className: "btn btn-primary btn-sm flex-shrink-0",
                       children: "Edit"
@@ -28714,7 +28769,7 @@ A/H: $275`
 
   // TaxonomyTab.tsx
   var import_react11 = __toESM(require_react());
-  var jsx_runtime9 = __toESM(require_jsx_runtime());
+  var jsx_runtime10 = __toESM(require_jsx_runtime());
   var BRAND = {
     darkPurple: "#2C244C",
     mauve: "#8D5273",
@@ -28835,23 +28890,23 @@ A/H: $275`
         return [];
       return allPracNames.filter((n) => !editing.pracNames.includes(n));
     }, [editing, allPracNames]);
-    return /* @__PURE__ */ jsx_runtime9.jsxs("div", {
+    return /* @__PURE__ */ jsx_runtime10.jsxs("div", {
       className: "p-4 max-w-4xl mx-auto",
       children: [
-        /* @__PURE__ */ jsx_runtime9.jsxs("div", {
+        /* @__PURE__ */ jsx_runtime10.jsxs("div", {
           className: "mb-4",
           children: [
-            /* @__PURE__ */ jsx_runtime9.jsx("h2", {
+            /* @__PURE__ */ jsx_runtime10.jsx("h2", {
               className: "text-xl font-bold mb-1",
               style: { color: BRAND.darkPurple },
               children: "\uD83C\uDFF7️ Presentations & Modalities"
             }),
-            /* @__PURE__ */ jsx_runtime9.jsxs("p", {
+            /* @__PURE__ */ jsx_runtime10.jsxs("p", {
               className: "text-sm",
               style: { color: BRAND.mauve },
               children: [
                 "Click ",
-                /* @__PURE__ */ jsx_runtime9.jsx("strong", {
+                /* @__PURE__ */ jsx_runtime10.jsx("strong", {
                   children: "✏️ Edit"
                 }),
                 " on any item to rename it or update which practitioners it's assigned to."
@@ -28859,9 +28914,9 @@ A/H: $275`
             })
           ]
         }),
-        /* @__PURE__ */ jsx_runtime9.jsx("div", {
+        /* @__PURE__ */ jsx_runtime10.jsx("div", {
           className: "flex gap-2 mb-4",
-          children: ["presentations", "modalities"].map((s) => /* @__PURE__ */ jsx_runtime9.jsx("button", {
+          children: ["presentations", "modalities"].map((s) => /* @__PURE__ */ jsx_runtime10.jsx("button", {
             onClick: () => {
               setActiveSection(s);
               setSearch("");
@@ -28876,24 +28931,24 @@ A/H: $275`
             children: s === "presentations" ? `Presentations (${presentationsMap.size})` : `Modalities (${modalitiesMap.size})`
           }, s))
         }),
-        /* @__PURE__ */ jsx_runtime9.jsxs("div", {
+        /* @__PURE__ */ jsx_runtime10.jsxs("div", {
           className: "mb-3 relative",
           children: [
-            /* @__PURE__ */ jsx_runtime9.jsx("input", {
+            /* @__PURE__ */ jsx_runtime10.jsx("input", {
               type: "text",
               className: "input input-bordered input-sm w-full",
               placeholder: `Search ${field}… or type a practitioner name`,
               value: search,
               onChange: (e) => setSearch(e.target.value)
             }),
-            search && /* @__PURE__ */ jsx_runtime9.jsx("button", {
+            search && /* @__PURE__ */ jsx_runtime10.jsx("button", {
               onClick: () => setSearch(""),
               className: "absolute right-2 top-1/2 -translate-y-1/2 text-base-content/40 hover:text-base-content",
               children: "×"
             })
           ]
         }),
-        /* @__PURE__ */ jsx_runtime9.jsxs("div", {
+        /* @__PURE__ */ jsx_runtime10.jsxs("div", {
           className: "text-xs mb-3 px-3 py-2 rounded-lg",
           style: { backgroundColor: BRAND.lilac, color: BRAND.mauve },
           children: [
@@ -28906,8 +28961,8 @@ A/H: $275`
             search && ` matching "${search}"`
           ]
         }),
-        /* @__PURE__ */ jsx_runtime9.jsx("div", {
-          children: filteredEntries.length === 0 ? /* @__PURE__ */ jsx_runtime9.jsxs("div", {
+        /* @__PURE__ */ jsx_runtime10.jsx("div", {
+          children: filteredEntries.length === 0 ? /* @__PURE__ */ jsx_runtime10.jsxs("div", {
             className: "text-center py-12 text-base-content/40",
             children: [
               "No ",
@@ -28919,24 +28974,24 @@ A/H: $275`
           }) : filteredEntries.map(([item, pracs]) => {
             const isEditing = editing?.originalName === item;
             const justSaved = savedItem === item || savedItem === editing?.newName;
-            return /* @__PURE__ */ jsx_runtime9.jsx("div", {
+            return /* @__PURE__ */ jsx_runtime10.jsx("div", {
               className: "rounded-xl p-3 mb-2",
               style: {
                 border: `1px solid ${isEditing ? BRAND.mauve : BRAND.lightMauve}`,
                 backgroundColor: isEditing ? "#fdfcff" : "#fff",
                 transition: "border-color 0.15s"
               },
-              children: !isEditing ? /* @__PURE__ */ jsx_runtime9.jsxs(jsx_runtime9.Fragment, {
+              children: !isEditing ? /* @__PURE__ */ jsx_runtime10.jsxs(jsx_runtime10.Fragment, {
                 children: [
-                  /* @__PURE__ */ jsx_runtime9.jsxs("div", {
+                  /* @__PURE__ */ jsx_runtime10.jsxs("div", {
                     className: "flex items-center justify-between mb-1.5",
                     children: [
-                      /* @__PURE__ */ jsx_runtime9.jsxs("span", {
+                      /* @__PURE__ */ jsx_runtime10.jsxs("span", {
                         className: "text-sm font-semibold",
                         style: { color: BRAND.darkPurple },
                         children: [
                           item,
-                          /* @__PURE__ */ jsx_runtime9.jsxs("span", {
+                          /* @__PURE__ */ jsx_runtime10.jsxs("span", {
                             className: "ml-2 font-normal text-xs",
                             style: { color: BRAND.lightMauve },
                             children: [
@@ -28947,7 +29002,7 @@ A/H: $275`
                           })
                         ]
                       }),
-                      /* @__PURE__ */ jsx_runtime9.jsx("button", {
+                      /* @__PURE__ */ jsx_runtime10.jsx("button", {
                         onClick: () => startEdit(item, pracs),
                         className: "text-xs px-2 py-0.5 rounded",
                         style: {
@@ -28959,9 +29014,9 @@ A/H: $275`
                       })
                     ]
                   }),
-                  /* @__PURE__ */ jsx_runtime9.jsx("div", {
+                  /* @__PURE__ */ jsx_runtime10.jsx("div", {
                     className: "flex flex-wrap gap-1",
-                    children: [...pracs].sort().map((name) => /* @__PURE__ */ jsx_runtime9.jsx("span", {
+                    children: [...pracs].sort().map((name) => /* @__PURE__ */ jsx_runtime10.jsx("span", {
                       className: "px-2 py-0.5 rounded-full text-xs",
                       style: {
                         backgroundColor: BRAND.lilac,
@@ -28971,39 +29026,39 @@ A/H: $275`
                       children: name
                     }, name))
                   }),
-                  justSaved && /* @__PURE__ */ jsx_runtime9.jsx("div", {
+                  justSaved && /* @__PURE__ */ jsx_runtime10.jsx("div", {
                     className: "text-xs mt-1.5 font-medium",
                     style: { color: "#2d8a4e" },
                     children: "✓ Saved!"
                   })
                 ]
-              }) : /* @__PURE__ */ jsx_runtime9.jsxs("div", {
+              }) : /* @__PURE__ */ jsx_runtime10.jsxs("div", {
                 children: [
-                  /* @__PURE__ */ jsx_runtime9.jsxs("div", {
+                  /* @__PURE__ */ jsx_runtime10.jsxs("div", {
                     className: "mb-3",
                     children: [
-                      /* @__PURE__ */ jsx_runtime9.jsx("label", {
+                      /* @__PURE__ */ jsx_runtime10.jsx("label", {
                         className: "text-xs font-semibold mb-1 block",
                         style: { color: BRAND.mauve },
                         children: "Name"
                       }),
-                      /* @__PURE__ */ jsx_runtime9.jsx("input", {
+                      /* @__PURE__ */ jsx_runtime10.jsx("input", {
                         type: "text",
                         className: "input input-bordered input-sm w-full",
                         value: editing.newName,
                         onChange: (e) => setEditing((prev) => prev ? { ...prev, newName: e.target.value } : null)
                       }),
-                      editing.originalName !== editing.newName && /* @__PURE__ */ jsx_runtime9.jsx("p", {
+                      editing.originalName !== editing.newName && /* @__PURE__ */ jsx_runtime10.jsx("p", {
                         className: "text-xs mt-1",
                         style: { color: BRAND.mauve },
                         children: "⚠️ Renaming will update this term across all practitioners who have it."
                       })
                     ]
                   }),
-                  /* @__PURE__ */ jsx_runtime9.jsxs("div", {
+                  /* @__PURE__ */ jsx_runtime10.jsxs("div", {
                     className: "mb-3",
                     children: [
-                      /* @__PURE__ */ jsx_runtime9.jsxs("label", {
+                      /* @__PURE__ */ jsx_runtime10.jsxs("label", {
                         className: "text-xs font-semibold mb-1 block",
                         style: { color: BRAND.mauve },
                         children: [
@@ -29012,13 +29067,13 @@ A/H: $275`
                           ")"
                         ]
                       }),
-                      /* @__PURE__ */ jsx_runtime9.jsx("div", {
+                      /* @__PURE__ */ jsx_runtime10.jsx("div", {
                         className: "flex flex-wrap gap-1 mb-2 min-h-[28px]",
-                        children: editing.pracNames.length === 0 ? /* @__PURE__ */ jsx_runtime9.jsx("span", {
+                        children: editing.pracNames.length === 0 ? /* @__PURE__ */ jsx_runtime10.jsx("span", {
                           className: "text-xs italic",
                           style: { color: BRAND.lightMauve },
                           children: "No practitioners assigned"
-                        }) : [...editing.pracNames].sort().map((name) => /* @__PURE__ */ jsx_runtime9.jsxs("span", {
+                        }) : [...editing.pracNames].sort().map((name) => /* @__PURE__ */ jsx_runtime10.jsxs("span", {
                           className: "px-2 py-0.5 rounded-full text-xs flex items-center gap-1",
                           style: {
                             backgroundColor: BRAND.lilac,
@@ -29027,7 +29082,7 @@ A/H: $275`
                           },
                           children: [
                             name,
-                            /* @__PURE__ */ jsx_runtime9.jsx("button", {
+                            /* @__PURE__ */ jsx_runtime10.jsx("button", {
                               onClick: () => setEditing((prev) => prev ? {
                                 ...prev,
                                 pracNames: prev.pracNames.filter((n) => n !== name)
@@ -29040,25 +29095,25 @@ A/H: $275`
                           ]
                         }, name))
                       }),
-                      pracsNotInList.length > 0 && /* @__PURE__ */ jsx_runtime9.jsxs("div", {
+                      pracsNotInList.length > 0 && /* @__PURE__ */ jsx_runtime10.jsxs("div", {
                         className: "flex gap-2 items-center",
                         children: [
-                          /* @__PURE__ */ jsx_runtime9.jsxs("select", {
+                          /* @__PURE__ */ jsx_runtime10.jsxs("select", {
                             className: "select select-bordered select-sm flex-1",
                             value: addingPrac,
                             onChange: (e) => setAddingPrac(e.target.value),
                             children: [
-                              /* @__PURE__ */ jsx_runtime9.jsx("option", {
+                              /* @__PURE__ */ jsx_runtime10.jsx("option", {
                                 value: "",
                                 children: "+ Add a practitioner…"
                               }),
-                              pracsNotInList.map((n) => /* @__PURE__ */ jsx_runtime9.jsx("option", {
+                              pracsNotInList.map((n) => /* @__PURE__ */ jsx_runtime10.jsx("option", {
                                 value: n,
                                 children: n
                               }, n))
                             ]
                           }),
-                          addingPrac && /* @__PURE__ */ jsx_runtime9.jsx("button", {
+                          addingPrac && /* @__PURE__ */ jsx_runtime10.jsx("button", {
                             onClick: () => {
                               setEditing((prev) => prev ? {
                                 ...prev,
@@ -29074,21 +29129,21 @@ A/H: $275`
                       })
                     ]
                   }),
-                  saveError && /* @__PURE__ */ jsx_runtime9.jsx("div", {
+                  saveError && /* @__PURE__ */ jsx_runtime10.jsx("div", {
                     className: "text-xs text-red-500 mb-2",
                     children: saveError
                   }),
-                  /* @__PURE__ */ jsx_runtime9.jsxs("div", {
+                  /* @__PURE__ */ jsx_runtime10.jsxs("div", {
                     className: "flex gap-2 mt-1",
                     children: [
-                      /* @__PURE__ */ jsx_runtime9.jsx("button", {
+                      /* @__PURE__ */ jsx_runtime10.jsx("button", {
                         onClick: saveEdit,
                         disabled: saving || !editing.newName.trim(),
                         className: "btn btn-sm",
                         style: { backgroundColor: BRAND.darkPurple, color: "#fff" },
                         children: saving ? "Saving…" : "Save Changes"
                       }),
-                      /* @__PURE__ */ jsx_runtime9.jsx("button", {
+                      /* @__PURE__ */ jsx_runtime10.jsx("button", {
                         onClick: cancelEdit,
                         disabled: saving,
                         className: "btn btn-sm btn-ghost",
@@ -29108,7 +29163,7 @@ A/H: $275`
 
   // EmailTemplateTab.tsx
   var import_react12 = __toESM(require_react());
-  var jsx_runtime10 = __toESM(require_jsx_runtime());
+  var jsx_runtime11 = __toESM(require_jsx_runtime());
   var SECTION_LABELS = [
     { key: "wording", label: "Email Wording", icon: "✍️" },
     { key: "goodtoknow", label: "Good to Know", icon: "\uD83D\uDCCB" },
@@ -29136,14 +29191,14 @@ Fridays at 2pm (Fortnightly: Starting 6th Jun)`
     location_notes: undefined
   };
   function Field({ label, help, children }) {
-    return /* @__PURE__ */ jsx_runtime10.jsxs("div", {
+    return /* @__PURE__ */ jsx_runtime11.jsxs("div", {
       className: "mb-4",
       children: [
-        /* @__PURE__ */ jsx_runtime10.jsx("label", {
+        /* @__PURE__ */ jsx_runtime11.jsx("label", {
           className: "block text-xs font-bold text-gray-500 uppercase tracking-wide mb-1",
           children: label
         }),
-        help && /* @__PURE__ */ jsx_runtime10.jsx("p", {
+        help && /* @__PURE__ */ jsx_runtime11.jsx("p", {
           className: "text-xs text-gray-400 mb-1",
           children: help
         }),
@@ -29152,7 +29207,7 @@ Fridays at 2pm (Fortnightly: Starting 6th Jun)`
     });
   }
   function TextArea({ value, onChange, rows = 4 }) {
-    return /* @__PURE__ */ jsx_runtime10.jsx("textarea", {
+    return /* @__PURE__ */ jsx_runtime11.jsx("textarea", {
       className: "textarea textarea-bordered w-full text-sm",
       rows,
       value,
@@ -29160,7 +29215,7 @@ Fridays at 2pm (Fortnightly: Starting 6th Jun)`
     });
   }
   function TextInput({ value, onChange, placeholder }) {
-    return /* @__PURE__ */ jsx_runtime10.jsx("input", {
+    return /* @__PURE__ */ jsx_runtime11.jsx("input", {
       type: "text",
       className: "input input-bordered input-sm w-full text-sm",
       value,
@@ -29169,29 +29224,29 @@ Fridays at 2pm (Fortnightly: Starting 6th Jun)`
     });
   }
   function ColorPicker({ label, value, onChange }) {
-    return /* @__PURE__ */ jsx_runtime10.jsxs("div", {
+    return /* @__PURE__ */ jsx_runtime11.jsxs("div", {
       className: "flex items-center gap-3 mb-3",
       children: [
-        /* @__PURE__ */ jsx_runtime10.jsx("input", {
+        /* @__PURE__ */ jsx_runtime11.jsx("input", {
           type: "color",
           className: "w-10 h-10 rounded border border-gray-200 cursor-pointer p-0.5",
           value,
           onChange: (e) => onChange(e.target.value),
           title: label
         }),
-        /* @__PURE__ */ jsx_runtime10.jsxs("div", {
+        /* @__PURE__ */ jsx_runtime11.jsxs("div", {
           children: [
-            /* @__PURE__ */ jsx_runtime10.jsx("div", {
+            /* @__PURE__ */ jsx_runtime11.jsx("div", {
               className: "text-sm font-medium",
               children: label
             }),
-            /* @__PURE__ */ jsx_runtime10.jsx("div", {
+            /* @__PURE__ */ jsx_runtime11.jsx("div", {
               className: "text-xs text-gray-400 font-mono",
               children: value
             })
           ]
         }),
-        /* @__PURE__ */ jsx_runtime10.jsx("input", {
+        /* @__PURE__ */ jsx_runtime11.jsx("input", {
           type: "text",
           className: "input input-bordered input-xs w-28 font-mono ml-auto",
           value,
@@ -29239,57 +29294,57 @@ Fridays at 2pm (Fortnightly: Starting 6th Jun)`
       }
     };
     const previewHtml = import_react12.useMemo(() => buildEmailHtml("Sample Client", "", draft.senders[0] || "Anna Donaldson", [SAMPLE_PRACTITIONER], draft), [draft]);
-    return /* @__PURE__ */ jsx_runtime10.jsxs("div", {
+    return /* @__PURE__ */ jsx_runtime11.jsxs("div", {
       className: "flex flex-col",
       style: { height: "calc(100vh - 140px)" },
       children: [
-        /* @__PURE__ */ jsx_runtime10.jsxs("div", {
+        /* @__PURE__ */ jsx_runtime11.jsxs("div", {
           className: "flex items-center justify-between px-4 py-3 bg-white border-b border-gray-200 flex-shrink-0",
           children: [
-            /* @__PURE__ */ jsx_runtime10.jsxs("div", {
+            /* @__PURE__ */ jsx_runtime11.jsxs("div", {
               children: [
-                /* @__PURE__ */ jsx_runtime10.jsx("h2", {
+                /* @__PURE__ */ jsx_runtime11.jsx("h2", {
                   className: "text-base font-bold",
                   style: { color: "#2C244C" },
                   children: "Email Template Editor"
                 }),
-                /* @__PURE__ */ jsx_runtime10.jsx("p", {
+                /* @__PURE__ */ jsx_runtime11.jsx("p", {
                   className: "text-xs text-gray-400",
                   children: "Changes are saved to your browser — no rebuild required."
                 })
               ]
             }),
-            /* @__PURE__ */ jsx_runtime10.jsxs("div", {
+            /* @__PURE__ */ jsx_runtime11.jsxs("div", {
               className: "flex items-center gap-2",
               children: [
-                /* @__PURE__ */ jsx_runtime10.jsxs("button", {
+                /* @__PURE__ */ jsx_runtime11.jsxs("button", {
                   onClick: () => setShowPreview((v) => !v),
                   className: "btn btn-ghost btn-sm gap-1 text-xs",
                   children: [
-                    showPreview ? /* @__PURE__ */ jsx_runtime10.jsx(EyeOff, {
+                    showPreview ? /* @__PURE__ */ jsx_runtime11.jsx(EyeOff, {
                       size: 14
-                    }) : /* @__PURE__ */ jsx_runtime10.jsx(Eye, {
+                    }) : /* @__PURE__ */ jsx_runtime11.jsx(Eye, {
                       size: 14
                     }),
                     showPreview ? "Hide preview" : "Show preview"
                   ]
                 }),
-                /* @__PURE__ */ jsx_runtime10.jsxs("button", {
+                /* @__PURE__ */ jsx_runtime11.jsxs("button", {
                   onClick: handleReset,
                   className: "btn btn-ghost btn-sm gap-1 text-xs text-error",
                   children: [
-                    /* @__PURE__ */ jsx_runtime10.jsx(RotateCcw, {
+                    /* @__PURE__ */ jsx_runtime11.jsx(RotateCcw, {
                       size: 14
                     }),
                     " Reset"
                   ]
                 }),
-                /* @__PURE__ */ jsx_runtime10.jsxs("button", {
+                /* @__PURE__ */ jsx_runtime11.jsxs("button", {
                   onClick: handleSave,
                   className: "btn btn-sm gap-1",
                   style: { background: saved ? "#47B2AE" : "#2C244C", color: "white", borderColor: "transparent" },
                   children: [
-                    /* @__PURE__ */ jsx_runtime10.jsx(Save, {
+                    /* @__PURE__ */ jsx_runtime11.jsx(Save, {
                       size: 14
                     }),
                     saved ? "Saved ✓" : "Save Changes"
@@ -29299,16 +29354,16 @@ Fridays at 2pm (Fortnightly: Starting 6th Jun)`
             })
           ]
         }),
-        /* @__PURE__ */ jsx_runtime10.jsxs("div", {
+        /* @__PURE__ */ jsx_runtime11.jsxs("div", {
           className: "flex flex-1 overflow-hidden",
           children: [
-            /* @__PURE__ */ jsx_runtime10.jsxs("div", {
+            /* @__PURE__ */ jsx_runtime11.jsxs("div", {
               className: "flex flex-col overflow-hidden",
               style: { width: showPreview ? "48%" : "100%", borderRight: "1px solid #e5e7eb" },
               children: [
-                /* @__PURE__ */ jsx_runtime10.jsx("div", {
+                /* @__PURE__ */ jsx_runtime11.jsx("div", {
                   className: "flex border-b border-gray-200 bg-white flex-shrink-0 overflow-x-auto",
-                  children: SECTION_LABELS.map((s) => /* @__PURE__ */ jsx_runtime10.jsxs("button", {
+                  children: SECTION_LABELS.map((s) => /* @__PURE__ */ jsx_runtime11.jsxs("button", {
                     onClick: () => setSection(s.key),
                     className: "px-3 py-2 text-xs font-semibold whitespace-nowrap flex-shrink-0 border-b-2 transition-colors",
                     style: {
@@ -29323,41 +29378,41 @@ Fridays at 2pm (Fortnightly: Starting 6th Jun)`
                     ]
                   }, s.key))
                 }),
-                /* @__PURE__ */ jsx_runtime10.jsxs("div", {
+                /* @__PURE__ */ jsx_runtime11.jsxs("div", {
                   className: "flex-1 overflow-y-auto p-4 bg-white",
                   children: [
-                    section === "wording" && /* @__PURE__ */ jsx_runtime10.jsxs("div", {
+                    section === "wording" && /* @__PURE__ */ jsx_runtime11.jsxs("div", {
                       children: [
-                        /* @__PURE__ */ jsx_runtime10.jsx(Field, {
+                        /* @__PURE__ */ jsx_runtime11.jsx(Field, {
                           label: "Opening paragraph",
                           help: "Shown at the top of every email after 'Hi [Client Name],'",
-                          children: /* @__PURE__ */ jsx_runtime10.jsx(TextArea, {
+                          children: /* @__PURE__ */ jsx_runtime11.jsx(TextArea, {
                             rows: 3,
                             value: draft.intro_text,
                             onChange: (v) => update({ intro_text: v })
                           })
                         }),
-                        /* @__PURE__ */ jsx_runtime10.jsx(Field, {
+                        /* @__PURE__ */ jsx_runtime11.jsx(Field, {
                           label: "Closing paragraphs",
                           help: "Shown after the Good to Know section. Use blank lines between paragraphs.",
-                          children: /* @__PURE__ */ jsx_runtime10.jsx(TextArea, {
+                          children: /* @__PURE__ */ jsx_runtime11.jsx(TextArea, {
                             rows: 8,
                             value: draft.closing_text,
                             onChange: (v) => update({ closing_text: v })
                           })
                         }),
-                        /* @__PURE__ */ jsx_runtime10.jsx(Field, {
+                        /* @__PURE__ */ jsx_runtime11.jsx(Field, {
                           label: "No-availability message (heading)",
                           help: "Shown when a practitioner is fully booked.",
-                          children: /* @__PURE__ */ jsx_runtime10.jsx(TextInput, {
+                          children: /* @__PURE__ */ jsx_runtime11.jsx(TextInput, {
                             value: draft.no_availability_message,
                             onChange: (v) => update({ no_availability_message: v }),
                             placeholder: "Currently fully booked — waitlist availability only."
                           })
                         }),
-                        /* @__PURE__ */ jsx_runtime10.jsx(Field, {
+                        /* @__PURE__ */ jsx_runtime11.jsx(Field, {
                           label: "No-availability subtext",
-                          children: /* @__PURE__ */ jsx_runtime10.jsx(TextInput, {
+                          children: /* @__PURE__ */ jsx_runtime11.jsx(TextInput, {
                             value: draft.no_availability_subtext,
                             onChange: (v) => update({ no_availability_subtext: v }),
                             placeholder: "We can add you to the waitlist for your preferred days and times."
@@ -29365,26 +29420,26 @@ Fridays at 2pm (Fortnightly: Starting 6th Jun)`
                         })
                       ]
                     }),
-                    section === "goodtoknow" && /* @__PURE__ */ jsx_runtime10.jsx("div", {
+                    section === "goodtoknow" && /* @__PURE__ */ jsx_runtime11.jsx("div", {
                       children: ["medicare", "after_hours", "private_health"].map((key) => {
                         const labels = {
                           medicare: "Medicare Rebates",
                           after_hours: "After-Hours Appointments",
                           private_health: "Private Health Insurance"
                         };
-                        return /* @__PURE__ */ jsx_runtime10.jsxs("div", {
+                        return /* @__PURE__ */ jsx_runtime11.jsxs("div", {
                           className: "mb-6 p-3 rounded-lg border border-purple-100 bg-purple-50/30",
                           children: [
-                            /* @__PURE__ */ jsx_runtime10.jsx(Field, {
+                            /* @__PURE__ */ jsx_runtime11.jsx(Field, {
                               label: `${labels[key]} — Heading`,
-                              children: /* @__PURE__ */ jsx_runtime10.jsx(TextInput, {
+                              children: /* @__PURE__ */ jsx_runtime11.jsx(TextInput, {
                                 value: draft.good_to_know[key].heading,
                                 onChange: (v) => updateGoodToKnow(key, { heading: v })
                               })
                             }),
-                            /* @__PURE__ */ jsx_runtime10.jsx(Field, {
+                            /* @__PURE__ */ jsx_runtime11.jsx(Field, {
                               label: "Body text",
-                              children: /* @__PURE__ */ jsx_runtime10.jsx(TextArea, {
+                              children: /* @__PURE__ */ jsx_runtime11.jsx(TextArea, {
                                 rows: 4,
                                 value: draft.good_to_know[key].body,
                                 onChange: (v) => updateGoodToKnow(key, { body: v })
@@ -29394,18 +29449,18 @@ Fridays at 2pm (Fortnightly: Starting 6th Jun)`
                         }, key);
                       })
                     }),
-                    section === "senders" && /* @__PURE__ */ jsx_runtime10.jsxs("div", {
+                    section === "senders" && /* @__PURE__ */ jsx_runtime11.jsxs("div", {
                       children: [
-                        /* @__PURE__ */ jsx_runtime10.jsx("p", {
+                        /* @__PURE__ */ jsx_runtime11.jsx("p", {
                           className: "text-sm text-gray-500 mb-4",
                           children: 'These names appear in the "Sending As" dropdown when composing an email.'
                         }),
-                        /* @__PURE__ */ jsx_runtime10.jsx("div", {
+                        /* @__PURE__ */ jsx_runtime11.jsx("div", {
                           className: "space-y-2 mb-4",
-                          children: draft.senders.map((s, i) => /* @__PURE__ */ jsx_runtime10.jsxs("div", {
+                          children: draft.senders.map((s, i) => /* @__PURE__ */ jsx_runtime11.jsxs("div", {
                             className: "flex items-center gap-2",
                             children: [
-                              /* @__PURE__ */ jsx_runtime10.jsx("input", {
+                              /* @__PURE__ */ jsx_runtime11.jsx("input", {
                                 type: "text",
                                 className: "input input-bordered input-sm flex-1 text-sm",
                                 value: s,
@@ -29415,7 +29470,7 @@ Fridays at 2pm (Fortnightly: Starting 6th Jun)`
                                   update({ senders });
                                 }
                               }),
-                              /* @__PURE__ */ jsx_runtime10.jsx("button", {
+                              /* @__PURE__ */ jsx_runtime11.jsx("button", {
                                 onClick: () => {
                                   if (draft.senders.length <= 1)
                                     return;
@@ -29423,17 +29478,17 @@ Fridays at 2pm (Fortnightly: Starting 6th Jun)`
                                 },
                                 className: "btn btn-ghost btn-sm btn-circle text-error",
                                 disabled: draft.senders.length <= 1,
-                                children: /* @__PURE__ */ jsx_runtime10.jsx(Trash2, {
+                                children: /* @__PURE__ */ jsx_runtime11.jsx(Trash2, {
                                   size: 14
                                 })
                               })
                             ]
                           }, i))
                         }),
-                        /* @__PURE__ */ jsx_runtime10.jsxs("div", {
+                        /* @__PURE__ */ jsx_runtime11.jsxs("div", {
                           className: "flex items-center gap-2",
                           children: [
-                            /* @__PURE__ */ jsx_runtime10.jsx("input", {
+                            /* @__PURE__ */ jsx_runtime11.jsx("input", {
                               type: "text",
                               className: "input input-bordered input-sm flex-1 text-sm",
                               placeholder: "Add sender name...",
@@ -29446,7 +29501,7 @@ Fridays at 2pm (Fortnightly: Starting 6th Jun)`
                                 }
                               }
                             }),
-                            /* @__PURE__ */ jsx_runtime10.jsxs("button", {
+                            /* @__PURE__ */ jsx_runtime11.jsxs("button", {
                               onClick: () => {
                                 if (newSender.trim()) {
                                   update({ senders: [...draft.senders, newSender.trim()] });
@@ -29456,7 +29511,7 @@ Fridays at 2pm (Fortnightly: Starting 6th Jun)`
                               className: "btn btn-sm gap-1",
                               style: { background: "#2C244C", color: "white" },
                               children: [
-                                /* @__PURE__ */ jsx_runtime10.jsx(Plus, {
+                                /* @__PURE__ */ jsx_runtime11.jsx(Plus, {
                                   size: 14
                                 }),
                                 " Add"
@@ -29466,146 +29521,146 @@ Fridays at 2pm (Fortnightly: Starting 6th Jun)`
                         })
                       ]
                     }),
-                    section === "signature" && /* @__PURE__ */ jsx_runtime10.jsxs("div", {
+                    section === "signature" && /* @__PURE__ */ jsx_runtime11.jsxs("div", {
                       children: [
-                        /* @__PURE__ */ jsx_runtime10.jsx(Field, {
+                        /* @__PURE__ */ jsx_runtime11.jsx(Field, {
                           label: "Practice Name",
-                          children: /* @__PURE__ */ jsx_runtime10.jsx(TextInput, {
+                          children: /* @__PURE__ */ jsx_runtime11.jsx(TextInput, {
                             value: draft.signature.practice_name,
                             onChange: (v) => updateSignature({ practice_name: v })
                           })
                         }),
-                        /* @__PURE__ */ jsx_runtime10.jsxs("div", {
+                        /* @__PURE__ */ jsx_runtime11.jsxs("div", {
                           className: "grid grid-cols-2 gap-3",
                           children: [
-                            /* @__PURE__ */ jsx_runtime10.jsx(Field, {
+                            /* @__PURE__ */ jsx_runtime11.jsx(Field, {
                               label: "Phone",
-                              children: /* @__PURE__ */ jsx_runtime10.jsx(TextInput, {
+                              children: /* @__PURE__ */ jsx_runtime11.jsx(TextInput, {
                                 value: draft.signature.phone,
                                 onChange: (v) => updateSignature({ phone: v })
                               })
                             }),
-                            /* @__PURE__ */ jsx_runtime10.jsx(Field, {
+                            /* @__PURE__ */ jsx_runtime11.jsx(Field, {
                               label: "Fax",
-                              children: /* @__PURE__ */ jsx_runtime10.jsx(TextInput, {
+                              children: /* @__PURE__ */ jsx_runtime11.jsx(TextInput, {
                                 value: draft.signature.fax,
                                 onChange: (v) => updateSignature({ fax: v })
                               })
                             })
                           ]
                         }),
-                        /* @__PURE__ */ jsx_runtime10.jsx(Field, {
+                        /* @__PURE__ */ jsx_runtime11.jsx(Field, {
                           label: "Email",
-                          children: /* @__PURE__ */ jsx_runtime10.jsx(TextInput, {
+                          children: /* @__PURE__ */ jsx_runtime11.jsx(TextInput, {
                             value: draft.signature.email,
                             onChange: (v) => updateSignature({ email: v })
                           })
                         }),
-                        /* @__PURE__ */ jsx_runtime10.jsx(Field, {
+                        /* @__PURE__ */ jsx_runtime11.jsx(Field, {
                           label: "Website",
-                          children: /* @__PURE__ */ jsx_runtime10.jsx(TextInput, {
+                          children: /* @__PURE__ */ jsx_runtime11.jsx(TextInput, {
                             value: draft.signature.website,
                             onChange: (v) => updateSignature({ website: v })
                           })
                         }),
-                        /* @__PURE__ */ jsx_runtime10.jsx(Field, {
+                        /* @__PURE__ */ jsx_runtime11.jsx(Field, {
                           label: "Clinic Addresses",
                           help: "Shown below phone/fax. Separate addresses with |",
-                          children: /* @__PURE__ */ jsx_runtime10.jsx(TextArea, {
+                          children: /* @__PURE__ */ jsx_runtime11.jsx(TextArea, {
                             rows: 3,
                             value: draft.signature.addresses,
                             onChange: (v) => updateSignature({ addresses: v })
                           })
                         }),
-                        /* @__PURE__ */ jsx_runtime10.jsx(Field, {
+                        /* @__PURE__ */ jsx_runtime11.jsx(Field, {
                           label: "Footnote",
                           help: "Small italic line at the bottom of the signature (e.g. clinic move notice). Leave blank to hide.",
-                          children: /* @__PURE__ */ jsx_runtime10.jsx(TextInput, {
+                          children: /* @__PURE__ */ jsx_runtime11.jsx(TextInput, {
                             value: draft.signature.footnote,
                             onChange: (v) => updateSignature({ footnote: v })
                           })
                         })
                       ]
                     }),
-                    section === "disclaimer" && /* @__PURE__ */ jsx_runtime10.jsx("div", {
-                      children: /* @__PURE__ */ jsx_runtime10.jsx(Field, {
+                    section === "disclaimer" && /* @__PURE__ */ jsx_runtime11.jsx("div", {
+                      children: /* @__PURE__ */ jsx_runtime11.jsx(Field, {
                         label: "Disclaimer text",
                         help: "Shown in small grey text at the bottom of every email.",
-                        children: /* @__PURE__ */ jsx_runtime10.jsx(TextArea, {
+                        children: /* @__PURE__ */ jsx_runtime11.jsx(TextArea, {
                           rows: 14,
                           value: draft.disclaimer,
                           onChange: (v) => update({ disclaimer: v })
                         })
                       })
                     }),
-                    section === "colours" && /* @__PURE__ */ jsx_runtime10.jsxs("div", {
+                    section === "colours" && /* @__PURE__ */ jsx_runtime11.jsxs("div", {
                       children: [
-                        /* @__PURE__ */ jsx_runtime10.jsx("p", {
+                        /* @__PURE__ */ jsx_runtime11.jsx("p", {
                           className: "text-sm text-gray-500 mb-4",
                           children: "Click a colour swatch or type a hex code to change it. The preview updates live."
                         }),
-                        /* @__PURE__ */ jsx_runtime10.jsxs("div", {
+                        /* @__PURE__ */ jsx_runtime11.jsxs("div", {
                           className: "space-y-1",
                           children: [
-                            /* @__PURE__ */ jsx_runtime10.jsx("div", {
+                            /* @__PURE__ */ jsx_runtime11.jsx("div", {
                               className: "text-xs font-bold text-gray-400 uppercase tracking-wide mb-2",
                               children: "Header Bar"
                             }),
-                            /* @__PURE__ */ jsx_runtime10.jsx(ColorPicker, {
+                            /* @__PURE__ */ jsx_runtime11.jsx(ColorPicker, {
                               label: "Start colour",
                               value: draft.colors.header_bar_start,
                               onChange: (v) => updateColors({ header_bar_start: v })
                             }),
-                            /* @__PURE__ */ jsx_runtime10.jsx(ColorPicker, {
+                            /* @__PURE__ */ jsx_runtime11.jsx(ColorPicker, {
                               label: "Mid colour",
                               value: draft.colors.header_bar_mid,
                               onChange: (v) => updateColors({ header_bar_mid: v })
                             }),
-                            /* @__PURE__ */ jsx_runtime10.jsx(ColorPicker, {
+                            /* @__PURE__ */ jsx_runtime11.jsx(ColorPicker, {
                               label: "End colour",
                               value: draft.colors.header_bar_end,
                               onChange: (v) => updateColors({ header_bar_end: v })
                             }),
-                            /* @__PURE__ */ jsx_runtime10.jsx("div", {
+                            /* @__PURE__ */ jsx_runtime11.jsx("div", {
                               className: "divider my-2"
                             }),
-                            /* @__PURE__ */ jsx_runtime10.jsx("div", {
+                            /* @__PURE__ */ jsx_runtime11.jsx("div", {
                               className: "text-xs font-bold text-gray-400 uppercase tracking-wide mb-2",
                               children: "Practitioner Cards"
                             }),
-                            /* @__PURE__ */ jsx_runtime10.jsx(ColorPicker, {
+                            /* @__PURE__ */ jsx_runtime11.jsx(ColorPicker, {
                               label: "Card border",
                               value: draft.colors.card_border,
                               onChange: (v) => updateColors({ card_border: v })
                             }),
-                            /* @__PURE__ */ jsx_runtime10.jsx(ColorPicker, {
+                            /* @__PURE__ */ jsx_runtime11.jsx(ColorPicker, {
                               label: "Practitioner name",
                               value: draft.colors.name_color,
                               onChange: (v) => updateColors({ name_color: v })
                             }),
-                            /* @__PURE__ */ jsx_runtime10.jsx(ColorPicker, {
+                            /* @__PURE__ */ jsx_runtime11.jsx(ColorPicker, {
                               label: "Title / accent",
                               value: draft.colors.title_color,
                               onChange: (v) => updateColors({ title_color: v })
                             }),
-                            /* @__PURE__ */ jsx_runtime10.jsx(ColorPicker, {
+                            /* @__PURE__ */ jsx_runtime11.jsx(ColorPicker, {
                               label: "Availability heading",
                               value: draft.colors.availability_heading,
                               onChange: (v) => updateColors({ availability_heading: v })
                             }),
-                            /* @__PURE__ */ jsx_runtime10.jsx("div", {
+                            /* @__PURE__ */ jsx_runtime11.jsx("div", {
                               className: "divider my-2"
                             }),
-                            /* @__PURE__ */ jsx_runtime10.jsx("div", {
+                            /* @__PURE__ */ jsx_runtime11.jsx("div", {
                               className: "text-xs font-bold text-gray-400 uppercase tracking-wide mb-2",
                               children: "Footer"
                             }),
-                            /* @__PURE__ */ jsx_runtime10.jsx(ColorPicker, {
+                            /* @__PURE__ */ jsx_runtime11.jsx(ColorPicker, {
                               label: "Footer background",
                               value: draft.colors.footer_bg,
                               onChange: (v) => updateColors({ footer_bg: v })
                             }),
-                            /* @__PURE__ */ jsx_runtime10.jsx(ColorPicker, {
+                            /* @__PURE__ */ jsx_runtime11.jsx(ColorPicker, {
                               label: "Footer text",
                               value: draft.colors.footer_text,
                               onChange: (v) => updateColors({ footer_text: v })
@@ -29618,19 +29673,19 @@ Fridays at 2pm (Fortnightly: Starting 6th Jun)`
                 })
               ]
             }),
-            showPreview && /* @__PURE__ */ jsx_runtime10.jsxs("div", {
+            showPreview && /* @__PURE__ */ jsx_runtime11.jsxs("div", {
               className: "flex-1 flex flex-col overflow-hidden bg-gray-100",
               children: [
-                /* @__PURE__ */ jsx_runtime10.jsx("div", {
+                /* @__PURE__ */ jsx_runtime11.jsx("div", {
                   className: "px-3 py-2 bg-gray-100 border-b border-gray-200 flex-shrink-0",
-                  children: /* @__PURE__ */ jsx_runtime10.jsx("p", {
+                  children: /* @__PURE__ */ jsx_runtime11.jsx("p", {
                     className: "text-xs text-gray-500 font-medium",
                     children: "\uD83D\uDCE7 Live preview — sample email with one practitioner card"
                   })
                 }),
-                /* @__PURE__ */ jsx_runtime10.jsx("div", {
+                /* @__PURE__ */ jsx_runtime11.jsx("div", {
                   className: "flex-1 overflow-auto p-3",
-                  children: /* @__PURE__ */ jsx_runtime10.jsx("iframe", {
+                  children: /* @__PURE__ */ jsx_runtime11.jsx("iframe", {
                     srcDoc: previewHtml,
                     style: { width: "100%", minHeight: "900px", border: "none", borderRadius: "6px", background: "white" },
                     title: "Email Template Preview"
@@ -29647,7 +29702,7 @@ Fridays at 2pm (Fortnightly: Starting 6th Jun)`
 
   // ReferralNetwork.tsx
   var import_react13 = __toESM(require_react());
-  var jsx_runtime11 = __toESM(require_jsx_runtime());
+  var jsx_runtime12 = __toESM(require_jsx_runtime());
   var BRAND2 = {
     lilac: "#7C6B9E",
     lightLilac: "#EAE6F2",
@@ -29706,23 +29761,23 @@ Fridays at 2pm (Fortnightly: Starting 6th Jun)`
     "Self Funded",
     "Third Party"
   ];
-  var SelectField = ({ label, value, onChange, options, placeholder }) => /* @__PURE__ */ jsx_runtime11.jsxs("div", {
+  var SelectField = ({ label, value, onChange, options, placeholder }) => /* @__PURE__ */ jsx_runtime12.jsxs("div", {
     style: { marginBottom: 12 },
     children: [
-      /* @__PURE__ */ jsx_runtime11.jsx("label", {
+      /* @__PURE__ */ jsx_runtime12.jsx("label", {
         style: labelStyle,
         children: label
       }),
-      /* @__PURE__ */ jsx_runtime11.jsxs("select", {
+      /* @__PURE__ */ jsx_runtime12.jsxs("select", {
         value,
         onChange: (e) => onChange(e.target.value),
         style: { ...inputStyle, appearance: "auto" },
         children: [
-          /* @__PURE__ */ jsx_runtime11.jsx("option", {
+          /* @__PURE__ */ jsx_runtime12.jsx("option", {
             value: "",
             children: placeholder || "Select…"
           }),
-          options.map((o) => /* @__PURE__ */ jsx_runtime11.jsx("option", {
+          options.map((o) => /* @__PURE__ */ jsx_runtime12.jsx("option", {
             value: o,
             children: o
           }, o))
@@ -29746,15 +29801,15 @@ Fridays at 2pm (Fortnightly: Starting 6th Jun)`
     const toggle = (o) => {
       onChange(selected.includes(o) ? selected.filter((s) => s !== o) : [...selected, o]);
     };
-    return /* @__PURE__ */ jsx_runtime11.jsxs("div", {
+    return /* @__PURE__ */ jsx_runtime12.jsxs("div", {
       style: { marginBottom: 12 },
       ref,
       children: [
-        /* @__PURE__ */ jsx_runtime11.jsx("label", {
+        /* @__PURE__ */ jsx_runtime12.jsx("label", {
           style: labelStyle,
           children: label
         }),
-        /* @__PURE__ */ jsx_runtime11.jsxs("div", {
+        /* @__PURE__ */ jsx_runtime12.jsxs("div", {
           onClick: () => setOpen((o) => !o),
           style: {
             ...inputStyle,
@@ -29767,11 +29822,11 @@ Fridays at 2pm (Fortnightly: Starting 6th Jun)`
             paddingBottom: selected.length ? 4 : 6
           },
           children: [
-            selected.length === 0 && /* @__PURE__ */ jsx_runtime11.jsx("span", {
+            selected.length === 0 && /* @__PURE__ */ jsx_runtime12.jsx("span", {
               style: { color: "#9ca3af", fontSize: 13 },
               children: placeholder || "Select…"
             }),
-            selected.map((s) => /* @__PURE__ */ jsx_runtime11.jsxs("span", {
+            selected.map((s) => /* @__PURE__ */ jsx_runtime12.jsxs("span", {
               style: {
                 background: "#ede9f7",
                 color: "#7C6B9E",
@@ -29785,7 +29840,7 @@ Fridays at 2pm (Fortnightly: Starting 6th Jun)`
               },
               children: [
                 s,
-                /* @__PURE__ */ jsx_runtime11.jsx("span", {
+                /* @__PURE__ */ jsx_runtime12.jsx("span", {
                   onMouseDown: (e) => {
                     e.stopPropagation();
                     toggle(s);
@@ -29795,13 +29850,13 @@ Fridays at 2pm (Fortnightly: Starting 6th Jun)`
                 })
               ]
             }, s)),
-            /* @__PURE__ */ jsx_runtime11.jsx("span", {
+            /* @__PURE__ */ jsx_runtime12.jsx("span", {
               style: { marginLeft: "auto", color: "#9ca3af", fontSize: 11 },
               children: "▾"
             })
           ]
         }),
-        open && /* @__PURE__ */ jsx_runtime11.jsxs("div", {
+        open && /* @__PURE__ */ jsx_runtime12.jsxs("div", {
           style: {
             position: "absolute",
             zIndex: 999,
@@ -29817,9 +29872,9 @@ Fridays at 2pm (Fortnightly: Starting 6th Jun)`
             minWidth: 260
           },
           children: [
-            /* @__PURE__ */ jsx_runtime11.jsx("div", {
+            /* @__PURE__ */ jsx_runtime12.jsx("div", {
               style: { padding: "8px 10px", borderBottom: "1px solid #f3f4f6" },
-              children: /* @__PURE__ */ jsx_runtime11.jsx("input", {
+              children: /* @__PURE__ */ jsx_runtime12.jsx("input", {
                 autoFocus: true,
                 value: search,
                 onChange: (e) => setSearch(e.target.value),
@@ -29828,14 +29883,14 @@ Fridays at 2pm (Fortnightly: Starting 6th Jun)`
                 onMouseDown: (e) => e.stopPropagation()
               })
             }),
-            /* @__PURE__ */ jsx_runtime11.jsxs("div", {
+            /* @__PURE__ */ jsx_runtime12.jsxs("div", {
               style: { overflowY: "auto", maxHeight: 200 },
               children: [
-                filtered.length === 0 && /* @__PURE__ */ jsx_runtime11.jsx("div", {
+                filtered.length === 0 && /* @__PURE__ */ jsx_runtime12.jsx("div", {
                   style: { padding: "10px 14px", fontSize: 12, color: "#9ca3af" },
                   children: "No options found"
                 }),
-                filtered.map((o) => /* @__PURE__ */ jsx_runtime11.jsx("div", {
+                filtered.map((o) => /* @__PURE__ */ jsx_runtime12.jsx("div", {
                   onMouseDown: (e) => {
                     e.preventDefault();
                     toggle(o);
@@ -29860,19 +29915,19 @@ Fridays at 2pm (Fortnightly: Starting 6th Jun)`
   };
   var CheckboxGroup = ({ label, selected, onChange, options }) => {
     const toggle = (o) => onChange(selected.includes(o) ? selected.filter((s) => s !== o) : [...selected, o]);
-    return /* @__PURE__ */ jsx_runtime11.jsxs("div", {
+    return /* @__PURE__ */ jsx_runtime12.jsxs("div", {
       style: { marginBottom: 12 },
       children: [
-        /* @__PURE__ */ jsx_runtime11.jsx("label", {
+        /* @__PURE__ */ jsx_runtime12.jsx("label", {
           style: labelStyle,
           children: label
         }),
-        /* @__PURE__ */ jsx_runtime11.jsx("div", {
+        /* @__PURE__ */ jsx_runtime12.jsx("div", {
           style: { display: "flex", flexWrap: "wrap", gap: "6px 14px", paddingTop: 4 },
-          children: options.map((o) => /* @__PURE__ */ jsx_runtime11.jsxs("label", {
+          children: options.map((o) => /* @__PURE__ */ jsx_runtime12.jsxs("label", {
             style: { display: "flex", alignItems: "center", gap: 5, fontSize: 13, cursor: "pointer", fontWeight: "normal" },
             children: [
-              /* @__PURE__ */ jsx_runtime11.jsx("input", {
+              /* @__PURE__ */ jsx_runtime12.jsx("input", {
                 type: "checkbox",
                 checked: selected.includes(o),
                 onChange: () => toggle(o),
@@ -29906,19 +29961,19 @@ Fridays at 2pm (Fortnightly: Starting 6th Jun)`
     const [referralWebsite, setReferralWebsite] = import_react13.useState(iv?.referral_website ?? "");
     const [isFormerPC, setIsFormerPC] = import_react13.useState(iv?.former_pc ?? (!iv?.referral_source || iv?.referral_source === "former_pc"));
     const [currentClinic, setCurrentClinic] = import_react13.useState(iv?.current_clinic ?? "");
-    const field = (label, value, onChange, placeholder, type = "input") => /* @__PURE__ */ jsx_runtime11.jsxs("div", {
+    const field = (label, value, onChange, placeholder, type = "input") => /* @__PURE__ */ jsx_runtime12.jsxs("div", {
       style: { marginBottom: 12 },
       children: [
-        /* @__PURE__ */ jsx_runtime11.jsx("label", {
+        /* @__PURE__ */ jsx_runtime12.jsx("label", {
           style: labelStyle,
           children: label
         }),
-        type === "textarea" ? /* @__PURE__ */ jsx_runtime11.jsx("textarea", {
+        type === "textarea" ? /* @__PURE__ */ jsx_runtime12.jsx("textarea", {
           value,
           onChange: (e) => onChange(e.target.value),
           placeholder,
           style: { ...inputStyle, resize: "vertical", minHeight: 60 }
-        }) : /* @__PURE__ */ jsx_runtime11.jsx("input", {
+        }) : /* @__PURE__ */ jsx_runtime12.jsx("input", {
           value,
           onChange: (e) => onChange(e.target.value),
           placeholder,
@@ -29958,35 +30013,35 @@ Fridays at 2pm (Fortnightly: Starting 6th Jun)`
       };
       onAdd(newP);
     };
-    return /* @__PURE__ */ jsx_runtime11.jsxs("div", {
+    return /* @__PURE__ */ jsx_runtime12.jsxs("div", {
       style: { background: "#fff", border: `1px solid #e5e7eb`, borderRadius: 12, padding: 20, marginBottom: 24, position: "relative" },
       children: [
-        /* @__PURE__ */ jsx_runtime11.jsx("h3", {
+        /* @__PURE__ */ jsx_runtime12.jsx("h3", {
           style: { margin: "0 0 16px", fontSize: 16, color: "#7C6B9E" },
           children: iv ? `✏️ Edit — ${iv.name}` : "➕ Add External Referral"
         }),
-        /* @__PURE__ */ jsx_runtime11.jsxs("div", {
+        /* @__PURE__ */ jsx_runtime12.jsxs("div", {
           style: { display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0 16px" },
           children: [
-            /* @__PURE__ */ jsx_runtime11.jsx("div", {
+            /* @__PURE__ */ jsx_runtime12.jsx("div", {
               children: field("Full Name *", name, setName, "e.g. Dr Jane Smith")
             }),
-            /* @__PURE__ */ jsx_runtime11.jsx("div", {
+            /* @__PURE__ */ jsx_runtime12.jsx("div", {
               children: field("Title / Role", title, setTitle, "e.g. Clinical Psychologist")
             })
           ]
         }),
-        /* @__PURE__ */ jsx_runtime11.jsxs("div", {
+        /* @__PURE__ */ jsx_runtime12.jsxs("div", {
           style: { display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0 16px" },
           children: [
-            /* @__PURE__ */ jsx_runtime11.jsx(SelectField, {
+            /* @__PURE__ */ jsx_runtime12.jsx(SelectField, {
               label: "Therapist Type",
               value: therapistType,
               onChange: setTherapistType,
               options: THERAPIST_TYPES,
               placeholder: "Select type…"
             }),
-            /* @__PURE__ */ jsx_runtime11.jsx(SelectField, {
+            /* @__PURE__ */ jsx_runtime12.jsx(SelectField, {
               label: "Gender",
               value: gender,
               onChange: setGender,
@@ -29995,61 +30050,61 @@ Fridays at 2pm (Fortnightly: Starting 6th Jun)`
             })
           ]
         }),
-        /* @__PURE__ */ jsx_runtime11.jsxs("div", {
+        /* @__PURE__ */ jsx_runtime12.jsxs("div", {
           style: { display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0 16px" },
           children: [
-            /* @__PURE__ */ jsx_runtime11.jsx(SelectField, {
+            /* @__PURE__ */ jsx_runtime12.jsx(SelectField, {
               label: "Age Range",
               value: ageRange,
               onChange: setAgeRange,
               options: AGE_RANGE_OPTIONS,
               placeholder: "Select age range…"
             }),
-            /* @__PURE__ */ jsx_runtime11.jsx("div", {
+            /* @__PURE__ */ jsx_runtime12.jsx("div", {
               children: field("Languages", languages, setLanguages, "e.g. English, Spanish")
             })
           ]
         }),
-        /* @__PURE__ */ jsx_runtime11.jsx(CheckboxGroup, {
+        /* @__PURE__ */ jsx_runtime12.jsx(CheckboxGroup, {
           label: "Billing Types",
           selected: billingTypes,
           onChange: setBillingTypes,
           options: BILLING_OPTIONS2
         }),
-        /* @__PURE__ */ jsx_runtime11.jsx(SearchableMultiSelect, {
+        /* @__PURE__ */ jsx_runtime12.jsx(SearchableMultiSelect, {
           label: "Specialties / Presentations",
           selected: presentations,
           onChange: setPresentations,
           options: CANONICAL_PRESENTATIONS,
           placeholder: "Select presentations…"
         }),
-        /* @__PURE__ */ jsx_runtime11.jsx(SearchableMultiSelect, {
+        /* @__PURE__ */ jsx_runtime12.jsx(SearchableMultiSelect, {
           label: "Therapy Modalities",
           selected: modalities,
           onChange: setModalities,
           options: CANONICAL_MODALITIES,
           placeholder: "Select modalities…"
         }),
-        /* @__PURE__ */ jsx_runtime11.jsxs("div", {
+        /* @__PURE__ */ jsx_runtime12.jsxs("div", {
           style: { display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0 16px", alignItems: "start" },
           children: [
-            /* @__PURE__ */ jsx_runtime11.jsxs("div", {
+            /* @__PURE__ */ jsx_runtime12.jsxs("div", {
               style: { marginBottom: 12 },
               children: [
-                /* @__PURE__ */ jsx_runtime11.jsx("label", {
+                /* @__PURE__ */ jsx_runtime12.jsx("label", {
                   style: labelStyle,
                   children: "Former PC Practitioner?"
                 }),
-                /* @__PURE__ */ jsx_runtime11.jsxs("label", {
+                /* @__PURE__ */ jsx_runtime12.jsxs("label", {
                   style: { display: "flex", alignItems: "center", gap: 10, cursor: "pointer", marginTop: 6 },
                   children: [
-                    /* @__PURE__ */ jsx_runtime11.jsx("input", {
+                    /* @__PURE__ */ jsx_runtime12.jsx("input", {
                       type: "checkbox",
                       checked: isFormerPC,
                       onChange: (e) => setIsFormerPC(e.target.checked),
                       style: { width: 18, height: 18, accentColor: "#7C6B9E", cursor: "pointer" }
                     }),
-                    /* @__PURE__ */ jsx_runtime11.jsx("span", {
+                    /* @__PURE__ */ jsx_runtime12.jsx("span", {
                       style: { fontSize: 14, color: isFormerPC ? "#7C6B9E" : "#6b7280", fontWeight: isFormerPC ? 600 : 400 },
                       children: isFormerPC ? "Yes — former PC practitioner" : "No — external referral"
                     })
@@ -30057,18 +30112,18 @@ Fridays at 2pm (Fortnightly: Starting 6th Jun)`
                 })
               ]
             }),
-            /* @__PURE__ */ jsx_runtime11.jsx("div", {
+            /* @__PURE__ */ jsx_runtime12.jsx("div", {
               children: field("Current Clinic / Practice", currentClinic, setCurrentClinic, "e.g. Melbourne Psych Group")
             })
           ]
         }),
-        /* @__PURE__ */ jsx_runtime11.jsxs("div", {
+        /* @__PURE__ */ jsx_runtime12.jsxs("div", {
           style: { display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0 16px" },
           children: [
-            /* @__PURE__ */ jsx_runtime11.jsx("div", {
+            /* @__PURE__ */ jsx_runtime12.jsx("div", {
               children: field("Email", referralContact, setReferralContact, "e.g. jane@example.com")
             }),
-            /* @__PURE__ */ jsx_runtime11.jsx("div", {
+            /* @__PURE__ */ jsx_runtime12.jsx("div", {
               children: field("Phone", referralPhone, setReferralPhone, "e.g. (03) 9123 4567")
             })
           ]
@@ -30078,15 +30133,15 @@ Fridays at 2pm (Fortnightly: Starting 6th Jun)`
         field("Website / Profile URL", referralWebsite, setReferralWebsite, "e.g. https://…"),
         field("Short Bio / Notes", shortBio, setShortBio, "Brief notes about this referral…", "textarea"),
         field("Qualifications", qualifications, setQualifications, "e.g. MPsych(Clin), MAPS"),
-        /* @__PURE__ */ jsx_runtime11.jsxs("div", {
+        /* @__PURE__ */ jsx_runtime12.jsxs("div", {
           style: { display: "flex", gap: 10, marginTop: 8 },
           children: [
-            /* @__PURE__ */ jsx_runtime11.jsx("button", {
+            /* @__PURE__ */ jsx_runtime12.jsx("button", {
               onClick: handleAdd,
               style: { background: "#7C6B9E", color: "#fff", border: "none", borderRadius: 8, padding: "8px 20px", fontWeight: 600, cursor: "pointer", fontSize: 14 },
               children: iv ? "Save Changes" : "Add to Network"
             }),
-            /* @__PURE__ */ jsx_runtime11.jsx("button", {
+            /* @__PURE__ */ jsx_runtime12.jsx("button", {
               onClick: onCancel,
               style: { background: "#fff", color: "#6b7280", border: `1px solid #e5e7eb`, borderRadius: 8, padding: "8px 20px", fontWeight: 600, cursor: "pointer", fontSize: 14 },
               children: "Cancel"
@@ -30123,12 +30178,12 @@ Fridays at 2pm (Fortnightly: Starting 6th Jun)`
         setTimeout(() => setCopied(false), 2000);
       });
     };
-    return /* @__PURE__ */ jsx_runtime11.jsx("div", {
+    return /* @__PURE__ */ jsx_runtime12.jsx("div", {
       style: { background: "#fff", border: `1px solid ${BRAND2.border}`, borderRadius: 12, padding: 18, marginBottom: 14, boxShadow: "0 1px 3px rgba(0,0,0,0.06)" },
-      children: /* @__PURE__ */ jsx_runtime11.jsxs("div", {
+      children: /* @__PURE__ */ jsx_runtime12.jsxs("div", {
         style: { display: "flex", alignItems: "flex-start", gap: 14 },
         children: [
-          p.photo_url && /* @__PURE__ */ jsx_runtime11.jsx("img", {
+          p.photo_url && /* @__PURE__ */ jsx_runtime12.jsx("img", {
             src: p.photo_url,
             alt: p.name,
             style: { width: 64, height: 64, borderRadius: "50%", objectFit: "cover", flexShrink: 0, border: `2px solid ${BRAND2.lightLilac}` },
@@ -30136,17 +30191,17 @@ Fridays at 2pm (Fortnightly: Starting 6th Jun)`
               e.target.style.display = "none";
             }
           }),
-          /* @__PURE__ */ jsx_runtime11.jsxs("div", {
+          /* @__PURE__ */ jsx_runtime12.jsxs("div", {
             style: { flex: 1, minWidth: 0 },
             children: [
-              /* @__PURE__ */ jsx_runtime11.jsxs("div", {
+              /* @__PURE__ */ jsx_runtime12.jsxs("div", {
                 style: { display: "flex", alignItems: "center", flexWrap: "wrap", gap: 8, marginBottom: 4 },
                 children: [
-                  /* @__PURE__ */ jsx_runtime11.jsx("h3", {
+                  /* @__PURE__ */ jsx_runtime12.jsx("h3", {
                     style: { margin: 0, fontSize: 16, fontWeight: 700, color: BRAND2.text },
                     children: p.name
                   }),
-                  /* @__PURE__ */ jsx_runtime11.jsx("span", {
+                  /* @__PURE__ */ jsx_runtime12.jsx("span", {
                     style: {
                       background: isFormerPC ? BRAND2.lightLilac : "#e0f2f1",
                       color: isFormerPC ? BRAND2.lilac : BRAND2.teal,
@@ -30161,11 +30216,11 @@ Fridays at 2pm (Fortnightly: Starting 6th Jun)`
                   })
                 ]
               }),
-              /* @__PURE__ */ jsx_runtime11.jsxs("p", {
+              /* @__PURE__ */ jsx_runtime12.jsxs("p", {
                 style: { margin: "0 0 4px", fontSize: 13, color: BRAND2.subtext },
                 children: [
                   [p.title || p.therapist_type, p.gender, p.age_range].filter(Boolean).join(" · "),
-                  p.current_clinic && /* @__PURE__ */ jsx_runtime11.jsxs("span", {
+                  p.current_clinic && /* @__PURE__ */ jsx_runtime12.jsxs("span", {
                     style: { marginLeft: 6, color: BRAND2.teal },
                     children: [
                       "\uD83D\uDCCD ",
@@ -30174,18 +30229,18 @@ Fridays at 2pm (Fortnightly: Starting 6th Jun)`
                   })
                 ]
               }),
-              p.short_bio && /* @__PURE__ */ jsx_runtime11.jsx("p", {
+              p.short_bio && /* @__PURE__ */ jsx_runtime12.jsx("p", {
                 style: { margin: "0 0 8px", fontSize: 13, color: BRAND2.text, lineHeight: 1.5 },
                 children: p.short_bio
               }),
-              /* @__PURE__ */ jsx_runtime11.jsxs("div", {
+              /* @__PURE__ */ jsx_runtime12.jsxs("div", {
                 style: { display: "flex", flexWrap: "wrap", gap: 6, marginBottom: 8 },
                 children: [
-                  presentations.slice(0, expanded ? undefined : 5).map((s, i) => /* @__PURE__ */ jsx_runtime11.jsx("span", {
+                  presentations.slice(0, expanded ? undefined : 5).map((s, i) => /* @__PURE__ */ jsx_runtime12.jsx("span", {
                     style: { background: "#f3f4f6", color: BRAND2.text, borderRadius: 20, padding: "2px 10px", fontSize: 11 },
                     children: s
                   }, i)),
-                  !expanded && presentations.length > 5 && /* @__PURE__ */ jsx_runtime11.jsxs("button", {
+                  !expanded && presentations.length > 5 && /* @__PURE__ */ jsx_runtime12.jsxs("button", {
                     onClick: () => setExpanded(true),
                     style: { background: "none", border: "none", color: BRAND2.lilac, fontSize: 11, cursor: "pointer", fontWeight: 600 },
                     children: [
@@ -30196,29 +30251,29 @@ Fridays at 2pm (Fortnightly: Starting 6th Jun)`
                   })
                 ]
               }),
-              modalities.length > 0 && /* @__PURE__ */ jsx_runtime11.jsx("div", {
+              modalities.length > 0 && /* @__PURE__ */ jsx_runtime12.jsx("div", {
                 style: { display: "flex", flexWrap: "wrap", gap: 5, marginBottom: 8 },
-                children: modalities.map((m, i) => /* @__PURE__ */ jsx_runtime11.jsx("span", {
+                children: modalities.map((m, i) => /* @__PURE__ */ jsx_runtime12.jsx("span", {
                   style: { background: "#ede9f7", color: BRAND2.lilac, borderRadius: 20, padding: "2px 10px", fontSize: 11 },
                   children: m
                 }, i))
               }),
-              /* @__PURE__ */ jsx_runtime11.jsxs("div", {
+              /* @__PURE__ */ jsx_runtime12.jsxs("div", {
                 style: { display: "flex", flexWrap: "wrap", gap: 12, fontSize: 12, color: BRAND2.subtext },
                 children: [
-                  p.billing_types && /* @__PURE__ */ jsx_runtime11.jsxs("span", {
+                  p.billing_types && /* @__PURE__ */ jsx_runtime12.jsxs("span", {
                     children: [
                       "\uD83D\uDCB3 ",
                       p.billing_types
                     ]
                   }),
-                  p.client_types && /* @__PURE__ */ jsx_runtime11.jsxs("span", {
+                  p.client_types && /* @__PURE__ */ jsx_runtime12.jsxs("span", {
                     children: [
                       "\uD83D\uDC65 ",
                       p.client_types
                     ]
                   }),
-                  p.languages && /* @__PURE__ */ jsx_runtime11.jsxs("span", {
+                  p.languages && /* @__PURE__ */ jsx_runtime12.jsxs("span", {
                     children: [
                       "\uD83C\uDF10 ",
                       p.languages
@@ -30226,40 +30281,40 @@ Fridays at 2pm (Fortnightly: Starting 6th Jun)`
                   })
                 ]
               }),
-              (p.referral_clinic || p.referral_address || p.referral_phone || p.referral_contact || p.referral_website || p.link_to_bio) && /* @__PURE__ */ jsx_runtime11.jsx("div", {
+              (p.referral_clinic || p.referral_address || p.referral_phone || p.referral_contact || p.referral_website || p.link_to_bio) && /* @__PURE__ */ jsx_runtime12.jsx("div", {
                 style: { marginTop: 12, background: "#f8f7fd", border: `1px solid ${BRAND2.lightLilac}`, borderRadius: 10, padding: "12px 14px" },
-                children: /* @__PURE__ */ jsx_runtime11.jsxs("div", {
+                children: /* @__PURE__ */ jsx_runtime12.jsxs("div", {
                   style: { display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 10 },
                   children: [
-                    /* @__PURE__ */ jsx_runtime11.jsxs("div", {
+                    /* @__PURE__ */ jsx_runtime12.jsxs("div", {
                       style: { display: "flex", flexDirection: "column", gap: 6, fontSize: 13 },
                       children: [
-                        p.referral_address && /* @__PURE__ */ jsx_runtime11.jsxs("span", {
+                        p.referral_address && /* @__PURE__ */ jsx_runtime12.jsxs("span", {
                           style: { color: BRAND2.text },
                           children: [
                             "\uD83D\uDCCD ",
-                            /* @__PURE__ */ jsx_runtime11.jsx("strong", {
+                            /* @__PURE__ */ jsx_runtime12.jsx("strong", {
                               children: p.referral_address
                             })
                           ]
                         }),
-                        p.referral_phone && /* @__PURE__ */ jsx_runtime11.jsxs("span", {
+                        p.referral_phone && /* @__PURE__ */ jsx_runtime12.jsxs("span", {
                           style: { color: BRAND2.text },
                           children: [
                             "\uD83D\uDCDE ",
-                            /* @__PURE__ */ jsx_runtime11.jsx("strong", {
+                            /* @__PURE__ */ jsx_runtime12.jsx("strong", {
                               children: p.referral_phone
                             })
                           ]
                         }),
-                        p.referral_contact && /* @__PURE__ */ jsx_runtime11.jsxs("span", {
+                        p.referral_contact && /* @__PURE__ */ jsx_runtime12.jsxs("span", {
                           style: { color: BRAND2.text },
                           children: [
                             "✉️ ",
                             p.referral_contact
                           ]
                         }),
-                        (p.referral_website || p.link_to_bio) && /* @__PURE__ */ jsx_runtime11.jsx("a", {
+                        (p.referral_website || p.link_to_bio) && /* @__PURE__ */ jsx_runtime12.jsx("a", {
                           href: p.referral_website || p.link_to_bio,
                           target: "_blank",
                           rel: "noreferrer",
@@ -30268,7 +30323,7 @@ Fridays at 2pm (Fortnightly: Starting 6th Jun)`
                         })
                       ]
                     }),
-                    /* @__PURE__ */ jsx_runtime11.jsx("button", {
+                    /* @__PURE__ */ jsx_runtime12.jsx("button", {
                       onClick: handleCopy,
                       title: "Copy contact details",
                       style: {
@@ -30291,15 +30346,15 @@ Fridays at 2pm (Fortnightly: Starting 6th Jun)`
               })
             ]
           }),
-          /* @__PURE__ */ jsx_runtime11.jsxs("div", {
+          /* @__PURE__ */ jsx_runtime12.jsxs("div", {
             style: { display: "flex", flexDirection: "column", gap: 6, flexShrink: 0 },
             children: [
-              /* @__PURE__ */ jsx_runtime11.jsx("button", {
+              /* @__PURE__ */ jsx_runtime12.jsx("button", {
                 onClick: () => onEdit(p),
                 style: { background: "none", border: `1px solid ${BRAND2.border}`, borderRadius: 8, padding: "4px 10px", fontSize: 12, color: BRAND2.subtext, cursor: "pointer" },
                 children: "Edit"
               }),
-              /* @__PURE__ */ jsx_runtime11.jsx("button", {
+              /* @__PURE__ */ jsx_runtime12.jsx("button", {
                 onClick: () => onDelete(p),
                 style: { background: "none", border: "1px solid #fca5a5", borderRadius: 8, padding: "4px 10px", fontSize: 12, color: "#ef4444", cursor: "pointer" },
                 children: "Delete"
@@ -30378,54 +30433,54 @@ Fridays at 2pm (Fortnightly: Starting 6th Jun)`
         return;
       await persist("delete", p);
     };
-    return /* @__PURE__ */ jsx_runtime11.jsxs("div", {
+    return /* @__PURE__ */ jsx_runtime12.jsxs("div", {
       style: { maxWidth: 900, margin: "0 auto", padding: "24px 16px", fontFamily: "system-ui, sans-serif" },
       children: [
-        /* @__PURE__ */ jsx_runtime11.jsxs("div", {
+        /* @__PURE__ */ jsx_runtime12.jsxs("div", {
           style: { marginBottom: 24 },
           children: [
-            /* @__PURE__ */ jsx_runtime11.jsx("h2", {
+            /* @__PURE__ */ jsx_runtime12.jsx("h2", {
               style: { margin: "0 0 6px", fontSize: 22, fontWeight: 700, color: BRAND2.lilac },
               children: "\uD83D\uDD17 Referral Network"
             }),
-            /* @__PURE__ */ jsx_runtime11.jsx("p", {
+            /* @__PURE__ */ jsx_runtime12.jsx("p", {
               style: { margin: "0 0 16px", fontSize: 14, color: BRAND2.subtext, lineHeight: 1.6 },
               children: "Practitioners no longer at Psychology Care and trusted external referrals — for when we don't have a suitable match in-house."
             }),
-            /* @__PURE__ */ jsx_runtime11.jsxs("div", {
+            /* @__PURE__ */ jsx_runtime12.jsxs("div", {
               style: { display: "flex", gap: 10, alignItems: "center", flexWrap: "wrap" },
               children: [
-                /* @__PURE__ */ jsx_runtime11.jsx("input", {
+                /* @__PURE__ */ jsx_runtime12.jsx("input", {
                   value: search,
                   onChange: (e) => setSearch(e.target.value),
                   placeholder: "Search by name, specialty, modality…",
                   style: { flex: 1, minWidth: 220, border: `1px solid ${BRAND2.border}`, borderRadius: 8, padding: "8px 14px", fontSize: 14 }
                 }),
-                /* @__PURE__ */ jsx_runtime11.jsx("button", {
+                /* @__PURE__ */ jsx_runtime12.jsx("button", {
                   onClick: () => setShowAddForm((s) => !s),
                   style: { background: BRAND2.lilac, color: "#fff", border: "none", borderRadius: 8, padding: "8px 18px", fontWeight: 600, cursor: "pointer", fontSize: 14, whiteSpace: "nowrap" },
                   children: "➕ Add External Referral"
                 })
               ]
             }),
-            /* @__PURE__ */ jsx_runtime11.jsxs("div", {
+            /* @__PURE__ */ jsx_runtime12.jsxs("div", {
               style: { marginTop: 10, display: "flex", gap: 12, fontSize: 12, color: BRAND2.subtext },
               children: [
-                /* @__PURE__ */ jsx_runtime11.jsxs("span", {
+                /* @__PURE__ */ jsx_runtime12.jsxs("span", {
                   children: [
                     "\uD83D\uDCCB ",
                     localReferrals.filter((p) => !p.referral_source || p.referral_source === "former_pc").length,
                     " former PC"
                   ]
                 }),
-                /* @__PURE__ */ jsx_runtime11.jsxs("span", {
+                /* @__PURE__ */ jsx_runtime12.jsxs("span", {
                   children: [
                     "\uD83C\uDF10 ",
                     localReferrals.filter((p) => p.referral_source === "external").length,
                     " external"
                   ]
                 }),
-                /* @__PURE__ */ jsx_runtime11.jsxs("span", {
+                /* @__PURE__ */ jsx_runtime12.jsxs("span", {
                   children: [
                     "\uD83D\uDD0D Showing ",
                     filtered.length,
@@ -30437,11 +30492,11 @@ Fridays at 2pm (Fortnightly: Starting 6th Jun)`
             })
           ]
         }),
-        showAddForm && /* @__PURE__ */ jsx_runtime11.jsx(AddReferralForm, {
+        showAddForm && /* @__PURE__ */ jsx_runtime12.jsx(AddReferralForm, {
           onAdd: handleAdd,
           onCancel: () => setShowAddForm(false)
         }),
-        editingP && /* @__PURE__ */ jsx_runtime11.jsx("div", {
+        editingP && /* @__PURE__ */ jsx_runtime12.jsx("div", {
           style: {
             position: "fixed",
             inset: 0,
@@ -30456,35 +30511,35 @@ Fridays at 2pm (Fortnightly: Starting 6th Jun)`
             if (e.target === e.currentTarget)
               setEditingP(null);
           },
-          children: /* @__PURE__ */ jsx_runtime11.jsx("div", {
+          children: /* @__PURE__ */ jsx_runtime12.jsx("div", {
             style: { background: "#fff", borderRadius: 12, padding: 28, width: "100%", maxWidth: 620, maxHeight: "90vh", overflowY: "auto", boxShadow: "0 8px 40px rgba(0,0,0,0.18)" },
-            children: /* @__PURE__ */ jsx_runtime11.jsx(AddReferralForm, {
+            children: /* @__PURE__ */ jsx_runtime12.jsx(AddReferralForm, {
               initialValues: editingP,
               onAdd: handleEditSave,
               onCancel: () => setEditingP(null)
             })
           })
         }),
-        filtered.length === 0 ? /* @__PURE__ */ jsx_runtime11.jsxs("div", {
+        filtered.length === 0 ? /* @__PURE__ */ jsx_runtime12.jsxs("div", {
           style: { textAlign: "center", padding: 60, color: BRAND2.subtext },
           children: [
-            /* @__PURE__ */ jsx_runtime11.jsx("div", {
+            /* @__PURE__ */ jsx_runtime12.jsx("div", {
               style: { fontSize: 36, marginBottom: 12 },
               children: "\uD83D\uDD0D"
             }),
-            /* @__PURE__ */ jsx_runtime11.jsxs("p", {
+            /* @__PURE__ */ jsx_runtime12.jsxs("p", {
               children: [
                 "No referrals found",
                 search ? ` matching "${search}"` : "",
                 "."
               ]
             }),
-            !search && /* @__PURE__ */ jsx_runtime11.jsx("p", {
+            !search && /* @__PURE__ */ jsx_runtime12.jsx("p", {
               style: { fontSize: 13 },
               children: "Add external referrals using the button above."
             })
           ]
-        }) : filtered.map((p, idx) => /* @__PURE__ */ jsx_runtime11.jsx(ReferralCard, {
+        }) : filtered.map((p, idx) => /* @__PURE__ */ jsx_runtime12.jsx(ReferralCard, {
           p,
           onEdit: handleEdit,
           onDelete: handleDelete
@@ -30496,7 +30551,7 @@ Fridays at 2pm (Fortnightly: Starting 6th Jun)`
 
   // AuditTab.tsx
   var import_react14 = __toESM(require_react());
-  var jsx_runtime12 = __toESM(require_jsx_runtime());
+  var jsx_runtime13 = __toESM(require_jsx_runtime());
   function formatTimestamp(iso) {
     try {
       const d = new Date(iso);
@@ -30528,18 +30583,18 @@ Fridays at 2pm (Fortnightly: Starting 6th Jun)`
   function AvailabilityImportDetails({ details }) {
     const updated = details?.updated || [];
     const unmatched = details?.unmatched || [];
-    return /* @__PURE__ */ jsx_runtime12.jsxs("div", {
+    return /* @__PURE__ */ jsx_runtime13.jsxs("div", {
       style: { fontSize: 13, color: "#444", marginTop: 8 },
       children: [
-        /* @__PURE__ */ jsx_runtime12.jsxs("div", {
+        /* @__PURE__ */ jsx_runtime13.jsxs("div", {
           style: { marginBottom: 4 },
           children: [
-            /* @__PURE__ */ jsx_runtime12.jsx("span", {
+            /* @__PURE__ */ jsx_runtime13.jsx("span", {
               style: { fontWeight: 600, color: "#2C244C" },
               children: updated.length
             }),
             " practitioners updated",
-            unmatched.length > 0 && /* @__PURE__ */ jsx_runtime12.jsxs("span", {
+            unmatched.length > 0 && /* @__PURE__ */ jsx_runtime13.jsxs("span", {
               style: { color: "#b45309", marginLeft: 8 },
               children: [
                 "⚠️ ",
@@ -30550,9 +30605,9 @@ Fridays at 2pm (Fortnightly: Starting 6th Jun)`
             })
           ]
         }),
-        updated.length > 0 && /* @__PURE__ */ jsx_runtime12.jsx("div", {
+        updated.length > 0 && /* @__PURE__ */ jsx_runtime13.jsx("div", {
           style: { display: "flex", flexWrap: "wrap", gap: 4, marginTop: 4 },
-          children: updated.map((name) => /* @__PURE__ */ jsx_runtime12.jsx("span", {
+          children: updated.map((name) => /* @__PURE__ */ jsx_runtime13.jsx("span", {
             style: {
               background: "#e8e4f4",
               color: "#2C244C",
@@ -30573,33 +30628,33 @@ Fridays at 2pm (Fortnightly: Starting 6th Jun)`
     const skipped = details?.skipped || [];
     const changes = details?.changes || {};
     const [expanded, setExpanded] = import_react14.useState(null);
-    return /* @__PURE__ */ jsx_runtime12.jsxs("div", {
+    return /* @__PURE__ */ jsx_runtime13.jsxs("div", {
       style: { fontSize: 13, color: "#444", marginTop: 8 },
       children: [
-        /* @__PURE__ */ jsx_runtime12.jsxs("div", {
+        /* @__PURE__ */ jsx_runtime13.jsxs("div", {
           style: { display: "flex", gap: 16, marginBottom: 6, flexWrap: "wrap" },
           children: [
-            /* @__PURE__ */ jsx_runtime12.jsxs("span", {
+            /* @__PURE__ */ jsx_runtime13.jsxs("span", {
               children: [
-                /* @__PURE__ */ jsx_runtime12.jsx("span", {
+                /* @__PURE__ */ jsx_runtime13.jsx("span", {
                   style: { fontWeight: 600, color: "#8D5273" },
                   children: changed.length
                 }),
                 " with changes"
               ]
             }),
-            /* @__PURE__ */ jsx_runtime12.jsxs("span", {
+            /* @__PURE__ */ jsx_runtime13.jsxs("span", {
               children: [
-                /* @__PURE__ */ jsx_runtime12.jsx("span", {
+                /* @__PURE__ */ jsx_runtime13.jsx("span", {
                   style: { fontWeight: 600, color: "#555" },
                   children: unchanged.length
                 }),
                 " unchanged"
               ]
             }),
-            skipped.length > 0 && /* @__PURE__ */ jsx_runtime12.jsxs("span", {
+            skipped.length > 0 && /* @__PURE__ */ jsx_runtime13.jsxs("span", {
               children: [
-                /* @__PURE__ */ jsx_runtime12.jsx("span", {
+                /* @__PURE__ */ jsx_runtime13.jsx("span", {
                   style: { fontWeight: 600, color: "#b45309" },
                   children: skipped.length
                 }),
@@ -30609,17 +30664,17 @@ Fridays at 2pm (Fortnightly: Starting 6th Jun)`
             })
           ]
         }),
-        changed.length > 0 && /* @__PURE__ */ jsx_runtime12.jsxs("div", {
+        changed.length > 0 && /* @__PURE__ */ jsx_runtime13.jsxs("div", {
           style: { marginTop: 4 },
           children: [
-            /* @__PURE__ */ jsx_runtime12.jsx("div", {
+            /* @__PURE__ */ jsx_runtime13.jsx("div", {
               style: { fontWeight: 600, color: "#2C244C", marginBottom: 4, fontSize: 12 },
               children: "Changed practitioners:"
             }),
-            changed.map((name) => /* @__PURE__ */ jsx_runtime12.jsxs("div", {
+            changed.map((name) => /* @__PURE__ */ jsx_runtime13.jsxs("div", {
               style: { marginBottom: 6 },
               children: [
-                /* @__PURE__ */ jsx_runtime12.jsxs("button", {
+                /* @__PURE__ */ jsx_runtime13.jsxs("button", {
                   onClick: () => setExpanded(expanded === name ? null : name),
                   style: {
                     background: "#fdf0f5",
@@ -30638,12 +30693,12 @@ Fridays at 2pm (Fortnightly: Starting 6th Jun)`
                     expanded === name ? "▲" : "▼"
                   ]
                 }),
-                expanded === name && changes[name] && /* @__PURE__ */ jsx_runtime12.jsx("div", {
+                expanded === name && changes[name] && /* @__PURE__ */ jsx_runtime13.jsx("div", {
                   style: { marginTop: 4, marginLeft: 4, borderLeft: "3px solid #e8c5d6", paddingLeft: 10 },
-                  children: changes[name].map(([field, oldVal, newVal], i) => /* @__PURE__ */ jsx_runtime12.jsxs("div", {
+                  children: changes[name].map(([field, oldVal, newVal], i) => /* @__PURE__ */ jsx_runtime13.jsxs("div", {
                     style: { marginBottom: 3, fontSize: 12 },
                     children: [
-                      /* @__PURE__ */ jsx_runtime12.jsxs("span", {
+                      /* @__PURE__ */ jsx_runtime13.jsxs("span", {
                         style: { fontWeight: 600, color: "#555" },
                         children: [
                           field,
@@ -30651,12 +30706,12 @@ Fridays at 2pm (Fortnightly: Starting 6th Jun)`
                         ]
                       }),
                       " ",
-                      /* @__PURE__ */ jsx_runtime12.jsx("span", {
+                      /* @__PURE__ */ jsx_runtime13.jsx("span", {
                         style: { color: "#b45309", textDecoration: "line-through" },
                         children: oldVal || "(empty)"
                       }),
                       " → ",
-                      /* @__PURE__ */ jsx_runtime12.jsx("span", {
+                      /* @__PURE__ */ jsx_runtime13.jsx("span", {
                         style: { color: "#166534" },
                         children: newVal || "(empty)"
                       })
@@ -30691,28 +30746,28 @@ Fridays at 2pm (Fortnightly: Starting 6th Jun)`
     }, []);
     const types = ["all", "availability_import", "zoho_sync", "manual_edit"];
     const filtered = filter === "all" ? entries : entries.filter((e) => e.type === filter);
-    return /* @__PURE__ */ jsx_runtime12.jsxs("div", {
+    return /* @__PURE__ */ jsx_runtime13.jsxs("div", {
       children: [
-        /* @__PURE__ */ jsx_runtime12.jsxs("div", {
+        /* @__PURE__ */ jsx_runtime13.jsxs("div", {
           style: { marginBottom: 24 },
           children: [
-            /* @__PURE__ */ jsx_runtime12.jsx("h2", {
+            /* @__PURE__ */ jsx_runtime13.jsx("h2", {
               style: { fontSize: 22, fontWeight: 700, color: "#2C244C", marginBottom: 4 },
               children: "\uD83D\uDCCB Change Audit Log"
             }),
-            /* @__PURE__ */ jsx_runtime12.jsx("p", {
+            /* @__PURE__ */ jsx_runtime13.jsx("p", {
               style: { color: "#666", fontSize: 14 },
               children: "All availability imports, Zoho syncs, and edits — most recent first."
             })
           ]
         }),
-        /* @__PURE__ */ jsx_runtime12.jsxs("div", {
+        /* @__PURE__ */ jsx_runtime13.jsxs("div", {
           style: { display: "flex", gap: 8, marginBottom: 20, flexWrap: "wrap" },
           children: [
             types.map((t) => {
               const cfg = t === "all" ? { icon: "\uD83D\uDDC2️", label: "All", color: "#2C244C", bg: "#f0eef8" } : typeConfig(t);
               const active = filter === t;
-              return /* @__PURE__ */ jsx_runtime12.jsxs("button", {
+              return /* @__PURE__ */ jsx_runtime13.jsxs("button", {
                 onClick: () => setFilter(t),
                 style: {
                   padding: "6px 16px",
@@ -30732,7 +30787,7 @@ Fridays at 2pm (Fortnightly: Starting 6th Jun)`
                 ]
               }, t);
             }),
-            /* @__PURE__ */ jsx_runtime12.jsxs("div", {
+            /* @__PURE__ */ jsx_runtime13.jsxs("div", {
               style: { marginLeft: "auto", color: "#888", fontSize: 13, alignSelf: "center" },
               children: [
                 filtered.length,
@@ -30742,11 +30797,11 @@ Fridays at 2pm (Fortnightly: Starting 6th Jun)`
             })
           ]
         }),
-        loading && /* @__PURE__ */ jsx_runtime12.jsx("div", {
+        loading && /* @__PURE__ */ jsx_runtime13.jsx("div", {
           style: { color: "#888", padding: 40, textAlign: "center" },
           children: "Loading audit log…"
         }),
-        error && !loading && /* @__PURE__ */ jsx_runtime12.jsx("div", {
+        error && !loading && /* @__PURE__ */ jsx_runtime13.jsx("div", {
           style: {
             background: "#fff8f0",
             border: "1px solid #fcd7a0",
@@ -30758,15 +30813,15 @@ Fridays at 2pm (Fortnightly: Starting 6th Jun)`
           },
           children: error
         }),
-        !loading && !error && filtered.length === 0 && /* @__PURE__ */ jsx_runtime12.jsx("div", {
+        !loading && !error && filtered.length === 0 && /* @__PURE__ */ jsx_runtime13.jsx("div", {
           style: { color: "#888", padding: 40, textAlign: "center" },
           children: "No entries for this filter."
         }),
-        !loading && !error && filtered.length > 0 && /* @__PURE__ */ jsx_runtime12.jsx("div", {
+        !loading && !error && filtered.length > 0 && /* @__PURE__ */ jsx_runtime13.jsx("div", {
           style: { display: "flex", flexDirection: "column", gap: 12 },
           children: filtered.map((entry) => {
             const cfg = typeConfig(entry.type);
-            return /* @__PURE__ */ jsx_runtime12.jsxs("div", {
+            return /* @__PURE__ */ jsx_runtime13.jsxs("div", {
               style: {
                 background: "white",
                 border: "1px solid #e8e4f0",
@@ -30775,13 +30830,13 @@ Fridays at 2pm (Fortnightly: Starting 6th Jun)`
                 borderLeft: `4px solid ${cfg.color}`
               },
               children: [
-                /* @__PURE__ */ jsx_runtime12.jsxs("div", {
+                /* @__PURE__ */ jsx_runtime13.jsxs("div", {
                   style: { display: "flex", justifyContent: "space-between", alignItems: "flex-start", flexWrap: "wrap", gap: 8 },
                   children: [
-                    /* @__PURE__ */ jsx_runtime12.jsxs("div", {
+                    /* @__PURE__ */ jsx_runtime13.jsxs("div", {
                       style: { display: "flex", alignItems: "center", gap: 8 },
                       children: [
-                        /* @__PURE__ */ jsx_runtime12.jsxs("span", {
+                        /* @__PURE__ */ jsx_runtime13.jsxs("span", {
                           style: {
                             background: cfg.bg,
                             color: cfg.color,
@@ -30796,13 +30851,13 @@ Fridays at 2pm (Fortnightly: Starting 6th Jun)`
                             cfg.label
                           ]
                         }),
-                        /* @__PURE__ */ jsx_runtime12.jsx("span", {
+                        /* @__PURE__ */ jsx_runtime13.jsx("span", {
                           style: { fontWeight: 600, color: "#2C244C", fontSize: 15 },
                           children: entry.title
                         })
                       ]
                     }),
-                    /* @__PURE__ */ jsx_runtime12.jsxs("span", {
+                    /* @__PURE__ */ jsx_runtime13.jsxs("span", {
                       style: { color: "#888", fontSize: 12, whiteSpace: "nowrap" },
                       children: [
                         "\uD83D\uDD50 ",
@@ -30811,13 +30866,13 @@ Fridays at 2pm (Fortnightly: Starting 6th Jun)`
                     })
                   ]
                 }),
-                entry.type === "availability_import" && /* @__PURE__ */ jsx_runtime12.jsx(AvailabilityImportDetails, {
+                entry.type === "availability_import" && /* @__PURE__ */ jsx_runtime13.jsx(AvailabilityImportDetails, {
                   details: entry.details
                 }),
-                entry.type === "zoho_sync" && /* @__PURE__ */ jsx_runtime12.jsx(ZohoSyncDetails, {
+                entry.type === "zoho_sync" && /* @__PURE__ */ jsx_runtime13.jsx(ZohoSyncDetails, {
                   details: entry.details
                 }),
-                entry.type !== "availability_import" && entry.type !== "zoho_sync" && entry.details?.note && /* @__PURE__ */ jsx_runtime12.jsx("div", {
+                entry.type !== "availability_import" && entry.type !== "zoho_sync" && entry.details?.note && /* @__PURE__ */ jsx_runtime13.jsx("div", {
                   style: { fontSize: 13, color: "#555", marginTop: 6 },
                   children: entry.details.note
                 })
@@ -30831,8 +30886,10 @@ Fridays at 2pm (Fortnightly: Starting 6th Jun)`
 
   // CRMSyncTab.tsx
   var import_react15 = __toESM(require_react());
-  var jsx_runtime13 = __toESM(require_jsx_runtime());
+  var jsx_runtime14 = __toESM(require_jsx_runtime());
   var FIELD_SOURCES = [
+    { field: "Internal Notes (staff only)", appKey: "alert", crmField: "Intake_Alert_Notes_Internal", source: "crm", note: "✅ CRM only — never included in client emails; blank clears note" },
+    { field: "Client-Facing Notes", appKey: "client_note", crmField: "Intake_Alert_Notes", source: "crm", note: "✅ CRM only — included in client email; blank clears note" },
     { field: "Presentations (Clinical Interests)", appKey: "presentations", crmField: "Clinical_Interests", source: "crm", note: "✅ Synced from CRM" },
     { field: "Modalities", appKey: "modalities", crmField: "Modalities", source: "crm", note: "✅ Synced from CRM" },
     { field: "Bio", appKey: "bio", crmField: "Bio_for_Website", source: "crm", note: "✅ Synced from CRM" },
@@ -33305,80 +33362,80 @@ Outside of clinical work, I'm an avid martial arts practitioner and have spent o
     const [expanded, setExpanded] = import_react15.useState(null);
     const sourceBadge = (source) => {
       if (source === "crm")
-        return /* @__PURE__ */ jsx_runtime13.jsx("span", {
+        return /* @__PURE__ */ jsx_runtime14.jsx("span", {
           style: { background: "#1a3d1a", color: "#6ddb6d", borderRadius: 4, padding: "2px 8px", fontSize: 12, fontWeight: 600 },
           children: "✅ CRM"
         });
       if (source === "available")
-        return /* @__PURE__ */ jsx_runtime13.jsx("span", {
+        return /* @__PURE__ */ jsx_runtime14.jsx("span", {
           style: { background: "#3d3200", color: "#ffd84d", borderRadius: 4, padding: "2px 8px", fontSize: 12, fontWeight: 600 },
           children: "\uD83D\uDFE1 Available"
         });
-      return /* @__PURE__ */ jsx_runtime13.jsx("span", {
+      return /* @__PURE__ */ jsx_runtime14.jsx("span", {
         style: { background: "#1a2a3d", color: "#7eb8f7", borderRadius: 4, padding: "2px 8px", fontSize: 12, fontWeight: 600 },
         children: "\uD83D\uDD35 Manual"
       });
     };
-    return /* @__PURE__ */ jsx_runtime13.jsxs("div", {
+    return /* @__PURE__ */ jsx_runtime14.jsxs("div", {
       style: { padding: "24px", maxWidth: 1000, margin: "0 auto", color: "#e8e0ef" },
       children: [
-        /* @__PURE__ */ jsx_runtime13.jsx("h2", {
+        /* @__PURE__ */ jsx_runtime14.jsx("h2", {
           style: { color: "#CDA8BA", marginBottom: 4 },
           children: "\uD83D\uDD17 CRM Sync"
         }),
-        /* @__PURE__ */ jsx_runtime13.jsx("p", {
+        /* @__PURE__ */ jsx_runtime14.jsx("p", {
           style: { color: "#aaa", marginBottom: 24, fontSize: 14 },
           children: "Shows which fields are synced from Zoho CRM and which are managed manually."
         }),
-        /* @__PURE__ */ jsx_runtime13.jsx("h3", {
+        /* @__PURE__ */ jsx_runtime14.jsx("h3", {
           style: { color: "#CDA8BA", marginBottom: 12 },
           children: "\uD83D\uDCCB Field Sources"
         }),
-        /* @__PURE__ */ jsx_runtime13.jsx("div", {
+        /* @__PURE__ */ jsx_runtime14.jsx("div", {
           style: { overflowX: "auto", marginBottom: 36 },
-          children: /* @__PURE__ */ jsx_runtime13.jsxs("table", {
+          children: /* @__PURE__ */ jsx_runtime14.jsxs("table", {
             style: { width: "100%", borderCollapse: "collapse", fontSize: 14 },
             children: [
-              /* @__PURE__ */ jsx_runtime13.jsx("thead", {
-                children: /* @__PURE__ */ jsx_runtime13.jsxs("tr", {
+              /* @__PURE__ */ jsx_runtime14.jsx("thead", {
+                children: /* @__PURE__ */ jsx_runtime14.jsxs("tr", {
                   style: { background: "#2C244C" },
                   children: [
-                    /* @__PURE__ */ jsx_runtime13.jsx("th", {
+                    /* @__PURE__ */ jsx_runtime14.jsx("th", {
                       style: { padding: "10px 12px", textAlign: "left", color: "#CDA8BA", borderBottom: "1px solid #3d3060" },
                       children: "App Field"
                     }),
-                    /* @__PURE__ */ jsx_runtime13.jsx("th", {
+                    /* @__PURE__ */ jsx_runtime14.jsx("th", {
                       style: { padding: "10px 12px", textAlign: "left", color: "#CDA8BA", borderBottom: "1px solid #3d3060" },
                       children: "CRM Field"
                     }),
-                    /* @__PURE__ */ jsx_runtime13.jsx("th", {
+                    /* @__PURE__ */ jsx_runtime14.jsx("th", {
                       style: { padding: "10px 12px", textAlign: "left", color: "#CDA8BA", borderBottom: "1px solid #3d3060" },
                       children: "Status"
                     }),
-                    /* @__PURE__ */ jsx_runtime13.jsx("th", {
+                    /* @__PURE__ */ jsx_runtime14.jsx("th", {
                       style: { padding: "10px 12px", textAlign: "left", color: "#CDA8BA", borderBottom: "1px solid #3d3060" },
                       children: "Notes"
                     })
                   ]
                 })
               }),
-              /* @__PURE__ */ jsx_runtime13.jsx("tbody", {
-                children: FIELD_SOURCES.map((row, i) => /* @__PURE__ */ jsx_runtime13.jsxs("tr", {
+              /* @__PURE__ */ jsx_runtime14.jsx("tbody", {
+                children: FIELD_SOURCES.map((row, i) => /* @__PURE__ */ jsx_runtime14.jsxs("tr", {
                   style: { background: i % 2 === 0 ? "#1e1830" : "#231d38" },
                   children: [
-                    /* @__PURE__ */ jsx_runtime13.jsx("td", {
+                    /* @__PURE__ */ jsx_runtime14.jsx("td", {
                       style: { padding: "9px 12px", fontWeight: 500 },
                       children: row.field
                     }),
-                    /* @__PURE__ */ jsx_runtime13.jsx("td", {
+                    /* @__PURE__ */ jsx_runtime14.jsx("td", {
                       style: { padding: "9px 12px", color: "#bbb", fontFamily: "monospace", fontSize: 12 },
                       children: row.crmField
                     }),
-                    /* @__PURE__ */ jsx_runtime13.jsx("td", {
+                    /* @__PURE__ */ jsx_runtime14.jsx("td", {
                       style: { padding: "9px 12px" },
                       children: sourceBadge(row.source)
                     }),
-                    /* @__PURE__ */ jsx_runtime13.jsx("td", {
+                    /* @__PURE__ */ jsx_runtime14.jsx("td", {
                       style: { padding: "9px 12px", color: "#aaa", fontSize: 13 },
                       children: row.note
                     })
@@ -33388,62 +33445,62 @@ Outside of clinical work, I'm an avid martial arts practitioner and have spent o
             ]
           })
         }),
-        /* @__PURE__ */ jsx_runtime13.jsx("h3", {
+        /* @__PURE__ */ jsx_runtime14.jsx("h3", {
           style: { color: "#CDA8BA", marginBottom: 12 },
           children: "\uD83D\uDC65 Practitioner Sync Status"
         }),
-        /* @__PURE__ */ jsx_runtime13.jsx("div", {
+        /* @__PURE__ */ jsx_runtime14.jsx("div", {
           style: { overflowX: "auto" },
-          children: /* @__PURE__ */ jsx_runtime13.jsxs("table", {
+          children: /* @__PURE__ */ jsx_runtime14.jsxs("table", {
             style: { width: "100%", borderCollapse: "collapse", fontSize: 13 },
             children: [
-              /* @__PURE__ */ jsx_runtime13.jsx("thead", {
-                children: /* @__PURE__ */ jsx_runtime13.jsxs("tr", {
+              /* @__PURE__ */ jsx_runtime14.jsx("thead", {
+                children: /* @__PURE__ */ jsx_runtime14.jsxs("tr", {
                   style: { background: "#2C244C" },
                   children: [
-                    /* @__PURE__ */ jsx_runtime13.jsx("th", {
+                    /* @__PURE__ */ jsx_runtime14.jsx("th", {
                       style: { padding: "10px 12px", textAlign: "left", color: "#CDA8BA", borderBottom: "1px solid #3d3060" },
                       children: "Practitioner"
                     }),
-                    /* @__PURE__ */ jsx_runtime13.jsx("th", {
+                    /* @__PURE__ */ jsx_runtime14.jsx("th", {
                       style: { padding: "10px 12px", textAlign: "center", color: "#CDA8BA", borderBottom: "1px solid #3d3060" },
                       children: "CRM"
                     }),
-                    /* @__PURE__ */ jsx_runtime13.jsx("th", {
+                    /* @__PURE__ */ jsx_runtime14.jsx("th", {
                       style: { padding: "10px 12px", textAlign: "center", color: "#CDA8BA", borderBottom: "1px solid #3d3060" },
                       children: "Presentations"
                     }),
-                    /* @__PURE__ */ jsx_runtime13.jsx("th", {
+                    /* @__PURE__ */ jsx_runtime14.jsx("th", {
                       style: { padding: "10px 12px", textAlign: "center", color: "#CDA8BA", borderBottom: "1px solid #3d3060" },
                       children: "Modalities"
                     }),
-                    /* @__PURE__ */ jsx_runtime13.jsx("th", {
+                    /* @__PURE__ */ jsx_runtime14.jsx("th", {
                       style: { padding: "10px 12px", textAlign: "left", color: "#CDA8BA", borderBottom: "1px solid #3d3060" },
                       children: "Ages"
                     }),
-                    /* @__PURE__ */ jsx_runtime13.jsx("th", {
+                    /* @__PURE__ */ jsx_runtime14.jsx("th", {
                       style: { padding: "10px 12px", textAlign: "left", color: "#CDA8BA", borderBottom: "1px solid #3d3060" },
                       children: "Client Types"
                     }),
-                    /* @__PURE__ */ jsx_runtime13.jsx("th", {
+                    /* @__PURE__ */ jsx_runtime14.jsx("th", {
                       style: { padding: "10px 12px", textAlign: "left", color: "#CDA8BA", borderBottom: "1px solid #3d3060" },
                       children: "Languages"
                     }),
-                    /* @__PURE__ */ jsx_runtime13.jsx("th", {
+                    /* @__PURE__ */ jsx_runtime14.jsx("th", {
                       style: { padding: "10px 12px", textAlign: "left", color: "#CDA8BA", borderBottom: "1px solid #3d3060" },
                       children: "Pronouns"
                     }),
-                    /* @__PURE__ */ jsx_runtime13.jsx("th", {
+                    /* @__PURE__ */ jsx_runtime14.jsx("th", {
                       style: { padding: "10px 12px", textAlign: "center", color: "#CDA8BA", borderBottom: "1px solid #3d3060" },
                       children: "Bio"
                     }),
-                    /* @__PURE__ */ jsx_runtime13.jsx("th", {
+                    /* @__PURE__ */ jsx_runtime14.jsx("th", {
                       style: { padding: "10px 12px", textAlign: "center", color: "#CDA8BA", borderBottom: "1px solid #3d3060" }
                     })
                   ]
                 })
               }),
-              /* @__PURE__ */ jsx_runtime13.jsx("tbody", {
+              /* @__PURE__ */ jsx_runtime14.jsx("tbody", {
                 children: PRACTITIONERS_DATA.map((p, i) => {
                   const crm = crmData[p.name];
                   const isExpanded = expanded === p.name;
@@ -33453,67 +33510,67 @@ Outside of clinical work, I'm an avid martial arts practitioner and have spent o
                   const crmModCount = crm ? crm.crm_modalities.length : 0;
                   const hasBio = crm && crm.crm_bio && crm.crm_bio.length > 10;
                   const hasShortBio = crm && crm.crm_short_bio && crm.crm_short_bio.length > 5;
-                  return /* @__PURE__ */ jsx_runtime13.jsxs(import_react15.default.Fragment, {
+                  return /* @__PURE__ */ jsx_runtime14.jsxs(import_react15.default.Fragment, {
                     children: [
-                      /* @__PURE__ */ jsx_runtime13.jsxs("tr", {
+                      /* @__PURE__ */ jsx_runtime14.jsxs("tr", {
                         style: { background: i % 2 === 0 ? "#1e1830" : "#231d38" },
                         children: [
-                          /* @__PURE__ */ jsx_runtime13.jsx("td", {
+                          /* @__PURE__ */ jsx_runtime14.jsx("td", {
                             style: { padding: "8px 12px", fontWeight: 500 },
                             children: p.name
                           }),
-                          /* @__PURE__ */ jsx_runtime13.jsx("td", {
+                          /* @__PURE__ */ jsx_runtime14.jsx("td", {
                             style: { padding: "8px 12px", textAlign: "center" },
-                            children: crm?.in_crm ? /* @__PURE__ */ jsx_runtime13.jsx("span", {
+                            children: crm?.in_crm ? /* @__PURE__ */ jsx_runtime14.jsx("span", {
                               style: { color: "#6ddb6d" },
                               children: "✅"
-                            }) : /* @__PURE__ */ jsx_runtime13.jsx("span", {
+                            }) : /* @__PURE__ */ jsx_runtime14.jsx("span", {
                               style: { color: "#f07070" },
                               children: "❌"
                             })
                           }),
-                          /* @__PURE__ */ jsx_runtime13.jsx("td", {
+                          /* @__PURE__ */ jsx_runtime14.jsx("td", {
                             style: { padding: "8px 12px", textAlign: "center", color: appPresCount > 0 ? "#6ddb6d" : "#f07070" },
                             children: appPresCount
                           }),
-                          /* @__PURE__ */ jsx_runtime13.jsx("td", {
+                          /* @__PURE__ */ jsx_runtime14.jsx("td", {
                             style: { padding: "8px 12px", textAlign: "center", color: appModCount > 0 ? "#6ddb6d" : "#aaa" },
                             children: appModCount > 0 ? appModCount : "—"
                           }),
-                          /* @__PURE__ */ jsx_runtime13.jsx("td", {
+                          /* @__PURE__ */ jsx_runtime14.jsx("td", {
                             style: { padding: "8px 12px", fontSize: 12, color: "#ccc" },
                             children: crm?.crm_ages?.join(", ") || "—"
                           }),
-                          /* @__PURE__ */ jsx_runtime13.jsx("td", {
+                          /* @__PURE__ */ jsx_runtime14.jsx("td", {
                             style: { padding: "8px 12px", fontSize: 12, color: "#ccc" },
                             children: crm?.crm_client_types?.join(", ") || "—"
                           }),
-                          /* @__PURE__ */ jsx_runtime13.jsx("td", {
+                          /* @__PURE__ */ jsx_runtime14.jsx("td", {
                             style: { padding: "8px 12px", fontSize: 12, color: "#ccc" },
                             children: crm?.crm_languages || "—"
                           }),
-                          /* @__PURE__ */ jsx_runtime13.jsx("td", {
+                          /* @__PURE__ */ jsx_runtime14.jsx("td", {
                             style: { padding: "8px 12px", fontSize: 12, color: "#ccc" },
                             children: crm?.crm_pronouns || "—"
                           }),
-                          /* @__PURE__ */ jsx_runtime13.jsx("td", {
+                          /* @__PURE__ */ jsx_runtime14.jsx("td", {
                             style: { padding: "8px 12px", textAlign: "center" },
-                            children: hasBio ? /* @__PURE__ */ jsx_runtime13.jsx("span", {
+                            children: hasBio ? /* @__PURE__ */ jsx_runtime14.jsx("span", {
                               style: { color: "#6ddb6d" },
                               title: "Has bio",
                               children: "✅"
-                            }) : hasShortBio ? /* @__PURE__ */ jsx_runtime13.jsx("span", {
+                            }) : hasShortBio ? /* @__PURE__ */ jsx_runtime14.jsx("span", {
                               style: { color: "#ffd84d" },
                               title: "Short bio only",
                               children: "\uD83D\uDCDD"
-                            }) : /* @__PURE__ */ jsx_runtime13.jsx("span", {
+                            }) : /* @__PURE__ */ jsx_runtime14.jsx("span", {
                               style: { color: "#888" },
                               children: "—"
                             })
                           }),
-                          /* @__PURE__ */ jsx_runtime13.jsx("td", {
+                          /* @__PURE__ */ jsx_runtime14.jsx("td", {
                             style: { padding: "8px 12px", textAlign: "center" },
-                            children: /* @__PURE__ */ jsx_runtime13.jsx("button", {
+                            children: /* @__PURE__ */ jsx_runtime14.jsx("button", {
                               onClick: () => setExpanded(isExpanded ? null : p.name),
                               style: { background: "none", border: "1px solid #3d3060", color: "#CDA8BA", borderRadius: 4, padding: "3px 10px", cursor: "pointer", fontSize: 12 },
                               children: isExpanded ? "▲" : "▼"
@@ -33521,44 +33578,44 @@ Outside of clinical work, I'm an avid martial arts practitioner and have spent o
                           })
                         ]
                       }),
-                      isExpanded && crm && /* @__PURE__ */ jsx_runtime13.jsx("tr", {
+                      isExpanded && crm && /* @__PURE__ */ jsx_runtime14.jsx("tr", {
                         style: { background: "#1a1528" },
-                        children: /* @__PURE__ */ jsx_runtime13.jsx("td", {
+                        children: /* @__PURE__ */ jsx_runtime14.jsx("td", {
                           colSpan: 10,
                           style: { padding: "12px 24px" },
-                          children: /* @__PURE__ */ jsx_runtime13.jsxs("div", {
+                          children: /* @__PURE__ */ jsx_runtime14.jsxs("div", {
                             style: { display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 },
                             children: [
-                              /* @__PURE__ */ jsx_runtime13.jsxs("div", {
+                              /* @__PURE__ */ jsx_runtime14.jsxs("div", {
                                 children: [
-                                  /* @__PURE__ */ jsx_runtime13.jsx("strong", {
+                                  /* @__PURE__ */ jsx_runtime14.jsx("strong", {
                                     style: { color: "#CDA8BA" },
                                     children: "Short Bio:"
                                   }),
-                                  /* @__PURE__ */ jsx_runtime13.jsx("p", {
+                                  /* @__PURE__ */ jsx_runtime14.jsx("p", {
                                     style: { color: "#ccc", fontSize: 13, marginTop: 4 },
-                                    children: crm.crm_short_bio || /* @__PURE__ */ jsx_runtime13.jsx("em", {
+                                    children: crm.crm_short_bio || /* @__PURE__ */ jsx_runtime14.jsx("em", {
                                       style: { color: "#888" },
                                       children: "Not set"
                                     })
                                   })
                                 ]
                               }),
-                              /* @__PURE__ */ jsx_runtime13.jsxs("div", {
+                              /* @__PURE__ */ jsx_runtime14.jsxs("div", {
                                 children: [
-                                  /* @__PURE__ */ jsx_runtime13.jsx("strong", {
+                                  /* @__PURE__ */ jsx_runtime14.jsx("strong", {
                                     style: { color: "#CDA8BA" },
                                     children: "Role:"
                                   }),
-                                  /* @__PURE__ */ jsx_runtime13.jsx("p", {
+                                  /* @__PURE__ */ jsx_runtime14.jsx("p", {
                                     style: { color: "#ccc", fontSize: 13, marginTop: 4 },
                                     children: crm.crm_role.join(", ") || "—"
                                   })
                                 ]
                               }),
-                              /* @__PURE__ */ jsx_runtime13.jsxs("div", {
+                              /* @__PURE__ */ jsx_runtime14.jsxs("div", {
                                 children: [
-                                  /* @__PURE__ */ jsx_runtime13.jsxs("strong", {
+                                  /* @__PURE__ */ jsx_runtime14.jsxs("strong", {
                                     style: { color: "#CDA8BA" },
                                     children: [
                                       "Modalities (",
@@ -33566,20 +33623,20 @@ Outside of clinical work, I'm an avid martial arts practitioner and have spent o
                                       "):"
                                     ]
                                   }),
-                                  /* @__PURE__ */ jsx_runtime13.jsx("ul", {
+                                  /* @__PURE__ */ jsx_runtime14.jsx("ul", {
                                     style: { color: "#ccc", fontSize: 12, marginTop: 4, paddingLeft: 16 },
-                                    children: crm.crm_modalities.length > 0 ? crm.crm_modalities.map((m) => /* @__PURE__ */ jsx_runtime13.jsx("li", {
+                                    children: crm.crm_modalities.length > 0 ? crm.crm_modalities.map((m) => /* @__PURE__ */ jsx_runtime14.jsx("li", {
                                       children: m
-                                    }, m)) : /* @__PURE__ */ jsx_runtime13.jsx("li", {
+                                    }, m)) : /* @__PURE__ */ jsx_runtime14.jsx("li", {
                                       style: { color: "#888" },
                                       children: "None in CRM"
                                     })
                                   })
                                 ]
                               }),
-                              /* @__PURE__ */ jsx_runtime13.jsxs("div", {
+                              /* @__PURE__ */ jsx_runtime14.jsxs("div", {
                                 children: [
-                                  /* @__PURE__ */ jsx_runtime13.jsxs("strong", {
+                                  /* @__PURE__ */ jsx_runtime14.jsxs("strong", {
                                     style: { color: "#CDA8BA" },
                                     children: [
                                       "Presentations (",
@@ -33589,11 +33646,11 @@ Outside of clinical work, I'm an avid martial arts practitioner and have spent o
                                       " in app):"
                                     ]
                                   }),
-                                  /* @__PURE__ */ jsx_runtime13.jsx("ul", {
+                                  /* @__PURE__ */ jsx_runtime14.jsx("ul", {
                                     style: { color: "#ccc", fontSize: 12, marginTop: 4, paddingLeft: 16, maxHeight: 120, overflowY: "auto" },
-                                    children: crm.crm_presentations.length > 0 ? crm.crm_presentations.map((p) => /* @__PURE__ */ jsx_runtime13.jsx("li", {
+                                    children: crm.crm_presentations.length > 0 ? crm.crm_presentations.map((p) => /* @__PURE__ */ jsx_runtime14.jsx("li", {
                                       children: p
-                                    }, p)) : /* @__PURE__ */ jsx_runtime13.jsx("li", {
+                                    }, p)) : /* @__PURE__ */ jsx_runtime14.jsx("li", {
                                       style: { color: "#888" },
                                       children: "None in CRM"
                                     })
@@ -33617,7 +33674,7 @@ Outside of clinical work, I'm an avid martial arts practitioner and have spent o
 
   // AdHocAvailabilityTab.tsx
   var import_react16 = __toESM(require_react());
-  var jsx_runtime14 = __toESM(require_jsx_runtime());
+  var jsx_runtime15 = __toESM(require_jsx_runtime());
   var BRAND3 = "#2C244C";
   var ZANDA_CONN = "conn_xv49yqpd5marmz16g37p";
   var ZANDA_BASE = "https://zandaapi.zandahealth.com";
@@ -33832,27 +33889,27 @@ Outside of clinical work, I'm an avid martial arts practitioner and have spent o
     const fortnightlyCount = slots?.filter((s) => s.kind === "Fortnightly").length ?? 0;
     const monthlyCount = slots?.filter((s) => s.kind === "Monthly").length ?? 0;
     const cancelledCount = slots?.filter((s) => s.kind === "Cancelled").length ?? 0;
-    return /* @__PURE__ */ jsx_runtime14.jsxs("div", {
+    return /* @__PURE__ */ jsx_runtime15.jsxs("div", {
       style: { fontFamily: "'Poppins', sans-serif" },
       children: [
-        /* @__PURE__ */ jsx_runtime14.jsx("h2", {
+        /* @__PURE__ */ jsx_runtime15.jsx("h2", {
           style: { color: BRAND3, fontSize: 20, fontWeight: 700, marginBottom: 4 },
           children: "\uD83D\uDDD3️ Ad-hoc Availability"
         }),
-        /* @__PURE__ */ jsx_runtime14.jsx("p", {
+        /* @__PURE__ */ jsx_runtime15.jsx("p", {
           style: { color: "#666", fontSize: 13, marginBottom: 24 },
           children: "Shows upcoming available slots for a practitioner — recurring openings plus any client cancellations. Use for waitlist and ad-hoc bookings."
         }),
-        /* @__PURE__ */ jsx_runtime14.jsxs("div", {
+        /* @__PURE__ */ jsx_runtime15.jsxs("div", {
           style: { display: "flex", gap: 16, alignItems: "flex-end", flexWrap: "wrap", marginBottom: 24 },
           children: [
-            /* @__PURE__ */ jsx_runtime14.jsxs("div", {
+            /* @__PURE__ */ jsx_runtime15.jsxs("div", {
               children: [
-                /* @__PURE__ */ jsx_runtime14.jsx("label", {
+                /* @__PURE__ */ jsx_runtime15.jsx("label", {
                   style: { display: "block", fontSize: 12, fontWeight: 600, color: BRAND3, marginBottom: 4 },
                   children: "Practitioner"
                 }),
-                /* @__PURE__ */ jsx_runtime14.jsxs("select", {
+                /* @__PURE__ */ jsx_runtime15.jsxs("select", {
                   value: selectedPrac,
                   onChange: (e) => {
                     setSelectedPrac(e.target.value);
@@ -33868,11 +33925,11 @@ Outside of clinical work, I'm an avid martial arts practitioner and have spent o
                     color: BRAND3
                   },
                   children: [
-                    /* @__PURE__ */ jsx_runtime14.jsx("option", {
+                    /* @__PURE__ */ jsx_runtime15.jsx("option", {
                       value: "",
                       children: "— Select practitioner —"
                     }),
-                    [...practitioners].filter((p) => p.acceptingNewClients !== false && p.name !== "Cristina Jimenez").sort((a, b) => a.name.localeCompare(b.name)).map((p) => /* @__PURE__ */ jsx_runtime14.jsx("option", {
+                    [...practitioners].filter((p) => p.acceptingNewClients !== false && p.name !== "Cristina Jimenez").sort((a, b) => a.name.localeCompare(b.name)).map((p) => /* @__PURE__ */ jsx_runtime15.jsx("option", {
                       value: p.name,
                       children: p.name
                     }, p.name))
@@ -33880,10 +33937,10 @@ Outside of clinical work, I'm an avid martial arts practitioner and have spent o
                 })
               ]
             }),
-            /* @__PURE__ */ jsx_runtime14.jsxs("label", {
+            /* @__PURE__ */ jsx_runtime15.jsxs("label", {
               style: { display: "flex", alignItems: "center", gap: 8, fontSize: 13, color: "#444", cursor: "pointer" },
               children: [
-                /* @__PURE__ */ jsx_runtime14.jsx("input", {
+                /* @__PURE__ */ jsx_runtime15.jsx("input", {
                   type: "checkbox",
                   checked: includeMonthly,
                   onChange: (e) => setIncludeMonthly(e.target.checked),
@@ -33892,7 +33949,7 @@ Outside of clinical work, I'm an avid martial arts practitioner and have spent o
                 "Include monthly slots"
               ]
             }),
-            /* @__PURE__ */ jsx_runtime14.jsx("button", {
+            /* @__PURE__ */ jsx_runtime15.jsx("button", {
               onClick: run,
               disabled: !selectedPrac || loading,
               style: {
@@ -33909,41 +33966,29 @@ Outside of clinical work, I'm an avid martial arts practitioner and have spent o
             })
           ]
         }),
-        prac?.alert && /* @__PURE__ */ jsx_runtime14.jsxs("div", {
-          style: {
-            background: "#fef9c3",
-            border: "1px solid #fbbf24",
-            borderRadius: 8,
-            padding: "10px 16px",
-            marginBottom: 16,
-            fontSize: 13,
-            color: "#92400e"
-          },
-          children: [
-            "⚠️ ",
-            prac.alert.includes("|") ? prac.alert.split("|")[1].trim() : prac.alert
-          ]
+        prac && /* @__PURE__ */ jsx_runtime15.jsx(PractitionerNotes, {
+          practitioner: prac
         }),
-        error && /* @__PURE__ */ jsx_runtime14.jsxs("div", {
+        error && /* @__PURE__ */ jsx_runtime15.jsxs("div", {
           style: { background: "#fee2e2", border: "1px solid #ef4444", borderRadius: 8, padding: "10px 16px", color: "#b91c1c", fontSize: 13, marginBottom: 16 },
           children: [
             "❌ ",
             error
           ]
         }),
-        loading && /* @__PURE__ */ jsx_runtime14.jsxs("div", {
+        loading && /* @__PURE__ */ jsx_runtime15.jsxs("div", {
           style: { textAlign: "center", padding: 40, color: "#666", fontSize: 14 },
           children: [
-            /* @__PURE__ */ jsx_runtime14.jsx("div", {
+            /* @__PURE__ */ jsx_runtime15.jsx("div", {
               style: { fontSize: 28, marginBottom: 8 },
               children: "⏳"
             }),
             "Fetching availability from Zanda…"
           ]
         }),
-        slots && !loading && /* @__PURE__ */ jsx_runtime14.jsxs(jsx_runtime14.Fragment, {
+        slots && !loading && /* @__PURE__ */ jsx_runtime15.jsxs(jsx_runtime15.Fragment, {
           children: [
-            /* @__PURE__ */ jsx_runtime14.jsxs("div", {
+            /* @__PURE__ */ jsx_runtime15.jsxs("div", {
               style: {
                 background: "#f5f3ff",
                 border: `1.5px solid #e0d7f5`,
@@ -33956,7 +34001,7 @@ Outside of clinical work, I'm an avid martial arts practitioner and have spent o
                 flexWrap: "wrap"
               },
               children: [
-                /* @__PURE__ */ jsx_runtime14.jsxs("span", {
+                /* @__PURE__ */ jsx_runtime15.jsxs("span", {
                   style: { fontWeight: 700, color: BRAND3, fontSize: 15 },
                   children: [
                     slots.length,
@@ -33964,7 +34009,7 @@ Outside of clinical work, I'm an avid martial arts practitioner and have spent o
                     slots.length !== 1 ? "s" : ""
                   ]
                 }),
-                weeklyCount > 0 && /* @__PURE__ */ jsx_runtime14.jsxs("span", {
+                weeklyCount > 0 && /* @__PURE__ */ jsx_runtime15.jsxs("span", {
                   style: { fontSize: 13, background: "#d1fae5", color: "#065f46", borderRadius: 12, padding: "2px 10px" },
                   children: [
                     "\uD83D\uDFE2 ",
@@ -33972,7 +34017,7 @@ Outside of clinical work, I'm an avid martial arts practitioner and have spent o
                     " weekly"
                   ]
                 }),
-                fortnightlyCount > 0 && /* @__PURE__ */ jsx_runtime14.jsxs("span", {
+                fortnightlyCount > 0 && /* @__PURE__ */ jsx_runtime15.jsxs("span", {
                   style: { fontSize: 13, background: "#ede9fe", color: "#4c1d95", borderRadius: 12, padding: "2px 10px" },
                   children: [
                     "\uD83D\uDFE3 ",
@@ -33980,7 +34025,7 @@ Outside of clinical work, I'm an avid martial arts practitioner and have spent o
                     " fortnightly"
                   ]
                 }),
-                monthlyCount > 0 && /* @__PURE__ */ jsx_runtime14.jsxs("span", {
+                monthlyCount > 0 && /* @__PURE__ */ jsx_runtime15.jsxs("span", {
                   style: { fontSize: 13, background: "#dbeafe", color: "#1e3a8a", borderRadius: 12, padding: "2px 10px" },
                   children: [
                     "\uD83D\uDD35 ",
@@ -33988,7 +34033,7 @@ Outside of clinical work, I'm an avid martial arts practitioner and have spent o
                     " monthly"
                   ]
                 }),
-                cancelledCount > 0 && /* @__PURE__ */ jsx_runtime14.jsxs("span", {
+                cancelledCount > 0 && /* @__PURE__ */ jsx_runtime15.jsxs("span", {
                   style: { fontSize: 13, background: "#fef9c3", color: "#92400e", borderRadius: 12, padding: "2px 10px" },
                   children: [
                     "⭐ ",
@@ -33997,7 +34042,7 @@ Outside of clinical work, I'm an avid martial arts practitioner and have spent o
                     cancelledCount !== 1 ? "s" : ""
                   ]
                 }),
-                /* @__PURE__ */ jsx_runtime14.jsxs("span", {
+                /* @__PURE__ */ jsx_runtime15.jsxs("span", {
                   style: { marginLeft: "auto", fontSize: 12, color: "#999" },
                   children: [
                     "as of ",
@@ -34005,29 +34050,29 @@ Outside of clinical work, I'm an avid martial arts practitioner and have spent o
                     " today"
                   ]
                 }),
-                /* @__PURE__ */ jsx_runtime14.jsx("button", {
+                /* @__PURE__ */ jsx_runtime15.jsx("button", {
                   onClick: copyText,
                   style: { background: "#e9e4f5", border: "none", borderRadius: 6, padding: "6px 14px", fontSize: 12, color: BRAND3, cursor: "pointer", fontWeight: 600 },
                   children: "\uD83D\uDCCB Copy"
                 })
               ]
             }),
-            slots.length === 0 ? /* @__PURE__ */ jsx_runtime14.jsx("div", {
+            slots.length === 0 ? /* @__PURE__ */ jsx_runtime15.jsx("div", {
               style: { textAlign: "center", padding: 40, color: "#888", fontSize: 14 },
               children: "No available slots found in the next 8 weeks."
-            }) : /* @__PURE__ */ jsx_runtime14.jsx("div", {
+            }) : /* @__PURE__ */ jsx_runtime15.jsx("div", {
               style: { display: "flex", flexDirection: "column", gap: 16 },
-              children: Object.entries(grouped).sort().map(([date, daySlots]) => /* @__PURE__ */ jsx_runtime14.jsxs("div", {
+              children: Object.entries(grouped).sort().map(([date, daySlots]) => /* @__PURE__ */ jsx_runtime15.jsxs("div", {
                 style: { borderRadius: 10, overflow: "hidden", border: "1.5px solid #e8e4f0" },
                 children: [
-                  /* @__PURE__ */ jsx_runtime14.jsx("div", {
+                  /* @__PURE__ */ jsx_runtime15.jsx("div", {
                     style: { background: BRAND3, color: "#fff", padding: "8px 16px", fontWeight: 600, fontSize: 14 },
                     children: formatDateLabel(date)
                   }),
-                  /* @__PURE__ */ jsx_runtime14.jsx("div", {
+                  /* @__PURE__ */ jsx_runtime15.jsx("div", {
                     children: daySlots.map((s, i) => {
                       const c = KIND_COLORS[s.kind];
-                      return /* @__PURE__ */ jsx_runtime14.jsxs("div", {
+                      return /* @__PURE__ */ jsx_runtime15.jsxs("div", {
                         style: {
                           display: "flex",
                           alignItems: "center",
@@ -34037,7 +34082,7 @@ Outside of clinical work, I'm an avid martial arts practitioner and have spent o
                           background: i % 2 === 0 ? "#fff" : "#faf9fd"
                         },
                         children: [
-                          /* @__PURE__ */ jsx_runtime14.jsx("span", {
+                          /* @__PURE__ */ jsx_runtime15.jsx("span", {
                             style: {
                               background: c.bg,
                               color: c.text,
@@ -34050,11 +34095,11 @@ Outside of clinical work, I'm an avid martial arts practitioner and have spent o
                             },
                             children: c.label
                           }),
-                          /* @__PURE__ */ jsx_runtime14.jsx("span", {
+                          /* @__PURE__ */ jsx_runtime15.jsx("span", {
                             style: { fontWeight: 700, color: BRAND3, fontSize: 15, minWidth: 60 },
                             children: s.time
                           }),
-                          /* @__PURE__ */ jsx_runtime14.jsx("span", {
+                          /* @__PURE__ */ jsx_runtime15.jsx("span", {
                             style: { color: "#555", fontSize: 13 },
                             children: s.location
                           })
@@ -34074,9 +34119,9 @@ Outside of clinical work, I'm an avid martial arts practitioner and have spent o
 
   // app.tsx
   var import_client = __toESM(require_client());
-  var jsx_runtime15 = __toESM(require_jsx_runtime());
+  var jsx_runtime16 = __toESM(require_jsx_runtime());
   var DATA_PATH = "/tasklet/agent/home/practitioners_data.json";
-  var ErrorBoundary = ({ children }) => /* @__PURE__ */ jsx_runtime15.jsx(jsx_runtime15.Fragment, {
+  var ErrorBoundary = ({ children }) => /* @__PURE__ */ jsx_runtime16.jsx(jsx_runtime16.Fragment, {
     children
   });
   function AppMain() {
@@ -34138,27 +34183,27 @@ Outside of clinical work, I'm an avid martial arts practitioner and have spent o
       { key: "audit", label: "\uD83D\uDDC2️ Audit Log" },
       { key: "crm", label: "\uD83D\uDD17 CRM Sync" }
     ];
-    return /* @__PURE__ */ jsx_runtime15.jsxs("div", {
+    return /* @__PURE__ */ jsx_runtime16.jsxs("div", {
       className: "min-h-screen bg-gray-50",
       children: [
-        /* @__PURE__ */ jsx_runtime15.jsx("div", {
+        /* @__PURE__ */ jsx_runtime16.jsx("div", {
           style: { background: "linear-gradient(135deg, #2C244C 0%, #8D5273 100%)" },
           className: "text-white shadow-lg",
-          children: /* @__PURE__ */ jsx_runtime15.jsxs("div", {
+          children: /* @__PURE__ */ jsx_runtime16.jsxs("div", {
             className: "max-w-7xl mx-auto px-6 py-10 flex flex-col items-center",
             children: [
-              /* @__PURE__ */ jsx_runtime15.jsx("img", {
+              /* @__PURE__ */ jsx_runtime16.jsx("img", {
                 src: "/logo.svg",
                 alt: "PsychologyCare",
                 style: { height: 72, width: "auto", marginBottom: 10 }
               }),
-              /* @__PURE__ */ jsx_runtime15.jsx("p", {
+              /* @__PURE__ */ jsx_runtime16.jsx("p", {
                 style: { color: "#d8d0ec", fontSize: 14, letterSpacing: "0.12em", textTransform: "uppercase", fontFamily: "'Poppins', sans-serif", fontWeight: 400 },
                 children: "Practitioner Matching & Client Intake"
               }),
-              /* @__PURE__ */ jsx_runtime15.jsx("div", {
+              /* @__PURE__ */ jsx_runtime16.jsx("div", {
                 style: { marginTop: 10 },
-                children: /* @__PURE__ */ jsx_runtime15.jsxs("span", {
+                children: /* @__PURE__ */ jsx_runtime16.jsxs("span", {
                   style: {
                     display: "inline-flex",
                     alignItems: "center",
@@ -34182,12 +34227,12 @@ Outside of clinical work, I'm an avid martial arts practitioner and have spent o
             ]
           })
         }),
-        /* @__PURE__ */ jsx_runtime15.jsx("div", {
+        /* @__PURE__ */ jsx_runtime16.jsx("div", {
           className: "bg-white border-b sticky top-0 z-40 shadow-sm",
           style: { borderColor: "#e8e4f0" },
-          children: /* @__PURE__ */ jsx_runtime15.jsx("div", {
+          children: /* @__PURE__ */ jsx_runtime16.jsx("div", {
             className: "max-w-7xl mx-auto px-4 flex gap-4 items-center",
-            children: tabs.map((t) => /* @__PURE__ */ jsx_runtime15.jsx("button", {
+            children: tabs.map((t) => /* @__PURE__ */ jsx_runtime16.jsx("button", {
               onClick: () => setTab(t.key),
               className: "px-4 py-3 font-medium text-sm border-b-2 transition-all",
               style: tab === t.key ? { color: "#2C244C", borderColor: "#2C244C" } : { color: "#666", borderColor: "transparent" },
@@ -34203,55 +34248,55 @@ Outside of clinical work, I'm an avid martial arts practitioner and have spent o
             }, t.key))
           })
         }),
-        /* @__PURE__ */ jsx_runtime15.jsx("div", {
+        /* @__PURE__ */ jsx_runtime16.jsx("div", {
           className: "max-w-7xl mx-auto px-4 py-8",
-          children: /* @__PURE__ */ jsx_runtime15.jsxs(ErrorBoundary, {
+          children: /* @__PURE__ */ jsx_runtime16.jsxs(ErrorBoundary, {
             children: [
-              tab === "find" && /* @__PURE__ */ jsx_runtime15.jsx(FindPractitioner, {
+              tab === "find" && /* @__PURE__ */ jsx_runtime16.jsx(FindPractitioner, {
                 practitioners
               }),
-              tab === "directory" && /* @__PURE__ */ jsx_runtime15.jsx(Directory, {
+              tab === "directory" && /* @__PURE__ */ jsx_runtime16.jsx(Directory, {
                 practitioners
               }),
-              tab === "manage" && /* @__PURE__ */ jsx_runtime15.jsx(ManageAvailability_default, {
+              tab === "manage" && /* @__PURE__ */ jsx_runtime16.jsx(ManageAvailability_default, {
                 practitioners,
                 onUpdate: handleUpdate
               }),
-              tab === "snapshot" && /* @__PURE__ */ jsx_runtime15.jsx(AvailabilitySnapshot_default, {
+              tab === "snapshot" && /* @__PURE__ */ jsx_runtime16.jsx(AvailabilitySnapshot_default, {
                 practitioners
               }),
-              tab === "intake" && /* @__PURE__ */ jsx_runtime15.jsx(IntakeTab, {}),
-              tab === "referral" && /* @__PURE__ */ jsx_runtime15.jsx(ReferralNetwork_default, {
+              tab === "intake" && /* @__PURE__ */ jsx_runtime16.jsx(IntakeTab, {}),
+              tab === "referral" && /* @__PURE__ */ jsx_runtime16.jsx(ReferralNetwork_default, {
                 practitioners
               }),
-              tab === "adhoc" && /* @__PURE__ */ jsx_runtime15.jsx(AdHocAvailabilityTab_default, {
+              tab === "adhoc" && /* @__PURE__ */ jsx_runtime16.jsx(AdHocAvailabilityTab_default, {
                 practitioners
               }),
-              tab === "taxonomy" && /* @__PURE__ */ jsx_runtime15.jsx(TaxonomyTab_default, {
+              tab === "taxonomy" && /* @__PURE__ */ jsx_runtime16.jsx(TaxonomyTab_default, {
                 practitioners,
                 onBulkUpdate: handleBulkUpdate
               }),
-              tab === "email" && /* @__PURE__ */ jsx_runtime15.jsx(EmailTemplateTab_default, {
+              tab === "email" && /* @__PURE__ */ jsx_runtime16.jsx(EmailTemplateTab_default, {
                 config: emailConfig,
                 onConfigChange: handleConfigChange
               }),
-              tab === "audit" && /* @__PURE__ */ jsx_runtime15.jsx(AuditTab, {}),
-              tab === "crm" && /* @__PURE__ */ jsx_runtime15.jsxs("div", {
+              tab === "audit" && /* @__PURE__ */ jsx_runtime16.jsx(AuditTab, {}),
+              tab === "crm" && /* @__PURE__ */ jsx_runtime16.jsxs("div", {
                 className: "bg-slate-900 rounded-2xl p-6 min-h-[60vh]",
                 children: [
-                  /* @__PURE__ */ jsx_runtime15.jsx("h2", {
+                  /* @__PURE__ */ jsx_runtime16.jsx("h2", {
                     className: "text-xl font-bold text-white mb-1",
                     style: { fontFamily: "'Poppins', sans-serif" },
                     children: "\uD83D\uDD17 CRM Sync — Field Sources"
                   }),
-                  /* @__PURE__ */ jsx_runtime15.jsx("p", {
+                  /* @__PURE__ */ jsx_runtime16.jsx("p", {
                     className: "text-slate-400 text-sm mb-6",
                     children: "Shows which app fields are synced from Zoho CRM and which are managed manually. Use this to plan future CRM mapping."
                   }),
-                  /* @__PURE__ */ jsx_runtime15.jsx(CRMSyncTab, {})
+                  /* @__PURE__ */ jsx_runtime16.jsx(CRMSyncTab, {})
                 ]
               }),
-              saveStatus && /* @__PURE__ */ jsx_runtime15.jsx("div", {
+              saveStatus && /* @__PURE__ */ jsx_runtime16.jsx("div", {
                 style: {
                   position: "fixed",
                   bottom: 24,
@@ -34270,15 +34315,15 @@ Outside of clinical work, I'm an avid martial arts practitioner and have spent o
             ]
           })
         }),
-        /* @__PURE__ */ jsx_runtime15.jsx("footer", {
+        /* @__PURE__ */ jsx_runtime16.jsx("footer", {
           className: "bg-gray-900 text-gray-300 mt-16 py-8",
-          children: /* @__PURE__ */ jsx_runtime15.jsxs("div", {
+          children: /* @__PURE__ */ jsx_runtime16.jsxs("div", {
             className: "max-w-7xl mx-auto px-4 text-center text-sm",
             children: [
-              /* @__PURE__ */ jsx_runtime15.jsx("p", {
+              /* @__PURE__ */ jsx_runtime16.jsx("p", {
                 children: "PsychologyCare VIC · Melbourne"
               }),
-              /* @__PURE__ */ jsx_runtime15.jsx("p", {
+              /* @__PURE__ */ jsx_runtime16.jsx("p", {
                 className: "mt-2 text-gray-500",
                 children: "For professional inquiries: info@psychologycare.com.au"
               })
@@ -34289,10 +34334,10 @@ Outside of clinical work, I'm an avid martial arts practitioner and have spent o
     });
   }
   function AppContent() {
-    return /* @__PURE__ */ jsx_runtime15.jsx(ErrorBoundary, {
-      children: /* @__PURE__ */ jsx_runtime15.jsx(AppMain, {})
+    return /* @__PURE__ */ jsx_runtime16.jsx(ErrorBoundary, {
+      children: /* @__PURE__ */ jsx_runtime16.jsx(AppMain, {})
     });
   }
   var root = import_client.createRoot(document.getElementById("root"));
-  root.render(/* @__PURE__ */ jsx_runtime15.jsx(AppContent, {}));
+  root.render(/* @__PURE__ */ jsx_runtime16.jsx(AppContent, {}));
 })();

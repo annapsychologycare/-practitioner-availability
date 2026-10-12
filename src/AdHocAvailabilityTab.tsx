@@ -1,3 +1,4 @@
+import PractitionerNotes from './components/PractitionerNotes';
 /**
  * AdHocAvailabilityTab.tsx
  * Shows a practitioner's upcoming available slots for ad-hoc/waitlist clients.
@@ -99,7 +100,13 @@ async function zandaGet(path: string): Promise<any> {
   });
   if (!res.ok) throw new Error(res.error ?? "API error");
   const raw = typeof res.body === "string" ? JSON.parse(res.body) : res.body;
-  return raw.body ?? raw;
+  const data = raw.body ?? raw;
+  // Surface Zanda validation errors clearly
+  if (data?.status >= 400) {
+    const errs = data?.errors ? Object.entries(data.errors).map(([k, v]) => `${k}: ${(v as string[]).join(", ")}`).join("; ") : "";
+    throw new Error(`Zanda API error: ${data?.title ?? "Unknown error"}${errs ? ` — ${errs}` : ""}`);
+  }
+  return data;
 }
 
 async function fetchAppointmentsForClient(
@@ -114,7 +121,7 @@ async function fetchAppointmentsForClient(
       clientId: String(clientId),
       dateFrom,
       dateTo,
-      pageSize: "200",
+      pageSize: "50",
       ...(cursor ? { cursor } : {}),
     });
     const res = await zandaGet(`/api/v1/appointments?${qs}`);
@@ -198,24 +205,34 @@ const AdHocAvailabilityTab: React.FC<Props> = ({ practitioners }) => {
 
       try {
         // Get practitioner list to find their Zanda ID
-        const pracsRes = await zandaGet("/api/v1/practitioners?pageSize=100");
+        const pracsRes = await zandaGet("/api/v1/practitioners?pageSize=50");
         const pracList: any[] = (pracsRes.items ?? []).map((i: any) => i.data ?? i);
         const zandaPrac = pracList.find((p: any) =>
           (p.name ?? "").toLowerCase().includes(selectedPrac.split(" ").pop()?.toLowerCase() ?? "")
         );
 
         if (zandaPrac?.id) {
-          // Fetch CXL appointments for this practitioner
-          const qs = new URLSearchParams({
-            practitionerId: String(zandaPrac.id),
-            dateFrom,
-            dateTo,
-            pageSize: "200",
-          });
+          // Fetch CXL appointments for this practitioner (paginated, max 100 per page)
           // Note: if this endpoint doesn't support practitionerId filter, we fall back
           try {
-            const apptRes = await zandaGet(`/api/v1/appointments?${qs}`);
-            const appts: any[] = (apptRes.items ?? []).map((i: any) => i.data ?? i);
+            const allAppts: any[] = [];
+            let cxlCursor = "";
+            while (true) {
+              const qs = new URLSearchParams({
+                practitionerId: String(zandaPrac.id),
+                dateFrom,
+                dateTo,
+                pageSize: "50",
+                ...(cxlCursor ? { cursor: cxlCursor } : {}),
+              });
+              const apptRes = await zandaGet(`/api/v1/appointments?${qs}`);
+              const batch: any[] = (apptRes.items ?? []).map((i: any) => i.data ?? i);
+              allAppts.push(...batch);
+              if (!apptRes.hasNextPage) break;
+              cxlCursor = apptRes.nextCursor ?? "";
+              if (!cxlCursor) break;
+            }
+            const appts = allAppts;
 
             // Filter to cancelled (CXL) that are NOT availability clients
             const availClientIds = new Set(Object.keys(AVAILABILITY_CLIENTS).map(Number));
@@ -237,7 +254,7 @@ const AdHocAvailabilityTab: React.FC<Props> = ({ practitioners }) => {
                 appointmentId: a.id,
               };
             });
-          } catch {
+          } catch (e) {
             // Practitioner filter not supported — skip CXL fetch
           }
         }
@@ -338,15 +355,7 @@ const AdHocAvailabilityTab: React.FC<Props> = ({ practitioners }) => {
       </div>
 
       {/* Practitioner alert banner */}
-      {prac?.alert && (
-        <div style={{
-          background: "#fef9c3", border: "1px solid #fbbf24",
-          borderRadius: 8, padding: "10px 16px", marginBottom: 16,
-          fontSize: 13, color: "#92400e",
-        }}>
-          ⚠️ {prac.alert.includes("|") ? prac.alert.split("|")[1].trim() : prac.alert}
-        </div>
-      )}
+      {prac && <PractitionerNotes practitioner={prac} />}
 
       {/* Error */}
       {error && (

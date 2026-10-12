@@ -5,7 +5,7 @@ const result = JSON.parse(readFileSync('/tmp/import_result.json', 'utf8'));
 if (!result.ok || !result.totalSlots) throw new Error('Invalid or empty import; refusing to publish');
 const before = JSON.parse(readFileSync('/tmp/practitioners_before_import.json', 'utf8'));
 const after = JSON.parse(readFileSync(`${base}/practitioners_data.json`, 'utf8'));
-const strip = (p:any) => { const {availability, locations, alert, ...rest} = p; return {...rest, locations: (locations ?? []).map((l:any)=>{const {availability,...r}=l;return r;})}; };
+const strip = (p:any) => { const {availability, locations, alert, client_note, ...rest} = p; return {...rest, locations: (locations ?? []).map((l:any)=>{const {availability,...r}=l;return r;})}; };
 if (JSON.stringify(before.map(strip)) !== JSON.stringify(after.map(strip))) throw new Error('Unexpected non-availability changes');
 const r = await invokeTool({toolName:'github_push_to_branch',connectionId:'conn_nvshm6rz3kzncg0nh4vk',args:{
   owner:'annapsychologycare',repo:'-practitioner-availability',branch:'main',

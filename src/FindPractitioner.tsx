@@ -1,3 +1,4 @@
+import PractitionerNotes from './components/PractitionerNotes';
 import React, { useState, useMemo } from "react";
 import { Send, CheckSquare } from "lucide-react";
 import { Practitioner } from "./types";
@@ -545,11 +546,7 @@ const PractitionerCard: React.FC<CardProps> = ({ p, locationFilter, isSelected, 
           </div>
         </div>
 
-        {p.alert && (
-          <div style={{ backgroundColor: "#00B8C8", color: "white", borderRadius: "10px", padding: "8px 14px", fontSize: "13px", fontWeight: 700, boxShadow: "0 2px 8px rgba(0,184,200,0.35)", display: "inline-block" }}>
-            🚨 {p.alert}
-          </div>
-        )}
+        <PractitionerNotes practitioner={p} />
 
         <div className="flex flex-wrap gap-4 text-sm mt-2">
           <div>

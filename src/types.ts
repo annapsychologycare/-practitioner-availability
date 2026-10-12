@@ -13,6 +13,7 @@ export type Practitioner = {
   medicare_rebate: string;
   gender: string;
   alert: string;
+  client_note?: string;
   presentations: string | string[];
   modalities: string | string[];
   client_types: string;
