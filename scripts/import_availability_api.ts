@@ -357,6 +357,7 @@ const melbNowStr = now.toLocaleString('en-AU', {
 }).replace(',', '').replace(' at', ' at').replace(' am', 'am').replace(' pm', 'pm');
 
 writeFileSync(MASTER_JSON, JSON.stringify(practitioners, null, 2));
+writeFileSync('/tasklet/threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/netlify/functions/practitioners-data.json', JSON.stringify(practitioners, null, 2));
 
 // Merge photo_b64 from sidecar (photos are stored separately to keep main JSON small)
 const PHOTOS_PATH = '/tasklet/threads/a_cwa98xzh47ey9rcvmmh4/work/practitioners_photos.json';

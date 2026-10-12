@@ -12,6 +12,7 @@ const r = await invokeTool({toolName:'github_push_to_branch',connectionId:'conn_
   commitMessage:`Availability update via Zanda API — ${result.timestamp}`,
   files:[
     {repoPath:'src/practitioners_data.json',localPath:`${base}/practitioners_data.json`},
+    {repoPath:'netlify/functions/practitioners-data.json',localPath:`${base}/deploy/netlify/functions/practitioners-data.json`},
     {repoPath:'src/practitionersData.ts',localPath:`${base}/deploy/src/practitionersData.ts`},
     {repoPath:'bundle.js',localPath:`${base}/deploy/src/bundle.js`},
     {repoPath:'public/bundle.js',localPath:`${base}/deploy/src/bundle.js`},
