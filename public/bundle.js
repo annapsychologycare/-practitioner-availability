@@ -19368,6 +19368,11 @@ Please note: There are inherent confidentiality risks in communicating by email.
           <div style="font-size:16px;font-weight:700;color:${c.name_color};margin-bottom:10px;">Hi ${clientName},</div>
           <p style="font-size:14px;line-height:1.85;color:#555;margin:0 0 24px;">${config.intro_text}</p>
           ${note ? `<div style="background:#F0EEF7;border-left:4px solid ${c.title_color};padding:12px 16px;border-radius:6px;font-size:14px;font-style:italic;color:#555;margin-bottom:24px;">${note}</div>` : ""}
+          <!-- Universal access notice: included in every client availability email -->
+          <div style="background:#fff8e1;border:1px solid #ffe082;border-left:4px solid #ffb300;border-radius:6px;padding:14px 16px;margin-bottom:24px;">
+            <div style="font-size:14px;font-weight:700;color:#7a5a00;margin-bottom:6px;">Please note: stairs at our Prahran clinics</div>
+            <div style="font-size:13px;color:#555;line-height:1.7;">Our Prahran clinics at <strong>183A and 185A Greville Street</strong> are located upstairs and require access via <strong>approximately 18 stairs</strong>. If stairs may be difficult for you, please let us know before booking so we can discuss suitable appointment options.</div>
+          </div>
           ${cards}
         </div>
 
