@@ -23894,7 +23894,8 @@ Wednesdays at 1pm (Monthly: Starting 18th Nov)`,
       name: "Dr Krista De Castella",
       title: "Clinical Psychologist, Psychotherapist",
       fees: `B/H: $275
-A/H: $315`,
+A/H: $315
+90-minute appointments: $345 (Krista De Castella only). 60-minute appointments remain $275 during business hours. Existing standard after-hours fee for 60-minute appointments is unchanged; confirm any after-hours 90-minute booking with admin.`,
       medicare_rebate: "149.05",
       gender: "Female",
       alert: "",

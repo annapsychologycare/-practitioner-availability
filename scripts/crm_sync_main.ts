@@ -36,10 +36,10 @@ console.log('Fetching fee schedules...');
 const feeSchedResp = await invokeTool({
   toolName: 'zoho_crm-list-objects',
   connectionId: 'conn_pdkvmnzjcqdeb3ha13wc',
-  args: { module: 'Fee_Schedules', pageSize: 50 }
+  args: { module: 'Fee_Schedules', perPage: '200' }
 });
 
-const feeSchedMap = new Map<string, { bh: number; ah: number; rebate: number | null }>();
+const feeSchedMap = new Map<string, { bh: number; ah: number; rebate: number | null; notes: string }>();
 if (feeSchedResp.ok) {
   const fsData = await feeSchedResp.json() as any;
   const fsRecords: any[] = fsData?.result?.data || fsData?.data || [];
@@ -48,6 +48,7 @@ if (feeSchedResp.ok) {
       bh: r.Business_Hours_Fee,
       ah: r.After_Hours_Fee,
       rebate: r.Medicare_Rebate ?? null,
+      notes: typeof r.Fee_Notes === 'string' ? r.Fee_Notes.trim() : '',
     });
   }
   console.log(`Fetched ${feeSchedMap.size} fee schedules`);
@@ -120,7 +121,7 @@ interface Change {
   newVal: any;
 }
 
-function mapCrmToApp(crm: any, existing: any, practName: string, feeMap?: Map<string, { bh: number; ah: number; rebate: number | null }>): { updated: any; changes: Change[] } {
+function mapCrmToApp(crm: any, existing: any, practName: string, feeMap?: Map<string, { bh: number; ah: number; rebate: number | null; notes: string }>): { updated: any; changes: Change[] } {
   const changes: Change[] = [];
   const updated = { ...existing };
   for (const [field, newVal] of Object.entries(mapCrmNotes(crm))) {
@@ -204,7 +205,7 @@ function mapCrmToApp(crm: any, existing: any, practName: string, feeMap?: Map<st
   if (feeMap && crm.Fee_Schedule?.id) {
     const sched = feeMap.get(crm.Fee_Schedule.id);
     if (sched && sched.bh && sched.ah) {
-      const feesStr = `B/H: $${sched.bh}\nA/H: $${sched.ah}`;
+      const feesStr = `B/H: $${sched.bh}\nA/H: $${sched.ah}${sched.notes ? '\n' + sched.notes : ''}`;
       applyChange('fees', feesStr);
     }
   }
