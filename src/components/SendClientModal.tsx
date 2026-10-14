@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import { Send, X, ArrowLeft, Eye, Clipboard, ClipboardCheck } from "lucide-react";
 import { Practitioner } from "../types";
 import { hasAfterHoursAvailability } from "../utils/afterHours";
@@ -30,6 +30,11 @@ const SendClientModal: React.FC<Props> = ({ selected, locationFilter, onClose, o
   const [note, setNote] = useState("");
   const [sending, setSending] = useState(false);
   const [error, setError] = useState("");
+  const [diaryVerified, setDiaryVerified] = useState(false);
+  const needsDiaryReview=selected.some(p=>p.requires_diary_verification);
+  const reviewReady=!needsDiaryReview || diaryVerified;
+  const selectionKey=selected.map(p=>p.name).join('|');
+  useEffect(()=>{setDiaryVerified(false);setStep('form');},[selectionKey,locationFilter,sessionType]);
 
   const practitionerData = useMemo(
     () =>
@@ -83,6 +88,7 @@ const SendClientModal: React.FC<Props> = ({ selected, locationFilter, onClose, o
   );
 
   const handleCopyEmail = async () => {
+    if(!reviewReady){setError('Review and confirm Krista’s live diary before copying or offering appointments.');return;}
     try {
       // Copy as rich HTML so it pastes correctly into email clients
       const blob = new Blob([previewHtml], { type: "text/html" });
@@ -114,12 +120,14 @@ const SendClientModal: React.FC<Props> = ({ selected, locationFilter, onClose, o
   };
 
   const handlePreview = () => {
+    if(!reviewReady){setError('Review and confirm Krista’s live diary before previewing or offering appointments.');return;}
     if (!clientName.trim()) { setError("Please enter the client's name."); return; }
     setError("");
     setStep("preview");
   };
 
   const handleSend = async () => {
+    if(!reviewReady){setError('Review and confirm Krista’s live diary before sending appointment options.');setStep('form');return;}
     setSending(true);
     try {
       const ccList = ccEmails
@@ -185,6 +193,12 @@ const SendClientModal: React.FC<Props> = ({ selected, locationFilter, onClose, o
             <X size={16} />
           </button>
         </div>
+
+        {needsDiaryReview && <div className="border rounded p-3 mb-3 text-sm" style={{borderColor:'#8D5273'}}>
+          <strong>Staff-only diary revalidation required — Krista</strong>
+          <p>These are confirmed recurring options, not automatically checked live availability. Verify each relevant fortnightly occurrence over the next 8 weeks against Pending/Confirmed/Completed appointments and diary/PAP/room blocks, including 90 minutes plus a 15-minute break (8:30–10:15am / 12–1:45pm). Resolve any booked/blocked occurrence before offering. No automated overlap checking has occurred.</p>
+          <label className="flex gap-2 mt-2"><input type="checkbox" checked={diaryVerified} onChange={e=>{setDiaryVerified(e.target.checked);if(!e.target.checked)setStep('form');}} />I have checked Krista’s Zanda diary and room availability for these recurring appointments and confirmed the options in this email for this client. No unconfirmed times will be offered.</label>
+        </div>}
 
         {step === "form" ? (
           <>

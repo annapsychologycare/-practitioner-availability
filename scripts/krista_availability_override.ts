@@ -15,6 +15,7 @@ export function applyKristaAvailabilityOverride(practitioners: any[], fromDate =
   p.working_hours='Mondays 8:30am–2pm in person at Burke Rd, Camberwell; Tuesdays 9:30am–4:30pm via telehealth only. Working hours are not available appointment times.';
   p.confirmed_slots=[{day:'Monday',start:'08:30',end:'10:00'},{day:'Monday',start:'12:00',end:'13:30'}].map(s=>({...s,location:'Burke Rd, Camberwell',frequency:'Fortnightly',anchor_date:'2026-10-19',next_date:date,duration_minutes:90,buffer_after_minutes:15}));
   p.availability_source='Anna-approved confirmed-slot override (14 October 2026); Zanda diary changes pending';
+  p.requires_diary_verification=true;
   p.weekly_availability=[];p.fortnightly_availability=[];
   for (const l of p.locations??[]) {
     l.availability=l.location==='Burke Rd, Camberwell'?lines.join('\n'):'';

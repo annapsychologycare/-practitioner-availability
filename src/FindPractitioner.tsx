@@ -1,5 +1,5 @@
 import PractitionerNotes from './components/PractitionerNotes';
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import { Send, CheckSquare } from "lucide-react";
 import { Practitioner } from "./types";
 import SendClientModal from "./components/SendClientModal";
@@ -39,6 +39,7 @@ interface Filters {
   gateClientType: string;
   gateAgeRep: number | null;
   gateExcludeFemaleOnly: boolean;
+  nonComplexEmdrConfirmed?: boolean;
 }
 
 const DAYS_OF_WEEK = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
@@ -270,6 +271,12 @@ const MODALITY_OPTIONS = [
 ];
 
 export function scoreMatch(p: Practitioner, filters: Filters): number {
+  // Krista's EMDR work is non-complex only. When EMDR is a required modality
+  // (sole choice or AND), require explicit staff confirmation in fixed-slot
+  // results too; an OR choice of IFS can still match for IFS instead.
+  if (p.name===KRISTA_NAME && filters.modalities.some(m=>/\(EMDR\)/i.test(m)) &&
+      (filters.modalitiesMatchAll || filters.modalities.length===1) &&
+      (!filters.nonComplexEmdrConfirmed || filters.presentations.some(p=>/complex|dissociat|developmental|childhood/i.test(p)))) return -1;
   const kw = filters.keyword.trim().toLowerCase();
   let score = 0;
 
@@ -470,6 +477,8 @@ interface CardProps {
   onToggleSelect: (name: string) => void;
   includeMonthly: boolean;
   gateClientType: string;
+  diaryVerified?: boolean;
+  onDiaryVerify?: (verified:boolean)=>void;
 }
 
 function parseAvailabilityColumns(text: string | string[]): { weekly: string[]; fortnightly: string[]; monthly: string[] } {
@@ -486,7 +495,7 @@ function parseAvailabilityColumns(text: string | string[]): { weekly: string[]; 
   return { weekly, fortnightly, monthly };
 }
 
-const PractitionerCard: React.FC<CardProps> = ({ p, locationFilter, isSelected, onToggleSelect, includeMonthly, gateClientType }) => {
+const PractitionerCard: React.FC<CardProps> = ({ p, locationFilter, isSelected, onToggleSelect, includeMonthly, gateClientType, diaryVerified=false, onDiaryVerify }) => {
   const [expanded, setExpanded] = useState(false);
   const [copied, setCopied] = useState(false);
 
@@ -520,6 +529,7 @@ const PractitionerCard: React.FC<CardProps> = ({ p, locationFilter, isSelected, 
               type="checkbox"
               className="checkbox checkbox-primary mt-1 flex-shrink-0"
               checked={isSelected}
+              disabled={!!p.requires_diary_verification && !diaryVerified}
               onChange={() => onToggleSelect(p.name)}
               title="Select for sending to client"
             />
@@ -549,6 +559,11 @@ const PractitionerCard: React.FC<CardProps> = ({ p, locationFilter, isSelected, 
         </div>
 
         <PractitionerNotes practitioner={p} />
+        {p.requires_diary_verification && <div className="border rounded p-3 mt-2 text-sm" style={{borderColor:'#8D5273'}}>
+          <strong>STAFF ONLY: Confirmed recurring options — not checked live diary availability.</strong>
+          <p>Before offering either slot, check every relevant fortnightly occurrence over the next 8 weeks against booked appointments and diary/PAP/room blocks. Review Pending, Confirmed and Completed appointments and the full 90-minute appointment plus 15-minute break (8:30–10:15am / 12–1:45pm). A booked occurrence requires review; it does not automatically remove the recurring option. No automatic overlap check has been performed.</p>
+          <label className="flex gap-2 mt-2"><input type="checkbox" checked={diaryVerified} onChange={e=>onDiaryVerify?.(e.target.checked)} />I have checked Krista’s Zanda diary and room availability for these recurring appointments, including relevant occurrences and buffers, and confirmed the options for this client.</label>
+        </div>}
 
         <div className="flex flex-wrap gap-4 text-sm mt-2">
           <div>
@@ -573,7 +588,7 @@ const PractitionerCard: React.FC<CardProps> = ({ p, locationFilter, isSelected, 
         <div className="mt-3 rounded-lg p-3" style={{ backgroundColor: "#F0EEF7" }}>
           <div className="flex items-center justify-between mb-2">
             <span className="font-semibold text-sm">Availability</span>
-            {hasAvail && (
+            {hasAvail && (!p.requires_diary_verification || diaryVerified) && (
               <button onClick={copyAvailability} className={"btn btn-xs " + (copied ? "btn-success" : "btn-primary")}>
                 {copied ? "Copied!" : "Copy"}
               </button>
@@ -777,31 +792,34 @@ export default function FindPractitioner({ practitioners }: Props) {
   const [sentSuccess, setSentSuccess] = useState(false);
   const [cannotUseKristaSlots, setCannotUseKristaSlots] = useState(false);
   const [nonComplexEmdrConfirmed, setNonComplexEmdrConfirmed] = useState(false);
+  const [kristaDiaryVerified, setKristaDiaryVerified] = useState(false);
+  useEffect(()=>{setKristaDiaryVerified(false);},[gateClientType,gateAgeRep,gateExcludeFemaleOnly,keyword,selectedLocations,locationMatchAll,gender,clientType,therapistType,afterHours,hasAvailability,includeMonthly,selectedPresentations,presentationsMatchAll,selectedModalities,modalitiesMatchAll,selectedStyles,stylesMatchAll,selectedBillingTypes,clientAge,selectedPractitionerNames,selectedAvailabilityTypes,selectedDays,daysMatchAll,cannotUseKristaSlots,nonComplexEmdrConfirmed]);
 
   const allPractitionerNames = useMemo(() => practitioners.map(p => p.name).sort(), [practitioners]);
 
   const results = useMemo(() => {
-    const filters: Filters = { keyword, locations: selectedLocations, locationMatchAll, gender, clientType, therapistType, afterHours, hasAvailability, includeMonthly, presentations: selectedPresentations, presentationsMatchAll, modalities: selectedModalities, modalitiesMatchAll, styles: selectedStyles, stylesMatchAll, billingTypes: selectedBillingTypes, clientAge, practitionerNames: selectedPractitionerNames, availabilityTypes: selectedAvailabilityTypes, days: selectedDays, daysMatchAll, gateClientType, gateAgeRep, gateExcludeFemaleOnly };
+    const filters: Filters = { keyword, locations: selectedLocations, locationMatchAll, gender, clientType, therapistType, afterHours, hasAvailability, includeMonthly, presentations: selectedPresentations, presentationsMatchAll, modalities: selectedModalities, modalitiesMatchAll, styles: selectedStyles, stylesMatchAll, billingTypes: selectedBillingTypes, clientAge, practitionerNames: selectedPractitionerNames, availabilityTypes: selectedAvailabilityTypes, days: selectedDays, daysMatchAll, gateClientType, gateAgeRep, gateExcludeFemaleOnly, nonComplexEmdrConfirmed };
     return practitioners
       .filter(p => !(p as any).referral_only)
       .filter(p => p.name !== KRISTA_NAME || !cannotUseKristaSlots)
       .map(p => ({ p, score: scoreMatch(p, filters) }))
       .filter(item => item.score >= 0)
       .sort((a, b) => b.score - a.score || a.p.name.localeCompare(b.p.name));
-  }, [practitioners, keyword, selectedLocations, locationMatchAll, gender, clientType, therapistType, afterHours, hasAvailability, includeMonthly, selectedPresentations, presentationsMatchAll, selectedModalities, modalitiesMatchAll, selectedStyles, stylesMatchAll, selectedBillingTypes, clientAge, selectedPractitionerNames, selectedAvailabilityTypes, selectedDays, daysMatchAll, gateClientType, gateAgeRep, gateExcludeFemaleOnly, cannotUseKristaSlots]);
+  }, [practitioners, keyword, selectedLocations, locationMatchAll, gender, clientType, therapistType, afterHours, hasAvailability, includeMonthly, selectedPresentations, presentationsMatchAll, selectedModalities, modalitiesMatchAll, selectedStyles, stylesMatchAll, selectedBillingTypes, clientAge, selectedPractitionerNames, selectedAvailabilityTypes, selectedDays, daysMatchAll, gateClientType, gateAgeRep, gateExcludeFemaleOnly, cannotUseKristaSlots, nonComplexEmdrConfirmed]);
 
   // Reuse ordinary clinical/demographic filters; relax only confirmed-slot constraints.
   // No keyword inference of EMDR complexity, and no generic-trauma contact matching.
   const potentialKrista = useMemo(() => {
-    if (!gateComplete || !hasKristaClinicalSpecificity(selectedModalities, selectedPresentations, nonComplexEmdrConfirmed)) return null;
+    if (!gateComplete || !hasKristaClinicalSpecificity(selectedModalities, selectedPresentations, nonComplexEmdrConfirmed, modalitiesMatchAll)) return null;
     const p=practitioners.find(p=>isKristaIndividualEligible(p,gateClientType,gateAgeRep,gateExcludeFemaleOnly));
     if (!p || (!cannotUseKristaSlots && results.some(r=>r.p.name===KRISTA_NAME))) return null;
-    const clinical: Filters={keyword,locations:selectedLocations,locationMatchAll,gender,clientType,therapistType,afterHours:false,hasAvailability:false,includeMonthly,presentations:selectedPresentations,presentationsMatchAll,modalities:selectedModalities,modalitiesMatchAll,styles:selectedStyles,stylesMatchAll,billingTypes:selectedBillingTypes,clientAge,practitionerNames:selectedPractitionerNames,availabilityTypes:[],days:[],daysMatchAll:false,gateClientType,gateAgeRep,gateExcludeFemaleOnly};
+    const clinical: Filters={keyword,locations:selectedLocations,locationMatchAll,gender,clientType,therapistType,afterHours:false,hasAvailability:false,includeMonthly,presentations:selectedPresentations,presentationsMatchAll,modalities:selectedModalities,modalitiesMatchAll,styles:selectedStyles,stylesMatchAll,billingTypes:selectedBillingTypes,clientAge,practitionerNames:selectedPractitionerNames,availabilityTypes:[],days:[],daysMatchAll:false,gateClientType,gateAgeRep,gateExcludeFemaleOnly,nonComplexEmdrConfirmed};
     return scoreMatch(p,clinical)>=0?p:null;
   },[practitioners,gateComplete,selectedModalities,selectedPresentations,nonComplexEmdrConfirmed,gateClientType,gateAgeRep,gateExcludeFemaleOnly,cannotUseKristaSlots,results,keyword,selectedLocations,locationMatchAll,gender,clientType,therapistType,includeMonthly,presentationsMatchAll,modalitiesMatchAll,selectedStyles,stylesMatchAll,selectedBillingTypes,clientAge,selectedPractitionerNames]);
 
   const clearFilters = () => {
     setCannotUseKristaSlots(false); setNonComplexEmdrConfirmed(false);
+    setKristaDiaryVerified(false);
     setKeyword(""); setSelectedLocations([]); setLocationMatchAll(false); setGender(""); setClientType("");
     setTherapistType(""); setAfterHours(false); setHasAvailability(false);
     setSelectedPresentations([]); setPresentationsMatchAll(false);
@@ -832,7 +850,7 @@ export default function FindPractitioner({ practitioners }: Props) {
   // Preserve selection order — map names in the order they were selected
   const selectedPractitioners = selectedNames
     .map(name => practitioners.find(p => p.name === name))
-    .filter((p): p is typeof practitioners[0] => !!p && (p.name!==KRISTA_NAME || results.some(r=>r.p.name===KRISTA_NAME)));
+    .filter((p): p is typeof practitioners[0] => !!p && (p.name!==KRISTA_NAME || (kristaDiaryVerified && results.some(r=>r.p.name===KRISTA_NAME))));
 
   const handleSent = () => {
     setShowSendModal(false);
@@ -1181,7 +1199,7 @@ export default function FindPractitioner({ practitioners }: Props) {
       {gateComplete && gateClientType==='Individual' && <div className="rounded-lg border p-3 mb-4 text-sm" style={{borderColor:'#CDA8BA'}}>
         <div className="font-semibold">Krista — staff referral checks</div>
         <label className="flex gap-2 mt-2"><input type="checkbox" checked={cannotUseKristaSlots} onChange={e=>{setCannotUseKristaSlots(e.target.checked);setSelectedNames(n=>n.filter(x=>x!==KRISTA_NAME));}} />Client cannot attend Krista’s confirmed fortnightly Monday 8:30am–10am or 12pm–1:30pm slots (from 19 October 2026).</label>
-        <label className="flex gap-2 mt-2"><input type="checkbox" checked={nonComplexEmdrConfirmed} onChange={e=>setNonComplexEmdrConfirmed(e.target.checked)} />For EMDR contact referrals: staff have confirmed the presentation is non-complex. Generic trauma/PTSD is not sufficient.</label>
+        <label className="flex gap-2 mt-2"><input type="checkbox" checked={nonComplexEmdrConfirmed} onChange={e=>setNonComplexEmdrConfirmed(e.target.checked)} />For Krista EMDR referrals: staff have confirmed the presentation is non-complex. Generic trauma/PTSD is not sufficient.</label>
         <p className="text-xs mt-2">Select an IFS modality, non-complex EMDR, or difficult psychedelic experience / bad-trip integration presentation for contact-only matching. Psychedelic-assisted therapy is not offered here.</p>
       </div>}
 
@@ -1210,6 +1228,8 @@ export default function FindPractitioner({ practitioners }: Props) {
                 onToggleSelect={toggleSelect}
                 includeMonthly={includeMonthly}
                 gateClientType={gateClientType}
+                diaryVerified={item.p.name===KRISTA_NAME && kristaDiaryVerified}
+                onDiaryVerify={verified=>{setKristaDiaryVerified(verified);if(!verified)setSelectedNames(n=>n.filter(x=>x!==KRISTA_NAME));}}
               />
             </div>
           ))}

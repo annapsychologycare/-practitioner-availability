@@ -19410,6 +19410,14 @@ Please note: There are inherent confidentiality risks in communicating by email.
     const [note, setNote] = import_react3.useState("");
     const [sending, setSending] = import_react3.useState(false);
     const [error, setError] = import_react3.useState("");
+    const [diaryVerified, setDiaryVerified] = import_react3.useState(false);
+    const needsDiaryReview = selected.some((p) => p.requires_diary_verification);
+    const reviewReady = !needsDiaryReview || diaryVerified;
+    const selectionKey = selected.map((p) => p.name).join("|");
+    import_react3.useEffect(() => {
+      setDiaryVerified(false);
+      setStep("form");
+    }, [selectionKey, locationFilter, sessionType]);
     const practitionerData = import_react3.useMemo(() => selected.map((p) => {
       let locs;
       if (sessionType === "Supervision") {
@@ -19446,6 +19454,10 @@ Please note: There are inherent confidentiality risks in communicating by email.
     }), [selected, locationFilter, sessionType]);
     const previewHtml = import_react3.useMemo(() => buildEmailHtml(clientName || "Client", note, senderName, practitionerData, { ...config, intro_text: openingParagraph }, includeMonthly), [clientName, note, senderName, practitionerData, config, openingParagraph, includeMonthly]);
     const handleCopyEmail = async () => {
+      if (!reviewReady) {
+        setError("Review and confirm Krista’s live diary before copying or offering appointments.");
+        return;
+      }
       try {
         const blob = new Blob([previewHtml], { type: "text/html" });
         const item = new ClipboardItem({ "text/html": blob });
@@ -19474,6 +19486,10 @@ Please note: There are inherent confidentiality risks in communicating by email.
       }
     };
     const handlePreview = () => {
+      if (!reviewReady) {
+        setError("Review and confirm Krista’s live diary before previewing or offering appointments.");
+        return;
+      }
       if (!clientName.trim()) {
         setError("Please enter the client's name.");
         return;
@@ -19482,6 +19498,11 @@ Please note: There are inherent confidentiality risks in communicating by email.
       setStep("preview");
     };
     const handleSend = async () => {
+      if (!reviewReady) {
+        setError("Review and confirm Krista’s live diary before sending appointment options.");
+        setStep("form");
+        return;
+      }
       setSending(true);
       try {
         const ccList = ccEmails.split(",").map((e) => e.trim()).filter((e) => e.includes("@"));
@@ -19547,6 +19568,33 @@ Please note: There are inherent confidentiality risks in communicating by email.
                   children: /* @__PURE__ */ jsx_runtime2.jsx(X, {
                     size: 16
                   })
+                })
+              ]
+            }),
+            needsDiaryReview && /* @__PURE__ */ jsx_runtime2.jsxs("div", {
+              className: "border rounded p-3 mb-3 text-sm",
+              style: { borderColor: "#8D5273" },
+              children: [
+                /* @__PURE__ */ jsx_runtime2.jsx("strong", {
+                  children: "Staff-only diary revalidation required — Krista"
+                }),
+                /* @__PURE__ */ jsx_runtime2.jsx("p", {
+                  children: "These are confirmed recurring options, not automatically checked live availability. Verify each relevant fortnightly occurrence over the next 8 weeks against Pending/Confirmed/Completed appointments and diary/PAP/room blocks, including 90 minutes plus a 15-minute break (8:30–10:15am / 12–1:45pm). Resolve any booked/blocked occurrence before offering. No automated overlap checking has occurred."
+                }),
+                /* @__PURE__ */ jsx_runtime2.jsxs("label", {
+                  className: "flex gap-2 mt-2",
+                  children: [
+                    /* @__PURE__ */ jsx_runtime2.jsx("input", {
+                      type: "checkbox",
+                      checked: diaryVerified,
+                      onChange: (e) => {
+                        setDiaryVerified(e.target.checked);
+                        if (!e.target.checked)
+                          setStep("form");
+                      }
+                    }),
+                    "I have checked Krista’s Zanda diary and room availability for these recurring appointments and confirmed the options in this email for this client. No unconfirmed times will be offered."
+                  ]
                 })
               ]
             }),
@@ -19952,11 +20000,13 @@ Please note: There are inherent confidentiality risks in communicating by email.
   // utils/kristaMatching.ts
   var KRISTA_NAME = "Dr Krista De Castella";
   var INTEGRATION_PRESENTATION = "Difficult Psychedelic Experience / Bad-Trip Integration";
-  function hasKristaClinicalSpecificity(modalities, presentations, nonComplexEmdrConfirmed) {
+  function hasKristaClinicalSpecificity(modalities, presentations, nonComplexEmdrConfirmed, modalitiesMatchAll = false) {
     const ifs = modalities.some((m) => /^Internal Family Systems \(IFS\)/i.test(m));
     const integration = presentations.includes(INTEGRATION_PRESENTATION);
     const emdr = modalities.some((m) => /\(EMDR\)/i.test(m));
     const complex = presentations.some((p) => /complex|dissociat|developmental|childhood/i.test(p));
+    if (emdr && modalitiesMatchAll && (!nonComplexEmdrConfirmed || complex))
+      return false;
     return ifs || integration || emdr && nonComplexEmdrConfirmed && !complex;
   }
   function isKristaIndividualEligible(p, sessionType, age, excludeFemaleOnly) {
@@ -20233,6 +20283,8 @@ Please note: There are inherent confidentiality risks in communicating by email.
     "Trauma-Informed Care"
   ];
   function scoreMatch(p, filters) {
+    if (p.name === KRISTA_NAME && filters.modalities.some((m) => /\(EMDR\)/i.test(m)) && (filters.modalitiesMatchAll || filters.modalities.length === 1) && (!filters.nonComplexEmdrConfirmed || filters.presentations.some((p) => /complex|dissociat|developmental|childhood/i.test(p))))
+      return -1;
     const kw = filters.keyword.trim().toLowerCase();
     let score = 0;
     if (kw) {
@@ -20412,7 +20464,7 @@ Please note: There are inherent confidentiality risks in communicating by email.
     }
     return { weekly, fortnightly, monthly };
   }
-  var PractitionerCard = ({ p, locationFilter, isSelected, onToggleSelect, includeMonthly, gateClientType }) => {
+  var PractitionerCard = ({ p, locationFilter, isSelected, onToggleSelect, includeMonthly, gateClientType, diaryVerified = false, onDiaryVerify }) => {
     const [expanded, setExpanded] = import_react5.useState(false);
     const [copied, setCopied] = import_react5.useState(false);
     const safeLocs = p.locations || [];
@@ -20448,6 +20500,7 @@ Please note: There are inherent confidentiality risks in communicating by email.
                     type: "checkbox",
                     className: "checkbox checkbox-primary mt-1 flex-shrink-0",
                     checked: isSelected,
+                    disabled: !!p.requires_diary_verification && !diaryVerified,
                     onChange: () => onToggleSelect(p.name),
                     title: "Select for sending to client"
                   }),
@@ -20522,6 +20575,29 @@ Please note: There are inherent confidentiality risks in communicating by email.
           }),
           /* @__PURE__ */ jsx_runtime4.jsx(PractitionerNotes, {
             practitioner: p
+          }),
+          p.requires_diary_verification && /* @__PURE__ */ jsx_runtime4.jsxs("div", {
+            className: "border rounded p-3 mt-2 text-sm",
+            style: { borderColor: "#8D5273" },
+            children: [
+              /* @__PURE__ */ jsx_runtime4.jsx("strong", {
+                children: "STAFF ONLY: Confirmed recurring options — not checked live diary availability."
+              }),
+              /* @__PURE__ */ jsx_runtime4.jsx("p", {
+                children: "Before offering either slot, check every relevant fortnightly occurrence over the next 8 weeks against booked appointments and diary/PAP/room blocks. Review Pending, Confirmed and Completed appointments and the full 90-minute appointment plus 15-minute break (8:30–10:15am / 12–1:45pm). A booked occurrence requires review; it does not automatically remove the recurring option. No automatic overlap check has been performed."
+              }),
+              /* @__PURE__ */ jsx_runtime4.jsxs("label", {
+                className: "flex gap-2 mt-2",
+                children: [
+                  /* @__PURE__ */ jsx_runtime4.jsx("input", {
+                    type: "checkbox",
+                    checked: diaryVerified,
+                    onChange: (e) => onDiaryVerify?.(e.target.checked)
+                  }),
+                  "I have checked Krista’s Zanda diary and room availability for these recurring appointments, including relevant occurrences and buffers, and confirmed the options for this client."
+                ]
+              })
+            ]
           }),
           /* @__PURE__ */ jsx_runtime4.jsxs("div", {
             className: "flex flex-wrap gap-4 text-sm mt-2",
@@ -20606,7 +20682,7 @@ Please note: There are inherent confidentiality risks in communicating by email.
                     className: "font-semibold text-sm",
                     children: "Availability"
                   }),
-                  hasAvail && /* @__PURE__ */ jsx_runtime4.jsx("button", {
+                  hasAvail && (!p.requires_diary_verification || diaryVerified) && /* @__PURE__ */ jsx_runtime4.jsx("button", {
                     onClick: copyAvailability,
                     className: "btn btn-xs " + (copied ? "btn-success" : "btn-primary"),
                     children: copied ? "Copied!" : "Copy"
@@ -20911,23 +20987,28 @@ Please note: There are inherent confidentiality risks in communicating by email.
     const [sentSuccess, setSentSuccess] = import_react5.useState(false);
     const [cannotUseKristaSlots, setCannotUseKristaSlots] = import_react5.useState(false);
     const [nonComplexEmdrConfirmed, setNonComplexEmdrConfirmed] = import_react5.useState(false);
+    const [kristaDiaryVerified, setKristaDiaryVerified] = import_react5.useState(false);
+    import_react5.useEffect(() => {
+      setKristaDiaryVerified(false);
+    }, [gateClientType, gateAgeRep, gateExcludeFemaleOnly, keyword, selectedLocations, locationMatchAll, gender, clientType, therapistType, afterHours, hasAvailability, includeMonthly, selectedPresentations, presentationsMatchAll, selectedModalities, modalitiesMatchAll, selectedStyles, stylesMatchAll, selectedBillingTypes, clientAge, selectedPractitionerNames, selectedAvailabilityTypes, selectedDays, daysMatchAll, cannotUseKristaSlots, nonComplexEmdrConfirmed]);
     const allPractitionerNames = import_react5.useMemo(() => practitioners.map((p) => p.name).sort(), [practitioners]);
     const results = import_react5.useMemo(() => {
-      const filters = { keyword, locations: selectedLocations, locationMatchAll, gender, clientType, therapistType, afterHours, hasAvailability, includeMonthly, presentations: selectedPresentations, presentationsMatchAll, modalities: selectedModalities, modalitiesMatchAll, styles: selectedStyles, stylesMatchAll, billingTypes: selectedBillingTypes, clientAge, practitionerNames: selectedPractitionerNames, availabilityTypes: selectedAvailabilityTypes, days: selectedDays, daysMatchAll, gateClientType, gateAgeRep, gateExcludeFemaleOnly };
+      const filters = { keyword, locations: selectedLocations, locationMatchAll, gender, clientType, therapistType, afterHours, hasAvailability, includeMonthly, presentations: selectedPresentations, presentationsMatchAll, modalities: selectedModalities, modalitiesMatchAll, styles: selectedStyles, stylesMatchAll, billingTypes: selectedBillingTypes, clientAge, practitionerNames: selectedPractitionerNames, availabilityTypes: selectedAvailabilityTypes, days: selectedDays, daysMatchAll, gateClientType, gateAgeRep, gateExcludeFemaleOnly, nonComplexEmdrConfirmed };
       return practitioners.filter((p) => !p.referral_only).filter((p) => p.name !== KRISTA_NAME || !cannotUseKristaSlots).map((p) => ({ p, score: scoreMatch(p, filters) })).filter((item) => item.score >= 0).sort((a, b) => b.score - a.score || a.p.name.localeCompare(b.p.name));
-    }, [practitioners, keyword, selectedLocations, locationMatchAll, gender, clientType, therapistType, afterHours, hasAvailability, includeMonthly, selectedPresentations, presentationsMatchAll, selectedModalities, modalitiesMatchAll, selectedStyles, stylesMatchAll, selectedBillingTypes, clientAge, selectedPractitionerNames, selectedAvailabilityTypes, selectedDays, daysMatchAll, gateClientType, gateAgeRep, gateExcludeFemaleOnly, cannotUseKristaSlots]);
+    }, [practitioners, keyword, selectedLocations, locationMatchAll, gender, clientType, therapistType, afterHours, hasAvailability, includeMonthly, selectedPresentations, presentationsMatchAll, selectedModalities, modalitiesMatchAll, selectedStyles, stylesMatchAll, selectedBillingTypes, clientAge, selectedPractitionerNames, selectedAvailabilityTypes, selectedDays, daysMatchAll, gateClientType, gateAgeRep, gateExcludeFemaleOnly, cannotUseKristaSlots, nonComplexEmdrConfirmed]);
     const potentialKrista = import_react5.useMemo(() => {
-      if (!gateComplete || !hasKristaClinicalSpecificity(selectedModalities, selectedPresentations, nonComplexEmdrConfirmed))
+      if (!gateComplete || !hasKristaClinicalSpecificity(selectedModalities, selectedPresentations, nonComplexEmdrConfirmed, modalitiesMatchAll))
         return null;
       const p = practitioners.find((p) => isKristaIndividualEligible(p, gateClientType, gateAgeRep, gateExcludeFemaleOnly));
       if (!p || !cannotUseKristaSlots && results.some((r) => r.p.name === KRISTA_NAME))
         return null;
-      const clinical = { keyword, locations: selectedLocations, locationMatchAll, gender, clientType, therapistType, afterHours: false, hasAvailability: false, includeMonthly, presentations: selectedPresentations, presentationsMatchAll, modalities: selectedModalities, modalitiesMatchAll, styles: selectedStyles, stylesMatchAll, billingTypes: selectedBillingTypes, clientAge, practitionerNames: selectedPractitionerNames, availabilityTypes: [], days: [], daysMatchAll: false, gateClientType, gateAgeRep, gateExcludeFemaleOnly };
+      const clinical = { keyword, locations: selectedLocations, locationMatchAll, gender, clientType, therapistType, afterHours: false, hasAvailability: false, includeMonthly, presentations: selectedPresentations, presentationsMatchAll, modalities: selectedModalities, modalitiesMatchAll, styles: selectedStyles, stylesMatchAll, billingTypes: selectedBillingTypes, clientAge, practitionerNames: selectedPractitionerNames, availabilityTypes: [], days: [], daysMatchAll: false, gateClientType, gateAgeRep, gateExcludeFemaleOnly, nonComplexEmdrConfirmed };
       return scoreMatch(p, clinical) >= 0 ? p : null;
     }, [practitioners, gateComplete, selectedModalities, selectedPresentations, nonComplexEmdrConfirmed, gateClientType, gateAgeRep, gateExcludeFemaleOnly, cannotUseKristaSlots, results, keyword, selectedLocations, locationMatchAll, gender, clientType, therapistType, includeMonthly, presentationsMatchAll, modalitiesMatchAll, selectedStyles, stylesMatchAll, selectedBillingTypes, clientAge, selectedPractitionerNames]);
     const clearFilters = () => {
       setCannotUseKristaSlots(false);
       setNonComplexEmdrConfirmed(false);
+      setKristaDiaryVerified(false);
       setKeyword("");
       setSelectedLocations([]);
       setLocationMatchAll(false);
@@ -20963,7 +21044,7 @@ Please note: There are inherent confidentiality risks in communicating by email.
     const toggleSelect = (name) => {
       setSelectedNames((prev) => prev.includes(name) ? prev.filter((n) => n !== name) : [...prev, name]);
     };
-    const selectedPractitioners = selectedNames.map((name) => practitioners.find((p) => p.name === name)).filter((p) => !!p && (p.name !== KRISTA_NAME || results.some((r) => r.p.name === KRISTA_NAME)));
+    const selectedPractitioners = selectedNames.map((name) => practitioners.find((p) => p.name === name)).filter((p) => !!p && (p.name !== KRISTA_NAME || kristaDiaryVerified && results.some((r) => r.p.name === KRISTA_NAME)));
     const handleSent = () => {
       setShowSendModal(false);
       setSelectedNames([]);
@@ -21611,7 +21692,7 @@ Please note: There are inherent confidentiality risks in communicating by email.
                       checked: nonComplexEmdrConfirmed,
                       onChange: (e) => setNonComplexEmdrConfirmed(e.target.checked)
                     }),
-                    "For EMDR contact referrals: staff have confirmed the presentation is non-complex. Generic trauma/PTSD is not sufficient."
+                    "For Krista EMDR referrals: staff have confirmed the presentation is non-complex. Generic trauma/PTSD is not sufficient."
                   ]
                 }),
                 /* @__PURE__ */ jsx_runtime4.jsx("p", {
@@ -21663,7 +21744,13 @@ Please note: There are inherent confidentiality risks in communicating by email.
                   isSelected: selectedNames.includes(item.p.name),
                   onToggleSelect: toggleSelect,
                   includeMonthly,
-                  gateClientType
+                  gateClientType,
+                  diaryVerified: item.p.name === KRISTA_NAME && kristaDiaryVerified,
+                  onDiaryVerify: (verified) => {
+                    setKristaDiaryVerified(verified);
+                    if (!verified)
+                      setSelectedNames((n) => n.filter((x) => x !== KRISTA_NAME));
+                  }
                 })
               }, idx))
             }),
@@ -23719,7 +23806,16 @@ Wednesdays at 1pm (Monthly: Starting 18th Nov)`,
 A/H: $315`,
       medicare_rebate: "149.05",
       gender: "Female",
-      alert: "Scheduling/referral update approved by Anna — 14 October 2026: Individual referrals only; no couples work. Suitable priorities: IFS; non-complex EMDR only (Krista is new to EMDR; do not infer non-complexity from generic trauma/PTSD); difficult psychedelic experience/bad-trip integration; interest in psychedelic-assisted therapy research and long-term work. PsychologyCare is not offering psychedelic-assisted therapy. Mondays 8:30am–2pm in person at Burke Rd, Camberwell; Tuesdays 9:30am–4:30pm TELEHEALTH ONLY. TWO reliable new-client slots: Mondays 8:30am–10am and 12pm–1:30pm, FORTNIGHTLY starting 19 October 2026, on the same alternating Mondays. Prefer 90-minute appointments; 60 minutes only by agreement; allow 15-minute breaks after appointments (10–10:15am and 1:30–1:45pm for these slots). Moving diary/PAP blocks: do not infer additional availability from working hours. Extra Monday afternoon appointments require Anna’s room approval. If a clinically suitable individual client cannot use the fixed slots, contact Krista first; potential matches are staff-only and not bookable or sendable to clients. Zanda is read-only here: the matching app uses an explicit Krista-only override; the diary still needs staff reconciliation.",
+      alert: `Anna — 14 October 2026: 
+
+Individual clients only; no couples work. 
+Suitable Clients: IFS; non-complex EMDR only (Krista is new to EMDR); difficult psychedelic experience/bad-trip integration; interest in psychedelic-assisted therapy research and long-term work. 
+
+ Prefer 90-minute appointments; 60 minutes only by agreement; allow 15-minute breaks after appointments.
+
+Krista may be available for Monday after noon appointments pending approval from Krista and confirmation of Room availability with Anna.
+
+Diary safety clarification — 14 October 2026: Anna has confirmed the two recurring Monday new-client options; this is a static confirmed schedule, NOT automatically checked live diary availability. No per-occurrence booked/blocked overlap check has been performed by the app. Before offering/copying/sending, staff must acknowledge that Krista’s Zanda diary and room availability have been checked for the relevant recurring appointments and their 90-minute duration plus 15-minute break. Review each relevant occurrence over the next 8 weeks (Pending/Confirmed/Completed appointments and diary/PAP/room blocks). A booked instance needs review, not automatic cancellation of the recurring option. Acknowledgement is client/selection-specific and resets on refresh or enquiry changes. The daily import retains verification-required status and does not convert working hours into live bookable openings.`,
       presentations: "ADD and ADHD; Agoraphobia; Anxiety; Asperger Syndrome; Attachment Disorder; Autism Spectrum Disorders (ASD); Avoidant Personality Disorder; Burnout; Career transition; Complex Trauma; Fear of Failure; General Adaptation Disorder (Adjustment Disorder); Generalized Anxiety Disorder (GAD); Imposter Syndrome; Intermittent Explosive Disorder (Uncontrolled Anger); LGBTIQA+; Life Transitions; Low self esteem; Non-Monogomy/ Polyamory; Pain Management; Panic Disorder & Panic Attacks; Perfectionism; Pregnancy and Postnatal Depression Anxiety; Relationship breakdown; Sexual problems; Social anxiety disorder / Social Phobia; Stress; Trauma; Difficult Psychedelic Experience / Bad-Trip Integration",
       modalities: [
         "Eye Movement Desensitisation and Reprocessing (EMDR)",
@@ -23791,7 +23887,7 @@ Mondays at 12pm–1:30pm (Fortnightly: Starting 19th Oct 2026)`,
         "Individual"
       ],
       therapistType: "Clinical Psychologist",
-      client_note: "Krista sees individual clients. The confirmed new-client appointments are Mondays 8:30am–10am or 12pm–1:30pm, fortnightly from 19 October 2026, in person at Burke Rd, Camberwell. Krista prefers 90-minute appointments; a 60-minute appointment is available only by agreement. Tuesday consultations are telehealth only; no Tuesday new-client appointment time is currently confirmed. Other times require confirmation before booking. Psychedelic experience integration is available; psychedelic-assisted therapy is not offered by PsychologyCare.",
+      client_note: "Krista prefers 90-minute appointments; a 60-minute appointment is available agreement.",
       accepts_couples: false,
       confirmed_slots: [
         {
@@ -23817,7 +23913,8 @@ Mondays at 12pm–1:30pm (Fortnightly: Starting 19th Oct 2026)`,
           buffer_after_minutes: 15
         }
       ],
-      availability_source: "Anna-approved confirmed-slot override (14 October 2026); Zanda diary changes pending"
+      availability_source: "Anna-approved confirmed-slot override (14 October 2026); Zanda diary changes pending",
+      requires_diary_verification: true
     },
     {
       id: 2,

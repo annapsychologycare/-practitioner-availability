@@ -1287,7 +1287,7 @@
     "fees": "B/H: $275\nA/H: $315",
     "medicare_rebate": "149.05",
     "gender": "Female",
-    "alert": "Scheduling/referral update approved by Anna — 14 October 2026: Individual referrals only; no couples work. Suitable priorities: IFS; non-complex EMDR only (Krista is new to EMDR; do not infer non-complexity from generic trauma/PTSD); difficult psychedelic experience/bad-trip integration; interest in psychedelic-assisted therapy research and long-term work. PsychologyCare is not offering psychedelic-assisted therapy. Mondays 8:30am–2pm in person at Burke Rd, Camberwell; Tuesdays 9:30am–4:30pm TELEHEALTH ONLY. TWO reliable new-client slots: Mondays 8:30am–10am and 12pm–1:30pm, FORTNIGHTLY starting 19 October 2026, on the same alternating Mondays. Prefer 90-minute appointments; 60 minutes only by agreement; allow 15-minute breaks after appointments (10–10:15am and 1:30–1:45pm for these slots). Moving diary/PAP blocks: do not infer additional availability from working hours. Extra Monday afternoon appointments require Anna’s room approval. If a clinically suitable individual client cannot use the fixed slots, contact Krista first; potential matches are staff-only and not bookable or sendable to clients. Zanda is read-only here: the matching app uses an explicit Krista-only override; the diary still needs staff reconciliation.",
+    "alert": "Anna — 14 October 2026: \n\nIndividual clients only; no couples work. \nSuitable Clients: IFS; non-complex EMDR only (Krista is new to EMDR); difficult psychedelic experience/bad-trip integration; interest in psychedelic-assisted therapy research and long-term work. \n\n Prefer 90-minute appointments; 60 minutes only by agreement; allow 15-minute breaks after appointments.\n\nKrista may be available for Monday after noon appointments pending approval from Krista and confirmation of Room availability with Anna.\n\nDiary safety clarification — 14 October 2026: Anna has confirmed the two recurring Monday new-client options; this is a static confirmed schedule, NOT automatically checked live diary availability. No per-occurrence booked/blocked overlap check has been performed by the app. Before offering/copying/sending, staff must acknowledge that Krista’s Zanda diary and room availability have been checked for the relevant recurring appointments and their 90-minute duration plus 15-minute break. Review each relevant occurrence over the next 8 weeks (Pending/Confirmed/Completed appointments and diary/PAP/room blocks). A booked instance needs review, not automatic cancellation of the recurring option. Acknowledgement is client/selection-specific and resets on refresh or enquiry changes. The daily import retains verification-required status and does not convert working hours into live bookable openings.",
     "presentations": "ADD and ADHD; Agoraphobia; Anxiety; Asperger Syndrome; Attachment Disorder; Autism Spectrum Disorders (ASD); Avoidant Personality Disorder; Burnout; Career transition; Complex Trauma; Fear of Failure; General Adaptation Disorder (Adjustment Disorder); Generalized Anxiety Disorder (GAD); Imposter Syndrome; Intermittent Explosive Disorder (Uncontrolled Anger); LGBTIQA+; Life Transitions; Low self esteem; Non-Monogomy/ Polyamory; Pain Management; Panic Disorder & Panic Attacks; Perfectionism; Pregnancy and Postnatal Depression Anxiety; Relationship breakdown; Sexual problems; Social anxiety disorder / Social Phobia; Stress; Trauma; Difficult Psychedelic Experience / Bad-Trip Integration",
     "modalities": [
       "Eye Movement Desensitisation and Reprocessing (EMDR)",
@@ -1352,7 +1352,7 @@
       "Individual"
     ],
     "therapistType": "Clinical Psychologist",
-    "client_note": "Krista sees individual clients. The confirmed new-client appointments are Mondays 8:30am–10am or 12pm–1:30pm, fortnightly from 19 October 2026, in person at Burke Rd, Camberwell. Krista prefers 90-minute appointments; a 60-minute appointment is available only by agreement. Tuesday consultations are telehealth only; no Tuesday new-client appointment time is currently confirmed. Other times require confirmation before booking. Psychedelic experience integration is available; psychedelic-assisted therapy is not offered by PsychologyCare.",
+    "client_note": "Krista prefers 90-minute appointments; a 60-minute appointment is available agreement.",
     "accepts_couples": false,
     "confirmed_slots": [
       {
@@ -1378,7 +1378,8 @@
         "buffer_after_minutes": 15
       }
     ],
-    "availability_source": "Anna-approved confirmed-slot override (14 October 2026); Zanda diary changes pending"
+    "availability_source": "Anna-approved confirmed-slot override (14 October 2026); Zanda diary changes pending",
+    "requires_diary_verification": true
   },
   {
     "id": 2,
