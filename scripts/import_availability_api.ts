@@ -349,8 +349,10 @@ for (const [pracName, locMap] of pracData) {
 // Explicit, narrowly scoped confirmed-slot override: Zanda is read-only and may
 // retain stale diary flags. Replace Krista only; never infer openings from hours.
 for (let i=summarySlots.length-1;i>=0;i--) if(summarySlots[i].includes(`  ${KRISTA_NAME} |`)) summarySlots.splice(i,1);
-summarySlots.push(...applyKristaAvailabilityOverride(practitioners, dateFrom));
-matched.add(KRISTA_NAME);
+const kristaSlots = applyKristaAvailabilityOverride(practitioners, dateFrom);
+summarySlots.push(...kristaSlots);
+if (kristaSlots.length) matched.add(KRISTA_NAME);
+else matched.delete(KRISTA_NAME);
 
 // 7. Write updated files
 const melbNowStr = now.toLocaleString('en-AU', {

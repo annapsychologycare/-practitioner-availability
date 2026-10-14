@@ -289,14 +289,13 @@ export const PRACTITIONERS_DATA = [
     "locations": [
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "Mondays at 4pm (Fortnightly: Starting 26th Oct)\nMondays at 10am (Fortnightly: Starting 16th Nov)\nMondays at 3pm (Monthly: Starting 2nd Nov)\nSaturdays at 12pm (Monthly: Starting 21st Nov)\nMondays at 1pm (Monthly: Starting 30th Nov)",
+        "availability": "Mondays at 10am (Fortnightly: Starting 16th Nov)\nMondays at 3pm (Monthly: Starting 2nd Nov)\nSaturdays at 12pm (Monthly: Starting 21st Nov)\nMondays at 1pm (Monthly: Starting 30th Nov)",
         "weekly_availability": [],
         "fortnightly_availability": []
       }
     ],
     "last_updated": "2026-07-19",
     "availability": [
-      "Mondays at 4pm (Fortnightly: Starting 26th Oct) — Burke Rd, Camberwell",
       "Mondays at 10am (Fortnightly: Starting 16th Nov) — Burke Rd, Camberwell",
       "Mondays at 3pm (Monthly: Starting 2nd Nov) — Burke Rd, Camberwell",
       "Saturdays at 12pm (Monthly: Starting 21st Nov) — Burke Rd, Camberwell",
@@ -1225,14 +1224,14 @@ export const PRACTITIONERS_DATA = [
       },
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "Tuesdays at 12:30pm (Fortnightly: Starting 27th Oct)\nWednesdays at 1pm (Monthly: Starting 18th Nov)",
+        "availability": "Tuesdays at 12:30pm (Fortnightly: Starting 10th Nov)\nWednesdays at 1pm (Monthly: Starting 18th Nov)",
         "weekly_availability": [],
         "fortnightly_availability": []
       }
     ],
     "last_updated": "2026-07-19",
     "availability": [
-      "Tuesdays at 12:30pm (Fortnightly: Starting 27th Oct) — Burke Rd, Camberwell",
+      "Tuesdays at 12:30pm (Fortnightly: Starting 10th Nov) — Burke Rd, Camberwell",
       "Wednesdays at 1pm (Monthly: Starting 18th Nov) — Burke Rd, Camberwell"
     ],
     "short_bio": "An integrative ISTDP, and CBT therapist helping clients face painful feelings, heal relational wounds and integrate difficult psychedelic experiences.",
@@ -1639,7 +1638,7 @@ export const PRACTITIONERS_DATA = [
         "location": "Telehealth"
       },
       {
-        "availability": "Mondays at 8am (Weekly: Starting 26th Oct)\nMondays at 11:30am (Fortnightly: Starting 23rd Nov)\nThursdays at 1:30pm (Fortnightly: Starting 19th Nov)\nThursdays at 10am (Fortnightly: Starting 26th Nov)\nThursdays at 9am (Fortnightly: Starting 26th Nov)\nThursdays at 11:30am (Fortnightly: Starting 5th Nov)\nThursdays at 8am (Fortnightly: Starting 26th Nov)\nTuesdays at 2:30pm (Monthly: Starting 8th Dec)\nTuesdays at 4:30pm (Monthly: Starting 8th Dec)\nThursdays at 12:30pm (Monthly: Starting 19th Nov)",
+        "availability": "Thursdays at 1:30pm (Weekly: Starting 19th Nov)\nMondays at 8am (Weekly: Starting 26th Oct)\nMondays at 11:30am (Fortnightly: Starting 23rd Nov)\nThursdays at 10am (Fortnightly: Starting 26th Nov)\nThursdays at 9am (Fortnightly: Starting 26th Nov)\nThursdays at 11:30am (Fortnightly: Starting 5th Nov)\nThursdays at 8am (Fortnightly: Starting 26th Nov)\nTuesdays at 2:30pm (Monthly: Starting 8th Dec)\nTuesdays at 4:30pm (Monthly: Starting 8th Dec)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Burke Rd, Camberwell"
@@ -1647,16 +1646,15 @@ export const PRACTITIONERS_DATA = [
     ],
     "last_updated": "2026-07-19",
     "availability": [
+      "Thursdays at 1:30pm (Weekly: Starting 19th Nov) — Burke Rd, Camberwell",
       "Mondays at 8am (Weekly: Starting 26th Oct) — Burke Rd, Camberwell",
       "Mondays at 11:30am (Fortnightly: Starting 23rd Nov) — Burke Rd, Camberwell",
-      "Thursdays at 1:30pm (Fortnightly: Starting 19th Nov) — Burke Rd, Camberwell",
       "Thursdays at 10am (Fortnightly: Starting 26th Nov) — Burke Rd, Camberwell",
       "Thursdays at 9am (Fortnightly: Starting 26th Nov) — Burke Rd, Camberwell",
       "Thursdays at 11:30am (Fortnightly: Starting 5th Nov) — Burke Rd, Camberwell",
       "Thursdays at 8am (Fortnightly: Starting 26th Nov) — Burke Rd, Camberwell",
       "Tuesdays at 2:30pm (Monthly: Starting 8th Dec) — Burke Rd, Camberwell",
       "Tuesdays at 4:30pm (Monthly: Starting 8th Dec) — Burke Rd, Camberwell",
-      "Thursdays at 12:30pm (Monthly: Starting 19th Nov) — Burke Rd, Camberwell",
       "Tuesdays at 11am (Weekly: Starting 27th Oct) — Telehealth"
     ],
     "short_bio": "A trauma-informed clinical psychologist and social worker integrating IFS, ACT, DBT, CBT and mindfulness to support healing from trauma, intense emotions and life transitions.",
@@ -1943,7 +1941,7 @@ export const PRACTITIONERS_DATA = [
     "locations": [
       {
         "location": "Greville St, Prahran",
-        "availability": "Tuesdays at 11am (Fortnightly: Starting 20th Oct)\nSaturdays at 2pm (Fortnightly: Starting 31st Oct)\nWednesdays at 5:30pm (Fortnightly: Starting 28th Oct)\nFridays at 5:30pm (Fortnightly: Starting 23rd Oct)\nMondays at 10am (Monthly: Starting 9th Nov)\nSaturdays at 10am (Monthly: Starting 17th Oct)\nTuesdays at 8am (Monthly: Starting 3rd Nov)",
+        "availability": "Tuesdays at 11am (Fortnightly: Starting 20th Oct)\nSaturdays at 2pm (Fortnightly: Starting 31st Oct)\nWednesdays at 5:30pm (Fortnightly: Starting 28th Oct)\nFridays at 5:30pm (Fortnightly: Starting 23rd Oct)\nMondays at 10am (Monthly: Starting 9th Nov)\nSaturdays at 10am (Monthly: Starting 14th Nov)\nTuesdays at 8am (Monthly: Starting 3rd Nov)",
         "weekly_availability": [],
         "fortnightly_availability": []
       }
@@ -1955,7 +1953,7 @@ export const PRACTITIONERS_DATA = [
       "Wednesdays at 5:30pm (Fortnightly: Starting 28th Oct) — Greville St, Prahran",
       "Fridays at 5:30pm (Fortnightly: Starting 23rd Oct) — Greville St, Prahran",
       "Mondays at 10am (Monthly: Starting 9th Nov) — Greville St, Prahran",
-      "Saturdays at 10am (Monthly: Starting 17th Oct) — Greville St, Prahran",
+      "Saturdays at 10am (Monthly: Starting 14th Nov) — Greville St, Prahran",
       "Tuesdays at 8am (Monthly: Starting 3rd Nov) — Greville St, Prahran"
     ],
     "short_bio": "Christine is a trauma specialist psychotherapist and psychoanalyst offering EMDR and depth therapy to help survivors reclaim and live with their stories.​",
@@ -2558,7 +2556,7 @@ export const PRACTITIONERS_DATA = [
       },
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "Fridays at 12:30pm (Weekly: Starting 16th Oct)\nWednesdays at 9am (Weekly: Starting 21st Oct)\nThursdays at 8am (Fortnightly: Starting 22nd Oct)\nFridays at 2:30pm (Fortnightly: Starting 23rd Oct)\nThursdays at 10am (Fortnightly: Starting 15th Oct)\nThursdays at 9am (Fortnightly: Starting 22nd Oct)\nThursdays at 12:30pm (Monthly: Starting 12th Nov)\nWednesdays at 1pm (Monthly: Starting 4th Nov)",
+        "availability": "Fridays at 12:30pm (Weekly: Starting 16th Oct)\nWednesdays at 9am (Weekly: Starting 21st Oct)\nThursdays at 8am (Fortnightly: Starting 22nd Oct)\nFridays at 2:30pm (Fortnightly: Starting 23rd Oct)\nThursdays at 10am (Fortnightly: Starting 29th Oct)\nThursdays at 9am (Fortnightly: Starting 22nd Oct)\nThursdays at 12:30pm (Monthly: Starting 12th Nov)\nWednesdays at 1pm (Monthly: Starting 4th Nov)",
         "weekly_availability": [],
         "fortnightly_availability": []
       }
@@ -2569,7 +2567,7 @@ export const PRACTITIONERS_DATA = [
       "Wednesdays at 9am (Weekly: Starting 21st Oct) — Burke Rd, Camberwell",
       "Thursdays at 8am (Fortnightly: Starting 22nd Oct) — Burke Rd, Camberwell",
       "Fridays at 2:30pm (Fortnightly: Starting 23rd Oct) — Burke Rd, Camberwell",
-      "Thursdays at 10am (Fortnightly: Starting 15th Oct) — Burke Rd, Camberwell",
+      "Thursdays at 10am (Fortnightly: Starting 29th Oct) — Burke Rd, Camberwell",
       "Thursdays at 9am (Fortnightly: Starting 22nd Oct) — Burke Rd, Camberwell",
       "Thursdays at 12:30pm (Monthly: Starting 12th Nov) — Burke Rd, Camberwell",
       "Wednesdays at 1pm (Monthly: Starting 4th Nov) — Burke Rd, Camberwell",
@@ -2925,7 +2923,7 @@ export const PRACTITIONERS_DATA = [
     "locations": [
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "Tuesdays at 8pm (Weekly: Starting 20th Oct)\nTuesdays at 7pm (Weekly: Starting 20th Oct)\nTuesdays at 6pm (Weekly: Starting 20th Oct)\nTuesdays at 5pm (Weekly: Starting 20th Oct)\nThursdays at 6:30pm (Weekly: Starting 15th Oct)\nWednesdays at 7:30pm (Fortnightly: Starting 28th Oct)\nTuesdays at 4pm (Fortnightly: Starting 20th Oct)\nWednesdays at 2:30pm (Monthly: Starting 28th Oct)",
+        "availability": "Tuesdays at 8pm (Weekly: Starting 20th Oct)\nTuesdays at 7pm (Weekly: Starting 20th Oct)\nTuesdays at 6pm (Weekly: Starting 20th Oct)\nTuesdays at 5pm (Weekly: Starting 20th Oct)\nWednesdays at 7:30pm (Fortnightly: Starting 28th Oct)\nTuesdays at 4pm (Fortnightly: Starting 20th Oct)\nWednesdays at 2:30pm (Monthly: Starting 28th Oct)",
         "weekly_availability": [],
         "fortnightly_availability": []
       },
@@ -2947,7 +2945,6 @@ export const PRACTITIONERS_DATA = [
       "Tuesdays at 7pm (Weekly: Starting 20th Oct) — Burke Rd, Camberwell",
       "Tuesdays at 6pm (Weekly: Starting 20th Oct) — Burke Rd, Camberwell",
       "Tuesdays at 5pm (Weekly: Starting 20th Oct) — Burke Rd, Camberwell",
-      "Thursdays at 6:30pm (Weekly: Starting 15th Oct) — Burke Rd, Camberwell",
       "Wednesdays at 7:30pm (Fortnightly: Starting 28th Oct) — Burke Rd, Camberwell",
       "Tuesdays at 4pm (Fortnightly: Starting 20th Oct) — Burke Rd, Camberwell",
       "Wednesdays at 2:30pm (Monthly: Starting 28th Oct) — Burke Rd, Camberwell",
@@ -3103,7 +3100,7 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/therese-van-maanen/",
     "locations": [
       {
-        "availability": "Thursdays at 2pm (Weekly: Starting 22nd Oct)\nThursdays at 3:15pm (Weekly: Starting 22nd Oct)\nThursdays at 12:45pm (Fortnightly: Starting 15th Oct)\nThursdays at 12:45pm (Monthly: Starting 22nd Oct)",
+        "availability": "Thursdays at 2pm (Weekly: Starting 22nd Oct)\nThursdays at 3:15pm (Weekly: Starting 29th Oct)\nThursdays at 12:45pm (Fortnightly: Starting 29th Oct)\nThursdays at 12:45pm (Monthly: Starting 22nd Oct)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Victoria St, St Kilda"
@@ -3112,8 +3109,8 @@ export const PRACTITIONERS_DATA = [
     "last_updated": "2026-07-19",
     "availability": [
       "Thursdays at 2pm (Weekly: Starting 22nd Oct) — Victoria St, St Kilda",
-      "Thursdays at 3:15pm (Weekly: Starting 22nd Oct) — Victoria St, St Kilda",
-      "Thursdays at 12:45pm (Fortnightly: Starting 15th Oct) — Victoria St, St Kilda",
+      "Thursdays at 3:15pm (Weekly: Starting 29th Oct) — Victoria St, St Kilda",
+      "Thursdays at 12:45pm (Fortnightly: Starting 29th Oct) — Victoria St, St Kilda",
       "Thursdays at 12:45pm (Monthly: Starting 22nd Oct) — Victoria St, St Kilda"
     ],
     "short_bio": "A reflective, attachment-focused psychologist drawing on Circle of Security to support teens, adults, new parents and diverse couples toward meaningful change.",
@@ -3796,7 +3793,7 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/clare-tuttleby/",
     "locations": [
       {
-        "availability": "Tuesdays at 2:30pm (Fortnightly: Starting 20th Oct)\nTuesdays at 2:30pm (Monthly: Starting 10th Nov)\nMondays at 3:30pm (Monthly: Starting 19th Oct)\nMondays at 2:30pm (Monthly: Starting 2nd Nov)",
+        "availability": "Tuesdays at 2:30pm (Fortnightly: Starting 20th Oct)\nMondays at 6:30pm (Monthly: Starting 26th Oct)\nTuesdays at 2:30pm (Monthly: Starting 10th Nov)\nMondays at 3:30pm (Monthly: Starting 19th Oct)\nMondays at 2:30pm (Monthly: Starting 2nd Nov)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
@@ -3820,6 +3817,7 @@ export const PRACTITIONERS_DATA = [
       "Tuesdays at 11am (Fortnightly: Starting 20th Oct) — Telehealth",
       "Tuesdays at 11am (Monthly: Starting 27th Oct) — Telehealth",
       "Tuesdays at 2:30pm (Fortnightly: Starting 20th Oct) — Greville St, Prahran",
+      "Mondays at 6:30pm (Monthly: Starting 26th Oct) — Greville St, Prahran",
       "Tuesdays at 2:30pm (Monthly: Starting 10th Nov) — Greville St, Prahran",
       "Mondays at 3:30pm (Monthly: Starting 19th Oct) — Greville St, Prahran",
       "Mondays at 2:30pm (Monthly: Starting 2nd Nov) — Greville St, Prahran"
@@ -3962,7 +3960,7 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/elizabeth-white/",
     "locations": [
       {
-        "availability": "Thursdays at 9am (Weekly: Starting 15th Oct)\nWednesdays at 9am (Weekly: Starting 21st Oct)\nFridays at 11am (Fortnightly: Starting 16th Oct)\nThursdays at 10am (Fortnightly: Starting 22nd Oct)\nWednesdays at 10am (Fortnightly: Starting 28th Oct)\nWednesdays at 1pm (Fortnightly: Starting 28th Oct)\nThursdays at 8am (Fortnightly: Starting 12th Nov)",
+        "availability": "Thursdays at 9am (Weekly: Starting 29th Oct)\nWednesdays at 9am (Weekly: Starting 21st Oct)\nFridays at 11am (Fortnightly: Starting 16th Oct)\nThursdays at 10am (Fortnightly: Starting 22nd Oct)\nWednesdays at 10am (Fortnightly: Starting 28th Oct)\nWednesdays at 1pm (Fortnightly: Starting 28th Oct)\nThursdays at 8am (Fortnightly: Starting 12th Nov)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
@@ -3976,7 +3974,7 @@ export const PRACTITIONERS_DATA = [
     ],
     "last_updated": "2026-07-19",
     "availability": [
-      "Thursdays at 9am (Weekly: Starting 15th Oct) — Greville St, Prahran",
+      "Thursdays at 9am (Weekly: Starting 29th Oct) — Greville St, Prahran",
       "Wednesdays at 9am (Weekly: Starting 21st Oct) — Greville St, Prahran",
       "Fridays at 11am (Fortnightly: Starting 16th Oct) — Greville St, Prahran",
       "Thursdays at 10am (Fortnightly: Starting 22nd Oct) — Greville St, Prahran",
@@ -4169,7 +4167,7 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/karen-pereira-york/",
     "locations": [
       {
-        "availability": "Thursdays at 9:30am (Fortnightly: Starting 22nd Oct)\nWednesdays at 3:30pm (Fortnightly: Starting 28th Oct)\nMondays at 10:30am (Fortnightly: Starting 19th Oct)\nThursdays at 1pm (Fortnightly: Starting 22nd Oct)\nThursdays at 10:30am (Fortnightly: Starting 29th Oct)\nTuesdays at 2:30pm (Monthly: Starting 1st Dec)\nThursdays at 8:30am (Monthly: Starting 29th Oct)\nTuesdays at 4:30pm (Monthly: Starting 1st Dec)",
+        "availability": "Thursdays at 9:30am (Fortnightly: Starting 22nd Oct)\nWednesdays at 3:30pm (Fortnightly: Starting 28th Oct)\nMondays at 10:30am (Fortnightly: Starting 19th Oct)\nThursdays at 1pm (Fortnightly: Starting 22nd Oct)\nThursdays at 10:30am (Fortnightly: Starting 29th Oct)\nMondays at 10:30am (Monthly: Starting 9th Nov)\nTuesdays at 2:30pm (Monthly: Starting 1st Dec)\nThursdays at 8:30am (Monthly: Starting 29th Oct)\nTuesdays at 4:30pm (Monthly: Starting 1st Dec)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
@@ -4182,6 +4180,7 @@ export const PRACTITIONERS_DATA = [
       "Mondays at 10:30am (Fortnightly: Starting 19th Oct) — Greville St, Prahran",
       "Thursdays at 1pm (Fortnightly: Starting 22nd Oct) — Greville St, Prahran",
       "Thursdays at 10:30am (Fortnightly: Starting 29th Oct) — Greville St, Prahran",
+      "Mondays at 10:30am (Monthly: Starting 9th Nov) — Greville St, Prahran",
       "Tuesdays at 2:30pm (Monthly: Starting 1st Dec) — Greville St, Prahran",
       "Thursdays at 8:30am (Monthly: Starting 29th Oct) — Greville St, Prahran",
       "Tuesdays at 4:30pm (Monthly: Starting 1st Dec) — Greville St, Prahran"
@@ -4240,4 +4239,4 @@ export const PRACTITIONERS_DATA = [
   }
 ];
 export const practitionersData = PRACTITIONERS_DATA;
-export const AVAILABILITY_LAST_UPDATED = "14 Oct 2026 6:03am";
+export const AVAILABILITY_LAST_UPDATED = "15 Oct 2026 6:03am";
