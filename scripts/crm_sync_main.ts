@@ -1,6 +1,7 @@
 import { invokeTool } from '@tasklet/tools/v2';
 import { readFile, writeFile } from 'node:fs/promises';
 import { mapCrmNotes } from './crm_alerts';
+import { applyIntakePauses } from './practitioner_intake_pause';
 
 // ============================================================
 // STEP 1: Fetch all CRM contacts for PsychologyCare
@@ -305,6 +306,7 @@ for (const c of crmContacts) {
 // ============================================================
 // STEP 7: Save updated app data
 // ============================================================
+applyIntakePauses(updatedAppData);
 await writeFile('/tasklet/threads/a_cwa98xzh47ey9rcvmmh4/work/practitioners_data.json', JSON.stringify(updatedAppData, null, 2));
 console.log('\n✅ Updated practitioners_data.json');
 

@@ -14,8 +14,9 @@ import { createRoot } from "react-dom/client";
 import { PRACTITIONERS_DATA, AVAILABILITY_LAST_UPDATED as AVAILABILITY_LAST_UPDATED_STATIC } from "./practitionersData";
 import { loadEmailTemplateConfig, saveEmailTemplateConfig, EmailTemplateConfig } from "./emailTemplateConfig";
 import type { Practitioner } from "./types";
+import { suppressKristaIntake } from './utils/practitionerIntakePause';
 
-const DATA_PATH = "/tasklet/agent/home/practitioners_data.json";
+const DATA_PATH = "/tasklet/threads/a_cwa98xzh47ey9rcvmmh4/work/practitioners_data.json";
 
 // Error boundary wrapper - simple passthrough (Tasklet outer layer handles errors)
 const ErrorBoundary: React.FC<{ children: ReactNode }> = ({ children }) => <>{children}</>;
@@ -33,14 +34,14 @@ type Tab = "find" | "directory" | "manage" | "snapshot" | "intake" | "referral" 
 
 function AppMain() {
   const [tab, setTab] = useState<Tab>("find");
-  const [practitioners, setPractitioners] = useState<Practitioner[]>(PRACTITIONERS_DATA as unknown as Practitioner[]);
+  const [practitioners, setPractitioners] = useState<Practitioner[]>((PRACTITIONERS_DATA as unknown as Practitioner[]).map(suppressKristaIntake));
   const [emailConfig, setEmailConfig] = useState<EmailTemplateConfig>(loadEmailTemplateConfig);
   const [saveStatus, setSaveStatus] = useState<string | null>(null);
   const [availabilityDate, setAvailabilityDate] = useState<string>(AVAILABILITY_LAST_UPDATED_STATIC);
 
   // Read the timestamp at runtime from the meta file so it's never stale
   React.useEffect(() => {
-    window.tasklet.readFileFromDisk("/tasklet/agent/home/apps/practitioner-availability/availability_meta.json")
+    window.tasklet.readFileFromDisk("/tasklet/threads/a_cwa98xzh47ey9rcvmmh4/work/apps/practitioner-availability/availability_meta.json")
       .then((raw: string) => {
         try {
           const meta = JSON.parse(raw);
@@ -60,7 +61,7 @@ function AppMain() {
       // Strip photo_b64 before writing — photos are stored in a separate sidecar file
       // (practitioners_photos.json) and merged back by the import script at bundle time.
       // This keeps the save payload small enough for writeFileToDisk.
-      const stripped = updated.map(p => {
+      const stripped = updated.map(suppressKristaIntake).map(p => {
         const { photo_b64, ...rest } = p as any;
         return rest;
       });
@@ -73,15 +74,16 @@ function AppMain() {
 
   const handleUpdate = useCallback((updated: Practitioner) => {
     setPractitioners(prev => {
-      const next = prev.map(p => p.name === updated.name ? updated : p);
+      const next = prev.map(p => p.name === updated.name ? suppressKristaIntake(updated) : p);
       saveToDisk(next);
       return next;
     });
   }, [saveToDisk]);
 
   const handleBulkUpdate = useCallback((updated: Practitioner[]) => {
-    setPractitioners(updated);
-    saveToDisk(updated);
+    const safe=updated.map(suppressKristaIntake);
+    setPractitioners(safe);
+    saveToDisk(safe);
   }, [saveToDisk]);
 
   const handleConfigChange = useCallback((config: EmailTemplateConfig) => {

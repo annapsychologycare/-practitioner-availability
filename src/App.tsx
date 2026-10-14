@@ -8,6 +8,8 @@ import { Compare } from "./Compare";
 import { createRoot } from "react-dom/client";
 import { PRACTITIONERS_DATA, AVAILABILITY_LAST_UPDATED } from "./practitionersData";
 import "./index.css";
+import { suppressKristaIntake } from './utils/practitionerIntakePause';
+const INTAKE_PRACTITIONERS=PRACTITIONERS_DATA.map(suppressKristaIntake);
 
 // Error boundary
 class ErrorBoundary extends Component<{ children: ReactNode }, { error: Error | null }> {
@@ -103,11 +105,11 @@ function AppMain() {
       {/* Content */}
       <div className="max-w-7xl mx-auto px-4 py-8">
         <ErrorBoundary>
-          {tab === "find" && <FindPractitioner practitioners={PRACTITIONERS_DATA} />}
-          {tab === "directory" && <Directory practitioners={PRACTITIONERS_DATA} />}
-          {tab === "snapshot" && <AvailabilitySnapshot practitioners={PRACTITIONERS_DATA} />}
+          {tab === "find" && <FindPractitioner practitioners={INTAKE_PRACTITIONERS} />}
+          {tab === "directory" && <Directory practitioners={INTAKE_PRACTITIONERS} />}
+          {tab === "snapshot" && <AvailabilitySnapshot practitioners={INTAKE_PRACTITIONERS} />}
           {tab === "intake" && <IntakeTab />}
-          {tab === "referral" && <ReferralNetwork practitioners={PRACTITIONERS_DATA} />}
+          {tab === "referral" && <ReferralNetwork practitioners={INTAKE_PRACTITIONERS} />}
         </ErrorBoundary>
       </div>
 

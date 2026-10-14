@@ -1,4 +1,5 @@
 import { Practitioner } from '../types';
+import { isKristaIntakePaused } from './practitionerIntakePause';
 export const KRISTA_NAME='Dr Krista De Castella';
 export const INTEGRATION_PRESENTATION='Difficult Psychedelic Experience / Bad-Trip Integration';
 export function hasKristaClinicalSpecificity(modalities: string[], presentations: string[], nonComplexEmdrConfirmed: boolean, modalitiesMatchAll=false): boolean {
@@ -10,6 +11,7 @@ export function hasKristaClinicalSpecificity(modalities: string[], presentations
   return ifs || integration || (emdr && nonComplexEmdrConfirmed && !complex);
 }
 export function isKristaIndividualEligible(p: Practitioner, sessionType: string, age: number|null, excludeFemaleOnly: boolean): boolean {
+  if(isKristaIntakePaused(p.name))return false;
   const types=Array.isArray(p.client_types)?p.client_types:[p.client_types];
   return p.name===KRISTA_NAME && !p.referral_only && sessionType==='Individual' && types.includes('Individual') && age!==null && age>=16 && !(excludeFemaleOnly && p.client_gender_accepted==='Female Only');
 }

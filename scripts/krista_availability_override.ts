@@ -1,7 +1,10 @@
 // Anna-approved 14 October 2026. Zanda is GET-only: its diary flags are NOT edited.
 // Two confirmed appointments, not a working-hours expansion. Do not generate gaps.
 export const KRISTA_NAME = 'Dr Krista De Castella';
+import {isKristaIntakePaused,applyIntakePauses} from './practitioner_intake_pause';
 export function applyKristaAvailabilityOverride(practitioners: any[], fromDate = '2026-10-19'): string[] {
+  // Temporary app-only pause takes precedence over the historical fixed slots.
+  if(isKristaIntakePaused(KRISTA_NAME)){applyIntakePauses(practitioners);return [];}
   const p = practitioners.find(p => p.name === KRISTA_NAME);
   if (!p) throw new Error('Krista override target missing');
   const anchor = new Date('2026-10-19T00:00:00Z');

@@ -1,5 +1,6 @@
 // Shared email HTML builder — used by SendClientModal and EmailTemplateTab preview.
 import { EmailTemplateConfig, DEFAULT_EMAIL_TEMPLATE_CONFIG } from "../emailTemplateConfig";
+import { suppressKristaIntake } from './practitionerIntakePause';
 
 export interface PractitionerEmailData {
   name: string;
@@ -125,7 +126,8 @@ function formatMedicareInline(rebate: string): string {
   return `<span style="font-size:13px;color:#888;font-style:italic;">${first}</span>`;
 }
 
-function buildPractitionerCard(p: PractitionerEmailData, config: EmailTemplateConfig, includeMonthly = false): string {
+function buildPractitionerCard(original: PractitionerEmailData, config: EmailTemplateConfig, includeMonthly = false): string {
+  const p=suppressKristaIntake(original);
   const c = config.colors;
   const availHtml = buildAvailabilitySection(p.availabilityLocations || [], config, p.location_notes, includeMonthly);
   const feesInline = formatFeesInline(p.fees || "");

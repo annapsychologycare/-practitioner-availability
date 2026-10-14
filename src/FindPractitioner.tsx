@@ -6,6 +6,7 @@ import SendClientModal from "./components/SendClientModal";
 import MultiSelectDropdown from "./components/MultiSelectDropdown";
 import { hasAfterHoursAvailability } from "./utils/afterHours";
 import { KRISTA_NAME, INTEGRATION_PRESENTATION, hasKristaClinicalSpecificity, isKristaIndividualEligible } from './utils/kristaMatching';
+import { isKristaIntakePaused, suppressKristaIntake } from './utils/practitionerIntakePause';
 
 interface Props {
   practitioners: Practitioner[];
@@ -745,7 +746,8 @@ const PractitionerCard: React.FC<CardProps> = ({ p, locationFilter, isSelected, 
   );
 };
 
-export default function FindPractitioner({ practitioners }: Props) {
+export default function FindPractitioner({ practitioners: sourcePractitioners }: Props) {
+  const practitioners=useMemo(()=>sourcePractitioners.map(suppressKristaIntake),[sourcePractitioners]);
   // Gate state — mandatory qualifying questions
   const [gateClientType, setGateClientType] = useState("");
   const [gateAgeBracket, setGateAgeBracket] = useState("");
@@ -810,6 +812,7 @@ export default function FindPractitioner({ practitioners }: Props) {
   // Reuse ordinary clinical/demographic filters; relax only confirmed-slot constraints.
   // No keyword inference of EMDR complexity, and no generic-trauma contact matching.
   const potentialKrista = useMemo(() => {
+    if(isKristaIntakePaused(KRISTA_NAME))return null;
     if (!gateComplete || !hasKristaClinicalSpecificity(selectedModalities, selectedPresentations, nonComplexEmdrConfirmed, modalitiesMatchAll)) return null;
     const p=practitioners.find(p=>isKristaIndividualEligible(p,gateClientType,gateAgeRep,gateExcludeFemaleOnly));
     if (!p || (!cannotUseKristaSlots && results.some(r=>r.p.name===KRISTA_NAME))) return null;
@@ -1196,7 +1199,7 @@ export default function FindPractitioner({ practitioners }: Props) {
         </div>
       </div>
 
-      {gateComplete && gateClientType==='Individual' && <div className="rounded-lg border p-3 mb-4 text-sm" style={{borderColor:'#CDA8BA'}}>
+      {gateComplete && gateClientType==='Individual' && !isKristaIntakePaused(KRISTA_NAME) && <div className="rounded-lg border p-3 mb-4 text-sm" style={{borderColor:'#CDA8BA'}}>
         <div className="font-semibold">Krista — staff referral checks</div>
         <label className="flex gap-2 mt-2"><input type="checkbox" checked={cannotUseKristaSlots} onChange={e=>{setCannotUseKristaSlots(e.target.checked);setSelectedNames(n=>n.filter(x=>x!==KRISTA_NAME));}} />Client cannot attend Krista’s confirmed fortnightly Monday 8:30am–10am or 12pm–1:30pm slots (from 19 October 2026).</label>
         <label className="flex gap-2 mt-2"><input type="checkbox" checked={nonComplexEmdrConfirmed} onChange={e=>setNonComplexEmdrConfirmed(e.target.checked)} />For Krista EMDR referrals: staff have confirmed the presentation is non-complex. Generic trauma/PTSD is not sufficient.</label>

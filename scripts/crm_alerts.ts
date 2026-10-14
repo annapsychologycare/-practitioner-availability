@@ -1,6 +1,8 @@
 import { invokeTool } from '@tasklet/tools/v2';
+import { isKristaIntakePaused, applyIntakePauses } from './practitioner_intake_pause';
 
 export function mapCrmNotes(crm: any): {alert: string; client_note: string} {
+  if(isKristaIntakePaused(crm.Full_Name))return {alert:'',client_note:''};
   // CRM is authoritative, including blank fields. Never retain local notes.
   if (!Object.hasOwn(crm, 'Intake_Alert_Notes') || !Object.hasOwn(crm, 'Intake_Alert_Notes_Internal')) throw new Error('CRM note fields missing from record');
   return {
@@ -28,6 +30,7 @@ export async function refreshCrmAlerts(practitioners: any[]): Promise<string[]> 
     records.push(rows[0]);
   }
   const changed: string[] = [];
+  applyIntakePauses(practitioners);
   for (const p of practitioners) {
     const matches = records.filter(r => normalize(r.Full_Name || '') === normalize(p.name));
     if (matches.length > 1) throw new Error(`Ambiguous CRM alert match for ${p.name}`);

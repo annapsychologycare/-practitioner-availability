@@ -21,6 +21,7 @@ const r = await invokeTool({toolName:'github_push_to_branch',connectionId:'conn_
     {repoPath:'src/bundle.js',localPath:`${base}/deploy/src/bundle.js`},
     {repoPath:'scripts/import_availability_api.ts',localPath:`${base}/scripts/import_availability_api.ts`},
     {repoPath:'scripts/krista_availability_override.ts',localPath:`${base}/scripts/krista_availability_override.ts`},
+    {repoPath:'scripts/practitioner_intake_pause.ts',localPath:`${base}/scripts/practitioner_intake_pause.ts`},
     {repoPath:'scripts/crm_alerts.ts',localPath:`${base}/scripts/crm_alerts.ts`},
   ]
 }});

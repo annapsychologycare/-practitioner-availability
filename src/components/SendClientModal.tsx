@@ -4,6 +4,7 @@ import { Practitioner } from "../types";
 import { hasAfterHoursAvailability } from "../utils/afterHours";
 import { loadEmailTemplateConfig } from "../emailTemplateConfig";
 import { buildEmailHtml } from "../utils/emailBuilder";
+import {suppressKristaIntake} from '../utils/practitionerIntakePause';
 
 interface Props {
   selected: Practitioner[];
@@ -31,14 +32,14 @@ const SendClientModal: React.FC<Props> = ({ selected, locationFilter, onClose, o
   const [sending, setSending] = useState(false);
   const [error, setError] = useState("");
   const [diaryVerified, setDiaryVerified] = useState(false);
-  const needsDiaryReview=selected.some(p=>p.requires_diary_verification);
+  const needsDiaryReview=selected.map(suppressKristaIntake).some(p=>p.requires_diary_verification);
   const reviewReady=!needsDiaryReview || diaryVerified;
   const selectionKey=selected.map(p=>p.name).join('|');
   useEffect(()=>{setDiaryVerified(false);setStep('form');},[selectionKey,locationFilter,sessionType]);
 
   const practitionerData = useMemo(
     () =>
-      selected.map((p) => {
+      selected.map(suppressKristaIntake).map((p) => {
         // For supervision sessions, use supervision_availability instead of regular locations
         let locs;
         if (sessionType === "Supervision") {
