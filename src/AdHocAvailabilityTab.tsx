@@ -403,7 +403,7 @@ const AdHocAvailabilityTab: React.FC<Props> = ({ practitioners }) => {
             </div>
           ) : (
             <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-              {Object.entries(grouped).sort().map(([date, daySlots]) => (
+              {(Object.entries(grouped) as [string, AvailableSlot[]][]).sort().map(([date, daySlots]) => (
                 <div key={date} style={{ borderRadius: 10, overflow: "hidden", border: "1.5px solid #e8e4f0" }}>
                   {/* Date header */}
                   <div style={{ background: BRAND, color: "#fff", padding: "8px 16px", fontWeight: 600, fontSize: 14 }}>
