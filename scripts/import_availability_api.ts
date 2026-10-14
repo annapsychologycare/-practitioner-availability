@@ -9,6 +9,7 @@
 
 import { invokeTool } from '@tasklet/tools/v2';
 import { refreshCrmAlerts } from './crm_alerts';
+import { applyKristaAvailabilityOverride, KRISTA_NAME } from './krista_availability_override';
 import { readFileSync, writeFileSync, copyFileSync, existsSync, mkdirSync, unlinkSync } from 'node:fs';
 
 const MELB_TZ = 'Australia/Melbourne';
@@ -345,6 +346,12 @@ for (const [pracName, locMap] of pracData) {
   p.availability = topAvail;
 }
 
+// Explicit, narrowly scoped confirmed-slot override: Zanda is read-only and may
+// retain stale diary flags. Replace Krista only; never infer openings from hours.
+for (let i=summarySlots.length-1;i>=0;i--) if(summarySlots[i].includes(`  ${KRISTA_NAME} |`)) summarySlots.splice(i,1);
+summarySlots.push(...applyKristaAvailabilityOverride(practitioners, dateFrom));
+matched.add(KRISTA_NAME);
+
 // 7. Write updated files
 const melbNowStr = now.toLocaleString('en-AU', {
   timeZone: MELB_TZ,
@@ -358,6 +365,16 @@ const melbNowStr = now.toLocaleString('en-AU', {
 
 writeFileSync(MASTER_JSON, JSON.stringify(practitioners, null, 2));
 writeFileSync('/tasklet/threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/netlify/functions/practitioners-data.json', JSON.stringify(practitioners, null, 2));
+writeFileSync('/tasklet/threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/practitioners_data.json', JSON.stringify(practitioners, null, 2));
+// Legacy root/public JSON have independent pre-existing data. Keep unrelated
+// practitioners untouched there; synchronize only this approved override target.
+for (const path of ['/tasklet/threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/practitioners_data.json', '/tasklet/threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/public/practitioners_data.json']) {
+  const legacy=JSON.parse(readFileSync(path,'utf8'));
+  const index=legacy.findIndex((p:any)=>p.name===KRISTA_NAME);
+  if(index<0)throw new Error(`Krista missing from legacy representation: ${path}`);
+  legacy[index]=practitioners.find((p:any)=>p.name===KRISTA_NAME);
+  writeFileSync(path,JSON.stringify(legacy,null,2));
+}
 
 // Merge photo_b64 from sidecar (photos are stored separately to keep main JSON small)
 const PHOTOS_PATH = '/tasklet/threads/a_cwa98xzh47ey9rcvmmh4/work/practitioners_photos.json';

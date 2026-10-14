@@ -5,6 +5,7 @@ import { Practitioner } from "./types";
 import SendClientModal from "./components/SendClientModal";
 import MultiSelectDropdown from "./components/MultiSelectDropdown";
 import { hasAfterHoursAvailability } from "./utils/afterHours";
+import { KRISTA_NAME, INTEGRATION_PRESENTATION, hasKristaClinicalSpecificity, isKristaIndividualEligible } from './utils/kristaMatching';
 
 interface Props {
   practitioners: Practitioner[];
@@ -43,6 +44,7 @@ interface Filters {
 const DAYS_OF_WEEK = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
 
 const PRESENTATION_OPTIONS = [
+  INTEGRATION_PRESENTATION,
   "Academic Pressure & Performance Stress",
   "Acquired Brain Injury (ABI) — Adjustment & Psychological Support",
   "Acute Stress Reaction",
@@ -267,7 +269,7 @@ const MODALITY_OPTIONS = [
   "Trauma-Informed Care",
 ];
 
-function scoreMatch(p: Practitioner, filters: Filters): number {
+export function scoreMatch(p: Practitioner, filters: Filters): number {
   const kw = filters.keyword.trim().toLowerCase();
   let score = 0;
 
@@ -773,6 +775,8 @@ export default function FindPractitioner({ practitioners }: Props) {
   const [selectedNames, setSelectedNames] = useState<string[]>([]);
   const [showSendModal, setShowSendModal] = useState(false);
   const [sentSuccess, setSentSuccess] = useState(false);
+  const [cannotUseKristaSlots, setCannotUseKristaSlots] = useState(false);
+  const [nonComplexEmdrConfirmed, setNonComplexEmdrConfirmed] = useState(false);
 
   const allPractitionerNames = useMemo(() => practitioners.map(p => p.name).sort(), [practitioners]);
 
@@ -780,12 +784,24 @@ export default function FindPractitioner({ practitioners }: Props) {
     const filters: Filters = { keyword, locations: selectedLocations, locationMatchAll, gender, clientType, therapistType, afterHours, hasAvailability, includeMonthly, presentations: selectedPresentations, presentationsMatchAll, modalities: selectedModalities, modalitiesMatchAll, styles: selectedStyles, stylesMatchAll, billingTypes: selectedBillingTypes, clientAge, practitionerNames: selectedPractitionerNames, availabilityTypes: selectedAvailabilityTypes, days: selectedDays, daysMatchAll, gateClientType, gateAgeRep, gateExcludeFemaleOnly };
     return practitioners
       .filter(p => !(p as any).referral_only)
+      .filter(p => p.name !== KRISTA_NAME || !cannotUseKristaSlots)
       .map(p => ({ p, score: scoreMatch(p, filters) }))
       .filter(item => item.score >= 0)
       .sort((a, b) => b.score - a.score || a.p.name.localeCompare(b.p.name));
-  }, [practitioners, keyword, selectedLocations, locationMatchAll, gender, clientType, therapistType, afterHours, hasAvailability, selectedPresentations, presentationsMatchAll, selectedModalities, modalitiesMatchAll, selectedStyles, stylesMatchAll, selectedBillingTypes, clientAge, selectedPractitionerNames, selectedAvailabilityTypes, selectedDays, daysMatchAll, gateClientType, gateAgeRep, gateExcludeFemaleOnly]);
+  }, [practitioners, keyword, selectedLocations, locationMatchAll, gender, clientType, therapistType, afterHours, hasAvailability, includeMonthly, selectedPresentations, presentationsMatchAll, selectedModalities, modalitiesMatchAll, selectedStyles, stylesMatchAll, selectedBillingTypes, clientAge, selectedPractitionerNames, selectedAvailabilityTypes, selectedDays, daysMatchAll, gateClientType, gateAgeRep, gateExcludeFemaleOnly, cannotUseKristaSlots]);
+
+  // Reuse ordinary clinical/demographic filters; relax only confirmed-slot constraints.
+  // No keyword inference of EMDR complexity, and no generic-trauma contact matching.
+  const potentialKrista = useMemo(() => {
+    if (!gateComplete || !hasKristaClinicalSpecificity(selectedModalities, selectedPresentations, nonComplexEmdrConfirmed)) return null;
+    const p=practitioners.find(p=>isKristaIndividualEligible(p,gateClientType,gateAgeRep,gateExcludeFemaleOnly));
+    if (!p || (!cannotUseKristaSlots && results.some(r=>r.p.name===KRISTA_NAME))) return null;
+    const clinical: Filters={keyword,locations:selectedLocations,locationMatchAll,gender,clientType,therapistType,afterHours:false,hasAvailability:false,includeMonthly,presentations:selectedPresentations,presentationsMatchAll,modalities:selectedModalities,modalitiesMatchAll,styles:selectedStyles,stylesMatchAll,billingTypes:selectedBillingTypes,clientAge,practitionerNames:selectedPractitionerNames,availabilityTypes:[],days:[],daysMatchAll:false,gateClientType,gateAgeRep,gateExcludeFemaleOnly};
+    return scoreMatch(p,clinical)>=0?p:null;
+  },[practitioners,gateComplete,selectedModalities,selectedPresentations,nonComplexEmdrConfirmed,gateClientType,gateAgeRep,gateExcludeFemaleOnly,cannotUseKristaSlots,results,keyword,selectedLocations,locationMatchAll,gender,clientType,therapistType,includeMonthly,presentationsMatchAll,modalitiesMatchAll,selectedStyles,stylesMatchAll,selectedBillingTypes,clientAge,selectedPractitionerNames]);
 
   const clearFilters = () => {
+    setCannotUseKristaSlots(false); setNonComplexEmdrConfirmed(false);
     setKeyword(""); setSelectedLocations([]); setLocationMatchAll(false); setGender(""); setClientType("");
     setTherapistType(""); setAfterHours(false); setHasAvailability(false);
     setSelectedPresentations([]); setPresentationsMatchAll(false);
@@ -816,7 +832,7 @@ export default function FindPractitioner({ practitioners }: Props) {
   // Preserve selection order — map names in the order they were selected
   const selectedPractitioners = selectedNames
     .map(name => practitioners.find(p => p.name === name))
-    .filter((p): p is typeof practitioners[0] => !!p);
+    .filter((p): p is typeof practitioners[0] => !!p && (p.name!==KRISTA_NAME || results.some(r=>r.p.name===KRISTA_NAME)));
 
   const handleSent = () => {
     setShowSendModal(false);
@@ -1162,6 +1178,13 @@ export default function FindPractitioner({ practitioners }: Props) {
         </div>
       </div>
 
+      {gateComplete && gateClientType==='Individual' && <div className="rounded-lg border p-3 mb-4 text-sm" style={{borderColor:'#CDA8BA'}}>
+        <div className="font-semibold">Krista — staff referral checks</div>
+        <label className="flex gap-2 mt-2"><input type="checkbox" checked={cannotUseKristaSlots} onChange={e=>{setCannotUseKristaSlots(e.target.checked);setSelectedNames(n=>n.filter(x=>x!==KRISTA_NAME));}} />Client cannot attend Krista’s confirmed fortnightly Monday 8:30am–10am or 12pm–1:30pm slots (from 19 October 2026).</label>
+        <label className="flex gap-2 mt-2"><input type="checkbox" checked={nonComplexEmdrConfirmed} onChange={e=>setNonComplexEmdrConfirmed(e.target.checked)} />For EMDR contact referrals: staff have confirmed the presentation is non-complex. Generic trauma/PTSD is not sufficient.</label>
+        <p className="text-xs mt-2">Select an IFS modality, non-complex EMDR, or difficult psychedelic experience / bad-trip integration presentation for contact-only matching. Psychedelic-assisted therapy is not offered here.</p>
+      </div>}
+
       {!gateComplete ? (
         <div className="card bg-white shadow-sm border" style={{ borderColor: "#CDA8BA" }}>
           <div className="card-body text-center py-12">
@@ -1193,13 +1216,20 @@ export default function FindPractitioner({ practitioners }: Props) {
         </div>
       )}
 
-      {/* Floating Send Bar */}
-      {selectedNames.length > 0 && (
+      {potentialKrista && <section className="rounded-lg border p-4 mt-4" style={{borderColor:'#8D5273',backgroundColor:'#fdf8fb'}} aria-label="Potential match — contact Krista">
+        <h3 className="font-bold">Potential match — contact Krista</h3>
+        <div className="text-xs font-bold mt-1">STAFF ONLY — NOT BOOKABLE / NOT FOR CLIENT EMAIL</div>
+        <p className="text-sm mt-2">{potentialKrista.name} may clinically fit. Contact Krista to discuss an individual referral and confirm a suitable time. No appointment outside the two fixed slots is confirmed. Tuesdays are telehealth only; extra Monday afternoon appointments require Anna’s room approval.</p>
+        <p className="text-sm mt-2">IFS; non-complex EMDR only (new to EMDR); difficult psychedelic experience integration; interest in long-term work. Do not offer psychedelic-assisted therapy.</p>
+      </section>}
+
+      {/* Contact-only candidates never enter selectedPractitioners or the send modal. */}
+      {selectedPractitioners.length > 0 && (
         <div className="fixed bottom-0 left-0 right-0 z-50 p-4 bg-white shadow-lg" style={{ borderTop: "2px solid #CDA8BA" }}>
           <div className="max-w-4xl mx-auto flex items-center justify-between gap-4">
             <div className="flex items-center gap-2">
               <CheckSquare size={18} style={{ color: "#8D5273" }} />
-              <span className="font-semibold">{selectedNames.length} practitioner{selectedNames.length !== 1 ? "s" : ""} selected</span>
+              <span className="font-semibold">{selectedPractitioners.length} practitioner{selectedPractitioners.length !== 1 ? "s" : ""} selected</span>
               <span className="text-base-content/50 text-sm hidden sm:inline">
                 — {selectedPractitioners.map(p => p.name.split(" ")[0]).join(", ")}
               </span>
