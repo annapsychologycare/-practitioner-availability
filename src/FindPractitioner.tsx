@@ -7,6 +7,7 @@ import MultiSelectDropdown from "./components/MultiSelectDropdown";
 import { hasAfterHoursAvailability } from "./utils/afterHours";
 import { KRISTA_NAME, INTEGRATION_PRESENTATION, hasKristaClinicalSpecificity, isKristaIndividualEligible } from './utils/kristaMatching';
 import { isKristaIntakePaused, suppressKristaIntake } from './utils/practitionerIntakePause';
+import { matchesPresentation, matchesModality, selectedCriteriaBreakdown } from './utils/selectedCriteria';
 
 interface Props {
   practitioners: Practitioner[];
@@ -344,12 +345,10 @@ export function scoreMatch(p: Practitioner, filters: Filters): number {
   }
 
   if (filters.presentations.length > 0) {
-    const presVal: any = p.presentations;
-    const presText = (presVal == null ? "" : typeof presVal === "string" ? presVal : Array.isArray(presVal) ? presVal.join(" ") : String(presVal)).toLowerCase();
     // OR or AND logic based on toggle
     const presMatch = filters.presentationsMatchAll
-      ? filters.presentations.every(pres => presText.includes(pres.toLowerCase()))
-      : filters.presentations.some(pres => presText.includes(pres.toLowerCase()));
+      ? filters.presentations.every(pres => matchesPresentation(p.presentations, pres))
+      : filters.presentations.some(pres => matchesPresentation(p.presentations, pres));
     if (!presMatch) return -1;
   }
 
@@ -381,26 +380,10 @@ export function scoreMatch(p: Practitioner, filters: Filters): number {
   }
 
   if (filters.modalities.length > 0) {
-    const modVal: any = p.modalities;
-    const modArray: string[] = Array.isArray(modVal) ? modVal : typeof modVal === "string" ? modVal.split(/[,\n]/).map((s: string) => s.trim()).filter(Boolean) : [];
-    const modText = modArray.join(" ").toLowerCase();
     // OR or AND logic based on toggle
-    const modMatchFn = (mod: string) => {
-      // Exact match first (case-insensitive)
-      if (modArray.some((m: string) => m.toLowerCase() === mod.toLowerCase())) return true;
-      // Fuzzy fallback for legacy/short labels
-      const key = mod.toLowerCase()
-        .replace(/^emdr.*/, "eye movement")
-        .replace(/^humanistic.*/, "humanistic")
-        .replace(/^trauma-informed.*/, "trauma")
-        .replace(/^internal family systems.*/, "internal family systems")
-        .replace(/^intensive short.term dynamic.*/, "intensive short");
-      // Only use substring if key is meaningfully long (>15 chars) to avoid false positives
-      return key.length > 15 && modText.includes(key);
-    };
     const modMatch = filters.modalitiesMatchAll
-      ? filters.modalities.every(modMatchFn)
-      : filters.modalities.some(modMatchFn);
+      ? filters.modalities.every(mod => matchesModality(p.modalities, mod))
+      : filters.modalities.some(mod => matchesModality(p.modalities, mod));
     if (!modMatch) return -1;
   }
 
@@ -478,6 +461,8 @@ interface CardProps {
   onToggleSelect: (name: string) => void;
   includeMonthly: boolean;
   gateClientType: string;
+  selectedPresentations: string[];
+  selectedModalities: string[];
   diaryVerified?: boolean;
   onDiaryVerify?: (verified:boolean)=>void;
 }
@@ -496,7 +481,7 @@ function parseAvailabilityColumns(text: string | string[]): { weekly: string[]; 
   return { weekly, fortnightly, monthly };
 }
 
-const PractitionerCard: React.FC<CardProps> = ({ p, locationFilter, isSelected, onToggleSelect, includeMonthly, gateClientType, diaryVerified=false, onDiaryVerify }) => {
+const PractitionerCard: React.FC<CardProps> = ({ p, locationFilter, isSelected, onToggleSelect, includeMonthly, gateClientType, selectedPresentations, selectedModalities, diaryVerified=false, onDiaryVerify }) => {
   const [expanded, setExpanded] = useState(false);
   const [copied, setCopied] = useState(false);
 
@@ -559,6 +544,23 @@ const PractitionerCard: React.FC<CardProps> = ({ p, locationFilter, isSelected, 
           </div>
         </div>
 
+        {(selectedPresentations.length > 0 || selectedModalities.length > 0) && (
+          <div className="rounded-lg border border-base-300 p-3 mt-2 space-y-2 text-sm" data-staff-criteria aria-label="Selected criteria matched — staff only">
+            <div className="text-xs font-semibold text-base-content/50">STAFF ONLY — selected profile criteria</div>
+            {[
+              { label: 'Presentations', value: p.presentations, selected: selectedPresentations, matches: matchesPresentation },
+              { label: 'Modalities', value: p.modalities, selected: selectedModalities, matches: matchesModality },
+            ].filter(group => group.selected.length > 0).map(group => {
+              const breakdown = selectedCriteriaBreakdown(group.value, group.selected, group.matches);
+              return <div key={group.label}>
+                <div className="font-semibold">{group.label} matched ({breakdown.matched.length} of {breakdown.total})</div>
+                <div><span className="font-medium">Matched:</span> {breakdown.matched.join('; ') || 'None'}</div>
+                {breakdown.notListed.length > 0 && <div className="text-base-content/60"><span className="font-medium">Not listed in profile:</span> {breakdown.notListed.join('; ')}</div>}
+              </div>;
+            })}
+            <div className="text-xs text-base-content/50">Based on the current profile and matching rules; not listed does not mean the practitioner cannot treat it.</div>
+          </div>
+        )}
         <PractitionerNotes practitioner={p} />
         {p.requires_diary_verification && <div className="border rounded p-3 mt-2 text-sm" style={{borderColor:'#8D5273'}}>
           <strong>STAFF ONLY: Confirmed recurring options — not checked live diary availability.</strong>
@@ -1231,6 +1233,8 @@ export default function FindPractitioner({ practitioners: sourcePractitioners }:
                 onToggleSelect={toggleSelect}
                 includeMonthly={includeMonthly}
                 gateClientType={gateClientType}
+                selectedPresentations={selectedPresentations}
+                selectedModalities={selectedModalities}
                 diaryVerified={item.p.name===KRISTA_NAME && kristaDiaryVerified}
                 onDiaryVerify={verified=>{setKristaDiaryVerified(verified);if(!verified)setSelectedNames(n=>n.filter(x=>x!==KRISTA_NAME));}}
               />
