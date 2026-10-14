@@ -1,4 +1,5 @@
 import PractitionerNotes from './components/PractitionerNotes';
+import { isKristaIntakePaused, suppressKristaIntake } from './utils/practitionerIntakePause';
 import React, { useState, useMemo } from "react";
 import { Practitioner } from "./types";
 
@@ -14,6 +15,7 @@ export default function Directory({ practitioners }: Props) {
   const filtered = useMemo(() => {
     const q = search.toLowerCase();
     return practitioners
+      .map(p => suppressKristaIntake(p))
       .filter(p => !(p as any).referral_only)
       .filter(p => !q || p.name.toLowerCase().includes(q) || (p.title || "").toLowerCase().includes(q) || (p.therapist_type || "").toLowerCase().includes(q))
       .sort((a, b) => {
@@ -75,7 +77,7 @@ export default function Directory({ practitioners }: Props) {
                     <div className="text-sm">{selected.modalities}</div>
                   </div>
                 )}
-                <div>
+                {!isKristaIntakePaused(selected.name) && <div>
                   <div className="text-xs font-bold text-base-content/50 uppercase tracking-wide mb-1">Availability</div>
                   {(selected.locations || []).map((loc, i) => (
                     <div key={i} className="mb-2">
@@ -87,7 +89,7 @@ export default function Directory({ practitioners }: Props) {
                       )}
                     </div>
                   ))}
-                </div>
+                </div>}
               </div>
 
               {selected.bio && (
@@ -153,9 +155,9 @@ export default function Directory({ practitioners }: Props) {
                     <div style={{ fontSize: 11, color: "#e8d4e4" }}>{p.title}</div>
                   </div>
                   <div className="flex flex-col gap-1 items-end">
-                    <span className={`badge badge-sm ${hasAvail ? "badge-success" : "badge-ghost"}`}>
+                    {!isKristaIntakePaused(p.name) && <span className={`badge badge-sm ${hasAvail ? "badge-success" : "badge-ghost"}`}>
                       {hasAvail ? "Available" : "Waitlist"}
-                    </span>
+                    </span>}
                     {p.accepts_couples && <span className="badge badge-info badge-xs">Couples</span>}
                     {p.alert && <span style={{ backgroundColor: "#00B8C8", color: "white", borderRadius: "999px", padding: "1px 8px", fontSize: "11px", fontWeight: 700, marginLeft: "4px" }}>🚨 Note</span>}
                   </div>
