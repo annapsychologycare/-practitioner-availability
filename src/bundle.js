@@ -22572,7 +22572,7 @@ Alex is passionate about normalising the distress we may experience in response 
       link_to_bio: "https://psychologycare.com.au/alex-barry/",
       locations: [
         {
-          availability: "Thursdays at 7pm (Fortnightly: Starting 12th Nov)",
+          availability: "",
           weekly_availability: [],
           fortnightly_availability: [],
           location: "Greville St, Prahran"
@@ -22604,7 +22604,6 @@ Mondays at 4:30pm (Monthly: Starting 7th Dec)`,
         "Mondays at 6:30pm (Monthly: Starting 9th Nov) — Burke Rd, Camberwell",
         "Tuesdays at 5:30pm (Monthly: Starting 10th Nov) — Burke Rd, Camberwell",
         "Mondays at 4:30pm (Monthly: Starting 7th Dec) — Burke Rd, Camberwell",
-        "Thursdays at 7pm (Fortnightly: Starting 12th Nov) — Greville St, Prahran",
         "Wednesdays at 1:30pm (Fortnightly: Starting 11th Nov) — Telehealth",
         "Wednesdays at 1:30pm (Monthly: Starting 2nd Dec) — Telehealth"
       ],
@@ -22829,7 +22828,8 @@ Rebekah has a compassionate and thoughtful approach to the emotional care and su
       locations: [
         {
           location: "Burke Rd, Camberwell",
-          availability: `Mondays at 10am (Fortnightly: Starting 16th Nov)
+          availability: `Mondays at 12pm (Fortnightly: Starting 26th Oct)
+Mondays at 10am (Fortnightly: Starting 16th Nov)
 Mondays at 3pm (Monthly: Starting 2nd Nov)
 Saturdays at 12pm (Monthly: Starting 21st Nov)
 Mondays at 1pm (Monthly: Starting 30th Nov)`,
@@ -22839,6 +22839,7 @@ Mondays at 1pm (Monthly: Starting 30th Nov)`,
       ],
       last_updated: "2026-07-19",
       availability: [
+        "Mondays at 12pm (Fortnightly: Starting 26th Oct) — Burke Rd, Camberwell",
         "Mondays at 10am (Fortnightly: Starting 16th Nov) — Burke Rd, Camberwell",
         "Mondays at 3pm (Monthly: Starting 2nd Nov) — Burke Rd, Camberwell",
         "Saturdays at 12pm (Monthly: Starting 21st Nov) — Burke Rd, Camberwell",
@@ -23127,7 +23128,7 @@ Broadly, Amy is obsessed with her new 6yo rescue kelpie x staffy, Naia; she love
         {
           location: "Burke Rd, Camberwell",
           availability: `Mondays at 10am (Fortnightly: Starting 30th Nov)
-Fridays at 9am (Fortnightly: Starting 16th Oct)
+Fridays at 9am (Fortnightly: Starting 30th Oct)
 Mondays at 9am (Fortnightly: Starting 19th Oct)
 Fridays at 10am (Monthly: Starting 23rd Oct)
 Fridays at 9am (Monthly: Starting 23rd Oct)
@@ -23146,7 +23147,7 @@ Mondays at 1pm (Monthly: Starting 26th Oct)`,
       last_updated: "2026-07-19",
       availability: [
         "Mondays at 10am (Fortnightly: Starting 30th Nov) — Burke Rd, Camberwell",
-        "Fridays at 9am (Fortnightly: Starting 16th Oct) — Burke Rd, Camberwell",
+        "Fridays at 9am (Fortnightly: Starting 30th Oct) — Burke Rd, Camberwell",
         "Mondays at 9am (Fortnightly: Starting 19th Oct) — Burke Rd, Camberwell",
         "Fridays at 10am (Monthly: Starting 23rd Oct) — Burke Rd, Camberwell",
         "Fridays at 9am (Monthly: Starting 23rd Oct) — Burke Rd, Camberwell",
@@ -23578,11 +23579,12 @@ A/H: $275`,
       link_to_bio: "https://psychologycare.com.au/dr-maddie-brygel-psychologist/",
       locations: [
         {
-          availability: `Mondays at 8am (Fortnightly: Starting 2nd Nov)
+          availability: `Mondays at 11am (Fortnightly: Starting 19th Oct)
+Mondays at 8am (Fortnightly: Starting 2nd Nov)
 Thursdays at 10am (Fortnightly: Starting 19th Nov)
 Tuesdays at 9am (Fortnightly: Starting 27th Oct)
 Thursdays at 8am (Monthly: Starting 5th Nov)
-Thursdays at 12pm (Monthly: Starting 5th Nov)
+Thursdays at 12pm (Monthly: Starting 3rd Dec)
 Mondays at 1pm (Monthly: Starting 9th Nov)
 Mondays at 10am (Monthly: Starting 9th Nov)`,
           weekly_availability: [],
@@ -23630,11 +23632,12 @@ Mondays at 10am (Monthly: Starting 9th Nov)`,
       ],
       last_updated: "2026-07-19",
       availability: [
+        "Mondays at 11am (Fortnightly: Starting 19th Oct) — Greville St, Prahran",
         "Mondays at 8am (Fortnightly: Starting 2nd Nov) — Greville St, Prahran",
         "Thursdays at 10am (Fortnightly: Starting 19th Nov) — Greville St, Prahran",
         "Tuesdays at 9am (Fortnightly: Starting 27th Oct) — Greville St, Prahran",
         "Thursdays at 8am (Monthly: Starting 5th Nov) — Greville St, Prahran",
-        "Thursdays at 12pm (Monthly: Starting 5th Nov) — Greville St, Prahran",
+        "Thursdays at 12pm (Monthly: Starting 3rd Dec) — Greville St, Prahran",
         "Mondays at 1pm (Monthly: Starting 9th Nov) — Greville St, Prahran",
         "Mondays at 10am (Monthly: Starting 9th Nov) — Greville St, Prahran"
       ],
@@ -24613,26 +24616,30 @@ I am committed to providing best practice trauma informed care in a confidential
       locations: [
         {
           location: "Greville St, Prahran",
-          availability: `Tuesdays at 11am (Fortnightly: Starting 20th Oct)
+          availability: `Mondays at 2pm (Fortnightly: Starting 26th Oct)
+Tuesdays at 11am (Fortnightly: Starting 20th Oct)
 Saturdays at 2pm (Fortnightly: Starting 31st Oct)
 Wednesdays at 5:30pm (Fortnightly: Starting 28th Oct)
 Fridays at 5:30pm (Fortnightly: Starting 23rd Oct)
+Tuesdays at 12pm (Monthly: Starting 10th Nov)
+Mondays at 12pm (Monthly: Starting 26th Oct)
 Mondays at 10am (Monthly: Starting 9th Nov)
-Saturdays at 10am (Monthly: Starting 14th Nov)
-Tuesdays at 8am (Monthly: Starting 3rd Nov)`,
+Saturdays at 10am (Monthly: Starting 14th Nov)`,
           weekly_availability: [],
           fortnightly_availability: []
         }
       ],
       last_updated: "2026-07-19",
       availability: [
+        "Mondays at 2pm (Fortnightly: Starting 26th Oct) — Greville St, Prahran",
         "Tuesdays at 11am (Fortnightly: Starting 20th Oct) — Greville St, Prahran",
         "Saturdays at 2pm (Fortnightly: Starting 31st Oct) — Greville St, Prahran",
         "Wednesdays at 5:30pm (Fortnightly: Starting 28th Oct) — Greville St, Prahran",
         "Fridays at 5:30pm (Fortnightly: Starting 23rd Oct) — Greville St, Prahran",
+        "Tuesdays at 12pm (Monthly: Starting 10th Nov) — Greville St, Prahran",
+        "Mondays at 12pm (Monthly: Starting 26th Oct) — Greville St, Prahran",
         "Mondays at 10am (Monthly: Starting 9th Nov) — Greville St, Prahran",
-        "Saturdays at 10am (Monthly: Starting 14th Nov) — Greville St, Prahran",
-        "Tuesdays at 8am (Monthly: Starting 3rd Nov) — Greville St, Prahran"
+        "Saturdays at 10am (Monthly: Starting 14th Nov) — Greville St, Prahran"
       ],
       short_bio: "Christine is a trauma specialist psychotherapist and psychoanalyst offering EMDR and depth therapy to help survivors reclaim and live with their stories.​",
       weekly_availability: [
@@ -25080,7 +25087,6 @@ Throughout our time together, rest assured that I understand and respect the tru
       locations: [
         {
           availability: `Saturdays at 12pm (Weekly: Starting 31st Oct)
-Saturdays at 10am (Fortnightly: Starting 31st Oct)
 Saturdays at 1pm (Monthly: Starting 31st Oct)
 Saturdays at 10am (Monthly: Starting 5th Dec)`,
           weekly_availability: [],
@@ -25091,7 +25097,6 @@ Saturdays at 10am (Monthly: Starting 5th Dec)`,
       last_updated: "2026-07-19",
       availability: [
         "Saturdays at 12pm (Weekly: Starting 31st Oct) — Telehealth",
-        "Saturdays at 10am (Fortnightly: Starting 31st Oct) — Telehealth",
         "Saturdays at 1pm (Monthly: Starting 31st Oct) — Telehealth",
         "Saturdays at 10am (Monthly: Starting 5th Dec) — Telehealth"
       ],
@@ -25276,10 +25281,9 @@ Tuesdays at 4pm (Monthly: Starting 1st Dec)`,
         },
         {
           location: "Burke Rd, Camberwell",
-          availability: `Fridays at 12:30pm (Weekly: Starting 16th Oct)
+          availability: `Fridays at 12:30pm (Weekly: Starting 30th Oct)
 Wednesdays at 9am (Weekly: Starting 21st Oct)
 Thursdays at 8am (Fortnightly: Starting 22nd Oct)
-Fridays at 2:30pm (Fortnightly: Starting 23rd Oct)
 Thursdays at 10am (Fortnightly: Starting 29th Oct)
 Thursdays at 9am (Fortnightly: Starting 22nd Oct)
 Thursdays at 12:30pm (Monthly: Starting 12th Nov)
@@ -25290,10 +25294,9 @@ Wednesdays at 1pm (Monthly: Starting 4th Nov)`,
       ],
       last_updated: "2026-07-19",
       availability: [
-        "Fridays at 12:30pm (Weekly: Starting 16th Oct) — Burke Rd, Camberwell",
+        "Fridays at 12:30pm (Weekly: Starting 30th Oct) — Burke Rd, Camberwell",
         "Wednesdays at 9am (Weekly: Starting 21st Oct) — Burke Rd, Camberwell",
         "Thursdays at 8am (Fortnightly: Starting 22nd Oct) — Burke Rd, Camberwell",
-        "Fridays at 2:30pm (Fortnightly: Starting 23rd Oct) — Burke Rd, Camberwell",
         "Thursdays at 10am (Fortnightly: Starting 29th Oct) — Burke Rd, Camberwell",
         "Thursdays at 9am (Fortnightly: Starting 22nd Oct) — Burke Rd, Camberwell",
         "Thursdays at 12:30pm (Monthly: Starting 12th Nov) — Burke Rd, Camberwell",
@@ -26795,7 +26798,7 @@ Regular therapy sessions can be a brief or a longer-term investment, depending o
         {
           availability: `Thursdays at 9am (Weekly: Starting 29th Oct)
 Wednesdays at 9am (Weekly: Starting 21st Oct)
-Fridays at 11am (Fortnightly: Starting 16th Oct)
+Fridays at 11am (Fortnightly: Starting 30th Oct)
 Thursdays at 10am (Fortnightly: Starting 22nd Oct)
 Wednesdays at 10am (Fortnightly: Starting 28th Oct)
 Wednesdays at 1pm (Fortnightly: Starting 28th Oct)
@@ -26815,7 +26818,7 @@ Thursdays at 8am (Fortnightly: Starting 12th Nov)`,
       availability: [
         "Thursdays at 9am (Weekly: Starting 29th Oct) — Greville St, Prahran",
         "Wednesdays at 9am (Weekly: Starting 21st Oct) — Greville St, Prahran",
-        "Fridays at 11am (Fortnightly: Starting 16th Oct) — Greville St, Prahran",
+        "Fridays at 11am (Fortnightly: Starting 30th Oct) — Greville St, Prahran",
         "Thursdays at 10am (Fortnightly: Starting 22nd Oct) — Greville St, Prahran",
         "Wednesdays at 10am (Fortnightly: Starting 28th Oct) — Greville St, Prahran",
         "Wednesdays at 1pm (Fortnightly: Starting 28th Oct) — Greville St, Prahran",
@@ -27117,7 +27120,7 @@ Tuesdays at 4:30pm (Monthly: Starting 1st Dec)`,
       client_note: ""
     }
   ];
-  var AVAILABILITY_LAST_UPDATED = "15 Oct 2026 6:03am";
+  var AVAILABILITY_LAST_UPDATED = "16 Oct 2026 6:03am";
 
   // components/IntakeTab.tsx
   var jsx_runtime7 = __toESM(require_jsx_runtime());
