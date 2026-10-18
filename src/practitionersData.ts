@@ -424,14 +424,12 @@ export const PRACTITIONERS_DATA = [
       },
       {
         "location": "Greville St, Prahran",
-        "availability": "Wednesdays at 10am (Fortnightly: Starting 4th Nov)"
+        "availability": ""
       }
     ],
     "location_notes": {},
     "last_updated": "2026-07-19",
-    "availability": [
-      "Wednesdays at 10am (Fortnightly: Starting 4th Nov) — Greville St, Prahran"
-    ],
+    "availability": [],
     "client_gender_accepted": "Any",
     "shortBio": "Brigid is a warm and reflective therapist who offers a calm, supportive space for clients to explore life’s challenges and create meaningful change. Her approach is grounded in trauma-informed Schema Therapy and EMDR, supported by CBT, ACT, and mindfulness-based techniques. With a background in yoga and meditation, she brings a gentle, body-aware presence to her work. Brigid supports adults and adolescents with anxiety, mood difficulties, trauma, relationships, and self-esteem, and is passionate about working inclusively with the LGBTIQ+ community.",
     "ageGroups": [
@@ -4246,4 +4244,4 @@ export const PRACTITIONERS_DATA = [
   }
 ];
 export const practitionersData = PRACTITIONERS_DATA;
-export const AVAILABILITY_LAST_UPDATED = "19 Oct 2026 10:07am";
+export const AVAILABILITY_LAST_UPDATED = "19 Oct 2026 10:39am";
