@@ -204,14 +204,11 @@ function buildPractitionerCard(original: PractitionerEmailData, config: EmailTem
 }
 
 export interface ClientAccessContext {
-  age?: string | number;
-  hasMobilityConcerns?: boolean;
+  age60Plus?: boolean;
 }
 
 export function shouldShowPrahranStairsNotice(practitioners: PractitionerEmailData[], includeMonthly = false, access: ClientAccessContext = {}): boolean {
-  const age = Number(access.age);
-  const needsAccessReminder = access.hasMobilityConcerns === true || (Number.isFinite(age) && age > 60);
-  if (!needsAccessReminder) return false;
+  if (access.age60Plus !== true) return false;
   // Use only the availability actually rendered in this email, not working hours,
   // profile locations, hidden monthly slots or temporarily paused availability.
   return practitioners.map(suppressKristaIntake).some(p => (p.availabilityLocations || []).some(loc => {

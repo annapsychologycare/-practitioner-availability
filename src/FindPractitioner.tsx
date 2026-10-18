@@ -766,6 +766,7 @@ export default function FindPractitioner({ practitioners: sourcePractitioners }:
     "16–17": 16,
     "18–24": 18,
     "25+": 25,
+    "60+": 60,
   };
   const gateAgeRep = gateAgeBracket ? (AGE_BRACKET_MAP[gateAgeBracket] ?? null) : null;
   const gateExcludeFemaleOnly = gateClientGender === "Male" || gateClientGender === "Non-binary / Other";
@@ -914,7 +915,7 @@ export default function FindPractitioner({ practitioners: sourcePractitioners }:
               Client's age {gateAgeBracket && <span className="text-green-600 ml-1">✓</span>}
             </div>
             <div className="flex gap-2 flex-wrap">
-              {["Under 12", "12–15", "16–17", "18–24", "25+"].map(opt => (
+              {["Under 12", "12–15", "16–17", "18–24", "25+", "60+"].map(opt => (
                 <button key={opt} onClick={() => setGateAgeBracket(opt)}
                   className="px-4 py-1.5 rounded-full text-sm font-medium border transition-all"
                   style={gateAgeBracket === opt
@@ -1289,7 +1290,7 @@ export default function FindPractitioner({ practitioners: sourcePractitioners }:
           onSent={handleSent}
           includeMonthly={includeMonthly}
           sessionType={gateClientType}
-          initialClientAge={clientAge}
+          clientAge60Plus={gateClientType !== "Supervision" && gateAgeBracket === "60+"}
         />
       )}
 

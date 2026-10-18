@@ -13,12 +13,12 @@ interface Props {
   onSent: () => void;
   includeMonthly?: boolean;
   sessionType?: string;
-  initialClientAge?: string;
+  clientAge60Plus?: boolean;
 }
 
 // ── Component ────────────────────────────────────────────────────────────────
 
-const SendClientModal: React.FC<Props> = ({ selected, locationFilter, onClose, onSent, includeMonthly = false, sessionType = "Individual", initialClientAge = "" }) => {
+const SendClientModal: React.FC<Props> = ({ selected, locationFilter, onClose, onSent, includeMonthly = false, sessionType = "Individual", clientAge60Plus = false }) => {
   // Load config from localStorage (reflects any edits made in Email Template tab)
   const config = useMemo(() => loadEmailTemplateConfig(), []);
 
@@ -26,8 +26,6 @@ const SendClientModal: React.FC<Props> = ({ selected, locationFilter, onClose, o
   const [copied, setCopied] = useState(false);
   const [clientName, setClientName] = useState("");
   const [clientEmail, setClientEmail] = useState("");
-  const [clientAge, setClientAge] = useState(initialClientAge);
-  const [hasMobilityConcerns, setHasMobilityConcerns] = useState(false);
   const [ccEmails, setCcEmails] = useState("anna@psychologycare.com.au");
   const [senderName, setSenderName] = useState(config.senders[0] || "Anna Donaldson");
   const [openingParagraph, setOpeningParagraph] = useState(config.intro_text);
@@ -87,8 +85,8 @@ const SendClientModal: React.FC<Props> = ({ selected, locationFilter, onClose, o
   );
 
   const previewHtml = useMemo(
-    () => buildEmailHtml(clientName || "Client", note, senderName, practitionerData, { ...config, intro_text: openingParagraph }, includeMonthly, { age: clientAge, hasMobilityConcerns }),
-    [clientName, note, senderName, practitionerData, config, openingParagraph, includeMonthly, clientAge, hasMobilityConcerns]
+    () => buildEmailHtml(clientName || "Client", note, senderName, practitionerData, { ...config, intro_text: openingParagraph }, includeMonthly, { age60Plus: clientAge60Plus }),
+    [clientName, note, senderName, practitionerData, config, openingParagraph, includeMonthly, clientAge60Plus]
   );
 
   const handleCopyEmail = async () => {
@@ -231,17 +229,6 @@ const SendClientModal: React.FC<Props> = ({ selected, locationFilter, onClose, o
                     <option key={name} value={name}>{name}</option>
                   ))}
                 </select>
-              </div>
-
-              <div className="p-3 bg-base-200 rounded-lg space-y-2">
-                <div className="font-semibold text-sm">Stairs / access check (staff only)</div>
-                <label className="label label-text" htmlFor="email-client-age">Client age (if known)</label>
-                <input id="email-client-age" type="number" min="0" max="120" className="input input-bordered w-full" placeholder="Age, if known" value={clientAge} onChange={e => setClientAge(e.target.value)} />
-                <label className="flex items-start gap-2 text-sm">
-                  <input type="checkbox" className="checkbox checkbox-sm" checked={hasMobilityConcerns} onChange={e => setHasMobilityConcerns(e.target.checked)} />
-                  Known mobility or stair-access concerns
-                </label>
-                <p className="text-xs text-base-content/60">The stairs notice is included only when this email lists Prahran availability and the client is over 60 or has known mobility/access concerns. Age and this checkbox are not shown to the client. Check the intake before sending; leave age blank if unknown.</p>
               </div>
 
               {/* Client Name */}
