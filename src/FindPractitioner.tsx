@@ -1289,6 +1289,7 @@ export default function FindPractitioner({ practitioners: sourcePractitioners }:
           onSent={handleSent}
           includeMonthly={includeMonthly}
           sessionType={gateClientType}
+          initialClientAge={clientAge}
         />
       )}
 
