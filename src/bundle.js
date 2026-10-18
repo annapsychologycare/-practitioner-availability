@@ -881,7 +881,7 @@ See https://react.dev/link/invalid-hook-call for tips about how to debug and fix
       exports.useTransition = function() {
         return resolveDispatcher().useTransition();
       };
-      exports.version = "19.3.0";
+      exports.version = "19.3.1";
       typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop === "function" && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(Error());
     })();
   });
@@ -1586,7 +1586,7 @@ See https://react.dev/link/invalid-hook-call for tips about how to debug and fix
       exports.useFormStatus = function() {
         return resolveDispatcher().useHostTransitionStatus();
       };
-      exports.version = "19.3.0";
+      exports.version = "19.3.1";
       typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop === "function" && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(Error());
     })();
   });
@@ -18674,10 +18674,10 @@ Check the top-level render call using <` + componentName + ">.");
       };
       (function() {
         var isomorphicReactPackageVersion = React.version;
-        if (isomorphicReactPackageVersion !== "19.3.0")
+        if (isomorphicReactPackageVersion !== "19.3.1")
           throw Error(`Incompatible React versions: The "react" and "react-dom" packages must have the exact same version. Instead got:
   - react:      ` + (isomorphicReactPackageVersion + `
-  - react-dom:  19.3.0
+  - react-dom:  19.3.1
 Learn more: https://react.dev/warnings/version-mismatch`));
       })();
       typeof Map === "function" && Map.prototype != null && typeof Map.prototype.forEach === "function" && typeof Set === "function" && Set.prototype != null && typeof Set.prototype.clear === "function" && typeof Set.prototype.forEach === "function" || console.error("React depends on Map and Set built-in types. Make sure that you load a polyfill in older browsers. https://react.dev/link/react-polyfills");
@@ -18697,10 +18697,10 @@ Learn more: https://react.dev/warnings/version-mismatch`));
       if (!function() {
         var internals = {
           bundleType: 1,
-          version: "19.3.0",
+          version: "19.3.1",
           rendererPackageName: "react-dom",
           currentDispatcherRef: ReactSharedInternals,
-          reconcilerVersion: "19.3.0"
+          reconcilerVersion: "19.3.1"
         };
         internals.overrideHookState = overrideHookState;
         internals.overrideHookStateDeletePath = overrideHookStateDeletePath;
@@ -18760,7 +18760,7 @@ You might need to use a local HTTP server (instead of file://): https://react.de
         listenToAllSupportedEvents(container);
         return new ReactDOMHydrationRoot(initialChildren);
       };
-      exports.version = "19.3.0";
+      exports.version = "19.3.1";
       typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop === "function" && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(Error());
     })();
   });
@@ -23758,6 +23758,7 @@ A/H: $315`,
         "Anxiety - Health (Illness Anxiety / Hypochondria)",
         "Anxiety - Social Anxiety Disorder",
         "Attachment Difficulties",
+        "Bad Trip Integration",
         "Burnout — Carer / Family",
         "Burnout — Work-Related",
         "Depression — Major Depressive Disorder",

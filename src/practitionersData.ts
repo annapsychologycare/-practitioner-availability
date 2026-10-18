@@ -1163,6 +1163,7 @@ export const PRACTITIONERS_DATA = [
       "Anxiety - Health (Illness Anxiety / Hypochondria)",
       "Anxiety - Social Anxiety Disorder",
       "Attachment Difficulties",
+      "Bad Trip Integration",
       "Burnout — Carer / Family",
       "Burnout — Work-Related",
       "Depression — Major Depressive Disorder",
