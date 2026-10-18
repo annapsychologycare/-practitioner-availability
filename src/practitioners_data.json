@@ -994,7 +994,7 @@
     "link_to_bio": "https://psychologycare.com.au/dr-maddie-brygel-psychologist/",
     "locations": [
       {
-        "availability": "Thursdays at 12pm (Fortnightly: Starting 29th Oct)\nMondays at 11am (Fortnightly: Starting 2nd Nov)\nThursdays at 10am (Fortnightly: Starting 19th Nov)\nTuesdays at 9am (Fortnightly: Starting 27th Oct)\nThursdays at 8am (Monthly: Starting 5th Nov)\nThursdays at 12pm (Monthly: Starting 3rd Dec)\nMondays at 1pm (Monthly: Starting 9th Nov)\nMondays at 10am (Monthly: Starting 9th Nov)",
+        "availability": "Tuesdays at 12pm (Weekly: Starting 27th Oct)\nTuesdays at 1pm (Fortnightly: Starting 27th Oct)\nThursdays at 12pm (Fortnightly: Starting 29th Oct)\nMondays at 11am (Fortnightly: Starting 2nd Nov)\nThursdays at 10am (Fortnightly: Starting 19th Nov)\nTuesdays at 9am (Fortnightly: Starting 27th Oct)\nThursdays at 8am (Monthly: Starting 5th Nov)\nThursdays at 12pm (Monthly: Starting 3rd Dec)\nMondays at 1pm (Monthly: Starting 9th Nov)\nMondays at 10am (Monthly: Starting 9th Nov)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
@@ -1040,6 +1040,8 @@
     ],
     "last_updated": "2026-07-19",
     "availability": [
+      "Tuesdays at 12pm (Weekly: Starting 27th Oct) — Greville St, Prahran",
+      "Tuesdays at 1pm (Fortnightly: Starting 27th Oct) — Greville St, Prahran",
       "Thursdays at 12pm (Fortnightly: Starting 29th Oct) — Greville St, Prahran",
       "Mondays at 11am (Fortnightly: Starting 2nd Nov) — Greville St, Prahran",
       "Thursdays at 10am (Fortnightly: Starting 19th Nov) — Greville St, Prahran",
@@ -3281,7 +3283,7 @@
     "link_to_bio": "https://psychologycare.com.au/belinda-pacella/",
     "locations": [
       {
-        "availability": "Thursdays at 10am (Fortnightly: Starting 22nd Oct)\nThursdays at 11am (Fortnightly: Starting 5th Nov)\nThursdays at 9am (Fortnightly: Starting 12th Nov)\nThursdays at 8am (Monthly: Starting 29th Oct)",
+        "availability": "Thursdays at 10am (Fortnightly: Starting 5th Nov)\nThursdays at 11am (Fortnightly: Starting 5th Nov)\nThursdays at 9am (Fortnightly: Starting 12th Nov)\nThursdays at 8am (Monthly: Starting 29th Oct)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
@@ -3289,7 +3291,7 @@
     ],
     "last_updated": "2026-07-19",
     "availability": [
-      "Thursdays at 10am (Fortnightly: Starting 22nd Oct) — Greville St, Prahran",
+      "Thursdays at 10am (Fortnightly: Starting 5th Nov) — Greville St, Prahran",
       "Thursdays at 11am (Fortnightly: Starting 5th Nov) — Greville St, Prahran",
       "Thursdays at 9am (Fortnightly: Starting 12th Nov) — Greville St, Prahran",
       "Thursdays at 8am (Monthly: Starting 29th Oct) — Greville St, Prahran"

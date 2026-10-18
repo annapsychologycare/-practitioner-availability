@@ -23570,7 +23570,9 @@ A/H: $275`,
       link_to_bio: "https://psychologycare.com.au/dr-maddie-brygel-psychologist/",
       locations: [
         {
-          availability: `Thursdays at 12pm (Fortnightly: Starting 29th Oct)
+          availability: `Tuesdays at 12pm (Weekly: Starting 27th Oct)
+Tuesdays at 1pm (Fortnightly: Starting 27th Oct)
+Thursdays at 12pm (Fortnightly: Starting 29th Oct)
 Mondays at 11am (Fortnightly: Starting 2nd Nov)
 Thursdays at 10am (Fortnightly: Starting 19th Nov)
 Tuesdays at 9am (Fortnightly: Starting 27th Oct)
@@ -23623,6 +23625,8 @@ Mondays at 10am (Monthly: Starting 9th Nov)`,
       ],
       last_updated: "2026-07-19",
       availability: [
+        "Tuesdays at 12pm (Weekly: Starting 27th Oct) — Greville St, Prahran",
+        "Tuesdays at 1pm (Fortnightly: Starting 27th Oct) — Greville St, Prahran",
         "Thursdays at 12pm (Fortnightly: Starting 29th Oct) — Greville St, Prahran",
         "Mondays at 11am (Fortnightly: Starting 2nd Nov) — Greville St, Prahran",
         "Thursdays at 10am (Fortnightly: Starting 19th Nov) — Greville St, Prahran",
@@ -26030,7 +26034,7 @@ Belinda aims to work collaboratively with her clients to help them develop a dee
       link_to_bio: "https://psychologycare.com.au/belinda-pacella/",
       locations: [
         {
-          availability: `Thursdays at 10am (Fortnightly: Starting 22nd Oct)
+          availability: `Thursdays at 10am (Fortnightly: Starting 5th Nov)
 Thursdays at 11am (Fortnightly: Starting 5th Nov)
 Thursdays at 9am (Fortnightly: Starting 12th Nov)
 Thursdays at 8am (Monthly: Starting 29th Oct)`,
@@ -26041,7 +26045,7 @@ Thursdays at 8am (Monthly: Starting 29th Oct)`,
       ],
       last_updated: "2026-07-19",
       availability: [
-        "Thursdays at 10am (Fortnightly: Starting 22nd Oct) — Greville St, Prahran",
+        "Thursdays at 10am (Fortnightly: Starting 5th Nov) — Greville St, Prahran",
         "Thursdays at 11am (Fortnightly: Starting 5th Nov) — Greville St, Prahran",
         "Thursdays at 9am (Fortnightly: Starting 12th Nov) — Greville St, Prahran",
         "Thursdays at 8am (Monthly: Starting 29th Oct) — Greville St, Prahran"
@@ -27114,7 +27118,7 @@ Tuesdays at 4:30pm (Monthly: Starting 1st Dec)`,
       client_note: ""
     }
   ];
-  var AVAILABILITY_LAST_UPDATED = "19 Oct 2026 6:01am";
+  var AVAILABILITY_LAST_UPDATED = "19 Oct 2026 9:38am";
 
   // components/IntakeTab.tsx
   var jsx_dev_runtime7 = __toESM(require_jsx_dev_runtime());
