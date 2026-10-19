@@ -214,9 +214,13 @@ for (const [clientId, freqType] of Object.entries(AVAILABILITY_CLIENTS)) {
 }
 
 console.error(`Total raw appointments: ${allAppointments.length}`);
+writeFileSync('/tasklet/threads/a_cwa98xzh47ey9rcvmmh4/work/availability_raw_latest.json',JSON.stringify({dateFrom,dateTo,appointments:allAppointments}));
 
 // 3. Filter to Pending + active only; apply per-practitioner exclusions
 const pending = allAppointments.filter(a => {
+  // Defense in depth: never publish today/past or beyond the requested window,
+  // even if the API ignores date parameters or changes its filtering behavior.
+  if(typeof a.date!=='string'||a.date.slice(0,10)<dateFrom.slice(0,10)||a.date.slice(0,10)>dateTo.slice(0,10))return false;
   if (a.attendanceState !== 'Pending' || a.isActive === false) return false;
   // David Spektor: exclude Monthly availability
   const pracName = a.practitioner?.name ?? '';
@@ -368,13 +372,22 @@ const melbNowStr = now.toLocaleString('en-AU', {
 writeFileSync(MASTER_JSON, JSON.stringify(practitioners, null, 2));
 writeFileSync('/tasklet/threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/netlify/functions/practitioners-data.json', JSON.stringify(practitioners, null, 2));
 writeFileSync('/tasklet/threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/practitioners_data.json', JSON.stringify(practitioners, null, 2));
-// Legacy root/public JSON have independent pre-existing data. Keep unrelated
-// practitioners untouched there; synchronize only this approved override target.
+// Root/public JSON retain independent profile data. Synchronize every imported
+// availability/CRM-note field, without replacing unrelated profile fields.
 for (const path of ['/tasklet/threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/practitioners_data.json', '/tasklet/threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/public/practitioners_data.json']) {
   const legacy=JSON.parse(readFileSync(path,'utf8'));
-  const index=legacy.findIndex((p:any)=>p.name===KRISTA_NAME);
-  if(index<0)throw new Error(`Krista missing from legacy representation: ${path}`);
-  legacy[index]=practitioners.find((p:any)=>p.name===KRISTA_NAME);
+  for(const source of practitioners){
+    const target=legacy.find((p:any)=>p.name===source.name);
+    if(!target)throw new Error(`Practitioner missing from representation: ${source.name} in ${path}`);
+    for(const key of ['availability','alert','client_note'])target[key]=source[key];
+    for(const location of target.locations??[])location.availability='';
+    for(const location of source.locations??[]){
+      let dest=(target.locations??[]).find((l:any)=>(l.location??l.name)===(location.location??location.name));
+      if(!dest){target.locations??=[];dest={...location};target.locations.push(dest);}
+      dest.availability=location.availability;
+    }
+  }
+  applyKristaAvailabilityOverride(legacy,dateFrom);
   writeFileSync(path,JSON.stringify(legacy,null,2));
 }
 
