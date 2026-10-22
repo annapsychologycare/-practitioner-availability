@@ -288,13 +288,14 @@
     "locations": [
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "Mondays at 12pm (Fortnightly: Starting 26th Oct)\nMondays at 10am (Fortnightly: Starting 16th Nov)\nMondays at 3pm (Monthly: Starting 30th Nov)\nSaturdays at 12pm (Monthly: Starting 21st Nov)\nMondays at 1pm (Monthly: Starting 30th Nov)",
+        "availability": "Mondays at 11am (Fortnightly: Starting 16th Nov)\nMondays at 12pm (Fortnightly: Starting 26th Oct)\nMondays at 10am (Fortnightly: Starting 16th Nov)\nMondays at 3pm (Monthly: Starting 30th Nov)\nSaturdays at 12pm (Monthly: Starting 21st Nov)\nMondays at 1pm (Monthly: Starting 30th Nov)",
         "weekly_availability": [],
         "fortnightly_availability": []
       }
     ],
     "last_updated": "2026-07-19",
     "availability": [
+      "Mondays at 11am (Fortnightly: Starting 16th Nov) — Burke Rd, Camberwell",
       "Mondays at 12pm (Fortnightly: Starting 26th Oct) — Burke Rd, Camberwell",
       "Mondays at 10am (Fortnightly: Starting 16th Nov) — Burke Rd, Camberwell",
       "Mondays at 3pm (Monthly: Starting 30th Nov) — Burke Rd, Camberwell",
@@ -418,7 +419,7 @@
     "locations": [
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "",
+        "availability": "Tuesdays at 3:30pm (Fortnightly: Starting 3rd Nov)",
         "weekly_availability": [],
         "fortnightly_availability": []
       },
@@ -429,7 +430,9 @@
     ],
     "location_notes": {},
     "last_updated": "2026-07-19",
-    "availability": [],
+    "availability": [
+      "Tuesdays at 3:30pm (Fortnightly: Starting 3rd Nov) — Burke Rd, Camberwell"
+    ],
     "client_gender_accepted": "Any",
     "shortBio": "Brigid is a warm and reflective therapist who offers a calm, supportive space for clients to explore life’s challenges and create meaningful change. Her approach is grounded in trauma-informed Schema Therapy and EMDR, supported by CBT, ACT, and mindfulness-based techniques. With a background in yoga and meditation, she brings a gentle, body-aware presence to her work. Brigid supports adults and adolescents with anxiety, mood difficulties, trauma, relationships, and self-esteem, and is passionate about working inclusively with the LGBTIQ+ community.",
     "ageGroups": [
@@ -563,7 +566,7 @@
     "locations": [
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "Mondays at 10am (Fortnightly: Starting 30th Nov)\nMondays at 9am (Fortnightly: Starting 2nd Nov)\nFridays at 10am (Monthly: Starting 23rd Oct)\nFridays at 9am (Monthly: Starting 23rd Oct)\nMondays at 8am (Monthly: Starting 7th Dec)\nMondays at 1pm (Monthly: Starting 26th Oct)",
+        "availability": "Mondays at 10am (Fortnightly: Starting 30th Nov)\nMondays at 9am (Fortnightly: Starting 2nd Nov)\nFridays at 10am (Monthly: Starting 6th Nov)\nFridays at 9am (Monthly: Starting 20th Nov)\nMondays at 8am (Monthly: Starting 7th Dec)\nMondays at 1pm (Monthly: Starting 26th Oct)",
         "weekly_availability": [],
         "fortnightly_availability": []
       },
@@ -578,8 +581,8 @@
     "availability": [
       "Mondays at 10am (Fortnightly: Starting 30th Nov) — Burke Rd, Camberwell",
       "Mondays at 9am (Fortnightly: Starting 2nd Nov) — Burke Rd, Camberwell",
-      "Fridays at 10am (Monthly: Starting 23rd Oct) — Burke Rd, Camberwell",
-      "Fridays at 9am (Monthly: Starting 23rd Oct) — Burke Rd, Camberwell",
+      "Fridays at 10am (Monthly: Starting 6th Nov) — Burke Rd, Camberwell",
+      "Fridays at 9am (Monthly: Starting 20th Nov) — Burke Rd, Camberwell",
       "Mondays at 8am (Monthly: Starting 7th Dec) — Burke Rd, Camberwell",
       "Mondays at 1pm (Monthly: Starting 26th Oct) — Burke Rd, Camberwell"
     ],
@@ -991,14 +994,14 @@
     "link_to_bio": "https://psychologycare.com.au/dr-maddie-brygel-psychologist/",
     "locations": [
       {
-        "availability": "Tuesdays at 12pm (Fortnightly: Starting 3rd Nov)\nTuesdays at 1pm (Fortnightly: Starting 27th Oct)\nThursdays at 12pm (Fortnightly: Starting 12th Nov)\nMondays at 11am (Fortnightly: Starting 2nd Nov)\nTuesdays at 9am (Fortnightly: Starting 27th Oct)\nThursdays at 8am (Monthly: Starting 5th Nov)\nMondays at 1pm (Monthly: Starting 9th Nov)\nMondays at 10am (Monthly: Starting 9th Nov)",
+        "availability": "Tuesdays at 12pm (Fortnightly: Starting 3rd Nov)\nTuesdays at 1pm (Fortnightly: Starting 27th Oct)\nMondays at 11am (Fortnightly: Starting 2nd Nov)\nThursdays at 12pm (Monthly: Starting 19th Nov)\nThursdays at 8am (Monthly: Starting 5th Nov)\nMondays at 1pm (Monthly: Starting 9th Nov)\nMondays at 10am (Monthly: Starting 9th Nov)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
       },
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "Tuesdays at 12pm (Fortnightly: Starting 1st Dec)\nTuesdays at 1pm (Fortnightly: Starting 8th Dec)\nThursdays at 12pm (Fortnightly: Starting 10th Dec)\nThursdays at 10am (Fortnightly: Starting 3rd Dec)\nTuesdays at 9am (Fortnightly: Starting 8th Dec)\nThursdays at 8am (Monthly: Starting 3rd Dec)\nThursdays at 12pm (Monthly: Starting 3rd Dec)",
+        "availability": "Tuesdays at 12pm (Fortnightly: Starting 1st Dec)\nTuesdays at 1pm (Fortnightly: Starting 8th Dec)\nThursdays at 10am (Fortnightly: Starting 3rd Dec)\nThursdays at 8am (Monthly: Starting 3rd Dec)\nThursdays at 12pm (Monthly: Starting 3rd Dec)",
         "weekly_availability": [
           {
             "day": "Tuesday",
@@ -1039,16 +1042,13 @@
     "availability": [
       "Tuesdays at 12pm (Fortnightly: Starting 1st Dec) — Burke Rd, Camberwell",
       "Tuesdays at 1pm (Fortnightly: Starting 8th Dec) — Burke Rd, Camberwell",
-      "Thursdays at 12pm (Fortnightly: Starting 10th Dec) — Burke Rd, Camberwell",
       "Thursdays at 10am (Fortnightly: Starting 3rd Dec) — Burke Rd, Camberwell",
-      "Tuesdays at 9am (Fortnightly: Starting 8th Dec) — Burke Rd, Camberwell",
       "Thursdays at 8am (Monthly: Starting 3rd Dec) — Burke Rd, Camberwell",
       "Thursdays at 12pm (Monthly: Starting 3rd Dec) — Burke Rd, Camberwell",
       "Tuesdays at 12pm (Fortnightly: Starting 3rd Nov) — Greville St, Prahran",
       "Tuesdays at 1pm (Fortnightly: Starting 27th Oct) — Greville St, Prahran",
-      "Thursdays at 12pm (Fortnightly: Starting 12th Nov) — Greville St, Prahran",
       "Mondays at 11am (Fortnightly: Starting 2nd Nov) — Greville St, Prahran",
-      "Tuesdays at 9am (Fortnightly: Starting 27th Oct) — Greville St, Prahran",
+      "Thursdays at 12pm (Monthly: Starting 19th Nov) — Greville St, Prahran",
       "Thursdays at 8am (Monthly: Starting 5th Nov) — Greville St, Prahran",
       "Mondays at 1pm (Monthly: Starting 9th Nov) — Greville St, Prahran",
       "Mondays at 10am (Monthly: Starting 9th Nov) — Greville St, Prahran"
@@ -1948,7 +1948,7 @@
     "locations": [
       {
         "location": "Greville St, Prahran",
-        "availability": "Saturdays at 3pm (Fortnightly: Starting 14th Nov)\nSaturdays at 2pm (Fortnightly: Starting 14th Nov)\nMondays at 10am (Monthly: Starting 2nd Nov)\nFridays at 4:30pm (Monthly: Starting 13th Nov)\nTuesdays at 12pm (Monthly: Starting 8th Dec)\nMondays at 12pm (Monthly: Starting 26th Oct)",
+        "availability": "Saturdays at 3pm (Fortnightly: Starting 14th Nov)\nSaturdays at 2pm (Fortnightly: Starting 14th Nov)\nMondays at 10am (Monthly: Starting 2nd Nov)\nFridays at 4:30pm (Monthly: Starting 13th Nov)\nTuesdays at 12pm (Monthly: Starting 8th Dec)\nMondays at 12pm (Monthly: Starting 23rd Nov)",
         "weekly_availability": [],
         "fortnightly_availability": []
       }
@@ -1960,7 +1960,7 @@
       "Mondays at 10am (Monthly: Starting 2nd Nov) — Greville St, Prahran",
       "Fridays at 4:30pm (Monthly: Starting 13th Nov) — Greville St, Prahran",
       "Tuesdays at 12pm (Monthly: Starting 8th Dec) — Greville St, Prahran",
-      "Mondays at 12pm (Monthly: Starting 26th Oct) — Greville St, Prahran"
+      "Mondays at 12pm (Monthly: Starting 23rd Nov) — Greville St, Prahran"
     ],
     "short_bio": "Christine is a trauma specialist psychotherapist and psychoanalyst offering EMDR and depth therapy to help survivors reclaim and live with their stories.​",
     "weekly_availability": [
@@ -2562,20 +2562,22 @@
       },
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "Fridays at 12:30pm (Weekly: Starting 13th Nov)\nFridays at 1:30pm (Fortnightly: Starting 6th Nov)\nFridays at 2:30pm (Fortnightly: Starting 13th Nov)\nThursdays at 8am (Fortnightly: Starting 5th Nov)\nThursdays at 10am (Fortnightly: Starting 12th Nov)\nThursdays at 9am (Fortnightly: Starting 3rd Dec)\nThursdays at 10am (Monthly: Starting 17th Dec)\nThursdays at 12:30pm (Monthly: Starting 12th Nov)\nWednesdays at 1pm (Monthly: Starting 2nd Dec)",
+        "availability": "Thursdays at 1:30pm (Weekly: Starting 29th Oct)\nFridays at 12:30pm (Weekly: Starting 13th Nov)\nThursdays at 12:30pm (Fortnightly: Starting 5th Nov)\nFridays at 1:30pm (Fortnightly: Starting 6th Nov)\nFridays at 2:30pm (Fortnightly: Starting 13th Nov)\nThursdays at 8am (Fortnightly: Starting 5th Nov)\nThursdays at 10am (Fortnightly: Starting 12th Nov)\nThursdays at 9am (Fortnightly: Starting 3rd Dec)\nThursdays at 10am (Monthly: Starting 10th Dec)\nThursdays at 12:30pm (Monthly: Starting 12th Nov)\nWednesdays at 1pm (Monthly: Starting 2nd Dec)",
         "weekly_availability": [],
         "fortnightly_availability": []
       }
     ],
     "last_updated": "2026-07-19",
     "availability": [
+      "Thursdays at 1:30pm (Weekly: Starting 29th Oct) — Burke Rd, Camberwell",
       "Fridays at 12:30pm (Weekly: Starting 13th Nov) — Burke Rd, Camberwell",
+      "Thursdays at 12:30pm (Fortnightly: Starting 5th Nov) — Burke Rd, Camberwell",
       "Fridays at 1:30pm (Fortnightly: Starting 6th Nov) — Burke Rd, Camberwell",
       "Fridays at 2:30pm (Fortnightly: Starting 13th Nov) — Burke Rd, Camberwell",
       "Thursdays at 8am (Fortnightly: Starting 5th Nov) — Burke Rd, Camberwell",
       "Thursdays at 10am (Fortnightly: Starting 12th Nov) — Burke Rd, Camberwell",
       "Thursdays at 9am (Fortnightly: Starting 3rd Dec) — Burke Rd, Camberwell",
-      "Thursdays at 10am (Monthly: Starting 17th Dec) — Burke Rd, Camberwell",
+      "Thursdays at 10am (Monthly: Starting 10th Dec) — Burke Rd, Camberwell",
       "Thursdays at 12:30pm (Monthly: Starting 12th Nov) — Burke Rd, Camberwell",
       "Wednesdays at 1pm (Monthly: Starting 2nd Dec) — Burke Rd, Camberwell",
       "Tuesdays at 11am (Fortnightly: Starting 27th Oct) — Greville St, Prahran",
@@ -2942,7 +2944,7 @@
       },
       {
         "location": "Telehealth",
-        "availability": "Thursdays at 6:30pm (Weekly: Starting 5th Nov)\nTuesdays at 8pm (Weekly: Starting 3rd Nov)\nTuesdays at 7pm (Weekly: Starting 3rd Nov)\nTuesdays at 5pm (Fortnightly: Starting 3rd Nov)\nTuesdays at 6pm (Fortnightly: Starting 10th Nov)\nWednesdays at 2:30pm (Fortnightly: Starting 4th Nov)\nWednesdays at 7:30pm (Fortnightly: Starting 11th Nov)\nWednesdays at 2:30pm (Monthly: Starting 25th Nov)"
+        "availability": "Thursdays at 6:30pm (Weekly: Starting 5th Nov)\nTuesdays at 8pm (Weekly: Starting 3rd Nov)\nTuesdays at 7pm (Weekly: Starting 3rd Nov)\nTuesdays at 6pm (Fortnightly: Starting 3rd Nov)\nWednesdays at 6:30pm (Fortnightly: Starting 4th Nov)\nTuesdays at 5pm (Fortnightly: Starting 3rd Nov)\nWednesdays at 2:30pm (Fortnightly: Starting 4th Nov)\nWednesdays at 7:30pm (Fortnightly: Starting 11th Nov)\nWednesdays at 2:30pm (Monthly: Starting 25th Nov)"
       }
     ],
     "last_updated": "2026-07-19",
@@ -2959,8 +2961,9 @@
       "Thursdays at 6:30pm (Weekly: Starting 5th Nov) — Telehealth",
       "Tuesdays at 8pm (Weekly: Starting 3rd Nov) — Telehealth",
       "Tuesdays at 7pm (Weekly: Starting 3rd Nov) — Telehealth",
+      "Tuesdays at 6pm (Fortnightly: Starting 3rd Nov) — Telehealth",
+      "Wednesdays at 6:30pm (Fortnightly: Starting 4th Nov) — Telehealth",
       "Tuesdays at 5pm (Fortnightly: Starting 3rd Nov) — Telehealth",
-      "Tuesdays at 6pm (Fortnightly: Starting 10th Nov) — Telehealth",
       "Wednesdays at 2:30pm (Fortnightly: Starting 4th Nov) — Telehealth",
       "Wednesdays at 7:30pm (Fortnightly: Starting 11th Nov) — Telehealth",
       "Wednesdays at 2:30pm (Monthly: Starting 25th Nov) — Telehealth"
@@ -4180,7 +4183,7 @@
     "link_to_bio": "https://psychologycare.com.au/karen-pereira-york/",
     "locations": [
       {
-        "availability": "Thursdays at 9:30am (Fortnightly: Starting 5th Nov)\nThursdays at 10:30am (Fortnightly: Starting 29th Oct)\nMondays at 10:30am (Monthly: Starting 9th Nov)\nTuesdays at 2:30pm (Monthly: Starting 1st Dec)\nThursdays at 8:30am (Monthly: Starting 29th Oct)\nTuesdays at 4:30pm (Monthly: Starting 1st Dec)",
+        "availability": "Mondays at 10:30am (Monthly: Starting 9th Nov)\nTuesdays at 2:30pm (Monthly: Starting 1st Dec)\nThursdays at 8:30am (Monthly: Starting 29th Oct)\nTuesdays at 4:30pm (Monthly: Starting 1st Dec)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
@@ -4188,8 +4191,6 @@
     ],
     "last_updated": "2026-07-19",
     "availability": [
-      "Thursdays at 9:30am (Fortnightly: Starting 5th Nov) — Greville St, Prahran",
-      "Thursdays at 10:30am (Fortnightly: Starting 29th Oct) — Greville St, Prahran",
       "Mondays at 10:30am (Monthly: Starting 9th Nov) — Greville St, Prahran",
       "Tuesdays at 2:30pm (Monthly: Starting 1st Dec) — Greville St, Prahran",
       "Thursdays at 8:30am (Monthly: Starting 29th Oct) — Greville St, Prahran",
