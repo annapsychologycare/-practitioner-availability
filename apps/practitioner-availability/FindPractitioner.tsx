@@ -1,9 +1,13 @@
-import React, { useState, useMemo } from "react";
+import PractitionerNotes from './components/PractitionerNotes';
+import React, { useState, useMemo, useEffect } from "react";
 import { Send, CheckSquare } from "lucide-react";
 import { Practitioner } from "./types";
 import SendClientModal from "./components/SendClientModal";
 import MultiSelectDropdown from "./components/MultiSelectDropdown";
 import { hasAfterHoursAvailability } from "./utils/afterHours";
+import { KRISTA_NAME, INTEGRATION_PRESENTATION, hasKristaClinicalSpecificity, isKristaIndividualEligible } from './utils/kristaMatching';
+import { isKristaIntakePaused, suppressKristaIntake } from './utils/practitionerIntakePause';
+import { matchesPresentation, matchesModality, selectedCriteriaBreakdown } from './utils/selectedCriteria';
 
 interface Props {
   practitioners: Practitioner[];
@@ -18,6 +22,7 @@ interface Filters {
   therapistType: string;
   afterHours: boolean;
   hasAvailability: boolean;
+  includeMonthly: boolean;
 
   presentations: string[];
   presentationsMatchAll: boolean;
@@ -36,11 +41,13 @@ interface Filters {
   gateClientType: string;
   gateAgeRep: number | null;
   gateExcludeFemaleOnly: boolean;
+  nonComplexEmdrConfirmed?: boolean;
 }
 
 const DAYS_OF_WEEK = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
 
 const PRESENTATION_OPTIONS = [
+  INTEGRATION_PRESENTATION,
   "Academic Pressure & Performance Stress",
   "Acquired Brain Injury (ABI) — Adjustment & Psychological Support",
   "Acute Stress Reaction",
@@ -250,9 +257,9 @@ const MODALITY_OPTIONS = [
   "Eye Movement Desensitisation and Reprocessing (EMDR)", "Existential Therapy",
   "Exposure and Response Prevention (ERP)", "Family Systems Therapy",
   "Gestalt Therapy", "Gottman Method Couples Therapy", "Humanistic / Person-Centred",
-  "Internal Family Systems (IFS) / Parts Work - Informed",
-  "Internal Family Systems (IFS) / Parts Work - Certified Level 1",
-  "Intensive Short Term Dynamic Psychotherapy (ISTDP)",
+  "Internal Family Systems (IFS) / Parts Work (Informed)",
+  "Internal Family Systems (IFS) / Parts Work (Level 1 Certified)",
+  "Intensive Short-Term Dynamic Psychotherapy (ISTDP)",
   "Interpersonal Therapy (IPT)", "LGBTQIA+ Informed Therapies",
   "Mindfulness", "Mindfulness-Based Cognitive Therapy (MBCT)",
   "Motivational Interviewing (MI)", "Narrative Therapy",
@@ -265,7 +272,13 @@ const MODALITY_OPTIONS = [
   "Trauma-Informed Care",
 ];
 
-function scoreMatch(p: Practitioner, filters: Filters): number {
+export function scoreMatch(p: Practitioner, filters: Filters): number {
+  // Krista's EMDR work is non-complex only. When EMDR is a required modality
+  // (sole choice or AND), require explicit staff confirmation in fixed-slot
+  // results too; an OR choice of IFS can still match for IFS instead.
+  if (p.name===KRISTA_NAME && filters.modalities.some(m=>/\(EMDR\)/i.test(m)) &&
+      (filters.modalitiesMatchAll || filters.modalities.length===1) &&
+      (!filters.nonComplexEmdrConfirmed || filters.presentations.some(p=>/complex|dissociat|developmental|childhood/i.test(p)))) return -1;
   const kw = filters.keyword.trim().toLowerCase();
   let score = 0;
 
@@ -319,19 +332,23 @@ function scoreMatch(p: Practitioner, filters: Filters): number {
     const hasAvail = relevantLocs.some(l => {
       const avail = l.availability;
       if (!avail) return false;
-      if (Array.isArray(avail)) return avail.length > 0;
-      return (avail as string).trim().length > 0;
+      const availStr = Array.isArray(avail) ? avail.join("\n") : (avail as string);
+      if (!availStr.trim()) return false;
+      // If monthly is excluded, only count weekly or fortnightly slots
+      if (!filters.includeMonthly) {
+        const lower = availStr.toLowerCase();
+        return lower.includes("(weekly") || lower.includes("(fortnightly");
+      }
+      return true;
     });
     if (!hasAvail) return -1;
   }
 
   if (filters.presentations.length > 0) {
-    const presVal: any = p.presentations;
-    const presText = (presVal == null ? "" : typeof presVal === "string" ? presVal : Array.isArray(presVal) ? presVal.join(" ") : String(presVal)).toLowerCase();
     // OR or AND logic based on toggle
     const presMatch = filters.presentationsMatchAll
-      ? filters.presentations.every(pres => presText.includes(pres.toLowerCase()))
-      : filters.presentations.some(pres => presText.includes(pres.toLowerCase()));
+      ? filters.presentations.every(pres => matchesPresentation(p.presentations, pres))
+      : filters.presentations.some(pres => matchesPresentation(p.presentations, pres));
     if (!presMatch) return -1;
   }
 
@@ -363,21 +380,10 @@ function scoreMatch(p: Practitioner, filters: Filters): number {
   }
 
   if (filters.modalities.length > 0) {
-    const modVal: any = p.modalities;
-    const modArray: string[] = Array.isArray(modVal) ? modVal : typeof modVal === "string" ? modVal.split(/[,\n]/).map((s: string) => s.trim()).filter(Boolean) : [];
-    const modText = modArray.join(" ").toLowerCase();
     // OR or AND logic based on toggle
-    const modMatchFn = (mod: string) => {
-      // Exact match first (case-insensitive)
-      if (modArray.some((m: string) => m.toLowerCase() === mod.toLowerCase())) return true;
-      // Fuzzy fallback for legacy/short labels
-      const key = mod.toLowerCase().replace(/^emdr.*/, "eye movement").replace(/^humanistic.*/, "humanistic").replace(/^trauma-informed.*/, "trauma");
-      // Only use substring if key is meaningfully long (>15 chars) to avoid false positives
-      return key.length > 15 && modText.includes(key);
-    };
     const modMatch = filters.modalitiesMatchAll
-      ? filters.modalities.every(modMatchFn)
-      : filters.modalities.some(modMatchFn);
+      ? filters.modalities.every(mod => matchesModality(p.modalities, mod))
+      : filters.modalities.some(mod => matchesModality(p.modalities, mod));
     if (!modMatch) return -1;
   }
 
@@ -393,25 +399,30 @@ function scoreMatch(p: Practitioner, filters: Filters): number {
     }
   }
 
-  // Gate: client type (Individual / Couples)
-  if (filters.gateClientType && p.client_types) {
-    const gateClientTypesStr = Array.isArray(p.client_types) ? p.client_types.join(" ") : (p.client_types || "");
-    if (!gateClientTypesStr.toLowerCase().includes(filters.gateClientType.toLowerCase())) return -1;
-  }
-
-  // Gate: age bracket
-  if (filters.gateAgeRep !== null && p.age_range) {
-    const ageRangeStr2 = Array.isArray(p.age_range) ? p.age_range.join(" ") : (p.age_range || "");
-    const nums = ageRangeStr2.match(/\d+/g);
-    if (nums && nums.length > 0) {
-      const minAge = Math.min(...nums.map(Number));
-      if (filters.gateAgeRep < minAge) return -1;
+  // Gate: supervision — only show practitioners with supervision_availability
+  if (filters.gateClientType === "Supervision") {
+    if (!((p as any).supervision_availability?.length > 0)) return -1;
+  } else {
+    // Gate: client type (Individual / Couples)
+    if (filters.gateClientType && p.client_types) {
+      const gateClientTypesStr = Array.isArray(p.client_types) ? p.client_types.join(" ") : (p.client_types || "");
+      if (!gateClientTypesStr.toLowerCase().includes(filters.gateClientType.toLowerCase())) return -1;
     }
-  }
 
-  // Gate: client gender — exclude female-only practitioners if client is not female
-  if (filters.gateExcludeFemaleOnly && (p as any).client_gender_accepted === "Female Only") {
-    return -1;
+    // Gate: age bracket
+    if (filters.gateAgeRep !== null && p.age_range) {
+      const ageRangeStr2 = Array.isArray(p.age_range) ? p.age_range.join(" ") : (p.age_range || "");
+      const nums = ageRangeStr2.match(/\d+/g);
+      if (nums && nums.length > 0) {
+        const minAge = Math.min(...nums.map(Number));
+        if (filters.gateAgeRep < minAge) return -1;
+      }
+    }
+
+    // Gate: client gender — exclude female-only practitioners if client is not female
+    if (filters.gateExcludeFemaleOnly && (p as any).client_gender_accepted === "Female Only") {
+      return -1;
+    }
   }
 
   if (filters.practitionerNames.length > 0) {
@@ -449,6 +460,11 @@ interface CardProps {
   isSelected: boolean;
   onToggleSelect: (name: string) => void;
   includeMonthly: boolean;
+  gateClientType: string;
+  selectedPresentations: string[];
+  selectedModalities: string[];
+  diaryVerified?: boolean;
+  onDiaryVerify?: (verified:boolean)=>void;
 }
 
 function parseAvailabilityColumns(text: string | string[]): { weekly: string[]; fortnightly: string[]; monthly: string[] } {
@@ -465,7 +481,7 @@ function parseAvailabilityColumns(text: string | string[]): { weekly: string[]; 
   return { weekly, fortnightly, monthly };
 }
 
-const PractitionerCard: React.FC<CardProps> = ({ p, locationFilter, isSelected, onToggleSelect, includeMonthly }) => {
+const PractitionerCard: React.FC<CardProps> = ({ p, locationFilter, isSelected, onToggleSelect, includeMonthly, gateClientType, selectedPresentations, selectedModalities, diaryVerified=false, onDiaryVerify }) => {
   const [expanded, setExpanded] = useState(false);
   const [copied, setCopied] = useState(false);
 
@@ -499,6 +515,7 @@ const PractitionerCard: React.FC<CardProps> = ({ p, locationFilter, isSelected, 
               type="checkbox"
               className="checkbox checkbox-primary mt-1 flex-shrink-0"
               checked={isSelected}
+              disabled={!!p.requires_diary_verification && !diaryVerified}
               onChange={() => onToggleSelect(p.name)}
               title="Select for sending to client"
             />
@@ -527,11 +544,29 @@ const PractitionerCard: React.FC<CardProps> = ({ p, locationFilter, isSelected, 
           </div>
         </div>
 
-        {p.alert && (
-          <div style={{ backgroundColor: "#00B8C8", color: "white", borderRadius: "10px", padding: "8px 14px", fontSize: "13px", fontWeight: 700, boxShadow: "0 2px 8px rgba(0,184,200,0.35)", display: "inline-block" }}>
-            🚨 {p.alert}
+        {(selectedPresentations.length > 0 || selectedModalities.length > 0) && (
+          <div className="rounded-lg border border-base-300 p-3 mt-2 space-y-2 text-sm" data-staff-criteria aria-label="Selected criteria matched — staff only">
+            <div className="text-xs font-semibold text-base-content/50">STAFF ONLY — selected profile criteria</div>
+            {[
+              { label: 'Presentations', value: p.presentations, selected: selectedPresentations, matches: matchesPresentation },
+              { label: 'Modalities', value: p.modalities, selected: selectedModalities, matches: matchesModality },
+            ].filter(group => group.selected.length > 0).map(group => {
+              const breakdown = selectedCriteriaBreakdown(group.value, group.selected, group.matches);
+              return <div key={group.label}>
+                <div className="font-semibold">{group.label} matched ({breakdown.matched.length} of {breakdown.total})</div>
+                <div><span className="font-medium">Matched:</span> {breakdown.matched.join('; ') || 'None'}</div>
+                {breakdown.notListed.length > 0 && <div className="text-base-content/60"><span className="font-medium">Not listed in profile:</span> {breakdown.notListed.join('; ')}</div>}
+              </div>;
+            })}
+            <div className="text-xs text-base-content/50">Based on the current profile and matching rules; not listed does not mean the practitioner cannot treat it.</div>
           </div>
         )}
+        <PractitionerNotes practitioner={p} />
+        {p.requires_diary_verification && <div className="border rounded p-3 mt-2 text-sm" style={{borderColor:'#8D5273'}}>
+          <strong>STAFF ONLY: Confirmed recurring options — not checked live diary availability.</strong>
+          <p>Before offering either slot, check every relevant fortnightly occurrence over the next 8 weeks against booked appointments and diary/PAP/room blocks. Review Pending, Confirmed and Completed appointments and the full 90-minute appointment plus 15-minute break (8:30–10:15am / 12–1:45pm). A booked occurrence requires review; it does not automatically remove the recurring option. No automatic overlap check has been performed.</p>
+          <label className="flex gap-2 mt-2"><input type="checkbox" checked={diaryVerified} onChange={e=>onDiaryVerify?.(e.target.checked)} />I have checked Krista’s Zanda diary and room availability for these recurring appointments, including relevant occurrences and buffers, and confirmed the options for this client.</label>
+        </div>}
 
         <div className="flex flex-wrap gap-4 text-sm mt-2">
           <div>
@@ -556,13 +591,33 @@ const PractitionerCard: React.FC<CardProps> = ({ p, locationFilter, isSelected, 
         <div className="mt-3 rounded-lg p-3" style={{ backgroundColor: "#F0EEF7" }}>
           <div className="flex items-center justify-between mb-2">
             <span className="font-semibold text-sm">Availability</span>
-            {hasAvail && (
+            {hasAvail && (!p.requires_diary_verification || diaryVerified) && (
               <button onClick={copyAvailability} className={"btn btn-xs " + (copied ? "btn-success" : "btn-primary")}>
                 {copied ? "Copied!" : "Copy"}
               </button>
             )}
           </div>
-          {displayLocs.length === 0 ? (
+          {gateClientType === "Supervision" ? (
+            (p as any).supervision_availability?.length > 0 ? (
+              <div className="mt-2">
+                <div className="rounded-lg p-2" style={{ backgroundColor: "rgba(54,97,136,0.08)" }}>
+                  <div className="text-xs font-bold mb-1" style={{ color: "#366188" }}>🎓 Supervision Slots (Weekly · Telehealth)</div>
+                  {(p as any).supervision_availability.map((loc: any, li: number) => (
+                    <div key={li}>
+                      {(p as any).supervision_availability.length > 1 && <div className="text-xs text-base-content/50 mb-1">📍 {loc.location}</div>}
+                      {loc.days.map((d: any, di: number) => (
+                        <div key={di} className="text-xs">
+                          <span className="font-medium">{d.day}</span>: {d.times.join(", ")}
+                        </div>
+                      ))}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ) : (
+              <div className="text-sm text-base-content/40 italic">No supervision availability listed</div>
+            )
+          ) : displayLocs.length === 0 ? (
             <div className="text-sm text-base-content/40 italic">No availability listed</div>
           ) : (
             displayLocs.map((loc, i) => {
@@ -693,7 +748,8 @@ const PractitionerCard: React.FC<CardProps> = ({ p, locationFilter, isSelected, 
   );
 };
 
-export default function FindPractitioner({ practitioners }: Props) {
+export default function FindPractitioner({ practitioners: sourcePractitioners }: Props) {
+  const practitioners=useMemo(()=>sourcePractitioners.map(suppressKristaIntake),[sourcePractitioners]);
   // Gate state — mandatory qualifying questions
   const [gateClientType, setGateClientType] = useState("");
   const [gateAgeBracket, setGateAgeBracket] = useState("");
@@ -702,7 +758,7 @@ export default function FindPractitioner({ practitioners }: Props) {
 
   const [includeMonthly, setIncludeMonthly] = useState(false);
 
-  const gateComplete = !!gateClientType && !!gateAgeBracket && !!gateClientGender;
+  const gateComplete = !!gateClientType && (gateClientType === "Supervision" || (!!gateAgeBracket && !!gateClientGender));
 
   const AGE_BRACKET_MAP: Record<string, number> = {
     "Under 12": 10,
@@ -710,6 +766,7 @@ export default function FindPractitioner({ practitioners }: Props) {
     "16–17": 16,
     "18–24": 18,
     "25+": 25,
+    "60+": 60,
   };
   const gateAgeRep = gateAgeBracket ? (AGE_BRACKET_MAP[gateAgeBracket] ?? null) : null;
   const gateExcludeFemaleOnly = gateClientGender === "Male" || gateClientGender === "Non-binary / Other";
@@ -738,19 +795,37 @@ export default function FindPractitioner({ practitioners }: Props) {
   const [selectedNames, setSelectedNames] = useState<string[]>([]);
   const [showSendModal, setShowSendModal] = useState(false);
   const [sentSuccess, setSentSuccess] = useState(false);
+  const [cannotUseKristaSlots, setCannotUseKristaSlots] = useState(false);
+  const [nonComplexEmdrConfirmed, setNonComplexEmdrConfirmed] = useState(false);
+  const [kristaDiaryVerified, setKristaDiaryVerified] = useState(false);
+  useEffect(()=>{setKristaDiaryVerified(false);},[gateClientType,gateAgeRep,gateExcludeFemaleOnly,keyword,selectedLocations,locationMatchAll,gender,clientType,therapistType,afterHours,hasAvailability,includeMonthly,selectedPresentations,presentationsMatchAll,selectedModalities,modalitiesMatchAll,selectedStyles,stylesMatchAll,selectedBillingTypes,clientAge,selectedPractitionerNames,selectedAvailabilityTypes,selectedDays,daysMatchAll,cannotUseKristaSlots,nonComplexEmdrConfirmed]);
 
   const allPractitionerNames = useMemo(() => practitioners.map(p => p.name).sort(), [practitioners]);
 
   const results = useMemo(() => {
-    const filters: Filters = { keyword, locations: selectedLocations, locationMatchAll, gender, clientType, therapistType, afterHours, hasAvailability, presentations: selectedPresentations, presentationsMatchAll, modalities: selectedModalities, modalitiesMatchAll, styles: selectedStyles, stylesMatchAll, billingTypes: selectedBillingTypes, clientAge, practitionerNames: selectedPractitionerNames, availabilityTypes: selectedAvailabilityTypes, days: selectedDays, daysMatchAll, gateClientType, gateAgeRep, gateExcludeFemaleOnly };
+    const filters: Filters = { keyword, locations: selectedLocations, locationMatchAll, gender, clientType, therapistType, afterHours, hasAvailability, includeMonthly, presentations: selectedPresentations, presentationsMatchAll, modalities: selectedModalities, modalitiesMatchAll, styles: selectedStyles, stylesMatchAll, billingTypes: selectedBillingTypes, clientAge, practitionerNames: selectedPractitionerNames, availabilityTypes: selectedAvailabilityTypes, days: selectedDays, daysMatchAll, gateClientType, gateAgeRep, gateExcludeFemaleOnly, nonComplexEmdrConfirmed };
     return practitioners
       .filter(p => !(p as any).referral_only)
+      .filter(p => p.name !== KRISTA_NAME || !cannotUseKristaSlots)
       .map(p => ({ p, score: scoreMatch(p, filters) }))
       .filter(item => item.score >= 0)
       .sort((a, b) => b.score - a.score || a.p.name.localeCompare(b.p.name));
-  }, [practitioners, keyword, selectedLocations, locationMatchAll, gender, clientType, therapistType, afterHours, hasAvailability, selectedPresentations, presentationsMatchAll, selectedModalities, modalitiesMatchAll, selectedStyles, stylesMatchAll, selectedBillingTypes, clientAge, selectedPractitionerNames, selectedAvailabilityTypes, selectedDays, daysMatchAll, gateClientType, gateAgeRep, gateExcludeFemaleOnly]);
+  }, [practitioners, keyword, selectedLocations, locationMatchAll, gender, clientType, therapistType, afterHours, hasAvailability, includeMonthly, selectedPresentations, presentationsMatchAll, selectedModalities, modalitiesMatchAll, selectedStyles, stylesMatchAll, selectedBillingTypes, clientAge, selectedPractitionerNames, selectedAvailabilityTypes, selectedDays, daysMatchAll, gateClientType, gateAgeRep, gateExcludeFemaleOnly, cannotUseKristaSlots, nonComplexEmdrConfirmed]);
+
+  // Reuse ordinary clinical/demographic filters; relax only confirmed-slot constraints.
+  // No keyword inference of EMDR complexity, and no generic-trauma contact matching.
+  const potentialKrista = useMemo(() => {
+    if(isKristaIntakePaused(KRISTA_NAME))return null;
+    if (!gateComplete || !hasKristaClinicalSpecificity(selectedModalities, selectedPresentations, nonComplexEmdrConfirmed, modalitiesMatchAll)) return null;
+    const p=practitioners.find(p=>isKristaIndividualEligible(p,gateClientType,gateAgeRep,gateExcludeFemaleOnly));
+    if (!p || (!cannotUseKristaSlots && results.some(r=>r.p.name===KRISTA_NAME))) return null;
+    const clinical: Filters={keyword,locations:selectedLocations,locationMatchAll,gender,clientType,therapistType,afterHours:false,hasAvailability:false,includeMonthly,presentations:selectedPresentations,presentationsMatchAll,modalities:selectedModalities,modalitiesMatchAll,styles:selectedStyles,stylesMatchAll,billingTypes:selectedBillingTypes,clientAge,practitionerNames:selectedPractitionerNames,availabilityTypes:[],days:[],daysMatchAll:false,gateClientType,gateAgeRep,gateExcludeFemaleOnly,nonComplexEmdrConfirmed};
+    return scoreMatch(p,clinical)>=0?p:null;
+  },[practitioners,gateComplete,selectedModalities,selectedPresentations,nonComplexEmdrConfirmed,gateClientType,gateAgeRep,gateExcludeFemaleOnly,cannotUseKristaSlots,results,keyword,selectedLocations,locationMatchAll,gender,clientType,therapistType,includeMonthly,presentationsMatchAll,modalitiesMatchAll,selectedStyles,stylesMatchAll,selectedBillingTypes,clientAge,selectedPractitionerNames]);
 
   const clearFilters = () => {
+    setCannotUseKristaSlots(false); setNonComplexEmdrConfirmed(false);
+    setKristaDiaryVerified(false);
     setKeyword(""); setSelectedLocations([]); setLocationMatchAll(false); setGender(""); setClientType("");
     setTherapistType(""); setAfterHours(false); setHasAvailability(false);
     setSelectedPresentations([]); setPresentationsMatchAll(false);
@@ -781,7 +856,7 @@ export default function FindPractitioner({ practitioners }: Props) {
   // Preserve selection order — map names in the order they were selected
   const selectedPractitioners = selectedNames
     .map(name => practitioners.find(p => p.name === name))
-    .filter((p): p is typeof practitioners[0] => !!p);
+    .filter((p): p is typeof practitioners[0] => !!p && (p.name!==KRISTA_NAME || (kristaDiaryVerified && results.some(r=>r.p.name===KRISTA_NAME))));
 
   const handleSent = () => {
     setShowSendModal(false);
@@ -823,25 +898,24 @@ export default function FindPractitioner({ practitioners }: Props) {
               Session type {gateClientType && <span className="text-green-600 ml-1">✓</span>}
             </div>
             <div className="flex gap-2 flex-wrap">
-              {["Individual", "Couples"].map(opt => (
-                <button key={opt} onClick={() => setGateClientType(opt)}
+              {["Individual", "Couples", "Supervision"].map(opt => (
+                <button key={opt} onClick={() => { setGateClientType(opt); if (opt === "Supervision") { setGateAgeBracket(""); setGateClientGender(""); } }}
                   className="px-4 py-1.5 rounded-full text-sm font-medium border transition-all"
                   style={gateClientType === opt
                     ? { backgroundColor: "#2C244C", color: "white", borderColor: "#2C244C" }
                     : { backgroundColor: "white", color: "#2C244C", borderColor: "#CDA8BA" }}>
-                  {opt === "Individual" ? "👤 Individual" : "👥 Couples"}
+                  {opt === "Individual" ? "👤 Individual" : opt === "Couples" ? "👥 Couples" : "🎓 Supervision"}
                 </button>
               ))}
             </div>
           </div>
 
-          {/* Q2: Client age */}
-          <div>
+          {gateClientType !== "Supervision" && (<div>
             <div className="text-xs font-semibold mb-2" style={{ color: "#2C244C" }}>
               Client's age {gateAgeBracket && <span className="text-green-600 ml-1">✓</span>}
             </div>
             <div className="flex gap-2 flex-wrap">
-              {["Under 12", "12–15", "16–17", "18–24", "25+"].map(opt => (
+              {["Under 12", "12–15", "16–17", "18–24", "25+", "60+"].map(opt => (
                 <button key={opt} onClick={() => setGateAgeBracket(opt)}
                   className="px-4 py-1.5 rounded-full text-sm font-medium border transition-all"
                   style={gateAgeBracket === opt
@@ -851,11 +925,11 @@ export default function FindPractitioner({ practitioners }: Props) {
                 </button>
               ))}
             </div>
-          </div>
+          </div>)}
         </div>
 
         {/* Row 2: Client gender */}
-        <div>
+        {gateClientType !== "Supervision" && (<div>
           <div className="text-xs font-semibold mb-2" style={{ color: "#2C244C" }}>
             Client's gender {gateClientGender && <span className="text-green-600 ml-1">✓</span>}
           </div>
@@ -875,7 +949,7 @@ export default function FindPractitioner({ practitioners }: Props) {
               ⚠️ Alex Barry, Chiara Killey and Clare Tuttleby accept female clients only.
             </div>
           )}
-        </div>
+        </div>)}
 
         {/* Monthly availability toggle */}
         <div className="mt-4 pt-4" style={{ borderTop: "1px solid #CDA8BA" }}>
@@ -1128,6 +1202,13 @@ export default function FindPractitioner({ practitioners }: Props) {
         </div>
       </div>
 
+      {gateComplete && gateClientType==='Individual' && !isKristaIntakePaused(KRISTA_NAME) && <div className="rounded-lg border p-3 mb-4 text-sm" style={{borderColor:'#CDA8BA'}}>
+        <div className="font-semibold">Krista — staff referral checks</div>
+        <label className="flex gap-2 mt-2"><input type="checkbox" checked={cannotUseKristaSlots} onChange={e=>{setCannotUseKristaSlots(e.target.checked);setSelectedNames(n=>n.filter(x=>x!==KRISTA_NAME));}} />Client cannot attend Krista’s confirmed fortnightly Monday 8:30am–10am or 12pm–1:30pm slots (from 19 October 2026).</label>
+        <label className="flex gap-2 mt-2"><input type="checkbox" checked={nonComplexEmdrConfirmed} onChange={e=>setNonComplexEmdrConfirmed(e.target.checked)} />For Krista EMDR referrals: staff have confirmed the presentation is non-complex. Generic trauma/PTSD is not sufficient.</label>
+        <p className="text-xs mt-2">Select an IFS modality, non-complex EMDR, or difficult psychedelic experience / bad-trip integration presentation for contact-only matching. Psychedelic-assisted therapy is not offered here.</p>
+      </div>}
+
       {!gateComplete ? (
         <div className="card bg-white shadow-sm border" style={{ borderColor: "#CDA8BA" }}>
           <div className="card-body text-center py-12">
@@ -1152,19 +1233,31 @@ export default function FindPractitioner({ practitioners }: Props) {
                 isSelected={selectedNames.includes(item.p.name)}
                 onToggleSelect={toggleSelect}
                 includeMonthly={includeMonthly}
+                gateClientType={gateClientType}
+                selectedPresentations={selectedPresentations}
+                selectedModalities={selectedModalities}
+                diaryVerified={item.p.name===KRISTA_NAME && kristaDiaryVerified}
+                onDiaryVerify={verified=>{setKristaDiaryVerified(verified);if(!verified)setSelectedNames(n=>n.filter(x=>x!==KRISTA_NAME));}}
               />
             </div>
           ))}
         </div>
       )}
 
-      {/* Floating Send Bar */}
-      {selectedNames.length > 0 && (
+      {potentialKrista && <section className="rounded-lg border p-4 mt-4" style={{borderColor:'#8D5273',backgroundColor:'#fdf8fb'}} aria-label="Potential match — contact Krista">
+        <h3 className="font-bold">Potential match — contact Krista</h3>
+        <div className="text-xs font-bold mt-1">STAFF ONLY — NOT BOOKABLE / NOT FOR CLIENT EMAIL</div>
+        <p className="text-sm mt-2">{potentialKrista.name} may clinically fit. Contact Krista to discuss an individual referral and confirm a suitable time. No appointment outside the two fixed slots is confirmed. Tuesdays are telehealth only; extra Monday afternoon appointments require Anna’s room approval.</p>
+        <p className="text-sm mt-2">IFS; non-complex EMDR only (new to EMDR); difficult psychedelic experience integration; interest in long-term work. Do not offer psychedelic-assisted therapy.</p>
+      </section>}
+
+      {/* Contact-only candidates never enter selectedPractitioners or the send modal. */}
+      {selectedPractitioners.length > 0 && (
         <div className="fixed bottom-0 left-0 right-0 z-50 p-4 bg-white shadow-lg" style={{ borderTop: "2px solid #CDA8BA" }}>
           <div className="max-w-4xl mx-auto flex items-center justify-between gap-4">
             <div className="flex items-center gap-2">
               <CheckSquare size={18} style={{ color: "#8D5273" }} />
-              <span className="font-semibold">{selectedNames.length} practitioner{selectedNames.length !== 1 ? "s" : ""} selected</span>
+              <span className="font-semibold">{selectedPractitioners.length} practitioner{selectedPractitioners.length !== 1 ? "s" : ""} selected</span>
               <span className="text-base-content/50 text-sm hidden sm:inline">
                 — {selectedPractitioners.map(p => p.name.split(" ")[0]).join(", ")}
               </span>
@@ -1195,6 +1288,9 @@ export default function FindPractitioner({ practitioners }: Props) {
           locationFilter={selectedLocations.length === 1 ? selectedLocations[0] : ""}
           onClose={() => setShowSendModal(false)}
           onSent={handleSent}
+          includeMonthly={includeMonthly}
+          sessionType={gateClientType}
+          clientAge60Plus={gateClientType !== "Supervision" && gateAgeBracket === "60+"}
         />
       )}
 

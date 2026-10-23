@@ -67,20 +67,29 @@ export const PRACTITIONERS_DATA = [
         "location": "Greville St, Prahran"
       },
       {
-        "availability": "",
+        "availability": "Wednesdays at 1:30pm (Fortnightly: Starting 11th Nov)\nWednesdays at 1:30pm (Monthly: Starting 2nd Dec)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Telehealth"
       },
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "",
+        "availability": "Mondays at 6:30pm (Fortnightly: Starting 7th Dec)\nMondays at 3:30pm (Fortnightly: Starting 9th Nov)\nFridays at 11am (Fortnightly: Starting 6th Nov)\nFridays at 9am (Monthly: Starting 13th Nov)\nTuesdays at 5:30pm (Monthly: Starting 10th Nov)\nMondays at 4:30pm (Monthly: Starting 7th Dec)",
         "weekly_availability": [],
         "fortnightly_availability": []
       }
     ],
     "last_updated": "2026-07-19",
-    "availability": [],
+    "availability": [
+      "Mondays at 6:30pm (Fortnightly: Starting 7th Dec) — Burke Rd, Camberwell",
+      "Mondays at 3:30pm (Fortnightly: Starting 9th Nov) — Burke Rd, Camberwell",
+      "Fridays at 11am (Fortnightly: Starting 6th Nov) — Burke Rd, Camberwell",
+      "Fridays at 9am (Monthly: Starting 13th Nov) — Burke Rd, Camberwell",
+      "Tuesdays at 5:30pm (Monthly: Starting 10th Nov) — Burke Rd, Camberwell",
+      "Mondays at 4:30pm (Monthly: Starting 7th Dec) — Burke Rd, Camberwell",
+      "Wednesdays at 1:30pm (Fortnightly: Starting 11th Nov) — Telehealth",
+      "Wednesdays at 1:30pm (Monthly: Starting 2nd Dec) — Telehealth"
+    ],
     "short_bio": "Trauma-informed psychologist supporting adults across sectors with integrative EMDR, CBT, schema, and somatic therapies in neuroaffirming, sex-positive, LGBTQIA+ inclusive practice.",
     "weekly_availability": [],
     "fortnightly_availability": [
@@ -149,7 +158,8 @@ export const PRACTITIONERS_DATA = [
       "Gender Fluid",
       "Gender Nonconforming",
       "Gender Queer"
-    ]
+    ],
+    "client_note": ""
   },
   {
     "id": 25,
@@ -278,16 +288,19 @@ export const PRACTITIONERS_DATA = [
     "locations": [
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "Mondays at 4pm (Fortnightly: Starting 28th Sept)\nMondays at 4pm (Monthly: Starting 19th Oct)\nMondays at 1pm (Monthly: Starting 5th Oct)",
+        "availability": "Mondays at 11am (Fortnightly: Starting 16th Nov)\nMondays at 12pm (Fortnightly: Starting 26th Oct)\nMondays at 10am (Fortnightly: Starting 16th Nov)\nMondays at 3pm (Monthly: Starting 30th Nov)\nSaturdays at 12pm (Monthly: Starting 21st Nov)\nMondays at 1pm (Monthly: Starting 30th Nov)",
         "weekly_availability": [],
         "fortnightly_availability": []
       }
     ],
     "last_updated": "2026-07-19",
     "availability": [
-      "Mondays at 4pm (Fortnightly: Starting 28th Sept) — Burke Rd, Camberwell",
-      "Mondays at 4pm (Monthly: Starting 19th Oct) — Burke Rd, Camberwell",
-      "Mondays at 1pm (Monthly: Starting 5th Oct) — Burke Rd, Camberwell"
+      "Mondays at 11am (Fortnightly: Starting 16th Nov) — Burke Rd, Camberwell",
+      "Mondays at 12pm (Fortnightly: Starting 26th Oct) — Burke Rd, Camberwell",
+      "Mondays at 10am (Fortnightly: Starting 16th Nov) — Burke Rd, Camberwell",
+      "Mondays at 3pm (Monthly: Starting 30th Nov) — Burke Rd, Camberwell",
+      "Saturdays at 12pm (Monthly: Starting 21st Nov) — Burke Rd, Camberwell",
+      "Mondays at 1pm (Monthly: Starting 30th Nov) — Burke Rd, Camberwell"
     ],
     "short_bio": "Rebekah is a relationship-focused mental health social worker using counselling, psychotherapy and ACT to help individuals and couples strengthen connection and wellbeing.",
     "weekly_availability": [],
@@ -342,7 +355,8 @@ export const PRACTITIONERS_DATA = [
       "Male",
       "Non Binary",
       "Transgender"
-    ]
+    ],
+    "client_note": ""
   },
   {
     "id": 5,
@@ -357,7 +371,7 @@ export const PRACTITIONERS_DATA = [
     "client_types": [
       "Individual"
     ],
-    "alert": "No new clients until August",
+    "alert": "No new clients until Jan 2027",
     "presentations": [
       "Acute Stress Reaction",
       "Adjustment Disorder",
@@ -433,7 +447,8 @@ export const PRACTITIONERS_DATA = [
       "Gender Nonconforming",
       "Gender Queer",
       "Male"
-    ]
+    ],
+    "client_note": ""
   },
   {
     "id": 3,
@@ -454,6 +469,9 @@ export const PRACTITIONERS_DATA = [
       "Anxiety - Separation",
       "Anxiety - Social Anxiety Disorder",
       "Attachment Difficulties",
+      "Attention-Deficit/Hyperactivity Disorder (ADHD) — Suspected or Actively Impacting",
+      "Autism Spectrum Disorder (ASD) — Diagnosed & Managed",
+      "Autism Spectrum Disorder (ASD) — Suspected or Actively Impacting",
       "Body Dysmorphic Disorder (BDD)",
       "Body Image Concerns",
       "Burnout — Carer / Family",
@@ -546,7 +564,7 @@ export const PRACTITIONERS_DATA = [
     "locations": [
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "Fridays at 9am (Fortnightly: Starting 16th Oct)\nMondays at 9am (Fortnightly: Starting 5th Oct)\nFridays at 9am (Monthly: Starting 23rd Oct)\nFridays at 10am (Monthly: Starting 23rd Oct)\nMondays at 8am (Monthly: Starting 12th Oct)\nMondays at 1pm (Monthly: Starting 26th Oct)",
+        "availability": "Mondays at 10am (Fortnightly: Starting 30th Nov)\nMondays at 9am (Fortnightly: Starting 2nd Nov)\nFridays at 10am (Monthly: Starting 6th Nov)\nFridays at 9am (Monthly: Starting 20th Nov)\nMondays at 8am (Monthly: Starting 7th Dec)\nMondays at 1pm (Monthly: Starting 26th Oct)",
         "weekly_availability": [],
         "fortnightly_availability": []
       },
@@ -559,11 +577,11 @@ export const PRACTITIONERS_DATA = [
     ],
     "last_updated": "2026-07-19",
     "availability": [
-      "Fridays at 9am (Fortnightly: Starting 16th Oct) — Burke Rd, Camberwell",
-      "Mondays at 9am (Fortnightly: Starting 5th Oct) — Burke Rd, Camberwell",
-      "Fridays at 9am (Monthly: Starting 23rd Oct) — Burke Rd, Camberwell",
-      "Fridays at 10am (Monthly: Starting 23rd Oct) — Burke Rd, Camberwell",
-      "Mondays at 8am (Monthly: Starting 12th Oct) — Burke Rd, Camberwell",
+      "Mondays at 10am (Fortnightly: Starting 30th Nov) — Burke Rd, Camberwell",
+      "Mondays at 9am (Fortnightly: Starting 2nd Nov) — Burke Rd, Camberwell",
+      "Fridays at 10am (Monthly: Starting 6th Nov) — Burke Rd, Camberwell",
+      "Fridays at 9am (Monthly: Starting 20th Nov) — Burke Rd, Camberwell",
+      "Mondays at 8am (Monthly: Starting 7th Dec) — Burke Rd, Camberwell",
       "Mondays at 1pm (Monthly: Starting 26th Oct) — Burke Rd, Camberwell"
     ],
     "short_bio": "Amy is a warm, LGBTQIAP+ friendly clinical psychologist supporting clients 16+ with mood, relationship and eating difficulties using flexible, evidence-based therapies.",
@@ -632,7 +650,8 @@ export const PRACTITIONERS_DATA = [
       "Male",
       "Non Binary",
       "Transgender"
-    ]
+    ],
+    "client_note": ""
   },
   {
     "id": 27,
@@ -743,7 +762,7 @@ export const PRACTITIONERS_DATA = [
     "locations": [
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "Tuesdays at 1pm (Fortnightly: Starting 29th Sept)\nWednesdays at 10am (Fortnightly: Starting 30th Sept)\nTuesdays at 12pm (Monthly: Starting 29th Sept)\nWednesdays at 8am (Monthly: Starting 14th Oct)",
+        "availability": "Wednesdays at 12pm (Monthly: Starting 9th Dec)\nTuesdays at 12pm (Monthly: Starting 24th Nov)\nWednesdays at 8am (Monthly: Starting 9th Dec)",
         "weekly_availability": [],
         "fortnightly_availability": [
           {
@@ -756,10 +775,9 @@ export const PRACTITIONERS_DATA = [
     ],
     "last_updated": "2026-07-19",
     "availability": [
-      "Tuesdays at 1pm (Fortnightly: Starting 29th Sept) — Burke Rd, Camberwell",
-      "Wednesdays at 10am (Fortnightly: Starting 30th Sept) — Burke Rd, Camberwell",
-      "Tuesdays at 12pm (Monthly: Starting 29th Sept) — Burke Rd, Camberwell",
-      "Wednesdays at 8am (Monthly: Starting 14th Oct) — Burke Rd, Camberwell"
+      "Wednesdays at 12pm (Monthly: Starting 9th Dec) — Burke Rd, Camberwell",
+      "Tuesdays at 12pm (Monthly: Starting 24th Nov) — Burke Rd, Camberwell",
+      "Wednesdays at 8am (Monthly: Starting 9th Dec) — Burke Rd, Camberwell"
     ],
     "short_bio": "A warm clinical psychology registrar integrating IFS, CBT, ACT, schema and mindfulness to support adults toward self-understanding, compassion and emotionally grounded change.",
     "weekly_availability": [],
@@ -805,7 +823,8 @@ export const PRACTITIONERS_DATA = [
       "Male",
       "Non Binary",
       "Transgender"
-    ]
+    ],
+    "client_note": ""
   },
   {
     "id": 17,
@@ -814,7 +833,7 @@ export const PRACTITIONERS_DATA = [
     "fees": "B/H: $235\nA/H: $275",
     "medicare_rebate": "101.55",
     "gender": "Female",
-    "alert": "Anna 27/05- No complex clients for a while per 86373",
+    "alert": "",
     "presentations": [
       "Academic Pressure & Performance Stress",
       "Acquired Brain Injury (ABI) — Adjustment & Psychological Support",
@@ -973,7 +992,7 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/dr-maddie-brygel-psychologist/",
     "locations": [
       {
-        "availability": "Thursdays at 11am (Fortnightly: Starting 24th Sept)\nMondays at 8am (Fortnightly: Starting 19th Oct)\nMondays at 9am (Fortnightly: Starting 28th Sept)\nThursdays at 9am (Fortnightly: Starting 24th Sept)\nThursdays at 11am (Monthly: Starting 17th Sept)\nMondays at 1pm (Monthly: Starting 12th Oct)\nFridays at 8am (Monthly: Starting 2nd Oct)\nThursdays at 8am (Monthly: Starting 8th Oct)",
+        "availability": "Thursdays at 12pm (Fortnightly: Starting 19th Nov)\nTuesdays at 12pm (Fortnightly: Starting 3rd Nov)\nThursdays at 10am (Fortnightly: Starting 3rd Dec)\nFridays at 1pm (Monthly: Starting 4th Dec)\nThursdays at 8am (Monthly: Starting 5th Nov)\nMondays at 1pm (Monthly: Starting 9th Nov)\nMondays at 10am (Monthly: Starting 9th Nov)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
@@ -1019,14 +1038,13 @@ export const PRACTITIONERS_DATA = [
     ],
     "last_updated": "2026-07-19",
     "availability": [
-      "Thursdays at 11am (Fortnightly: Starting 24th Sept) — Greville St, Prahran",
-      "Mondays at 8am (Fortnightly: Starting 19th Oct) — Greville St, Prahran",
-      "Mondays at 9am (Fortnightly: Starting 28th Sept) — Greville St, Prahran",
-      "Thursdays at 9am (Fortnightly: Starting 24th Sept) — Greville St, Prahran",
-      "Thursdays at 11am (Monthly: Starting 17th Sept) — Greville St, Prahran",
-      "Mondays at 1pm (Monthly: Starting 12th Oct) — Greville St, Prahran",
-      "Fridays at 8am (Monthly: Starting 2nd Oct) — Greville St, Prahran",
-      "Thursdays at 8am (Monthly: Starting 8th Oct) — Greville St, Prahran"
+      "Thursdays at 12pm (Fortnightly: Starting 19th Nov) — Greville St, Prahran",
+      "Tuesdays at 12pm (Fortnightly: Starting 3rd Nov) — Greville St, Prahran",
+      "Thursdays at 10am (Fortnightly: Starting 3rd Dec) — Greville St, Prahran",
+      "Fridays at 1pm (Monthly: Starting 4th Dec) — Greville St, Prahran",
+      "Thursdays at 8am (Monthly: Starting 5th Nov) — Greville St, Prahran",
+      "Mondays at 1pm (Monthly: Starting 9th Nov) — Greville St, Prahran",
+      "Mondays at 10am (Monthly: Starting 9th Nov) — Greville St, Prahran"
     ],
     "short_bio": "A psychologist trained in both clinical and forensic psychology, lecturer, and researcher supporting adults with anxiety, depression, trauma, grief, addiction and women’s mental health",
     "weekly_availability": [
@@ -1097,7 +1115,7 @@ export const PRACTITIONERS_DATA = [
       }
     ],
     "style": "Active Listener, Artistic, Calm, Compassionate, Conscientiousness, Creative, Direct, Empathetic, Existential, Extravert, Gentle, Good at tough Love, Humerous, Humorous, Non Judgemental, Openness, Outgoing, Sensitive and Gentle, Solution Oriented, Talkative, Teach new Skills, Warm",
-    "working_hours": "Working Days: Mondays 8am to 2PM (Telehealth Only), Tuesdays 8am to 2PM (Camberwell), Thursdays 8am to 2PM (Prahran) & Fridays 8am to 2PM (Prahran)",
+    "working_hours": "Mondays, Tuesdays, Thursdays and Fridays, 8am to 2pm — Prahran or Telehealth.",
     "location_notes": {
       "Wattletree Rd, Malvern": "Please Note: As of 9th June 2026 Maddie's Friday appointments will be moving from our Malvern Clinic to our Prahran Clinic on Greville Street."
     },
@@ -1123,7 +1141,8 @@ export const PRACTITIONERS_DATA = [
     "genderOfClientsSeen": [
       "Female",
       "Male"
-    ]
+    ],
+    "client_note": "Please note: Maddie's in-person appointments on Tuesdays and Thursdays are at Prahran before 11 January 2027 and will move to Camberwell from 11 January 2027. Monday and Friday in-person appointments will remain at Prahran. Telehealth appointments remain available."
   },
   {
     "id": 19,
@@ -1143,6 +1162,7 @@ export const PRACTITIONERS_DATA = [
       "Anxiety - Health (Illness Anxiety / Hypochondria)",
       "Anxiety - Social Anxiety Disorder",
       "Attachment Difficulties",
+      "Bad Trip Integration",
       "Burnout — Carer / Family",
       "Burnout — Work-Related",
       "Depression — Major Depressive Disorder",
@@ -1185,7 +1205,7 @@ export const PRACTITIONERS_DATA = [
     "therapist_type": "Clinical Psychologist",
     "additional_info": "OCD (Mild to Moderate Only)\n \n Regarding substance use: Able to work with patients able to abstain from substance use / for whom substance use is one of a range of avoidance strategies (e.g. drinking to manage anxiety in social situations / to self-sabotage). \n \n For patients unable to abstain from substance use / with substance use dependance it is better for patients to address this first with a substance use focussed counsellor before addressing underlying emotional issues.",
     "qualifications": "",
-    "bio": "Pain is part of being human, the price we pay for loving and wanting to love. \n \nEven the most fortunate of us have been wounded.  And the feelings which tell us about our hurts are so very human too.  As painful as they can be, our feelings give texture and meaning to life, give us direction and help us to connect with ourselves and others. \n \nSadly, many of us have learned very early on and without meaning to that we should hide or ignore or punish these feelings, and when we do this we can cause further suffering which shows up as anxiety, depression, relationship difficulties and a whole host of other mental health difficulties. \n \nBut if we can turn towards our painful feelings, listen to what they have to tell us and feel them deeply rather than avoiding them in unhelpful ways, then we can find healing on the other side and live a life with more freedom and connection.\n \nWhat is hurt in relationship must be healed in relationship, and I see my role as your therapist as walking with you step by step as you begin to welcome these exiled feelings back home, in whatever stage of the journey you are on.\n\nMy therapy approach is primarily informed by Intensive Short Term Dynamic Psychotherapy (ISTDP), an evidence-based emotion-focussed therapy which uses the therapy relationship to help people to stop avoiding their feelings in unhelpful ways which lead to anxiety, depression, somatic complaints and relationship difficulties.  However, as an integrative therapist I draw on other therapies when appropriate to suit the needs of the individual, including Cognitive Behavioural Therapy (CBT) and Internal Family Systems Therapy (IFS).  \n\nI have a developing interest and training in the new research around psychedelic assisted therapies and I have also received training in ‘bad trip integration’ - helping people to integrate negative experiences of psychedelics.  I have a background in Social Psychology and Cultural History research and I am fascinated by what we can learn",
+    "bio": "Pain is part of being human, the price we pay for loving and wanting to love. \n \nEven the most fortunate of us have been wounded.  And the feelings which tell us about our hurts are so very human too.  As painful as they can be, our feelings give texture and meaning to life, give us direction and help us to connect with ourselves and others. \n \nSadly, many of us have learned very early on and without meaning to that we should hide or ignore or punish these feelings, and when we do this we can cause further suffering which shows up as anxiety, depression, relationship difficulties and a whole host of other mental health difficulties. \n \nBut if we can turn towards our painful feelings, listen to what they have to tell us and feel them deeply rather than avoiding them in unhelpful ways, then we can find healing on the other side and live a life with more freedom and connection.\n \nWhat is hurt in relationship must be healed in relationship, and I see my role as your therapist as walking with you step by step as you begin to welcome these exiled feelings back home, in whatever stage of the journey you are on.\n\nMy therapy approach is primarily informed by Intensive Short Term Dynamic Psychotherapy (ISTDP), an evidence-based emotion-focussed therapy which uses the therapy relationship to help people to stop avoiding their feelings in unhelpful ways which lead to anxiety, depression, somatic complaints and relationship difficulties.  However, as an integrative therapist I draw on a range of evidence-based therapies when appropriate to suit the needs of the individual. \n\nI have a developing interest and training in the new research around psychedelic assisted therapies and I have also received training in ‘bad trip integration’ - helping people to integrate negative experiences of psychedelics.  I have a background in Social Psychology and Cultural History research and I am fascinated by what we can learn about human suffering and wellbeing from our early human ancestors and",
     "pronouns": "He/Him",
     "billing_types": "Medicare Rebate, NDIS, Self Funded, Third Party",
     "languages": [
@@ -1205,33 +1225,17 @@ export const PRACTITIONERS_DATA = [
       },
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "Wednesdays at 1pm (Monthly: Starting 7th Oct)\nThursdays at 9am (Monthly: Starting 1st Oct)",
+        "availability": "Wednesdays at 1pm (Fortnightly: Starting 18th Nov)",
         "weekly_availability": [],
         "fortnightly_availability": []
       }
     ],
     "last_updated": "2026-07-19",
     "availability": [
-      "Wednesdays at 1pm (Monthly: Starting 7th Oct) — Burke Rd, Camberwell",
-      "Thursdays at 9am (Monthly: Starting 1st Oct) — Burke Rd, Camberwell"
+      "Wednesdays at 1pm (Fortnightly: Starting 18th Nov) — Burke Rd, Camberwell"
     ],
-    "short_bio": "An integrative ISTDP, CBT and IFS therapist helping clients face painful feelings, heal relational wounds and integrate difficult psychedelic experiences.",
+    "short_bio": "An integrative ISTDP, and CBT therapist helping clients face painful feelings, heal relational wounds and integrate difficult psychedelic experiences.",
     "weekly_availability": [],
-    "supervision_availability": [
-      {
-        "location": "Telehealth",
-        "days": [
-          {
-            "day": "Monday",
-            "times": [
-              "9am",
-              "10am",
-              "11am"
-            ]
-          }
-        ]
-      }
-    ],
     "fortnightly_availability": [
       {
         "location": "Wattletree Rd, Malvern",
@@ -1272,24 +1276,24 @@ export const PRACTITIONERS_DATA = [
     "genderOfClientsSeen": [
       "Female",
       "Male"
-    ]
+    ],
+    "client_note": ""
   },
   {
     "id": 16,
     "name": "Dr Krista De Castella",
     "title": "Clinical Psychologist, Psychotherapist",
-    "fees": "B/H: $275\nA/H: $315",
+    "fees": "B/H: $275\nA/H: $315\n90-minute appointments: $345 (Krista De Castella only). 60-minute appointments remain $275 during business hours. Existing standard after-hours fee for 60-minute appointments is unchanged; confirm any after-hours 90-minute booking with admin.",
     "medicare_rebate": "149.05",
     "gender": "Female",
-    "alert": ",",
-    "presentations": "ADD and ADHD; Agoraphobia; Anxiety; Asperger Syndrome; Attachment Disorder; Autism Spectrum Disorders (ASD); Avoidant Personality Disorder; Burnout; Career transition; Complex Trauma; Fear of Failure; General Adaptation Disorder (Adjustment Disorder); Generalized Anxiety Disorder (GAD); Imposter Syndrome; Intermittent Explosive Disorder (Uncontrolled Anger); LGBTIQA+; Life Transitions; Low self esteem; Non-Monogomy/ Polyamory; Pain Management; Panic Disorder & Panic Attacks; Perfectionism; Pregnancy and Postnatal Depression Anxiety; Relationship breakdown; Sexual problems; Social anxiety disorder / Social Phobia; Stress; Trauma",
+    "alert": "",
+    "presentations": "ADD and ADHD; Agoraphobia; Anxiety; Asperger Syndrome; Attachment Disorder; Autism Spectrum Disorders (ASD); Avoidant Personality Disorder; Burnout; Career transition; Complex Trauma; Fear of Failure; General Adaptation Disorder (Adjustment Disorder); Generalized Anxiety Disorder (GAD); Imposter Syndrome; Intermittent Explosive Disorder (Uncontrolled Anger); LGBTIQA+; Life Transitions; Low self esteem; Non-Monogomy/ Polyamory; Pain Management; Panic Disorder & Panic Attacks; Perfectionism; Pregnancy and Postnatal Depression Anxiety; Relationship breakdown; Sexual problems; Social anxiety disorder / Social Phobia; Stress; Trauma; Difficult Psychedelic Experience / Bad-Trip Integration",
     "modalities": [
       "Eye Movement Desensitisation and Reprocessing (EMDR)",
       "Internal Family Systems (IFS) / Parts Work (Level 1 Certified)"
     ],
     "client_types": [
-      "Individual",
-      "Couples"
+      "Individual"
     ],
     "age_range": [
       "16 Yrs +"
@@ -1323,27 +1327,30 @@ export const PRACTITIONERS_DATA = [
       }
     ],
     "last_updated": "2026-07-19",
-    "short_bio": "A clinical psychologist and psychedelic-assisted therapist integrating IFS, mindfulness and attachment-based approaches to support values-led healing, growth and non-ordinary states.",
+    "short_bio": "A clinical psychologist integrating IFS, mindfulness and attachment-based approaches, with an interest in long-term individual work and difficult psychedelic experience integration. Psychedelic-assisted therapy is not offered by PsychologyCare.",
     "availability": [],
     "weekly_availability": [],
     "fortnightly_availability": [],
     "style": "A parent, Active Listener, Calm, Conscientiousness, Extravert, Humerous, Humorous, Openness, Outgoing, Sensitive and Gentle, Spiritual, Talkative",
-    "location_notes": {
-      "Wattletree Rd, Malvern": "Please Note: As of 9th June 2026 Krista's Monday appointments will be moving from our Malvern Clinic to our new Clinic on Burke Road, Camberwell."
-    },
-    "working_hours": "Mondays in Camberwell & Tuesdays via Telehealth",
+    "location_notes": {},
+    "working_hours": "",
     "photo_url": "https://pc-prac-availability.netlify.app/photos/dr-krista-de-castella_thumb.jpg",
     "photo_b64": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQIAHAAcAAD/4QwOaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCI/PiA8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJBZG9iZSBYTVAgQ29yZSA5LjEtYzAwMiA3OS5hNmE2Mzk2OGEsIDIwMjQvMDMvMDYtMTE6NTI6MDUgICAgICAgICI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIgeG1sbnM6dGlmZj0iaHR0cDovL25zLmFkb2JlLmNvbS90aWZmLzEuMC8iIHhtbG5zOmV4aWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20vZXhpZi8xLjAvIiB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iIHhtbG5zOnBob3Rvc2hvcD0iaHR0cDovL25zLmFkb2JlLmNvbS9waG90b3Nob3AvMS4wLyIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0RXZ0PSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VFdmVudCMiIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBXZWIgKDIwMjQuMTIuMS4wIGZmMDMxODMxYWVlKSAoR29vZ2xlIENocm9tZSkiIHhtcDpDcmVhdGVEYXRlPSIyMDI0LTA2LTIxVDEyOjE1OjM4KzEwOjAwIiB4bXA6TW9kaWZ5RGF0ZT0iMjAyNC0wNi0yMVQxMjoxNTo1NSsxMDowMCIgeG1wOk1ldGFkYXRhRGF0ZT0iMjAyNC0wNi0yMVQxMjoxNTo1NSsxMDowMCIgdGlmZjpPcmllbnRhdGlvbj0iMSIgdGlmZjpZQ2JDclBvc2l0aW9uaW5nPSIxIiB0aWZmOlhSZXNvbHV0aW9uPSI3MjAwMDAvMTAwMDAiIHRpZmY6WVJlc29sdXRpb249IjcyMDAwMC8xMDAwMCIgdGlmZjpSZXNvbHV0aW9uVW5pdD0iMiIgZXhpZjpFeGlmVmVyc2lvbj0iMDIyMSIgZXhpZjpGbGFzaHBpeFZlcnNpb249IjAxMDAiIGV4aWY6Q29sb3JTcGFjZT0iNjU1MzUiIGV4aWY6UGl4ZWxYRGltZW5zaW9uPSIyMjQyIiBleGlmOlBpeGVsWURpbWVuc2lvbj0iMjI0MiIgZXhpZjpTY2VuZUNhcHR1cmVUeXBlPSIwIiBkYzpmb3JtYXQ9ImltYWdlL3BuZyIgcGhvdG9zaG9wOkNvbG9yTW9kZT0iMyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpiZTYwYTkyYi0zYjlkLTRiZjMtYjU5ZS02ZWI3ZWMzMmE4NzAiIHhtcE1NOkRvY3VtZW50SUQ9ImFkb2JlOmRvY2lkOnBob3Rvc2hvcDo2NjBjNzc5Ny1kMWNjLWYyNDAtOTUyNi04NGU5YTJkMGU2ZjYiIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo2NDk2YTRjNy0wY2E2LTRhZjMtYjdlNi1lZWM3ZjdhZTU2NGUiPiA8ZXhpZjpDb21wb25lbnRzQ29uZmlndXJhdGlvbj4gPHJkZjpTZXE+IDxyZGY6bGk+MTwvcmRmOmxpPiA8cmRmOmxpPjI8L3JkZjpsaT4gPHJkZjpsaT4zPC9yZGY6bGk+IDxyZGY6bGk+MDwvcmRmOmxpPiA8L3JkZjpTZXE+IDwvZXhpZjpDb21wb25lbnRzQ29uZmlndXJhdGlvbj4gPHhtcE1NOkhpc3Rvcnk+IDxyZGY6U2VxPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0iY3JlYXRlZCIgc3RFdnQ6aW5zdGFuY2VJRD0ieG1wLmlpZDo2NDk2YTRjNy0wY2E2LTRhZjMtYjdlNi1lZWM3ZjdhZTU2NGUiIHN0RXZ0OndoZW49IjIwMjQtMDYtMjFUMTI6MTU6MzgrMTA6MDAiIHN0RXZ0OnNvZnR3YXJlQWdlbnQ9IkFkb2JlIFBob3Rvc2hvcCBXZWIgKDIwMjQuMTIuMS4wIGZmMDMxODMxYWVlKSAoR29vZ2xlIENocm9tZSkiLz4gPHJkZjpsaSBzdEV2dDphY3Rpb249InNhdmVkIiBzdEV2dDppbnN0YW5jZUlEPSJ4bXAuaWlkOmVmNmYxZWU4LTZmMTMtNGU1Yy1iYmY2LTIxMTE3MmQzZDhhMSIgc3RFdnQ6d2hlbj0iMjAyNC0wNi0yMVQxMjoxNTo1MysxMDowMCIgc3RFdnQ6c29mdHdhcmVBZ2VudD0iQWRvYmUgUGhvdG9zaG9wIFdlYiAoMjAyNC4xMi4xLjAgZmYwMzE4MzFhZWUpIChHb29nbGUgQ2hyb21lKSIgc3RFdnQ6Y2hhbmdlZD0iLyIvPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0ic2F2ZWQiIHN0RXZ0Omluc3RhbmNlSUQ9InhtcC5paWQ6MzAzZWVjZTMtZWFjMy00NzEwLThjM2MtNjQwYmY1ZTBiNjdmIiBzdEV2dDp3aGVuPSIyMDI0LTA2LTIxVDEyOjE1OjU1KzEwOjAwIiBzdEV2dDpzb2Z0d2FyZUFnZW50PSJBZG9iZSBQaG90b3Nob3AgV2ViICgyMDI0LjEyLjEuMCBmZjAzMTgzMWFlZSkgKEdvb2dsZSBDaHJvbWUpIiBzdEV2dDpjaGFuZ2VkPSIvIi8+IDxyZGY6bGkgc3RFdnQ6YWN0aW9uPSJjb252ZXJ0ZWQiIHN0RXZ0OnBhcmFtZXRlcnM9ImZyb20gZG9jdW1lbnQvdm5kLmFkb2JlLmNwc2QrZGN4IHRvIGltYWdlL3BuZyIvPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0iZGVyaXZlZCIgc3RFdnQ6cGFyYW1ldGVycz0iY29udmVydGVkIGZyb20gZG9jdW1lbnQvdm5kLmFkb2JlLmNwc2QrZGN4IHRvIGltYWdlL3BuZyIvPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0ic2F2ZWQiIHN0RXZ0Omluc3RhbmNlSUQ9InhtcC5paWQ6YmU2MGE5MmItM2I5ZC00YmYzLWI1OWUtNmViN2VjMzJhODcwIiBzdEV2dDp3aGVuPSIyMDI0LTA2LTIxVDEyOjE1OjU1KzEwOjAwIiBzdEV2dDpz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",
     "client_gender_accepted": "Any",
-    "shortBio": "A clinical psychologist and psychedelic-assisted therapist integrating IFS, mindfulness and attachment-based approaches to support values-led healing, growth and non-ordinary states.",
+    "shortBio": "A clinical psychologist integrating IFS, mindfulness and attachment-based approaches, with an interest in long-term individual work and difficult psychedelic experience integration. Psychedelic-assisted therapy is not offered by PsychologyCare.",
     "ageGroups": [
       "16 Yrs +"
     ],
     "clientTypes": [
-      "Individual",
-      "Couples"
+      "Individual"
     ],
-    "therapistType": "Clinical Psychologist"
+    "therapistType": "Clinical Psychologist",
+    "client_note": "",
+    "accepts_couples": false,
+    "confirmed_slots": [],
+    "availability_source": "PAUSED BY ANNA — app availability and notes withheld; CRM preserved (14 October 2026)",
+    "requires_diary_verification": false,
+    "intake_availability_notes_paused": true
   },
   {
     "id": 2,
@@ -1449,7 +1456,7 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/allison-conyer/",
     "locations": [
       {
-        "availability": "",
+        "availability": "Thursdays at 12pm (Monthly: Starting 5th Nov)",
         "weekly_availability": [],
         "fortnightly_availability": [
           {
@@ -1468,7 +1475,9 @@ export const PRACTITIONERS_DATA = [
       }
     ],
     "last_updated": "2026-07-19",
-    "availability": [],
+    "availability": [
+      "Thursdays at 12pm (Monthly: Starting 5th Nov) — Greville St, Prahran"
+    ],
     "short_bio": "Allison is a warm, culturally aware psychologist supporting all ages with anxiety, trauma, life transitions and family relationships using integrative evidence-based therapies.",
     "weekly_availability": [],
     "fortnightly_availability": [],
@@ -1499,7 +1508,8 @@ export const PRACTITIONERS_DATA = [
       "Male",
       "Non Binary",
       "Transgender"
-    ]
+    ],
+    "client_note": ""
   },
   {
     "id": 21,
@@ -1622,13 +1632,13 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/niloofar-danaei/",
     "locations": [
       {
-        "availability": "Tuesdays at 10am (Monthly: Starting 29th Sept)",
+        "availability": "",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Telehealth"
       },
       {
-        "availability": "",
+        "availability": "Mondays at 8am (Weekly: Starting 26th Oct)\nThursdays at 1:30pm (Weekly: Starting 19th Nov)\nMondays at 11:30am (Fortnightly: Starting 23rd Nov)\nThursdays at 10am (Fortnightly: Starting 26th Nov)\nThursdays at 9am (Fortnightly: Starting 26th Nov)\nThursdays at 11:30am (Fortnightly: Starting 5th Nov)\nThursdays at 8am (Fortnightly: Starting 26th Nov)\nMondays at 9am (Monthly: Starting 23rd Nov)\nTuesdays at 2:30pm (Monthly: Starting 8th Dec)\nTuesdays at 4:30pm (Monthly: Starting 8th Dec)\nThursdays at 12:30pm (Monthly: Starting 17th Dec)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Burke Rd, Camberwell"
@@ -1636,7 +1646,17 @@ export const PRACTITIONERS_DATA = [
     ],
     "last_updated": "2026-07-19",
     "availability": [
-      "Tuesdays at 10am (Monthly: Starting 29th Sept) — Telehealth"
+      "Mondays at 8am (Weekly: Starting 26th Oct) — Burke Rd, Camberwell",
+      "Thursdays at 1:30pm (Weekly: Starting 19th Nov) — Burke Rd, Camberwell",
+      "Mondays at 11:30am (Fortnightly: Starting 23rd Nov) — Burke Rd, Camberwell",
+      "Thursdays at 10am (Fortnightly: Starting 26th Nov) — Burke Rd, Camberwell",
+      "Thursdays at 9am (Fortnightly: Starting 26th Nov) — Burke Rd, Camberwell",
+      "Thursdays at 11:30am (Fortnightly: Starting 5th Nov) — Burke Rd, Camberwell",
+      "Thursdays at 8am (Fortnightly: Starting 26th Nov) — Burke Rd, Camberwell",
+      "Mondays at 9am (Monthly: Starting 23rd Nov) — Burke Rd, Camberwell",
+      "Tuesdays at 2:30pm (Monthly: Starting 8th Dec) — Burke Rd, Camberwell",
+      "Tuesdays at 4:30pm (Monthly: Starting 8th Dec) — Burke Rd, Camberwell",
+      "Thursdays at 12:30pm (Monthly: Starting 17th Dec) — Burke Rd, Camberwell"
     ],
     "short_bio": "A trauma-informed clinical psychologist and social worker integrating IFS, ACT, DBT, CBT and mindfulness to support healing from trauma, intense emotions and life transitions.",
     "weekly_availability": [
@@ -1703,7 +1723,8 @@ export const PRACTITIONERS_DATA = [
       "Male",
       "Non Binary",
       "Transgender"
-    ]
+    ],
+    "client_note": ""
   },
   {
     "id": 7,
@@ -1712,7 +1733,7 @@ export const PRACTITIONERS_DATA = [
     "fees": "B/H: $235\nA/H: $275",
     "medicare_rebate": "89.5",
     "gender": "Female",
-    "alert": "",
+    "alert": "Accredited Mental Health Social Worker - Not Psychologist, so Private health Insurance may not pay. Encourage client to check with Insurer first",
     "presentations": [
       "Academic Pressure & Performance Stress",
       "Acquired Brain Injury (ABI) — Adjustment & Psychological Support",
@@ -1921,23 +1942,20 @@ export const PRACTITIONERS_DATA = [
     "locations": [
       {
         "location": "Greville St, Prahran",
-        "availability": "Fridays at 8:30pm (Weekly: Starting 18th Sept)\nSaturdays at 11am (Fortnightly: Starting 19th Sept)\nSaturdays at 1pm (Fortnightly: Starting 26th Sept)\nFridays at 4:30pm (Monthly: Starting 2nd Oct)\nMondays at 12pm (Monthly: Starting 28th Sept)\nFridays at 5:30pm (Monthly: Starting 25th Sept)\nWednesdays at 6:30pm (Monthly: Starting 14th Oct)\nSaturdays at 10am (Monthly: Starting 19th Sept)\nTuesdays at 9am (Monthly: Starting 13th Oct)\nTuesdays at 8am (Monthly: Starting 6th Oct)",
+        "availability": "Mondays at 10am (Fortnightly: Starting 23rd Nov)\nFridays at 5:30pm (Fortnightly: Starting 30th Oct)\nSaturdays at 3pm (Fortnightly: Starting 14th Nov)\nSaturdays at 2pm (Fortnightly: Starting 14th Nov)\nMondays at 10am (Monthly: Starting 2nd Nov)\nFridays at 4:30pm (Monthly: Starting 13th Nov)\nTuesdays at 12pm (Monthly: Starting 8th Dec)",
         "weekly_availability": [],
         "fortnightly_availability": []
       }
     ],
     "last_updated": "2026-07-19",
     "availability": [
-      "Fridays at 8:30pm (Weekly: Starting 18th Sept) — Greville St, Prahran",
-      "Saturdays at 11am (Fortnightly: Starting 19th Sept) — Greville St, Prahran",
-      "Saturdays at 1pm (Fortnightly: Starting 26th Sept) — Greville St, Prahran",
-      "Fridays at 4:30pm (Monthly: Starting 2nd Oct) — Greville St, Prahran",
-      "Mondays at 12pm (Monthly: Starting 28th Sept) — Greville St, Prahran",
-      "Fridays at 5:30pm (Monthly: Starting 25th Sept) — Greville St, Prahran",
-      "Wednesdays at 6:30pm (Monthly: Starting 14th Oct) — Greville St, Prahran",
-      "Saturdays at 10am (Monthly: Starting 19th Sept) — Greville St, Prahran",
-      "Tuesdays at 9am (Monthly: Starting 13th Oct) — Greville St, Prahran",
-      "Tuesdays at 8am (Monthly: Starting 6th Oct) — Greville St, Prahran"
+      "Mondays at 10am (Fortnightly: Starting 23rd Nov) — Greville St, Prahran",
+      "Fridays at 5:30pm (Fortnightly: Starting 30th Oct) — Greville St, Prahran",
+      "Saturdays at 3pm (Fortnightly: Starting 14th Nov) — Greville St, Prahran",
+      "Saturdays at 2pm (Fortnightly: Starting 14th Nov) — Greville St, Prahran",
+      "Mondays at 10am (Monthly: Starting 2nd Nov) — Greville St, Prahran",
+      "Fridays at 4:30pm (Monthly: Starting 13th Nov) — Greville St, Prahran",
+      "Tuesdays at 12pm (Monthly: Starting 8th Dec) — Greville St, Prahran"
     ],
     "short_bio": "Christine is a trauma specialist psychotherapist and psychoanalyst offering EMDR and depth therapy to help survivors reclaim and live with their stories.​",
     "weekly_availability": [
@@ -1997,7 +2015,8 @@ export const PRACTITIONERS_DATA = [
     "clientTypes": [
       "Individual"
     ],
-    "therapistType": "Accredited Mental Health Social Worker"
+    "therapistType": "Accredited Mental Health Social Worker",
+    "client_note": "Please note: Christine is an Accredited Mental Health Social Worker (AMHSW) with the AASW, rather than a psychologist. She is an eligible Medicare provider under a Mental Health Treatment Plan. If you intend to use private health insurance, please check with your insurer prior to booking, as not all funds provide rebates for Mental Health Social Work services."
   },
   {
     "id": 18,
@@ -2006,7 +2025,7 @@ export const PRACTITIONERS_DATA = [
     "fees": "B/H: $235\nA/H: $275",
     "medicare_rebate": "101.55",
     "gender": "Female",
-    "alert": "Maternity leave from mid-Nov 2026. Return date unknown.|Please note: Meg will be going on maternity leave from mid-November 2026. If you're looking for ongoing longer-term support, it's worth keeping this in mind when deciding if she is the right match for you.",
+    "alert": "Maternity leave from mid-Nov 2026. Return date unknown.",
     "presentations": [
       "Academic Pressure & Performance Stress",
       "Adjustment Disorder",
@@ -2066,16 +2085,13 @@ export const PRACTITIONERS_DATA = [
     "locations": [
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "Tuesdays at 12pm (Weekly: Starting 22nd Sept)\nThursdays at 1pm (Weekly: Starting 17th Sept)",
+        "availability": "",
         "weekly_availability": [],
         "fortnightly_availability": []
       }
     ],
     "last_updated": "2026-07-19",
-    "availability": [
-      "Tuesdays at 12pm (Weekly: Starting 22nd Sept) — Burke Rd, Camberwell",
-      "Thursdays at 1pm (Weekly: Starting 17th Sept) — Burke Rd, Camberwell"
-    ],
+    "availability": [],
     "short_bio": "Meg is a warm, person-centred psychologist using integrative cognitive, behavioural and psychodynamic therapies to support stress, anxiety, depression, trauma and life changes.",
     "weekly_availability": [
       {
@@ -2133,7 +2149,8 @@ export const PRACTITIONERS_DATA = [
       "Female",
       "Male",
       "Non Binary"
-    ]
+    ],
+    "client_note": "Please note: Meg will be going on maternity leave from mid-November 2026. If you're looking for ongoing longer-term support, it's worth keeping this in mind when deciding if she is the right match for you."
   },
   {
     "id": 15,
@@ -2142,7 +2159,7 @@ export const PRACTITIONERS_DATA = [
     "fees": "B/H: $275\nA/H: $315",
     "medicare_rebate": "149.05",
     "gender": "Female",
-    "alert": "Currently on Maternity Leave, Expected Return early to Mid July 2026. Please let Kiira know of any clients that reahc out to check in on her return and add to/ update availability in zanda\nOnly seeing clients she has seen before. No new clients.\nEMDR in-person only — not appropriate for telehealth delivery.",
+    "alert": "Kiira is Telehealth Only.  ? EMDR in-person only — not appropriate for telehealth delivery.",
     "presentations": [
       "Anger & Aggression",
       "Anxiety - Generalised (GAD)",
@@ -2217,7 +2234,7 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/kiira-gavralas/",
     "locations": [
       {
-        "availability": "Tuesdays at 9:15am (Fortnightly: Starting 22nd Sept)\nTuesdays at 11:45am (Monthly: Starting 22nd Sept)\nTuesdays at 9:15am (Monthly: Starting 29th Sept)",
+        "availability": "Tuesdays at 10:30am (Fortnightly: Starting 17th Nov)\nTuesdays at 11:45am (Monthly: Starting 17th Nov)\nTuesdays at 9:15am (Monthly: Starting 27th Oct)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Telehealth"
@@ -2226,9 +2243,9 @@ export const PRACTITIONERS_DATA = [
     "last_updated": "2026-07-19",
     "short_bio": "A genuine, relational psychologist using psychodynamic, attachment-informed ISTDP to help clients understand emotional patterns, ease distress and navigate parenthood transitions.",
     "availability": [
-      "Tuesdays at 9:15am (Fortnightly: Starting 22nd Sept) — Telehealth",
-      "Tuesdays at 11:45am (Monthly: Starting 22nd Sept) — Telehealth",
-      "Tuesdays at 9:15am (Monthly: Starting 29th Sept) — Telehealth"
+      "Tuesdays at 10:30am (Fortnightly: Starting 17th Nov) — Telehealth",
+      "Tuesdays at 11:45am (Monthly: Starting 17th Nov) — Telehealth",
+      "Tuesdays at 9:15am (Monthly: Starting 27th Oct) — Telehealth"
     ],
     "weekly_availability": [],
     "fortnightly_availability": [],
@@ -2248,7 +2265,8 @@ export const PRACTITIONERS_DATA = [
       "Cisgender",
       "Female",
       "Male"
-    ]
+    ],
+    "client_note": "Please note: Chiara offers Telehealth appointments only, with no in-person appointments available. Please take this into consideration when deciding whether Chiara will be the right practitioner for you, particularly if you prefer face-to-face sessions."
   },
   {
     "id": 6,
@@ -2257,7 +2275,7 @@ export const PRACTITIONERS_DATA = [
     "fees": "B/H: $275\nA/H: $315",
     "medicare_rebate": "149.05",
     "gender": "Female",
-    "alert": "Telehealth Only from 1st June 2026 until Chiara advises otherwise. ADULT Female  client only. Not too complex due to being a Saturday",
+    "alert": "Telehealth Only from 1st June 2026 until Chiara advises otherwise. ADULT Female client only. Not too complex due to being a Saturday",
     "presentations": [
       "Academic Pressure & Performance Stress",
       "Acute Stress Reaction",
@@ -2361,7 +2379,7 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/chiara-killey/",
     "locations": [
       {
-        "availability": "Saturdays at 12pm (Weekly: Starting 10th Oct)\nSaturdays at 10am (Fortnightly: Starting 17th Oct)\nSaturdays at 1pm (Monthly: Starting 31st Oct)\nSaturdays at 10am (Monthly: Starting 10th Oct)",
+        "availability": "Saturdays at 12pm (Weekly: Starting 31st Oct)\nSaturdays at 11am (Monthly: Starting 14th Nov)\nSaturdays at 1pm (Monthly: Starting 31st Oct)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Telehealth"
@@ -2369,10 +2387,9 @@ export const PRACTITIONERS_DATA = [
     ],
     "last_updated": "2026-07-19",
     "availability": [
-      "Saturdays at 12pm (Weekly: Starting 10th Oct) — Telehealth",
-      "Saturdays at 10am (Fortnightly: Starting 17th Oct) — Telehealth",
-      "Saturdays at 1pm (Monthly: Starting 31st Oct) — Telehealth",
-      "Saturdays at 10am (Monthly: Starting 10th Oct) — Telehealth"
+      "Saturdays at 12pm (Weekly: Starting 31st Oct) — Telehealth",
+      "Saturdays at 11am (Monthly: Starting 14th Nov) — Telehealth",
+      "Saturdays at 1pm (Monthly: Starting 31st Oct) — Telehealth"
     ],
     "short_bio": "Chiara is a neurodivergent, neuro-affirming clinical psychologist supporting adults with autism, ADHD and diverse needs using collaborative, family-inclusive, evidence-based therapies.",
     "weekly_availability": [],
@@ -2405,7 +2422,8 @@ export const PRACTITIONERS_DATA = [
     "clientTypes": [
       "Individual"
     ],
-    "therapistType": "Clinical Psychologist"
+    "therapistType": "Clinical Psychologist",
+    "client_note": "Please note: Chiara offers Telehealth appointments only, with no in-person appointments available. Please take this into consideration when deciding whether Chiara will be the right practitioner for you, particularly if you prefer face-to-face sessions."
   },
   {
     "id": 20,
@@ -2414,7 +2432,7 @@ export const PRACTITIONERS_DATA = [
     "fees": "B/H: $275\nA/H: $315",
     "medicare_rebate": "149.05",
     "gender": "Male",
-    "alert": "Per email from NK on 15/04- pause any new clients who have already received a diagnosis of autism or querying an ASD diagnosis as it's not a specialist area I want to work predominantly with at the moment.",
+    "alert": "",
     "presentations": [
       "Academic Pressure & Performance Stress",
       "Acute Stress Reaction",
@@ -2526,7 +2544,7 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/nicholas-kleeman/",
     "locations": [
       {
-        "availability": "Tuesdays at 11am (Fortnightly: Starting 22nd Sept)\nTuesdays at 10am (Monthly: Starting 29th Sept)",
+        "availability": "Tuesdays at 11am (Fortnightly: Starting 27th Oct)\nTuesdays at 9am (Monthly: Starting 27th Oct)\nTuesdays at 4pm (Monthly: Starting 1st Dec)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
@@ -2539,23 +2557,27 @@ export const PRACTITIONERS_DATA = [
       },
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "Fridays at 12:30pm (Weekly: Starting 2nd Oct)\nFridays at 2:30pm (Weekly: Starting 2nd Oct)\nWednesdays at 9am (Weekly: Starting 23rd Sept)\nThursdays at 10am (Fortnightly: Starting 17th Sept)\nThursdays at 9am (Fortnightly: Starting 8th Oct)\nThursdays at 11:30am (Fortnightly: Starting 1st Oct)\nWednesdays at 1pm (Monthly: Starting 7th Oct)\nFridays at 10am (Monthly: Starting 16th Oct)",
+        "availability": "Thursdays at 1:30pm (Weekly: Starting 29th Oct)\nFridays at 12:30pm (Weekly: Starting 13th Nov)\nThursdays at 12:30pm (Fortnightly: Starting 5th Nov)\nFridays at 1:30pm (Fortnightly: Starting 6th Nov)\nFridays at 2:30pm (Fortnightly: Starting 13th Nov)\nThursdays at 8am (Fortnightly: Starting 5th Nov)\nThursdays at 10am (Fortnightly: Starting 12th Nov)\nThursdays at 9am (Fortnightly: Starting 3rd Dec)\nThursdays at 10am (Monthly: Starting 10th Dec)\nThursdays at 12:30pm (Monthly: Starting 12th Nov)\nWednesdays at 1pm (Monthly: Starting 2nd Dec)",
         "weekly_availability": [],
         "fortnightly_availability": []
       }
     ],
     "last_updated": "2026-07-19",
     "availability": [
-      "Fridays at 12:30pm (Weekly: Starting 2nd Oct) — Burke Rd, Camberwell",
-      "Fridays at 2:30pm (Weekly: Starting 2nd Oct) — Burke Rd, Camberwell",
-      "Wednesdays at 9am (Weekly: Starting 23rd Sept) — Burke Rd, Camberwell",
-      "Thursdays at 10am (Fortnightly: Starting 17th Sept) — Burke Rd, Camberwell",
-      "Thursdays at 9am (Fortnightly: Starting 8th Oct) — Burke Rd, Camberwell",
-      "Thursdays at 11:30am (Fortnightly: Starting 1st Oct) — Burke Rd, Camberwell",
-      "Wednesdays at 1pm (Monthly: Starting 7th Oct) — Burke Rd, Camberwell",
-      "Fridays at 10am (Monthly: Starting 16th Oct) — Burke Rd, Camberwell",
-      "Tuesdays at 11am (Fortnightly: Starting 22nd Sept) — Greville St, Prahran",
-      "Tuesdays at 10am (Monthly: Starting 29th Sept) — Greville St, Prahran"
+      "Thursdays at 1:30pm (Weekly: Starting 29th Oct) — Burke Rd, Camberwell",
+      "Fridays at 12:30pm (Weekly: Starting 13th Nov) — Burke Rd, Camberwell",
+      "Thursdays at 12:30pm (Fortnightly: Starting 5th Nov) — Burke Rd, Camberwell",
+      "Fridays at 1:30pm (Fortnightly: Starting 6th Nov) — Burke Rd, Camberwell",
+      "Fridays at 2:30pm (Fortnightly: Starting 13th Nov) — Burke Rd, Camberwell",
+      "Thursdays at 8am (Fortnightly: Starting 5th Nov) — Burke Rd, Camberwell",
+      "Thursdays at 10am (Fortnightly: Starting 12th Nov) — Burke Rd, Camberwell",
+      "Thursdays at 9am (Fortnightly: Starting 3rd Dec) — Burke Rd, Camberwell",
+      "Thursdays at 10am (Monthly: Starting 10th Dec) — Burke Rd, Camberwell",
+      "Thursdays at 12:30pm (Monthly: Starting 12th Nov) — Burke Rd, Camberwell",
+      "Wednesdays at 1pm (Monthly: Starting 2nd Dec) — Burke Rd, Camberwell",
+      "Tuesdays at 11am (Fortnightly: Starting 27th Oct) — Greville St, Prahran",
+      "Tuesdays at 9am (Monthly: Starting 27th Oct) — Greville St, Prahran",
+      "Tuesdays at 4pm (Monthly: Starting 1st Dec) — Greville St, Prahran"
     ],
     "short_bio": "Nick is a warm, trauma-informed clinical psychologist using ACT, mindfulness, CBT and SFT to support diverse adults and adolescents, including neurodivergent clients.",
     "weekly_availability": [
@@ -2638,7 +2660,8 @@ export const PRACTITIONERS_DATA = [
       "Male",
       "Non Binary",
       "Transgender"
-    ]
+    ],
+    "client_note": ""
   },
   {
     "id": 26,
@@ -2647,7 +2670,7 @@ export const PRACTITIONERS_DATA = [
     "fees": "B/H: $235\nA/H: $275",
     "medicare_rebate": "101.55",
     "gender": "Female",
-    "alert": "Ms Elizabeth Maria Knoetze",
+    "alert": "Telehealth Only from Jan 2027. Be sure to discuss with Clients. ?Real Full Name - Ms Elizabeth Maria Knoetze",
     "presentations": [
       "Adjustment Disorder",
       "Anxiety - Anticipatory",
@@ -2730,13 +2753,13 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/ricki-knoetze/",
     "locations": [
       {
-        "availability": "Mondays at 6pm (Fortnightly: Starting 5th Oct)\nMondays at 3:30pm (Monthly: Starting 21st Sept)\nMondays at 5pm (Monthly: Starting 5th Oct)",
+        "availability": "",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
       },
       {
-        "availability": "Wednesdays at 12pm (Fortnightly: Starting 23rd Sept)\nWednesdays at 1pm (Fortnightly: Starting 23rd Sept)",
+        "availability": "Wednesdays at 1pm (Fortnightly: Starting 28th Oct)\nWednesdays at 12pm (Fortnightly: Starting 4th Nov)\nMondays at 2:15pm (Monthly: Starting 16th Nov)\nMondays at 2:30pm (Monthly: Starting 2nd Nov)\nMondays at 3:30pm (Monthly: Starting 16th Nov)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Telehealth"
@@ -2756,11 +2779,11 @@ export const PRACTITIONERS_DATA = [
     ],
     "last_updated": "2026-07-19",
     "availability": [
-      "Mondays at 6pm (Fortnightly: Starting 5th Oct) — Greville St, Prahran",
-      "Mondays at 3:30pm (Monthly: Starting 21st Sept) — Greville St, Prahran",
-      "Mondays at 5pm (Monthly: Starting 5th Oct) — Greville St, Prahran",
-      "Wednesdays at 12pm (Fortnightly: Starting 23rd Sept) — Telehealth",
-      "Wednesdays at 1pm (Fortnightly: Starting 23rd Sept) — Telehealth"
+      "Wednesdays at 1pm (Fortnightly: Starting 28th Oct) — Telehealth",
+      "Wednesdays at 12pm (Fortnightly: Starting 4th Nov) — Telehealth",
+      "Mondays at 2:15pm (Monthly: Starting 16th Nov) — Telehealth",
+      "Mondays at 2:30pm (Monthly: Starting 2nd Nov) — Telehealth",
+      "Mondays at 3:30pm (Monthly: Starting 16th Nov) — Telehealth"
     ],
     "short_bio": "Ricki is a warm, non-judgemental psychologist using CBT, ACT and psychodynamic therapies to support adolescents and adults with anxiety, depression, trauma and ADHD.",
     "weekly_availability": [],
@@ -2795,7 +2818,8 @@ export const PRACTITIONERS_DATA = [
     "clientTypes": [
       "Individual"
     ],
-    "therapistType": "Registered Psychologist"
+    "therapistType": "Registered Psychologist",
+    "client_note": "Please note: From January 2027 onwards, Ricki will be offering Telehealth appointments only, with no in-person appointments available. Please take this into consideration when deciding whether Ricki will be the right practitioner for you, particularly if you prefer face-to-face sessions."
   },
   {
     "id": 13,
@@ -2804,7 +2828,7 @@ export const PRACTITIONERS_DATA = [
     "fees": "B/H: $235\nA/H: $275",
     "medicare_rebate": "101.55",
     "gender": "Male",
-    "alert": "Telehealth only 30 Oct – 5 Dec 2026 | Please note: Josh Kugel is available for Telehealth appointments only between 30 October and 5 December 2026.",
+    "alert": "Josh Telehealth Only from 30th Oct to 5th Dec. Please discuss with new clients",
     "presentations": [
       "Academic Pressure & Performance Stress",
       "Addiction/Dependence (Alcohol) — Current / Active",
@@ -2903,7 +2927,7 @@ export const PRACTITIONERS_DATA = [
     "locations": [
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "Tuesdays at 1pm (Weekly: Starting 29th Sept)\nTuesdays at 12pm (Weekly: Starting 29th Sept)\nTuesdays at 10am (Weekly: Starting 29th Sept)\nTuesdays at 9am (Weekly: Starting 29th Sept)\nTuesdays at 8am (Weekly: Starting 29th Sept)\nThursdays at 2:30pm (Weekly: Starting 17th Sept)\nThursdays at 3:30pm (Fortnightly: Starting 24th Sept)\nWednesdays at 6:30pm (Monthly: Starting 14th Oct)",
+        "availability": "Thursdays at 6:30pm (Weekly: Starting 29th Oct)\nTuesdays at 8pm (Weekly: Starting 27th Oct)\nTuesdays at 7pm (Weekly: Starting 27th Oct)\nTuesdays at 6pm (Fortnightly: Starting 27th Oct)\nWednesdays at 2:30pm (Fortnightly: Starting 16th Dec)\nWednesdays at 7:30pm (Fortnightly: Starting 28th Oct)\nWednesdays at 2:30pm (Monthly: Starting 28th Oct)",
         "weekly_availability": [],
         "fortnightly_availability": []
       },
@@ -2912,19 +2936,31 @@ export const PRACTITIONERS_DATA = [
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
+      },
+      {
+        "location": "Telehealth",
+        "availability": "Thursdays at 6:30pm (Weekly: Starting 5th Nov)\nTuesdays at 8pm (Weekly: Starting 3rd Nov)\nTuesdays at 7pm (Weekly: Starting 3rd Nov)\nThursdays at 4:30pm (Fortnightly: Starting 5th Nov)\nTuesdays at 6pm (Fortnightly: Starting 3rd Nov)\nWednesdays at 6:30pm (Fortnightly: Starting 4th Nov)\nWednesdays at 2:30pm (Fortnightly: Starting 4th Nov)\nWednesdays at 7:30pm (Fortnightly: Starting 11th Nov)\nWednesdays at 2:30pm (Monthly: Starting 25th Nov)"
       }
     ],
     "last_updated": "2026-07-19",
     "short_bio": "Josh is a warm, research-active clinical psychologist supporting adolescents and adults with integrative, values-based therapy for trauma, neurodiversity and emotional difficulties.",
     "availability": [
-      "Tuesdays at 1pm (Weekly: Starting 29th Sept) — Burke Rd, Camberwell",
-      "Tuesdays at 12pm (Weekly: Starting 29th Sept) — Burke Rd, Camberwell",
-      "Tuesdays at 10am (Weekly: Starting 29th Sept) — Burke Rd, Camberwell",
-      "Tuesdays at 9am (Weekly: Starting 29th Sept) — Burke Rd, Camberwell",
-      "Tuesdays at 8am (Weekly: Starting 29th Sept) — Burke Rd, Camberwell",
-      "Thursdays at 2:30pm (Weekly: Starting 17th Sept) — Burke Rd, Camberwell",
-      "Thursdays at 3:30pm (Fortnightly: Starting 24th Sept) — Burke Rd, Camberwell",
-      "Wednesdays at 6:30pm (Monthly: Starting 14th Oct) — Burke Rd, Camberwell"
+      "Thursdays at 6:30pm (Weekly: Starting 29th Oct) — Burke Rd, Camberwell",
+      "Tuesdays at 8pm (Weekly: Starting 27th Oct) — Burke Rd, Camberwell",
+      "Tuesdays at 7pm (Weekly: Starting 27th Oct) — Burke Rd, Camberwell",
+      "Tuesdays at 6pm (Fortnightly: Starting 27th Oct) — Burke Rd, Camberwell",
+      "Wednesdays at 2:30pm (Fortnightly: Starting 16th Dec) — Burke Rd, Camberwell",
+      "Wednesdays at 7:30pm (Fortnightly: Starting 28th Oct) — Burke Rd, Camberwell",
+      "Wednesdays at 2:30pm (Monthly: Starting 28th Oct) — Burke Rd, Camberwell",
+      "Thursdays at 6:30pm (Weekly: Starting 5th Nov) — Telehealth",
+      "Tuesdays at 8pm (Weekly: Starting 3rd Nov) — Telehealth",
+      "Tuesdays at 7pm (Weekly: Starting 3rd Nov) — Telehealth",
+      "Thursdays at 4:30pm (Fortnightly: Starting 5th Nov) — Telehealth",
+      "Tuesdays at 6pm (Fortnightly: Starting 3rd Nov) — Telehealth",
+      "Wednesdays at 6:30pm (Fortnightly: Starting 4th Nov) — Telehealth",
+      "Wednesdays at 2:30pm (Fortnightly: Starting 4th Nov) — Telehealth",
+      "Wednesdays at 7:30pm (Fortnightly: Starting 11th Nov) — Telehealth",
+      "Wednesdays at 2:30pm (Monthly: Starting 25th Nov) — Telehealth"
     ],
     "weekly_availability": [],
     "fortnightly_availability": [],
@@ -2932,7 +2968,7 @@ export const PRACTITIONERS_DATA = [
     "location_notes": {
       "Wattletree Rd, Malvern": "Please Note: As of 9th June 2026 Joshua will also be available at our new Clinic on Burke Road, Camberwell."
     },
-    "working_hours": "Working Days: Tuesdays 8am to 2PM, Wednesdays & Thursdays 2:30PM to 8:30PM in Camberwell",
+    "working_hours": "Tuesdays, Wednesdays and Thursdays, 2:30pm–8:30pm — Camberwell.",
     "photo_url": "https://pc-prac-availability.netlify.app/photos/joshua-kugel_thumb.jpg",
     "photo_b64": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQIAJQAlAAD/2wBDAAMCAgICAgMCAgIDAwMDBAYEBAQEBAgGBgUGCQgKCgkICQkKDA8MCgsOCwkJDRENDg8QEBEQCgwSExIQEw8QEBD/2wBDAQMDAwQDBAgEBAgQCwkLEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBD/wAARCADIAMgDAREAAhEBAxEB/8QAHQAAAgIDAQEBAAAAAAAAAAAAAwQFBgIHCAEACf/EAEIQAAECBQIEAwQHBgQGAwAAAAECAwAEBQYREiEHMUFREyJhMkJScRQVI3KBkaEIFiZiscEXJdHwJDM0NkNTguHx/8QAHAEAAwEBAQEBAQAAAAAAAAAAAAECAwQFBgcI/8QANhEAAgEDAwMCBAUDBAIDAAAAAAECAxEyBCExEjNBBRMGIkJRQ2FxgbEUI6EVkdHhJMElYvH/2gAMAwEAAhEDEQA/AON7OSf3grKE/HHBU4R3U8mZ2OjFcq6M/wDkMKpwh018zGLGQU1mspHxmCpwgp8sJYaCmqVlI/8AYqCo9kFPlmdioV9ZVlIG+tUTU4RVPljXDxomZrKVf+xUFR8BT5YawGj4tYGOS1wqngKXkPw9az9cDHvrgqPgdNchOHrBKK1notcKo+ApeT3hywVM1kfzrhVOUOkuQ/D5oCSrOB7y4JvdBS4Z9w8bT9XVjPxrgm90OlwzKxGU/VFXOM+ZcEnuhUsWDsVkfu/VV495cOfKCnixa0mh+7VTOMbrglkhQxYG0mf4RqBHdUEn8yFBfIwdry+LLnjjqqHJ/MggvkYtbDPh2VOKP80OT+ZChgZWujTZE6cfHBLJDjgKURspsKbUOuqB5IUcD6jo0cPHlDmQqHLMUcBKRSUWE6T1SqG8wWB5IoDfDl3PVJgeYLtmEq2lvhypWNygw/rBdswS2G+Hec80QfiC4pjdop0XVV0HqYU8UOGbCWanRc1WTj3iYVTFBTyYxZIzcVYT3UYKmKHTyYexGf8APKygn3jCqPZDpr5mfWMgprlZT01mFV4Q6WTH+HzQNQrKeXmVEz4Q6fLGOHzf/F1lOPfXDqeBU1uxjh0yS7Wh/OuFU8DpeQnD1nT9dpxnzLgqeApeTLhs19lWsp95cKfKHS8heH7Z+hVoBPvLgnygpcMFw/b006sAj3lwT5QUuGHsFv8AySsbdVQS5QUsWYWU1ptmqn1XDm90FLFidqtEWrU1Y6qhSyQqeDMLUbIsqfVp5lUOWSFDBgreSU2LOq0/FDeSFHBilAb/AIEmlcs6oJZIIYM+t9vRYU2r70DyQ44CdOQUcPZgkbHVDeYlgeSKdHDhzbmkw3mJdsjmk6LAUe4MP6xfhniyGuHOnqpMP6w/DBqJRw6AxzRAswfbMZ0eHw8bHLKBDWYn2xy3AEXpU0fFCnghwzYW00hN2VVHcwqmKKhmxuymgLpqye5MKeKCnkw9kN4uasN91GFUxHTyYSymgm4KwkfEqJqcDpZMf4dspVVqyk/EqCfCHTXzMYsBlIqNZRj3lwVPAUuWM8OGf+KrSce8uFU8BS5Yfh6yPErgA6rgn4Cj5MeHKdKK2j1XCqcoKPDCcPWj9DrWO64J8odHhmHD5jVTqyT0UuCfKCitmFsVkCh1jBGcqglkgpYsFZqcWzVRsN1Q5coVLFiltNlFo1NWOqoJZIVPBntsNkWLP5Tv5oJZIIdtgaIyP3AnMj4obfzIIr+2JUdkt8P5knrqglmhR7Z5Smkp4eTCgdzmG8xx7Ym02W+HbhPUGD6xLtgkJCeHB2xlMP6xfQR76NFgJ25iH9YngBqSEo4et42JTDWYPAFP5Rw/aTyykRSzE+2Y10eHYMunllIgjmKXbHaEAL6nx3EKeBUc2EtsFF61Id+kTPFBDNkhZ/8A3jU0kYzmFN/KOGbGbNTi7qsnHMmFUxHDNhLMb/imrpPUmFUxHTzZI8PUAV2sIA6qgnwh0smHsJB+t6ynHvLgnwgpZMLw8BRUqyk91wqngdHljPDv/qq4nGBlcKp4Cjyxey5qRpktXZ2oTTcuwgry44rAEE020kFJ2TualqPFmr0YzUnbc6ywzNLVlWkKcWM+oIAjrjQUt5HM6zhsinpum4J8OySa3OsmYJUUB0oSvqRttFuEY72IjNva55IGqSTvitVOaaWvIJS6UlXorBhOw1cdpteqVAmmapTZt1LroVLvIKlKS4oHJyCd8phOHVsxqdt0bnti56I5ac7KPTiJeadClBl3yn1HYxzShLqOiEo9FiStgLFjz6D2Kh8txEyyQQwZ5SEgcPps4+KB5hDtidNTjh2+SOeYbyBdswkm/D4dOKxzzB9YLtiT7RHDrIHPMF/nF+GLzKFN8OkY6ph/WJ9sj6kjw7BZx1AilkJ4AK4jTYMuB1Ahp/OEsAFdBbsiVT3CYI5ilgYXT5LLlEdwmKhmKeA9ScJv+aAPNMTLApZhreGm/Z4HkRCngOGbH7VAF91BI5ERM8BxzY9aYCb3qacc4U8UOnmwtot/xjVU45kwTxHTzY7YDZ/eerIG26omfCHTyY3YqMVyspHdUE+EKlkzPh6lIqtazzyuCpwh0uWMcPWx9LrSjnHngqeAo8s59v6tTM/V5uQlnlKlWH1pS0k7Kc3ycdT0jspQ2uzknLwU0yzk0QAVpOQFp051k9M/LG0bptIytdk3RqCGULeLJSUArbSQTnG+N/xhN3KSaJpVEfcZam2GlLyrStJG4AHlWPzIMRdWKs7mVQoM81JrmGZcYaeS8DjGTy2/OF1LgfQ+TOaMs5KNy0zMNtFQUV4JJUvORjcdv1itmHg2fZdxNm05inzQHnbDSHB8fMhQ6Z6HltHLOnZ3RtCfy2ZYKU2Bw8mc9zGLzNI9sVZaCOHDhA55h/WJdoWaOOG6sjnmD6w/CE5tKk8OkAdYPqE+0L1VBTw6YHcCKWYPtkbXWyixJUZ5gQ45ClgLXIVJsmTQeRCYayFPAFdACbPkUY56YcMhTwA3nhNrSDY5kJiqeQqmJISDejiE6D1REvAtdwYoyMcQppJ6iJlgEe4P28zo4hTiQOYhSwHHuD9sMkX7UB6QpYlQzYe1Bi96kgDnmFPFBT7jHbGaKbuqgzz1QpYodPNjNkpIuOsIHdUE+EFLJgLQ+kNT9cXKslxaFFRQOakg+YD1xnEE+EKm3d2KdcV9ztn0eqz1G8zs0pbQOwLedgrB+fLEbKn1Pcz63FOxpihy79Wn2mAlxxKsrURspSicnB/3yjoculGMYOTsbPpPB+tTlWafk5FqYpU4gLlH1zYbQ2sHCkuHBIUD0xHNLVRjs+Trho5Td1wzpvgZwGtq4XqnRLtoemapyWXQtlZ0uJWDt5hz2/JQ5RyVdY47xO6joU9p8m81fsz8Mg22iVoIYW2nTrJznvmMP6uZ0/0VMgrj/ZntJFGnEytPQpSUKUjbYbRpTrSbuzGppopbHC18WImgVWdkJxpKEocK0J0gpWk7deREenSm5HlVafQa0mZlykTiV0+dSW0uoKkDrg9B6R0PixyedjpKngHhw8sbaiTHmvM712hdAV/hwoY5kwfWJdoUcb08OBnrD+sT7QrUUFPDtgd4FkEu0L15JRYMonuBFLNilgiOudPh2VJIxzCYI5MU8EJ3cAm0pBvHPTDjkwnigF4eW26c2OumKhyKeKF73GKJTUd9MVDliqYolWU+HxE+8iI+gpdwakBo4jO+qYl4FLuEhRQE8RZn1EJ4BHuD9vp0cQJ5J94QSxHHuMztpPh39Pp75hTxCHcY7ZoKb0qY+9CliiodxjNkgJumrg9dUE+EKlmzOwU/5/WB0JVBPhBSyZrPiXRm5q2KzPtyqVLlZhKluAYWElWnn23jaErNIxaumyy8KeEVvVSz6bUkCdM4UqefWw0X+ZwlJQB8+XbeOKvqpRqNHpaXSxnBS8nXfAXhtPWvab0vPlKHpyYU80Hk6y2g+yFJBwD1IBjkrVFVnc9GhRdKFmbks+0pW31zU89MCanp1SVPvKbCBgZ0pSgbJSMnuSTkkwm7ldNi0pX4xVhsAfKI6rvgfTYxckkTEs4y4gDWCOfSOik9zCpwfnP+2RRHLbrywhkoCnSFfzA8iPSPV03B42s5OW5tLc2qWeCEpcS4AQeaxnoepjrb2OBI6WlW1N8NlY6x5rzO9doA9lvhyPUwfWL8IFNoA4cNDvAswfaE663osCUT8WIFkEu2AuhvRZEijuBFxyYp4IjLxQU2rTkd9MEMmTPFCd6oxQKY330wRyYTxQveiAKXS2x3TFw8inwha/BiUpjWeqYcOWKp4JhxIb4gtEj2kCJ+gt9waS0EcRhpHtJiXgP8QepzWjiQ4O4hPAa7hIUpARxFmU9xCeAR7gSgthHEObSeuYUsBw7jHLUSE31UEd9UJ4jh3GMWcjTdtVSR8UOeKFTzZ7YpCbgq4A564J8IKeTIpmkKrtHu2ko9uYlXgj7wBI/UQ5O1mKCv1IlOE/FulcNeHlvMPUabqM7OtqUZeWb1K2WQSfyxHBV0stTWl9kepQ1cdNQjtds3tw6/a5syoz7dLrVvValFR0hbzB056bRqtA6au2NeoRqO3B0Yu56Y5SvreRBmGVteKgoHMYzEuML2OhN2uaDufjpxvqlUXTLDshlmWUrQl2YI1K258wBv3jpjSpW+ZnFUr1W/liOWteP7SdFnpefve3JN2mOEJfQh8LUAfeTp2BHblEzhSWIoTrSyRX/24rUZuHhtT7rlZdJXKTAQ4rG/hrG2T2B/rG2lavYw1sfluch8GOA108Y6jMqpr0hJ02jOB2YmJp0pbSobhIABJJjpr1lT2Su2cul0k9RdrhG2LhoU/a1ozlBqgQJmTeLbmhWUnsUnqCMEfOOFSUpXRtUg6UXCXKIefSkcOWsdTFLMh9oHVG9PDqVGMZIhrMJdtClzICLGkB3xAsmKp20L3i2RZ9NA66YqGTFUwRHXqgC36W3jnphw5YqmKE77bCadSmh/JBDlhU4QpfDZ8KlN+qIqHkmp4FL7QC9S2vuxUOGKpyiYqKdF/wAqonmgRCwLeY08QjiIyR1SIn6B/iD7BLfEnOOaYPoH+KOyJ08SHc9RCeA13QtHOOI8zkcwYUsAj3R22SE3/PA9cxMsSo9xh7UH8ZVMd9UOWKFT7jMrIQBctWSP5oc+EFPNhuH7KJiu1eWXjDmtBzy3yImrfp2L03T7nzcFpsvhjO0KnU9yiSzMxWqY05KSfjtEoQsuE+Ir0AOcRwyrxjVakenHTNQXT4NkvcJ7ynZf6fdN6zVQmUZWlCGyltB045DSnAO4GCfWPYdfTulaMN/ucMdNW93qlPb7WNn8Jpia/d+dpcxMKedlSUIJbxnbfbpHgzn/AHGke17dqabK9V+E1PuKovztUDzkvM/ZJSog+EdQJUgYwDkcz0j0NLqvZfVt+5x6jSe7Hp3/AGJ+0eELFlzHj25cdVVLuJImJGedDssvPUJ9w/LaFq9WqsrpL9jPT6Z0o2d7E7xLtWWuOwp2hzZbbbeQEq8nlR6gRlpqjVRSZVempUmiMsO0ba4f0h+2pCjyNPZZYDpdbRgugIBUtZ/M5jaVRqbb5OijTUaUWuDlPi5ckndktVq3Tk4lX5ooYPxNoASlX4gZ/GKpx6XZnk6qqqrlNeSn1ZvTw7lh3Ii1kYS7ZlXUBHD+RTjniBZMc+2hK7U6bOpqO+mHHIVTBAL0Gm26U3jnphx5ZNXFCN9oH1ZSWwPhh0+WKpwhC/UDTSW+vkgh5Cp4E75TiZpLfqn+0XAVTlCV7p1Valt9RpiocMmfKJist6b4kVHqkRmsC5ZoZqCAjiDKHukQvoKe1REg4jTxIax1SISwG+6NIGjiSc7ZEH0B+KMUkAcR389RClgEe6NUBIHEOcHfMS8So9xjFrAC+KkPvQ5Yihmz2yf+66sM/FBLFBTzZnYZ03BWMHca8frBPhDpZM6E4HVRiq4mluIdUVlK0ke/ncfnHjaik1VPoNJNVaVzcddKGpRbji0JwklIB/SOhRk4mq6Lkfwnp7uieUAN3MnfJHrCoQc5dS8FaicYxSZYp1apKd8IyzL6TqKktqysoHvY6ZjedJ3ukY05px53J6UmqMqneLLLTpWnljJHpE9EF5M5Sm3uUXiLWEs25NSsvMkuuNqCFJ93EOEUppo5qsvlaKhx9q6rW4W1WtKm9dRqzKabLaMgNtKT5iPXSDv6xdKPXP3JFauv7en9uJyPODw+HDQ7mOn6zx32gdXB/wAPpMHqRAsmEu2glyDRY1OR3xAsmOeCErzSE2zSUd9MEcmKrggV9oxR6SjuExUOWKrihC+kfZUhv7kOHkVTwR9/JJnqQ1jqj+0EBVOUKXqjVWqU3jlpi4cCqZISvFGq5acgdMQ48CnkiXuJBTeNMX8SRERd4lyXzoNWRovuQUeoEKOA5dxD80ojiLLKxzSIlYDl3UNPg/4kJPpB9APuhZXycR1+ohPAf4o7Q1D/ABFmR3BhPAa7jD28Cm/KgB1CocsQh3Ge2UD+99V/+UEsUKnmwtiAC5KyCPj/ALwT4QU8mWngrcy5Wtz1GRMhpaX1LbB21Z6RzaiF2pI9DQVulOLNrXtxCqlIKqe+0h51SEhvBOAFA7/pGdOLnszsnqOl2SK3Y01xPL8+9LXpJ0+VnGtSEEavCc6Yxk9eu0dsIK3BMdPqKu6LNatLv+3/ABZyZuGYqk4+7krCFuax6YTFVE3uw/pa1KPzFwtWu1BmTm5mrPuoW06G3NQwA4fQfhHnzjeV0Squ3SyAuWszFSYmXC+kobC29Das6sjmPwjaEbM5pzumzUfGO7K9XaK/S61Na26S8ZVhAGAEp2ye6sY3jWmtzn1NSU01LwUCqkJ4dSw7qi1mc8tqYOuqCbDkEkYyRAshz7aMrr8tm0xHfEEcmKpghW90/wCRUdHfTBDlhVxQG/ARKUdvHRMVDyKrwhO+UlUxSG/uf2hw8iqrdCN8J1VylM45aYIcCqZJCN3JK7ppreOWIqGIp5ISuUeJeUk2fdxFRxFLIlrnOm5qQ53AjOOLNKmSCXLhN601fcCCOLCeaHKorRfsmodUiEsBy7iHJo44hsnuBCWAPuhAoI4j79RC+gf4o1Sjo4iv9MwPAa7jD0NWm/Z0A8wYJYhHaoz6znSi8qoOp1QSxQoZsLZD+m5Kxtz1wT4QU8mQdPnJ+k1GcuKnIUtVOf8AEeSj2i1ncj5c/wA4bSewU5ODbRs2jcfKDcd00Zcy2FsHLClnclSgNJ/r+sRPSyUG0dVLVx9xX4Nx1mrXFbKJd2y6fSp4zR/5Sk4XjGem0Yaab4bPWqVqiS9tl8oNzXBLWqqr3Z9XsTKAFKlpY4KR69SYKzlN2Rk5ytebOda3xlmU16uN01pBlZhwFDThyQoggnI+Z/Qx2w0y6U2ePU1L6nYBwzmq9ft2y1BmUkoUtKplSFeVtAxkkDqrH6mHWjGnG6Cg5VZWYhxtp7lOfrmd23ai8UK+SsEfMGI9mdJRcuGroK0lLqS8MpFaOOHspnqRErIzl2wVxkfuTTU9yII5MJ9tBrwITa1JRncgQo8sdTFC17qH0CjN+iYcOQq8IWv1X2tIbz0RFQ8iq+Ba8zmr0lv7h/pBDgmpkhS78OXXTUDpphw4CpmhK5BrvWSSN9OIqOIpZojq1hy+2E9opYkvMfulw/XFHXnqIzhwzSpkhm6hi6aU4eRAhQxYVM0MV5Wi9qetPVIhRxHNf3EN1JWi/wCVUo+0BAsBy7iDTp8PiK0U9QIX0B+KMSx08RVHPOD6B/ihaQvTxAmgOoMDxBdxnlrKIvWpDPMKgligh3GEsxYTclWBPxf3gnwhU82AtSelJOcrj06+2yylK9SnDhON4r25VGowV2KElHqciuUbhdN1OnKv+zH1TH0OdcMxIKUUBSAMhTZ778jG9Sb09T2a32Cnp/dpe9S8Pg2FbfHCgyss6Juqrl5hB0tpUlSPDWM5GDvnbrCemSd0XDWO1mDu7j3TZtlNPo82/MOkBQEskrUpQPLO/LfblFQoRTuyaurlNWiUKWo17XvUBOrk105l5QbA05WtJ5lWOUbOcYnKqc57na/7PXDWQsShSyj/ANQ+kuzDilZKlZ5k9gI86tN1Hdnr6al7cbI1VxARI3lT64nxChMxPzU1LLHQeIdJ+RA/WPtKXpyr6CFOfNtvyPArV2q8pLi5p2qTrU7ZqJCVDqn5NQ8dpTZStA7kdvUbR81W9Or6duUldfc61qIVIWXJ5czmLSpaO5EcUcmbVMEFvJeKJR288wmFHljq4oFe2dNHT6Jgh5Cr4F74IXU6QgHkEQ4cMVXlC94Em4qYjsEw4cE1M0J3ErXesintiCOITzQpV1By/mE/CBFxxFLMj54a7+T6CKWJLzGrtUEzVHc65TGcOGaVPAzdqwa3SF5+GFHFjqZIZuVWm7KYvuEwo4sc80OVlQF7yKu4EJYhPuIyqS9PEGXVnmBAsAfcQyhzTxDBzzEH0B+KGpbgTxAmN+YMJ4jXcYO3nkt3vUVLUAnCsknYRajKaUYq7FFpTbZ9JFy3qhP1mbcbSy/nRvkkH07x6+n9InVS93b8jknqlTbcTXd2Vj6xnlMy0uhmVb+1Wgb+IvmNXfvHvUdJT08emCPPqVpVHdm3/wBnOtpamZm1Jl0Yn5dubaUergTpWB89jHzfrNB9Uav7HuelVbRlSf6llleHVDcuqblKnJsKQ46XNSkDKQfWPPp1XFWOmpQTkbOk+CtrSL0rUG6ZLNNpQoJCGwM5x+eRGrndXIVHfgs0lQKP9Jl0sskhpQxlOknPMYEcrk2zeNNJHvFjiC3Z9tmhU5xKanPJLCCj/wAST7SvTAMd/pmieu1Cp+Fu/wBDHV6haak5eXwc9VivokaK8pC8BLYZQCep2Efo84qELI+UUmyqWncTKbgMm+tKVNIH0dS05xt5kH0Mc3RFyLU2Wy8LXauOnsGlrZk1BSVJbXsgqPNO3L0PKPF13ocal6tBWf28P/g7Kerdume5VL9l5iSYpUjNNFt1shKknvHycqU6M3CorM9KclOKcWK3qsmapDZO2ExlDyVV8AbvOqvUtsdAmHDhiqZIBdCs3dIIPQJhxxJnmhGsL8S+5dI90CHHEcu4JTDnicQB/KIpYkvMUCvFvxZO+kRX0i+sNdeVIpDp6FMZQ8l1fAe8DpqFIcz1TBDhjq8oZuhZFw0pzPRMKHDHUyQ1X3Cm7aevPMCFHFhPNGVUdxfUqruBAsBy7iGXnMX+364gW8BPaoTzVvmm3A/cNTn2mW8EJZG6/wAe0expfSZ1op1Nl/k5qupUJtrch52bp7c05PMMBtLpKsH2lnoT/pHv6fRU9NG0EcFStKo7sqNfq81NpUlxSiM4SnpmO2MVFXRzSk27FSr00qVpMw6CNagJdB7lXtH8oir8sGl5BO7uW6hVV+iPSNakl6HZJaVAg48pA2+XOODV6Zaii4efB16es6U1JHTdFrEnczMjcLSQSoBD2OecdY+NqQdNtH1NOaqpSNtW+lTrCG5pS1tpBKArASB03gjLawS3K7dl70u1UvuB1tDqOWCNj6RVOlPUTUKau2TKcaUXObskc9XLd01X6i9V5txSlHZAUeQ7R+i+l+nx9Oo9P1PlnyWt1b1VTq8eCj3HWnZualKa2s6fEDjgz23jrrPqaic0RSedDU4JojSdXMRnJeR+TZdOrIm5FEvMvAam9znntt+MauV10spbEvLO0i4JFFIuqWDrjK8MvZwsgclJV3xzjg1WjpaqHTUX7+TeFSVN7FY4lWrUKfU6bOSrapmQQpKPGSM6e2oDl8+UfH6z0yroby5j9/8Ak9OOoVdr7lfuhYN005OOQTHmRxN6maFrgUXL3lAkZwBDjiKSvUQpNy067fSHG5N5SQPaCDiI9yEY2bK6JOeyKzdlKvIXQuepNInFBOdw0cGGtRRUbOSJnRrdV4xZXWZLiWmqKqLNvz6nTtu0R/WJeroJZIzVHUt3UGb4uXgvcc23JNSsyyUyxBUo9o8mHrlGzbR7VT0iq7JMnUcEma85JrqNXIMqASlpPUfOOSfr6V/bidK9G6rdcixTfBW1ahNS778zNKclwNJBxyjk/wBfqrix0f6PSe7uOu8GrTm55iemjMKcaxp82Iyfr1dbJov/AEii3d3I+5OB0hOVNFbpFRW0+wMhpzdKgPWOvTevuT6Ki5Oev6Os4PgoFQaptHqTtRKUvz+ShK85S393ufWP030v05QgqlRbv/B8jqq95tRIKZmajMqW69lKXMZCjkkx7qW9kcH6iM4PDbUtR82CcnnGiXU7eCG1EqE3NBanXxkpa8qfVZinz+hBG3PIrbozDauYcSVfM84mcbrcL+DKpTKjZsyl1KwFNBtK8bFYUAE578o5Kso36L72NVjc3Z+ztcjs2r6oW444yAG1a06CrbZWMnHb8I+b9UoOLVSSs3ye16bW6rwXg3pV6o9SZEtKnphptI3GvAxHjx3dktz15LpV2cnX9xXdnOITEnJTBmKWk+A91ytR2WPlt+GY+w9K0z0XS5Ld8/kfMa/U/wBRNqL2RKVOopQnwwsDwxqV6mPqJOx5ZXpcl6aVOLO59nPSOfl3ZZIVTKmiT0wYJ8DLLQJtEzIJJIKRhKvSHGzRSJddR0NJlZnKkNHLbqfaR/rCl9hp2J6lXVNLlvBLqFhvZpSvMlWPdPpGM4RqxcZLY0jJxd0bIoq7TueQYqM/Q5QzASBkIGQRH5T8Teiar0u+q0bbpPleY/8AX8H2XpOuoa21Kukp/wA/9jq7St0upqrNJllLHvKbGRHwj9WqyWbPoloaSeKCtyEg6dTNLb1pPMIGYxlr5y5ZqtPGJ81SELdLjaUjotCkCFHUuT2Y3TVrEbXKAltsvSvlV8OOcbKtdcmfSSrRUgupCEr9SNo4nXlCWxt0KS3BtiWk21eUpeVvgCM5VHyUohmpkBIWgaiOnXMK75H0rgOt8lrxTLnUOo6RDqbXY1HexUeIt2/U9vlhh3EzOZQDyKU+8f7R9p8Eelv1HWf1FRXhT3/V+P8Ak8H4h1n9Jp/bhlL+PJoOcfXM5dQckHUMnqI/cIx2PztseddbXKocOPZBxF28Im/3KxXp1TbCx1OwirdKJe5AyUsHpxEtzbkx4rx6F1XIfhERXU0gbsMVuXEzKJaVv9qjJjSauSuCOXSm35J6VmEH7Najz555H8Iw9mLbbW5V3axaOFV9zFg1dE3UKEid0uJS8tCinLefaA5E43jg12glraah1br/ACdmj1a0s+q17m+P2i7iZesqRcoDzRRX0p0OIXuhopClH5nYfjHg+jaJ1NU/c+j+T2fVNT06dKH1fwcsm2NbzLLWEqz4ilDmMHmY+y6E9kfL78lqW4ZptptUu0hYC1urSkhThJ21dDjkMdMQ6VKVOcpOTd9/0HKXUkkjBhnw1oT0J6xo2JIkqggeHpxsRvFS4KPLSnBKzzkivzIcScRnB2YyzOOIKNafkYqTKQKQUrxFLbXoOcpV6+ojNfNuVwWizbjnKapcm8MYzhaVZHoBBFKScJK402ndG67ZrjFTpWhXtowFA9fWPw/41+G4+j6n+qor+1Uf+z+36fY/QfQvU3rqXtTfzx/yvuSEsUSjmpk51HcGPioxj4Pebb5DTamkOB5JwFDeNYpMkXdmJd4bhJxGsFYl3IptSXErSp0jKzHK4dTuzTqse/ZF1RGpS0gJGDyhpOT/AEC9keliZYV4yWdhvuecDpz8ApJ7MaD839GU4rTpVzTzjP2ZJXC6vY544i11dXuSZbC/sZZZZbHoOf65j99+E/To+n+mUopWlJdT/Vn5t61qnqtZNt7LZfsU3x/o7paWcJO4j6mG2x40g0y+WpRRUcpSnJjRbEMq9Ymy2EuEFZbSNIPvLPIf77REnZDQ3S5IyEilpw5ecJdeJ5lZ5xpTh0rcl7nz6C60sDosH9Ynlj8BTLh2WK8eYjBECVwb2A0cMonEGalkTSWdQLK1qQleQQMlO+xII+Uc+oo1K0OmnLpZUJKLvJXJaq1irVK3qZQJglTdLUttpSTvpUoEk/LcRFLTKhUnUXMrf4NalZ1IRh9hOUawoqHNRwCewjvpLyzml9gqVBLqkjclOIt8guDF3KSV/Bj+sZMaGnyXEhRPSKe40RbTplapLPDYFzQT6GMr2kV4LNNTCgrwW1YK/wAh6xUrt9KGtt2EmH0yzCC1uEgAfOLa6VZE3uM0ScUFjUonJ59zBTVhtm1bFrRlZxCVYLa/KoehjzfiH0uPq3ptXTtb2uv1W6O70zVvR6qFRPa+/wCjNlAlwZIKMco/mtxS+WSP1S/2MZlLjgSlJ8uNzmLjF8IltIjVlbSikDT37R0wp32IlIXbMwpSktNjUd8xg7p7Gl15G0oLaUura8yvawYON2hXuG8TxEhh1whKuRMPLYXG4vPByRkH5hbx0tIUvA7AExWm08qtaFO/LS/3ZFWqqcHP7JnLDkyt6bfecJUpTilKPzMf0fQgqcFBeNj8pqS6pOT8gJ5HjtYT7adx6iOpRMWxJyaLsmhpSt1EIVDbuiSOZQJ+rFZ3ZlD15Kc/3/SEl1yAl8KOVGNWSClwHA4MRnHkp8DDY8hSe8XBCYqG0tzDqvZynUCBA1Z3ENElMvrJyQnc+sRyyuEeSadbyQRjSMmN0t7EGD5CJsEbZhS5BH01q+jrXjmYmW6KQZK9bKVp6iGtwIyppV4JdT7SFBY/DeMZryUTbE0iYDa0Kyp5IOOwjaGy6vJMnfYwqDylOolG9yndXaJlu7IaJCmkoUAFjI5noPlGkVZgy/WxN/aJd9lJISj19Y1T6l+Qlsze8k6JuSYWtvJW2CD+EfzR69Qem9Sr0EtlJ/yfq/p9X3dLTqX5SAvBtvJcXyPIdY86m0ludTu+CLmgJhSlNuDAHsx0xfWnuQ/l5PEl5DgIwSBnbtHN0ybNLqwZxxhxKXlLKVK209IvoTd2TdrYUmlJQElDgJ7xLvHgpblf4h3Qig2fMOghS5wiURvyK9s/lmPpfhnQrW6+F+I/M/2/7PI9Y1H9Nppfd7f7nNipwsvFweZPIjuI/cI7bn5yzMTjZVhK8pV7J657fON0ZshqnMeFMJXnHtKI77cxCk7CQ1SmBLyjadQUpz7VahyKlbw4LpiDJFRweWdopsQBoKTqUnbmYiK3KZmVqKNQ68o2XBL3PVth9PqsAfrvEz4GgTqyg+GpWRmJjtuDGZd1IVjlq2jSL3JZhNj7QLzjAgn9wRmgeJKkK6phcxGYyGzSmirJQqFT+w2CmkhaEoI55BhSQJgKa4Zd0AnIQ3jH4mJi7A+RrxSFKW6oajuTDWw2StPUXNIPs8yO8aR328BcuNGmVJU2BzJ0IHr/AKCNer7CR0HQHUuUKUVnKtGAI/A/jOmqfrNb87P/AAj9J9Dl1aGH7/yfTLbrZJWkYPIGPk3Jxd7HsrdEe/4LKS43jV1THRC0t0Zyvwz6Xa1AKKsrAAGIvo6dxOR4F5eKFoBGcbxm/mdh8IWmZcOOlAPlPWHKNthqRqrjy45K0mnUpDZ1vPl8H7gGP6x958C6fqrVar8JL/f/APD5j4lrf24U15bf+xpZDpUorKdifMO0fqsD4uRm5JoWCtDnhg9xt+cbdJncr9eROsuoS6pLiVJOlaTudxzjGpdDROU8+HLSzJPstp2jRbJIESYVlBOM45RXgXkGkeU5Vz9YIIGC1oTkAkiNOBBZZfhOBLiVeGrYqxnSD1jGvJwi3FXf2HFJvcNWKc1T51yXkJxmdZQryPITgODHP5RGnnUqU1KcbP7DkknZO4i24S4AoYxG6e5I2+pHhKBIJI2MXNqwkZs7spG0SuBiynDLlbw3SFjV8olbXZRnOsPKQHpcBQ2UMRUltdEkM/PeDMbNKS4pHlQR72Yxk7FIekJd95SXptzHUD/f9YqKb5FcmkTLbCksoClKVySnmf8AT5xq5W2QFwtlCluiYfIK8aUgeygdhGsY+WK5v613FCgyzgI04KR+Bj8L+N3/APNVEvtH+D9G9AX/AIEb/n/I4+qYmtKcDAMfIM9tWRHz0ops6jzVzjenFJGbk2EaWhnJIzq5RrGlYzcrgnELUAUt8jn5wRpqLH1gnCk7YwRzzFSipbNCUmjU/HZwOOUZ0q5B1I74IEfoXwLGyrbfb/2fK/Em7p/uaXLTks74jWNBPIjb5ekfosduD5SQ3LvMJyndvPNKuX4GN4tGZAXepLMs260SlSXU6SBkYJwd/lGFfZXQ48j7DgJbUBtpGIq4yR1jSQN4bAybTrGTy9Y0iiWYuvMtJwkflFcAYNuOK86jjfYE4iXyAOamn5ZxLqslsA6hnOBmJba3AzcLbgS80QUkdIr80AaWdaLYTvtzzCiAygoUnTt8yIpAAmWG3GVoSB5ueCYVttgEG5h2QlgyHVqSORVgkDtCTcVYfJXzNuT9XcmGcrSykIyVbZPT/wCowb6pXQ0TsqifeSAcoGd1HbbtGqTYE5IS6GvMpXmUd1RtFJEsuFGeSwgLSSegHeNkJHQtsSf8P05KjgFlKiPU7/3j8B+K5dfrNd/n/CR+l+j/AC6Gml9iYWgITpQkAjrHzvt33PS6iNmylYPiEGNo0ru5LlYGZTQn7Xn0Eel7f2ObrTMNClJOOkZ+2/A7gjLhXMgxEou9ikzQvGip+LcP0H2kSjaUbdCdz/WP1H4R03saH3HzJt/+j431yt7mp6fsjXWkpwoHKVcwY+wijwGzJKEo2wChXQiNEQQtxSv/AAD3gkgYzo5g/LtEVY3jsNckbRKp9JlGwpYyBg5jGnLqVy2ifZeKsebpGyJY2hZ06Ukb9Y0iSeoYbCgVHUSeUWkIIrSVYWggADH/AORMuQR86GngWueU4IIhxs9gZD5cp7imNy2d0xnvB2K5Q8iY0o8VCQoEYIhpiPA8gnWkHQdlpzD2AFMyzqk6pOecCv5jkH8IHC+LAgJ2emUSz6Zk6VNoUSRtmMJyai7jS3PralHJaSbW6goUsaytewGfn1iKStEplklXZXG80has81KJA/1joW5JKSqW3FhaZhS8dcYEaxSEWeiJdmZhpKCPDSRk9z0AjVCOnKIhSKXJatsMoA/KPwf4hip+p13/APZn6T6a+nSU1+Q3MJOCkqOTHkRhbc7LkY+wCkhK8ntGiQrkq0qSdW464MBCfLq6mPVpwi22zgbaItxHgzgLyTpc9nHKMnT6Zb8GqneOwJxPhrwkE77gdIzdNdRam2jly/ZtU9ctQmVK2XMrx8gcf2j9e9MoqhpacF4SPg9ZU9ytOX5sriDoVjmk8vSPVicTM1HCdOwEaogjqkgKlnAM50n1iJ8DRrq3p8ILraXCrw3ljfr5jHl6epu1+bN5Iu8lN6kAZwox6CZiySbmAz53ATiNE7EnhnZZxQCtaR3AhqSBok6dKPVpxUpTXUOPJbW4lKzgqCBkgZ6+kc+p1UNPaUvOxcYOfBCpqDsrNp+ksKSTgHMaqXSybXQ3UtLiUOpTkE9BGs91clfYHKzDe7JTj5jETF+BmTim2yRjST+RhgKPzYa8yVcoTdgIKen0VaeZp4QBrV5sdQN456slN9LKjtuWSTkpcLypAdWMbrOY0ikPklkutIT4bSAtQ56RsPxjZN2JG5GSem3UmYOlGc6Btn5xcY3E/wAy8UFkB5oBsJQkgISO3eN+FYS5Oj5aWUinSoQrkyjb8BH4P6p8+urS+8n/ACfpGjfTp4R/JGS3Q4NONxHGoxasb3aEZhnfxM4xCUbD6hllvDmta0qB3Ce0d0LtnG+Ak+6yZYB5tIB3Cuoh1JJL5kEU77EFVJj6FJuzgJ0ttLXq9AMxhTh11YxXloucumDb8I5Oqr/izC3FkkrUVfnH7NSj0xUUfAzd22IFQCsdI6YoxbMXMEZCzFkijgU6C0nzFWwHcxFSSjFt+BxTk0kazpa0y7z7IlcuB1WSOm8ePo6nXDZXOmpHpkT0pOtggqfKT2IxHepW5MWrlql3ZAsh9T5Xt7ozHSmmrkWMXqxTmyPBTuN94OuK4Cw/Q3G56TE7oyoOrCVDYiHBRmrsT2F62w+oKmGsLUg5xjmMQ5xbWwITbqam2gmdA8JWFtOJHL0MLqtGz4DyFdmmHAlxGc9D3EK6YC01PKwNiIHICDqFRIydYEYznbcpIStRSp2vuOhepLLROT3JxHLSm6lV/kaNWRsWVllPJz/y2Rz7rjviiGOthCMIaSAkdhtGv6i/QnKelSgM7Y6RvB3JexcLdY8adYQPjSMH5xUpdMWwgrySOjENgMoSFckgJHfAj8F1MlOpKf3bP0en8sUvsLvJbGw1JWOZjmjHc1chJaVrBSVERp0vwTc//9k=",
     "client_gender_accepted": "Any",
@@ -2956,7 +2992,8 @@ export const PRACTITIONERS_DATA = [
       "Male",
       "Non Binary",
       "Transgender"
-    ]
+    ],
+    "client_note": "Please note: Josh Kugel will be offering Telehealth appointments only from 30 October to 5 December 2026. During this period, all sessions will be conducted online rather than in person. In-person appointments will resume following this period. Please take this into consideration when deciding whether Josh will be the right practitioner for you, particularly if you prefer face-to-face sessions."
   },
   {
     "id": 29,
@@ -2965,7 +3002,7 @@ export const PRACTITIONERS_DATA = [
     "fees": "B/H: $235\nA/H: $275",
     "medicare_rebate": "101.55",
     "gender": "Female",
-    "alert": ". Couples clients must be referred to TVM for her intake (after ours), then we can book in",
+    "alert": "Not seeing Individual Clients - Couples Only",
     "presentations": [
       "Adjustment Disorder",
       "Anger & Aggression",
@@ -3074,7 +3111,7 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/therese-van-maanen/",
     "locations": [
       {
-        "availability": "Thursdays at 3:15pm (Weekly: Starting 17th Sept)\nThursdays at 2pm (Fortnightly: Starting 17th Sept)\nThursdays at 12:45pm (Fortnightly: Starting 17th Sept)\nThursdays at 12:45pm (Monthly: Starting 8th Oct)",
+        "availability": "Thursdays at 2pm (Weekly: Starting 29th Oct)\nThursdays at 3:15pm (Weekly: Starting 29th Oct)\nThursdays at 12:45pm (Fortnightly: Starting 12th Nov)\nThursdays at 12:45pm (Monthly: Starting 5th Nov)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Victoria St, St Kilda"
@@ -3082,10 +3119,10 @@ export const PRACTITIONERS_DATA = [
     ],
     "last_updated": "2026-07-19",
     "availability": [
-      "Thursdays at 3:15pm (Weekly: Starting 17th Sept) — Victoria St, St Kilda",
-      "Thursdays at 2pm (Fortnightly: Starting 17th Sept) — Victoria St, St Kilda",
-      "Thursdays at 12:45pm (Fortnightly: Starting 17th Sept) — Victoria St, St Kilda",
-      "Thursdays at 12:45pm (Monthly: Starting 8th Oct) — Victoria St, St Kilda"
+      "Thursdays at 2pm (Weekly: Starting 29th Oct) — Victoria St, St Kilda",
+      "Thursdays at 3:15pm (Weekly: Starting 29th Oct) — Victoria St, St Kilda",
+      "Thursdays at 12:45pm (Fortnightly: Starting 12th Nov) — Victoria St, St Kilda",
+      "Thursdays at 12:45pm (Monthly: Starting 5th Nov) — Victoria St, St Kilda"
     ],
     "short_bio": "A reflective, attachment-focused psychologist drawing on Circle of Security to support teens, adults, new parents and diverse couples toward meaningful change.",
     "weekly_availability": [
@@ -3140,7 +3177,8 @@ export const PRACTITIONERS_DATA = [
       "Male",
       "Non Binary",
       "Transgender"
-    ]
+    ],
+    "client_note": ""
   },
   {
     "id": 4,
@@ -3250,7 +3288,7 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/belinda-pacella/",
     "locations": [
       {
-        "availability": "Thursdays at 9am (Fortnightly: Starting 29th Oct)",
+        "availability": "Thursdays at 11am (Fortnightly: Starting 5th Nov)\nThursdays at 9am (Fortnightly: Starting 12th Nov)\nThursdays at 8am (Monthly: Starting 29th Oct)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
@@ -3258,7 +3296,9 @@ export const PRACTITIONERS_DATA = [
     ],
     "last_updated": "2026-07-19",
     "availability": [
-      "Thursdays at 9am (Fortnightly: Starting 29th Oct) — Greville St, Prahran"
+      "Thursdays at 11am (Fortnightly: Starting 5th Nov) — Greville St, Prahran",
+      "Thursdays at 9am (Fortnightly: Starting 12th Nov) — Greville St, Prahran",
+      "Thursdays at 8am (Monthly: Starting 29th Oct) — Greville St, Prahran"
     ],
     "short_bio": "Belinda is a collaborative clinical psychologist and supervisor using relational, emotion-focused ISTDP to foster deep self-understanding, emotional resilience and lasting change.",
     "weekly_availability": [
@@ -3323,7 +3363,8 @@ export const PRACTITIONERS_DATA = [
       "Male",
       "Non Binary",
       "Transgender"
-    ]
+    ],
+    "client_note": ""
   },
   {
     "id": 24,
@@ -3433,7 +3474,7 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/poorna-selvaraja/",
     "locations": [
       {
-        "availability": "Wednesdays at 3:30pm (Fortnightly: Starting 23rd Sept)\nTuesdays at 11:30am (Fortnightly: Starting 6th Oct)\nMondays at 10am (Fortnightly: Starting 28th Sept)\nMondays at 2pm (Fortnightly: Starting 5th Oct)\nTuesdays at 8:30am (Fortnightly: Starting 6th Oct)\nTuesdays at 1:30pm (Monthly: Starting 29th Sept)\nTuesdays at 9:30am (Monthly: Starting 6th Oct)\nTuesdays at 10:30am (Monthly: Starting 13th Oct)\nWednesdays at 7pm (Monthly: Starting 7th Oct)\nTuesdays at 8:30am (Monthly: Starting 13th Oct)\nMondays at 11am (Monthly: Starting 28th Sept)",
+        "availability": "Tuesdays at 2:30pm (Weekly: Starting 27th Oct)\nTuesdays at 11:30am (Fortnightly: Starting 1st Dec)\nTuesdays at 9:30am (Fortnightly: Starting 27th Oct)\nMondays at 10am (Fortnightly: Starting 23rd Nov)\nTuesdays at 1:30pm (Monthly: Starting 27th Oct)\nTuesdays at 9:30am (Monthly: Starting 3rd Nov)\nTuesdays at 10:30am (Monthly: Starting 8th Dec)\nWednesdays at 7pm (Monthly: Starting 4th Nov)\nTuesdays at 8:30am (Monthly: Starting 10th Nov)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
@@ -3441,17 +3482,15 @@ export const PRACTITIONERS_DATA = [
     ],
     "last_updated": "2026-07-19",
     "availability": [
-      "Wednesdays at 3:30pm (Fortnightly: Starting 23rd Sept) — Greville St, Prahran",
-      "Tuesdays at 11:30am (Fortnightly: Starting 6th Oct) — Greville St, Prahran",
-      "Mondays at 10am (Fortnightly: Starting 28th Sept) — Greville St, Prahran",
-      "Mondays at 2pm (Fortnightly: Starting 5th Oct) — Greville St, Prahran",
-      "Tuesdays at 8:30am (Fortnightly: Starting 6th Oct) — Greville St, Prahran",
-      "Tuesdays at 1:30pm (Monthly: Starting 29th Sept) — Greville St, Prahran",
-      "Tuesdays at 9:30am (Monthly: Starting 6th Oct) — Greville St, Prahran",
-      "Tuesdays at 10:30am (Monthly: Starting 13th Oct) — Greville St, Prahran",
-      "Wednesdays at 7pm (Monthly: Starting 7th Oct) — Greville St, Prahran",
-      "Tuesdays at 8:30am (Monthly: Starting 13th Oct) — Greville St, Prahran",
-      "Mondays at 11am (Monthly: Starting 28th Sept) — Greville St, Prahran"
+      "Tuesdays at 2:30pm (Weekly: Starting 27th Oct) — Greville St, Prahran",
+      "Tuesdays at 11:30am (Fortnightly: Starting 1st Dec) — Greville St, Prahran",
+      "Tuesdays at 9:30am (Fortnightly: Starting 27th Oct) — Greville St, Prahran",
+      "Mondays at 10am (Fortnightly: Starting 23rd Nov) — Greville St, Prahran",
+      "Tuesdays at 1:30pm (Monthly: Starting 27th Oct) — Greville St, Prahran",
+      "Tuesdays at 9:30am (Monthly: Starting 3rd Nov) — Greville St, Prahran",
+      "Tuesdays at 10:30am (Monthly: Starting 8th Dec) — Greville St, Prahran",
+      "Wednesdays at 7pm (Monthly: Starting 4th Nov) — Greville St, Prahran",
+      "Tuesdays at 8:30am (Monthly: Starting 10th Nov) — Greville St, Prahran"
     ],
     "short_bio": "Poorna is a warm, culturally attuned clinical psychologist using CBT, schema and psychodynamic therapy to support trauma, identity, adjustment and cross-cultural challenges",
     "weekly_availability": [],
@@ -3507,7 +3546,8 @@ export const PRACTITIONERS_DATA = [
       "Male",
       "Non Binary",
       "Transgender"
-    ]
+    ],
+    "client_note": ""
   },
   {
     "name": "Dr David Spektor",
@@ -3574,7 +3614,7 @@ export const PRACTITIONERS_DATA = [
     "languages": "",
     "spare_time": "",
     "pap_clinician": "",
-    "alert": "Books closed indefinitely — not taking any new clients. No waitlist.",
+    "alert": "",
     "client_gender_accepted": "Any",
     "ageGroups": [
       "18 Yrs +"
@@ -3582,7 +3622,8 @@ export const PRACTITIONERS_DATA = [
     "clientTypes": [
       "Individual"
     ],
-    "therapistType": "Clinical Psychologist"
+    "therapistType": "Clinical Psychologist",
+    "client_note": ""
   },
   {
     "id": 23,
@@ -3653,7 +3694,7 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/pete-steele/",
     "locations": [
       {
-        "availability": "Tuesdays at 10am (Fortnightly: Starting 13th Oct)\nTuesdays at 9am (Fortnightly: Starting 6th Oct)\nTuesdays at 1pm (Monthly: Starting 6th Oct)\nWednesdays at 11am (Monthly: Starting 14th Oct)\nTuesdays at 8am (Monthly: Starting 27th Oct)",
+        "availability": "Tuesdays at 8am (Monthly: Starting 3rd Nov)\nTuesdays at 1pm (Monthly: Starting 3rd Nov)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
@@ -3667,11 +3708,8 @@ export const PRACTITIONERS_DATA = [
     ],
     "last_updated": "2026-07-19",
     "availability": [
-      "Tuesdays at 10am (Fortnightly: Starting 13th Oct) — Greville St, Prahran",
-      "Tuesdays at 9am (Fortnightly: Starting 6th Oct) — Greville St, Prahran",
-      "Tuesdays at 1pm (Monthly: Starting 6th Oct) — Greville St, Prahran",
-      "Wednesdays at 11am (Monthly: Starting 14th Oct) — Greville St, Prahran",
-      "Tuesdays at 8am (Monthly: Starting 27th Oct) — Greville St, Prahran"
+      "Tuesdays at 8am (Monthly: Starting 3rd Nov) — Greville St, Prahran",
+      "Tuesdays at 1pm (Monthly: Starting 3rd Nov) — Greville St, Prahran"
     ],
     "short_bio": "Pete is a warm, trauma-informed clinical psychologist using CBT and ACT to support diverse adults and adolescents, including LGBTIQ+ and CALD communities.",
     "weekly_availability": [],
@@ -3706,7 +3744,8 @@ export const PRACTITIONERS_DATA = [
       "Cisgender",
       "Non Binary",
       "Transgender"
-    ]
+    ],
+    "client_note": ""
   },
   {
     "id": 8,
@@ -3764,13 +3803,13 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/clare-tuttleby/",
     "locations": [
       {
-        "availability": "Tuesdays at 6:30pm (Fortnightly: Starting 22nd Sept)\nTuesdays at 2:30pm (Fortnightly: Starting 22nd Sept)\nTuesdays at 3:30pm (Fortnightly: Starting 29th Sept)\nMondays at 5:30pm (Fortnightly: Starting 21st Sept)\nMondays at 3:30pm (Monthly: Starting 5th Oct)\nMondays at 2:30pm (Monthly: Starting 5th Oct)\nMondays at 5:30pm (Monthly: Starting 28th Sept)",
+        "availability": "Tuesdays at 2:30pm (Fortnightly: Starting 3rd Nov)\nMondays at 6:30pm (Monthly: Starting 23rd Nov)\nMondays at 2:30pm (Monthly: Starting 2nd Nov)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
       },
       {
-        "availability": "Tuesdays at 11am (Fortnightly: Starting 22nd Sept)",
+        "availability": "Mondays at 11am (Weekly: Starting 26th Oct)\nTuesdays at 11am (Fortnightly: Starting 3rd Nov)\nTuesdays at 11am (Monthly: Starting 27th Oct)",
         "weekly_availability": [],
         "fortnightly_availability": [
           {
@@ -3784,14 +3823,12 @@ export const PRACTITIONERS_DATA = [
     ],
     "last_updated": "2026-07-19",
     "availability": [
-      "Tuesdays at 6:30pm (Fortnightly: Starting 22nd Sept) — Greville St, Prahran",
-      "Tuesdays at 2:30pm (Fortnightly: Starting 22nd Sept) — Greville St, Prahran",
-      "Tuesdays at 3:30pm (Fortnightly: Starting 29th Sept) — Greville St, Prahran",
-      "Mondays at 5:30pm (Fortnightly: Starting 21st Sept) — Greville St, Prahran",
-      "Mondays at 3:30pm (Monthly: Starting 5th Oct) — Greville St, Prahran",
-      "Mondays at 2:30pm (Monthly: Starting 5th Oct) — Greville St, Prahran",
-      "Mondays at 5:30pm (Monthly: Starting 28th Sept) — Greville St, Prahran",
-      "Tuesdays at 11am (Fortnightly: Starting 22nd Sept) — Telehealth"
+      "Mondays at 11am (Weekly: Starting 26th Oct) — Telehealth",
+      "Tuesdays at 11am (Fortnightly: Starting 3rd Nov) — Telehealth",
+      "Tuesdays at 11am (Monthly: Starting 27th Oct) — Telehealth",
+      "Tuesdays at 2:30pm (Fortnightly: Starting 3rd Nov) — Greville St, Prahran",
+      "Mondays at 6:30pm (Monthly: Starting 23rd Nov) — Greville St, Prahran",
+      "Mondays at 2:30pm (Monthly: Starting 2nd Nov) — Greville St, Prahran"
     ],
     "short_bio": "Clare is a warm, client-centred psychologist supporting life transitions, anxiety, perinatal and health challenges using CBT, ACT and mindfulness-based approaches.",
     "weekly_availability": [],
@@ -3808,7 +3845,8 @@ export const PRACTITIONERS_DATA = [
     "clientTypes": [
       "Individual"
     ],
-    "therapistType": "Psychologist"
+    "therapistType": "Psychologist",
+    "client_note": ""
   },
   {
     "id": 10,
@@ -3817,7 +3855,7 @@ export const PRACTITIONERS_DATA = [
     "fees": "B/H: $275\nA/H: $315",
     "medicare_rebate": "149.05",
     "gender": "Female",
-    "alert": "Anna 16/03- No NDIS or complex clients\nCannot see clients who I have been working with at Kingston Rehab (Monash Health) at this time while I am still working there.\nMax 2 new clients per week. Thursday Camberwell slots are reserved for clients with mobility difficulties or older clients (Prahran clinic has steps — Camberwell is step-free).",
+    "alert": "Anna 16/03- No NDIS or complex clients Cannot see clients who I have been working with at Kingston Rehab (Monash Health) at this time while I am still working there. Max 2 new clients per week. Thursday Camberwell slots are reserved for clients with mobility difficulties or older clients (Prahran clinic has steps — Camberwell is step-free).",
     "presentations": [
       "Academic Pressure & Performance Stress",
       "Acute Stress Reaction",
@@ -3885,7 +3923,6 @@ export const PRACTITIONERS_DATA = [
       "Trauma - Developmental",
       "Trauma - Intergenerational",
       "Trauma - Sexual Trauma",
-      "Trauma — Complex",
       "Women's Health — Menopause & Perimenopause",
       "Women's Health — Polycystic Ovary Syndrome (PCOS)",
       "Women's Health — Postpartum Anxiety",
@@ -3931,26 +3968,29 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/elizabeth-white/",
     "locations": [
       {
-        "availability": "Wednesdays at 9am (Weekly: Starting 23rd Sept)\nThursdays at 9am (Weekly: Starting 8th Oct)\nFridays at 10am (Fortnightly: Starting 2nd Oct)\nFridays at 9am (Fortnightly: Starting 25th Sept)\nMondays at 4:30pm (Monthly: Starting 19th Oct)\nThursdays at 10am (Monthly: Starting 8th Oct)",
+        "availability": "Fridays at 11am (Weekly: Starting 30th Oct)\nThursdays at 9am (Weekly: Starting 5th Nov)\nWednesdays at 9am (Weekly: Starting 4th Nov)\nFridays at 8am (Fortnightly: Starting 30th Oct)\nThursdays at 10am (Fortnightly: Starting 5th Nov)\nWednesdays at 10am (Fortnightly: Starting 28th Oct)\nWednesdays at 1pm (Fortnightly: Starting 28th Oct)\nThursdays at 8am (Fortnightly: Starting 12th Nov)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
       },
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "",
+        "availability": "Thursdays at 2:30pm (Fortnightly: Starting 5th Nov)",
         "weekly_availability": [],
         "fortnightly_availability": []
       }
     ],
     "last_updated": "2026-07-19",
     "availability": [
-      "Wednesdays at 9am (Weekly: Starting 23rd Sept) — Greville St, Prahran",
-      "Thursdays at 9am (Weekly: Starting 8th Oct) — Greville St, Prahran",
-      "Fridays at 10am (Fortnightly: Starting 2nd Oct) — Greville St, Prahran",
-      "Fridays at 9am (Fortnightly: Starting 25th Sept) — Greville St, Prahran",
-      "Mondays at 4:30pm (Monthly: Starting 19th Oct) — Greville St, Prahran",
-      "Thursdays at 10am (Monthly: Starting 8th Oct) — Greville St, Prahran"
+      "Fridays at 11am (Weekly: Starting 30th Oct) — Greville St, Prahran",
+      "Thursdays at 9am (Weekly: Starting 5th Nov) — Greville St, Prahran",
+      "Wednesdays at 9am (Weekly: Starting 4th Nov) — Greville St, Prahran",
+      "Fridays at 8am (Fortnightly: Starting 30th Oct) — Greville St, Prahran",
+      "Thursdays at 10am (Fortnightly: Starting 5th Nov) — Greville St, Prahran",
+      "Wednesdays at 10am (Fortnightly: Starting 28th Oct) — Greville St, Prahran",
+      "Wednesdays at 1pm (Fortnightly: Starting 28th Oct) — Greville St, Prahran",
+      "Thursdays at 8am (Fortnightly: Starting 12th Nov) — Greville St, Prahran",
+      "Thursdays at 2:30pm (Fortnightly: Starting 5th Nov) — Burke Rd, Camberwell"
     ],
     "short_bio": "A mature-age clinical psychologist using ISTDP, Conversational Model, ACT and CBT to support adults through chronic depression, stress-related symptoms and life transitions.",
     "weekly_availability": [
@@ -4030,7 +4070,8 @@ export const PRACTITIONERS_DATA = [
       "Gender Queer",
       "Male",
       "Non Binary"
-    ]
+    ],
+    "client_note": ""
   },
   {
     "id": 14,
@@ -4039,7 +4080,7 @@ export const PRACTITIONERS_DATA = [
     "fees": "B/H: $275\nA/H: $315",
     "medicare_rebate": "149.05",
     "gender": "Female",
-    "alert": ",",
+    "alert": "",
     "presentations": [
       "Addiction/Dependence (Alcohol) — Not Current / In Recovery",
       "Addiction/Dependence (Cannabis) — Not Current / In Recovery",
@@ -4136,7 +4177,7 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/karen-pereira-york/",
     "locations": [
       {
-        "availability": "Mondays at 10:30am (Fortnightly: Starting 21st Sept)\nThursdays at 1pm (Fortnightly: Starting 24th Sept)\nThursdays at 12pm (Fortnightly: Starting 8th Oct)\nThursdays at 10:30am (Fortnightly: Starting 17th Sept)\nThursdays at 9:30am (Fortnightly: Starting 24th Sept)\nTuesdays at 2:30pm (Monthly: Starting 6th Oct)\nThursdays at 8:30am (Monthly: Starting 1st Oct)\nTuesdays at 6:30pm (Monthly: Starting 29th Sept)\nTuesdays at 4:30pm (Monthly: Starting 6th Oct)",
+        "availability": "Mondays at 8:30am (Fortnightly: Starting 9th Nov)\nMondays at 10:30am (Monthly: Starting 9th Nov)\nTuesdays at 2:30pm (Monthly: Starting 1st Dec)\nThursdays at 8:30am (Monthly: Starting 29th Oct)\nTuesdays at 4:30pm (Monthly: Starting 1st Dec)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
@@ -4144,15 +4185,11 @@ export const PRACTITIONERS_DATA = [
     ],
     "last_updated": "2026-07-19",
     "availability": [
-      "Mondays at 10:30am (Fortnightly: Starting 21st Sept) — Greville St, Prahran",
-      "Thursdays at 1pm (Fortnightly: Starting 24th Sept) — Greville St, Prahran",
-      "Thursdays at 12pm (Fortnightly: Starting 8th Oct) — Greville St, Prahran",
-      "Thursdays at 10:30am (Fortnightly: Starting 17th Sept) — Greville St, Prahran",
-      "Thursdays at 9:30am (Fortnightly: Starting 24th Sept) — Greville St, Prahran",
-      "Tuesdays at 2:30pm (Monthly: Starting 6th Oct) — Greville St, Prahran",
-      "Thursdays at 8:30am (Monthly: Starting 1st Oct) — Greville St, Prahran",
-      "Tuesdays at 6:30pm (Monthly: Starting 29th Sept) — Greville St, Prahran",
-      "Tuesdays at 4:30pm (Monthly: Starting 6th Oct) — Greville St, Prahran"
+      "Mondays at 8:30am (Fortnightly: Starting 9th Nov) — Greville St, Prahran",
+      "Mondays at 10:30am (Monthly: Starting 9th Nov) — Greville St, Prahran",
+      "Tuesdays at 2:30pm (Monthly: Starting 1st Dec) — Greville St, Prahran",
+      "Thursdays at 8:30am (Monthly: Starting 29th Oct) — Greville St, Prahran",
+      "Tuesdays at 4:30pm (Monthly: Starting 1st Dec) — Greville St, Prahran"
     ],
     "short_bio": "Karen is a psychodynamic clinical psychologist integrating EMDR to support trauma, identity, grief and life transitions with culturally attuned, exploratory therapy.",
     "weekly_availability": [
@@ -4203,8 +4240,9 @@ export const PRACTITIONERS_DATA = [
     "genderOfClientsSeen": [
       "Female",
       "Male"
-    ]
+    ],
+    "client_note": ""
   }
 ];
 export const practitionersData = PRACTITIONERS_DATA;
-export const AVAILABILITY_LAST_UPDATED = "16 Sept 2026 6:01am";
+export const AVAILABILITY_LAST_UPDATED = "23 Oct 2026 2:28pm";
