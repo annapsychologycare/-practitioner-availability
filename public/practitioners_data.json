@@ -989,7 +989,7 @@
     "link_to_bio": "https://psychologycare.com.au/dr-maddie-brygel-psychologist/",
     "locations": [
       {
-        "availability": "Mondays at 9am (Fortnightly: Starting 9th Nov)\nTuesdays at 12pm (Fortnightly: Starting 3rd Nov)\nThursdays at 10am (Fortnightly: Starting 3rd Dec)\nFridays at 1pm (Monthly: Starting 4th Dec)\nThursdays at 8am (Monthly: Starting 5th Nov)\nMondays at 1pm (Monthly: Starting 9th Nov)\nMondays at 10am (Monthly: Starting 9th Nov)",
+        "availability": "Tuesdays at 12pm (Fortnightly: Starting 3rd Nov)\nThursdays at 10am (Fortnightly: Starting 3rd Dec)\nMondays at 10am (Monthly: Starting 9th Nov)\nMondays at 1pm (Monthly: Starting 9th Nov)\nThursdays at 8am (Monthly: Starting 5th Nov)\nFridays at 1pm (Monthly: Starting 4th Dec)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
@@ -1035,13 +1035,12 @@
     ],
     "last_updated": "2026-07-19",
     "availability": [
-      "Mondays at 9am (Fortnightly: Starting 9th Nov) — Greville St, Prahran",
       "Tuesdays at 12pm (Fortnightly: Starting 3rd Nov) — Greville St, Prahran",
       "Thursdays at 10am (Fortnightly: Starting 3rd Dec) — Greville St, Prahran",
-      "Fridays at 1pm (Monthly: Starting 4th Dec) — Greville St, Prahran",
-      "Thursdays at 8am (Monthly: Starting 5th Nov) — Greville St, Prahran",
+      "Mondays at 10am (Monthly: Starting 9th Nov) — Greville St, Prahran",
       "Mondays at 1pm (Monthly: Starting 9th Nov) — Greville St, Prahran",
-      "Mondays at 10am (Monthly: Starting 9th Nov) — Greville St, Prahran"
+      "Thursdays at 8am (Monthly: Starting 5th Nov) — Greville St, Prahran",
+      "Fridays at 1pm (Monthly: Starting 4th Dec) — Greville St, Prahran"
     ],
     "short_bio": "A psychologist trained in both clinical and forensic psychology, lecturer, and researcher supporting adults with anxiety, depression, trauma, grief, addiction and women’s mental health",
     "weekly_availability": [
@@ -2158,7 +2157,7 @@
     "fees": "B/H: $275\nA/H: $315",
     "medicare_rebate": "149.05",
     "gender": "Female",
-    "alert": "Kiira is Telehealth Only.  ? EMDR in-person only — not appropriate for telehealth delivery.",
+    "alert": "⚠️ Please note: Kiira offers Telehealth only appointments until the end of 2026. As of mid Jan 2027, Kiira will be offering in person appointments on Tuesdays and Wednesdays between 8am and 2PM at the Camberwell Clinic. Please take this into consideration when deciding whether Kiira will be the right practitioner for you, particularly if you prefer face-to-face sessions.",
     "presentations": [
       "Anger & Aggression",
       "Anxiety - Generalised (GAD)",
@@ -2265,7 +2264,7 @@
       "Female",
       "Male"
     ],
-    "client_note": "Please note: Chiara offers Telehealth appointments only, with no in-person appointments available. Please take this into consideration when deciding whether Chiara will be the right practitioner for you, particularly if you prefer face-to-face sessions."
+    "client_note": "⚠️ Please note: Kiira offers Telehealth only appointments until the end of 2026. As of mid Jan 2027, Kiira will be offering in person appointments on Tuesdays and Wednesdays between 8am and 2PM at the Camberwell Clinic. Please take this into consideration when deciding whether Kiira will be the right practitioner for you, particularly if you prefer face-to-face sessions."
   },
   {
     "id": 6,
