@@ -3692,7 +3692,7 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/pete-steele/",
     "locations": [
       {
-        "availability": "Tuesdays at 8am (Monthly: Starting 3rd Nov)\nTuesdays at 1pm (Monthly: Starting 3rd Nov)",
+        "availability": "Tuesdays at 8am (Fortnightly: Starting 24th Nov)\nTuesdays at 1pm (Monthly: Starting 3rd Nov)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
@@ -3706,7 +3706,7 @@ export const PRACTITIONERS_DATA = [
     ],
     "last_updated": "2026-07-19",
     "availability": [
-      "Tuesdays at 8am (Monthly: Starting 3rd Nov) — Greville St, Prahran",
+      "Tuesdays at 8am (Fortnightly: Starting 24th Nov) — Greville St, Prahran",
       "Tuesdays at 1pm (Monthly: Starting 3rd Nov) — Greville St, Prahran"
     ],
     "short_bio": "Pete is a warm, trauma-informed clinical psychologist using CBT and ACT to support diverse adults and adolescents, including LGBTIQ+ and CALD communities.",
@@ -4245,4 +4245,4 @@ export const PRACTITIONERS_DATA = [
   }
 ];
 export const practitionersData = PRACTITIONERS_DATA;
-export const AVAILABILITY_LAST_UPDATED = "28 Oct 2026 6:03am";
+export const AVAILABILITY_LAST_UPDATED = "28 Oct 2026 12:05pm";

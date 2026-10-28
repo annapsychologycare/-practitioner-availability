@@ -26505,7 +26505,7 @@ Pete practices using Cognitive Behaviour Therapy (CBT) and Acceptance and Commit
       link_to_bio: "https://psychologycare.com.au/pete-steele/",
       locations: [
         {
-          availability: `Tuesdays at 8am (Monthly: Starting 3rd Nov)
+          availability: `Tuesdays at 8am (Fortnightly: Starting 24th Nov)
 Tuesdays at 1pm (Monthly: Starting 3rd Nov)`,
           weekly_availability: [],
           fortnightly_availability: [],
@@ -26520,7 +26520,7 @@ Tuesdays at 1pm (Monthly: Starting 3rd Nov)`,
       ],
       last_updated: "2026-07-19",
       availability: [
-        "Tuesdays at 8am (Monthly: Starting 3rd Nov) — Greville St, Prahran",
+        "Tuesdays at 8am (Fortnightly: Starting 24th Nov) — Greville St, Prahran",
         "Tuesdays at 1pm (Monthly: Starting 3rd Nov) — Greville St, Prahran"
       ],
       short_bio: "Pete is a warm, trauma-informed clinical psychologist using CBT and ACT to support diverse adults and adolescents, including LGBTIQ+ and CALD communities.",
@@ -27137,7 +27137,7 @@ Tuesdays at 4:30pm (Monthly: Starting 1st Dec)`,
       client_note: ""
     }
   ];
-  var AVAILABILITY_LAST_UPDATED = "28 Oct 2026 6:03am";
+  var AVAILABILITY_LAST_UPDATED = "28 Oct 2026 12:05pm";
 
   // components/IntakeTab.tsx
   var jsx_dev_runtime7 = __toESM(require_jsx_dev_runtime());
