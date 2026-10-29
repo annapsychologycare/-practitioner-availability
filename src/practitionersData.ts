@@ -288,7 +288,7 @@ export const PRACTITIONERS_DATA = [
     "locations": [
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "Mondays at 11am (Fortnightly: Starting 16th Nov)\nMondays at 12pm (Fortnightly: Starting 9th Nov)\nMondays at 10am (Fortnightly: Starting 16th Nov)\nMondays at 3pm (Monthly: Starting 30th Nov)\nSaturdays at 12pm (Monthly: Starting 21st Nov)\nMondays at 1pm (Monthly: Starting 30th Nov)",
+        "availability": "Mondays at 11am (Fortnightly: Starting 16th Nov)\nMondays at 10am (Fortnightly: Starting 16th Nov)\nMondays at 3pm (Monthly: Starting 30th Nov)\nSaturdays at 12pm (Monthly: Starting 21st Nov)\nMondays at 1pm (Monthly: Starting 30th Nov)",
         "weekly_availability": [],
         "fortnightly_availability": []
       }
@@ -296,7 +296,6 @@ export const PRACTITIONERS_DATA = [
     "last_updated": "2026-07-19",
     "availability": [
       "Mondays at 11am (Fortnightly: Starting 16th Nov) — Burke Rd, Camberwell",
-      "Mondays at 12pm (Fortnightly: Starting 9th Nov) — Burke Rd, Camberwell",
       "Mondays at 10am (Fortnightly: Starting 16th Nov) — Burke Rd, Camberwell",
       "Mondays at 3pm (Monthly: Starting 30th Nov) — Burke Rd, Camberwell",
       "Saturdays at 12pm (Monthly: Starting 21st Nov) — Burke Rd, Camberwell",
@@ -564,7 +563,7 @@ export const PRACTITIONERS_DATA = [
     "locations": [
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "Mondays at 9am (Fortnightly: Starting 2nd Nov)\nFridays at 10am (Fortnightly: Starting 30th Oct)\nMondays at 10am (Fortnightly: Starting 30th Nov)\nMondays at 8am (Monthly: Starting 7th Dec)\nFridays at 9am (Monthly: Starting 20th Nov)\nFridays at 10am (Monthly: Starting 6th Nov)\nMondays at 1pm (Monthly: Starting 23rd Nov)",
+        "availability": "Mondays at 9am (Fortnightly: Starting 2nd Nov)\nFridays at 10am (Fortnightly: Starting 13th Nov)\nMondays at 10am (Fortnightly: Starting 30th Nov)\nMondays at 8am (Monthly: Starting 7th Dec)\nFridays at 9am (Monthly: Starting 20th Nov)\nFridays at 10am (Monthly: Starting 6th Nov)\nMondays at 1pm (Monthly: Starting 23rd Nov)",
         "weekly_availability": [],
         "fortnightly_availability": []
       },
@@ -578,7 +577,7 @@ export const PRACTITIONERS_DATA = [
     "last_updated": "2026-07-19",
     "availability": [
       "Mondays at 9am (Fortnightly: Starting 2nd Nov) — Burke Rd, Camberwell",
-      "Fridays at 10am (Fortnightly: Starting 30th Oct) — Burke Rd, Camberwell",
+      "Fridays at 10am (Fortnightly: Starting 13th Nov) — Burke Rd, Camberwell",
       "Mondays at 10am (Fortnightly: Starting 30th Nov) — Burke Rd, Camberwell",
       "Mondays at 8am (Monthly: Starting 7th Dec) — Burke Rd, Camberwell",
       "Fridays at 9am (Monthly: Starting 20th Nov) — Burke Rd, Camberwell",
@@ -1944,17 +1943,17 @@ export const PRACTITIONERS_DATA = [
     "locations": [
       {
         "location": "Greville St, Prahran",
-        "availability": "Fridays at 4:30pm (Fortnightly: Starting 30th Oct)\nMondays at 10am (Fortnightly: Starting 23rd Nov)\nTuesdays at 9am (Monthly: Starting 10th Nov)\nMondays at 10am (Monthly: Starting 2nd Nov)\nTuesdays at 12pm (Monthly: Starting 8th Dec)",
+        "availability": "Fridays at 4:30pm (Fortnightly: Starting 13th Nov)\nSaturdays at 10am (Monthly: Starting 14th Nov)\nTuesdays at 9am (Monthly: Starting 10th Nov)\nMondays at 10am (Monthly: Starting 30th Nov)\nTuesdays at 12pm (Monthly: Starting 8th Dec)",
         "weekly_availability": [],
         "fortnightly_availability": []
       }
     ],
     "last_updated": "2026-07-19",
     "availability": [
-      "Fridays at 4:30pm (Fortnightly: Starting 30th Oct) — Greville St, Prahran",
-      "Mondays at 10am (Fortnightly: Starting 23rd Nov) — Greville St, Prahran",
+      "Fridays at 4:30pm (Fortnightly: Starting 13th Nov) — Greville St, Prahran",
+      "Saturdays at 10am (Monthly: Starting 14th Nov) — Greville St, Prahran",
       "Tuesdays at 9am (Monthly: Starting 10th Nov) — Greville St, Prahran",
-      "Mondays at 10am (Monthly: Starting 2nd Nov) — Greville St, Prahran",
+      "Mondays at 10am (Monthly: Starting 30th Nov) — Greville St, Prahran",
       "Tuesdays at 12pm (Monthly: Starting 8th Dec) — Greville St, Prahran"
     ],
     "short_bio": "Christine is a trauma specialist psychotherapist and psychoanalyst offering EMDR and depth therapy to help survivors reclaim and live with their stories.​",
@@ -3286,7 +3285,7 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/belinda-pacella/",
     "locations": [
       {
-        "availability": "Thursdays at 10am (Fortnightly: Starting 5th Nov)\nThursdays at 11am (Fortnightly: Starting 5th Nov)\nThursdays at 8am (Monthly: Starting 26th Nov)",
+        "availability": "Thursdays at 10am (Fortnightly: Starting 5th Nov)\nThursdays at 8am (Monthly: Starting 26th Nov)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
@@ -3295,7 +3294,6 @@ export const PRACTITIONERS_DATA = [
     "last_updated": "2026-07-19",
     "availability": [
       "Thursdays at 10am (Fortnightly: Starting 5th Nov) — Greville St, Prahran",
-      "Thursdays at 11am (Fortnightly: Starting 5th Nov) — Greville St, Prahran",
       "Thursdays at 8am (Monthly: Starting 26th Nov) — Greville St, Prahran"
     ],
     "short_bio": "Belinda is a collaborative clinical psychologist and supervisor using relational, emotion-focused ISTDP to foster deep self-understanding, emotional resilience and lasting change.",
@@ -3968,7 +3966,7 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/elizabeth-white/",
     "locations": [
       {
-        "availability": "Wednesdays at 9am (Weekly: Starting 4th Nov)\nFridays at 11am (Weekly: Starting 30th Oct)\nThursdays at 9am (Weekly: Starting 5th Nov)\nFridays at 8am (Fortnightly: Starting 30th Oct)\nWednesdays at 10am (Fortnightly: Starting 25th Nov)\nWednesdays at 1pm (Fortnightly: Starting 11th Nov)",
+        "availability": "Wednesdays at 9am (Weekly: Starting 4th Nov)\nFridays at 11am (Weekly: Starting 6th Nov)\nThursdays at 9am (Weekly: Starting 5th Nov)\nFridays at 8am (Fortnightly: Starting 13th Nov)\nWednesdays at 10am (Fortnightly: Starting 25th Nov)\nWednesdays at 1pm (Fortnightly: Starting 11th Nov)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
@@ -3983,9 +3981,9 @@ export const PRACTITIONERS_DATA = [
     "last_updated": "2026-07-19",
     "availability": [
       "Wednesdays at 9am (Weekly: Starting 4th Nov) — Greville St, Prahran",
-      "Fridays at 11am (Weekly: Starting 30th Oct) — Greville St, Prahran",
+      "Fridays at 11am (Weekly: Starting 6th Nov) — Greville St, Prahran",
       "Thursdays at 9am (Weekly: Starting 5th Nov) — Greville St, Prahran",
-      "Fridays at 8am (Fortnightly: Starting 30th Oct) — Greville St, Prahran",
+      "Fridays at 8am (Fortnightly: Starting 13th Nov) — Greville St, Prahran",
       "Wednesdays at 10am (Fortnightly: Starting 25th Nov) — Greville St, Prahran",
       "Wednesdays at 1pm (Fortnightly: Starting 11th Nov) — Greville St, Prahran",
       "Thursdays at 2:30pm (Fortnightly: Starting 5th Nov) — Burke Rd, Camberwell"
@@ -4175,7 +4173,7 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/karen-pereira-york/",
     "locations": [
       {
-        "availability": "Thursdays at 10:30am (Fortnightly: Starting 24th Dec)\nThursdays at 9:30am (Fortnightly: Starting 5th Nov)\nMondays at 8:30am (Fortnightly: Starting 9th Nov)\nMondays at 10:30am (Monthly: Starting 7th Dec)\nThursdays at 8:30am (Monthly: Starting 26th Nov)\nTuesdays at 4:30pm (Monthly: Starting 1st Dec)",
+        "availability": "Thursdays at 10:30am (Fortnightly: Starting 24th Dec)\nThursdays at 9:30am (Fortnightly: Starting 5th Nov)\nMondays at 8:30am (Fortnightly: Starting 9th Nov)\nTuesdays at 2:30pm (Monthly: Starting 1st Dec)\nMondays at 10:30am (Monthly: Starting 7th Dec)\nThursdays at 8:30am (Monthly: Starting 26th Nov)\nTuesdays at 4:30pm (Monthly: Starting 1st Dec)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
@@ -4186,6 +4184,7 @@ export const PRACTITIONERS_DATA = [
       "Thursdays at 10:30am (Fortnightly: Starting 24th Dec) — Greville St, Prahran",
       "Thursdays at 9:30am (Fortnightly: Starting 5th Nov) — Greville St, Prahran",
       "Mondays at 8:30am (Fortnightly: Starting 9th Nov) — Greville St, Prahran",
+      "Tuesdays at 2:30pm (Monthly: Starting 1st Dec) — Greville St, Prahran",
       "Mondays at 10:30am (Monthly: Starting 7th Dec) — Greville St, Prahran",
       "Thursdays at 8:30am (Monthly: Starting 26th Nov) — Greville St, Prahran",
       "Tuesdays at 4:30pm (Monthly: Starting 1st Dec) — Greville St, Prahran"
@@ -4244,4 +4243,4 @@ export const PRACTITIONERS_DATA = [
   }
 ];
 export const practitionersData = PRACTITIONERS_DATA;
-export const AVAILABILITY_LAST_UPDATED = "29 Oct 2026 6:04am";
+export const AVAILABILITY_LAST_UPDATED = "30 Oct 2026 6:03am";
