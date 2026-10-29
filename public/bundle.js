@@ -24619,22 +24619,22 @@ I am committed to providing best practice trauma informed care in a confidential
       locations: [
         {
           location: "Greville St, Prahran",
-          availability: `Fridays at 4:30pm (Fortnightly: Starting 13th Nov)
-Saturdays at 10am (Monthly: Starting 14th Nov)
-Tuesdays at 9am (Monthly: Starting 10th Nov)
+          availability: `Fridays at 2:30pm (Fortnightly: Starting 13th Nov)
 Mondays at 10am (Monthly: Starting 30th Nov)
-Tuesdays at 12pm (Monthly: Starting 8th Dec)`,
+Tuesdays at 12pm (Monthly: Starting 8th Dec)
+Tuesdays at 9am (Monthly: Starting 10th Nov)
+Saturdays at 10am (Monthly: Starting 14th Nov)`,
           weekly_availability: [],
           fortnightly_availability: []
         }
       ],
       last_updated: "2026-07-19",
       availability: [
-        "Fridays at 4:30pm (Fortnightly: Starting 13th Nov) — Greville St, Prahran",
-        "Saturdays at 10am (Monthly: Starting 14th Nov) — Greville St, Prahran",
-        "Tuesdays at 9am (Monthly: Starting 10th Nov) — Greville St, Prahran",
+        "Fridays at 2:30pm (Fortnightly: Starting 13th Nov) — Greville St, Prahran",
         "Mondays at 10am (Monthly: Starting 30th Nov) — Greville St, Prahran",
-        "Tuesdays at 12pm (Monthly: Starting 8th Dec) — Greville St, Prahran"
+        "Tuesdays at 12pm (Monthly: Starting 8th Dec) — Greville St, Prahran",
+        "Tuesdays at 9am (Monthly: Starting 10th Nov) — Greville St, Prahran",
+        "Saturdays at 10am (Monthly: Starting 14th Nov) — Greville St, Prahran"
       ],
       short_bio: "Christine is a trauma specialist psychotherapist and psychoanalyst offering EMDR and depth therapy to help survivors reclaim and live with their stories.​",
       weekly_availability: [
@@ -26814,32 +26814,31 @@ Regular therapy sessions can be a brief or a longer-term investment, depending o
       link_to_bio: "https://psychologycare.com.au/elizabeth-white/",
       locations: [
         {
-          availability: `Wednesdays at 9am (Weekly: Starting 4th Nov)
-Fridays at 11am (Weekly: Starting 6th Nov)
+          availability: `Wednesdays at 9am (Weekly: Starting 11th Nov)
 Thursdays at 9am (Weekly: Starting 5th Nov)
-Fridays at 8am (Fortnightly: Starting 13th Nov)
+Fridays at 11am (Weekly: Starting 6th Nov)
 Wednesdays at 10am (Fortnightly: Starting 25th Nov)
-Wednesdays at 1pm (Fortnightly: Starting 11th Nov)`,
+Wednesdays at 1pm (Fortnightly: Starting 11th Nov)
+Fridays at 8am (Fortnightly: Starting 13th Nov)`,
           weekly_availability: [],
           fortnightly_availability: [],
           location: "Greville St, Prahran"
         },
         {
           location: "Burke Rd, Camberwell",
-          availability: "Thursdays at 2:30pm (Fortnightly: Starting 5th Nov)",
+          availability: "",
           weekly_availability: [],
           fortnightly_availability: []
         }
       ],
       last_updated: "2026-07-19",
       availability: [
-        "Wednesdays at 9am (Weekly: Starting 4th Nov) — Greville St, Prahran",
-        "Fridays at 11am (Weekly: Starting 6th Nov) — Greville St, Prahran",
+        "Wednesdays at 9am (Weekly: Starting 11th Nov) — Greville St, Prahran",
         "Thursdays at 9am (Weekly: Starting 5th Nov) — Greville St, Prahran",
-        "Fridays at 8am (Fortnightly: Starting 13th Nov) — Greville St, Prahran",
+        "Fridays at 11am (Weekly: Starting 6th Nov) — Greville St, Prahran",
         "Wednesdays at 10am (Fortnightly: Starting 25th Nov) — Greville St, Prahran",
         "Wednesdays at 1pm (Fortnightly: Starting 11th Nov) — Greville St, Prahran",
-        "Thursdays at 2:30pm (Fortnightly: Starting 5th Nov) — Burke Rd, Camberwell"
+        "Fridays at 8am (Fortnightly: Starting 13th Nov) — Greville St, Prahran"
       ],
       short_bio: "A mature-age clinical psychologist using ISTDP, Conversational Model, ACT and CBT to support adults through chronic depression, stress-related symptoms and life transitions.",
       weekly_availability: [
@@ -27133,7 +27132,7 @@ Tuesdays at 4:30pm (Monthly: Starting 1st Dec)`,
       client_note: ""
     }
   ];
-  var AVAILABILITY_LAST_UPDATED = "30 Oct 2026 6:03am";
+  var AVAILABILITY_LAST_UPDATED = "30 Oct 2026 10:04am";
 
   // components/IntakeTab.tsx
   var jsx_dev_runtime7 = __toESM(require_jsx_dev_runtime());
