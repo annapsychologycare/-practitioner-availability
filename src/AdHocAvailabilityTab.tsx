@@ -12,7 +12,7 @@ import type { Practitioner } from "./types";
 
 const BRAND = "#2C244C";
 const ROSE  = "#8D5273";
-const ZANDA_CONN = "conn_xv49yqpd5marmz16g37p";
+const ZANDA_CONN = "conn_eps1awzjskk2nv579hf9";
 const ZANDA_BASE = "https://zandaapi.zandahealth.com";
 
 // Zanda availability flag IDs (same as import script)

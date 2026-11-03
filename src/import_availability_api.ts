@@ -146,7 +146,7 @@ function getDayOfWeek(dateStr: string): number {
 async function apiGet(path: string): Promise<any> {
   const r = await invokeTool({
     toolName: 'remote_http_call',
-    connectionId: 'conn_xv49yqpd5marmz16g37p',
+    connectionId: 'conn_eps1awzjskk2nv579hf9',
     args: { url: BASE + path, method: 'GET', extraHeaders: HEADERS },
   });
   if (!r.ok) throw new Error(`API error: ${r.error}`);
