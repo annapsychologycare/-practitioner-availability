@@ -12,6 +12,8 @@ Production origin: https://pc-prac-availability.netlify.app. Netlify Identity re
 Netlify environment flag `STAFF_PRIVATE_ACCESS_ENABLED` is scoped to Functions only: production `true`, Deploy Previews/branch/preview runners/local `false`. It is a nonsecret feature switch, not an authentication credential. Netlify's build-only CONTEXT variable is not relied on at function runtime. No netlify.toml changes.
 
 ## Initial activation / release gate
+Password recovery is **user-initiated only**: Staff sign in → Forgot password? → Send password reset link. The server uses SDK `requestPasswordRecovery`, returns the same generic result for unapproved emails/provider errors, and only contacts the provider for the approved account. Do not submit this form for Anna without her explicit action. Invitation links open Set your staff password; recovery links open Reset your staff password, with confirmation and 12-character minimum. Expired/used links offer the recovery route. Never read Anna's inbox/token or set her password. Dashboard login remains separate.
+
 Empty protected infrastructure can be deployed without private data. Anna must accept the invitation, set her own password in the site form and sign in herself. Agent must never request passwords/tokens in chat. Verify live signed-in authorized path, session logout/expiry, and no-token/forged-token failures before reading/importing real DOB-derived ages. No real sensitive snapshot has been loaded during infrastructure setup.
 
 ## Ongoing CRM sync: explicit current limitation

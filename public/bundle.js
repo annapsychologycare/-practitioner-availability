@@ -25,9 +25,9 @@
     mod
   ));
 
-  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/node_modules/react/cjs/react.production.min.js
+  // deploy/node_modules/react/cjs/react.production.min.js
   var require_react_production_min = __commonJS({
-    "../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/node_modules/react/cjs/react.production.min.js"(exports) {
+    "deploy/node_modules/react/cjs/react.production.min.js"(exports) {
       "use strict";
       var l = Symbol.for("react.element");
       var n = Symbol.for("react.portal");
@@ -298,9 +298,9 @@
     }
   });
 
-  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/node_modules/react/index.js
+  // deploy/node_modules/react/index.js
   var require_react = __commonJS({
-    "../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/node_modules/react/index.js"(exports, module) {
+    "deploy/node_modules/react/index.js"(exports, module) {
       "use strict";
       if (true) {
         module.exports = require_react_production_min();
@@ -310,9 +310,9 @@
     }
   });
 
-  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/node_modules/react/cjs/react-jsx-runtime.production.min.js
+  // deploy/node_modules/react/cjs/react-jsx-runtime.production.min.js
   var require_react_jsx_runtime_production_min = __commonJS({
-    "../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/node_modules/react/cjs/react-jsx-runtime.production.min.js"(exports) {
+    "deploy/node_modules/react/cjs/react-jsx-runtime.production.min.js"(exports) {
       "use strict";
       var f = require_react();
       var k = Symbol.for("react.element");
@@ -335,9 +335,9 @@
     }
   });
 
-  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/node_modules/react/jsx-runtime.js
+  // deploy/node_modules/react/jsx-runtime.js
   var require_jsx_runtime = __commonJS({
-    "../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/node_modules/react/jsx-runtime.js"(exports, module) {
+    "deploy/node_modules/react/jsx-runtime.js"(exports, module) {
       "use strict";
       if (true) {
         module.exports = require_react_jsx_runtime_production_min();
@@ -347,9 +347,9 @@
     }
   });
 
-  // ../../tmp/pc-staff-build/node_modules/react/cjs/react.production.min.js
+  // ../../../../tmp/pc-staff-build/node_modules/react/cjs/react.production.min.js
   var require_react_production_min2 = __commonJS({
-    "../../tmp/pc-staff-build/node_modules/react/cjs/react.production.min.js"(exports) {
+    "../../../../tmp/pc-staff-build/node_modules/react/cjs/react.production.min.js"(exports) {
       "use strict";
       var l = Symbol.for("react.element");
       var n = Symbol.for("react.portal");
@@ -620,9 +620,9 @@
     }
   });
 
-  // ../../tmp/pc-staff-build/node_modules/react/index.js
+  // ../../../../tmp/pc-staff-build/node_modules/react/index.js
   var require_react2 = __commonJS({
-    "../../tmp/pc-staff-build/node_modules/react/index.js"(exports, module) {
+    "../../../../tmp/pc-staff-build/node_modules/react/index.js"(exports, module) {
       "use strict";
       if (true) {
         module.exports = require_react_production_min2();
@@ -632,9 +632,9 @@
     }
   });
 
-  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/node_modules/scheduler/cjs/scheduler.production.min.js
+  // deploy/node_modules/scheduler/cjs/scheduler.production.min.js
   var require_scheduler_production_min = __commonJS({
-    "../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/node_modules/scheduler/cjs/scheduler.production.min.js"(exports) {
+    "deploy/node_modules/scheduler/cjs/scheduler.production.min.js"(exports) {
       "use strict";
       function f(a, b) {
         var c = a.length;
@@ -885,9 +885,9 @@
     }
   });
 
-  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/node_modules/scheduler/index.js
+  // deploy/node_modules/scheduler/index.js
   var require_scheduler = __commonJS({
-    "../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/node_modules/scheduler/index.js"(exports, module) {
+    "deploy/node_modules/scheduler/index.js"(exports, module) {
       "use strict";
       if (true) {
         module.exports = require_scheduler_production_min();
@@ -897,9 +897,9 @@
     }
   });
 
-  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/node_modules/react-dom/cjs/react-dom.production.min.js
+  // deploy/node_modules/react-dom/cjs/react-dom.production.min.js
   var require_react_dom_production_min = __commonJS({
-    "../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/node_modules/react-dom/cjs/react-dom.production.min.js"(exports) {
+    "deploy/node_modules/react-dom/cjs/react-dom.production.min.js"(exports) {
       "use strict";
       var aa = require_react();
       var ca = require_scheduler();
@@ -7507,9 +7507,9 @@
     }
   });
 
-  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/node_modules/react-dom/index.js
+  // deploy/node_modules/react-dom/index.js
   var require_react_dom = __commonJS({
-    "../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/node_modules/react-dom/index.js"(exports, module) {
+    "deploy/node_modules/react-dom/index.js"(exports, module) {
       "use strict";
       function checkDCE() {
         if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ === "undefined" || typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE !== "function") {
@@ -7533,9 +7533,9 @@
     }
   });
 
-  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/node_modules/react-dom/client.js
+  // deploy/node_modules/react-dom/client.js
   var require_client = __commonJS({
-    "../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/node_modules/react-dom/client.js"(exports) {
+    "deploy/node_modules/react-dom/client.js"(exports) {
       "use strict";
       var m = require_react_dom();
       if (true) {
@@ -7564,10 +7564,10 @@
     }
   });
 
-  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/App.tsx
+  // deploy/src/App.tsx
   var import_react12 = __toESM(require_react());
 
-  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/utils/upcomingLeave.ts
+  // deploy/src/utils/upcomingLeave.ts
   function melbourneDate(now = /* @__PURE__ */ new Date()) {
     const parts = new Intl.DateTimeFormat("en-AU", { timeZone: "Australia/Melbourne", year: "numeric", month: "2-digit", day: "2-digit" }).formatToParts(now);
     const part = (type) => parts.find((p) => p.type === type).value;
@@ -7606,7 +7606,7 @@
   </td></tr></table>`;
   }
 
-  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/utils/useNoticeClock.ts
+  // deploy/src/utils/useNoticeClock.ts
   var import_react = __toESM(require_react());
   function useNoticeClock() {
     const [now, setNow] = (0, import_react.useState)(Date.now());
@@ -7627,7 +7627,7 @@
     return now;
   }
 
-  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/utils/practitionerIntakePause.ts
+  // deploy/src/utils/practitionerIntakePause.ts
   var KRISTA_INTAKE_PAUSED = true;
   function isKristaIntakePaused(name) {
     return KRISTA_INTAKE_PAUSED && (name ?? "").replace(/^Dr\.?\s+/i, "").trim().toLowerCase() === "krista de castella";
@@ -7642,7 +7642,7 @@
     return p;
   }
 
-  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/components/UpcomingLeave.tsx
+  // deploy/src/components/UpcomingLeave.tsx
   var import_jsx_runtime = __toESM(require_jsx_runtime());
   var UpcomingLeave = ({ practitioner }) => {
     const now = useNoticeClock();
@@ -7653,7 +7653,7 @@
     ] }) : null;
   };
 
-  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/components/PractitionerNotes.tsx
+  // deploy/src/components/PractitionerNotes.tsx
   var import_jsx_runtime2 = __toESM(require_jsx_runtime());
   function PractitionerNotes({ practitioner: original }) {
     const p = suppressKristaIntake(original);
@@ -7670,7 +7670,7 @@
     ] });
   }
 
-  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/components/StaffAccess.tsx
+  // deploy/src/components/StaffAccess.tsx
   var import_react2 = __toESM(require_react());
   var import_jsx_runtime3 = __toESM(require_jsx_runtime());
   var ORIGIN = "https://pc-prac-availability.netlify.app";
@@ -7690,6 +7690,8 @@
     const [message, setMessage] = (0, import_react2.useState)("");
     const [busy, setBusy] = (0, import_react2.useState)(false);
     const [callback, setCallback] = (0, import_react2.useState)(null);
+    const [recoveryOpen, setRecoveryOpen] = (0, import_react2.useState)(false);
+    const [recoverySent, setRecoverySent] = (0, import_react2.useState)(false);
     const requestVersion = (0, import_react2.useRef)(0);
     const supported = window.location.origin === ORIGIN;
     const api = async (name, init) => {
@@ -7742,16 +7744,43 @@
       setBusy(true);
       setMessage("");
       const form = event.currentTarget, values = new FormData(form);
+      if (callback && values.get("password") !== values.get("confirmPassword")) {
+        setMessage("The passwords do not match. Please enter the same new password twice.");
+        setBusy(false);
+        return;
+      }
       try {
         await api("staff-session", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ action: callback?.action || "login", token: callback?.token, email: values.get("email"), password: values.get("password") }) });
         form.reset();
         setCallback(null);
         await refresh();
       } catch {
-        setMessage("Unable to sign in. Use your current staff invitation or check your credentials.");
+        setMessage(callback ? "This link may have expired or already been used. Open your latest invitation, or choose Forgot password to request a fresh reset link." : "Unable to sign in. Check your credentials, or choose Forgot password.");
       } finally {
         setBusy(false);
       }
+    };
+    const requestRecovery = async (event) => {
+      event.preventDefault();
+      setBusy(true);
+      setMessage("");
+      const values = new FormData(event.currentTarget);
+      try {
+        const result = await api("staff-session", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ action: "request-recovery", email: values.get("email") }) });
+        setRecoverySent(true);
+        setMessage(result.message);
+      } catch {
+        setMessage("The request could not be completed. Please wait a moment and try again.");
+      } finally {
+        setBusy(false);
+      }
+    };
+    const showRecovery = () => {
+      setCallback(null);
+      setRecoveryOpen(true);
+      setRecoverySent(false);
+      setMessage("");
+      setAges({});
     };
     const signOut = async () => {
       requestVersion.current++;
@@ -7781,10 +7810,23 @@
       /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { className: "bg-base-100 border-b px-4 py-2 text-sm flex flex-wrap items-center gap-3", children: !supported ? /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("a", { className: "btn btn-ghost btn-xs", href: ORIGIN, target: "_blank", rel: "noopener noreferrer", children: "Open secure staff sign-in on published app" }) : /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)(import_jsx_runtime3.Fragment, { children: [
         /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("button", { className: "btn btn-ghost btn-xs", onClick: () => setOpen(!open), children: staff ? "Staff access" : "Staff sign in" }),
         staff && /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("button", { className: "btn btn-ghost btn-xs", onClick: signOut, children: "Sign out" }),
-        open && !staff && /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("form", { onSubmit: signIn, className: "flex flex-wrap items-center gap-2", autoComplete: "on", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("input", { className: "input input-bordered input-sm", type: "email", name: "email", "aria-label": "Staff email", defaultValue: "anna@psychologycare.com.au", autoComplete: "username", required: true }),
-          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("input", { className: "input input-bordered input-sm", type: "password", name: "password", "aria-label": callback ? "Set staff password" : "Staff password", autoComplete: callback ? "new-password" : "current-password", minLength: callback ? 12 : 1, required: true }),
-          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("button", { className: "btn btn-primary btn-sm", disabled: busy, children: callback ? "Set password and accept invitation" : "Sign in" })
+        open && (!staff || callback) && /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("section", { className: "w-full max-w-xl rounded-xl border border-base-300 p-4 space-y-3", "aria-label": "Staff account access", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("h2", { className: "font-semibold", children: callback?.action === "invite" ? "Set your staff password" : callback?.action === "recovery" ? "Reset your staff password" : recoveryOpen ? "Forgot your password?" : "Staff sign in" }),
+          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("p", { className: "text-base-content/70", children: callback ? "Choose a new password with at least 12 characters. This is your practitioner app staff account, separate from Netlify dashboard sign-in." : recoveryOpen ? "Enter your invited staff email. We will send a reset link if the account is eligible. New staff should use their invitation email to set up their password." : "Already accepted your invitation? Sign in below. First time here? Open your staff invitation email to set your password." }),
+          !recoveryOpen && /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("form", { onSubmit: signIn, className: "flex flex-wrap items-center gap-2", autoComplete: "on", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("input", { className: "input input-bordered input-sm", type: "email", name: "email", "aria-label": "Staff email", defaultValue: "anna@psychologycare.com.au", autoComplete: "username", required: true }),
+            /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("input", { className: "input input-bordered input-sm", type: "password", name: "password", "aria-label": callback ? "Set staff password" : "Staff password", autoComplete: callback ? "new-password" : "current-password", minLength: callback ? 12 : 1, required: true }),
+            callback && /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("input", { className: "input input-bordered input-sm", type: "password", name: "confirmPassword", "aria-label": "Confirm new staff password", autoComplete: "new-password", minLength: 12, required: true }),
+            /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("button", { className: "btn btn-primary btn-sm", disabled: busy, children: busy ? "Please wait\u2026" : callback?.action === "invite" ? "Set password and accept invitation" : callback?.action === "recovery" ? "Reset password and sign in" : "Sign in" })
+          ] }),
+          recoveryOpen && /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("form", { onSubmit: requestRecovery, className: "flex flex-wrap items-center gap-2", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("input", { className: "input input-bordered input-sm", type: "email", name: "email", "aria-label": "Recovery staff email", defaultValue: "anna@psychologycare.com.au", autoComplete: "username", maxLength: 254, required: true }),
+            /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("button", { className: "btn btn-primary btn-sm", disabled: busy || recoverySent, children: busy ? "Please wait\u2026" : recoverySent ? "Request submitted" : "Send password reset link" })
+          ] }),
+          recoveryOpen ? /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("button", { className: "btn btn-ghost btn-sm", disabled: busy, onClick: () => {
+            setRecoveryOpen(false);
+            setMessage("");
+          }, children: "Back to sign in" }) : /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("button", { className: "btn btn-link btn-sm", disabled: busy, onClick: showRecovery, children: "Forgot password?" })
         ] }),
         open && staff && /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("label", { className: "flex items-center gap-2", children: [
           "Import private CRM age snapshot",
@@ -7799,13 +7841,13 @@
     ] });
   };
 
-  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/FindPractitioner.tsx
+  // deploy/src/FindPractitioner.tsx
   var import_react6 = __toESM(require_react());
 
-  // ../../tmp/pc-staff-build/node_modules/lucide-react/dist/esm/createLucideIcon.js
+  // ../../../../tmp/pc-staff-build/node_modules/lucide-react/dist/esm/createLucideIcon.js
   var import_react3 = __toESM(require_react2());
 
-  // ../../tmp/pc-staff-build/node_modules/lucide-react/dist/esm/defaultAttributes.js
+  // ../../../../tmp/pc-staff-build/node_modules/lucide-react/dist/esm/defaultAttributes.js
   var defaultAttributes = {
     xmlns: "http://www.w3.org/2000/svg",
     width: 24,
@@ -7818,10 +7860,10 @@
     strokeLinejoin: "round"
   };
 
-  // ../../tmp/pc-staff-build/node_modules/lucide-react/dist/esm/shared/src/utils.js
+  // ../../../../tmp/pc-staff-build/node_modules/lucide-react/dist/esm/shared/src/utils.js
   var toKebabCase = (string) => string.replace(/([a-z0-9])([A-Z])/g, "$1-$2").toLowerCase();
 
-  // ../../tmp/pc-staff-build/node_modules/lucide-react/dist/esm/createLucideIcon.js
+  // ../../../../tmp/pc-staff-build/node_modules/lucide-react/dist/esm/createLucideIcon.js
   var createLucideIcon = (iconName, iconNode) => {
     const Component2 = (0, import_react3.forwardRef)(
       ({
@@ -7856,13 +7898,13 @@
     return Component2;
   };
 
-  // ../../tmp/pc-staff-build/node_modules/lucide-react/dist/esm/icons/arrow-left.js
+  // ../../../../tmp/pc-staff-build/node_modules/lucide-react/dist/esm/icons/arrow-left.js
   var ArrowLeft = createLucideIcon("ArrowLeft", [
     ["path", { d: "m12 19-7-7 7-7", key: "1l729n" }],
     ["path", { d: "M19 12H5", key: "x3x0zl" }]
   ]);
 
-  // ../../tmp/pc-staff-build/node_modules/lucide-react/dist/esm/icons/clipboard-check.js
+  // ../../../../tmp/pc-staff-build/node_modules/lucide-react/dist/esm/icons/clipboard-check.js
   var ClipboardCheck = createLucideIcon("ClipboardCheck", [
     ["rect", { width: "8", height: "4", x: "8", y: "2", rx: "1", ry: "1", key: "tgr4d6" }],
     [
@@ -7875,7 +7917,7 @@
     ["path", { d: "m9 14 2 2 4-4", key: "df797q" }]
   ]);
 
-  // ../../tmp/pc-staff-build/node_modules/lucide-react/dist/esm/icons/clipboard.js
+  // ../../../../tmp/pc-staff-build/node_modules/lucide-react/dist/esm/icons/clipboard.js
   var Clipboard = createLucideIcon("Clipboard", [
     ["rect", { width: "8", height: "4", x: "8", y: "2", rx: "1", ry: "1", key: "tgr4d6" }],
     [
@@ -7887,34 +7929,34 @@
     ]
   ]);
 
-  // ../../tmp/pc-staff-build/node_modules/lucide-react/dist/esm/icons/eye.js
+  // ../../../../tmp/pc-staff-build/node_modules/lucide-react/dist/esm/icons/eye.js
   var Eye = createLucideIcon("Eye", [
     ["path", { d: "M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z", key: "rwhkz3" }],
     ["circle", { cx: "12", cy: "12", r: "3", key: "1v7zrd" }]
   ]);
 
-  // ../../tmp/pc-staff-build/node_modules/lucide-react/dist/esm/icons/send.js
+  // ../../../../tmp/pc-staff-build/node_modules/lucide-react/dist/esm/icons/send.js
   var Send = createLucideIcon("Send", [
     ["path", { d: "m22 2-7 20-4-9-9-4Z", key: "1q3vgg" }],
     ["path", { d: "M22 2 11 13", key: "nzbqef" }]
   ]);
 
-  // ../../tmp/pc-staff-build/node_modules/lucide-react/dist/esm/icons/square-check-big.js
+  // ../../../../tmp/pc-staff-build/node_modules/lucide-react/dist/esm/icons/square-check-big.js
   var SquareCheckBig = createLucideIcon("SquareCheckBig", [
     ["path", { d: "m9 11 3 3L22 4", key: "1pflzl" }],
     ["path", { d: "M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11", key: "1jnkn4" }]
   ]);
 
-  // ../../tmp/pc-staff-build/node_modules/lucide-react/dist/esm/icons/x.js
+  // ../../../../tmp/pc-staff-build/node_modules/lucide-react/dist/esm/icons/x.js
   var X = createLucideIcon("X", [
     ["path", { d: "M18 6 6 18", key: "1bl5f8" }],
     ["path", { d: "m6 6 12 12", key: "d8bk6v" }]
   ]);
 
-  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/components/SendClientModal.tsx
+  // deploy/src/components/SendClientModal.tsx
   var import_react4 = __toESM(require_react());
 
-  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/utils/afterHours.ts
+  // deploy/src/utils/afterHours.ts
   var WEEKEND_DAYS = ["saturdays", "sundays"];
   var WEEKDAY_DAYS = ["mondays", "tuesdays", "wednesdays", "thursdays", "fridays"];
   function parseTimeMinutes(timeStr) {
@@ -7965,7 +8007,7 @@
     return false;
   }
 
-  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/emailTemplateConfig.ts
+  // deploy/src/emailTemplateConfig.ts
   var DEFAULT_EMAIL_TEMPLATE_CONFIG = {
     senders: ["Anna Donaldson", "Charlotte Davenport"],
     intro_text: "Thank you for reaching out to PsychologyCare. Based on your intake information, we've put together a list of practitioners we think could be a great fit for you.",
@@ -8031,7 +8073,7 @@
     return { ...DEFAULT_EMAIL_TEMPLATE_CONFIG };
   }
 
-  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/utils/emailBuilder.ts
+  // deploy/src/utils/emailBuilder.ts
   function parseAvailability(text, includeMonthly = false) {
     const weekly = [];
     const fortnightly = [];
@@ -8270,7 +8312,7 @@
     </div>`;
   }
 
-  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/components/SendClientModal.tsx
+  // deploy/src/components/SendClientModal.tsx
   var import_jsx_runtime4 = __toESM(require_jsx_runtime());
   var SendClientModal = ({ selected, locationFilter, onClose, onSent, includeMonthly = false, sessionType = "Individual", clientAge60Plus = false }) => {
     const config = (0, import_react4.useMemo)(() => loadEmailTemplateConfig(), []);
@@ -8646,7 +8688,7 @@
   };
   var SendClientModal_default = SendClientModal;
 
-  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/components/MultiSelectDropdown.tsx
+  // deploy/src/components/MultiSelectDropdown.tsx
   var import_react5 = __toESM(require_react());
   var import_jsx_runtime5 = __toESM(require_jsx_runtime());
   function MultiSelectDropdown({ label, options, selected, onChange, placeholder }) {
@@ -8730,7 +8772,7 @@
     ] });
   }
 
-  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/utils/kristaMatching.ts
+  // deploy/src/utils/kristaMatching.ts
   var KRISTA_NAME = "Dr Krista De Castella";
   var INTEGRATION_PRESENTATION = "Difficult Psychedelic Experience / Bad-Trip Integration";
   function hasKristaClinicalSpecificity(modalities, presentations, nonComplexEmdrConfirmed, modalitiesMatchAll = false) {
@@ -8747,7 +8789,7 @@
     return p.name === KRISTA_NAME && !p.referral_only && sessionType === "Individual" && types.includes("Individual") && age !== null && age >= 16 && !(excludeFemaleOnly && p.client_gender_accepted === "Female Only");
   }
 
-  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/utils/selectedCriteria.ts
+  // deploy/src/utils/selectedCriteria.ts
   function matchesPresentation(value, selected) {
     const text = (value == null ? "" : typeof value === "string" ? value : Array.isArray(value) ? value.join(" ") : String(value)).toLowerCase();
     return text.includes(selected.toLowerCase());
@@ -8766,7 +8808,7 @@
     };
   }
 
-  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/FindPractitioner.tsx
+  // deploy/src/FindPractitioner.tsx
   var import_jsx_runtime6 = __toESM(require_jsx_runtime());
   var DAYS_OF_WEEK = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
   var PRESENTATION_OPTIONS = [
@@ -9969,7 +10011,7 @@
     ] });
   }
 
-  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/Directory.tsx
+  // deploy/src/Directory.tsx
   var import_react7 = __toESM(require_react());
   var import_jsx_runtime7 = __toESM(require_jsx_runtime());
   function Directory({ practitioners }) {
@@ -10156,7 +10198,7 @@
     ] });
   }
 
-  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/AvailabilitySnapshot.tsx
+  // deploy/src/AvailabilitySnapshot.tsx
   var import_react8 = __toESM(require_react());
   var import_jsx_runtime8 = __toESM(require_jsx_runtime());
   function getAvailabilityLines(text, type) {
@@ -10252,10 +10294,10 @@
   };
   var AvailabilitySnapshot_default = AvailabilitySnapshot;
 
-  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/components/IntakeTab.tsx
+  // deploy/src/components/IntakeTab.tsx
   var import_react9 = __toESM(require_react());
 
-  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/practitionersData.ts
+  // deploy/src/practitionersData.ts
   var PRACTITIONERS_DATA = [
     {
       "id": 1,
@@ -14556,7 +14598,7 @@
   ];
   var AVAILABILITY_LAST_UPDATED = "4 Nov 2026 1:02pm";
 
-  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/components/IntakeTab.tsx
+  // deploy/src/components/IntakeTab.tsx
   var import_jsx_runtime9 = __toESM(require_jsx_runtime());
   var COLORS = {
     darkPurple: "#2C244C",
@@ -15191,10 +15233,10 @@
     return lines.join("\n");
   }
 
-  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/ReferralNetwork.tsx
+  // deploy/src/ReferralNetwork.tsx
   var import_react10 = __toESM(require_react());
 
-  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/constants.ts
+  // deploy/src/constants.ts
   var CANONICAL_PRESENTATIONS = [
     // Anxiety & Stress
     "Anxiety",
@@ -15438,7 +15480,7 @@
     "Trauma-Informed Care"
   ].sort();
 
-  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/ReferralNetwork.tsx
+  // deploy/src/ReferralNetwork.tsx
   var import_jsx_runtime10 = __toESM(require_jsx_runtime());
   var BRAND = {
     lilac: "#7C6B9E",
@@ -16096,7 +16138,7 @@
   };
   var ReferralNetwork_default = ReferralNetwork;
 
-  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/Compare.tsx
+  // deploy/src/Compare.tsx
   var import_react11 = __toESM(require_react());
   var import_jsx_runtime11 = __toESM(require_jsx_runtime());
   var NETLIFY_BASE2 = "https://practitioneravailabilitypsychologycar.netlify.app";
@@ -16426,7 +16468,7 @@
     );
   };
 
-  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/App.tsx
+  // deploy/src/App.tsx
   var import_client = __toESM(require_client());
   var import_jsx_runtime12 = __toESM(require_jsx_runtime());
   var INTAKE_PRACTITIONERS = PRACTITIONERS_DATA.map(suppressKristaIntake);

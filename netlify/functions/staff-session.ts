@@ -1,4 +1,4 @@
-import { getUser, login, logout, acceptInvite, recoverPassword, refreshSession, verifyRequestOrigin } from '@netlify/identity';
+import { getUser, login, logout, acceptInvite, recoverPassword, requestPasswordRecovery, refreshSession, verifyRequestOrigin } from '@netlify/identity';
 import { allowedStaff, ANNA_EMAIL, PRIVATE_HEADERS, productionRequest, reply, SITE_ORIGIN } from '../lib/staff-policy';
 
 export default async (req: Request) => {
@@ -17,6 +17,15 @@ export default async (req: Request) => {
     const text = await req.text();
     if (text.length > 8192) return reply({ error: 'Request too large' }, 413);
     const body = JSON.parse(text);
+    if (body.action === 'request-recovery') {
+      // Only the approved account reaches the provider. Always give the same
+      // response for other accounts and provider failures: no account oracle.
+      if (typeof body.email !== 'string' || body.email.length > 254) return reply({ error: 'Invalid request' }, 400);
+      if (body.email.trim().toLowerCase() === ANNA_EMAIL) {
+        try { await requestPasswordRecovery(ANNA_EMAIL); } catch { /* Generic response, no provider details/logging. */ }
+      }
+      return reply({ message: 'If this email is eligible for staff access, a password reset link will arrive shortly. Check your inbox and spam folder.' });
+    }
     if (body.action === 'logout') {
       await logout();
       return reply({ signedOut: true });
@@ -27,6 +36,7 @@ export default async (req: Request) => {
       if (body.email !== ANNA_EMAIL) return reply({ error: 'Sign in unavailable for this account' }, 403);
       user = await login(body.email, body.password);
     } else if (body.action === 'invite' || body.action === 'recovery') {
+      if (body.password.length < 12) return reply({ error: 'Use at least 12 characters' }, 400);
       if (typeof body.token !== 'string' || !body.token || body.token.length > 2048) return reply({ error: 'Invalid request' }, 400);
       const redeemed = body.action === 'invite' ? await acceptInvite(body.token, body.password) : await recoverPassword(body.token, body.password);
       if (redeemed.email !== ANNA_EMAIL) return reply({ error: 'Not authorized' }, 403);

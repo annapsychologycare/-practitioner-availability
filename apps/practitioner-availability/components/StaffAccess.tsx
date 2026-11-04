@@ -16,6 +16,8 @@ export const StaffAccess: React.FC<{ children: React.ReactNode }> = ({ children 
   const [message, setMessage] = useState('');
   const [busy, setBusy] = useState(false);
   const [callback, setCallback] = useState<{ action: string; token: string } | null>(null);
+  const [recoveryOpen, setRecoveryOpen] = useState(false);
+  const [recoverySent, setRecoverySent] = useState(false);
   const requestVersion = useRef(0);
   const supported = window.location.origin === ORIGIN;
   const api = async (name: string, init?: RequestInit) => {
@@ -56,11 +58,26 @@ export const StaffAccess: React.FC<{ children: React.ReactNode }> = ({ children 
   const signIn = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault(); setBusy(true); setMessage('');
     const form = event.currentTarget, values = new FormData(form);
+    if (callback && values.get('password') !== values.get('confirmPassword')) {
+      setMessage('The passwords do not match. Please enter the same new password twice.'); setBusy(false); return;
+    }
     try {
       await api('staff-session', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ action: callback?.action || 'login', token: callback?.token, email: values.get('email'), password: values.get('password') }) });
       form.reset(); setCallback(null); await refresh();
-    } catch { setMessage('Unable to sign in. Use your current staff invitation or check your credentials.'); }
+    } catch { setMessage(callback ? 'This link may have expired or already been used. Open your latest invitation, or choose Forgot password to request a fresh reset link.' : 'Unable to sign in. Check your credentials, or choose Forgot password.'); }
     finally { setBusy(false); }
+  };
+  const requestRecovery = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault(); setBusy(true); setMessage('');
+    const values = new FormData(event.currentTarget);
+    try {
+      const result = await api('staff-session', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ action: 'request-recovery', email: values.get('email') }) });
+      setRecoverySent(true); setMessage(result.message);
+    } catch { setMessage('The request could not be completed. Please wait a moment and try again.'); }
+    finally { setBusy(false); }
+  };
+  const showRecovery = () => {
+    setCallback(null); setRecoveryOpen(true); setRecoverySent(false); setMessage(''); setAges({});
   };
   const signOut = async () => {
     requestVersion.current++; setAges({}); setStaff(false); setMessage('Signed out.');
@@ -82,11 +99,21 @@ export const StaffAccess: React.FC<{ children: React.ReactNode }> = ({ children 
       {!supported ? <a className="btn btn-ghost btn-xs" href={ORIGIN} target="_blank" rel="noopener noreferrer">Open secure staff sign-in on published app</a> : <>
         <button className="btn btn-ghost btn-xs" onClick={() => setOpen(!open)}>{staff ? 'Staff access' : 'Staff sign in'}</button>
         {staff && <button className="btn btn-ghost btn-xs" onClick={signOut}>Sign out</button>}
-        {open && !staff && <form onSubmit={signIn} className="flex flex-wrap items-center gap-2" autoComplete="on">
+        {open && (!staff || callback) && <section className="w-full max-w-xl rounded-xl border border-base-300 p-4 space-y-3" aria-label="Staff account access">
+          <h2 className="font-semibold">{callback?.action === 'invite' ? 'Set your staff password' : callback?.action === 'recovery' ? 'Reset your staff password' : recoveryOpen ? 'Forgot your password?' : 'Staff sign in'}</h2>
+          <p className="text-base-content/70">{callback ? 'Choose a new password with at least 12 characters. This is your practitioner app staff account, separate from Netlify dashboard sign-in.' : recoveryOpen ? 'Enter your invited staff email. We will send a reset link if the account is eligible. New staff should use their invitation email to set up their password.' : 'Already accepted your invitation? Sign in below. First time here? Open your staff invitation email to set your password.'}</p>
+          {!recoveryOpen && <form onSubmit={signIn} className="flex flex-wrap items-center gap-2" autoComplete="on">
           <input className="input input-bordered input-sm" type="email" name="email" aria-label="Staff email" defaultValue="anna@psychologycare.com.au" autoComplete="username" required />
           <input className="input input-bordered input-sm" type="password" name="password" aria-label={callback ? 'Set staff password' : 'Staff password'} autoComplete={callback ? 'new-password' : 'current-password'} minLength={callback ? 12 : 1} required />
-          <button className="btn btn-primary btn-sm" disabled={busy}>{callback ? 'Set password and accept invitation' : 'Sign in'}</button>
-        </form>}
+          {callback && <input className="input input-bordered input-sm" type="password" name="confirmPassword" aria-label="Confirm new staff password" autoComplete="new-password" minLength={12} required />}
+          <button className="btn btn-primary btn-sm" disabled={busy}>{busy ? 'Please wait…' : callback?.action === 'invite' ? 'Set password and accept invitation' : callback?.action === 'recovery' ? 'Reset password and sign in' : 'Sign in'}</button>
+          </form>}
+          {recoveryOpen && <form onSubmit={requestRecovery} className="flex flex-wrap items-center gap-2">
+            <input className="input input-bordered input-sm" type="email" name="email" aria-label="Recovery staff email" defaultValue="anna@psychologycare.com.au" autoComplete="username" maxLength={254} required />
+            <button className="btn btn-primary btn-sm" disabled={busy || recoverySent}>{busy ? 'Please wait…' : recoverySent ? 'Request submitted' : 'Send password reset link'}</button>
+          </form>}
+          {recoveryOpen ? <button className="btn btn-ghost btn-sm" disabled={busy} onClick={() => { setRecoveryOpen(false); setMessage(''); }}>Back to sign in</button> : <button className="btn btn-link btn-sm" disabled={busy} onClick={showRecovery}>Forgot password?</button>}
+        </section>}
         {open && staff && <label className="flex items-center gap-2">Import private CRM age snapshot<input aria-label="Private age snapshot" type="file" accept="application/json,.json" disabled={busy} onChange={e => { void upload(e.target.files?.[0]); e.target.value = ''; }} /></label>}
         {open && message && <p role="status" className="text-base-content/70">{message}</p>}
       </>}
