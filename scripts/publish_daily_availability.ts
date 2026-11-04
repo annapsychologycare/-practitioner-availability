@@ -29,6 +29,8 @@ const r = await invokeTool({toolName:'github_push_to_branch',connectionId:'conn_
     {repoPath:'scripts/practitioner_intake_pause.ts',localPath:`${base}/scripts/practitioner_intake_pause.ts`},
     {repoPath:'scripts/crm_alerts.ts',localPath:`${base}/scripts/crm_alerts.ts`},
     {repoPath:'scripts/crm_upcoming_leave.ts',localPath:`${base}/scripts/crm_upcoming_leave.ts`},
+    {repoPath:'scripts/crm_leave_approvals.ts',localPath:`${base}/scripts/crm_leave_approvals.ts`},
+    {repoPath:'src/crm_leave_approvals.ts',localPath:`${base}/deploy/src/crm_leave_approvals.ts`},
     // Approved replacement connection routing, mirrored sources only.
     {repoPath:'src/import_availability_api.ts',localPath:`${base}/deploy/src/import_availability_api.ts`},
     {repoPath:'src/AdHocAvailabilityTab.tsx',localPath:`${base}/deploy/src/AdHocAvailabilityTab.tsx`},

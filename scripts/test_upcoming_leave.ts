@@ -26,8 +26,8 @@ const previouslyPopulated={...p};Object.assign(previouslyPopulated,mapCrmUpcomin
 eq(melbourneDate(at('2026-06-01T13:59:59Z')),'2026-06-01');eq(melbourneDate(at('2026-06-01T14:00:00Z')),'2026-06-02');
 assert.throws(()=>mapCrmUpcomingLeave({}));checks++;
 const crm={Full_Name:'Test',Intake_Alert_Notes:'Separate client note',Intake_Alert_Notes_Internal:'SECRET STAFF NOTE',Upcoming_leave_client_notice:p.upcoming_leave_client_notice,Show_notice_from:p.upcoming_leave_show_from,Hide_notice_after:p.upcoming_leave_hide_after,Leave_Reason:'SECRET HR REASON',Profile_Status:'SECRET LEAVE STATUS'};
-const mapped=mapCrmNotes(crm);eq(mapped.upcoming_leave_client_notice,p.upcoming_leave_client_notice);eq(mapped.alert,'SECRET STAFF NOTE');
-const base={name:'Test One',title:'Psychologist',fees:'',medicare_rebate:'',link_to_bio:'',availabilityLocations:[{location:'Telehealth',availability:'Mondays at 10am'}],...mapped};
+const mapped=mapCrmNotes(crm);eq(mapped.upcoming_leave_client_notice,'');eq(mapped.alert,'SECRET STAFF NOTE');
+const base={name:'Test One',title:'Psychologist',fees:'',medicare_rebate:'',link_to_bio:'',availabilityLocations:[{location:'Telehealth',availability:'Mondays at 10am'}],...mapped,...p};
 const second={...base,name:'Test Two',upcoming_leave_client_notice:'Second approved notice'};
 const paused={...base,name:'Dr Krista De Castella',upcoming_leave_client_notice:'PAUSED MUST NOT LEAK'};
 const html=buildEmailHtml('Test','','Staff',[base,second,paused],undefined,false,{},now);
