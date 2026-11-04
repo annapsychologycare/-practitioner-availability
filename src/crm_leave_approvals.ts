@@ -1,5 +1,5 @@
-// Explicit Confirmed correct sheet approval snapshot; never infer approval from CRM text.
-// Source gid 938400101; refreshed 4 November 2026. Change only after fresh confirmation.
+// Exact approved client-field signatures. Sheet-confirmed baseline 4 November 2026.
+// Poorna updated by explicit Anna CRM-pull approval, 5 November 2026; do not restore old sheet wording.
 export const APPROVED_LEAVE: Record<string,{name:string;sheetRow:number;notice:string;show:string;hide:string}> = {
   "50438000000202029": {
     "name": "Allison Conyer",
@@ -95,7 +95,7 @@ export const APPROVED_LEAVE: Record<string,{name:string;sheetRow:number;notice:s
   "50438000000207529": {
     "name": "Poorna Selvaraja",
     "sheetRow": 25,
-    "notice": "Poorna Selvaraja will be on leave from 14 December 2026 to 11 January 2027 inclusive.",
+    "notice": "Poorna Selvaraja will be Telehealth ONLY from Tuesday 17th November to Wednesday 9th December, then will be on leave from 10th December 2026 to 11 January 2027 inclusive. In Person appointments resume on Tuesday 12th Jan 2027.",
     "show": "2026-11-04",
     "hide": "2027-01-11"
   },

@@ -1,5 +1,8 @@
 # Approved upcoming-leave notices — 4 November 2026
 
+## Targeted CRM correction — Anna 5 November 08:04 request
+Poorna Selvaraja (CRM `50438000000207529`) has explicit user authorization to replace the approved signature with the current CRM client notice and display dates. This supersedes the old sheet wording for Poorna only. Preserve the exact approved CRM wording, including its explicitly stated telehealth period and in-person resume date; do not infer dates or use internal fields. Show/hide remain 2026-11-04 / 2027-01-11. Audit: `poorna_leave_2026-11-05/report.md`. All other 16 signatures unchanged; ordinary unapproved CRM edits still fail closed. This targeted pull does not re-read/import the spreadsheet or alter slots, availability timestamp, fees/hours/photos/auth/email policy.
+
 ## Latest confirmation refresh — Anna 13:43 request
 Fresh Dashboard read now confirms 17 practitioners. Newly added: Amy Bortz, Brigid Blanckenberg, Christine Deftereos, Elizabeth White, Nicholas Kleeman, Rebekah Barson and Ruby Bouhadana. Amy is now explicitly approved, superseding the earlier unconfirmed warning below. Brigid has two separate absences (2 Dec and 24 Dec–11 Jan); the reason/category is never exposed. Elizabeth has four separate periods; do not merge gaps. Ten earlier confirmed signatures unchanged. Current exact approval manifest is authoritative; old counted snapshots/helpers below are historical, not replayable. Evidence and scripts: `upcoming_leave_2026-11-04/reconfirmed_1343/`, `scripts/reconfirm_leave_1343.ts` and `scripts/sync_reconfirmed_leave_1343.ts`. Preserve current cream/mauve email helper unchanged. Only explicitly confirmed rows may be added; unknown/unapproved CRM text still fails closed.
 

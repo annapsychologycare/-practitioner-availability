@@ -1,0 +1,23 @@
+import {readFile,writeFile} from 'node:fs/promises';
+import assert from 'node:assert/strict';
+import {APPROVED_LEAVE} from './crm_leave_approvals';
+const root='/tasklet/threads/a_cwa98xzh47ey9rcvmmh4/work',dir=`${root}/poorna_leave_2026-11-05`;
+const read=async(f:string)=>JSON.parse(await readFile(`${root}/${f}`,'utf8'));
+const before=await read('poorna_leave_2026-11-05/data_before.json'),crm=await read('poorna_leave_2026-11-05/crm_client_fields.json');
+const updated={...APPROVED_LEAVE,[crm.id]:{...APPROVED_LEAVE[crm.id],notice:crm.Upcoming_leave_client_notice.trim(),show:crm.Show_notice_from??'',hide:crm.Hide_notice_after??''}};
+assert.equal(Object.keys(updated).length,17);
+const approval=`// Exact approved client-field signatures. Sheet-confirmed baseline 4 November 2026.\n// Poorna updated by explicit Anna CRM-pull approval, 5 November 2026; do not restore old sheet wording.\nexport const APPROVED_LEAVE: Record<string,{name:string;sheetRow:number;notice:string;show:string;hide:string}> = ${JSON.stringify(updated,null,2)};\n`;
+for(const f of ['scripts/crm_leave_approvals.ts','deploy/src/crm_leave_approvals.ts'])await writeFile(`${root}/${f}`,approval);
+const {mapCrmUpcomingLeave}=await import('./crm_upcoming_leave');
+const mapped=mapCrmUpcomingLeave(crm);assert.equal(mapped.upcoming_leave_client_notice,crm.Upcoming_leave_client_notice);
+const after=structuredClone(before),match=after.filter((p:any)=>p.name===crm.name);assert.equal(match.length,1);Object.assign(match[0],mapped);
+const changes=after.flatMap((p:any,i:number)=>Object.keys(p).filter(k=>JSON.stringify(p[k])!==JSON.stringify(before[i][k])).map(field=>({name:p.name,field,before:before[i][field],after:p[field]})));
+assert.equal(changes.length,1);assert.equal(changes[0].field,'upcoming_leave_client_notice');assert.equal(changes[0].name,crm.name);
+for(const f of ['practitioners_data.json','deploy/practitioners_data.json','deploy/public/practitioners_data.json','deploy/src/practitioners_data.json','deploy/netlify/functions/practitioners-data.json']){assert.deepEqual(await read(f),before);await writeFile(`${root}/${f}`,JSON.stringify(after,null,2));}
+const files=['apps/practitioner-availability/practitionersData.ts','deploy/src/practitionersData.ts'];
+const ts=await readFile(`${root}/${files[0]}`,'utf8'),stamp=ts.match(/export const AVAILABILITY_LAST_UPDATED = "([^"]+)";/)![1],photos=await read('practitioners_photos.json');
+const expectedBefore=`export const PRACTITIONERS_DATA = ${JSON.stringify(before.map((p:any)=>({...p,photo_b64:photos[p.name]??p.photo_b64??null})),null,2)};\nexport const practitionersData = PRACTITIONERS_DATA;\nexport const AVAILABILITY_LAST_UPDATED = "${stamp}";\n`;
+assert.equal(ts,expectedBefore);assert.equal(await readFile(`${root}/${files[1]}`,'utf8'),ts);
+const generated=expectedBefore.replace(JSON.stringify(before.map((p:any)=>({...p,photo_b64:photos[p.name]??p.photo_b64??null})),null,2),JSON.stringify(after.map((p:any)=>({...p,photo_b64:photos[p.name]??p.photo_b64??null})),null,2));
+for(const f of files)await writeFile(`${root}/${f}`,generated);
+await writeFile(`${dir}/changes.json`,JSON.stringify({changes,stamp,confirmedNotices:after.filter((p:any)=>p.upcoming_leave_client_notice).length,protectedOtherData:true},null,2));console.log(JSON.stringify({changes,stamp}));

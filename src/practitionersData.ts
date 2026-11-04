@@ -3580,7 +3580,7 @@ export const PRACTITIONERS_DATA = [
       "Transgender"
     ],
     "client_note": "",
-    "upcoming_leave_client_notice": "Poorna Selvaraja will be on leave from 14 December 2026 to 11 January 2027 inclusive.",
+    "upcoming_leave_client_notice": "Poorna Selvaraja will be Telehealth ONLY from Tuesday 17th November to Wednesday 9th December, then will be on leave from 10th December 2026 to 11 January 2027 inclusive. In Person appointments resume on Tuesday 12th Jan 2027.",
     "upcoming_leave_show_from": "2026-11-04",
     "upcoming_leave_hide_after": "2027-01-11"
   },

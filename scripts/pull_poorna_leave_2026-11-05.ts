@@ -1,0 +1,18 @@
+import {invokeTool} from '@tasklet/tools/v2';
+import {readFile,writeFile,mkdir} from 'node:fs/promises';
+import assert from 'node:assert/strict';
+import {APPROVED_LEAVE} from './crm_leave_approvals';
+const root='/tasklet/threads/a_cwa98xzh47ey9rcvmmh4/work',dir=`${root}/poorna_leave_2026-11-05`;
+await mkdir(dir,{recursive:true});
+const data=JSON.parse(await readFile(`${root}/practitioners_data.json`,'utf8'));
+const matches=data.filter((p:any)=>/poorna/i.test(p.name));assert.equal(matches.length,1);
+const entry=Object.entries(APPROVED_LEAVE).filter(([id,a])=>a.name===matches[0].name);assert.equal(entry.length,1);
+const [id,a]=entry[0];
+const r=await invokeTool({connectionId:'conn_pdkvmnzjcqdeb3ha13wc',toolName:'zoho_crm-get-object',args:{module:'Contacts',recordId:id}});assert(r.ok);
+const raw:any=await r.json(),p=(raw.result??raw).data[0];assert.equal(p.id,id);assert.equal(`${p.First_Name} ${p.Last_Name}`.trim(),a.name);
+const crm={id,name:a.name,Upcoming_leave_client_notice:p.Upcoming_leave_client_notice,Show_notice_from:p.Show_notice_from,Hide_notice_after:p.Hide_notice_after};
+for(const k of ['Upcoming_leave_client_notice','Show_notice_from','Hide_notice_after'])assert(Object.hasOwn(p,k));
+await writeFile(`${dir}/crm_client_fields.json`,JSON.stringify(crm,null,2));
+await writeFile(`${dir}/data_before.json`,JSON.stringify(data,null,2));
+await writeFile(`${dir}/approval_before.ts`,await readFile(`${root}/scripts/crm_leave_approvals.ts`));
+console.log(JSON.stringify({appName:matches[0].name,crm,previous:a}));
