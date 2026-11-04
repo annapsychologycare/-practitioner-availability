@@ -17,10 +17,10 @@ for(const [id,a]of Object.entries(APPROVED_LEAVE)){
 const amy={id:'50438000001633178',Full_Name:'Amy Bortz',Upcoming_leave_client_notice:'Amy will be unavailable from 18th Dec 2026 to 8th Jan 2027',Show_notice_from:'2026-11-04',Hide_notice_after:null,Intake_Alert_Notes:'',Intake_Alert_Notes_Internal:'SECRET INTERNAL'};
 eq(mapCrmUpcomingLeave(amy),empty);eq(mapCrmNotes(amy).upcoming_leave_client_notice,'');
 const data=JSON.parse(await readFile(`${root}/practitioners_data.json`,'utf8'));
-eq(data.filter((p:any)=>p.upcoming_leave_client_notice).length,10);
+eq(data.filter((p:any)=>p.upcoming_leave_client_notice).length,Object.keys(APPROVED_LEAVE).length);
 const pracs=data.map((p:any)=>({...p,availabilityLocations:(p.locations??[]).map((l:any)=>({location:l.name,availability:l.availability}))}));
 const html=buildEmailHtml('Test','','Staff',pracs,undefined,false,{},new Date('2026-11-04T03:00:00Z'));
-eq((html.match(/data-upcoming-leave="client"/g)||[]).length,10);
+eq((html.match(/data-upcoming-leave="client"/g)||[]).length,Object.keys(APPROVED_LEAVE).length);
 for(const text of ['Sick/ Personal','Holidays:','Annual Leave:','Telehealth Only:','SECRET INTERNAL','Amy will be unavailable']){assert(!html.includes(text));checks++;}
 const plan=JSON.parse(await readFile(`${dir}/plan.json`,'utf8'));
 eq(plan.plans.filter((p:any)=>p.ignoredTelehealthOnly.length).length,2);

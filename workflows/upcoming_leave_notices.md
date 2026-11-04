@@ -1,5 +1,8 @@
 # Approved upcoming-leave notices — 4 November 2026
 
+## Latest confirmation refresh — Anna 13:43 request
+Fresh Dashboard read now confirms 17 practitioners. Newly added: Amy Bortz, Brigid Blanckenberg, Christine Deftereos, Elizabeth White, Nicholas Kleeman, Rebekah Barson and Ruby Bouhadana. Amy is now explicitly approved, superseding the earlier unconfirmed warning below. Brigid has two separate absences (2 Dec and 24 Dec–11 Jan); the reason/category is never exposed. Elizabeth has four separate periods; do not merge gaps. Ten earlier confirmed signatures unchanged. Current exact approval manifest is authoritative; old counted snapshots/helpers below are historical, not replayable. Evidence and scripts: `upcoming_leave_2026-11-04/reconfirmed_1343/`, `scripts/reconfirm_leave_1343.ts` and `scripts/sync_reconfirmed_leave_1343.ts`. Preserve current cream/mauve email helper unchanged. Only explicitly confirmed rows may be added; unknown/unapproved CRM text still fails closed.
+
 ## Authority and fields
 Contacts `Upcoming_leave_client_notice` → `upcoming_leave_client_notice`.
 Contacts `Show_notice_from` → `upcoming_leave_show_from`.

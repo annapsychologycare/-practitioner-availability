@@ -1,0 +1,11 @@
+import {readFile,writeFile} from 'node:fs/promises';
+import assert from 'node:assert/strict';
+const root='/tasklet/threads/a_cwa98xzh47ey9rcvmmh4/work',dir=`${root}/upcoming_leave_2026-11-04/reconfirmed_1343`;
+const data=JSON.parse(await readFile(`${root}/practitioners_data.json`,'utf8')),before=JSON.parse(await readFile(`${dir}/app_before.json`,'utf8'));
+const protectedFields=(x:any)=>JSON.parse(JSON.stringify(x, (k,v)=>k.startsWith('upcoming_leave_')?undefined:v));
+assert.deepEqual(protectedFields(data),protectedFields(before));
+let code=await readFile(`${root}/scripts/test_leave_email_design.ts`,'utf8');
+code=code.replace("assert.deepEqual(rows,JSON.parse(await readFile(`${dir}/data_before.json`,'utf8')));",'');
+code=code.replace('dir=`${root}/leave_email_design_2026-11-04`','dir=`${root}/upcoming_leave_2026-11-04/reconfirmed_1343`');
+await writeFile(`${root}/scripts/test_leave_email_design_1343.ts`,code);
+console.log('Protected non-leave data unchanged across all 25 practitioners.');

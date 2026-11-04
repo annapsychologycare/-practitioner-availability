@@ -359,9 +359,9 @@ export const PRACTITIONERS_DATA = [
       "Transgender"
     ],
     "client_note": "",
-    "upcoming_leave_client_notice": "",
-    "upcoming_leave_show_from": "",
-    "upcoming_leave_hide_after": ""
+    "upcoming_leave_client_notice": "Rebekah Barson will be on leave from 24 December 2026 to 17 January 2027 inclusive.",
+    "upcoming_leave_show_from": "2026-11-04",
+    "upcoming_leave_hide_after": "2027-01-17"
   },
   {
     "id": 5,
@@ -454,9 +454,9 @@ export const PRACTITIONERS_DATA = [
       "Male"
     ],
     "client_note": "",
-    "upcoming_leave_client_notice": "",
-    "upcoming_leave_show_from": "",
-    "upcoming_leave_hide_after": ""
+    "upcoming_leave_client_notice": "Brigid Blanckenberg will be on leave from 2 December 2026 to 2 December 2026 inclusive.\nBrigid Blanckenberg will be on leave from 24 December 2026 to 11 January 2027 inclusive.",
+    "upcoming_leave_show_from": "2026-11-04",
+    "upcoming_leave_hide_after": "2027-01-11"
   },
   {
     "id": 3,
@@ -660,9 +660,9 @@ export const PRACTITIONERS_DATA = [
       "Transgender"
     ],
     "client_note": "",
-    "upcoming_leave_client_notice": "",
-    "upcoming_leave_show_from": "",
-    "upcoming_leave_hide_after": ""
+    "upcoming_leave_client_notice": "Amy Bortz will be on leave from 18 December 2026 to 8 January 2027 inclusive.",
+    "upcoming_leave_show_from": "2026-11-04",
+    "upcoming_leave_hide_after": "2027-01-08"
   },
   {
     "id": 27,
@@ -836,9 +836,9 @@ export const PRACTITIONERS_DATA = [
       "Transgender"
     ],
     "client_note": "",
-    "upcoming_leave_client_notice": "",
-    "upcoming_leave_show_from": "",
-    "upcoming_leave_hide_after": ""
+    "upcoming_leave_client_notice": "Ruby Bouhadana will be on leave from 22 December 2026 to 6 January 2027 inclusive.",
+    "upcoming_leave_show_from": "2026-11-04",
+    "upcoming_leave_hide_after": "2027-01-06"
   },
   {
     "id": 17,
@@ -2040,9 +2040,9 @@ export const PRACTITIONERS_DATA = [
     ],
     "therapistType": "Accredited Mental Health Social Worker",
     "client_note": "Please note: Christine is an Accredited Mental Health Social Worker (AMHSW) with the AASW, rather than a psychologist. She is an eligible Medicare provider under a Mental Health Treatment Plan. If you intend to use private health insurance, please check with your insurer prior to booking, as not all funds provide rebates for Mental Health Social Work services.",
-    "upcoming_leave_client_notice": "",
-    "upcoming_leave_show_from": "",
-    "upcoming_leave_hide_after": ""
+    "upcoming_leave_client_notice": "Christine Deftereos will be on leave from 24 December 2026 to 3 January 2027 inclusive.",
+    "upcoming_leave_show_from": "2026-11-04",
+    "upcoming_leave_hide_after": "2027-01-03"
   },
   {
     "id": 18,
@@ -2696,9 +2696,9 @@ export const PRACTITIONERS_DATA = [
       "Transgender"
     ],
     "client_note": "",
-    "upcoming_leave_client_notice": "",
-    "upcoming_leave_show_from": "",
-    "upcoming_leave_hide_after": ""
+    "upcoming_leave_client_notice": "Nicholas Kleeman will be on leave from 25 December 2026 to 4 January 2027 inclusive.",
+    "upcoming_leave_show_from": "2026-11-04",
+    "upcoming_leave_hide_after": "2027-01-04"
   },
   {
     "id": 26,
@@ -4121,9 +4121,9 @@ export const PRACTITIONERS_DATA = [
       "Non Binary"
     ],
     "client_note": "",
-    "upcoming_leave_client_notice": "",
-    "upcoming_leave_show_from": "",
-    "upcoming_leave_hide_after": ""
+    "upcoming_leave_client_notice": "Elizabeth White will be on leave from 12 December 2026 to 19 December 2026 inclusive.\nElizabeth White will be on leave from 25 December 2026 to 28 December 2026 inclusive.\nElizabeth White will be on leave from 31 December 2026 to 3 January 2027 inclusive.\nElizabeth White will be on leave from 27 January 2027 to 12 February 2027 inclusive.",
+    "upcoming_leave_show_from": "2026-11-04",
+    "upcoming_leave_hide_after": "2027-02-12"
   },
   {
     "id": 14,
