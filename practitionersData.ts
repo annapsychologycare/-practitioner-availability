@@ -2575,7 +2575,7 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/nicholas-kleeman/",
     "locations": [
       {
-        "availability": "Tuesdays at 11am (Fortnightly: Starting 24th Nov)\nTuesdays at 4pm (Monthly: Starting 10th Nov)\nTuesdays at 9am (Monthly: Starting 24th Nov)",
+        "availability": "Tuesdays at 11am (Weekly: Starting 1st Dec)\nTuesdays at 4pm (Monthly: Starting 10th Nov)\nTuesdays at 9am (Monthly: Starting 24th Nov)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
@@ -2588,13 +2588,16 @@ export const PRACTITIONERS_DATA = [
       },
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "Fridays at 2:30pm (Weekly: Starting 27th Nov)\nFridays at 12:30pm (Fortnightly: Starting 4th Dec)\nThursdays at 1:30pm (Fortnightly: Starting 10th Dec)\nThursdays at 12:30pm (Fortnightly: Starting 3rd Dec)\nFridays at 1:30pm (Fortnightly: Starting 4th Dec)\nFridays at 2:30pm (Fortnightly: Starting 13th Nov)\nThursdays at 8am (Fortnightly: Starting 3rd Dec)\nThursdays at 10am (Monthly: Starting 10th Dec)\nThursdays at 12:30pm (Monthly: Starting 12th Nov)\nWednesdays at 1pm (Monthly: Starting 2nd Dec)",
+        "availability": "Fridays at 2:30pm (Weekly: Starting 27th Nov)\nFridays at 12:30pm (Fortnightly: Starting 4th Dec)\nThursdays at 1:30pm (Fortnightly: Starting 10th Dec)\nThursdays at 12:30pm (Fortnightly: Starting 3rd Dec)\nFridays at 1:30pm (Fortnightly: Starting 4th Dec)\nFridays at 2:30pm (Fortnightly: Starting 13th Nov)\nThursdays at 8am (Fortnightly: Starting 3rd Dec)\nThursdays at 12:30pm (Monthly: Starting 12th Nov)",
         "weekly_availability": [],
         "fortnightly_availability": []
       }
     ],
     "last_updated": "2026-07-19",
     "availability": [
+      "Tuesdays at 11am (Weekly: Starting 1st Dec) — Greville St, Prahran",
+      "Tuesdays at 4pm (Monthly: Starting 10th Nov) — Greville St, Prahran",
+      "Tuesdays at 9am (Monthly: Starting 24th Nov) — Greville St, Prahran",
       "Fridays at 2:30pm (Weekly: Starting 27th Nov) — Burke Rd, Camberwell",
       "Fridays at 12:30pm (Fortnightly: Starting 4th Dec) — Burke Rd, Camberwell",
       "Thursdays at 1:30pm (Fortnightly: Starting 10th Dec) — Burke Rd, Camberwell",
@@ -2602,12 +2605,7 @@ export const PRACTITIONERS_DATA = [
       "Fridays at 1:30pm (Fortnightly: Starting 4th Dec) — Burke Rd, Camberwell",
       "Fridays at 2:30pm (Fortnightly: Starting 13th Nov) — Burke Rd, Camberwell",
       "Thursdays at 8am (Fortnightly: Starting 3rd Dec) — Burke Rd, Camberwell",
-      "Thursdays at 10am (Monthly: Starting 10th Dec) — Burke Rd, Camberwell",
-      "Thursdays at 12:30pm (Monthly: Starting 12th Nov) — Burke Rd, Camberwell",
-      "Wednesdays at 1pm (Monthly: Starting 2nd Dec) — Burke Rd, Camberwell",
-      "Tuesdays at 11am (Fortnightly: Starting 24th Nov) — Greville St, Prahran",
-      "Tuesdays at 4pm (Monthly: Starting 10th Nov) — Greville St, Prahran",
-      "Tuesdays at 9am (Monthly: Starting 24th Nov) — Greville St, Prahran"
+      "Thursdays at 12:30pm (Monthly: Starting 12th Nov) — Burke Rd, Camberwell"
     ],
     "short_bio": "Nick is a warm, trauma-informed clinical psychologist using ACT, mindfulness, CBT and SFT to support diverse adults and adolescents, including neurodivergent clients.",
     "weekly_availability": [
@@ -2786,13 +2784,13 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/ricki-knoetze/",
     "locations": [
       {
-        "availability": "",
+        "availability": "Mondays at 3:30pm (Fortnightly: Starting 16th Nov)\nMondays at 2:30pm (Fortnightly: Starting 16th Nov)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
       },
       {
-        "availability": "Wednesdays at 1pm (Fortnightly: Starting 18th Nov)\nWednesdays at 12pm (Fortnightly: Starting 18th Nov)\nMondays at 2:15pm (Monthly: Starting 16th Nov)\nMondays at 2:30pm (Monthly: Starting 30th Nov)\nMondays at 3:30pm (Monthly: Starting 16th Nov)",
+        "availability": "Wednesdays at 1pm (Weekly: Starting 18th Nov)\nWednesdays at 12pm (Fortnightly: Starting 18th Nov)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Telehealth"
@@ -2812,11 +2810,10 @@ export const PRACTITIONERS_DATA = [
     ],
     "last_updated": "2026-07-19",
     "availability": [
-      "Wednesdays at 1pm (Fortnightly: Starting 18th Nov) — Telehealth",
+      "Wednesdays at 1pm (Weekly: Starting 18th Nov) — Telehealth",
       "Wednesdays at 12pm (Fortnightly: Starting 18th Nov) — Telehealth",
-      "Mondays at 2:15pm (Monthly: Starting 16th Nov) — Telehealth",
-      "Mondays at 2:30pm (Monthly: Starting 30th Nov) — Telehealth",
-      "Mondays at 3:30pm (Monthly: Starting 16th Nov) — Telehealth"
+      "Mondays at 3:30pm (Fortnightly: Starting 16th Nov) — Greville St, Prahran",
+      "Mondays at 2:30pm (Fortnightly: Starting 16th Nov) — Greville St, Prahran"
     ],
     "short_bio": "Ricki is a warm, non-judgemental psychologist using CBT, ACT and psychodynamic therapies to support adolescents and adults with anxiety, depression, trauma and ADHD.",
     "weekly_availability": [],
@@ -4222,7 +4219,7 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/karen-pereira-york/",
     "locations": [
       {
-        "availability": "Thursdays at 10:30am (Fortnightly: Starting 12th Nov)\nTuesdays at 2:30pm (Monthly: Starting 1st Dec)",
+        "availability": "Tuesdays at 2:30pm (Monthly: Starting 1st Dec)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
@@ -4230,7 +4227,6 @@ export const PRACTITIONERS_DATA = [
     ],
     "last_updated": "2026-07-19",
     "availability": [
-      "Thursdays at 10:30am (Fortnightly: Starting 12th Nov) — Greville St, Prahran",
       "Tuesdays at 2:30pm (Monthly: Starting 1st Dec) — Greville St, Prahran"
     ],
     "short_bio": "Karen is a psychodynamic clinical psychologist integrating EMDR to support trauma, identity, grief and life transitions with culturally attuned, exploratory therapy.",
@@ -4290,4 +4286,4 @@ export const PRACTITIONERS_DATA = [
   }
 ];
 export const practitionersData = PRACTITIONERS_DATA;
-export const AVAILABILITY_LAST_UPDATED = "5 Nov 2026 6:06am";
+export const AVAILABILITY_LAST_UPDATED = "5 Nov 2026 9:25am";

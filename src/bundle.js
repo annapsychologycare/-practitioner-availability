@@ -25,9 +25,9 @@
     mod
   ));
 
-  // deploy/node_modules/react/cjs/react.production.min.js
+  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/node_modules/react/cjs/react.production.min.js
   var require_react_production_min = __commonJS({
-    "deploy/node_modules/react/cjs/react.production.min.js"(exports) {
+    "../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/node_modules/react/cjs/react.production.min.js"(exports) {
       "use strict";
       var l = Symbol.for("react.element");
       var n = Symbol.for("react.portal");
@@ -298,9 +298,9 @@
     }
   });
 
-  // deploy/node_modules/react/index.js
+  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/node_modules/react/index.js
   var require_react = __commonJS({
-    "deploy/node_modules/react/index.js"(exports, module) {
+    "../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/node_modules/react/index.js"(exports, module) {
       "use strict";
       if (true) {
         module.exports = require_react_production_min();
@@ -310,9 +310,9 @@
     }
   });
 
-  // deploy/node_modules/react/cjs/react-jsx-runtime.production.min.js
+  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/node_modules/react/cjs/react-jsx-runtime.production.min.js
   var require_react_jsx_runtime_production_min = __commonJS({
-    "deploy/node_modules/react/cjs/react-jsx-runtime.production.min.js"(exports) {
+    "../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/node_modules/react/cjs/react-jsx-runtime.production.min.js"(exports) {
       "use strict";
       var f = require_react();
       var k = Symbol.for("react.element");
@@ -335,9 +335,9 @@
     }
   });
 
-  // deploy/node_modules/react/jsx-runtime.js
+  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/node_modules/react/jsx-runtime.js
   var require_jsx_runtime = __commonJS({
-    "deploy/node_modules/react/jsx-runtime.js"(exports, module) {
+    "../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/node_modules/react/jsx-runtime.js"(exports, module) {
       "use strict";
       if (true) {
         module.exports = require_react_jsx_runtime_production_min();
@@ -347,9 +347,9 @@
     }
   });
 
-  // ../../../../tmp/pc-staff-build/node_modules/react/cjs/react.production.min.js
+  // ../../tmp/pc-staff-build/node_modules/react/cjs/react.production.min.js
   var require_react_production_min2 = __commonJS({
-    "../../../../tmp/pc-staff-build/node_modules/react/cjs/react.production.min.js"(exports) {
+    "../../tmp/pc-staff-build/node_modules/react/cjs/react.production.min.js"(exports) {
       "use strict";
       var l = Symbol.for("react.element");
       var n = Symbol.for("react.portal");
@@ -620,9 +620,9 @@
     }
   });
 
-  // ../../../../tmp/pc-staff-build/node_modules/react/index.js
+  // ../../tmp/pc-staff-build/node_modules/react/index.js
   var require_react2 = __commonJS({
-    "../../../../tmp/pc-staff-build/node_modules/react/index.js"(exports, module) {
+    "../../tmp/pc-staff-build/node_modules/react/index.js"(exports, module) {
       "use strict";
       if (true) {
         module.exports = require_react_production_min2();
@@ -632,9 +632,9 @@
     }
   });
 
-  // deploy/node_modules/scheduler/cjs/scheduler.production.min.js
+  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/node_modules/scheduler/cjs/scheduler.production.min.js
   var require_scheduler_production_min = __commonJS({
-    "deploy/node_modules/scheduler/cjs/scheduler.production.min.js"(exports) {
+    "../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/node_modules/scheduler/cjs/scheduler.production.min.js"(exports) {
       "use strict";
       function f(a, b) {
         var c = a.length;
@@ -885,9 +885,9 @@
     }
   });
 
-  // deploy/node_modules/scheduler/index.js
+  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/node_modules/scheduler/index.js
   var require_scheduler = __commonJS({
-    "deploy/node_modules/scheduler/index.js"(exports, module) {
+    "../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/node_modules/scheduler/index.js"(exports, module) {
       "use strict";
       if (true) {
         module.exports = require_scheduler_production_min();
@@ -897,9 +897,9 @@
     }
   });
 
-  // deploy/node_modules/react-dom/cjs/react-dom.production.min.js
+  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/node_modules/react-dom/cjs/react-dom.production.min.js
   var require_react_dom_production_min = __commonJS({
-    "deploy/node_modules/react-dom/cjs/react-dom.production.min.js"(exports) {
+    "../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/node_modules/react-dom/cjs/react-dom.production.min.js"(exports) {
       "use strict";
       var aa = require_react();
       var ca = require_scheduler();
@@ -7507,9 +7507,9 @@
     }
   });
 
-  // deploy/node_modules/react-dom/index.js
+  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/node_modules/react-dom/index.js
   var require_react_dom = __commonJS({
-    "deploy/node_modules/react-dom/index.js"(exports, module) {
+    "../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/node_modules/react-dom/index.js"(exports, module) {
       "use strict";
       function checkDCE() {
         if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ === "undefined" || typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE !== "function") {
@@ -7533,9 +7533,9 @@
     }
   });
 
-  // deploy/node_modules/react-dom/client.js
+  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/node_modules/react-dom/client.js
   var require_client = __commonJS({
-    "deploy/node_modules/react-dom/client.js"(exports) {
+    "../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/node_modules/react-dom/client.js"(exports) {
       "use strict";
       var m = require_react_dom();
       if (true) {
@@ -7564,10 +7564,10 @@
     }
   });
 
-  // deploy/src/App.tsx
+  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/App.tsx
   var import_react12 = __toESM(require_react());
 
-  // deploy/src/utils/upcomingLeave.ts
+  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/utils/upcomingLeave.ts
   function melbourneDate(now = /* @__PURE__ */ new Date()) {
     const parts = new Intl.DateTimeFormat("en-AU", { timeZone: "Australia/Melbourne", year: "numeric", month: "2-digit", day: "2-digit" }).formatToParts(now);
     const part = (type) => parts.find((p) => p.type === type).value;
@@ -7606,7 +7606,7 @@
   </td></tr></table>`;
   }
 
-  // deploy/src/utils/useNoticeClock.ts
+  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/utils/useNoticeClock.ts
   var import_react = __toESM(require_react());
   function useNoticeClock() {
     const [now, setNow] = (0, import_react.useState)(Date.now());
@@ -7627,7 +7627,7 @@
     return now;
   }
 
-  // deploy/src/utils/practitionerIntakePause.ts
+  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/utils/practitionerIntakePause.ts
   var KRISTA_INTAKE_PAUSED = true;
   function isKristaIntakePaused(name) {
     return KRISTA_INTAKE_PAUSED && (name ?? "").replace(/^Dr\.?\s+/i, "").trim().toLowerCase() === "krista de castella";
@@ -7642,7 +7642,7 @@
     return p;
   }
 
-  // deploy/src/components/UpcomingLeave.tsx
+  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/components/UpcomingLeave.tsx
   var import_jsx_runtime = __toESM(require_jsx_runtime());
   var UpcomingLeave = ({ practitioner }) => {
     const now = useNoticeClock();
@@ -7653,7 +7653,7 @@
     ] }) : null;
   };
 
-  // deploy/src/components/PractitionerNotes.tsx
+  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/components/PractitionerNotes.tsx
   var import_jsx_runtime2 = __toESM(require_jsx_runtime());
   function PractitionerNotes({ practitioner: original }) {
     const p = suppressKristaIntake(original);
@@ -7670,7 +7670,7 @@
     ] });
   }
 
-  // deploy/src/components/StaffAccess.tsx
+  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/components/StaffAccess.tsx
   var import_react2 = __toESM(require_react());
   var import_jsx_runtime3 = __toESM(require_jsx_runtime());
   var ORIGIN = "https://pc-prac-availability.netlify.app";
@@ -7841,13 +7841,13 @@
     ] });
   };
 
-  // deploy/src/FindPractitioner.tsx
+  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/FindPractitioner.tsx
   var import_react6 = __toESM(require_react());
 
-  // ../../../../tmp/pc-staff-build/node_modules/lucide-react/dist/esm/createLucideIcon.js
+  // ../../tmp/pc-staff-build/node_modules/lucide-react/dist/esm/createLucideIcon.js
   var import_react3 = __toESM(require_react2());
 
-  // ../../../../tmp/pc-staff-build/node_modules/lucide-react/dist/esm/defaultAttributes.js
+  // ../../tmp/pc-staff-build/node_modules/lucide-react/dist/esm/defaultAttributes.js
   var defaultAttributes = {
     xmlns: "http://www.w3.org/2000/svg",
     width: 24,
@@ -7860,10 +7860,10 @@
     strokeLinejoin: "round"
   };
 
-  // ../../../../tmp/pc-staff-build/node_modules/lucide-react/dist/esm/shared/src/utils.js
+  // ../../tmp/pc-staff-build/node_modules/lucide-react/dist/esm/shared/src/utils.js
   var toKebabCase = (string) => string.replace(/([a-z0-9])([A-Z])/g, "$1-$2").toLowerCase();
 
-  // ../../../../tmp/pc-staff-build/node_modules/lucide-react/dist/esm/createLucideIcon.js
+  // ../../tmp/pc-staff-build/node_modules/lucide-react/dist/esm/createLucideIcon.js
   var createLucideIcon = (iconName, iconNode) => {
     const Component2 = (0, import_react3.forwardRef)(
       ({
@@ -7898,13 +7898,13 @@
     return Component2;
   };
 
-  // ../../../../tmp/pc-staff-build/node_modules/lucide-react/dist/esm/icons/arrow-left.js
+  // ../../tmp/pc-staff-build/node_modules/lucide-react/dist/esm/icons/arrow-left.js
   var ArrowLeft = createLucideIcon("ArrowLeft", [
     ["path", { d: "m12 19-7-7 7-7", key: "1l729n" }],
     ["path", { d: "M19 12H5", key: "x3x0zl" }]
   ]);
 
-  // ../../../../tmp/pc-staff-build/node_modules/lucide-react/dist/esm/icons/clipboard-check.js
+  // ../../tmp/pc-staff-build/node_modules/lucide-react/dist/esm/icons/clipboard-check.js
   var ClipboardCheck = createLucideIcon("ClipboardCheck", [
     ["rect", { width: "8", height: "4", x: "8", y: "2", rx: "1", ry: "1", key: "tgr4d6" }],
     [
@@ -7917,7 +7917,7 @@
     ["path", { d: "m9 14 2 2 4-4", key: "df797q" }]
   ]);
 
-  // ../../../../tmp/pc-staff-build/node_modules/lucide-react/dist/esm/icons/clipboard.js
+  // ../../tmp/pc-staff-build/node_modules/lucide-react/dist/esm/icons/clipboard.js
   var Clipboard = createLucideIcon("Clipboard", [
     ["rect", { width: "8", height: "4", x: "8", y: "2", rx: "1", ry: "1", key: "tgr4d6" }],
     [
@@ -7929,34 +7929,34 @@
     ]
   ]);
 
-  // ../../../../tmp/pc-staff-build/node_modules/lucide-react/dist/esm/icons/eye.js
+  // ../../tmp/pc-staff-build/node_modules/lucide-react/dist/esm/icons/eye.js
   var Eye = createLucideIcon("Eye", [
     ["path", { d: "M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z", key: "rwhkz3" }],
     ["circle", { cx: "12", cy: "12", r: "3", key: "1v7zrd" }]
   ]);
 
-  // ../../../../tmp/pc-staff-build/node_modules/lucide-react/dist/esm/icons/send.js
+  // ../../tmp/pc-staff-build/node_modules/lucide-react/dist/esm/icons/send.js
   var Send = createLucideIcon("Send", [
     ["path", { d: "m22 2-7 20-4-9-9-4Z", key: "1q3vgg" }],
     ["path", { d: "M22 2 11 13", key: "nzbqef" }]
   ]);
 
-  // ../../../../tmp/pc-staff-build/node_modules/lucide-react/dist/esm/icons/square-check-big.js
+  // ../../tmp/pc-staff-build/node_modules/lucide-react/dist/esm/icons/square-check-big.js
   var SquareCheckBig = createLucideIcon("SquareCheckBig", [
     ["path", { d: "m9 11 3 3L22 4", key: "1pflzl" }],
     ["path", { d: "M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11", key: "1jnkn4" }]
   ]);
 
-  // ../../../../tmp/pc-staff-build/node_modules/lucide-react/dist/esm/icons/x.js
+  // ../../tmp/pc-staff-build/node_modules/lucide-react/dist/esm/icons/x.js
   var X = createLucideIcon("X", [
     ["path", { d: "M18 6 6 18", key: "1bl5f8" }],
     ["path", { d: "m6 6 12 12", key: "d8bk6v" }]
   ]);
 
-  // deploy/src/components/SendClientModal.tsx
+  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/components/SendClientModal.tsx
   var import_react4 = __toESM(require_react());
 
-  // deploy/src/utils/afterHours.ts
+  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/utils/afterHours.ts
   var WEEKEND_DAYS = ["saturdays", "sundays"];
   var WEEKDAY_DAYS = ["mondays", "tuesdays", "wednesdays", "thursdays", "fridays"];
   function parseTimeMinutes(timeStr) {
@@ -8007,7 +8007,7 @@
     return false;
   }
 
-  // deploy/src/emailTemplateConfig.ts
+  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/emailTemplateConfig.ts
   var DEFAULT_EMAIL_TEMPLATE_CONFIG = {
     senders: ["Anna Donaldson", "Charlotte Davenport"],
     intro_text: "Thank you for reaching out to PsychologyCare. Based on your intake information, we've put together a list of practitioners we think could be a great fit for you.",
@@ -8073,7 +8073,7 @@
     return { ...DEFAULT_EMAIL_TEMPLATE_CONFIG };
   }
 
-  // deploy/src/utils/emailBuilder.ts
+  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/utils/emailBuilder.ts
   function parseAvailability(text, includeMonthly = false) {
     const weekly = [];
     const fortnightly = [];
@@ -8312,7 +8312,7 @@
     </div>`;
   }
 
-  // deploy/src/components/SendClientModal.tsx
+  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/components/SendClientModal.tsx
   var import_jsx_runtime4 = __toESM(require_jsx_runtime());
   var SendClientModal = ({ selected, locationFilter, onClose, onSent, includeMonthly = false, sessionType = "Individual", clientAge60Plus = false }) => {
     const config = (0, import_react4.useMemo)(() => loadEmailTemplateConfig(), []);
@@ -8688,7 +8688,7 @@
   };
   var SendClientModal_default = SendClientModal;
 
-  // deploy/src/components/MultiSelectDropdown.tsx
+  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/components/MultiSelectDropdown.tsx
   var import_react5 = __toESM(require_react());
   var import_jsx_runtime5 = __toESM(require_jsx_runtime());
   function MultiSelectDropdown({ label, options, selected, onChange, placeholder }) {
@@ -8772,7 +8772,7 @@
     ] });
   }
 
-  // deploy/src/utils/kristaMatching.ts
+  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/utils/kristaMatching.ts
   var KRISTA_NAME = "Dr Krista De Castella";
   var INTEGRATION_PRESENTATION = "Difficult Psychedelic Experience / Bad-Trip Integration";
   function hasKristaClinicalSpecificity(modalities, presentations, nonComplexEmdrConfirmed, modalitiesMatchAll = false) {
@@ -8789,7 +8789,7 @@
     return p.name === KRISTA_NAME && !p.referral_only && sessionType === "Individual" && types.includes("Individual") && age !== null && age >= 16 && !(excludeFemaleOnly && p.client_gender_accepted === "Female Only");
   }
 
-  // deploy/src/utils/selectedCriteria.ts
+  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/utils/selectedCriteria.ts
   function matchesPresentation(value, selected) {
     const text = (value == null ? "" : typeof value === "string" ? value : Array.isArray(value) ? value.join(" ") : String(value)).toLowerCase();
     return text.includes(selected.toLowerCase());
@@ -8808,7 +8808,7 @@
     };
   }
 
-  // deploy/src/FindPractitioner.tsx
+  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/FindPractitioner.tsx
   var import_jsx_runtime6 = __toESM(require_jsx_runtime());
   var DAYS_OF_WEEK = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
   var PRESENTATION_OPTIONS = [
@@ -10011,7 +10011,7 @@
     ] });
   }
 
-  // deploy/src/Directory.tsx
+  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/Directory.tsx
   var import_react7 = __toESM(require_react());
   var import_jsx_runtime7 = __toESM(require_jsx_runtime());
   function Directory({ practitioners }) {
@@ -10198,7 +10198,7 @@
     ] });
   }
 
-  // deploy/src/AvailabilitySnapshot.tsx
+  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/AvailabilitySnapshot.tsx
   var import_react8 = __toESM(require_react());
   var import_jsx_runtime8 = __toESM(require_jsx_runtime());
   function getAvailabilityLines(text, type) {
@@ -10294,10 +10294,10 @@
   };
   var AvailabilitySnapshot_default = AvailabilitySnapshot;
 
-  // deploy/src/components/IntakeTab.tsx
+  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/components/IntakeTab.tsx
   var import_react9 = __toESM(require_react());
 
-  // deploy/src/practitionersData.ts
+  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/practitionersData.ts
   var PRACTITIONERS_DATA = [
     {
       "id": 1,
@@ -12875,7 +12875,7 @@
       "link_to_bio": "https://psychologycare.com.au/nicholas-kleeman/",
       "locations": [
         {
-          "availability": "Tuesdays at 11am (Fortnightly: Starting 24th Nov)\nTuesdays at 4pm (Monthly: Starting 10th Nov)\nTuesdays at 9am (Monthly: Starting 24th Nov)",
+          "availability": "Tuesdays at 11am (Weekly: Starting 1st Dec)\nTuesdays at 4pm (Monthly: Starting 10th Nov)\nTuesdays at 9am (Monthly: Starting 24th Nov)",
           "weekly_availability": [],
           "fortnightly_availability": [],
           "location": "Greville St, Prahran"
@@ -12888,13 +12888,16 @@
         },
         {
           "location": "Burke Rd, Camberwell",
-          "availability": "Fridays at 2:30pm (Weekly: Starting 27th Nov)\nFridays at 12:30pm (Fortnightly: Starting 4th Dec)\nThursdays at 1:30pm (Fortnightly: Starting 10th Dec)\nThursdays at 12:30pm (Fortnightly: Starting 3rd Dec)\nFridays at 1:30pm (Fortnightly: Starting 4th Dec)\nFridays at 2:30pm (Fortnightly: Starting 13th Nov)\nThursdays at 8am (Fortnightly: Starting 3rd Dec)\nThursdays at 10am (Monthly: Starting 10th Dec)\nThursdays at 12:30pm (Monthly: Starting 12th Nov)\nWednesdays at 1pm (Monthly: Starting 2nd Dec)",
+          "availability": "Fridays at 2:30pm (Weekly: Starting 27th Nov)\nFridays at 12:30pm (Fortnightly: Starting 4th Dec)\nThursdays at 1:30pm (Fortnightly: Starting 10th Dec)\nThursdays at 12:30pm (Fortnightly: Starting 3rd Dec)\nFridays at 1:30pm (Fortnightly: Starting 4th Dec)\nFridays at 2:30pm (Fortnightly: Starting 13th Nov)\nThursdays at 8am (Fortnightly: Starting 3rd Dec)\nThursdays at 12:30pm (Monthly: Starting 12th Nov)",
           "weekly_availability": [],
           "fortnightly_availability": []
         }
       ],
       "last_updated": "2026-07-19",
       "availability": [
+        "Tuesdays at 11am (Weekly: Starting 1st Dec) \u2014 Greville St, Prahran",
+        "Tuesdays at 4pm (Monthly: Starting 10th Nov) \u2014 Greville St, Prahran",
+        "Tuesdays at 9am (Monthly: Starting 24th Nov) \u2014 Greville St, Prahran",
         "Fridays at 2:30pm (Weekly: Starting 27th Nov) \u2014 Burke Rd, Camberwell",
         "Fridays at 12:30pm (Fortnightly: Starting 4th Dec) \u2014 Burke Rd, Camberwell",
         "Thursdays at 1:30pm (Fortnightly: Starting 10th Dec) \u2014 Burke Rd, Camberwell",
@@ -12902,12 +12905,7 @@
         "Fridays at 1:30pm (Fortnightly: Starting 4th Dec) \u2014 Burke Rd, Camberwell",
         "Fridays at 2:30pm (Fortnightly: Starting 13th Nov) \u2014 Burke Rd, Camberwell",
         "Thursdays at 8am (Fortnightly: Starting 3rd Dec) \u2014 Burke Rd, Camberwell",
-        "Thursdays at 10am (Monthly: Starting 10th Dec) \u2014 Burke Rd, Camberwell",
-        "Thursdays at 12:30pm (Monthly: Starting 12th Nov) \u2014 Burke Rd, Camberwell",
-        "Wednesdays at 1pm (Monthly: Starting 2nd Dec) \u2014 Burke Rd, Camberwell",
-        "Tuesdays at 11am (Fortnightly: Starting 24th Nov) \u2014 Greville St, Prahran",
-        "Tuesdays at 4pm (Monthly: Starting 10th Nov) \u2014 Greville St, Prahran",
-        "Tuesdays at 9am (Monthly: Starting 24th Nov) \u2014 Greville St, Prahran"
+        "Thursdays at 12:30pm (Monthly: Starting 12th Nov) \u2014 Burke Rd, Camberwell"
       ],
       "short_bio": "Nick is a warm, trauma-informed clinical psychologist using ACT, mindfulness, CBT and SFT to support diverse adults and adolescents, including neurodivergent clients.",
       "weekly_availability": [
@@ -13086,13 +13084,13 @@
       "link_to_bio": "https://psychologycare.com.au/ricki-knoetze/",
       "locations": [
         {
-          "availability": "",
+          "availability": "Mondays at 3:30pm (Fortnightly: Starting 16th Nov)\nMondays at 2:30pm (Fortnightly: Starting 16th Nov)",
           "weekly_availability": [],
           "fortnightly_availability": [],
           "location": "Greville St, Prahran"
         },
         {
-          "availability": "Wednesdays at 1pm (Fortnightly: Starting 18th Nov)\nWednesdays at 12pm (Fortnightly: Starting 18th Nov)\nMondays at 2:15pm (Monthly: Starting 16th Nov)\nMondays at 2:30pm (Monthly: Starting 30th Nov)\nMondays at 3:30pm (Monthly: Starting 16th Nov)",
+          "availability": "Wednesdays at 1pm (Weekly: Starting 18th Nov)\nWednesdays at 12pm (Fortnightly: Starting 18th Nov)",
           "weekly_availability": [],
           "fortnightly_availability": [],
           "location": "Telehealth"
@@ -13112,11 +13110,10 @@
       ],
       "last_updated": "2026-07-19",
       "availability": [
-        "Wednesdays at 1pm (Fortnightly: Starting 18th Nov) \u2014 Telehealth",
+        "Wednesdays at 1pm (Weekly: Starting 18th Nov) \u2014 Telehealth",
         "Wednesdays at 12pm (Fortnightly: Starting 18th Nov) \u2014 Telehealth",
-        "Mondays at 2:15pm (Monthly: Starting 16th Nov) \u2014 Telehealth",
-        "Mondays at 2:30pm (Monthly: Starting 30th Nov) \u2014 Telehealth",
-        "Mondays at 3:30pm (Monthly: Starting 16th Nov) \u2014 Telehealth"
+        "Mondays at 3:30pm (Fortnightly: Starting 16th Nov) \u2014 Greville St, Prahran",
+        "Mondays at 2:30pm (Fortnightly: Starting 16th Nov) \u2014 Greville St, Prahran"
       ],
       "short_bio": "Ricki is a warm, non-judgemental psychologist using CBT, ACT and psychodynamic therapies to support adolescents and adults with anxiety, depression, trauma and ADHD.",
       "weekly_availability": [],
@@ -14522,7 +14519,7 @@
       "link_to_bio": "https://psychologycare.com.au/karen-pereira-york/",
       "locations": [
         {
-          "availability": "Thursdays at 10:30am (Fortnightly: Starting 12th Nov)\nTuesdays at 2:30pm (Monthly: Starting 1st Dec)",
+          "availability": "Tuesdays at 2:30pm (Monthly: Starting 1st Dec)",
           "weekly_availability": [],
           "fortnightly_availability": [],
           "location": "Greville St, Prahran"
@@ -14530,7 +14527,6 @@
       ],
       "last_updated": "2026-07-19",
       "availability": [
-        "Thursdays at 10:30am (Fortnightly: Starting 12th Nov) \u2014 Greville St, Prahran",
         "Tuesdays at 2:30pm (Monthly: Starting 1st Dec) \u2014 Greville St, Prahran"
       ],
       "short_bio": "Karen is a psychodynamic clinical psychologist integrating EMDR to support trauma, identity, grief and life transitions with culturally attuned, exploratory therapy.",
@@ -14589,9 +14585,9 @@
       "upcoming_leave_hide_after": "2027-02-04"
     }
   ];
-  var AVAILABILITY_LAST_UPDATED = "5 Nov 2026 6:06am";
+  var AVAILABILITY_LAST_UPDATED = "5 Nov 2026 9:25am";
 
-  // deploy/src/components/IntakeTab.tsx
+  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/components/IntakeTab.tsx
   var import_jsx_runtime9 = __toESM(require_jsx_runtime());
   var COLORS = {
     darkPurple: "#2C244C",
@@ -15226,10 +15222,10 @@
     return lines.join("\n");
   }
 
-  // deploy/src/ReferralNetwork.tsx
+  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/ReferralNetwork.tsx
   var import_react10 = __toESM(require_react());
 
-  // deploy/src/constants.ts
+  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/constants.ts
   var CANONICAL_PRESENTATIONS = [
     // Anxiety & Stress
     "Anxiety",
@@ -15473,7 +15469,7 @@
     "Trauma-Informed Care"
   ].sort();
 
-  // deploy/src/ReferralNetwork.tsx
+  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/ReferralNetwork.tsx
   var import_jsx_runtime10 = __toESM(require_jsx_runtime());
   var BRAND = {
     lilac: "#7C6B9E",
@@ -16131,7 +16127,7 @@
   };
   var ReferralNetwork_default = ReferralNetwork;
 
-  // deploy/src/Compare.tsx
+  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/Compare.tsx
   var import_react11 = __toESM(require_react());
   var import_jsx_runtime11 = __toESM(require_jsx_runtime());
   var NETLIFY_BASE2 = "https://practitioneravailabilitypsychologycar.netlify.app";
@@ -16461,7 +16457,7 @@
     );
   };
 
-  // deploy/src/App.tsx
+  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/App.tsx
   var import_client = __toESM(require_client());
   var import_jsx_runtime12 = __toESM(require_jsx_runtime());
   var INTAKE_PRACTITIONERS = PRACTITIONERS_DATA.map(suppressKristaIntake);
