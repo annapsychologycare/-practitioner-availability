@@ -1,170 +1,54 @@
 # Daily Availability Import — Zanda API
 
-## Purpose
-Runs every morning to fetch the next 8 weeks of practitioner availability from the Zanda API
-and publish it to the practitioner availability app on Netlify/GitHub.
+## Purpose and boundaries
+Run the complete morning refresh and publish practitioner availability. Import/app data retains Weekly, Fortnightly and Monthly. **Email presentation is different** (Anna, 5 November 2026): main email lists/counts Weekly and Fortnightly ONLY, deduplicated rows AND counts. This supersedes every older instruction to list Monthly or show all location rows separately.
 
-## Steps
+## Connection and dates
+- Active Zanda `conn_eps1awzjskk2nv579hf9` / `remote_http_call`, GET only. Old connection revoked. Read current CONNECTION.md and TOOLS.d.ts before calling. Never put credentials in files.
+- Preserve tested importer date filters and cursor pagination, pageSize=50. Melbourne tomorrow through today+56 days inclusive; never today. Fresh runs clear stale checkpoints; recover only verified same-run checkpoints.
+- Daily/targeted importers and AdHocAvailabilityTab mirrors use active connection. Ad-hoc standalone UI additionally needs the host `window.tasklet.invokeTool` bridge; connection routing alone does not restore it. Targeted importer dates are explicit; update before reuse.
 
-### 1. Run the import script
-```
-cd /tasklet/threads/a_cwa98xzh47ey9rcvmmh4/work/scripts && bun -i import_availability_api.ts
-```
-- Captures stdout as JSON summary (ok, matched, unmatched, slots, totalSlots)
-- stderr contains progress logs — ignore in final output
-- On error: email anna@psychologycare.com.au with the error message and stop
-- The importer also refreshes practitioner notices from CRM `Intake_Alert_Notes` using `scripts/crm_alerts.ts`. Text after `|` is client-facing; unmarked notes are internal only and must not erase an existing banner. Keep `crm_alerts.ts` beside the importer and publish both scripts. Alert changes from this CRM refresh are expected in the daily publish guard.
+## 1. Guard and import
+Read existing sources before overwriting. Run `scripts/check_refresh_baseline.ts` and current `scripts/guard_daily_sources.ts` baseline check before importing. Preserve latest published CRM profile metadata, confirmed leave notices/styling, staff-auth/recovery/private infrastructure, working hours, Kiira/Maddie/Josh restrictions, Krista intake pause, David no-Monthly, and calendar-driven roster. No personal ages/DOB import/publication. Do not touch Fee Schedule or `netlify.toml`.
 
-### 2. Rebuild the bundle
-Copy latest source files to /tmp/prac-build/ then rebuild:
-```
-cp /tasklet/threads/a_cwa98xzh47ey9rcvmmh4/work/apps/practitioner-availability/*.tsx /tmp/prac-build/
-cp /tasklet/threads/a_cwa98xzh47ey9rcvmmh4/work/apps/practitioner-availability/practitionersData.ts /tmp/prac-build/
-cp /tasklet/threads/a_cwa98xzh47ey9rcvmmh4/work/apps/practitioner-availability/emailTemplateConfig.ts /tmp/prac-build/
-cp /tasklet/threads/a_cwa98xzh47ey9rcvmmh4/work/apps/practitioner-availability/constants.ts /tmp/prac-build/
-cp /tasklet/threads/a_cwa98xzh47ey9rcvmmh4/work/apps/practitioner-availability/types.ts /tmp/prac-build/
-cp /tasklet/threads/a_cwa98xzh47ey9rcvmmh4/work/apps/practitioner-availability/package.json /tmp/prac-build/
-cp -r /tasklet/threads/a_cwa98xzh47ey9rcvmmh4/work/apps/practitioner-availability/utils /tmp/prac-build/utils
-cp -r /tasklet/threads/a_cwa98xzh47ey9rcvmmh4/work/apps/practitioner-availability/components /tmp/prac-build/components
-cd /tmp/prac-build && bun install --silent && bun build app.tsx --bundle --format iife --outfile bundle.js
-```
-Then copy bundle back:
-```
-cp /tmp/prac-build/bundle.js /tasklet/threads/a_cwa98xzh47ey9rcvmmh4/work/apps/practitioner-availability/bundle.js
-cp /tmp/prac-build/bundle.js /tasklet/threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/bundle.js
-```
+Read `workflows/upcoming_leave_notices.md` and shared CRM mapping/approval guidance before any leave changes. Suppress unapproved notes; do not infer approvals.
 
-### 3. Push to GitHub
-Use connection: conn_nvshm6rz3kzncg0nh4vk
-Tool: github_push_to_branch
-Repo: annapsychologycare / -practitioner-availability, branch: main
-Commit message: "Availability update via Zanda API — {date}"
-Files to push:
-- src/practitioners_data.json → /tasklet/threads/a_cwa98xzh47ey9rcvmmh4/work/practitioners_data.json
-- src/practitionersData.ts → /tasklet/threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/practitionersData.ts
-- bundle.js → /tasklet/threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/bundle.js
-- public/bundle.js → /tasklet/threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/bundle.js
+Run from `scripts/`: `bun -i import_availability_api.ts`, capturing success JSON as `/tmp/import_result.json`. Persist dated import evidence; importer also saves `availability_raw_latest.json` (private local occurrence evidence, never publish raw records).
 
-### 4. Email summary
+Importer refreshes separate CRM fields via `crm_alerts.ts`: `Intake_Alert_Notes_Internal` → staff-only `alert`; `Intake_Alert_Notes` → `client_note`. Blank CRM values clear notes. Never use legacy notes/pipe fallback or expose staff notes to client outputs. Preserve approved leave mapping/suppression.
 
-Run the canonical email script which reads /tmp/import_result.json and sends via Gmail:
-```
-cd /tasklet/threads/a_cwa98xzh47ey9rcvmmh4/work/scripts && bun -i build_send_email.ts
-```
+On importer error notify Anna and stop without publication. Do not reuse stale success JSON.
 
-This script handles all formatting, colour-coding, and sending automatically.
-If it fails or doesn't exist, fall back to the manual HTML template below.
+## 2. Synchronize, validate, build
+Synchronize all canonical/app/deploy/root JSON/TypeScript representations, preserving location-level newline strings and unrelated metadata. Run `scripts/validate_availability_refresh.ts` and applicable leave/profile guards.
 
-Send to: anna@psychologycare.com.au
-Via Gmail connection: conn_nrjy2ygpjb7gn16jk3et
-Tool: gmail_send_message
-Subject: "Availability Update — {date} ({N} slots across {M} practitioners)"
+Build BOTH:
+- Standalone: stage current app `*.tsx`, `practitionersData.ts`, `emailTemplateConfig.ts`, `constants.ts`, `types.ts`, package.json, `utils/`, `components/` in `/tmp/prac-build`; install dependencies and `bun build app.tsx --bundle --format iife --outfile bundle.js`. Copy output to app `bundle.js` and deploy `src/bundle.js`. Include current leave dependencies.
+- Active Vite: root `index.html` → `src/App.tsx`. Build current deploy sources using an isolated `/tmp` staging directory if mounted installs are slow. Standalone build alone does not deploy active UI changes. Keep root `practitionersData.ts` synchronized.
 
-IMPORTANT: Use scripted tool calling via invokeTool (import from @tasklet/tools/v2). Read the HTML file as a string with readFileSync and pass it as `bodyHtml`. Never pass a file path as the bodyHtml value — it must be the actual HTML content string.
+## 3. Publish and verify
+GitHub `conn_nvshm6rz3kzncg0nh4vk`, repo `annapsychologycare/-practitioner-availability`, branch `main`. Read guidance/declaration first.
 
-Use the following HTML template exactly (fill in the variables):
+Use guarded `scripts/publish_daily_availability.ts`; its current file list is authoritative (not historical 4/17-file lists). It includes leave dependencies, routing mirrors and canonical email/review/test/workflow files. Verify read-back of all published files and protected source/infrastructure. Verify actual Netlify live timestamp, JSON SHA-256 and active bundle hash before success email. Push success alone is insufficient. Do not change `netlify.toml`.
 
-```html
-<!DOCTYPE html>
-<html>
-<head><meta charset="UTF-8"><style>
-  body { font-family: Arial, sans-serif; background: #f4f4f4; margin: 0; padding: 20px; }
-  .container { max-width: 620px; margin: 0 auto; background: #fff; border-radius: 8px; overflow: hidden; }
-  .header { background: #2C244C; color: white; padding: 28px 32px; }
-  .header h1 { margin: 0 0 6px 0; font-size: 22px; font-weight: 700; }
-  .header p { margin: 0; font-size: 14px; opacity: 0.8; }
-  .body { padding: 28px 32px; }
-  .summary-box { background: #f7f3f5; border-left: 4px solid #8D5273; border-radius: 4px; padding: 16px 20px; margin-bottom: 24px; font-size: 14px; color: #333; }
-  .summary-box strong { font-size: 15px; }
-  .summary-box .sub { margin-top: 6px; color: #666; font-size: 13px; }
-  h2 { font-size: 16px; color: #2C244C; margin: 0 0 12px 0; }
-  table { width: 100%; border-collapse: collapse; font-size: 13px; }
-  th { background: #2C244C; color: white; text-align: left; padding: 10px 12px; }
-  td { padding: 9px 12px; border-bottom: 1px solid #eee; vertical-align: top; }
-  tr:nth-child(even) td { background: #faf8fb; }
-  .prac-name { font-weight: 600; color: #2C244C; }
-  .footer { padding: 16px 32px; font-size: 12px; color: #999; border-top: 1px solid #eee; }
-</style></head>
-<body>
-<div class="container">
-  <div class="header">
-    <h1>Availability Update — {DATE e.g. "5 Aug 2026"}</h1>
-    <p>Updated via Zanda API at {TIME e.g. "6:01am"}</p>
-  </div>
-  <div class="body">
-    <div class="summary-box">
-      <strong>{N} availability slots across {M} practitioners</strong> — next 8 weeks ({START_DATE} – {END_DATE})<br>
-      <div class="sub">{WEEKLY_COUNT} weekly spots · {FORTNIGHTLY_COUNT} fortnightly spots · {MONTHLY_COUNT} monthly spots</div>
-      <div class="sub">{TOTAL_APPOINTMENTS} pending appointments fetched · {UNMATCHED} unmatched practitioners</div>
-    </div>
-    {IF UNMATCHED > 0: add a red-bordered warning box listing unmatched names}
-    <h2>Practitioners with Availability</h2>
-    <table>
-      <thead><tr><th>Practitioner</th><th>Location</th><th>Slot</th></tr></thead>
-      <tbody>
+## 4. Canonical email and consolidation review (Anna-approved 5 November)
+Run `bun test ./scripts/test_availability_email_review.ts` from work/ before sending. Run `scripts/build_send_email.ts`, which uses `availability_email_review.ts`:
+- Reads `/tmp/import_result.json` (or explicit `IMPORT_RESULT_PATH`) and `availability_raw_latest.json` (or `RAW_EVIDENCE_PATH`); windows must match. Never prefer stale `/tmp/import_result_clean.json`.
+- Main list/counts: Weekly/Fortnightly only. **No Monthly main rows/counts.** One row/count per practitioner/day/start/frequency; combine alternative location/first-date labels in that row. Do not double count mirrored locations or different first dates. Main practitioner count includes only represented practitioners.
+- Josh: main email Telehealth-only. Suppress duplicate clinic representations only in email, never change app data. Clinic-only unique patterns must be flagged separately with source location/first date, excluded explicitly from main count, not silently dropped or relabelled Telehealth. Flag later clinic dates; never promise they recur remotely.
+- Retain inline styles, alphabetical practitioner list, green Weekly/purple Fortnightly rows. No `<style>`/class reliance. Escape source text. Do not expose general staff CRM notes.
+- Review **actual occurrence evidence**, not summary first dates or free diary gaps. Opposite Fortnightly phases 7 days apart may align Weekly; Monthly here means demonstrated 28-day phases 14 days apart may align Fortnightly. Separate exact practitioner/day/start/duration/capacity-group type proxy/physical-location groups. Duplicate locations/dates cannot manufacture phases. Do not combine incompatible types/durations/locations.
+- Require >=2 observed active Pending dates per phase, no missing internal dates and no active non-pending conflicts in the proposed finite interval. Inactive historical records are excluded, not treated as booked capacity. Report full-window missing/boundary/cancelled dates. Partial-window alignments must be labelled **limited-window only, not ongoing recurrence recommendations**, with exact evidence dates and interval. Actual clinical type, recurrence IDs/end dates and real-client bookings are not fully exposed by placeholder extraction: require Anna to verify in Zanda. Reject insufficient/gapped/conflicting pairs. Monthly source may appear ONLY in this separate review, never main availability counts/list.
+- Suggestions are alerts only, NOT confirmed capacity, not added to main counts. **Never modify recurrence, Zanda, app availability, timestamp, profiles, login/private infrastructure or leave notices for this review.** Anna updates Zanda if appropriate.
+- Persist JSON review, HTML and Gmail receipt. `--preview` produces artifacts without sending. `EMAIL_ARTIFACT_SUFFIX` preserves dated/ad-hoc evidence. Identical-content send ledger prevents blind duplicate sends; investigate before retrying ambiguous send results.
 
-        ROW COLOUR LOGIC — all practitioners in one alphabetical list (by last name).
-        Each slot row is coloured based on its frequency:
-          - Weekly slot   → green background:  background:#e8f5e9; border-left: 3px solid #4caf50;
-          - Fortnightly slot → purple background: background:#f3e5f5; border-left: 3px solid #9c27b0;
-          - Monthly slot  → blue background:   background:#e3f2fd; border-left: 3px solid #2196f3;
+Send full slot-by-slot HTML to **anna@psychologycare.com.au**, Gmail `conn_nrjy2ygpjb7gn16jk3et` / `gmail_send_message`. Read current guidance/declaration. Script must pass actual HTML string as `bodyHtml`, not its path. Subject/headline use deduplicated Weekly/Fortnightly totals. Always send success confirmation after a full refresh; no client emails.
 
-        Detect frequency by checking whether the slot string contains "(Weekly:", "(Fortnightly:", or "(Monthly:".
-
-        {FOR EACH PRACTITIONER (sorted by last name):}
-        {FOR EACH SLOT of that practitioner:}
-
-        If slot contains "(Weekly:":
-        <tr style="background:#e8f5e9;">
-          <td style="padding:9px 12px;border-bottom:1px solid #eee;vertical-align:top;border-left:3px solid #4caf50;font-weight:600;color:#2C244C;">{NAME on first row only, else blank}</td>
-          <td style="padding:9px 12px;border-bottom:1px solid #eee;vertical-align:top;">{LOCATION}</td>
-          <td style="padding:9px 12px;border-bottom:1px solid #eee;vertical-align:top;">{SLOT}</td>
-        </tr>
-
-        If slot contains "(Fortnightly:":
-        <tr style="background:#f3e5f5;">
-          <td style="padding:9px 12px;border-bottom:1px solid #eee;vertical-align:top;border-left:3px solid #9c27b0;font-weight:600;color:#2C244C;">{NAME on first row only, else blank}</td>
-          <td style="padding:9px 12px;border-bottom:1px solid #eee;vertical-align:top;">{LOCATION}</td>
-          <td style="padding:9px 12px;border-bottom:1px solid #eee;vertical-align:top;">{SLOT}</td>
-        </tr>
-
-        If slot contains "(Monthly:":
-        <tr style="background:#e3f2fd;">
-          <td style="padding:9px 12px;border-bottom:1px solid #eee;vertical-align:top;border-left:3px solid #2196f3;font-weight:600;color:#2C244C;">{NAME on first row only, else blank}</td>
-          <td style="padding:9px 12px;border-bottom:1px solid #eee;vertical-align:top;">{LOCATION}</td>
-          <td style="padding:9px 12px;border-bottom:1px solid #eee;vertical-align:top;">{SLOT}</td>
-        </tr>
-
-        {END FOR}
-        {END FOR}
-
-      </tbody>
-    </table>
-  </div>
-  <div class="footer">Updated via Zanda API. Netlify will deploy automatically.</div>
-</div>
-</body>
-</html>
-```
-
-Counts to compute from the slots array:
-- WEEKLY_COUNT = number of slots where slot string contains "(Weekly:"
-- FORTNIGHTLY_COUNT = number of slots where slot string contains "(Fortnightly:"
-- MONTHLY_COUNT = number of slots where slot string contains "(Monthly:"
-
-Slot format: "{Day}s at {time} ({Weekly|Fortnightly|Monthly}: Starting {D Mon})" e.g. "Tuesdays at 1pm (Weekly: Starting 1st Sept)"
-Location format: "Greville St, Prahran" / "Burke Rd, Camberwell" / "Telehealth"
-Practitioner name: show only on the FIRST row for each practitioner; leave blank for subsequent rows of the same practitioner.
-
-IMPORTANT: Gmail does not support `<style>` blocks — convert ALL CSS to inline `style="..."` attributes before sending. Do NOT use class-based CSS in the email HTML.
+For an email-only policy update, use latest successful dated import/raw evidence; no fresh import, app rebuild or unrelated data deployment required. Publish only changed canonical scripts/workflow/tests through a narrowly scoped GitHub commit with read-back verification.
 
 ## Error handling
-- If the import script returns ok:false or non-zero exit, email Anna with the error and do not push
-- If bundle build fails, email Anna and do not push
-- If GitHub push fails, email Anna noting files were updated locally but not pushed
-
-## Key rules
-- Do NOT email if everything worked silently (email IS the confirmation) — always send the summary
-- Preserve AVAILABILITY_LAST_UPDATED timestamp (the import script handles this)
-- Do not use node_bundler = "esbuild" or global timeout in netlify.toml
-- Availability data in practitioners_data.json uses newline-separated strings (the script handles this)
+- Import/build/guard failure: notify Anna, do not push stale/unsafe data.
+- Push failure: notify Anna that local files changed but were not published.
+- Deployment not verified: do not claim live success; report exact blocker.
+- Preserve import-generated `AVAILABILITY_LAST_UPDATED`; email-only review does not change it.
+- Never use `node_bundler = "esbuild"` or global timeout in `netlify.toml`.
