@@ -1151,9 +1151,9 @@ export const PRACTITIONERS_DATA = [
       "Male"
     ],
     "client_note": "Please note: Maddie's in-person appointments on Tuesdays and Thursdays are at Prahran before 11 January 2027 and will move to Camberwell from 11 January 2027. Monday and Friday in-person appointments will remain at Prahran. Telehealth appointments remain available.",
-    "upcoming_leave_client_notice": "",
-    "upcoming_leave_show_from": "",
-    "upcoming_leave_hide_after": ""
+    "upcoming_leave_client_notice": "Maddie Brygel will be on leave from 3 December 2026 to 8 January 2027 inclusive.",
+    "upcoming_leave_show_from": "2026-11-04",
+    "upcoming_leave_hide_after": "2027-01-08"
   },
   {
     "id": 19,
@@ -2296,9 +2296,9 @@ export const PRACTITIONERS_DATA = [
       "Male"
     ],
     "client_note": "⚠️ Please note: Kiira offers Telehealth only appointments until the end of 2026. As of mid Jan 2027, Kiira will be offering in person appointments on Tuesdays and Wednesdays between 8am and 2PM at the Camberwell Clinic. Please take this into consideration when deciding whether Kiira will be the right practitioner for you, particularly if you prefer face-to-face sessions.",
-    "upcoming_leave_client_notice": "",
-    "upcoming_leave_show_from": "",
-    "upcoming_leave_hide_after": ""
+    "upcoming_leave_client_notice": "Kiira Gavralas will be on leave from 28 December 2026 to 15 January 2027 inclusive.",
+    "upcoming_leave_show_from": "2026-11-04",
+    "upcoming_leave_hide_after": "2027-01-15"
   },
   {
     "id": 6,
@@ -3897,9 +3897,9 @@ export const PRACTITIONERS_DATA = [
     ],
     "therapistType": "Psychologist",
     "client_note": "",
-    "upcoming_leave_client_notice": "",
-    "upcoming_leave_show_from": "",
-    "upcoming_leave_hide_after": ""
+    "upcoming_leave_client_notice": "Clare Tuttleby will be on leave from 28 December 2026 to 29 December 2026 inclusive.",
+    "upcoming_leave_show_from": "2026-11-04",
+    "upcoming_leave_hide_after": "2026-12-29"
   },
   {
     "id": 10,
