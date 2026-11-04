@@ -9,6 +9,7 @@ import { createRoot } from "react-dom/client";
 import { PRACTITIONERS_DATA, AVAILABILITY_LAST_UPDATED } from "./practitionersData";
 import "./index.css";
 import { suppressKristaIntake } from './utils/practitionerIntakePause';
+import { StaffAccess } from './components/StaffAccess';
 const INTAKE_PRACTITIONERS=PRACTITIONERS_DATA.map(suppressKristaIntake);
 
 // Error boundary
@@ -135,7 +136,7 @@ function AppContent() {
   }
   return (
     <ErrorBoundary>
-      <AppMain />
+      <StaffAccess><AppMain /></StaffAccess>
     </ErrorBoundary>
   );
 }

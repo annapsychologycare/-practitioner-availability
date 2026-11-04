@@ -25,9 +25,9 @@
     mod
   ));
 
-  // deploy/node_modules/react/cjs/react.production.min.js
+  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/node_modules/react/cjs/react.production.min.js
   var require_react_production_min = __commonJS({
-    "deploy/node_modules/react/cjs/react.production.min.js"(exports) {
+    "../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/node_modules/react/cjs/react.production.min.js"(exports) {
       "use strict";
       var l = Symbol.for("react.element");
       var n = Symbol.for("react.portal");
@@ -298,9 +298,9 @@
     }
   });
 
-  // deploy/node_modules/react/index.js
+  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/node_modules/react/index.js
   var require_react = __commonJS({
-    "deploy/node_modules/react/index.js"(exports, module) {
+    "../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/node_modules/react/index.js"(exports, module) {
       "use strict";
       if (true) {
         module.exports = require_react_production_min();
@@ -310,9 +310,9 @@
     }
   });
 
-  // deploy/node_modules/react/cjs/react-jsx-runtime.production.min.js
+  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/node_modules/react/cjs/react-jsx-runtime.production.min.js
   var require_react_jsx_runtime_production_min = __commonJS({
-    "deploy/node_modules/react/cjs/react-jsx-runtime.production.min.js"(exports) {
+    "../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/node_modules/react/cjs/react-jsx-runtime.production.min.js"(exports) {
       "use strict";
       var f = require_react();
       var k = Symbol.for("react.element");
@@ -335,9 +335,9 @@
     }
   });
 
-  // deploy/node_modules/react/jsx-runtime.js
+  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/node_modules/react/jsx-runtime.js
   var require_jsx_runtime = __commonJS({
-    "deploy/node_modules/react/jsx-runtime.js"(exports, module) {
+    "../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/node_modules/react/jsx-runtime.js"(exports, module) {
       "use strict";
       if (true) {
         module.exports = require_react_jsx_runtime_production_min();
@@ -347,9 +347,9 @@
     }
   });
 
-  // ../../../../tmp/prac-vite-build/node_modules/react/cjs/react.production.min.js
+  // ../../tmp/pc-staff-build/node_modules/react/cjs/react.production.min.js
   var require_react_production_min2 = __commonJS({
-    "../../../../tmp/prac-vite-build/node_modules/react/cjs/react.production.min.js"(exports) {
+    "../../tmp/pc-staff-build/node_modules/react/cjs/react.production.min.js"(exports) {
       "use strict";
       var l = Symbol.for("react.element");
       var n = Symbol.for("react.portal");
@@ -620,9 +620,9 @@
     }
   });
 
-  // ../../../../tmp/prac-vite-build/node_modules/react/index.js
+  // ../../tmp/pc-staff-build/node_modules/react/index.js
   var require_react2 = __commonJS({
-    "../../../../tmp/prac-vite-build/node_modules/react/index.js"(exports, module) {
+    "../../tmp/pc-staff-build/node_modules/react/index.js"(exports, module) {
       "use strict";
       if (true) {
         module.exports = require_react_production_min2();
@@ -632,9 +632,9 @@
     }
   });
 
-  // deploy/node_modules/scheduler/cjs/scheduler.production.min.js
+  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/node_modules/scheduler/cjs/scheduler.production.min.js
   var require_scheduler_production_min = __commonJS({
-    "deploy/node_modules/scheduler/cjs/scheduler.production.min.js"(exports) {
+    "../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/node_modules/scheduler/cjs/scheduler.production.min.js"(exports) {
       "use strict";
       function f(a, b) {
         var c = a.length;
@@ -885,9 +885,9 @@
     }
   });
 
-  // deploy/node_modules/scheduler/index.js
+  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/node_modules/scheduler/index.js
   var require_scheduler = __commonJS({
-    "deploy/node_modules/scheduler/index.js"(exports, module) {
+    "../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/node_modules/scheduler/index.js"(exports, module) {
       "use strict";
       if (true) {
         module.exports = require_scheduler_production_min();
@@ -897,9 +897,9 @@
     }
   });
 
-  // deploy/node_modules/react-dom/cjs/react-dom.production.min.js
+  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/node_modules/react-dom/cjs/react-dom.production.min.js
   var require_react_dom_production_min = __commonJS({
-    "deploy/node_modules/react-dom/cjs/react-dom.production.min.js"(exports) {
+    "../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/node_modules/react-dom/cjs/react-dom.production.min.js"(exports) {
       "use strict";
       var aa = require_react();
       var ca = require_scheduler();
@@ -7507,9 +7507,9 @@
     }
   });
 
-  // deploy/node_modules/react-dom/index.js
+  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/node_modules/react-dom/index.js
   var require_react_dom = __commonJS({
-    "deploy/node_modules/react-dom/index.js"(exports, module) {
+    "../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/node_modules/react-dom/index.js"(exports, module) {
       "use strict";
       function checkDCE() {
         if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ === "undefined" || typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE !== "function") {
@@ -7533,9 +7533,9 @@
     }
   });
 
-  // deploy/node_modules/react-dom/client.js
+  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/node_modules/react-dom/client.js
   var require_client = __commonJS({
-    "deploy/node_modules/react-dom/client.js"(exports) {
+    "../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/node_modules/react-dom/client.js"(exports) {
       "use strict";
       var m = require_react_dom();
       if (true) {
@@ -7564,10 +7564,10 @@
     }
   });
 
-  // deploy/src/App.tsx
-  var import_react11 = __toESM(require_react());
+  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/App.tsx
+  var import_react12 = __toESM(require_react());
 
-  // deploy/src/utils/upcomingLeave.ts
+  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/utils/upcomingLeave.ts
   function melbourneDate(now = /* @__PURE__ */ new Date()) {
     const parts = new Intl.DateTimeFormat("en-AU", { timeZone: "Australia/Melbourne", year: "numeric", month: "2-digit", day: "2-digit" }).formatToParts(now);
     const part = (type) => parts.find((p) => p.type === type).value;
@@ -7606,7 +7606,7 @@
   </td></tr></table>`;
   }
 
-  // deploy/src/utils/useNoticeClock.ts
+  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/utils/useNoticeClock.ts
   var import_react = __toESM(require_react());
   function useNoticeClock() {
     const [now, setNow] = (0, import_react.useState)(Date.now());
@@ -7627,7 +7627,7 @@
     return now;
   }
 
-  // deploy/src/utils/practitionerIntakePause.ts
+  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/utils/practitionerIntakePause.ts
   var KRISTA_INTAKE_PAUSED = true;
   function isKristaIntakePaused(name) {
     return KRISTA_INTAKE_PAUSED && (name ?? "").replace(/^Dr\.?\s+/i, "").trim().toLowerCase() === "krista de castella";
@@ -7642,7 +7642,7 @@
     return p;
   }
 
-  // deploy/src/components/UpcomingLeave.tsx
+  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/components/UpcomingLeave.tsx
   var import_jsx_runtime = __toESM(require_jsx_runtime());
   var UpcomingLeave = ({ practitioner }) => {
     const now = useNoticeClock();
@@ -7653,7 +7653,7 @@
     ] }) : null;
   };
 
-  // deploy/src/components/PractitionerNotes.tsx
+  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/components/PractitionerNotes.tsx
   var import_jsx_runtime2 = __toESM(require_jsx_runtime());
   function PractitionerNotes({ practitioner: original }) {
     const p = suppressKristaIntake(original);
@@ -7670,13 +7670,142 @@
     ] });
   }
 
-  // deploy/src/FindPractitioner.tsx
-  var import_react5 = __toESM(require_react());
+  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/components/StaffAccess.tsx
+  var import_react2 = __toESM(require_react());
+  var import_jsx_runtime3 = __toESM(require_jsx_runtime());
+  var ORIGIN = "https://pc-prac-availability.netlify.app";
+  var AgeContext = (0, import_react2.createContext)({});
+  var StaffAge = ({ id }) => {
+    const ages = (0, import_react2.useContext)(AgeContext);
+    const age = ages[String(id)];
+    return Number.isInteger(age) ? /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("span", { "data-private-staff-age": true, className: "badge badge-outline badge-sm", title: "Private \u2014 signed-in staff only", children: [
+      "Age ",
+      age
+    ] }) : null;
+  };
+  var StaffAccess = ({ children }) => {
+    const [ages, setAges] = (0, import_react2.useState)({});
+    const [staff, setStaff] = (0, import_react2.useState)(false);
+    const [open, setOpen] = (0, import_react2.useState)(false);
+    const [message, setMessage] = (0, import_react2.useState)("");
+    const [busy, setBusy] = (0, import_react2.useState)(false);
+    const [callback, setCallback] = (0, import_react2.useState)(null);
+    const requestVersion = (0, import_react2.useRef)(0);
+    const supported = window.location.origin === ORIGIN;
+    const api = async (name, init) => {
+      const r = await fetch(`/.netlify/functions/${name}`, { ...init, credentials: "same-origin", cache: "no-store" });
+      if (!r.ok) throw Error(String(r.status));
+      return r.json();
+    };
+    const refresh = async () => {
+      const version = ++requestVersion.current;
+      try {
+        await api("staff-session");
+        const result = await api("staff-ages");
+        if (version !== requestVersion.current) return;
+        setStaff(true);
+        setAges(Object.fromEntries((result.ages || []).map((x) => [String(x.id), x.age])));
+        setMessage(result.refreshRequired ? "Signed in. A fresh private CRM age import is needed; no ages are displayed." : "Staff access active. Ages are excluded from client emails and copied availability.");
+      } catch {
+        if (version !== requestVersion.current) return;
+        setAges({});
+        setStaff(false);
+      }
+    };
+    (0, import_react2.useEffect)(() => {
+      if (!supported) return;
+      const hash = new URLSearchParams(window.location.hash.slice(1));
+      const invite = hash.get("invite_token"), recovery = hash.get("recovery_token");
+      if (invite || recovery) {
+        setCallback({ action: invite ? "invite" : "recovery", token: invite || recovery });
+        setOpen(true);
+        history.replaceState(null, "", window.location.pathname + window.location.search);
+      }
+      void refresh();
+      const tick = setInterval(() => {
+        setAges({});
+        void refresh();
+      }, 6e4);
+      const visible = () => {
+        setAges({});
+        if (!document.hidden) void refresh();
+      };
+      document.addEventListener("visibilitychange", visible);
+      return () => {
+        clearInterval(tick);
+        document.removeEventListener("visibilitychange", visible);
+        requestVersion.current++;
+      };
+    }, []);
+    const signIn = async (event) => {
+      event.preventDefault();
+      setBusy(true);
+      setMessage("");
+      const form = event.currentTarget, values = new FormData(form);
+      try {
+        await api("staff-session", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ action: callback?.action || "login", token: callback?.token, email: values.get("email"), password: values.get("password") }) });
+        form.reset();
+        setCallback(null);
+        await refresh();
+      } catch {
+        setMessage("Unable to sign in. Use your current staff invitation or check your credentials.");
+      } finally {
+        setBusy(false);
+      }
+    };
+    const signOut = async () => {
+      requestVersion.current++;
+      setAges({});
+      setStaff(false);
+      setMessage("Signed out.");
+      try {
+        await api("staff-session", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ action: "logout" }) });
+      } catch {
+        setMessage("Private view cleared. Sign-out could not be confirmed; close this browser session.");
+      }
+    };
+    const upload = async (file) => {
+      if (!file) return;
+      setBusy(true);
+      try {
+        if (file.size > 16384) throw Error("size");
+        await api("staff-ages", { method: "PUT", headers: { "Content-Type": "application/json" }, body: await file.text() });
+        await refresh();
+      } catch {
+        setMessage("Import rejected or unavailable. Only a fresh CRM-derived age-only file is accepted.");
+      } finally {
+        setBusy(false);
+      }
+    };
+    return /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)(AgeContext.Provider, { value: ages, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { className: "bg-base-100 border-b px-4 py-2 text-sm flex flex-wrap items-center gap-3", children: !supported ? /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("a", { className: "btn btn-ghost btn-xs", href: ORIGIN, target: "_blank", rel: "noopener noreferrer", children: "Open secure staff sign-in on published app" }) : /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)(import_jsx_runtime3.Fragment, { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("button", { className: "btn btn-ghost btn-xs", onClick: () => setOpen(!open), children: staff ? "Staff access" : "Staff sign in" }),
+        staff && /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("button", { className: "btn btn-ghost btn-xs", onClick: signOut, children: "Sign out" }),
+        open && !staff && /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("form", { onSubmit: signIn, className: "flex flex-wrap items-center gap-2", autoComplete: "on", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("input", { className: "input input-bordered input-sm", type: "email", name: "email", "aria-label": "Staff email", defaultValue: "anna@psychologycare.com.au", autoComplete: "username", required: true }),
+          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("input", { className: "input input-bordered input-sm", type: "password", name: "password", "aria-label": callback ? "Set staff password" : "Staff password", autoComplete: callback ? "new-password" : "current-password", minLength: callback ? 12 : 1, required: true }),
+          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("button", { className: "btn btn-primary btn-sm", disabled: busy, children: callback ? "Set password and accept invitation" : "Sign in" })
+        ] }),
+        open && staff && /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("label", { className: "flex items-center gap-2", children: [
+          "Import private CRM age snapshot",
+          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("input", { "aria-label": "Private age snapshot", type: "file", accept: "application/json,.json", disabled: busy, onChange: (e) => {
+            void upload(e.target.files?.[0]);
+            e.target.value = "";
+          } })
+        ] }),
+        open && message && /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("p", { role: "status", className: "text-base-content/70", children: message })
+      ] }) }),
+      children
+    ] });
+  };
 
-  // ../../../../tmp/prac-vite-build/node_modules/lucide-react/dist/esm/createLucideIcon.js
-  var import_react2 = __toESM(require_react2());
+  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/FindPractitioner.tsx
+  var import_react6 = __toESM(require_react());
 
-  // ../../../../tmp/prac-vite-build/node_modules/lucide-react/dist/esm/defaultAttributes.js
+  // ../../tmp/pc-staff-build/node_modules/lucide-react/dist/esm/createLucideIcon.js
+  var import_react3 = __toESM(require_react2());
+
+  // ../../tmp/pc-staff-build/node_modules/lucide-react/dist/esm/defaultAttributes.js
   var defaultAttributes = {
     xmlns: "http://www.w3.org/2000/svg",
     width: 24,
@@ -7689,12 +7818,12 @@
     strokeLinejoin: "round"
   };
 
-  // ../../../../tmp/prac-vite-build/node_modules/lucide-react/dist/esm/shared/src/utils.js
+  // ../../tmp/pc-staff-build/node_modules/lucide-react/dist/esm/shared/src/utils.js
   var toKebabCase = (string) => string.replace(/([a-z0-9])([A-Z])/g, "$1-$2").toLowerCase();
 
-  // ../../../../tmp/prac-vite-build/node_modules/lucide-react/dist/esm/createLucideIcon.js
+  // ../../tmp/pc-staff-build/node_modules/lucide-react/dist/esm/createLucideIcon.js
   var createLucideIcon = (iconName, iconNode) => {
-    const Component2 = (0, import_react2.forwardRef)(
+    const Component2 = (0, import_react3.forwardRef)(
       ({
         color = "currentColor",
         size = 24,
@@ -7704,7 +7833,7 @@
         children,
         ...rest
       }, ref) => {
-        return (0, import_react2.createElement)(
+        return (0, import_react3.createElement)(
           "svg",
           {
             ref,
@@ -7717,7 +7846,7 @@
             ...rest
           },
           [
-            ...iconNode.map(([tag, attrs]) => (0, import_react2.createElement)(tag, attrs)),
+            ...iconNode.map(([tag, attrs]) => (0, import_react3.createElement)(tag, attrs)),
             ...Array.isArray(children) ? children : [children]
           ]
         );
@@ -7727,13 +7856,13 @@
     return Component2;
   };
 
-  // ../../../../tmp/prac-vite-build/node_modules/lucide-react/dist/esm/icons/arrow-left.js
+  // ../../tmp/pc-staff-build/node_modules/lucide-react/dist/esm/icons/arrow-left.js
   var ArrowLeft = createLucideIcon("ArrowLeft", [
     ["path", { d: "m12 19-7-7 7-7", key: "1l729n" }],
     ["path", { d: "M19 12H5", key: "x3x0zl" }]
   ]);
 
-  // ../../../../tmp/prac-vite-build/node_modules/lucide-react/dist/esm/icons/clipboard-check.js
+  // ../../tmp/pc-staff-build/node_modules/lucide-react/dist/esm/icons/clipboard-check.js
   var ClipboardCheck = createLucideIcon("ClipboardCheck", [
     ["rect", { width: "8", height: "4", x: "8", y: "2", rx: "1", ry: "1", key: "tgr4d6" }],
     [
@@ -7746,7 +7875,7 @@
     ["path", { d: "m9 14 2 2 4-4", key: "df797q" }]
   ]);
 
-  // ../../../../tmp/prac-vite-build/node_modules/lucide-react/dist/esm/icons/clipboard.js
+  // ../../tmp/pc-staff-build/node_modules/lucide-react/dist/esm/icons/clipboard.js
   var Clipboard = createLucideIcon("Clipboard", [
     ["rect", { width: "8", height: "4", x: "8", y: "2", rx: "1", ry: "1", key: "tgr4d6" }],
     [
@@ -7758,34 +7887,34 @@
     ]
   ]);
 
-  // ../../../../tmp/prac-vite-build/node_modules/lucide-react/dist/esm/icons/eye.js
+  // ../../tmp/pc-staff-build/node_modules/lucide-react/dist/esm/icons/eye.js
   var Eye = createLucideIcon("Eye", [
     ["path", { d: "M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z", key: "rwhkz3" }],
     ["circle", { cx: "12", cy: "12", r: "3", key: "1v7zrd" }]
   ]);
 
-  // ../../../../tmp/prac-vite-build/node_modules/lucide-react/dist/esm/icons/send.js
+  // ../../tmp/pc-staff-build/node_modules/lucide-react/dist/esm/icons/send.js
   var Send = createLucideIcon("Send", [
     ["path", { d: "m22 2-7 20-4-9-9-4Z", key: "1q3vgg" }],
     ["path", { d: "M22 2 11 13", key: "nzbqef" }]
   ]);
 
-  // ../../../../tmp/prac-vite-build/node_modules/lucide-react/dist/esm/icons/square-check-big.js
+  // ../../tmp/pc-staff-build/node_modules/lucide-react/dist/esm/icons/square-check-big.js
   var SquareCheckBig = createLucideIcon("SquareCheckBig", [
     ["path", { d: "m9 11 3 3L22 4", key: "1pflzl" }],
     ["path", { d: "M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11", key: "1jnkn4" }]
   ]);
 
-  // ../../../../tmp/prac-vite-build/node_modules/lucide-react/dist/esm/icons/x.js
+  // ../../tmp/pc-staff-build/node_modules/lucide-react/dist/esm/icons/x.js
   var X = createLucideIcon("X", [
     ["path", { d: "M18 6 6 18", key: "1bl5f8" }],
     ["path", { d: "m6 6 12 12", key: "d8bk6v" }]
   ]);
 
-  // deploy/src/components/SendClientModal.tsx
-  var import_react3 = __toESM(require_react());
+  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/components/SendClientModal.tsx
+  var import_react4 = __toESM(require_react());
 
-  // deploy/src/utils/afterHours.ts
+  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/utils/afterHours.ts
   var WEEKEND_DAYS = ["saturdays", "sundays"];
   var WEEKDAY_DAYS = ["mondays", "tuesdays", "wednesdays", "thursdays", "fridays"];
   function parseTimeMinutes(timeStr) {
@@ -7836,7 +7965,7 @@
     return false;
   }
 
-  // deploy/src/emailTemplateConfig.ts
+  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/emailTemplateConfig.ts
   var DEFAULT_EMAIL_TEMPLATE_CONFIG = {
     senders: ["Anna Donaldson", "Charlotte Davenport"],
     intro_text: "Thank you for reaching out to PsychologyCare. Based on your intake information, we've put together a list of practitioners we think could be a great fit for you.",
@@ -7902,7 +8031,7 @@
     return { ...DEFAULT_EMAIL_TEMPLATE_CONFIG };
   }
 
-  // deploy/src/utils/emailBuilder.ts
+  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/utils/emailBuilder.ts
   function parseAvailability(text, includeMonthly = false) {
     const weekly = [];
     const fortnightly = [];
@@ -8141,30 +8270,30 @@
     </div>`;
   }
 
-  // deploy/src/components/SendClientModal.tsx
-  var import_jsx_runtime3 = __toESM(require_jsx_runtime());
+  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/components/SendClientModal.tsx
+  var import_jsx_runtime4 = __toESM(require_jsx_runtime());
   var SendClientModal = ({ selected, locationFilter, onClose, onSent, includeMonthly = false, sessionType = "Individual", clientAge60Plus = false }) => {
-    const config = (0, import_react3.useMemo)(() => loadEmailTemplateConfig(), []);
+    const config = (0, import_react4.useMemo)(() => loadEmailTemplateConfig(), []);
     const noticeNow = useNoticeClock();
-    const [step, setStep] = (0, import_react3.useState)("form");
-    const [copied, setCopied] = (0, import_react3.useState)(false);
-    const [clientName, setClientName] = (0, import_react3.useState)("");
-    const [clientEmail, setClientEmail] = (0, import_react3.useState)("");
-    const [ccEmails, setCcEmails] = (0, import_react3.useState)("anna@psychologycare.com.au");
-    const [senderName, setSenderName] = (0, import_react3.useState)(config.senders[0] || "Anna Donaldson");
-    const [openingParagraph, setOpeningParagraph] = (0, import_react3.useState)(config.intro_text);
-    const [note, setNote] = (0, import_react3.useState)("");
-    const [sending, setSending] = (0, import_react3.useState)(false);
-    const [error, setError] = (0, import_react3.useState)("");
-    const [diaryVerified, setDiaryVerified] = (0, import_react3.useState)(false);
+    const [step, setStep] = (0, import_react4.useState)("form");
+    const [copied, setCopied] = (0, import_react4.useState)(false);
+    const [clientName, setClientName] = (0, import_react4.useState)("");
+    const [clientEmail, setClientEmail] = (0, import_react4.useState)("");
+    const [ccEmails, setCcEmails] = (0, import_react4.useState)("anna@psychologycare.com.au");
+    const [senderName, setSenderName] = (0, import_react4.useState)(config.senders[0] || "Anna Donaldson");
+    const [openingParagraph, setOpeningParagraph] = (0, import_react4.useState)(config.intro_text);
+    const [note, setNote] = (0, import_react4.useState)("");
+    const [sending, setSending] = (0, import_react4.useState)(false);
+    const [error, setError] = (0, import_react4.useState)("");
+    const [diaryVerified, setDiaryVerified] = (0, import_react4.useState)(false);
     const needsDiaryReview = selected.map(suppressKristaIntake).some((p) => p.requires_diary_verification);
     const reviewReady = !needsDiaryReview || diaryVerified;
     const selectionKey = selected.map((p) => p.name).join("|");
-    (0, import_react3.useEffect)(() => {
+    (0, import_react4.useEffect)(() => {
       setDiaryVerified(false);
       setStep("form");
     }, [selectionKey, locationFilter, sessionType]);
-    const practitionerData = (0, import_react3.useMemo)(
+    const practitionerData = (0, import_react4.useMemo)(
       () => selected.map(suppressKristaIntake).map((p) => {
         let locs;
         if (sessionType === "Supervision") {
@@ -8207,7 +8336,7 @@
       }),
       [selected, locationFilter, sessionType]
     );
-    const previewHtml = (0, import_react3.useMemo)(
+    const previewHtml = (0, import_react4.useMemo)(
       () => buildEmailHtml(clientName || "Client", note, senderName, practitionerData, { ...config, intro_text: openingParagraph }, includeMonthly, { age60Plus: clientAge60Plus }),
       [clientName, note, senderName, practitionerData, config, openingParagraph, includeMonthly, clientAge60Plus, noticeNow]
     );
@@ -8296,65 +8425,65 @@
       }
     };
     const ccDisplay = ccEmails.split(",").map((e) => e.trim()).filter(Boolean).join(", ");
-    return /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "modal modal-open", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)(
+    return /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { className: "modal modal-open", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(
         "div",
         {
           className: `modal-box ${step === "preview" ? "max-w-3xl" : "max-w-lg"}`,
           style: { maxHeight: "90vh", overflow: "hidden", display: "flex", flexDirection: "column" },
           children: [
-            /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "flex items-center justify-between mb-4 flex-shrink-0", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "flex items-center gap-2", children: [
-                step === "preview" && /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("button", { onClick: () => setStep("form"), className: "btn btn-ghost btn-sm btn-circle", children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(ArrowLeft, { size: 16 }) }),
-                /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("h3", { className: "font-bold text-lg", children: step === "form" ? "Send to Client" : "Preview Email" })
+            /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { className: "flex items-center justify-between mb-4 flex-shrink-0", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { className: "flex items-center gap-2", children: [
+                step === "preview" && /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("button", { onClick: () => setStep("form"), className: "btn btn-ghost btn-sm btn-circle", children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(ArrowLeft, { size: 16 }) }),
+                /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("h3", { className: "font-bold text-lg", children: step === "form" ? "Send to Client" : "Preview Email" })
               ] }),
-              /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("button", { onClick: onClose, className: "btn btn-ghost btn-sm btn-circle", children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(X, { size: 16 }) })
+              /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("button", { onClick: onClose, className: "btn btn-ghost btn-sm btn-circle", children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(X, { size: 16 }) })
             ] }),
-            needsDiaryReview && /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "border rounded p-3 mb-3 text-sm", style: { borderColor: "#8D5273" }, children: [
-              /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("strong", { children: "Staff-only diary revalidation required \u2014 Krista" }),
-              /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("p", { children: "These are confirmed recurring options, not automatically checked live availability. Verify each relevant fortnightly occurrence over the next 8 weeks against Pending/Confirmed/Completed appointments and diary/PAP/room blocks, including 90 minutes plus a 15-minute break (8:30\u201310:15am / 12\u20131:45pm). Resolve any booked/blocked occurrence before offering. No automated overlap checking has occurred." }),
-              /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("label", { className: "flex gap-2 mt-2", children: [
-                /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("input", { type: "checkbox", checked: diaryVerified, onChange: (e) => {
+            needsDiaryReview && /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { className: "border rounded p-3 mb-3 text-sm", style: { borderColor: "#8D5273" }, children: [
+              /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("strong", { children: "Staff-only diary revalidation required \u2014 Krista" }),
+              /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("p", { children: "These are confirmed recurring options, not automatically checked live availability. Verify each relevant fortnightly occurrence over the next 8 weeks against Pending/Confirmed/Completed appointments and diary/PAP/room blocks, including 90 minutes plus a 15-minute break (8:30\u201310:15am / 12\u20131:45pm). Resolve any booked/blocked occurrence before offering. No automated overlap checking has occurred." }),
+              /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("label", { className: "flex gap-2 mt-2", children: [
+                /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("input", { type: "checkbox", checked: diaryVerified, onChange: (e) => {
                   setDiaryVerified(e.target.checked);
                   if (!e.target.checked) setStep("form");
                 } }),
                 "I have checked Krista\u2019s Zanda diary and room availability for these recurring appointments and confirmed the options in this email for this client. No unconfirmed times will be offered."
               ] })
             ] }),
-            step === "form" ? /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)(import_jsx_runtime3.Fragment, { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "mb-4 p-3 bg-base-200 rounded-lg flex-shrink-0", children: [
-                /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "text-xs font-bold text-base-content/50 uppercase tracking-wide mb-2", children: [
+            step === "form" ? /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(import_jsx_runtime4.Fragment, { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { className: "mb-4 p-3 bg-base-200 rounded-lg flex-shrink-0", children: [
+                /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { className: "text-xs font-bold text-base-content/50 uppercase tracking-wide mb-2", children: [
                   "Sending ",
                   selected.length,
                   " Practitioner",
                   selected.length !== 1 ? "s" : ""
                 ] }),
-                selected.map((p, i) => /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "text-sm font-medium text-base-content/80", children: [
+                selected.map((p, i) => /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { className: "text-sm font-medium text-base-content/80", children: [
                   "\u2022 ",
                   p.name,
                   " \u2014 ",
                   p.title
                 ] }, i))
               ] }),
-              /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "space-y-3 flex-shrink-0 overflow-y-auto", style: { maxHeight: "60vh" }, children: [
-                /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { children: [
-                  /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("label", { className: "label label-text font-semibold pb-1", children: "Sending As" }),
-                  /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+              /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { className: "space-y-3 flex-shrink-0 overflow-y-auto", style: { maxHeight: "60vh" }, children: [
+                /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { children: [
+                  /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("label", { className: "label label-text font-semibold pb-1", children: "Sending As" }),
+                  /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
                     "select",
                     {
                       className: "select select-bordered w-full",
                       value: senderName,
                       onChange: (e) => setSenderName(e.target.value),
-                      children: config.senders.map((name) => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("option", { value: name, children: name }, name))
+                      children: config.senders.map((name) => /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("option", { value: name, children: name }, name))
                     }
                   )
                 ] }),
-                /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { children: [
-                  /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("label", { className: "label label-text font-semibold pb-1", children: [
+                /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { children: [
+                  /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("label", { className: "label label-text font-semibold pb-1", children: [
                     "Client Name ",
-                    /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("span", { className: "text-error", children: "*" })
+                    /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("span", { className: "text-error", children: "*" })
                   ] }),
-                  /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+                  /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
                     "input",
                     {
                       type: "text",
@@ -8365,13 +8494,13 @@
                     }
                   )
                 ] }),
-                /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { children: [
-                  /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("label", { className: "label label-text font-semibold pb-1", children: [
+                /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { children: [
+                  /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("label", { className: "label label-text font-semibold pb-1", children: [
                     "Client Email",
                     " ",
-                    /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("span", { className: "text-base-content/40 font-normal", children: "(optional)" })
+                    /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("span", { className: "text-base-content/40 font-normal", children: "(optional)" })
                   ] }),
-                  /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+                  /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
                     "input",
                     {
                       type: "email",
@@ -8382,13 +8511,13 @@
                     }
                   )
                 ] }),
-                /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { children: [
-                  /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("label", { className: "label label-text font-semibold pb-1", children: [
+                /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { children: [
+                  /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("label", { className: "label label-text font-semibold pb-1", children: [
                     "CC",
                     " ",
-                    /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("span", { className: "text-base-content/40 font-normal", children: "(comma-separated)" })
+                    /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("span", { className: "text-base-content/40 font-normal", children: "(comma-separated)" })
                   ] }),
-                  /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+                  /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
                     "input",
                     {
                       type: "text",
@@ -8399,10 +8528,10 @@
                     }
                   )
                 ] }),
-                /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { children: [
-                  /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "flex items-center justify-between pb-1", children: [
-                    /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("label", { className: "label label-text font-semibold", children: "Opening Paragraph" }),
-                    openingParagraph !== config.intro_text && /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+                /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { children: [
+                  /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { className: "flex items-center justify-between pb-1", children: [
+                    /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("label", { className: "label label-text font-semibold", children: "Opening Paragraph" }),
+                    openingParagraph !== config.intro_text && /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
                       "button",
                       {
                         type: "button",
@@ -8412,7 +8541,7 @@
                       }
                     )
                   ] }),
-                  /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+                  /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
                     "textarea",
                     {
                       className: "textarea textarea-bordered w-full text-sm",
@@ -8422,13 +8551,13 @@
                     }
                   )
                 ] }),
-                /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { children: [
-                  /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("label", { className: "label label-text font-semibold pb-1", children: [
+                /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { children: [
+                  /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("label", { className: "label label-text font-semibold pb-1", children: [
                     "Personal Note",
                     " ",
-                    /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("span", { className: "text-base-content/40 font-normal", children: "(optional)" })
+                    /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("span", { className: "text-base-content/40 font-normal", children: "(optional)" })
                   ] }),
-                  /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+                  /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
                     "textarea",
                     {
                       placeholder: "Add a personal note for this client...",
@@ -8440,35 +8569,35 @@
                   )
                 ] })
               ] }),
-              error && /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { className: "alert alert-error text-sm mt-3 py-2 flex-shrink-0", children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("span", { children: error }) }),
-              /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "modal-action mt-4 flex-shrink-0", children: [
-                /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("button", { onClick: onClose, className: "btn btn-ghost", children: "Cancel" }),
-                /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("button", { onClick: handlePreview, className: "btn btn-primary", children: [
-                  /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(Eye, { size: 16 }),
+              error && /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("div", { className: "alert alert-error text-sm mt-3 py-2 flex-shrink-0", children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("span", { children: error }) }),
+              /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { className: "modal-action mt-4 flex-shrink-0", children: [
+                /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("button", { onClick: onClose, className: "btn btn-ghost", children: "Cancel" }),
+                /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("button", { onClick: handlePreview, className: "btn btn-primary", children: [
+                  /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Eye, { size: 16 }),
                   " Preview Email \u2192"
                 ] })
               ] })
-            ] }) : /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)(import_jsx_runtime3.Fragment, { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "text-sm text-base-content/60 mb-3 flex-shrink-0 space-y-0.5", children: [
-                clientEmail.trim() && /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { children: [
+            ] }) : /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(import_jsx_runtime4.Fragment, { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { className: "text-sm text-base-content/60 mb-3 flex-shrink-0 space-y-0.5", children: [
+                clientEmail.trim() && /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { children: [
                   "To: ",
-                  /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("strong", { children: clientEmail })
+                  /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("strong", { children: clientEmail })
                 ] }),
-                ccDisplay && /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { children: [
+                ccDisplay && /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { children: [
                   "CC: ",
-                  /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("strong", { children: ccDisplay })
+                  /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("strong", { children: ccDisplay })
                 ] }),
-                /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { children: [
+                /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { children: [
                   "From: ",
-                  /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("strong", { children: senderName })
+                  /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("strong", { children: senderName })
                 ] })
               ] }),
-              /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+              /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
                 "div",
                 {
                   className: "flex-1 overflow-hidden rounded-lg border border-base-300",
                   style: { minHeight: 0 },
-                  children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+                  children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
                     "iframe",
                     {
                       srcDoc: previewHtml,
@@ -8478,33 +8607,33 @@
                   )
                 }
               ),
-              error && /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { className: "alert alert-error text-sm mt-3 py-2 flex-shrink-0", children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("span", { children: error }) }),
-              /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "modal-action mt-4 flex-shrink-0", children: [
-                /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("button", { onClick: () => setStep("form"), className: "btn btn-ghost", disabled: sending, children: [
-                  /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(ArrowLeft, { size: 16 }),
+              error && /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("div", { className: "alert alert-error text-sm mt-3 py-2 flex-shrink-0", children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("span", { children: error }) }),
+              /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { className: "modal-action mt-4 flex-shrink-0", children: [
+                /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("button", { onClick: () => setStep("form"), className: "btn btn-ghost", disabled: sending, children: [
+                  /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(ArrowLeft, { size: 16 }),
                   " Back"
                 ] }),
-                /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+                /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
                   "button",
                   {
                     onClick: handleCopyEmail,
                     className: "btn btn-outline",
                     style: { borderColor: "#8D5273", color: copied ? "#47B2AE" : "#8D5273" },
                     title: "Copy email to paste into your PMS",
-                    children: copied ? /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)(import_jsx_runtime3.Fragment, { children: [
-                      /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(ClipboardCheck, { size: 16 }),
+                    children: copied ? /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(import_jsx_runtime4.Fragment, { children: [
+                      /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(ClipboardCheck, { size: 16 }),
                       " Copied!"
-                    ] }) : /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)(import_jsx_runtime3.Fragment, { children: [
-                      /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(Clipboard, { size: 16 }),
+                    ] }) : /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(import_jsx_runtime4.Fragment, { children: [
+                      /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Clipboard, { size: 16 }),
                       " Copy Email"
                     ] })
                   }
                 ),
-                /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("button", { onClick: handleSend, className: "btn btn-success", disabled: sending, children: sending ? /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)(import_jsx_runtime3.Fragment, { children: [
-                  /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("span", { className: "loading loading-spinner loading-sm" }),
+                /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("button", { onClick: handleSend, className: "btn btn-success", disabled: sending, children: sending ? /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(import_jsx_runtime4.Fragment, { children: [
+                  /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("span", { className: "loading loading-spinner loading-sm" }),
                   " Sending..."
-                ] }) : /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)(import_jsx_runtime3.Fragment, { children: [
-                  /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(Send, { size: 16 }),
+                ] }) : /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(import_jsx_runtime4.Fragment, { children: [
+                  /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Send, { size: 16 }),
                   " Confirm & Send"
                 ] }) })
               ] })
@@ -8512,19 +8641,19 @@
           ]
         }
       ),
-      /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { className: "modal-backdrop", onClick: onClose })
+      /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("div", { className: "modal-backdrop", onClick: onClose })
     ] });
   };
   var SendClientModal_default = SendClientModal;
 
-  // deploy/src/components/MultiSelectDropdown.tsx
-  var import_react4 = __toESM(require_react());
-  var import_jsx_runtime4 = __toESM(require_jsx_runtime());
+  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/components/MultiSelectDropdown.tsx
+  var import_react5 = __toESM(require_react());
+  var import_jsx_runtime5 = __toESM(require_jsx_runtime());
   function MultiSelectDropdown({ label, options, selected, onChange, placeholder }) {
-    const [open, setOpen] = (0, import_react4.useState)(false);
-    const [search, setSearch] = (0, import_react4.useState)("");
-    const ref = (0, import_react4.useRef)(null);
-    (0, import_react4.useEffect)(() => {
+    const [open, setOpen] = (0, import_react5.useState)(false);
+    const [search, setSearch] = (0, import_react5.useState)("");
+    const ref = (0, import_react5.useRef)(null);
+    (0, import_react5.useEffect)(() => {
       const handler = (e) => {
         if (ref.current && !ref.current.contains(e.target)) setOpen(false);
       };
@@ -8536,9 +8665,9 @@
       if (selected.includes(opt)) onChange(selected.filter((s) => s !== opt));
       else onChange([...selected, opt]);
     };
-    return /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { ref, className: "relative", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("label", { className: "label label-text font-semibold pb-1", children: label }),
-      /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(
+    return /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { ref, className: "relative", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("label", { className: "label label-text font-semibold pb-1", children: label }),
+      /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)(
         "button",
         {
           type: "button",
@@ -8546,19 +8675,19 @@
           className: "btn btn-sm w-full justify-between font-normal text-left",
           style: { border: "1px solid #CDA8BA", backgroundColor: "white", minHeight: "2rem", height: "auto", paddingTop: "0.3rem", paddingBottom: "0.3rem" },
           children: [
-            /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("span", { className: "truncate text-sm", children: selected.length === 0 ? placeholder || `Any ${label.toLowerCase()}` : selected.length === 1 ? selected[0] : `${selected.length} selected` }),
-            /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("span", { className: "ml-1 text-base-content/50", children: open ? "\u25B2" : "\u25BC" })
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("span", { className: "truncate text-sm", children: selected.length === 0 ? placeholder || `Any ${label.toLowerCase()}` : selected.length === 1 ? selected[0] : `${selected.length} selected` }),
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("span", { className: "ml-1 text-base-content/50", children: open ? "\u25B2" : "\u25BC" })
           ]
         }
       ),
-      open && /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(
+      open && /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)(
         "div",
         {
           className: "absolute z-50 mt-1 w-full min-w-64 bg-white rounded-lg shadow-lg",
           style: { border: "1px solid #CDA8BA", maxHeight: "280px", overflowY: "auto" },
           children: [
-            /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { className: "p-2 border-b border-base-200 sticky top-0 bg-base-100", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "p-2 border-b border-base-200 sticky top-0 bg-base-100", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
                 "input",
                 {
                   type: "text",
@@ -8570,7 +8699,7 @@
                   autoFocus: true
                 }
               ),
-              selected.length > 0 && /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(
+              selected.length > 0 && /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)(
                 "button",
                 {
                   className: "btn btn-ghost btn-xs mt-1 w-full text-xs",
@@ -8583,8 +8712,8 @@
                 }
               )
             ] }),
-            filtered.length === 0 ? /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("div", { className: "p-3 text-sm text-base-content/50 text-center", children: "No results" }) : filtered.map((opt) => /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("label", { className: "flex items-center gap-2 px-3 py-1.5 hover:bg-base-200 cursor-pointer text-sm", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
+            filtered.length === 0 ? /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("div", { className: "p-3 text-sm text-base-content/50 text-center", children: "No results" }) : filtered.map((opt) => /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("label", { className: "flex items-center gap-2 px-3 py-1.5 hover:bg-base-200 cursor-pointer text-sm", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
                 "input",
                 {
                   type: "checkbox",
@@ -8593,7 +8722,7 @@
                   onChange: () => toggle(opt)
                 }
               ),
-              /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("span", { children: opt })
+              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("span", { children: opt })
             ] }, opt))
           ]
         }
@@ -8601,7 +8730,7 @@
     ] });
   }
 
-  // deploy/src/utils/kristaMatching.ts
+  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/utils/kristaMatching.ts
   var KRISTA_NAME = "Dr Krista De Castella";
   var INTEGRATION_PRESENTATION = "Difficult Psychedelic Experience / Bad-Trip Integration";
   function hasKristaClinicalSpecificity(modalities, presentations, nonComplexEmdrConfirmed, modalitiesMatchAll = false) {
@@ -8618,7 +8747,7 @@
     return p.name === KRISTA_NAME && !p.referral_only && sessionType === "Individual" && types.includes("Individual") && age !== null && age >= 16 && !(excludeFemaleOnly && p.client_gender_accepted === "Female Only");
   }
 
-  // deploy/src/utils/selectedCriteria.ts
+  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/utils/selectedCriteria.ts
   function matchesPresentation(value, selected) {
     const text = (value == null ? "" : typeof value === "string" ? value : Array.isArray(value) ? value.join(" ") : String(value)).toLowerCase();
     return text.includes(selected.toLowerCase());
@@ -8637,8 +8766,8 @@
     };
   }
 
-  // deploy/src/FindPractitioner.tsx
-  var import_jsx_runtime5 = __toESM(require_jsx_runtime());
+  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/FindPractitioner.tsx
+  var import_jsx_runtime6 = __toESM(require_jsx_runtime());
   var DAYS_OF_WEEK = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
   var PRESENTATION_OPTIONS = [
     INTEGRATION_PRESENTATION,
@@ -9053,8 +9182,8 @@
     return { weekly, fortnightly, monthly };
   }
   var PractitionerCard = ({ p, locationFilter, isSelected, onToggleSelect, includeMonthly, gateClientType, selectedPresentations, selectedModalities, diaryVerified = false, onDiaryVerify }) => {
-    const [expanded, setExpanded] = (0, import_react5.useState)(false);
-    const [copied, setCopied] = (0, import_react5.useState)(false);
+    const [expanded, setExpanded] = (0, import_react6.useState)(false);
+    const [copied, setCopied] = (0, import_react6.useState)(false);
     const safeLocs = p.locations || [];
     const displayLocs = locationFilter.length > 0 ? safeLocs.filter((l) => locationFilter.some((f) => (l.location || "").toLowerCase().includes(f.toLowerCase()))) : safeLocs;
     const hasAvail = displayLocs.some((l) => l.availability && l.availability.trim());
@@ -9070,10 +9199,10 @@
       setCopied(true);
       setTimeout(() => setCopied(false), 2e3);
     };
-    return /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("div", { className: "card bg-white shadow-sm border mb-4 transition-all", style: { borderColor: isSelected ? "#8D5273" : "#CDA8BA", boxShadow: isSelected ? "0 0 0 1px #8D5273" : void 0 }, children: /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "card-body p-4", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "flex flex-wrap gap-2 items-start justify-between", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "flex items-start gap-3 flex-1 min-w-0", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
+    return /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: "card bg-white shadow-sm border mb-4 transition-all", style: { borderColor: isSelected ? "#8D5273" : "#CDA8BA", boxShadow: isSelected ? "0 0 0 1px #8D5273" : void 0 }, children: /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "card-body p-4", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "flex flex-wrap gap-2 items-start justify-between", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "flex items-start gap-3 flex-1 min-w-0", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
             "input",
             {
               type: "checkbox",
@@ -9084,35 +9213,38 @@
               title: "Select for sending to client"
             }
           ),
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "flex-1 min-w-0", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "flex items-center gap-2 flex-wrap", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("h3", { className: "text-lg font-bold", style: { color: "#2C244C" }, children: p.link_to_bio ? /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("a", { href: p.link_to_bio, target: "_blank", rel: "noopener noreferrer", className: "hover:underline", children: p.name }) : p.name }),
-              p.pronouns && /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("span", { className: "text-xs text-base-content/50", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "flex-1 min-w-0", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "flex items-center gap-2 flex-wrap", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("h3", { className: "text-lg font-bold", style: { color: "#2C244C" }, children: [
+                p.link_to_bio ? /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("a", { href: p.link_to_bio, target: "_blank", rel: "noopener noreferrer", className: "hover:underline", children: p.name }) : p.name,
+                /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(StaffAge, { id: p.id })
+              ] }),
+              p.pronouns && /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("span", { className: "text-xs text-base-content/50", children: [
                 "(",
                 p.pronouns,
                 ")"
               ] }),
-              p.pap_clinician === "Yes" && /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("span", { className: "badge badge-sm text-white", style: { backgroundColor: "#8D5273" }, children: "PAP" }),
-              hasAfterHoursAvailability((p.locations || []).map((l) => ({ availability: l.availability }))) && /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("span", { className: "badge badge-sm text-white", style: { backgroundColor: "#52A3BA" }, children: "After Hours" }),
-              p.accepts_couples && /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("span", { className: "badge badge-sm text-white", style: { backgroundColor: "#366188" }, children: "Couples" })
+              p.pap_clinician === "Yes" && /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { className: "badge badge-sm text-white", style: { backgroundColor: "#8D5273" }, children: "PAP" }),
+              hasAfterHoursAvailability((p.locations || []).map((l) => ({ availability: l.availability }))) && /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { className: "badge badge-sm text-white", style: { backgroundColor: "#52A3BA" }, children: "After Hours" }),
+              p.accepts_couples && /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { className: "badge badge-sm text-white", style: { backgroundColor: "#366188" }, children: "Couples" })
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("p", { className: "text-sm text-base-content/70 font-medium", children: p.title })
+            /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("p", { className: "text-sm text-base-content/70 font-medium", children: p.title })
           ] })
         ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "flex gap-2 flex-shrink-0", children: [
-          p.link_to_bio && /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("a", { href: p.link_to_bio, target: "_blank", rel: "noopener noreferrer", className: "btn btn-ghost btn-xs", children: "Bio" }),
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("button", { onClick: () => setExpanded(!expanded), className: "btn btn-ghost btn-xs", children: expanded ? "Less" : "More" })
+        /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "flex gap-2 flex-shrink-0", children: [
+          p.link_to_bio && /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("a", { href: p.link_to_bio, target: "_blank", rel: "noopener noreferrer", className: "btn btn-ghost btn-xs", children: "Bio" }),
+          /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("button", { onClick: () => setExpanded(!expanded), className: "btn btn-ghost btn-xs", children: expanded ? "Less" : "More" })
         ] })
       ] }),
-      (selectedPresentations.length > 0 || selectedModalities.length > 0) && /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "rounded-lg border border-base-300 p-3 mt-2 space-y-2 text-sm", "data-staff-criteria": true, "aria-label": "Selected criteria matched \u2014 staff only", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("div", { className: "text-xs font-semibold text-base-content/50", children: "STAFF ONLY \u2014 selected profile criteria" }),
+      (selectedPresentations.length > 0 || selectedModalities.length > 0) && /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "rounded-lg border border-base-300 p-3 mt-2 space-y-2 text-sm", "data-staff-criteria": true, "aria-label": "Selected criteria matched \u2014 staff only", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: "text-xs font-semibold text-base-content/50", children: "STAFF ONLY \u2014 selected profile criteria" }),
         [
           { label: "Presentations", value: p.presentations, selected: selectedPresentations, matches: matchesPresentation },
           { label: "Modalities", value: p.modalities, selected: selectedModalities, matches: matchesModality }
         ].filter((group) => group.selected.length > 0).map((group) => {
           const breakdown = selectedCriteriaBreakdown(group.value, group.selected, group.matches);
-          return /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "font-semibold", children: [
+          return /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "font-semibold", children: [
               group.label,
               " matched (",
               breakdown.matched.length,
@@ -9120,156 +9252,156 @@
               breakdown.total,
               ")"
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("span", { className: "font-medium", children: "Matched:" }),
+            /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { className: "font-medium", children: "Matched:" }),
               " ",
               breakdown.matched.join("; ") || "None"
             ] }),
-            breakdown.notListed.length > 0 && /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "text-base-content/60", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("span", { className: "font-medium", children: "Not listed in profile:" }),
+            breakdown.notListed.length > 0 && /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "text-base-content/60", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { className: "font-medium", children: "Not listed in profile:" }),
               " ",
               breakdown.notListed.join("; ")
             ] })
           ] }, group.label);
         }),
-        /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("div", { className: "text-xs text-base-content/50", children: "Based on the current profile and matching rules; not listed does not mean the practitioner cannot treat it." })
+        /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: "text-xs text-base-content/50", children: "Based on the current profile and matching rules; not listed does not mean the practitioner cannot treat it." })
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(PractitionerNotes, { practitioner: p }),
-      p.requires_diary_verification && /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "border rounded p-3 mt-2 text-sm", style: { borderColor: "#8D5273" }, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("strong", { children: "STAFF ONLY: Confirmed recurring options \u2014 not checked live diary availability." }),
-        /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("p", { children: "Before offering either slot, check every relevant fortnightly occurrence over the next 8 weeks against booked appointments and diary/PAP/room blocks. Review Pending, Confirmed and Completed appointments and the full 90-minute appointment plus 15-minute break (8:30\u201310:15am / 12\u20131:45pm). A booked occurrence requires review; it does not automatically remove the recurring option. No automatic overlap check has been performed." }),
-        /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("label", { className: "flex gap-2 mt-2", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("input", { type: "checkbox", checked: diaryVerified, onChange: (e) => onDiaryVerify?.(e.target.checked) }),
+      /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(PractitionerNotes, { practitioner: p }),
+      p.requires_diary_verification && /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "border rounded p-3 mt-2 text-sm", style: { borderColor: "#8D5273" }, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("strong", { children: "STAFF ONLY: Confirmed recurring options \u2014 not checked live diary availability." }),
+        /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("p", { children: "Before offering either slot, check every relevant fortnightly occurrence over the next 8 weeks against booked appointments and diary/PAP/room blocks. Review Pending, Confirmed and Completed appointments and the full 90-minute appointment plus 15-minute break (8:30\u201310:15am / 12\u20131:45pm). A booked occurrence requires review; it does not automatically remove the recurring option. No automatic overlap check has been performed." }),
+        /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("label", { className: "flex gap-2 mt-2", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("input", { type: "checkbox", checked: diaryVerified, onChange: (e) => onDiaryVerify?.(e.target.checked) }),
           "I have checked Krista\u2019s Zanda diary and room availability for these recurring appointments, including relevant occurrences and buffers, and confirmed the options for this client."
         ] })
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "flex flex-wrap gap-4 text-sm mt-2", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { children: [
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("span", { className: "font-semibold text-base-content/60", children: "Fees:" }),
+      /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "flex flex-wrap gap-4 text-sm mt-2", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { className: "font-semibold text-base-content/60", children: "Fees:" }),
           " ",
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("span", { className: "whitespace-pre-line", children: p.fees })
+          /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { className: "whitespace-pre-line", children: p.fees })
         ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { children: [
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("span", { className: "font-semibold text-base-content/60", children: "Medicare:" }),
+        /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { className: "font-semibold text-base-content/60", children: "Medicare:" }),
           " ",
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("span", { className: "whitespace-pre-line", children: p.medicare_rebate })
+          /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { className: "whitespace-pre-line", children: p.medicare_rebate })
         ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { children: [
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("span", { className: "font-semibold text-base-content/60", children: "Gender:" }),
+        /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { className: "font-semibold text-base-content/60", children: "Gender:" }),
           " ",
           p.gender || "--"
         ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { children: [
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("span", { className: "font-semibold text-base-content/60", children: "Ages:" }),
+        /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { className: "font-semibold text-base-content/60", children: "Ages:" }),
           " ",
           p.age_range || "--"
         ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { children: [
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("span", { className: "font-semibold text-base-content/60", children: "Clients:" }),
+        /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { className: "font-semibold text-base-content/60", children: "Clients:" }),
           " ",
           p.client_types || "--"
         ] })
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("div", { className: "mt-2 flex items-center gap-1 flex-wrap", children: (p.locations || []).map((loc, i) => /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("span", { className: "badge badge-outline badge-sm", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: "mt-2 flex items-center gap-1 flex-wrap", children: (p.locations || []).map((loc, i) => /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("span", { className: "badge badge-outline badge-sm", children: [
         "\u{1F4CD}",
         " ",
         loc.location
       ] }, i)) }),
-      /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "mt-3 rounded-lg p-3", style: { backgroundColor: "#F0EEF7" }, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "flex items-center justify-between mb-2", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("span", { className: "font-semibold text-sm", children: "Availability" }),
-          hasAvail && (!p.requires_diary_verification || diaryVerified) && /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("button", { onClick: copyAvailability, className: "btn btn-xs " + (copied ? "btn-success" : "btn-primary"), children: copied ? "Copied!" : "Copy" })
+      /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "mt-3 rounded-lg p-3", style: { backgroundColor: "#F0EEF7" }, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "flex items-center justify-between mb-2", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { className: "font-semibold text-sm", children: "Availability" }),
+          hasAvail && (!p.requires_diary_verification || diaryVerified) && /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("button", { onClick: copyAvailability, className: "btn btn-xs " + (copied ? "btn-success" : "btn-primary"), children: copied ? "Copied!" : "Copy" })
         ] }),
-        gateClientType === "Supervision" ? p.supervision_availability?.length > 0 ? /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("div", { className: "mt-2", children: /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "rounded-lg p-2", style: { backgroundColor: "rgba(54,97,136,0.08)" }, children: [
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("div", { className: "text-xs font-bold mb-1", style: { color: "#366188" }, children: "\u{1F393} Supervision Slots (Weekly \xB7 Telehealth)" }),
-          p.supervision_availability.map((loc, li) => /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { children: [
-            p.supervision_availability.length > 1 && /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "text-xs text-base-content/50 mb-1", children: [
+        gateClientType === "Supervision" ? p.supervision_availability?.length > 0 ? /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: "mt-2", children: /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "rounded-lg p-2", style: { backgroundColor: "rgba(54,97,136,0.08)" }, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: "text-xs font-bold mb-1", style: { color: "#366188" }, children: "\u{1F393} Supervision Slots (Weekly \xB7 Telehealth)" }),
+          p.supervision_availability.map((loc, li) => /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { children: [
+            p.supervision_availability.length > 1 && /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "text-xs text-base-content/50 mb-1", children: [
               "\u{1F4CD} ",
               loc.location
             ] }),
-            loc.days.map((d, di) => /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "text-xs", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("span", { className: "font-medium", children: d.day }),
+            loc.days.map((d, di) => /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "text-xs", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { className: "font-medium", children: d.day }),
               ": ",
               d.times.join(", ")
             ] }, di))
           ] }, li))
-        ] }) }) : /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("div", { className: "text-sm text-base-content/40 italic", children: "No supervision availability listed" }) : displayLocs.length === 0 ? /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("div", { className: "text-sm text-base-content/40 italic", children: "No availability listed" }) : displayLocs.map((loc, i) => {
+        ] }) }) : /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: "text-sm text-base-content/40 italic", children: "No supervision availability listed" }) : displayLocs.length === 0 ? /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: "text-sm text-base-content/40 italic", children: "No availability listed" }) : displayLocs.map((loc, i) => {
           const { weekly, fortnightly, monthly } = parseAvailabilityColumns(loc.availability || "");
           const hasLocAvail = weekly.length > 0 || fortnightly.length > 0 || monthly.length > 0;
-          return /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: displayLocs.length > 1 ? "mb-3" : "", children: [
-            displayLocs.length > 1 && /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "text-xs font-semibold text-base-content/50 uppercase tracking-wide mb-2", children: [
+          return /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: displayLocs.length > 1 ? "mb-3" : "", children: [
+            displayLocs.length > 1 && /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "text-xs font-semibold text-base-content/50 uppercase tracking-wide mb-2", children: [
               "\u{1F4CD} ",
               loc.location
             ] }),
-            !hasLocAvail ? /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("div", { className: "text-sm text-base-content/40 italic", children: "No availability listed" }) : /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: `grid gap-2 ${includeMonthly ? "grid-cols-3" : "grid-cols-2"}`, children: [
-              /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "rounded-lg p-2", style: { backgroundColor: "rgba(54,97,136,0.08)" }, children: [
-                /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("div", { className: "text-xs font-bold mb-1", style: { color: "#366188" }, children: "\u25CF Weekly" }),
-                weekly.length > 0 ? /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("ul", { className: "space-y-1", children: weekly.map((line, j) => {
+            !hasLocAvail ? /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: "text-sm text-base-content/40 italic", children: "No availability listed" }) : /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: `grid gap-2 ${includeMonthly ? "grid-cols-3" : "grid-cols-2"}`, children: [
+              /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "rounded-lg p-2", style: { backgroundColor: "rgba(54,97,136,0.08)" }, children: [
+                /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: "text-xs font-bold mb-1", style: { color: "#366188" }, children: "\u25CF Weekly" }),
+                weekly.length > 0 ? /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("ul", { className: "space-y-1", children: weekly.map((line, j) => {
                   const label = line.replace(/\s*\(Weekly:.*\)/i, "").trim();
                   const startMatch = line.match(/Starting ([^)]+)/i);
-                  return /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("li", { className: "text-xs text-base-content leading-snug", children: [
-                    /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("span", { className: "font-medium", children: label }),
-                    startMatch && /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("span", { className: "text-base-content/50 block", children: [
+                  return /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("li", { className: "text-xs text-base-content leading-snug", children: [
+                    /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { className: "font-medium", children: label }),
+                    startMatch && /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("span", { className: "text-base-content/50 block", children: [
                       "from ",
                       startMatch[1]
                     ] })
                   ] }, j);
-                }) }) : /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("div", { className: "text-xs text-base-content/30 italic", children: "\u2014" })
+                }) }) : /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: "text-xs text-base-content/30 italic", children: "\u2014" })
               ] }),
-              /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "rounded-lg p-2", style: { backgroundColor: "rgba(82,163,186,0.08)" }, children: [
-                /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("div", { className: "text-xs font-bold mb-1", style: { color: "#52A3BA" }, children: "\u25CF Fortnightly" }),
-                fortnightly.length > 0 ? /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("ul", { className: "space-y-1", children: fortnightly.map((line, j) => {
+              /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "rounded-lg p-2", style: { backgroundColor: "rgba(82,163,186,0.08)" }, children: [
+                /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: "text-xs font-bold mb-1", style: { color: "#52A3BA" }, children: "\u25CF Fortnightly" }),
+                fortnightly.length > 0 ? /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("ul", { className: "space-y-1", children: fortnightly.map((line, j) => {
                   const label = line.replace(/\s*\(Fortnightly:.*\)/i, "").trim();
                   const startMatch = line.match(/Starting ([^)]+)/i);
-                  return /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("li", { className: "text-xs text-base-content leading-snug", children: [
-                    /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("span", { className: "font-medium", children: label }),
-                    startMatch && /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("span", { className: "text-base-content/50 block", children: [
+                  return /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("li", { className: "text-xs text-base-content leading-snug", children: [
+                    /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { className: "font-medium", children: label }),
+                    startMatch && /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("span", { className: "text-base-content/50 block", children: [
                       "from ",
                       startMatch[1]
                     ] })
                   ] }, j);
-                }) }) : /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("div", { className: "text-xs text-base-content/30 italic", children: "\u2014" })
+                }) }) : /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: "text-xs text-base-content/30 italic", children: "\u2014" })
               ] }),
-              includeMonthly && /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "rounded-lg p-2", style: { backgroundColor: "rgba(141,82,115,0.08)" }, children: [
-                /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("div", { className: "text-xs font-bold mb-1", style: { color: "#8D5273" }, children: "\u25CF Monthly" }),
-                monthly.length > 0 ? /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("ul", { className: "space-y-1", children: monthly.map((line, j) => {
+              includeMonthly && /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "rounded-lg p-2", style: { backgroundColor: "rgba(141,82,115,0.08)" }, children: [
+                /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: "text-xs font-bold mb-1", style: { color: "#8D5273" }, children: "\u25CF Monthly" }),
+                monthly.length > 0 ? /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("ul", { className: "space-y-1", children: monthly.map((line, j) => {
                   const label = line.replace(/\s*\(Monthly:.*\)/i, "").trim();
                   const startMatch = line.match(/Starting ([^)]+)/i);
-                  return /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("li", { className: "text-xs text-base-content leading-snug", children: [
-                    /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("span", { className: "font-medium", children: label }),
-                    startMatch && /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("span", { className: "text-base-content/50 block", children: [
+                  return /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("li", { className: "text-xs text-base-content leading-snug", children: [
+                    /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { className: "font-medium", children: label }),
+                    startMatch && /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("span", { className: "text-base-content/50 block", children: [
                       "from ",
                       startMatch[1]
                     ] })
                   ] }, j);
-                }) }) : /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("div", { className: "text-xs text-base-content/30 italic", children: "\u2014" })
+                }) }) : /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: "text-xs text-base-content/30 italic", children: "\u2014" })
               ] })
             ] })
           ] }, i);
         })
       ] }),
-      expanded && /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "mt-3 space-y-3 border-t border-base-300 pt-3", children: [
-        p.style && /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { children: [
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("div", { className: "text-xs font-bold text-base-content/50 uppercase tracking-wide mb-1", children: "Therapist Style" }),
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("div", { className: "flex flex-wrap gap-1", children: p.style.split(",").map((s, i) => /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("span", { className: "badge badge-sm badge-outline", style: { borderColor: "#8D5273", color: "#8D5273" }, children: s.trim() }, i)) })
+      expanded && /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "mt-3 space-y-3 border-t border-base-300 pt-3", children: [
+        p.style && /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: "text-xs font-bold text-base-content/50 uppercase tracking-wide mb-1", children: "Therapist Style" }),
+          /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: "flex flex-wrap gap-1", children: p.style.split(",").map((s, i) => /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { className: "badge badge-sm badge-outline", style: { borderColor: "#8D5273", color: "#8D5273" }, children: s.trim() }, i)) })
         ] }),
-        p.presentations && /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { children: [
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("div", { className: "text-xs font-bold text-base-content/50 uppercase tracking-wide mb-1", children: "Presentations" }),
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("div", { className: "text-sm text-base-content/80", children: p.presentations })
+        p.presentations && /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: "text-xs font-bold text-base-content/50 uppercase tracking-wide mb-1", children: "Presentations" }),
+          /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: "text-sm text-base-content/80", children: p.presentations })
         ] }),
-        p.modalities && /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { children: [
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("div", { className: "text-xs font-bold text-base-content/50 uppercase tracking-wide mb-1", children: "Modalities" }),
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("div", { className: "text-sm text-base-content/80", children: p.modalities })
+        p.modalities && /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: "text-xs font-bold text-base-content/50 uppercase tracking-wide mb-1", children: "Modalities" }),
+          /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: "text-sm text-base-content/80", children: p.modalities })
         ] }),
-        p.billing_types && /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { children: [
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("div", { className: "text-xs font-bold text-base-content/50 uppercase tracking-wide mb-1", children: "Billing" }),
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("div", { className: "text-sm", children: p.billing_types })
+        p.billing_types && /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: "text-xs font-bold text-base-content/50 uppercase tracking-wide mb-1", children: "Billing" }),
+          /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: "text-sm", children: p.billing_types })
         ] }),
-        p.religions_groups && /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { children: [
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("div", { className: "text-xs font-bold text-base-content/50 uppercase tracking-wide mb-1", children: "Cultural / Religious" }),
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("div", { className: "text-sm", children: p.religions_groups })
+        p.religions_groups && /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: "text-xs font-bold text-base-content/50 uppercase tracking-wide mb-1", children: "Cultural / Religious" }),
+          /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: "text-sm", children: p.religions_groups })
         ] }),
-        p.last_updated && /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "text-xs text-base-content/40", children: [
+        p.last_updated && /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "text-xs text-base-content/40", children: [
           "Last updated: ",
           p.last_updated
         ] })
@@ -9277,11 +9409,11 @@
     ] }) });
   };
   function FindPractitioner({ practitioners: sourcePractitioners }) {
-    const practitioners = (0, import_react5.useMemo)(() => sourcePractitioners.map(suppressKristaIntake), [sourcePractitioners]);
-    const [gateClientType, setGateClientType] = (0, import_react5.useState)("");
-    const [gateAgeBracket, setGateAgeBracket] = (0, import_react5.useState)("");
-    const [gateClientGender, setGateClientGender] = (0, import_react5.useState)("");
-    const [includeMonthly, setIncludeMonthly] = (0, import_react5.useState)(false);
+    const practitioners = (0, import_react6.useMemo)(() => sourcePractitioners.map(suppressKristaIntake), [sourcePractitioners]);
+    const [gateClientType, setGateClientType] = (0, import_react6.useState)("");
+    const [gateAgeBracket, setGateAgeBracket] = (0, import_react6.useState)("");
+    const [gateClientGender, setGateClientGender] = (0, import_react6.useState)("");
+    const [includeMonthly, setIncludeMonthly] = (0, import_react6.useState)(false);
     const gateComplete = !!gateClientType && (gateClientType === "Supervision" || !!gateAgeBracket && !!gateClientGender);
     const AGE_BRACKET_MAP = {
       "Under 12": 10,
@@ -9293,41 +9425,41 @@
     };
     const gateAgeRep = gateAgeBracket ? AGE_BRACKET_MAP[gateAgeBracket] ?? null : null;
     const gateExcludeFemaleOnly = gateClientGender === "Male" || gateClientGender === "Non-binary / Other";
-    const [keyword, setKeyword] = (0, import_react5.useState)("");
-    const [selectedLocations, setSelectedLocations] = (0, import_react5.useState)([]);
-    const [locationMatchAll, setLocationMatchAll] = (0, import_react5.useState)(false);
-    const [gender, setGender] = (0, import_react5.useState)("");
-    const [clientType, setClientType] = (0, import_react5.useState)("");
-    const [therapistType, setTherapistType] = (0, import_react5.useState)("");
-    const [afterHours, setAfterHours] = (0, import_react5.useState)(false);
-    const [hasAvailability, setHasAvailability] = (0, import_react5.useState)(true);
-    const [selectedPresentations, setSelectedPresentations] = (0, import_react5.useState)([]);
-    const [presentationsMatchAll, setPresentationsMatchAll] = (0, import_react5.useState)(false);
-    const [selectedModalities, setSelectedModalities] = (0, import_react5.useState)([]);
-    const [modalitiesMatchAll, setModalitiesMatchAll] = (0, import_react5.useState)(false);
-    const [selectedStyles, setSelectedStyles] = (0, import_react5.useState)([]);
-    const [stylesMatchAll, setStylesMatchAll] = (0, import_react5.useState)(false);
-    const [clientAge, setClientAge] = (0, import_react5.useState)("");
-    const [selectedPractitionerNames, setSelectedPractitionerNames] = (0, import_react5.useState)([]);
-    const [selectedAvailabilityTypes, setSelectedAvailabilityTypes] = (0, import_react5.useState)([]);
-    const [selectedDays, setSelectedDays] = (0, import_react5.useState)([]);
-    const [daysMatchAll, setDaysMatchAll] = (0, import_react5.useState)(false);
-    const [selectedBillingTypes, setSelectedBillingTypes] = (0, import_react5.useState)([]);
-    const [selectedNames, setSelectedNames] = (0, import_react5.useState)([]);
-    const [showSendModal, setShowSendModal] = (0, import_react5.useState)(false);
-    const [sentSuccess, setSentSuccess] = (0, import_react5.useState)(false);
-    const [cannotUseKristaSlots, setCannotUseKristaSlots] = (0, import_react5.useState)(false);
-    const [nonComplexEmdrConfirmed, setNonComplexEmdrConfirmed] = (0, import_react5.useState)(false);
-    const [kristaDiaryVerified, setKristaDiaryVerified] = (0, import_react5.useState)(false);
-    (0, import_react5.useEffect)(() => {
+    const [keyword, setKeyword] = (0, import_react6.useState)("");
+    const [selectedLocations, setSelectedLocations] = (0, import_react6.useState)([]);
+    const [locationMatchAll, setLocationMatchAll] = (0, import_react6.useState)(false);
+    const [gender, setGender] = (0, import_react6.useState)("");
+    const [clientType, setClientType] = (0, import_react6.useState)("");
+    const [therapistType, setTherapistType] = (0, import_react6.useState)("");
+    const [afterHours, setAfterHours] = (0, import_react6.useState)(false);
+    const [hasAvailability, setHasAvailability] = (0, import_react6.useState)(true);
+    const [selectedPresentations, setSelectedPresentations] = (0, import_react6.useState)([]);
+    const [presentationsMatchAll, setPresentationsMatchAll] = (0, import_react6.useState)(false);
+    const [selectedModalities, setSelectedModalities] = (0, import_react6.useState)([]);
+    const [modalitiesMatchAll, setModalitiesMatchAll] = (0, import_react6.useState)(false);
+    const [selectedStyles, setSelectedStyles] = (0, import_react6.useState)([]);
+    const [stylesMatchAll, setStylesMatchAll] = (0, import_react6.useState)(false);
+    const [clientAge, setClientAge] = (0, import_react6.useState)("");
+    const [selectedPractitionerNames, setSelectedPractitionerNames] = (0, import_react6.useState)([]);
+    const [selectedAvailabilityTypes, setSelectedAvailabilityTypes] = (0, import_react6.useState)([]);
+    const [selectedDays, setSelectedDays] = (0, import_react6.useState)([]);
+    const [daysMatchAll, setDaysMatchAll] = (0, import_react6.useState)(false);
+    const [selectedBillingTypes, setSelectedBillingTypes] = (0, import_react6.useState)([]);
+    const [selectedNames, setSelectedNames] = (0, import_react6.useState)([]);
+    const [showSendModal, setShowSendModal] = (0, import_react6.useState)(false);
+    const [sentSuccess, setSentSuccess] = (0, import_react6.useState)(false);
+    const [cannotUseKristaSlots, setCannotUseKristaSlots] = (0, import_react6.useState)(false);
+    const [nonComplexEmdrConfirmed, setNonComplexEmdrConfirmed] = (0, import_react6.useState)(false);
+    const [kristaDiaryVerified, setKristaDiaryVerified] = (0, import_react6.useState)(false);
+    (0, import_react6.useEffect)(() => {
       setKristaDiaryVerified(false);
     }, [gateClientType, gateAgeRep, gateExcludeFemaleOnly, keyword, selectedLocations, locationMatchAll, gender, clientType, therapistType, afterHours, hasAvailability, includeMonthly, selectedPresentations, presentationsMatchAll, selectedModalities, modalitiesMatchAll, selectedStyles, stylesMatchAll, selectedBillingTypes, clientAge, selectedPractitionerNames, selectedAvailabilityTypes, selectedDays, daysMatchAll, cannotUseKristaSlots, nonComplexEmdrConfirmed]);
-    const allPractitionerNames = (0, import_react5.useMemo)(() => practitioners.map((p) => p.name).sort(), [practitioners]);
-    const results = (0, import_react5.useMemo)(() => {
+    const allPractitionerNames = (0, import_react6.useMemo)(() => practitioners.map((p) => p.name).sort(), [practitioners]);
+    const results = (0, import_react6.useMemo)(() => {
       const filters = { keyword, locations: selectedLocations, locationMatchAll, gender, clientType, therapistType, afterHours, hasAvailability, includeMonthly, presentations: selectedPresentations, presentationsMatchAll, modalities: selectedModalities, modalitiesMatchAll, styles: selectedStyles, stylesMatchAll, billingTypes: selectedBillingTypes, clientAge, practitionerNames: selectedPractitionerNames, availabilityTypes: selectedAvailabilityTypes, days: selectedDays, daysMatchAll, gateClientType, gateAgeRep, gateExcludeFemaleOnly, nonComplexEmdrConfirmed };
       return practitioners.filter((p) => !p.referral_only).filter((p) => p.name !== KRISTA_NAME || !cannotUseKristaSlots).map((p) => ({ p, score: scoreMatch(p, filters) })).filter((item) => item.score >= 0).sort((a, b) => b.score - a.score || a.p.name.localeCompare(b.p.name));
     }, [practitioners, keyword, selectedLocations, locationMatchAll, gender, clientType, therapistType, afterHours, hasAvailability, includeMonthly, selectedPresentations, presentationsMatchAll, selectedModalities, modalitiesMatchAll, selectedStyles, stylesMatchAll, selectedBillingTypes, clientAge, selectedPractitionerNames, selectedAvailabilityTypes, selectedDays, daysMatchAll, gateClientType, gateAgeRep, gateExcludeFemaleOnly, cannotUseKristaSlots, nonComplexEmdrConfirmed]);
-    const potentialKrista = (0, import_react5.useMemo)(() => {
+    const potentialKrista = (0, import_react6.useMemo)(() => {
       if (isKristaIntakePaused(KRISTA_NAME)) return null;
       if (!gateComplete || !hasKristaClinicalSpecificity(selectedModalities, selectedPresentations, nonComplexEmdrConfirmed, modalitiesMatchAll)) return null;
       const p = practitioners.find((p2) => isKristaIndividualEligible(p2, gateClientType, gateAgeRep, gateExcludeFemaleOnly));
@@ -9383,15 +9515,15 @@
       setSentSuccess(true);
       setTimeout(() => setSentSuccess(false), 4e3);
     };
-    return /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "pb-24", children: [
-      sentSuccess && /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("div", { className: "alert alert-success mb-4", children: /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("span", { children: "\u2713 Email sent successfully to the client!" }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "rounded-xl mb-5 px-6 py-5", style: { backgroundColor: "#f0edf5" }, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "flex items-center justify-between gap-2 mb-4", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "flex items-center gap-2", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("span", { className: "text-xs font-bold uppercase tracking-widest px-2.5 py-1 rounded text-white", style: { backgroundColor: "#2C244C" }, children: "Required" }),
-            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("span", { className: "font-semibold text-base", style: { color: "#2C244C" }, children: "Tell us about the client first" })
+    return /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "pb-24", children: [
+      sentSuccess && /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: "alert alert-success mb-4", children: /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { children: "\u2713 Email sent successfully to the client!" }) }),
+      /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "rounded-xl mb-5 px-6 py-5", style: { backgroundColor: "#f0edf5" }, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "flex items-center justify-between gap-2 mb-4", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "flex items-center gap-2", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { className: "text-xs font-bold uppercase tracking-widest px-2.5 py-1 rounded text-white", style: { backgroundColor: "#2C244C" }, children: "Required" }),
+            /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { className: "font-semibold text-base", style: { color: "#2C244C" }, children: "Tell us about the client first" })
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
+          /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
             "button",
             {
               onClick: resetAll,
@@ -9402,13 +9534,13 @@
             }
           )
         ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "flex flex-wrap gap-10 mb-5", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "text-xs font-semibold mb-2", style: { color: "#2C244C" }, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "flex flex-wrap gap-10 mb-5", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "text-xs font-semibold mb-2", style: { color: "#2C244C" }, children: [
               "Session type ",
-              gateClientType && /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("span", { className: "text-green-600 ml-1", children: "\u2713" })
+              gateClientType && /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { className: "text-green-600 ml-1", children: "\u2713" })
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("div", { className: "flex gap-2 flex-wrap", children: ["Individual", "Couples", "Supervision"].map((opt) => /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
+            /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: "flex gap-2 flex-wrap", children: ["Individual", "Couples", "Supervision"].map((opt) => /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
               "button",
               {
                 onClick: () => {
@@ -9425,12 +9557,12 @@
               opt
             )) })
           ] }),
-          gateClientType !== "Supervision" && /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "text-xs font-semibold mb-2", style: { color: "#2C244C" }, children: [
+          gateClientType !== "Supervision" && /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "text-xs font-semibold mb-2", style: { color: "#2C244C" }, children: [
               "Client's age ",
-              gateAgeBracket && /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("span", { className: "text-green-600 ml-1", children: "\u2713" })
+              gateAgeBracket && /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { className: "text-green-600 ml-1", children: "\u2713" })
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("div", { className: "flex gap-2 flex-wrap", children: ["Under 12", "12\u201315", "16\u201317", "18\u201324", "25+", "60+"].map((opt) => /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
+            /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: "flex gap-2 flex-wrap", children: ["Under 12", "12\u201315", "16\u201317", "18\u201324", "25+", "60+"].map((opt) => /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
               "button",
               {
                 onClick: () => setGateAgeBracket(opt),
@@ -9442,12 +9574,12 @@
             )) })
           ] })
         ] }),
-        gateClientType !== "Supervision" && /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { children: [
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "text-xs font-semibold mb-2", style: { color: "#2C244C" }, children: [
+        gateClientType !== "Supervision" && /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "text-xs font-semibold mb-2", style: { color: "#2C244C" }, children: [
             "Client's gender ",
-            gateClientGender && /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("span", { className: "text-green-600 ml-1", children: "\u2713" })
+            gateClientGender && /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { className: "text-green-600 ml-1", children: "\u2713" })
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("div", { className: "flex gap-2 flex-wrap", children: ["Male", "Female", "Non-binary / Other"].map((opt) => /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
+          /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: "flex gap-2 flex-wrap", children: ["Male", "Female", "Non-binary / Other"].map((opt) => /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
             "button",
             {
               onClick: () => setGateClientGender(opt),
@@ -9457,16 +9589,16 @@
             },
             opt
           )) }),
-          (gateClientGender === "Male" || gateClientGender === "Non-binary / Other") && /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("div", { className: "text-xs mt-2", style: { color: "#8D5273" }, children: "\u26A0\uFE0F Alex Barry, Chiara Killey and Clare Tuttleby accept female clients only." })
+          (gateClientGender === "Male" || gateClientGender === "Non-binary / Other") && /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: "text-xs mt-2", style: { color: "#8D5273" }, children: "\u26A0\uFE0F Alex Barry, Chiara Killey and Clare Tuttleby accept female clients only." })
         ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "mt-4 pt-4", style: { borderTop: "1px solid #CDA8BA" }, children: [
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "text-xs font-semibold mb-2", style: { color: "#2C244C" }, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "mt-4 pt-4", style: { borderTop: "1px solid #CDA8BA" }, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "text-xs font-semibold mb-2", style: { color: "#2C244C" }, children: [
             "Include monthly availability?",
             " ",
-            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("span", { className: "font-normal", style: { color: "#8D5273" }, children: "Only for low risk or approved clients" })
+            /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { className: "font-normal", style: { color: "#8D5273" }, children: "Only for low risk or approved clients" })
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "flex gap-2 flex-wrap items-center", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
+          /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "flex gap-2 flex-wrap items-center", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
               "button",
               {
                 onClick: () => setIncludeMonthly(false),
@@ -9475,7 +9607,7 @@
                 children: "No (default)"
               }
             ),
-            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
+            /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
               "button",
               {
                 onClick: () => setIncludeMonthly(true),
@@ -9484,16 +9616,16 @@
                 children: "\u2713 Yes \u2014 include monthly slots"
               }
             ),
-            includeMonthly && /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("span", { className: "text-xs", style: { color: "#8D5273" }, children: "Monthly availability will be shown on all cards" })
+            includeMonthly && /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { className: "text-xs", style: { color: "#8D5273" }, children: "Monthly availability will be shown on all cards" })
           ] })
         ] })
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)(import_jsx_runtime5.Fragment, { children: [
-        /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("div", { className: "card bg-white shadow-sm border mb-6", style: { borderColor: "#CDA8BA" }, children: /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "card-body p-4", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("h2", { className: "font-bold text-lg mb-3", children: "Search and Filter" }),
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "mb-3", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("label", { className: "label label-text font-semibold pb-1", children: "Keywords" }),
-            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
+      /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)(import_jsx_runtime6.Fragment, { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: "card bg-white shadow-sm border mb-6", style: { borderColor: "#CDA8BA" }, children: /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "card-body p-4", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("h2", { className: "font-bold text-lg mb-3", children: "Search and Filter" }),
+          /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "mb-3", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("label", { className: "label label-text font-semibold pb-1", children: "Keywords" }),
+            /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
               "input",
               {
                 type: "text",
@@ -9503,18 +9635,18 @@
                 onChange: (e) => setKeyword(e.target.value)
               }
             ),
-            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("div", { className: "text-xs text-base-content/50 mt-1", children: "Searches presentations, modalities, name and specialty" })
+            /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: "text-xs text-base-content/50 mt-1", children: "Searches presentations, modalities, name and specialty" })
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 mb-3", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "flex items-center justify-between mb-1", children: [
-                /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("span", { className: "text-xs font-bold text-base-content/50 uppercase tracking-wide", children: "Location" }),
-                selectedLocations.length > 1 && /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "flex rounded overflow-hidden border border-purple-200 text-xs", children: [
-                  /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("button", { onClick: () => setLocationMatchAll(false), className: `px-2 py-0.5 ${!locationMatchAll ? "bg-purple-600 text-white" : "bg-white text-purple-600"}`, children: "Match any" }),
-                  /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("button", { onClick: () => setLocationMatchAll(true), className: `px-2 py-0.5 ${locationMatchAll ? "bg-purple-600 text-white" : "bg-white text-purple-600"}`, children: "Match all" })
+          /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 mb-3", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "flex items-center justify-between mb-1", children: [
+                /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { className: "text-xs font-bold text-base-content/50 uppercase tracking-wide", children: "Location" }),
+                selectedLocations.length > 1 && /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "flex rounded overflow-hidden border border-purple-200 text-xs", children: [
+                  /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("button", { onClick: () => setLocationMatchAll(false), className: `px-2 py-0.5 ${!locationMatchAll ? "bg-purple-600 text-white" : "bg-white text-purple-600"}`, children: "Match any" }),
+                  /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("button", { onClick: () => setLocationMatchAll(true), className: `px-2 py-0.5 ${locationMatchAll ? "bg-purple-600 text-white" : "bg-white text-purple-600"}`, children: "Match all" })
                 ] })
               ] }),
-              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
+              /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
                 MultiSelectDropdown,
                 {
                   label: "",
@@ -9525,40 +9657,40 @@
                 }
               )
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("label", { className: "label label-text font-semibold pb-1", children: "Gender" }),
-              /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("select", { className: "select select-bordered w-full select-sm", value: gender, onChange: (e) => setGender(e.target.value), children: [
-                /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("option", { value: "", children: "Any gender" }),
-                /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("option", { value: "Female", children: "Female" }),
-                /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("option", { value: "Male", children: "Male" })
+            /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("label", { className: "label label-text font-semibold pb-1", children: "Gender" }),
+              /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("select", { className: "select select-bordered w-full select-sm", value: gender, onChange: (e) => setGender(e.target.value), children: [
+                /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("option", { value: "", children: "Any gender" }),
+                /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("option", { value: "Female", children: "Female" }),
+                /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("option", { value: "Male", children: "Male" })
               ] })
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("label", { className: "label label-text font-semibold pb-1", children: "Client Type" }),
-              /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("select", { className: "select select-bordered w-full select-sm", value: clientType, onChange: (e) => setClientType(e.target.value), children: [
-                /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("option", { value: "", children: "Any" }),
-                /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("option", { value: "Individual", children: "Individual" }),
-                /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("option", { value: "Couples", children: "Couples" })
+            /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("label", { className: "label label-text font-semibold pb-1", children: "Client Type" }),
+              /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("select", { className: "select select-bordered w-full select-sm", value: clientType, onChange: (e) => setClientType(e.target.value), children: [
+                /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("option", { value: "", children: "Any" }),
+                /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("option", { value: "Individual", children: "Individual" }),
+                /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("option", { value: "Couples", children: "Couples" })
               ] })
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("label", { className: "label label-text font-semibold pb-1", children: "Therapist Type" }),
-              /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("select", { className: "select select-bordered w-full select-sm", value: therapistType, onChange: (e) => setTherapistType(e.target.value), children: [
-                /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("option", { value: "", children: "Any type" }),
-                /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("option", { value: "Clinical Psychologist", children: "Clinical Psychologist" }),
-                /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("option", { value: "Psychologist", children: "Psychologist" }),
-                /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("option", { value: "Social Worker", children: "Social Worker" }),
-                /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("option", { value: "Psychotherapist", children: "Psychotherapist" }),
-                /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("option", { value: "Counsellor", children: "Counsellor" })
+            /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("label", { className: "label label-text font-semibold pb-1", children: "Therapist Type" }),
+              /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("select", { className: "select select-bordered w-full select-sm", value: therapistType, onChange: (e) => setTherapistType(e.target.value), children: [
+                /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("option", { value: "", children: "Any type" }),
+                /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("option", { value: "Clinical Psychologist", children: "Clinical Psychologist" }),
+                /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("option", { value: "Psychologist", children: "Psychologist" }),
+                /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("option", { value: "Social Worker", children: "Social Worker" }),
+                /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("option", { value: "Psychotherapist", children: "Psychotherapist" }),
+                /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("option", { value: "Counsellor", children: "Counsellor" })
               ] })
             ] })
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-3 mb-3", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "flex items-center justify-between mb-1", children: [
-                /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("span", { className: "text-xs font-bold text-base-content/50 uppercase tracking-wide", children: "Presentations" }),
-                selectedPresentations.length > 1 && /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "flex rounded overflow-hidden border border-purple-200 text-xs", children: [
-                  /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
+          /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-3 mb-3", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "flex items-center justify-between mb-1", children: [
+                /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { className: "text-xs font-bold text-base-content/50 uppercase tracking-wide", children: "Presentations" }),
+                selectedPresentations.length > 1 && /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "flex rounded overflow-hidden border border-purple-200 text-xs", children: [
+                  /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
                     "button",
                     {
                       onClick: () => setPresentationsMatchAll(false),
@@ -9566,7 +9698,7 @@
                       children: "Match any"
                     }
                   ),
-                  /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
+                  /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
                     "button",
                     {
                       onClick: () => setPresentationsMatchAll(true),
@@ -9576,7 +9708,7 @@
                   )
                 ] })
               ] }),
-              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
+              /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
                 MultiSelectDropdown,
                 {
                   label: "",
@@ -9587,11 +9719,11 @@
                 }
               )
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "flex items-center justify-between mb-1", children: [
-                /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("span", { className: "text-xs font-bold text-base-content/50 uppercase tracking-wide", children: "Modalities" }),
-                selectedModalities.length > 1 && /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "flex rounded overflow-hidden border border-purple-200 text-xs", children: [
-                  /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
+            /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "flex items-center justify-between mb-1", children: [
+                /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { className: "text-xs font-bold text-base-content/50 uppercase tracking-wide", children: "Modalities" }),
+                selectedModalities.length > 1 && /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "flex rounded overflow-hidden border border-purple-200 text-xs", children: [
+                  /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
                     "button",
                     {
                       onClick: () => setModalitiesMatchAll(false),
@@ -9599,7 +9731,7 @@
                       children: "Match any"
                     }
                   ),
-                  /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
+                  /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
                     "button",
                     {
                       onClick: () => setModalitiesMatchAll(true),
@@ -9609,7 +9741,7 @@
                   )
                 ] })
               ] }),
-              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
+              /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
                 MultiSelectDropdown,
                 {
                   label: "",
@@ -9620,15 +9752,15 @@
                 }
               )
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "flex items-center justify-between mb-1", children: [
-                /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("span", { className: "text-xs font-bold text-base-content/50 uppercase tracking-wide", children: "Therapist Style" }),
-                selectedStyles.length > 1 && /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "flex rounded overflow-hidden border border-purple-200 text-xs", children: [
-                  /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("button", { onClick: () => setStylesMatchAll(false), className: `px-2 py-0.5 ${!stylesMatchAll ? "bg-purple-600 text-white" : "bg-white text-purple-600"}`, children: "Match any" }),
-                  /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("button", { onClick: () => setStylesMatchAll(true), className: `px-2 py-0.5 ${stylesMatchAll ? "bg-purple-600 text-white" : "bg-white text-purple-600"}`, children: "Match all" })
+            /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "flex items-center justify-between mb-1", children: [
+                /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { className: "text-xs font-bold text-base-content/50 uppercase tracking-wide", children: "Therapist Style" }),
+                selectedStyles.length > 1 && /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "flex rounded overflow-hidden border border-purple-200 text-xs", children: [
+                  /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("button", { onClick: () => setStylesMatchAll(false), className: `px-2 py-0.5 ${!stylesMatchAll ? "bg-purple-600 text-white" : "bg-white text-purple-600"}`, children: "Match any" }),
+                  /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("button", { onClick: () => setStylesMatchAll(true), className: `px-2 py-0.5 ${stylesMatchAll ? "bg-purple-600 text-white" : "bg-white text-purple-600"}`, children: "Match all" })
                 ] })
               ] }),
-              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
+              /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
                 MultiSelectDropdown,
                 {
                   label: "",
@@ -9639,7 +9771,7 @@
                 }
               )
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
+            /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
               MultiSelectDropdown,
               {
                 label: "Billing / Funding",
@@ -9650,10 +9782,10 @@
               }
             )
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "grid grid-cols-1 md:grid-cols-3 gap-3 mb-3", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("label", { className: "label label-text font-semibold pb-1", children: "Client Age" }),
-              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
+          /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "grid grid-cols-1 md:grid-cols-3 gap-3 mb-3", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("label", { className: "label label-text font-semibold pb-1", children: "Client Age" }),
+              /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
                 "input",
                 {
                   type: "number",
@@ -9665,9 +9797,9 @@
                   onChange: (e) => setClientAge(e.target.value)
                 }
               ),
-              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("div", { className: "text-xs text-base-content/50 mt-1", children: "Filters to practitioners who accept this age" })
+              /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: "text-xs text-base-content/50 mt-1", children: "Filters to practitioners who accept this age" })
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
+            /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
               MultiSelectDropdown,
               {
                 label: "Practitioner Name",
@@ -9677,7 +9809,7 @@
                 placeholder: "Any practitioner"
               }
             ),
-            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
+            /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
               MultiSelectDropdown,
               {
                 label: "Availability Type",
@@ -9687,15 +9819,15 @@
                 placeholder: "Any type"
               }
             ),
-            /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "flex items-center justify-between mb-1", children: [
-                /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("span", { className: "text-xs font-bold text-base-content/50 uppercase tracking-wide", children: "Day of Week" }),
-                selectedDays.length > 1 && /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "flex rounded overflow-hidden border border-purple-200 text-xs", children: [
-                  /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("button", { onClick: () => setDaysMatchAll(false), className: `px-2 py-0.5 ${!daysMatchAll ? "bg-purple-600 text-white" : "bg-white text-purple-600"}`, children: "Match any" }),
-                  /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("button", { onClick: () => setDaysMatchAll(true), className: `px-2 py-0.5 ${daysMatchAll ? "bg-purple-600 text-white" : "bg-white text-purple-600"}`, children: "Match all" })
+            /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "flex items-center justify-between mb-1", children: [
+                /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { className: "text-xs font-bold text-base-content/50 uppercase tracking-wide", children: "Day of Week" }),
+                selectedDays.length > 1 && /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "flex rounded overflow-hidden border border-purple-200 text-xs", children: [
+                  /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("button", { onClick: () => setDaysMatchAll(false), className: `px-2 py-0.5 ${!daysMatchAll ? "bg-purple-600 text-white" : "bg-white text-purple-600"}`, children: "Match any" }),
+                  /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("button", { onClick: () => setDaysMatchAll(true), className: `px-2 py-0.5 ${daysMatchAll ? "bg-purple-600 text-white" : "bg-white text-purple-600"}`, children: "Match all" })
                 ] })
               ] }),
-              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
+              /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
                 MultiSelectDropdown,
                 {
                   label: "",
@@ -9707,56 +9839,56 @@
               )
             ] })
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "flex flex-wrap gap-4 items-center", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("label", { className: "cursor-pointer flex items-center gap-2", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("input", { type: "checkbox", className: "checkbox checkbox-sm checkbox-primary", checked: hasAvailability, onChange: (e) => setHasAvailability(e.target.checked) }),
-              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("span", { className: "text-sm font-medium", children: "Has current availability" })
+          /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "flex flex-wrap gap-4 items-center", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("label", { className: "cursor-pointer flex items-center gap-2", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("input", { type: "checkbox", className: "checkbox checkbox-sm checkbox-primary", checked: hasAvailability, onChange: (e) => setHasAvailability(e.target.checked) }),
+              /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { className: "text-sm font-medium", children: "Has current availability" })
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("label", { className: "cursor-pointer flex items-center gap-2", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("input", { type: "checkbox", className: "checkbox checkbox-sm checkbox-accent", checked: afterHours, onChange: (e) => setAfterHours(e.target.checked) }),
-              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("span", { className: "text-sm font-medium", children: "After hours" })
+            /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("label", { className: "cursor-pointer flex items-center gap-2", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("input", { type: "checkbox", className: "checkbox checkbox-sm checkbox-accent", checked: afterHours, onChange: (e) => setAfterHours(e.target.checked) }),
+              /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { className: "text-sm font-medium", children: "After hours" })
             ] }),
-            hasFilters && /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("button", { onClick: clearFilters, className: "btn btn-ghost btn-xs ml-auto", children: "Clear filters" })
+            hasFilters && /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("button", { onClick: clearFilters, className: "btn btn-ghost btn-xs ml-auto", children: "Clear filters" })
           ] })
         ] }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "flex items-center justify-between mb-4", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("h2", { className: "font-bold text-lg", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "flex items-center justify-between mb-4", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("h2", { className: "font-bold text-lg", children: [
             results.length,
             " Practitioner",
             results.length !== 1 ? "s" : "",
             hasFilters ? " matched" : ""
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "flex items-center gap-2", children: [
-            keyword && /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("div", { className: "text-sm text-base-content/60", children: "Sorted by relevance" }),
-            selectedNames.length > 0 && /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "flex items-center gap-2", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("span", { className: "text-sm text-base-content/60", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "flex items-center gap-2", children: [
+            keyword && /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: "text-sm text-base-content/60", children: "Sorted by relevance" }),
+            selectedNames.length > 0 && /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "flex items-center gap-2", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("span", { className: "text-sm text-base-content/60", children: [
                 selectedNames.length,
                 " selected"
               ] }),
-              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("button", { onClick: () => setSelectedNames([]), className: "btn btn-ghost btn-xs", children: "Clear" })
+              /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("button", { onClick: () => setSelectedNames([]), className: "btn btn-ghost btn-xs", children: "Clear" })
             ] })
           ] })
         ] }),
-        gateComplete && gateClientType === "Individual" && !isKristaIntakePaused(KRISTA_NAME) && /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "rounded-lg border p-3 mb-4 text-sm", style: { borderColor: "#CDA8BA" }, children: [
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("div", { className: "font-semibold", children: "Krista \u2014 staff referral checks" }),
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("label", { className: "flex gap-2 mt-2", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("input", { type: "checkbox", checked: cannotUseKristaSlots, onChange: (e) => {
+        gateComplete && gateClientType === "Individual" && !isKristaIntakePaused(KRISTA_NAME) && /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "rounded-lg border p-3 mb-4 text-sm", style: { borderColor: "#CDA8BA" }, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: "font-semibold", children: "Krista \u2014 staff referral checks" }),
+          /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("label", { className: "flex gap-2 mt-2", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("input", { type: "checkbox", checked: cannotUseKristaSlots, onChange: (e) => {
               setCannotUseKristaSlots(e.target.checked);
               setSelectedNames((n) => n.filter((x) => x !== KRISTA_NAME));
             } }),
             "Client cannot attend Krista\u2019s confirmed fortnightly Monday 8:30am\u201310am or 12pm\u20131:30pm slots (from 19 October 2026)."
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("label", { className: "flex gap-2 mt-2", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("input", { type: "checkbox", checked: nonComplexEmdrConfirmed, onChange: (e) => setNonComplexEmdrConfirmed(e.target.checked) }),
+          /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("label", { className: "flex gap-2 mt-2", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("input", { type: "checkbox", checked: nonComplexEmdrConfirmed, onChange: (e) => setNonComplexEmdrConfirmed(e.target.checked) }),
             "For Krista EMDR referrals: staff have confirmed the presentation is non-complex. Generic trauma/PTSD is not sufficient."
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("p", { className: "text-xs mt-2", children: "Select an IFS modality, non-complex EMDR, or difficult psychedelic experience / bad-trip integration presentation for contact-only matching. Psychedelic-assisted therapy is not offered here." })
+          /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("p", { className: "text-xs mt-2", children: "Select an IFS modality, non-complex EMDR, or difficult psychedelic experience / bad-trip integration presentation for contact-only matching. Psychedelic-assisted therapy is not offered here." })
         ] }),
-        !gateComplete ? /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("div", { className: "card bg-white shadow-sm border", style: { borderColor: "#CDA8BA" }, children: /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("div", { className: "card-body text-center py-12", children: /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("p", { className: "text-base font-medium", style: { color: "#2C244C" }, children: "Complete the required questions above to see matching practitioners" }) }) }) : results.length === 0 ? /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("div", { className: "card bg-white shadow-sm border", style: { borderColor: "#CDA8BA" }, children: /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "card-body text-center py-12", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("p", { className: "text-lg", style: { color: "#36454F" }, children: "No practitioners match your search" }),
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("p", { className: "text-sm", style: { color: "#CDA8BA" }, children: "Try removing some filters" }),
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("button", { onClick: clearFilters, className: "btn btn-sm mt-4 mx-auto text-white", style: { backgroundColor: "#2C244C" }, children: "Clear Filters" })
-        ] }) }) : /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("div", { children: results.map((item, idx) => /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("div", { children: /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
+        !gateComplete ? /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: "card bg-white shadow-sm border", style: { borderColor: "#CDA8BA" }, children: /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: "card-body text-center py-12", children: /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("p", { className: "text-base font-medium", style: { color: "#2C244C" }, children: "Complete the required questions above to see matching practitioners" }) }) }) : results.length === 0 ? /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: "card bg-white shadow-sm border", style: { borderColor: "#CDA8BA" }, children: /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "card-body text-center py-12", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("p", { className: "text-lg", style: { color: "#36454F" }, children: "No practitioners match your search" }),
+          /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("p", { className: "text-sm", style: { color: "#CDA8BA" }, children: "Try removing some filters" }),
+          /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("button", { onClick: clearFilters, className: "btn btn-sm mt-4 mx-auto text-white", style: { backgroundColor: "#2C244C" }, children: "Clear Filters" })
+        ] }) }) : /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { children: results.map((item, idx) => /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { children: /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
           PractitionerCard,
           {
             p: item.p,
@@ -9774,31 +9906,31 @@
             }
           }
         ) }, idx)) }),
-        potentialKrista && /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("section", { className: "rounded-lg border p-4 mt-4", style: { borderColor: "#8D5273", backgroundColor: "#fdf8fb" }, "aria-label": "Potential match \u2014 contact Krista", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("h3", { className: "font-bold", children: "Potential match \u2014 contact Krista" }),
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("div", { className: "text-xs font-bold mt-1", children: "STAFF ONLY \u2014 NOT BOOKABLE / NOT FOR CLIENT EMAIL" }),
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("p", { className: "text-sm mt-2", children: [
+        potentialKrista && /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("section", { className: "rounded-lg border p-4 mt-4", style: { borderColor: "#8D5273", backgroundColor: "#fdf8fb" }, "aria-label": "Potential match \u2014 contact Krista", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("h3", { className: "font-bold", children: "Potential match \u2014 contact Krista" }),
+          /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: "text-xs font-bold mt-1", children: "STAFF ONLY \u2014 NOT BOOKABLE / NOT FOR CLIENT EMAIL" }),
+          /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("p", { className: "text-sm mt-2", children: [
             potentialKrista.name,
             " may clinically fit. Contact Krista to discuss an individual referral and confirm a suitable time. No appointment outside the two fixed slots is confirmed. Tuesdays are telehealth only; extra Monday afternoon appointments require Anna\u2019s room approval."
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("p", { className: "text-sm mt-2", children: "IFS; non-complex EMDR only (new to EMDR); difficult psychedelic experience integration; interest in long-term work. Do not offer psychedelic-assisted therapy." })
+          /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("p", { className: "text-sm mt-2", children: "IFS; non-complex EMDR only (new to EMDR); difficult psychedelic experience integration; interest in long-term work. Do not offer psychedelic-assisted therapy." })
         ] }),
-        selectedPractitioners.length > 0 && /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("div", { className: "fixed bottom-0 left-0 right-0 z-50 p-4 bg-white shadow-lg", style: { borderTop: "2px solid #CDA8BA" }, children: /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "max-w-4xl mx-auto flex items-center justify-between gap-4", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "flex items-center gap-2", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(SquareCheckBig, { size: 18, style: { color: "#8D5273" } }),
-            /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("span", { className: "font-semibold", children: [
+        selectedPractitioners.length > 0 && /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: "fixed bottom-0 left-0 right-0 z-50 p-4 bg-white shadow-lg", style: { borderTop: "2px solid #CDA8BA" }, children: /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "max-w-4xl mx-auto flex items-center justify-between gap-4", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "flex items-center gap-2", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(SquareCheckBig, { size: 18, style: { color: "#8D5273" } }),
+            /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("span", { className: "font-semibold", children: [
               selectedPractitioners.length,
               " practitioner",
               selectedPractitioners.length !== 1 ? "s" : "",
               " selected"
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("span", { className: "text-base-content/50 text-sm hidden sm:inline", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("span", { className: "text-base-content/50 text-sm hidden sm:inline", children: [
               "\u2014 ",
               selectedPractitioners.map((p) => p.name.split(" ")[0]).join(", ")
             ] })
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "flex items-center gap-2", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
+          /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "flex items-center gap-2", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
               "button",
               {
                 onClick: () => setSelectedNames([]),
@@ -9807,21 +9939,21 @@
                 children: "\u2715 Clear All"
               }
             ),
-            /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)(
+            /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)(
               "button",
               {
                 onClick: () => setShowSendModal(true),
                 className: "btn gap-2 text-white",
                 style: { backgroundColor: "#2C244C" },
                 children: [
-                  /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(Send, { size: 16 }),
+                  /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(Send, { size: 16 }),
                   "Send to Client"
                 ]
               }
             )
           ] })
         ] }) }),
-        showSendModal && /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
+        showSendModal && /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
           SendClientModal_default,
           {
             selected: selectedPractitioners,
@@ -9837,24 +9969,24 @@
     ] });
   }
 
-  // deploy/src/Directory.tsx
-  var import_react6 = __toESM(require_react());
-  var import_jsx_runtime6 = __toESM(require_jsx_runtime());
+  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/Directory.tsx
+  var import_react7 = __toESM(require_react());
+  var import_jsx_runtime7 = __toESM(require_jsx_runtime());
   function Directory({ practitioners }) {
-    const [search, setSearch] = (0, import_react6.useState)("");
-    const [sortBy, setSortBy] = (0, import_react6.useState)("name");
-    const [selected, setSelected] = (0, import_react6.useState)(null);
-    const filtered = (0, import_react6.useMemo)(() => {
+    const [search, setSearch] = (0, import_react7.useState)("");
+    const [sortBy, setSortBy] = (0, import_react7.useState)("name");
+    const [selected, setSelected] = (0, import_react7.useState)(null);
+    const filtered = (0, import_react7.useMemo)(() => {
       const q = search.toLowerCase();
       return practitioners.map((p) => suppressKristaIntake(p)).filter((p) => !p.referral_only).filter((p) => !q || p.name.toLowerCase().includes(q) || (p.title || "").toLowerCase().includes(q) || (p.therapist_type || "").toLowerCase().includes(q)).sort((a, b) => {
         if (sortBy === "name") return a.name.localeCompare(b.name);
         return a.therapist_type.localeCompare(b.therapist_type) || a.name.localeCompare(b.name);
       });
     }, [practitioners, search, sortBy]);
-    return /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { children: [
-      selected && /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: "fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4", onClick: () => setSelected(null), children: /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto", onClick: (e) => e.stopPropagation(), children: [
-        /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { style: { background: "linear-gradient(135deg,#2C244C 0%,#8D5273 100%)", borderRadius: "16px 16px 0 0", padding: "20px 24px" }, children: /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { style: { display: "flex", alignItems: "center", gap: 16 }, children: [
-          selected.photo_url ? /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
+    return /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { children: [
+      selected && /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("div", { className: "fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4", onClick: () => setSelected(null), children: /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto", onClick: (e) => e.stopPropagation(), children: [
+        /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("div", { style: { background: "linear-gradient(135deg,#2C244C 0%,#8D5273 100%)", borderRadius: "16px 16px 0 0", padding: "20px 24px" }, children: /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { style: { display: "flex", alignItems: "center", gap: 16 }, children: [
+          selected.photo_url ? /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
             "img",
             {
               src: `./public/photos/${selected.photo_url.split("/").pop()}`,
@@ -9862,91 +9994,91 @@
               height: 72,
               style: { borderRadius: "50%", border: "3px solid rgba(255,255,255,0.35)", objectFit: "cover", width: 72, height: 72, flexShrink: 0 }
             }
-          ) : /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { style: { width: 72, height: 72, borderRadius: "50%", background: "rgba(255,255,255,0.2)", border: "3px solid rgba(255,255,255,0.35)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 28, color: "#fff", flexShrink: 0 }, children: selected.name.charAt(0) }),
-          /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { style: { flex: 1 }, children: [
-            /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("h3", { style: { fontSize: 20, fontWeight: 700, color: "#fff", margin: 0 }, children: selected.name }),
-            /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("p", { style: { fontSize: 13, color: "#e8d4e4", margin: "2px 0 0" }, children: selected.title }),
-            selected.qualifications && /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("p", { style: { fontSize: 11, color: "rgba(255,255,255,0.6)", margin: "2px 0 0", fontStyle: "italic" }, children: selected.qualifications }),
-            selected.pronouns && /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("p", { style: { fontSize: 11, color: "rgba(255,255,255,0.5)", margin: "2px 0 0" }, children: selected.pronouns })
+          ) : /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("div", { style: { width: 72, height: 72, borderRadius: "50%", background: "rgba(255,255,255,0.2)", border: "3px solid rgba(255,255,255,0.35)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 28, color: "#fff", flexShrink: 0 }, children: selected.name.charAt(0) }),
+          /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { style: { flex: 1 }, children: [
+            /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("h3", { style: { fontSize: 20, fontWeight: 700, color: "#fff", margin: 0 }, children: selected.name }),
+            /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("p", { style: { fontSize: 13, color: "#e8d4e4", margin: "2px 0 0" }, children: selected.title }),
+            selected.qualifications && /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("p", { style: { fontSize: 11, color: "rgba(255,255,255,0.6)", margin: "2px 0 0", fontStyle: "italic" }, children: selected.qualifications }),
+            selected.pronouns && /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("p", { style: { fontSize: 11, color: "rgba(255,255,255,0.5)", margin: "2px 0 0" }, children: selected.pronouns })
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("button", { onClick: () => setSelected(null), style: { color: "#fff", background: "rgba(255,255,255,0.15)", border: "none", borderRadius: "50%", width: 32, height: 32, cursor: "pointer", fontSize: 16, flexShrink: 0, lineHeight: "32px" }, children: "\u2715" })
+          /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("button", { onClick: () => setSelected(null), style: { color: "#fff", background: "rgba(255,255,255,0.15)", border: "none", borderRadius: "50%", width: 32, height: 32, cursor: "pointer", fontSize: 16, flexShrink: 0, lineHeight: "32px" }, children: "\u2715" })
         ] }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "p-6", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(PractitionerNotes, { practitioner: selected }),
-          /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "grid grid-cols-2 gap-3 mb-4 text-sm", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { className: "font-semibold", children: "Fees:" }),
-              /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: "whitespace-pre-line", children: selected.fees })
+        /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "p-6", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(PractitionerNotes, { practitioner: selected }),
+          /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "grid grid-cols-2 gap-3 mb-4 text-sm", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("span", { className: "font-semibold", children: "Fees:" }),
+              /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("div", { className: "whitespace-pre-line", children: selected.fees })
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { className: "font-semibold", children: "Medicare:" }),
-              /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: "whitespace-pre-line", children: selected.medicare_rebate })
+            /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("span", { className: "font-semibold", children: "Medicare:" }),
+              /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("div", { className: "whitespace-pre-line", children: selected.medicare_rebate })
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { className: "font-semibold", children: "Gender:" }),
+            /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("span", { className: "font-semibold", children: "Gender:" }),
               " ",
               selected.gender || "\u2014"
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { className: "font-semibold", children: "Ages:" }),
+            /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("span", { className: "font-semibold", children: "Ages:" }),
               " ",
               selected.age_range || "\u2014"
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { className: "font-semibold", children: "Clients:" }),
+            /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("span", { className: "font-semibold", children: "Clients:" }),
               " ",
               selected.client_types || "\u2014"
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { className: "font-semibold", children: "Languages:" }),
+            /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("span", { className: "font-semibold", children: "Languages:" }),
               " ",
               selected.languages || "English"
             ] }),
-            selected.billing_types && /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "col-span-2", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { className: "font-semibold", children: "Billing:" }),
+            selected.billing_types && /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "col-span-2", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("span", { className: "font-semibold", children: "Billing:" }),
               " ",
               selected.billing_types
             ] }),
-            selected.after_hours && /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "col-span-2", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { className: "font-semibold", children: "After hours:" }),
+            selected.after_hours && /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "col-span-2", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("span", { className: "font-semibold", children: "After hours:" }),
               " ",
               selected.after_hours
             ] }),
-            selected.religions_groups && /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "col-span-2", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { className: "font-semibold", children: "Cultural/Religious:" }),
+            selected.religions_groups && /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "col-span-2", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("span", { className: "font-semibold", children: "Cultural/Religious:" }),
               " ",
               selected.religions_groups
             ] })
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "space-y-3", children: [
-            selected.presentations && /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: "text-xs font-bold text-base-content/50 uppercase tracking-wide mb-1", children: "Presentations" }),
-              /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: "text-sm", children: selected.presentations })
+          /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "space-y-3", children: [
+            selected.presentations && /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("div", { className: "text-xs font-bold text-base-content/50 uppercase tracking-wide mb-1", children: "Presentations" }),
+              /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("div", { className: "text-sm", children: selected.presentations })
             ] }),
-            selected.modalities && /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: "text-xs font-bold text-base-content/50 uppercase tracking-wide mb-1", children: "Modalities" }),
-              /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: "text-sm", children: selected.modalities })
+            selected.modalities && /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("div", { className: "text-xs font-bold text-base-content/50 uppercase tracking-wide mb-1", children: "Modalities" }),
+              /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("div", { className: "text-sm", children: selected.modalities })
             ] }),
-            !isKristaIntakePaused(selected.name) && /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: "text-xs font-bold text-base-content/50 uppercase tracking-wide mb-1", children: "Availability" }),
-              (selected.locations || []).map((loc, i) => /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "mb-2", children: [
-                /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "text-xs font-semibold text-base-content/60", children: [
+            !isKristaIntakePaused(selected.name) && /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("div", { className: "text-xs font-bold text-base-content/50 uppercase tracking-wide mb-1", children: "Availability" }),
+              (selected.locations || []).map((loc, i) => /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "mb-2", children: [
+                /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "text-xs font-semibold text-base-content/60", children: [
                   "\u{1F4CD} ",
                   loc.location
                 ] }),
-                loc.availability ? /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: "text-sm whitespace-pre-line", style: { color: "#366188" }, children: Array.isArray(loc.availability) ? loc.availability.join("\n") : loc.availability }) : /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: "text-sm text-base-content/40 italic", children: "None listed" })
+                loc.availability ? /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("div", { className: "text-sm whitespace-pre-line", style: { color: "#366188" }, children: Array.isArray(loc.availability) ? loc.availability.join("\n") : loc.availability }) : /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("div", { className: "text-sm text-base-content/40 italic", children: "None listed" })
               ] }, i))
             ] })
           ] }),
-          selected.bio && /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "mt-4", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: "text-xs font-bold text-base-content/50 uppercase tracking-wide mb-2", children: "About" }),
-            /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: "text-sm text-base-content/80 whitespace-pre-line leading-relaxed", children: selected.bio })
+          selected.bio && /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "mt-4", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("div", { className: "text-xs font-bold text-base-content/50 uppercase tracking-wide mb-2", children: "About" }),
+            /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("div", { className: "text-sm text-base-content/80 whitespace-pre-line leading-relaxed", children: selected.bio })
           ] }),
-          selected.link_to_bio && /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: "mt-4", children: /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("a", { href: selected.link_to_bio, target: "_blank", rel: "noopener noreferrer", className: "btn btn-primary btn-sm", children: "View Full Bio \u2197" }) })
+          selected.link_to_bio && /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("div", { className: "mt-4", children: /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("a", { href: selected.link_to_bio, target: "_blank", rel: "noopener noreferrer", className: "btn btn-primary btn-sm", children: "View Full Bio \u2197" }) })
         ] })
       ] }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "mb-4 flex gap-3 items-center", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
+      /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "mb-4 flex gap-3 items-center", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
           "input",
           {
             type: "text",
@@ -9956,30 +10088,30 @@
             onChange: (e) => setSearch(e.target.value)
           }
         ),
-        /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("select", { className: "select select-bordered select-sm", value: sortBy, onChange: (e) => setSortBy(e.target.value), children: [
-          /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("option", { value: "name", children: "Sort by name" }),
-          /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("option", { value: "type", children: "Sort by type" })
+        /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("select", { className: "select select-bordered select-sm", value: sortBy, onChange: (e) => setSortBy(e.target.value), children: [
+          /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("option", { value: "name", children: "Sort by name" }),
+          /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("option", { value: "type", children: "Sort by type" })
         ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "text-sm text-base-content/60 whitespace-nowrap", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "text-sm text-base-content/60 whitespace-nowrap", children: [
           filtered.length,
           " practitioners"
         ] })
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3", children: filtered.map((p) => {
+      /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("div", { className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3", children: filtered.map((p) => {
         const hasAvail = (p.locations || []).some((l) => {
           if (!l.availability) return false;
           if (Array.isArray(l.availability)) return l.availability.length > 0;
           return l.availability.trim().length > 0;
         });
-        return /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
+        return /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
           "div",
           {
             className: "card bg-white shadow-sm cursor-pointer hover:shadow-md transition-all",
             style: { border: "1px solid #CDA8BA" },
             onClick: () => setSelected(p),
-            children: /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "card-body p-0 overflow-hidden", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { style: { background: "linear-gradient(135deg,#2C244C 0%,#8D5273 100%)", padding: "12px 14px", display: "flex", alignItems: "center", gap: 10 }, children: [
-                p.photo_url ? /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
+            children: /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "card-body p-0 overflow-hidden", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { style: { background: "linear-gradient(135deg,#2C244C 0%,#8D5273 100%)", padding: "12px 14px", display: "flex", alignItems: "center", gap: 10 }, children: [
+                p.photo_url ? /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
                   "img",
                   {
                     src: `./public/photos/${p.photo_url.split("/").pop()}`,
@@ -9987,30 +10119,30 @@
                     height: 48,
                     style: { borderRadius: "50%", border: "2px solid rgba(255,255,255,0.4)", objectFit: "cover", width: 48, height: 48, flexShrink: 0 }
                   }
-                ) : /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { style: { width: 48, height: 48, borderRadius: "50%", background: "rgba(255,255,255,0.2)", border: "2px solid rgba(255,255,255,0.4)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 20, color: "#fff", flexShrink: 0 }, children: p.name.charAt(0) }),
-                /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { style: { flex: 1, minWidth: 0 }, children: [
-                  /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { style: { fontWeight: 700, color: "#fff", fontSize: 14, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }, children: p.name }),
-                  /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { style: { fontSize: 11, color: "#e8d4e4" }, children: p.title })
+                ) : /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("div", { style: { width: 48, height: 48, borderRadius: "50%", background: "rgba(255,255,255,0.2)", border: "2px solid rgba(255,255,255,0.4)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 20, color: "#fff", flexShrink: 0 }, children: p.name.charAt(0) }),
+                /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { style: { flex: 1, minWidth: 0 }, children: [
+                  /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("div", { style: { fontWeight: 700, color: "#fff", fontSize: 14, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }, children: p.name }),
+                  /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("div", { style: { fontSize: 11, color: "#e8d4e4" }, children: p.title })
                 ] }),
-                /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "flex flex-col gap-1 items-end", children: [
-                  !isKristaIntakePaused(p.name) && /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { className: `badge badge-sm ${hasAvail ? "badge-success" : "badge-ghost"}`, children: hasAvail ? "Available" : "Waitlist" }),
-                  p.accepts_couples && /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { className: "badge badge-info badge-xs", children: "Couples" }),
-                  p.alert && /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { style: { backgroundColor: "#00B8C8", color: "white", borderRadius: "999px", padding: "1px 8px", fontSize: "11px", fontWeight: 700, marginLeft: "4px" }, children: "\u{1F6A8} Note" })
+                /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "flex flex-col gap-1 items-end", children: [
+                  !isKristaIntakePaused(p.name) && /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("span", { className: `badge badge-sm ${hasAvail ? "badge-success" : "badge-ghost"}`, children: hasAvail ? "Available" : "Waitlist" }),
+                  p.accepts_couples && /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("span", { className: "badge badge-info badge-xs", children: "Couples" }),
+                  p.alert && /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("span", { style: { backgroundColor: "#00B8C8", color: "white", borderRadius: "999px", padding: "1px 8px", fontSize: "11px", fontWeight: 700, marginLeft: "4px" }, children: "\u{1F6A8} Note" })
                 ] })
               ] }),
-              /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { style: { padding: "10px 14px 12px" }, children: [
-                /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "flex gap-1 flex-wrap mb-1", children: [
-                  /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { className: "badge badge-outline badge-xs", children: p.gender || "\u2014" }),
-                  /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { className: "badge badge-outline badge-xs", children: p.age_range }),
-                  p.pap_clinician === "Yes" && /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { className: "badge badge-secondary badge-xs", children: "PAP" }),
-                  p.after_hours && /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { className: "badge badge-accent badge-xs", children: "AH" })
+              /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { style: { padding: "10px 14px 12px" }, children: [
+                /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "flex gap-1 flex-wrap mb-1", children: [
+                  /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("span", { className: "badge badge-outline badge-xs", children: p.gender || "\u2014" }),
+                  /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("span", { className: "badge badge-outline badge-xs", children: p.age_range }),
+                  p.pap_clinician === "Yes" && /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("span", { className: "badge badge-secondary badge-xs", children: "PAP" }),
+                  p.after_hours && /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("span", { className: "badge badge-accent badge-xs", children: "AH" })
                 ] }),
-                /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "flex gap-1 flex-wrap", children: [
-                  (p.locations || []).slice(0, 2).map((l, i) => /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("span", { className: "text-xs text-base-content/50 truncate", children: [
+                /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "flex gap-1 flex-wrap", children: [
+                  (p.locations || []).slice(0, 2).map((l, i) => /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("span", { className: "text-xs text-base-content/50 truncate", children: [
                     "\u{1F4CD} ",
                     l.location
                   ] }, i)),
-                  (p.locations || []).length > 2 && /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("span", { className: "text-xs text-base-content/40", children: [
+                  (p.locations || []).length > 2 && /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("span", { className: "text-xs text-base-content/40", children: [
                     "+",
                     (p.locations || []).length - 2
                   ] })
@@ -10024,9 +10156,9 @@
     ] });
   }
 
-  // deploy/src/AvailabilitySnapshot.tsx
-  var import_react7 = __toESM(require_react());
-  var import_jsx_runtime7 = __toESM(require_jsx_runtime());
+  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/AvailabilitySnapshot.tsx
+  var import_react8 = __toESM(require_react());
+  var import_jsx_runtime8 = __toESM(require_jsx_runtime());
   function getAvailabilityLines(text, type) {
     if (!text) return [];
     const lines = Array.isArray(text) ? text : text.split("\n");
@@ -10046,9 +10178,9 @@
     return { time, type, date };
   }
   var AvailabilitySnapshot = ({ practitioners }) => {
-    const [filter, setFilter] = (0, import_react7.useState)("all");
-    const [search, setSearch] = (0, import_react7.useState)("");
-    const visible = (0, import_react7.useMemo)(() => {
+    const [filter, setFilter] = (0, import_react8.useState)("all");
+    const [search, setSearch] = (0, import_react8.useState)("");
+    const visible = (0, import_react8.useMemo)(() => {
       const q = search.toLowerCase();
       return [...practitioners].sort((a, b) => a.name.localeCompare(b.name)).map((prac) => {
         const locs = prac.locations.map((loc) => ({
@@ -10069,9 +10201,9 @@
       { key: "weekly", label: "Weekly" },
       { key: "fortnightly", label: "Fortnightly" }
     ];
-    return /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { children: [
-      /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "flex flex-wrap items-center gap-3 mb-5", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("label", { className: "input input-bordered flex items-center gap-2 flex-1 min-w-48", children: /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
+    return /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { className: "flex flex-wrap items-center gap-3 mb-5", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("label", { className: "input input-bordered flex items-center gap-2 flex-1 min-w-48", children: /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(
           "input",
           {
             type: "search",
@@ -10081,7 +10213,7 @@
             onChange: (e) => setSearch(e.target.value)
           }
         ) }),
-        /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("div", { className: "join", children: FILTERS.map((f) => /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
+        /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("div", { className: "join", children: FILTERS.map((f) => /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(
           "button",
           {
             className: "join-item btn btn-sm",
@@ -10091,24 +10223,24 @@
           },
           f.key
         )) }),
-        /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("span", { className: "text-base-content/50 text-sm whitespace-nowrap", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("span", { className: "text-base-content/50 text-sm whitespace-nowrap", children: [
           visible.length,
           " practitioner",
           visible.length !== 1 ? "s" : ""
         ] })
       ] }),
-      visible.length === 0 ? /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("div", { className: "text-center text-base-content/40 py-16 text-sm", children: "No availability found matching your filters." }) : /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("div", { className: "grid grid-cols-2 gap-3", children: visible.map(({ prac, locs }) => /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("div", { className: "card bg-white shadow-sm", style: { border: "1px solid #CDA8BA" }, children: /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "card-body p-4 gap-2", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("h3", { className: "font-bold text-base text-base-content", children: prac.name }),
-        locs.map((loc) => /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "mt-1", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "text-xs font-semibold text-base-content/50 uppercase tracking-wide mb-1", children: [
+      visible.length === 0 ? /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("div", { className: "text-center text-base-content/40 py-16 text-sm", children: "No availability found matching your filters." }) : /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("div", { className: "grid grid-cols-2 gap-3", children: visible.map(({ prac, locs }) => /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("div", { className: "card bg-white shadow-sm", style: { border: "1px solid #CDA8BA" }, children: /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { className: "card-body p-4 gap-2", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("h3", { className: "font-bold text-base text-base-content", children: prac.name }),
+        locs.map((loc) => /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { className: "mt-1", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { className: "text-xs font-semibold text-base-content/50 uppercase tracking-wide mb-1", children: [
             "\u{1F4CD} ",
             loc.location
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("ul", { className: "space-y-1", children: loc.lines.map((line, i) => {
+          /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("ul", { className: "space-y-1", children: loc.lines.map((line, i) => {
             const { time, type, date } = formatLine(line);
-            return /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("li", { className: "text-sm text-base-content flex items-baseline gap-2", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("span", { children: time }),
-              type && /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("span", { className: "text-xs font-semibold px-1.5 py-0.5 rounded", style: { backgroundColor: type.toLowerCase() === "weekly" ? "rgba(54,97,136,0.12)" : "rgba(82,163,186,0.12)", color: type.toLowerCase() === "weekly" ? "#366188" : "#52A3BA" }, children: [
+            return /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("li", { className: "text-sm text-base-content flex items-baseline gap-2", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("span", { children: time }),
+              type && /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("span", { className: "text-xs font-semibold px-1.5 py-0.5 rounded", style: { backgroundColor: type.toLowerCase() === "weekly" ? "rgba(54,97,136,0.12)" : "rgba(82,163,186,0.12)", color: type.toLowerCase() === "weekly" ? "#366188" : "#52A3BA" }, children: [
                 type,
                 date ? ` \xB7 from ${date}` : ""
               ] })
@@ -10120,10 +10252,10 @@
   };
   var AvailabilitySnapshot_default = AvailabilitySnapshot;
 
-  // deploy/src/components/IntakeTab.tsx
-  var import_react8 = __toESM(require_react());
+  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/components/IntakeTab.tsx
+  var import_react9 = __toESM(require_react());
 
-  // deploy/src/practitionersData.ts
+  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/practitionersData.ts
   var PRACTITIONERS_DATA = [
     {
       "id": 1,
@@ -14424,8 +14556,8 @@
   ];
   var AVAILABILITY_LAST_UPDATED = "4 Nov 2026 1:02pm";
 
-  // deploy/src/components/IntakeTab.tsx
-  var import_jsx_runtime8 = __toESM(require_jsx_runtime());
+  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/components/IntakeTab.tsx
+  var import_jsx_runtime9 = __toESM(require_jsx_runtime());
   var COLORS = {
     darkPurple: "#2C244C",
     mauve: "#8D5273",
@@ -14446,15 +14578,15 @@
     return "#f8e8ef";
   };
   function IntakeTab() {
-    const [text, setText] = (0, import_react8.useState)("");
-    const [intakeType, setIntakeType] = (0, import_react8.useState)("notes");
-    const [loading, setLoading] = (0, import_react8.useState)(false);
-    const [result, setResult] = (0, import_react8.useState)(null);
-    const [error, setError] = (0, import_react8.useState)("");
-    const [copied, setCopied] = (0, import_react8.useState)(false);
-    const [extracting, setExtracting] = (0, import_react8.useState)(false);
-    const [fileError, setFileError] = (0, import_react8.useState)("");
-    const fileInputRef = (0, import_react8.useRef)(null);
+    const [text, setText] = (0, import_react9.useState)("");
+    const [intakeType, setIntakeType] = (0, import_react9.useState)("notes");
+    const [loading, setLoading] = (0, import_react9.useState)(false);
+    const [result, setResult] = (0, import_react9.useState)(null);
+    const [error, setError] = (0, import_react9.useState)("");
+    const [copied, setCopied] = (0, import_react9.useState)(false);
+    const [extracting, setExtracting] = (0, import_react9.useState)(false);
+    const [fileError, setFileError] = (0, import_react9.useState)("");
+    const fileInputRef = (0, import_react9.useRef)(null);
     const handleFileUpload = async (file) => {
       if (!file) return;
       setFileError("");
@@ -14569,17 +14701,17 @@
         setTimeout(() => setCopied(false), 2500);
       }
     };
-    return /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { style: { maxWidth: 800, margin: "0 auto", padding: "24px 16px" }, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { style: { display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 4 }, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("h2", { style: { color: COLORS.darkPurple, margin: 0 }, children: "\u{1F4DD} Intake & Practitioner Matching" }),
-        /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("span", { style: { fontSize: 12, color: "#6b5b8a", background: "#f0eef7", padding: "4px 10px", borderRadius: 20, whiteSpace: "nowrap" }, children: [
+    return /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { style: { maxWidth: 800, margin: "0 auto", padding: "24px 16px" }, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { style: { display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 4 }, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("h2", { style: { color: COLORS.darkPurple, margin: 0 }, children: "\u{1F4DD} Intake & Practitioner Matching" }),
+        /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("span", { style: { fontSize: 12, color: "#6b5b8a", background: "#f0eef7", padding: "4px 10px", borderRadius: 20, whiteSpace: "nowrap" }, children: [
           "\u{1F4C5} Availability updated ",
           AVAILABILITY_LAST_UPDATED
         ] })
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("p", { style: { color: "#666", marginBottom: 24, fontSize: 14 }, children: "Paste intake notes, a form response, or a call transcript. Get an instant summary and practitioner match suggestions." }),
-      /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { style: { display: "flex", gap: 8, marginBottom: 12, flexWrap: "wrap", alignItems: "center" }, children: [
-        ["form", "transcript", "notes"].map((t) => /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(
+      /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("p", { style: { color: "#666", marginBottom: 24, fontSize: 14 }, children: "Paste intake notes, a form response, or a call transcript. Get an instant summary and practitioner match suggestions." }),
+      /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { style: { display: "flex", gap: 8, marginBottom: 12, flexWrap: "wrap", alignItems: "center" }, children: [
+        ["form", "transcript", "notes"].map((t) => /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(
           "button",
           {
             onClick: () => setIntakeType(t),
@@ -14598,7 +14730,7 @@
           },
           t
         )),
-        /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(
+        /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(
           "input",
           {
             ref: fileInputRef,
@@ -14611,7 +14743,7 @@
             }
           }
         ),
-        /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(
+        /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(
           "button",
           {
             onClick: () => fileInputRef.current?.click(),
@@ -14631,11 +14763,11 @@
           }
         )
       ] }),
-      fileError && /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { style: { marginBottom: 8, fontSize: 12, color: "#c00", fontStyle: "italic" }, children: [
+      fileError && /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { style: { marginBottom: 8, fontSize: 12, color: "#c00", fontStyle: "italic" }, children: [
         "\u26A0\uFE0F ",
         fileError
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(
+      /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(
         "textarea",
         {
           value: text,
@@ -14655,7 +14787,7 @@
           }
         }
       ),
-      /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(
+      /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(
         "button",
         {
           onClick: handleSubmit,
@@ -14674,26 +14806,26 @@
           children: loading ? "\u23F3 Matching..." : "\u2728 Summarise & Match Practitioners"
         }
       ),
-      loading && /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("p", { style: { color: COLORS.mauve, marginTop: 12, fontSize: 13 }, children: "Matching against practitioner roster\u2026" }),
-      error && /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { style: { marginTop: 16, padding: 16, background: "#ffeaea", borderRadius: 8, color: "#c00", fontSize: 13 }, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("strong", { children: "\u26A0\uFE0F Matching unavailable" }),
-        /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("div", { style: { marginTop: 6, color: "#800" }, children: "Matching service error. Please try again or contact your Tasklet agent." }),
-        /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("details", { style: { marginTop: 8 }, children: [
-          /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("summary", { style: { cursor: "pointer", color: "#a00", fontSize: 12 }, children: "Technical detail" }),
-          /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("div", { style: { marginTop: 4, fontSize: 12, fontFamily: "monospace" }, children: error })
+      loading && /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("p", { style: { color: COLORS.mauve, marginTop: 12, fontSize: 13 }, children: "Matching against practitioner roster\u2026" }),
+      error && /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { style: { marginTop: 16, padding: 16, background: "#ffeaea", borderRadius: 8, color: "#c00", fontSize: 13 }, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("strong", { children: "\u26A0\uFE0F Matching unavailable" }),
+        /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("div", { style: { marginTop: 6, color: "#800" }, children: "Matching service error. Please try again or contact your Tasklet agent." }),
+        /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("details", { style: { marginTop: 8 }, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("summary", { style: { cursor: "pointer", color: "#a00", fontSize: 12 }, children: "Technical detail" }),
+          /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("div", { style: { marginTop: 4, fontSize: 12, fontFamily: "monospace" }, children: error })
         ] })
       ] }),
-      result && /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { style: { marginTop: 32 }, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { style: {
+      result && /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { style: { marginTop: 32 }, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { style: {
           background: COLORS.lightLilac,
           borderRadius: 12,
           padding: 20,
           marginBottom: 32,
           borderLeft: `4px solid ${COLORS.mauve}`
         }, children: [
-          /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { style: { display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16 }, children: [
-            /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("h3", { style: { margin: 0, color: COLORS.darkPurple, fontSize: 16 }, children: "\u{1F4CB} Intake Summary" }),
-            /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(
+          /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { style: { display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16 }, children: [
+            /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("h3", { style: { margin: 0, color: COLORS.darkPurple, fontSize: 16 }, children: "\u{1F4CB} Intake Summary" }),
+            /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(
               "button",
               {
                 onClick: handleCopy,
@@ -14711,35 +14843,35 @@
               }
             )
           ] }),
-          result.ai_display_summary ? /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(AISummaryDisplay, { text: result.ai_display_summary }) : /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(SummaryDisplay, { summary: result.summary })
+          result.ai_display_summary ? /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(AISummaryDisplay, { text: result.ai_display_summary }) : /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(SummaryDisplay, { summary: result.summary })
         ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("h3", { style: { color: COLORS.darkPurple, marginBottom: 4, fontSize: 18 }, children: "\u{1F3AF} Suggested Practitioners" }),
-        /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("p", { style: { color: "#666", fontSize: 13, marginBottom: 20 }, children: "Ranked by match strength based on presentations, client preferences, and current availability." }),
-        /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("div", { style: { display: "flex", flexDirection: "column", gap: 20 }, children: result.matches.map((match, i) => /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(MatchCard, { match, rank: i + 1 }, i)) }),
-        result.email_intro && /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(EmailIntroBox, { intro: result.email_intro, clientName: result.summary.client_name })
+        /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("h3", { style: { color: COLORS.darkPurple, marginBottom: 4, fontSize: 18 }, children: "\u{1F3AF} Suggested Practitioners" }),
+        /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("p", { style: { color: "#666", fontSize: 13, marginBottom: 20 }, children: "Ranked by match strength based on presentations, client preferences, and current availability." }),
+        /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("div", { style: { display: "flex", flexDirection: "column", gap: 20 }, children: result.matches.map((match, i) => /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(MatchCard, { match, rank: i + 1 }, i)) }),
+        result.email_intro && /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(EmailIntroBox, { intro: result.email_intro, clientName: result.summary.client_name })
       ] })
     ] });
   }
   function SummaryField({ label, value, highlight }) {
     if (!value || Array.isArray(value) && value.length === 0) return null;
-    return /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { style: { display: "flex", gap: 8, fontSize: 13, marginBottom: 4 }, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("span", { style: { color: COLORS.mauve, fontWeight: 600, minWidth: 140, flexShrink: 0 }, children: [
+    return /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { style: { display: "flex", gap: 8, fontSize: 13, marginBottom: 4 }, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("span", { style: { color: COLORS.mauve, fontWeight: 600, minWidth: 140, flexShrink: 0 }, children: [
         label,
         ":"
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("span", { style: { color: highlight ? "#c00" : "#333", fontWeight: highlight ? 600 : 400 }, children: Array.isArray(value) ? value.join(", ") : value })
+      /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("span", { style: { color: highlight ? "#c00" : "#333", fontWeight: highlight ? 600 : 400 }, children: Array.isArray(value) ? value.join(", ") : value })
     ] });
   }
   function SummarySection({ title, children }) {
-    return /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { style: { marginBottom: 14 }, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("div", { style: { fontWeight: 700, color: COLORS.darkPurple, fontSize: 12, textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 6, borderBottom: `1px solid ${COLORS.lightMauve}`, paddingBottom: 3 }, children: title }),
+    return /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { style: { marginBottom: 14 }, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("div", { style: { fontWeight: 700, color: COLORS.darkPurple, fontSize: 12, textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 6, borderBottom: `1px solid ${COLORS.lightMauve}`, paddingBottom: 3 }, children: title }),
       children
     ] });
   }
   function AISummaryDisplay({ text }) {
     const lines = text.split("\n");
-    return /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { children: [
-      /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("div", { style: { display: "flex", alignItems: "center", gap: 6, marginBottom: 12 }, children: /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("span", { style: {
+    return /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("div", { style: { display: "flex", alignItems: "center", gap: 6, marginBottom: 12 }, children: /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("span", { style: {
         background: "linear-gradient(135deg, #7c3aed, #a855f7)",
         color: "white",
         fontSize: 10,
@@ -14748,11 +14880,11 @@
         padding: "2px 8px",
         borderRadius: 10
       }, children: "\u2728 AI Summary" }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("div", { style: { fontSize: 13.5, lineHeight: 1.7, color: "#333" }, children: lines.map((line, i) => {
+      /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("div", { style: { fontSize: 13.5, lineHeight: 1.7, color: "#333" }, children: lines.map((line, i) => {
         const trimmed = line.trim();
-        if (!trimmed) return /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("div", { style: { height: 5 } }, i);
+        if (!trimmed) return /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("div", { style: { height: 5 } }, i);
         if (/^INTAKE SUMMARY/i.test(trimmed)) {
-          return /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("div", { style: {
+          return /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("div", { style: {
             fontWeight: 700,
             color: COLORS.darkPurple,
             fontSize: 15,
@@ -14763,7 +14895,7 @@
         }
         const isAllCaps = /^[A-Z][A-Z\s\/\-&,\.]+$/.test(trimmed) && trimmed.length > 4 && !/^\d/.test(trimmed);
         if (isAllCaps) {
-          return /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("div", { style: {
+          return /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("div", { style: {
             fontWeight: 700,
             color: COLORS.darkPurple,
             fontSize: 11.5,
@@ -14776,22 +14908,22 @@
         }
         const kvMatch = trimmed.match(/^([A-Za-z][A-Za-z\s]{1,40}?):\s+(.+)$/);
         if (kvMatch && !trimmed.startsWith("\u2022") && !trimmed.startsWith("-") && kvMatch[1].split(" ").length <= 5) {
-          return /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { style: { display: "flex", gap: 6, marginBottom: 4, flexWrap: "wrap" }, children: [
-            /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("span", { style: { fontWeight: 600, color: COLORS.mauve, minWidth: 190, flexShrink: 0 }, children: [
+          return /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { style: { display: "flex", gap: 6, marginBottom: 4, flexWrap: "wrap" }, children: [
+            /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("span", { style: { fontWeight: 600, color: COLORS.mauve, minWidth: 190, flexShrink: 0 }, children: [
               kvMatch[1],
               ":"
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("span", { style: { flex: 1 }, children: kvMatch[2] })
+            /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("span", { style: { flex: 1 }, children: kvMatch[2] })
           ] }, i);
         }
         if (trimmed.startsWith("\u2022") || trimmed.startsWith("- ") || trimmed.startsWith("-	")) {
           const content = trimmed.startsWith("\u2022") ? trimmed.slice(1).trim() : trimmed.slice(1).trim();
-          return /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { style: { display: "flex", gap: 7, marginBottom: 4 }, children: [
-            /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("span", { style: { color: COLORS.mauve, flexShrink: 0, marginTop: 1 }, children: "\u2022" }),
-            /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("span", { children: content })
+          return /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { style: { display: "flex", gap: 7, marginBottom: 4 }, children: [
+            /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("span", { style: { color: COLORS.mauve, flexShrink: 0, marginTop: 1 }, children: "\u2022" }),
+            /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("span", { children: content })
           ] }, i);
         }
-        return /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("div", { style: { marginBottom: 4 }, children: trimmed }, i);
+        return /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("div", { style: { marginBottom: 4 }, children: trimmed }, i);
       }) })
     ] });
   }
@@ -14804,40 +14936,40 @@
       summary.risk_other ? `Other: ${summary.risk_other}` : null
     ].filter(Boolean);
     const hasRisk = riskFields.length > 0;
-    return /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { children: [
-      /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)(SummarySection, { title: "\u{1F464} Client", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(SummaryField, { label: "Name", value: summary.client_name }),
-        /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(SummaryField, { label: "Age", value: summary.age }),
-        /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(SummaryField, { label: "Sex", value: summary.sex }),
-        /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(SummaryField, { label: "Referral source", value: summary.referral_source })
+    return /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)(SummarySection, { title: "\u{1F464} Client", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(SummaryField, { label: "Name", value: summary.client_name }),
+        /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(SummaryField, { label: "Age", value: summary.age }),
+        /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(SummaryField, { label: "Sex", value: summary.sex }),
+        /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(SummaryField, { label: "Referral source", value: summary.referral_source })
       ] }),
-      summary.presenting_issues?.length > 0 && /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(SummarySection, { title: "\u{1F3AF} Presenting Issues", children: /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("div", { style: { fontSize: 13, color: "#333" }, children: summary.presenting_issues.map((issue, i) => /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { style: { marginBottom: 2 }, children: [
+      summary.presenting_issues?.length > 0 && /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(SummarySection, { title: "\u{1F3AF} Presenting Issues", children: /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("div", { style: { fontSize: 13, color: "#333" }, children: summary.presenting_issues.map((issue, i) => /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { style: { marginBottom: 2 }, children: [
         "\u2022 ",
         issue
       ] }, i)) }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(SummarySection, { title: "\u26A0\uFE0F Risk", children: hasRisk ? /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("div", { style: { background: "#fff3cd", borderRadius: 6, padding: "8px 12px", border: "1px solid #ffc107" }, children: riskFields.map((r, i) => /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("div", { style: { fontSize: 13, color: "#856404", fontWeight: 600, marginBottom: 2 }, children: r }, i)) }) : /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("div", { style: { fontSize: 13, color: "#2e7d32" }, children: "\u2713 Nil identified" }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)(SummarySection, { title: "\u{1F9E0} Modalities & Approach", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(SummaryField, { label: "Preferred modalities", value: summary.modality_preference || "Not specified" }),
-        /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(SummaryField, { label: "Therapy style", value: summary.therapy_style }),
-        /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(SummaryField, { label: "Clinician gender pref", value: summary.gender }),
-        /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(SummaryField, { label: "Specific practitioner", value: summary.specific_practitioner })
+      /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(SummarySection, { title: "\u26A0\uFE0F Risk", children: hasRisk ? /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("div", { style: { background: "#fff3cd", borderRadius: 6, padding: "8px 12px", border: "1px solid #ffc107" }, children: riskFields.map((r, i) => /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("div", { style: { fontSize: 13, color: "#856404", fontWeight: 600, marginBottom: 2 }, children: r }, i)) }) : /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("div", { style: { fontSize: 13, color: "#2e7d32" }, children: "\u2713 Nil identified" }) }),
+      /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)(SummarySection, { title: "\u{1F9E0} Modalities & Approach", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(SummaryField, { label: "Preferred modalities", value: summary.modality_preference || "Not specified" }),
+        /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(SummaryField, { label: "Therapy style", value: summary.therapy_style }),
+        /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(SummaryField, { label: "Clinician gender pref", value: summary.gender }),
+        /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(SummaryField, { label: "Specific practitioner", value: summary.specific_practitioner })
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)(SummarySection, { title: "\u{1F3E5} Background", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(SummaryField, { label: "Diagnoses", value: summary.diagnosis }),
-        /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(SummaryField, { label: "Medication", value: summary.medication }),
-        /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(SummaryField, { label: "Previous therapy", value: summary.previous_therapy })
+      /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)(SummarySection, { title: "\u{1F3E5} Background", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(SummaryField, { label: "Diagnoses", value: summary.diagnosis }),
+        /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(SummaryField, { label: "Medication", value: summary.medication }),
+        /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(SummaryField, { label: "Previous therapy", value: summary.previous_therapy })
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)(SummarySection, { title: "\u{1F4CD} Location & Availability", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(SummaryField, { label: "Location", value: summary.location_preference }),
-        /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(SummaryField, { label: "Days/times", value: summary.timing }),
-        /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(SummaryField, { label: "Frequency", value: summary.frequency })
+      /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)(SummarySection, { title: "\u{1F4CD} Location & Availability", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(SummaryField, { label: "Location", value: summary.location_preference }),
+        /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(SummaryField, { label: "Days/times", value: summary.timing }),
+        /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(SummaryField, { label: "Frequency", value: summary.frequency })
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(SummarySection, { title: "\u{1F4B0} Funding", children: /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(SummaryField, { label: "Funding", value: summary.funding || "Not discussed", highlight: !!summary.funding?.includes("\u26A0\uFE0F") }) }),
-      summary.additional_notes && /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(SummarySection, { title: "\u{1F4DD} Notes", children: /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(SummaryField, { label: "Notes", value: summary.additional_notes }) })
+      /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(SummarySection, { title: "\u{1F4B0} Funding", children: /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(SummaryField, { label: "Funding", value: summary.funding || "Not discussed", highlight: !!summary.funding?.includes("\u26A0\uFE0F") }) }),
+      summary.additional_notes && /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(SummarySection, { title: "\u{1F4DD} Notes", children: /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(SummaryField, { label: "Notes", value: summary.additional_notes }) })
     ] });
   }
   function EmailIntroBox({ intro, clientName }) {
-    const [copied, setCopied] = import_react8.default.useState(false);
+    const [copied, setCopied] = import_react9.default.useState(false);
     const handleCopy = async () => {
       try {
         await navigator.clipboard.writeText(intro);
@@ -14855,19 +14987,19 @@
       setCopied(true);
       setTimeout(() => setCopied(false), 2500);
     };
-    return /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { style: {
+    return /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { style: {
       marginTop: 32,
       background: "#f0f7ff",
       borderRadius: 12,
       padding: 20,
       borderLeft: `4px solid ${COLORS.coolBlue}`
     }, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { style: { display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 12 }, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("h3", { style: { margin: 0, color: COLORS.darkPurple, fontSize: 16 }, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { style: { display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 12 }, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("h3", { style: { margin: 0, color: COLORS.darkPurple, fontSize: 16 }, children: [
           "\u2709\uFE0F Email Intro ",
           clientName ? `for ${clientName.split(" ")[0]}` : ""
         ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(
+        /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(
           "button",
           {
             onClick: handleCopy,
@@ -14885,8 +15017,8 @@
           }
         )
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("p", { style: { margin: 0, fontSize: 13, color: "#333", lineHeight: 1.6, fontStyle: "italic" }, children: intro }),
-      /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("p", { style: { margin: "8px 0 0", fontSize: 11, color: "#888" }, children: "Paste this as the opening paragraph of your client email, then add the practitioner details below." })
+      /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("p", { style: { margin: 0, fontSize: 13, color: "#333", lineHeight: 1.6, fontStyle: "italic" }, children: intro }),
+      /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("p", { style: { margin: "8px 0 0", fontSize: 11, color: "#888" }, children: "Paste this as the opening paragraph of your client email, then add the practitioner details below." })
     ] });
   }
   var MatchCard = ({ match, rank }) => {
@@ -14894,20 +15026,20 @@
     const localPhoto = photoFilename ? `/photos/${photoFilename}` : null;
     const rankEmoji = rank === 1 ? "\u{1F947}" : rank === 2 ? "\u{1F948}" : rank === 3 ? "\u{1F949}" : `${rank}.`;
     const hasAvailability = match.locations?.some((l) => l.availability?.trim());
-    return /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { style: {
+    return /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { style: {
       borderRadius: 12,
       border: `1px solid ${COLORS.lightMauve}`,
       overflow: "hidden",
       boxShadow: "0 2px 8px rgba(44,36,76,0.08)"
     }, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { style: {
+      /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { style: {
         background: `linear-gradient(135deg, ${COLORS.darkPurple}, ${COLORS.mauve})`,
         padding: "16px 20px",
         display: "flex",
         alignItems: "center",
         gap: 16
       }, children: [
-        localPhoto && /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(
+        localPhoto && /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(
           "img",
           {
             src: localPhoto,
@@ -14925,11 +15057,11 @@
             }
           }
         ),
-        /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { style: { flex: 1 }, children: [
-          /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { style: { display: "flex", alignItems: "center", gap: 10 }, children: [
-            /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("span", { style: { fontSize: 18 }, children: rankEmoji }),
-            /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("span", { style: { color: "white", fontWeight: 700, fontSize: 17 }, children: match.name }),
-            /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("span", { style: {
+        /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { style: { flex: 1 }, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { style: { display: "flex", alignItems: "center", gap: 10 }, children: [
+            /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("span", { style: { fontSize: 18 }, children: rankEmoji }),
+            /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("span", { style: { color: "white", fontWeight: 700, fontSize: 17 }, children: match.name }),
+            /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("span", { style: {
               background: scoreBg(match.match_score),
               color: scoreColor(match.match_score),
               fontWeight: 700,
@@ -14941,34 +15073,34 @@
               " Match"
             ] })
           ] }),
-          match.title && /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("div", { style: { color: "rgba(255,255,255,0.8)", fontSize: 13, marginTop: 2 }, children: match.title })
+          match.title && /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("div", { style: { color: "rgba(255,255,255,0.8)", fontSize: 13, marginTop: 2 }, children: match.title })
         ] })
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { style: { padding: "16px 20px", background: "white" }, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { style: { marginBottom: 14 }, children: [
-          /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("div", { style: { fontWeight: 600, color: COLORS.darkPurple, fontSize: 13, marginBottom: 6 }, children: "Why they're a good match:" }),
-          /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("ul", { style: { margin: 0, paddingLeft: 18 }, children: match.reasons.map((r, i) => /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("li", { style: { color: "#444", fontSize: 13, marginBottom: 3 }, children: r }, i)) })
+      /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { style: { padding: "16px 20px", background: "white" }, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { style: { marginBottom: 14 }, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("div", { style: { fontWeight: 600, color: COLORS.darkPurple, fontSize: 13, marginBottom: 6 }, children: "Why they're a good match:" }),
+          /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("ul", { style: { margin: 0, paddingLeft: 18 }, children: match.reasons.map((r, i) => /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("li", { style: { color: "#444", fontSize: 13, marginBottom: 3 }, children: r }, i)) })
         ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { style: {
+        /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { style: {
           background: hasAvailability ? "#f0f7ff" : "#fdf5f8",
           borderRadius: 8,
           padding: "10px 14px",
           borderLeft: `3px solid ${hasAvailability ? COLORS.coolBlue : COLORS.lightMauve}`
         }, children: [
-          /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { style: { fontWeight: 600, color: hasAvailability ? COLORS.coolBlue : COLORS.mauve, fontSize: 12, marginBottom: hasAvailability ? 4 : 0 }, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { style: { fontWeight: 600, color: hasAvailability ? COLORS.coolBlue : COLORS.mauve, fontSize: 12, marginBottom: hasAvailability ? 4 : 0 }, children: [
             "\u{1F5D3} ",
             hasAvailability ? "Current Availability" : "Availability"
           ] }),
-          hasAvailability ? match.locations?.filter((l) => l.availability?.trim()).map((loc, i) => /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { style: { marginBottom: i < (match.locations?.length || 0) - 1 ? 6 : 0 }, children: [
-            /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("div", { style: { fontWeight: 600, color: "#555", fontSize: 12 }, children: loc.location }),
-            loc.availability.split("\n").filter(Boolean).map((slot, j) => /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { style: { color: "#444", fontSize: 12, paddingLeft: 8 }, children: [
+          hasAvailability ? match.locations?.filter((l) => l.availability?.trim()).map((loc, i) => /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { style: { marginBottom: i < (match.locations?.length || 0) - 1 ? 6 : 0 }, children: [
+            /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("div", { style: { fontWeight: 600, color: "#555", fontSize: 12 }, children: loc.location }),
+            loc.availability.split("\n").filter(Boolean).map((slot, j) => /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { style: { color: "#444", fontSize: 12, paddingLeft: 8 }, children: [
               "\u2022 ",
               slot
             ] }, j))
-          ] }, i)) : /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("div", { style: { color: COLORS.mauve, fontSize: 13, fontStyle: "italic" }, children: match.availability_note || "Currently fully booked \u2014 waitlist only" })
+          ] }, i)) : /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("div", { style: { color: COLORS.mauve, fontSize: 13, fontStyle: "italic" }, children: match.availability_note || "Currently fully booked \u2014 waitlist only" })
         ] }),
-        match.billing_types && match.billing_types.length > 0 && /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { style: { marginTop: 10, fontSize: 12, color: "#666" }, children: [
-          /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("span", { style: { fontWeight: 600 }, children: "Billing: " }),
+        match.billing_types && match.billing_types.length > 0 && /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { style: { marginTop: 10, fontSize: 12, color: "#666" }, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("span", { style: { fontWeight: 600 }, children: "Billing: " }),
           Array.isArray(match.billing_types) ? match.billing_types.join(" \xB7 ") : match.billing_types
         ] })
       ] })
@@ -15059,10 +15191,10 @@
     return lines.join("\n");
   }
 
-  // deploy/src/ReferralNetwork.tsx
-  var import_react9 = __toESM(require_react());
+  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/ReferralNetwork.tsx
+  var import_react10 = __toESM(require_react());
 
-  // deploy/src/constants.ts
+  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/constants.ts
   var CANONICAL_PRESENTATIONS = [
     // Anxiety & Stress
     "Anxiety",
@@ -15306,8 +15438,8 @@
     "Trauma-Informed Care"
   ].sort();
 
-  // deploy/src/ReferralNetwork.tsx
-  var import_jsx_runtime9 = __toESM(require_jsx_runtime());
+  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/ReferralNetwork.tsx
+  var import_jsx_runtime10 = __toESM(require_jsx_runtime());
   var BRAND = {
     lilac: "#7C6B9E",
     lightLilac: "#EAE6F2",
@@ -15364,34 +15496,34 @@
     "Self Funded",
     "Third Party"
   ];
-  var SelectField = ({ label, value, onChange, options, placeholder }) => /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { style: { marginBottom: 12 }, children: [
-    /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("label", { style: labelStyle, children: label }),
-    /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("select", { value, onChange: (e) => onChange(e.target.value), style: { ...inputStyle, appearance: "auto" }, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("option", { value: "", children: placeholder || "Select\u2026" }),
-      options.map((o) => /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("option", { value: o, children: o }, o))
+  var SelectField = ({ label, value, onChange, options, placeholder }) => /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { style: { marginBottom: 12 }, children: [
+    /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("label", { style: labelStyle, children: label }),
+    /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("select", { value, onChange: (e) => onChange(e.target.value), style: { ...inputStyle, appearance: "auto" }, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("option", { value: "", children: placeholder || "Select\u2026" }),
+      options.map((o) => /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("option", { value: o, children: o }, o))
     ] })
   ] });
   var SearchableMultiSelect = ({ label, selected, onChange, options, placeholder }) => {
-    const [open, setOpen] = (0, import_react9.useState)(false);
-    const [search, setSearch] = (0, import_react9.useState)("");
-    const ref = (0, import_react9.useRef)(null);
-    (0, import_react9.useEffect)(() => {
+    const [open, setOpen] = (0, import_react10.useState)(false);
+    const [search, setSearch] = (0, import_react10.useState)("");
+    const ref = (0, import_react10.useRef)(null);
+    (0, import_react10.useEffect)(() => {
       const handler = (e) => {
         if (ref.current && !ref.current.contains(e.target)) setOpen(false);
       };
       document.addEventListener("mousedown", handler);
       return () => document.removeEventListener("mousedown", handler);
     }, []);
-    const filtered = (0, import_react9.useMemo)(
+    const filtered = (0, import_react10.useMemo)(
       () => options.filter((o) => o.toLowerCase().includes(search.toLowerCase()) && !selected.includes(o)),
       [options, search, selected]
     );
     const toggle = (o) => {
       onChange(selected.includes(o) ? selected.filter((s) => s !== o) : [...selected, o]);
     };
-    return /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { style: { marginBottom: 12 }, ref, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("label", { style: labelStyle, children: label }),
-      /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)(
+    return /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { style: { marginBottom: 12 }, ref, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("label", { style: labelStyle, children: label }),
+      /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)(
         "div",
         {
           onClick: () => setOpen((o) => !o),
@@ -15406,8 +15538,8 @@
             paddingBottom: selected.length ? 4 : 6
           },
           children: [
-            selected.length === 0 && /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("span", { style: { color: "#9ca3af", fontSize: 13 }, children: placeholder || "Select\u2026" }),
-            selected.map((s) => /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("span", { style: {
+            selected.length === 0 && /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("span", { style: { color: "#9ca3af", fontSize: 13 }, children: placeholder || "Select\u2026" }),
+            selected.map((s) => /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("span", { style: {
               background: "#ede9f7",
               color: "#7C6B9E",
               borderRadius: 20,
@@ -15419,7 +15551,7 @@
               gap: 4
             }, children: [
               s,
-              /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(
+              /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(
                 "span",
                 {
                   onMouseDown: (e) => {
@@ -15431,11 +15563,11 @@
                 }
               )
             ] }, s)),
-            /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("span", { style: { marginLeft: "auto", color: "#9ca3af", fontSize: 11 }, children: "\u25BE" })
+            /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("span", { style: { marginLeft: "auto", color: "#9ca3af", fontSize: 11 }, children: "\u25BE" })
           ]
         }
       ),
-      open && /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { style: {
+      open && /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { style: {
         position: "absolute",
         zIndex: 999,
         background: "#fff",
@@ -15449,7 +15581,7 @@
         width: "calc(100% - 2px)",
         minWidth: 260
       }, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("div", { style: { padding: "8px 10px", borderBottom: "1px solid #f3f4f6" }, children: /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(
+        /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("div", { style: { padding: "8px 10px", borderBottom: "1px solid #f3f4f6" }, children: /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(
           "input",
           {
             autoFocus: true,
@@ -15460,9 +15592,9 @@
             onMouseDown: (e) => e.stopPropagation()
           }
         ) }),
-        /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { style: { overflowY: "auto", maxHeight: 200 }, children: [
-          filtered.length === 0 && /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("div", { style: { padding: "10px 14px", fontSize: 12, color: "#9ca3af" }, children: "No options found" }),
-          filtered.map((o) => /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(
+        /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { style: { overflowY: "auto", maxHeight: 200 }, children: [
+          filtered.length === 0 && /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("div", { style: { padding: "10px 14px", fontSize: 12, color: "#9ca3af" }, children: "No options found" }),
+          filtered.map((o) => /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(
             "div",
             {
               onMouseDown: (e) => {
@@ -15490,10 +15622,10 @@
     const toggle = (o) => onChange(
       selected.includes(o) ? selected.filter((s) => s !== o) : [...selected, o]
     );
-    return /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { style: { marginBottom: 12 }, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("label", { style: labelStyle, children: label }),
-      /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("div", { style: { display: "flex", flexWrap: "wrap", gap: "6px 14px", paddingTop: 4 }, children: options.map((o) => /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("label", { style: { display: "flex", alignItems: "center", gap: 5, fontSize: 13, cursor: "pointer", fontWeight: "normal" }, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(
+    return /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { style: { marginBottom: 12 }, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("label", { style: labelStyle, children: label }),
+      /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("div", { style: { display: "flex", flexWrap: "wrap", gap: "6px 14px", paddingTop: 4 }, children: options.map((o) => /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("label", { style: { display: "flex", alignItems: "center", gap: 5, fontSize: 13, cursor: "pointer", fontWeight: "normal" }, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(
           "input",
           {
             type: "checkbox",
@@ -15508,34 +15640,34 @@
   };
   var AddReferralForm = ({ onAdd, onCancel, initialValues }) => {
     const iv = initialValues;
-    const [name, setName] = (0, import_react9.useState)(iv?.name ?? "");
-    const [title, setTitle] = (0, import_react9.useState)(iv?.title ?? "");
-    const [therapistType, setTherapistType] = (0, import_react9.useState)(iv?.therapist_type ?? "");
-    const [gender, setGender] = (0, import_react9.useState)(iv?.gender ?? "");
-    const [ageRange, setAgeRange] = (0, import_react9.useState)(iv?.age_range ?? "");
-    const [billingTypes, setBillingTypes] = (0, import_react9.useState)(
+    const [name, setName] = (0, import_react10.useState)(iv?.name ?? "");
+    const [title, setTitle] = (0, import_react10.useState)(iv?.title ?? "");
+    const [therapistType, setTherapistType] = (0, import_react10.useState)(iv?.therapist_type ?? "");
+    const [gender, setGender] = (0, import_react10.useState)(iv?.gender ?? "");
+    const [ageRange, setAgeRange] = (0, import_react10.useState)(iv?.age_range ?? "");
+    const [billingTypes, setBillingTypes] = (0, import_react10.useState)(
       iv?.billing_types ? iv.billing_types.split(",").map((s) => s.trim()).filter(Boolean) : []
     );
-    const [presentations, setPresentations] = (0, import_react9.useState)(
+    const [presentations, setPresentations] = (0, import_react10.useState)(
       Array.isArray(iv?.presentations) ? iv.presentations : []
     );
-    const [modalities, setModalities] = (0, import_react9.useState)(
+    const [modalities, setModalities] = (0, import_react10.useState)(
       Array.isArray(iv?.modalities) ? iv.modalities : []
     );
-    const [clientTypes, setClientTypes] = (0, import_react9.useState)(iv?.client_types ?? "");
-    const [shortBio, setShortBio] = (0, import_react9.useState)(iv?.short_bio ?? "");
-    const [qualifications, setQualifications] = (0, import_react9.useState)(iv?.qualifications ?? "");
-    const [languages, setLanguages] = (0, import_react9.useState)(iv?.languages ?? "");
-    const [referralClinic, setReferralClinic] = (0, import_react9.useState)(iv?.referral_clinic ?? "");
-    const [referralContact, setReferralContact] = (0, import_react9.useState)(iv?.referral_contact ?? "");
-    const [referralPhone, setReferralPhone] = (0, import_react9.useState)(iv?.referral_phone ?? "");
-    const [referralAddress, setReferralAddress] = (0, import_react9.useState)(iv?.referral_address ?? "");
-    const [referralWebsite, setReferralWebsite] = (0, import_react9.useState)(iv?.referral_website ?? "");
-    const [isFormerPC, setIsFormerPC] = (0, import_react9.useState)(iv?.former_pc ?? (!iv?.referral_source || iv?.referral_source === "former_pc"));
-    const [currentClinic, setCurrentClinic] = (0, import_react9.useState)(iv?.current_clinic ?? "");
-    const field = (label, value, onChange, placeholder, type = "input") => /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { style: { marginBottom: 12 }, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("label", { style: labelStyle, children: label }),
-      type === "textarea" ? /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(
+    const [clientTypes, setClientTypes] = (0, import_react10.useState)(iv?.client_types ?? "");
+    const [shortBio, setShortBio] = (0, import_react10.useState)(iv?.short_bio ?? "");
+    const [qualifications, setQualifications] = (0, import_react10.useState)(iv?.qualifications ?? "");
+    const [languages, setLanguages] = (0, import_react10.useState)(iv?.languages ?? "");
+    const [referralClinic, setReferralClinic] = (0, import_react10.useState)(iv?.referral_clinic ?? "");
+    const [referralContact, setReferralContact] = (0, import_react10.useState)(iv?.referral_contact ?? "");
+    const [referralPhone, setReferralPhone] = (0, import_react10.useState)(iv?.referral_phone ?? "");
+    const [referralAddress, setReferralAddress] = (0, import_react10.useState)(iv?.referral_address ?? "");
+    const [referralWebsite, setReferralWebsite] = (0, import_react10.useState)(iv?.referral_website ?? "");
+    const [isFormerPC, setIsFormerPC] = (0, import_react10.useState)(iv?.former_pc ?? (!iv?.referral_source || iv?.referral_source === "former_pc"));
+    const [currentClinic, setCurrentClinic] = (0, import_react10.useState)(iv?.current_clinic ?? "");
+    const field = (label, value, onChange, placeholder, type = "input") => /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { style: { marginBottom: 12 }, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("label", { style: labelStyle, children: label }),
+      type === "textarea" ? /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(
         "textarea",
         {
           value,
@@ -15543,7 +15675,7 @@
           placeholder,
           style: { ...inputStyle, resize: "vertical", minHeight: 60 }
         }
-      ) : /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(
+      ) : /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(
         "input",
         {
           value,
@@ -15585,22 +15717,22 @@
       };
       onAdd(newP);
     };
-    return /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { style: { background: "#fff", border: `1px solid #e5e7eb`, borderRadius: 12, padding: 20, marginBottom: 24, position: "relative" }, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("h3", { style: { margin: "0 0 16px", fontSize: 16, color: "#7C6B9E" }, children: iv ? `\u270F\uFE0F Edit \u2014 ${iv.name}` : "\u2795 Add External Referral" }),
-      /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { style: { display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0 16px" }, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("div", { children: field("Full Name *", name, setName, "e.g. Dr Jane Smith") }),
-        /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("div", { children: field("Title / Role", title, setTitle, "e.g. Clinical Psychologist") })
+    return /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { style: { background: "#fff", border: `1px solid #e5e7eb`, borderRadius: 12, padding: 20, marginBottom: 24, position: "relative" }, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("h3", { style: { margin: "0 0 16px", fontSize: 16, color: "#7C6B9E" }, children: iv ? `\u270F\uFE0F Edit \u2014 ${iv.name}` : "\u2795 Add External Referral" }),
+      /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { style: { display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0 16px" }, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("div", { children: field("Full Name *", name, setName, "e.g. Dr Jane Smith") }),
+        /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("div", { children: field("Title / Role", title, setTitle, "e.g. Clinical Psychologist") })
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { style: { display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0 16px" }, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(SelectField, { label: "Therapist Type", value: therapistType, onChange: setTherapistType, options: THERAPIST_TYPES, placeholder: "Select type\u2026" }),
-        /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(SelectField, { label: "Gender", value: gender, onChange: setGender, options: GENDER_OPTIONS, placeholder: "Select gender\u2026" })
+      /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { style: { display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0 16px" }, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(SelectField, { label: "Therapist Type", value: therapistType, onChange: setTherapistType, options: THERAPIST_TYPES, placeholder: "Select type\u2026" }),
+        /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(SelectField, { label: "Gender", value: gender, onChange: setGender, options: GENDER_OPTIONS, placeholder: "Select gender\u2026" })
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { style: { display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0 16px" }, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(SelectField, { label: "Age Range", value: ageRange, onChange: setAgeRange, options: AGE_RANGE_OPTIONS, placeholder: "Select age range\u2026" }),
-        /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("div", { children: field("Languages", languages, setLanguages, "e.g. English, Spanish") })
+      /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { style: { display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0 16px" }, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(SelectField, { label: "Age Range", value: ageRange, onChange: setAgeRange, options: AGE_RANGE_OPTIONS, placeholder: "Select age range\u2026" }),
+        /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("div", { children: field("Languages", languages, setLanguages, "e.g. English, Spanish") })
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(CheckboxGroup, { label: "Billing Types", selected: billingTypes, onChange: setBillingTypes, options: BILLING_OPTIONS2 }),
-      /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(
+      /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(CheckboxGroup, { label: "Billing Types", selected: billingTypes, onChange: setBillingTypes, options: BILLING_OPTIONS2 }),
+      /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(
         SearchableMultiSelect,
         {
           label: "Specialties / Presentations",
@@ -15610,7 +15742,7 @@
           placeholder: "Select presentations\u2026"
         }
       ),
-      /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(
+      /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(
         SearchableMultiSelect,
         {
           label: "Therapy Modalities",
@@ -15620,11 +15752,11 @@
           placeholder: "Select modalities\u2026"
         }
       ),
-      /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { style: { display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0 16px", alignItems: "start" }, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { style: { marginBottom: 12 }, children: [
-          /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("label", { style: labelStyle, children: "Former PC Practitioner?" }),
-          /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("label", { style: { display: "flex", alignItems: "center", gap: 10, cursor: "pointer", marginTop: 6 }, children: [
-            /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(
+      /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { style: { display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0 16px", alignItems: "start" }, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { style: { marginBottom: 12 }, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("label", { style: labelStyle, children: "Former PC Practitioner?" }),
+          /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("label", { style: { display: "flex", alignItems: "center", gap: 10, cursor: "pointer", marginTop: 6 }, children: [
+            /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(
               "input",
               {
                 type: "checkbox",
@@ -15633,22 +15765,22 @@
                 style: { width: 18, height: 18, accentColor: "#7C6B9E", cursor: "pointer" }
               }
             ),
-            /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("span", { style: { fontSize: 14, color: isFormerPC ? "#7C6B9E" : "#6b7280", fontWeight: isFormerPC ? 600 : 400 }, children: isFormerPC ? "Yes \u2014 former PC practitioner" : "No \u2014 external referral" })
+            /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("span", { style: { fontSize: 14, color: isFormerPC ? "#7C6B9E" : "#6b7280", fontWeight: isFormerPC ? 600 : 400 }, children: isFormerPC ? "Yes \u2014 former PC practitioner" : "No \u2014 external referral" })
           ] })
         ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("div", { children: field("Current Clinic / Practice", currentClinic, setCurrentClinic, "e.g. Melbourne Psych Group") })
+        /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("div", { children: field("Current Clinic / Practice", currentClinic, setCurrentClinic, "e.g. Melbourne Psych Group") })
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { style: { display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0 16px" }, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("div", { children: field("Email", referralContact, setReferralContact, "e.g. jane@example.com") }),
-        /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("div", { children: field("Phone", referralPhone, setReferralPhone, "e.g. (03) 9123 4567") })
+      /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { style: { display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0 16px" }, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("div", { children: field("Email", referralContact, setReferralContact, "e.g. jane@example.com") }),
+        /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("div", { children: field("Phone", referralPhone, setReferralPhone, "e.g. (03) 9123 4567") })
       ] }),
       field("Clinic Name", referralClinic, setReferralClinic, "e.g. Melbourne Psychology Group"),
       field("Address", referralAddress, setReferralAddress, "e.g. 123 Collins St, Melbourne VIC 3000"),
       field("Website / Profile URL", referralWebsite, setReferralWebsite, "e.g. https://\u2026"),
       field("Short Bio / Notes", shortBio, setShortBio, "Brief notes about this referral\u2026", "textarea"),
       field("Qualifications", qualifications, setQualifications, "e.g. MPsych(Clin), MAPS"),
-      /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { style: { display: "flex", gap: 10, marginTop: 8 }, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(
+      /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { style: { display: "flex", gap: 10, marginTop: 8 }, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(
           "button",
           {
             onClick: handleAdd,
@@ -15656,7 +15788,7 @@
             children: iv ? "Save Changes" : "Add to Network"
           }
         ),
-        /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(
+        /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(
           "button",
           {
             onClick: onCancel,
@@ -15668,8 +15800,8 @@
     ] });
   };
   var ReferralCard = ({ p, onEdit, onDelete }) => {
-    const [expanded, setExpanded] = (0, import_react9.useState)(false);
-    const [copied, setCopied] = (0, import_react9.useState)(false);
+    const [expanded, setExpanded] = (0, import_react10.useState)(false);
+    const [copied, setCopied] = (0, import_react10.useState)(false);
     const presentations = safeArr(p.presentations);
     const modalities = safeArr(p.modalities);
     const isFormerPC = !p.referral_source || p.referral_source === "former_pc";
@@ -15686,8 +15818,8 @@
         setTimeout(() => setCopied(false), 2e3);
       });
     };
-    return /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("div", { style: { background: "#fff", border: `1px solid ${BRAND.border}`, borderRadius: 12, padding: 18, marginBottom: 14, boxShadow: "0 1px 3px rgba(0,0,0,0.06)" }, children: /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { style: { display: "flex", alignItems: "flex-start", gap: 14 }, children: [
-      p.photo_url && /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(
+    return /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("div", { style: { background: "#fff", border: `1px solid ${BRAND.border}`, borderRadius: 12, padding: 18, marginBottom: 14, boxShadow: "0 1px 3px rgba(0,0,0,0.06)" }, children: /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { style: { display: "flex", alignItems: "flex-start", gap: 14 }, children: [
+      p.photo_url && /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(
         "img",
         {
           src: p.photo_url,
@@ -15698,10 +15830,10 @@
           }
         }
       ),
-      /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { style: { flex: 1, minWidth: 0 }, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { style: { display: "flex", alignItems: "center", flexWrap: "wrap", gap: 8, marginBottom: 4 }, children: [
-          /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("h3", { style: { margin: 0, fontSize: 16, fontWeight: 700, color: BRAND.text }, children: p.name }),
-          /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("span", { style: {
+      /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { style: { flex: 1, minWidth: 0 }, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { style: { display: "flex", alignItems: "center", flexWrap: "wrap", gap: 8, marginBottom: 4 }, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("h3", { style: { margin: 0, fontSize: 16, fontWeight: 700, color: BRAND.text }, children: p.name }),
+          /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("span", { style: {
             background: isFormerPC ? BRAND.lightLilac : "#e0f2f1",
             color: isFormerPC ? BRAND.lilac : BRAND.teal,
             border: `1px solid ${isFormerPC ? BRAND.lilac : BRAND.teal}`,
@@ -15712,17 +15844,17 @@
             whiteSpace: "nowrap"
           }, children: isFormerPC ? "Former PC" : "External" })
         ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("p", { style: { margin: "0 0 4px", fontSize: 13, color: BRAND.subtext }, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("p", { style: { margin: "0 0 4px", fontSize: 13, color: BRAND.subtext }, children: [
           [p.title || p.therapist_type, p.gender, p.age_range].filter(Boolean).join(" \xB7 "),
-          p.current_clinic && /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("span", { style: { marginLeft: 6, color: BRAND.teal }, children: [
+          p.current_clinic && /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("span", { style: { marginLeft: 6, color: BRAND.teal }, children: [
             "\u{1F4CD} ",
             p.current_clinic
           ] })
         ] }),
-        p.short_bio && /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("p", { style: { margin: "0 0 8px", fontSize: 13, color: BRAND.text, lineHeight: 1.5 }, children: p.short_bio }),
-        /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { style: { display: "flex", flexWrap: "wrap", gap: 6, marginBottom: 8 }, children: [
-          presentations.slice(0, expanded ? void 0 : 5).map((s, i) => /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("span", { style: { background: "#f3f4f6", color: BRAND.text, borderRadius: 20, padding: "2px 10px", fontSize: 11 }, children: s }, i)),
-          !expanded && presentations.length > 5 && /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)(
+        p.short_bio && /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("p", { style: { margin: "0 0 8px", fontSize: 13, color: BRAND.text, lineHeight: 1.5 }, children: p.short_bio }),
+        /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { style: { display: "flex", flexWrap: "wrap", gap: 6, marginBottom: 8 }, children: [
+          presentations.slice(0, expanded ? void 0 : 5).map((s, i) => /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("span", { style: { background: "#f3f4f6", color: BRAND.text, borderRadius: 20, padding: "2px 10px", fontSize: 11 }, children: s }, i)),
+          !expanded && presentations.length > 5 && /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)(
             "button",
             {
               onClick: () => setExpanded(true),
@@ -15735,40 +15867,40 @@
             }
           )
         ] }),
-        modalities.length > 0 && /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("div", { style: { display: "flex", flexWrap: "wrap", gap: 5, marginBottom: 8 }, children: modalities.map((m, i) => /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("span", { style: { background: "#ede9f7", color: BRAND.lilac, borderRadius: 20, padding: "2px 10px", fontSize: 11 }, children: m }, i)) }),
-        /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { style: { display: "flex", flexWrap: "wrap", gap: 12, fontSize: 12, color: BRAND.subtext }, children: [
-          p.billing_types && /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("span", { children: [
+        modalities.length > 0 && /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("div", { style: { display: "flex", flexWrap: "wrap", gap: 5, marginBottom: 8 }, children: modalities.map((m, i) => /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("span", { style: { background: "#ede9f7", color: BRAND.lilac, borderRadius: 20, padding: "2px 10px", fontSize: 11 }, children: m }, i)) }),
+        /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { style: { display: "flex", flexWrap: "wrap", gap: 12, fontSize: 12, color: BRAND.subtext }, children: [
+          p.billing_types && /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("span", { children: [
             "\u{1F4B3} ",
             p.billing_types
           ] }),
-          p.client_types && /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("span", { children: [
+          p.client_types && /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("span", { children: [
             "\u{1F465} ",
             p.client_types
           ] }),
-          p.languages && /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("span", { children: [
+          p.languages && /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("span", { children: [
             "\u{1F310} ",
             p.languages
           ] })
         ] }),
-        (p.referral_clinic || p.referral_address || p.referral_phone || p.referral_contact || p.referral_website || p.link_to_bio) && /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("div", { style: { marginTop: 12, background: "#f8f7fd", border: `1px solid ${BRAND.lightLilac}`, borderRadius: 10, padding: "12px 14px" }, children: /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { style: { display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 10 }, children: [
-          /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { style: { display: "flex", flexDirection: "column", gap: 6, fontSize: 13 }, children: [
-            p.referral_clinic && /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("span", { style: { color: BRAND.text }, children: [
+        (p.referral_clinic || p.referral_address || p.referral_phone || p.referral_contact || p.referral_website || p.link_to_bio) && /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("div", { style: { marginTop: 12, background: "#f8f7fd", border: `1px solid ${BRAND.lightLilac}`, borderRadius: 10, padding: "12px 14px" }, children: /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { style: { display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 10 }, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { style: { display: "flex", flexDirection: "column", gap: 6, fontSize: 13 }, children: [
+            p.referral_clinic && /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("span", { style: { color: BRAND.text }, children: [
               "\u{1F3E5} ",
-              /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("strong", { children: p.referral_clinic })
+              /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("strong", { children: p.referral_clinic })
             ] }),
-            p.referral_address && /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("span", { style: { color: BRAND.text }, children: [
+            p.referral_address && /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("span", { style: { color: BRAND.text }, children: [
               "\u{1F4CD} ",
-              /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("strong", { children: p.referral_address })
+              /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("strong", { children: p.referral_address })
             ] }),
-            p.referral_phone && /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("span", { style: { color: BRAND.text }, children: [
+            p.referral_phone && /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("span", { style: { color: BRAND.text }, children: [
               "\u{1F4DE} ",
-              /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("strong", { children: p.referral_phone })
+              /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("strong", { children: p.referral_phone })
             ] }),
-            p.referral_contact && /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("span", { style: { color: BRAND.text }, children: [
+            p.referral_contact && /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("span", { style: { color: BRAND.text }, children: [
               "\u2709\uFE0F ",
               p.referral_contact
             ] }),
-            (p.referral_website || p.link_to_bio) && /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(
+            (p.referral_website || p.link_to_bio) && /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(
               "a",
               {
                 href: p.referral_website || p.link_to_bio,
@@ -15779,7 +15911,7 @@
               }
             )
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(
+          /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(
             "button",
             {
               onClick: handleCopy,
@@ -15802,8 +15934,8 @@
           )
         ] }) })
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { style: { display: "flex", flexDirection: "column", gap: 6, flexShrink: 0 }, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(
+      /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { style: { display: "flex", flexDirection: "column", gap: 6, flexShrink: 0 }, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(
           "button",
           {
             onClick: () => onEdit(p),
@@ -15811,7 +15943,7 @@
             children: "Edit"
           }
         ),
-        /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(
+        /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(
           "button",
           {
             onClick: () => onDelete(p),
@@ -15823,9 +15955,9 @@
     ] }) });
   };
   var ReferralNetwork = ({ practitioners }) => {
-    const [search, setSearch] = (0, import_react9.useState)("");
-    const [showAddForm, setShowAddForm] = (0, import_react9.useState)(false);
-    const [editingP, setEditingP] = (0, import_react9.useState)(null);
+    const [search, setSearch] = (0, import_react10.useState)("");
+    const [showAddForm, setShowAddForm] = (0, import_react10.useState)(false);
+    const [editingP, setEditingP] = (0, import_react10.useState)(null);
     const LS_KEY = "pc_referral_overrides";
     const loadLS = () => {
       try {
@@ -15834,16 +15966,16 @@
         return { extras: [], overrides: {} };
       }
     };
-    const [lsData, setLsData] = (0, import_react9.useState)(loadLS);
+    const [lsData, setLsData] = (0, import_react10.useState)(loadLS);
     const saveLS = (next) => {
       localStorage.setItem(LS_KEY, JSON.stringify(next));
       setLsData(next);
     };
-    const referrals = (0, import_react9.useMemo)(() => {
+    const referrals = (0, import_react10.useMemo)(() => {
       const base = practitioners.filter((p) => p.referral_only === true).map((p) => lsData.overrides?.[p.id] ?? p);
       return [...base, ...lsData.extras || []].sort((a, b) => a.name.localeCompare(b.name));
     }, [practitioners, lsData]);
-    const filtered = (0, import_react9.useMemo)(() => {
+    const filtered = (0, import_react10.useMemo)(() => {
       const q = search.toLowerCase().trim();
       if (!q) return referrals;
       return referrals.filter((p) => {
@@ -15889,12 +16021,12 @@
         saveLS(next);
       }
     };
-    return /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { style: { maxWidth: 900, margin: "0 auto", padding: "24px 16px", fontFamily: "system-ui, sans-serif" }, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { style: { marginBottom: 24 }, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("h2", { style: { margin: "0 0 6px", fontSize: 22, fontWeight: 700, color: BRAND.lilac }, children: "\u{1F517} Referral Network" }),
-        /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("p", { style: { margin: "0 0 16px", fontSize: 14, color: BRAND.subtext, lineHeight: 1.6 }, children: "Practitioners no longer at Psychology Care and trusted external referrals \u2014 for when we don't have a suitable match in-house." }),
-        /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { style: { display: "flex", gap: 10, alignItems: "center", flexWrap: "wrap" }, children: [
-          /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(
+    return /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { style: { maxWidth: 900, margin: "0 auto", padding: "24px 16px", fontFamily: "system-ui, sans-serif" }, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { style: { marginBottom: 24 }, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("h2", { style: { margin: "0 0 6px", fontSize: 22, fontWeight: 700, color: BRAND.lilac }, children: "\u{1F517} Referral Network" }),
+        /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("p", { style: { margin: "0 0 16px", fontSize: 14, color: BRAND.subtext, lineHeight: 1.6 }, children: "Practitioners no longer at Psychology Care and trusted external referrals \u2014 for when we don't have a suitable match in-house." }),
+        /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { style: { display: "flex", gap: 10, alignItems: "center", flexWrap: "wrap" }, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(
             "input",
             {
               value: search,
@@ -15903,7 +16035,7 @@
               style: { flex: 1, minWidth: 220, border: `1px solid ${BRAND.border}`, borderRadius: 8, padding: "8px 14px", fontSize: 14 }
             }
           ),
-          /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(
+          /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(
             "button",
             {
               onClick: () => setShowAddForm((s) => !s),
@@ -15912,18 +16044,18 @@
             }
           )
         ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { style: { marginTop: 10, display: "flex", gap: 12, fontSize: 12, color: BRAND.subtext }, children: [
-          /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("span", { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { style: { marginTop: 10, display: "flex", gap: 12, fontSize: 12, color: BRAND.subtext }, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("span", { children: [
             "\u{1F4CB} ",
             referrals.filter((p) => !p.referral_source || p.referral_source === "former_pc").length,
             " former PC"
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("span", { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("span", { children: [
             "\u{1F310} ",
             referrals.filter((p) => p.referral_source === "external").length,
             " external"
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("span", { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("span", { children: [
             "\u{1F50D} Showing ",
             filtered.length,
             " of ",
@@ -15931,8 +16063,8 @@
           ] })
         ] })
       ] }),
-      showAddForm && /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(AddReferralForm, { onAdd: handleAdd, onCancel: () => setShowAddForm(false) }),
-      editingP && /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("div", { style: {
+      showAddForm && /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(AddReferralForm, { onAdd: handleAdd, onCancel: () => setShowAddForm(false) }),
+      editingP && /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("div", { style: {
         position: "fixed",
         inset: 0,
         background: "rgba(0,0,0,0.45)",
@@ -15943,7 +16075,7 @@
         padding: 24
       }, onClick: (e) => {
         if (e.target === e.currentTarget) setEditingP(null);
-      }, children: /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("div", { style: { background: "#fff", borderRadius: 12, padding: 28, width: "100%", maxWidth: 620, maxHeight: "90vh", overflowY: "auto", boxShadow: "0 8px 40px rgba(0,0,0,0.18)" }, children: /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(
+      }, children: /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("div", { style: { background: "#fff", borderRadius: 12, padding: 28, width: "100%", maxWidth: 620, maxHeight: "90vh", overflowY: "auto", boxShadow: "0 8px 40px rgba(0,0,0,0.18)" }, children: /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(
         AddReferralForm,
         {
           initialValues: editingP,
@@ -15951,22 +16083,22 @@
           onCancel: () => setEditingP(null)
         }
       ) }) }),
-      filtered.length === 0 ? /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { style: { textAlign: "center", padding: 60, color: BRAND.subtext }, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("div", { style: { fontSize: 36, marginBottom: 12 }, children: "\u{1F50D}" }),
-        /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("p", { children: [
+      filtered.length === 0 ? /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { style: { textAlign: "center", padding: 60, color: BRAND.subtext }, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("div", { style: { fontSize: 36, marginBottom: 12 }, children: "\u{1F50D}" }),
+        /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("p", { children: [
           "No referrals found",
           search ? ` matching "${search}"` : "",
           "."
         ] }),
-        !search && /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("p", { style: { fontSize: 13 }, children: "Add external referrals using the button above." })
-      ] }) : filtered.map((p, idx) => /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(ReferralCard, { p, onEdit: handleEdit, onDelete: handleDelete }, p.id ?? idx))
+        !search && /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("p", { style: { fontSize: 13 }, children: "Add external referrals using the button above." })
+      ] }) : filtered.map((p, idx) => /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(ReferralCard, { p, onEdit: handleEdit, onDelete: handleDelete }, p.id ?? idx))
     ] });
   };
   var ReferralNetwork_default = ReferralNetwork;
 
-  // deploy/src/Compare.tsx
-  var import_react10 = __toESM(require_react());
-  var import_jsx_runtime10 = __toESM(require_jsx_runtime());
+  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/Compare.tsx
+  var import_react11 = __toESM(require_react());
+  var import_jsx_runtime11 = __toESM(require_jsx_runtime());
   var NETLIFY_BASE2 = "https://practitioneravailabilitypsychologycar.netlify.app";
   function getPhotoUrl(p) {
     if (!p.photo_url) return null;
@@ -15978,8 +16110,8 @@
     if (Array.isArray(val)) return val.filter(Boolean);
     return val.split(/[;,\n]/).map((s) => s.trim()).filter(Boolean);
   }
-  var CompareRow = ({ label, children }) => /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { style: { display: "flex", borderBottom: "1px solid #ede9f5" }, children: [
-    /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(
+  var CompareRow = ({ label, children }) => /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("div", { style: { display: "flex", borderBottom: "1px solid #ede9f5" }, children: [
+    /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(
       "div",
       {
         style: {
@@ -16000,7 +16132,7 @@
         children: label
       }
     ),
-    children.map((cell, i) => /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(
+    children.map((cell, i) => /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(
       "div",
       {
         style: {
@@ -16018,8 +16150,8 @@
     ))
   ] });
   var TagList = ({ items, color = "#2C244C" }) => {
-    if (!items.length) return /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("span", { style: { color: "#aaa", fontStyle: "italic" }, children: "\u2014" });
-    return /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("div", { style: { display: "flex", flexWrap: "wrap", gap: 4 }, children: items.map((item, i) => /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(
+    if (!items.length) return /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("span", { style: { color: "#aaa", fontStyle: "italic" }, children: "\u2014" });
+    return /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("div", { style: { display: "flex", flexWrap: "wrap", gap: 4 }, children: items.map((item, i) => /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(
       "span",
       {
         style: {
@@ -16042,13 +16174,13 @@
       return weekly.length > 0 || fortnightly.length > 0;
     });
     if (!hasAny) {
-      return /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("span", { style: { color: "#8D5273", fontStyle: "italic", fontSize: 12 }, children: "Waitlist only" });
+      return /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("span", { style: { color: "#8D5273", fontStyle: "italic", fontSize: 12 }, children: "Waitlist only" });
     }
-    return /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(import_jsx_runtime10.Fragment, { children: locs.map((loc, i) => {
+    return /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(import_jsx_runtime11.Fragment, { children: locs.map((loc, i) => {
       const { weekly, fortnightly } = parseAvailability(loc.availability);
       if (!weekly.length && !fortnightly.length) return null;
-      return /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { style: { marginBottom: 10 }, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(
+      return /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("div", { style: { marginBottom: 10 }, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(
           "div",
           {
             style: {
@@ -16062,11 +16194,11 @@
             children: loc.location
           }
         ),
-        weekly.map((s, j) => /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { style: { fontSize: 12, color: "#366188" }, children: [
+        weekly.map((s, j) => /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("div", { style: { fontSize: 12, color: "#366188" }, children: [
           "\u2022 ",
           s.replace(/ · from /, " \u2014 from ")
         ] }, `w${j}`)),
-        fortnightly.map((s, j) => /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { style: { fontSize: 12, color: "#52A3BA" }, children: [
+        fortnightly.map((s, j) => /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("div", { style: { fontSize: 12, color: "#52A3BA" }, children: [
           "\u2022 ",
           s.replace(/ · from /, " \u2014 from "),
           " (fortnightly)"
@@ -16075,7 +16207,7 @@
     }) });
   };
   var Compare = ({ names }) => {
-    const practitioners = (0, import_react10.useMemo)(() => {
+    const practitioners = (0, import_react11.useMemo)(() => {
       return names.map(
         (name) => PRACTITIONERS_DATA.find(
           (p) => p.name.toLowerCase().trim() === name.toLowerCase().trim()
@@ -16083,13 +16215,13 @@
       ).filter(Boolean);
     }, [names]);
     if (!practitioners.length) {
-      return /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { style: { padding: 40, textAlign: "center", color: "#666" }, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("p", { children: "No practitioners found. Please try again from the email link." }),
-        /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("a", { href: "/", style: { color: "#2C244C", fontWeight: 600 }, children: "\u2190 Back to app" })
+      return /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("div", { style: { padding: 40, textAlign: "center", color: "#666" }, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("p", { children: "No practitioners found. Please try again from the email link." }),
+        /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("a", { href: "/", style: { color: "#2C244C", fontWeight: 600 }, children: "\u2190 Back to app" })
       ] });
     }
     const colCount = practitioners.length;
-    return /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)(
+    return /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)(
       "div",
       {
         style: {
@@ -16098,7 +16230,7 @@
           minHeight: "100vh"
         },
         children: [
-          /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)(
+          /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)(
             "div",
             {
               style: {
@@ -16107,8 +16239,8 @@
                 textAlign: "center"
               },
               children: [
-                /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("img", { src: "/logo.svg", alt: "PsychologyCare", style: { height: 56, width: "auto", marginBottom: 8 } }),
-                /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(
+                /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("img", { src: "/logo.svg", alt: "PsychologyCare", style: { height: 56, width: "auto", marginBottom: 8 } }),
+                /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(
                   "div",
                   {
                     style: {
@@ -16121,7 +16253,7 @@
                     children: "Practitioner Comparison"
                   }
                 ),
-                /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(
+                /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(
                   "a",
                   {
                     href: "/",
@@ -16139,8 +16271,8 @@
               ]
             }
           ),
-          /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { style: { maxWidth: 1100, margin: "0 auto", padding: "28px 16px 60px" }, children: [
-            /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)(
+          /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("div", { style: { maxWidth: 1100, margin: "0 auto", padding: "28px 16px 60px" }, children: [
+            /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)(
               "h2",
               {
                 style: {
@@ -16158,8 +16290,8 @@
                 ]
               }
             ),
-            /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("div", { style: { overflowX: "auto", borderRadius: 14, boxShadow: "0 4px 24px rgba(44,36,76,0.12)" }, children: /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { style: { minWidth: colCount * 220 + 120 }, children: [
-              /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)(
+            /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("div", { style: { overflowX: "auto", borderRadius: 14, boxShadow: "0 4px 24px rgba(44,36,76,0.12)" }, children: /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("div", { style: { minWidth: colCount * 220 + 120 }, children: [
+              /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)(
                 "div",
                 {
                   style: {
@@ -16169,10 +16301,10 @@
                     overflow: "hidden"
                   },
                   children: [
-                    /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("div", { style: { width: 120, minWidth: 120, background: "transparent" } }),
+                    /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("div", { style: { width: 120, minWidth: 120, background: "transparent" } }),
                     practitioners.map((p, i) => {
                       const photoUrl = getPhotoUrl(p);
-                      return /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)(
+                      return /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)(
                         "div",
                         {
                           style: {
@@ -16182,7 +16314,7 @@
                             textAlign: "center"
                           },
                           children: [
-                            photoUrl ? /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(
+                            photoUrl ? /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(
                               "img",
                               {
                                 src: photoUrl,
@@ -16197,7 +16329,7 @@
                                   margin: "0 auto 10px"
                                 }
                               }
-                            ) : /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(
+                            ) : /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(
                               "div",
                               {
                                 style: {
@@ -16211,12 +16343,12 @@
                                   justifyContent: "center",
                                   margin: "0 auto 10px"
                                 },
-                                children: /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("span", { style: { fontSize: 28, color: "rgba(255,255,255,0.8)", fontWeight: 700 }, children: p.name.charAt(0) })
+                                children: /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("span", { style: { fontSize: 28, color: "rgba(255,255,255,0.8)", fontWeight: 700 }, children: p.name.charAt(0) })
                               }
                             ),
-                            /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("div", { style: { fontWeight: 700, color: "#fff", fontSize: 15, lineHeight: 1.3, marginBottom: 4 }, children: p.name }),
-                            /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("div", { style: { color: "#e8d4e4", fontSize: 12, lineHeight: 1.5 }, children: p.title }),
-                            p.link_to_bio && /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(
+                            /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("div", { style: { fontWeight: 700, color: "#fff", fontSize: 15, lineHeight: 1.3, marginBottom: 4 }, children: p.name }),
+                            /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("div", { style: { color: "#e8d4e4", fontSize: 12, lineHeight: 1.5 }, children: p.title }),
+                            p.link_to_bio && /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(
                               "a",
                               {
                                 href: p.link_to_bio,
@@ -16240,21 +16372,21 @@
                   ]
                 }
               ),
-              /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { style: { background: "#fff" }, children: [
-                /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(CompareRow, { label: "Availability", children: practitioners.map((p, i) => /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(AvailabilityCell, { practitioner: p }, i)) }),
-                /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(CompareRow, { label: "Fees", children: practitioners.map((p, i) => /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("div", { style: { whiteSpace: "pre-line" }, children: p.fees || /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("span", { style: { color: "#aaa", fontStyle: "italic" }, children: "\u2014" }) }, i)) }),
-                /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(CompareRow, { label: "Ages Seen", children: practitioners.map((p, i) => /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("div", { style: { fontWeight: 600, color: "#2C244C" }, children: p.age_range || /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("span", { style: { color: "#aaa", fontStyle: "italic" }, children: "\u2014" }) }, i)) }),
-                /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(CompareRow, { label: "Locations", children: practitioners.map((p, i) => {
+              /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("div", { style: { background: "#fff" }, children: [
+                /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(CompareRow, { label: "Availability", children: practitioners.map((p, i) => /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(AvailabilityCell, { practitioner: p }, i)) }),
+                /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(CompareRow, { label: "Fees", children: practitioners.map((p, i) => /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("div", { style: { whiteSpace: "pre-line" }, children: p.fees || /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("span", { style: { color: "#aaa", fontStyle: "italic" }, children: "\u2014" }) }, i)) }),
+                /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(CompareRow, { label: "Ages Seen", children: practitioners.map((p, i) => /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("div", { style: { fontWeight: 600, color: "#2C244C" }, children: p.age_range || /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("span", { style: { color: "#aaa", fontStyle: "italic" }, children: "\u2014" }) }, i)) }),
+                /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(CompareRow, { label: "Locations", children: practitioners.map((p, i) => {
                   const locs = (p.locations || []).map((l) => l.location).filter(Boolean);
-                  return locs.length ? /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("div", { children: locs.map((l, j) => /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { style: { fontSize: 13, marginBottom: 2 }, children: [
+                  return locs.length ? /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("div", { children: locs.map((l, j) => /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("div", { style: { fontSize: 13, marginBottom: 2 }, children: [
                     "\u{1F4CD} ",
                     l
-                  ] }, j)) }, i) : /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("span", { style: { color: "#aaa", fontStyle: "italic" }, children: "\u2014" }, i);
+                  ] }, j)) }, i) : /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("span", { style: { color: "#aaa", fontStyle: "italic" }, children: "\u2014" }, i);
                 }) }),
-                /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(CompareRow, { label: "Presentations", children: practitioners.map((p, i) => /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(TagList, { items: parseList(p.presentations), color: "#2C244C" }, i)) }),
-                /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(CompareRow, { label: "Modalities", children: practitioners.map((p, i) => /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(TagList, { items: parseList(p.modalities), color: "#8D5273" }, i)) })
+                /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(CompareRow, { label: "Presentations", children: practitioners.map((p, i) => /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(TagList, { items: parseList(p.presentations), color: "#2C244C" }, i)) }),
+                /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(CompareRow, { label: "Modalities", children: practitioners.map((p, i) => /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(TagList, { items: parseList(p.modalities), color: "#8D5273" }, i)) })
               ] }),
-              /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(
+              /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(
                 "div",
                 {
                   style: {
@@ -16270,7 +16402,7 @@
                 }
               )
             ] }) }),
-            /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("div", { style: { textAlign: "center", marginTop: 28 }, children: /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(
+            /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("div", { style: { textAlign: "center", marginTop: 28 }, children: /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(
               "a",
               {
                 href: `mailto:info@psychologycare.com.au`,
@@ -16294,11 +16426,11 @@
     );
   };
 
-  // deploy/src/App.tsx
+  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/src/App.tsx
   var import_client = __toESM(require_client());
-  var import_jsx_runtime11 = __toESM(require_jsx_runtime());
+  var import_jsx_runtime12 = __toESM(require_jsx_runtime());
   var INTAKE_PRACTITIONERS = PRACTITIONERS_DATA.map(suppressKristaIntake);
-  var ErrorBoundary = class extends import_react11.Component {
+  var ErrorBoundary = class extends import_react12.Component {
     constructor(props) {
       super(props);
       this.state = { error: null };
@@ -16311,14 +16443,14 @@
     }
     render() {
       if (this.state.error) {
-        return /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("div", { style: { padding: 32, fontFamily: "sans-serif", color: "#333" }, children: [
-          /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("h2", { style: { color: "#c00" }, children: "Something went wrong" }),
-          /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("pre", { style: { background: "#f5f5f5", padding: 16, borderRadius: 8, fontSize: 13, whiteSpace: "pre-wrap", wordBreak: "break-word" }, children: [
+        return /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("div", { style: { padding: 32, fontFamily: "sans-serif", color: "#333" }, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("h2", { style: { color: "#c00" }, children: "Something went wrong" }),
+          /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("pre", { style: { background: "#f5f5f5", padding: 16, borderRadius: 8, fontSize: 13, whiteSpace: "pre-wrap", wordBreak: "break-word" }, children: [
             this.state.error.message,
             "\n\n",
             this.state.error.stack
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("button", { onClick: () => this.setState({ error: null }), style: { marginTop: 16, padding: "8px 16px", cursor: "pointer" }, children: "Try Again" })
+          /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("button", { onClick: () => this.setState({ error: null }), style: { marginTop: 16, padding: "8px 16px", cursor: "pointer" }, children: "Try Again" })
         ] });
       }
       return this.props.children;
@@ -16332,7 +16464,7 @@
     return names.length >= 1 ? names : null;
   }
   function AppMain() {
-    const [tab, setTab] = (0, import_react11.useState)("find");
+    const [tab, setTab] = (0, import_react12.useState)("find");
     const tabs = [
       { key: "find", label: "\u{1F50D} Find a Practitioner" },
       { key: "directory", label: "\u{1F4D6} Directory" },
@@ -16340,16 +16472,16 @@
       { key: "intake", label: "\u{1F4DD} Intake" },
       { key: "referral", label: "\u{1F517} Referral Network" }
     ];
-    return /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("div", { className: "min-h-screen bg-gray-50", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("div", { style: { background: "linear-gradient(135deg, #2C244C 0%, #8D5273 100%)" }, className: "text-white shadow-lg", children: /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("div", { className: "max-w-7xl mx-auto px-6 py-10 flex flex-col items-center", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("img", { src: "/logo.svg", alt: "PsychologyCare", style: { height: 72, width: "auto", marginBottom: 10 } }),
-        /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("p", { style: { color: "#d8d0ec", fontSize: 14, letterSpacing: "0.12em", textTransform: "uppercase", fontFamily: "'Poppins', sans-serif", fontWeight: 400 }, children: "Practitioner Matching & Client Intake" }),
-        /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("p", { style: { color: "#c8bfe8", fontSize: 12, marginTop: 6, fontFamily: "'Poppins', sans-serif" }, children: [
+    return /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("div", { className: "min-h-screen bg-gray-50", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("div", { style: { background: "linear-gradient(135deg, #2C244C 0%, #8D5273 100%)" }, className: "text-white shadow-lg", children: /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("div", { className: "max-w-7xl mx-auto px-6 py-10 flex flex-col items-center", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("img", { src: "/logo.svg", alt: "PsychologyCare", style: { height: 72, width: "auto", marginBottom: 10 } }),
+        /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("p", { style: { color: "#d8d0ec", fontSize: 14, letterSpacing: "0.12em", textTransform: "uppercase", fontFamily: "'Poppins', sans-serif", fontWeight: 400 }, children: "Practitioner Matching & Client Intake" }),
+        /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("p", { style: { color: "#c8bfe8", fontSize: 12, marginTop: 6, fontFamily: "'Poppins', sans-serif" }, children: [
           "\u{1F4C5} Availability updated ",
           AVAILABILITY_LAST_UPDATED
         ] })
       ] }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("div", { className: "bg-white border-b sticky top-0 z-40 shadow-sm", style: { borderColor: "#e8e4f0" }, children: /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("div", { className: "max-w-7xl mx-auto px-4 flex gap-4 items-center", children: tabs.map((t) => /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(
+      /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("div", { className: "bg-white border-b sticky top-0 z-40 shadow-sm", style: { borderColor: "#e8e4f0" }, children: /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("div", { className: "max-w-7xl mx-auto px-4 flex gap-4 items-center", children: tabs.map((t) => /* @__PURE__ */ (0, import_jsx_runtime12.jsx)(
         "button",
         {
           onClick: () => setTab(t.key),
@@ -16365,28 +16497,28 @@
         },
         t.key
       )) }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("div", { className: "max-w-7xl mx-auto px-4 py-8", children: /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)(ErrorBoundary, { children: [
-        tab === "find" && /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(FindPractitioner, { practitioners: INTAKE_PRACTITIONERS }),
-        tab === "directory" && /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(Directory, { practitioners: INTAKE_PRACTITIONERS }),
-        tab === "snapshot" && /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(AvailabilitySnapshot_default, { practitioners: INTAKE_PRACTITIONERS }),
-        tab === "intake" && /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(IntakeTab, {}),
-        tab === "referral" && /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(ReferralNetwork_default, { practitioners: INTAKE_PRACTITIONERS })
+      /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("div", { className: "max-w-7xl mx-auto px-4 py-8", children: /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)(ErrorBoundary, { children: [
+        tab === "find" && /* @__PURE__ */ (0, import_jsx_runtime12.jsx)(FindPractitioner, { practitioners: INTAKE_PRACTITIONERS }),
+        tab === "directory" && /* @__PURE__ */ (0, import_jsx_runtime12.jsx)(Directory, { practitioners: INTAKE_PRACTITIONERS }),
+        tab === "snapshot" && /* @__PURE__ */ (0, import_jsx_runtime12.jsx)(AvailabilitySnapshot_default, { practitioners: INTAKE_PRACTITIONERS }),
+        tab === "intake" && /* @__PURE__ */ (0, import_jsx_runtime12.jsx)(IntakeTab, {}),
+        tab === "referral" && /* @__PURE__ */ (0, import_jsx_runtime12.jsx)(ReferralNetwork_default, { practitioners: INTAKE_PRACTITIONERS })
       ] }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("footer", { className: "bg-gray-900 text-gray-300 mt-16 py-8", children: /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("div", { className: "max-w-7xl mx-auto px-4 text-center text-sm", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("p", { children: "PsychologyCare VIC \xB7 Melbourne" }),
-        /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("p", { className: "mt-2 text-gray-500", children: "For professional inquiries: info@psychologycare.com.au" })
+      /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("footer", { className: "bg-gray-900 text-gray-300 mt-16 py-8", children: /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("div", { className: "max-w-7xl mx-auto px-4 text-center text-sm", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("p", { children: "PsychologyCare VIC \xB7 Melbourne" }),
+        /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("p", { className: "mt-2 text-gray-500", children: "For professional inquiries: info@psychologycare.com.au" })
       ] }) })
     ] });
   }
   function AppContent() {
     const compareNames = getCompareNames();
     if (compareNames) {
-      return /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(ErrorBoundary, { children: /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(Compare, { names: compareNames }) });
+      return /* @__PURE__ */ (0, import_jsx_runtime12.jsx)(ErrorBoundary, { children: /* @__PURE__ */ (0, import_jsx_runtime12.jsx)(Compare, { names: compareNames }) });
     }
-    return /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(ErrorBoundary, { children: /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(AppMain, {}) });
+    return /* @__PURE__ */ (0, import_jsx_runtime12.jsx)(ErrorBoundary, { children: /* @__PURE__ */ (0, import_jsx_runtime12.jsx)(StaffAccess, { children: /* @__PURE__ */ (0, import_jsx_runtime12.jsx)(AppMain, {}) }) });
   }
   var root = (0, import_client.createRoot)(document.getElementById("root"));
-  root.render(/* @__PURE__ */ (0, import_jsx_runtime11.jsx)(AppContent, {}));
+  root.render(/* @__PURE__ */ (0, import_jsx_runtime12.jsx)(AppContent, {}));
 })();
 /*! Bundled license information:
 

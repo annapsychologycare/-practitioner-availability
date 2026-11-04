@@ -1,4 +1,5 @@
 import PractitionerNotes from './components/PractitionerNotes';
+import { StaffAge } from './components/StaffAccess';
 import React, { useState, useMemo, useEffect } from "react";
 import { Send, CheckSquare } from "lucide-react";
 import { Practitioner } from "./types";
@@ -525,6 +526,7 @@ const PractitionerCard: React.FC<CardProps> = ({ p, locationFilter, isSelected, 
                   {p.link_to_bio ? (
                     <a href={p.link_to_bio} target="_blank" rel="noopener noreferrer" className="hover:underline">{p.name}</a>
                   ) : p.name}
+                  <StaffAge id={p.id} />
                 </h3>
                 {p.pronouns && <span className="text-xs text-base-content/50">({p.pronouns})</span>}
                 {p.pap_clinician === "Yes" && <span className="badge badge-sm text-white" style={{ backgroundColor: "#8D5273" }}>PAP</span>}

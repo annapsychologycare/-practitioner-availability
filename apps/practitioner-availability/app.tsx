@@ -15,6 +15,7 @@ import { PRACTITIONERS_DATA, AVAILABILITY_LAST_UPDATED as AVAILABILITY_LAST_UPDA
 import { loadEmailTemplateConfig, saveEmailTemplateConfig, EmailTemplateConfig } from "./emailTemplateConfig";
 import type { Practitioner } from "./types";
 import { suppressKristaIntake } from './utils/practitionerIntakePause';
+import { StaffAccess } from './components/StaffAccess';
 
 const DATA_PATH = "/tasklet/threads/a_cwa98xzh47ey9rcvmmh4/work/practitioners_data.json";
 
@@ -196,7 +197,7 @@ function AppMain() {
 function AppContent() {
   return (
     <ErrorBoundary>
-      <AppMain />
+      <StaffAccess><AppMain /></StaffAccess>
     </ErrorBoundary>
   );
 }
