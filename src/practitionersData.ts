@@ -159,7 +159,10 @@ export const PRACTITIONERS_DATA = [
       "Gender Nonconforming",
       "Gender Queer"
     ],
-    "client_note": ""
+    "client_note": "",
+    "upcoming_leave_client_notice": "",
+    "upcoming_leave_show_from": "",
+    "upcoming_leave_hide_after": ""
   },
   {
     "id": 25,
@@ -355,7 +358,10 @@ export const PRACTITIONERS_DATA = [
       "Non Binary",
       "Transgender"
     ],
-    "client_note": ""
+    "client_note": "",
+    "upcoming_leave_client_notice": "",
+    "upcoming_leave_show_from": "",
+    "upcoming_leave_hide_after": ""
   },
   {
     "id": 5,
@@ -447,7 +453,10 @@ export const PRACTITIONERS_DATA = [
       "Gender Queer",
       "Male"
     ],
-    "client_note": ""
+    "client_note": "",
+    "upcoming_leave_client_notice": "",
+    "upcoming_leave_show_from": "",
+    "upcoming_leave_hide_after": ""
   },
   {
     "id": 3,
@@ -650,7 +659,10 @@ export const PRACTITIONERS_DATA = [
       "Non Binary",
       "Transgender"
     ],
-    "client_note": ""
+    "client_note": "",
+    "upcoming_leave_client_notice": "",
+    "upcoming_leave_show_from": "",
+    "upcoming_leave_hide_after": ""
   },
   {
     "id": 27,
@@ -823,7 +835,10 @@ export const PRACTITIONERS_DATA = [
       "Non Binary",
       "Transgender"
     ],
-    "client_note": ""
+    "client_note": "",
+    "upcoming_leave_client_notice": "",
+    "upcoming_leave_show_from": "",
+    "upcoming_leave_hide_after": ""
   },
   {
     "id": 17,
@@ -1135,7 +1150,10 @@ export const PRACTITIONERS_DATA = [
       "Female",
       "Male"
     ],
-    "client_note": "Please note: Maddie's in-person appointments on Tuesdays and Thursdays are at Prahran before 11 January 2027 and will move to Camberwell from 11 January 2027. Monday and Friday in-person appointments will remain at Prahran. Telehealth appointments remain available."
+    "client_note": "Please note: Maddie's in-person appointments on Tuesdays and Thursdays are at Prahran before 11 January 2027 and will move to Camberwell from 11 January 2027. Monday and Friday in-person appointments will remain at Prahran. Telehealth appointments remain available.",
+    "upcoming_leave_client_notice": "",
+    "upcoming_leave_show_from": "",
+    "upcoming_leave_hide_after": ""
   },
   {
     "id": 19,
@@ -1271,7 +1289,10 @@ export const PRACTITIONERS_DATA = [
       "Female",
       "Male"
     ],
-    "client_note": ""
+    "client_note": "",
+    "upcoming_leave_client_notice": "",
+    "upcoming_leave_show_from": "",
+    "upcoming_leave_hide_after": ""
   },
   {
     "id": 16,
@@ -1344,7 +1365,10 @@ export const PRACTITIONERS_DATA = [
     "confirmed_slots": [],
     "availability_source": "PAUSED BY ANNA — app availability and notes withheld; CRM preserved (14 October 2026)",
     "requires_diary_verification": false,
-    "intake_availability_notes_paused": true
+    "intake_availability_notes_paused": true,
+    "upcoming_leave_client_notice": "",
+    "upcoming_leave_show_from": "",
+    "upcoming_leave_hide_after": ""
   },
   {
     "id": 2,
@@ -1503,7 +1527,10 @@ export const PRACTITIONERS_DATA = [
       "Non Binary",
       "Transgender"
     ],
-    "client_note": ""
+    "client_note": "",
+    "upcoming_leave_client_notice": "",
+    "upcoming_leave_show_from": "",
+    "upcoming_leave_hide_after": ""
   },
   {
     "id": 21,
@@ -1717,7 +1744,10 @@ export const PRACTITIONERS_DATA = [
       "Non Binary",
       "Transgender"
     ],
-    "client_note": ""
+    "client_note": "",
+    "upcoming_leave_client_notice": "",
+    "upcoming_leave_show_from": "",
+    "upcoming_leave_hide_after": ""
   },
   {
     "id": 7,
@@ -2009,7 +2039,10 @@ export const PRACTITIONERS_DATA = [
       "Individual"
     ],
     "therapistType": "Accredited Mental Health Social Worker",
-    "client_note": "Please note: Christine is an Accredited Mental Health Social Worker (AMHSW) with the AASW, rather than a psychologist. She is an eligible Medicare provider under a Mental Health Treatment Plan. If you intend to use private health insurance, please check with your insurer prior to booking, as not all funds provide rebates for Mental Health Social Work services."
+    "client_note": "Please note: Christine is an Accredited Mental Health Social Worker (AMHSW) with the AASW, rather than a psychologist. She is an eligible Medicare provider under a Mental Health Treatment Plan. If you intend to use private health insurance, please check with your insurer prior to booking, as not all funds provide rebates for Mental Health Social Work services.",
+    "upcoming_leave_client_notice": "",
+    "upcoming_leave_show_from": "",
+    "upcoming_leave_hide_after": ""
   },
   {
     "id": 18,
@@ -2143,7 +2176,10 @@ export const PRACTITIONERS_DATA = [
       "Male",
       "Non Binary"
     ],
-    "client_note": "Please note: Meg will be going on maternity leave from mid-November 2026. If you're looking for ongoing longer-term support, it's worth keeping this in mind when deciding if she is the right match for you."
+    "client_note": "Please note: Meg will be going on maternity leave from mid-November 2026. If you're looking for ongoing longer-term support, it's worth keeping this in mind when deciding if she is the right match for you.",
+    "upcoming_leave_client_notice": "",
+    "upcoming_leave_show_from": "",
+    "upcoming_leave_hide_after": ""
   },
   {
     "id": 15,
@@ -2259,7 +2295,10 @@ export const PRACTITIONERS_DATA = [
       "Female",
       "Male"
     ],
-    "client_note": "⚠️ Please note: Kiira offers Telehealth only appointments until the end of 2026. As of mid Jan 2027, Kiira will be offering in person appointments on Tuesdays and Wednesdays between 8am and 2PM at the Camberwell Clinic. Please take this into consideration when deciding whether Kiira will be the right practitioner for you, particularly if you prefer face-to-face sessions."
+    "client_note": "⚠️ Please note: Kiira offers Telehealth only appointments until the end of 2026. As of mid Jan 2027, Kiira will be offering in person appointments on Tuesdays and Wednesdays between 8am and 2PM at the Camberwell Clinic. Please take this into consideration when deciding whether Kiira will be the right practitioner for you, particularly if you prefer face-to-face sessions.",
+    "upcoming_leave_client_notice": "",
+    "upcoming_leave_show_from": "",
+    "upcoming_leave_hide_after": ""
   },
   {
     "id": 6,
@@ -2417,7 +2456,10 @@ export const PRACTITIONERS_DATA = [
       "Individual"
     ],
     "therapistType": "Clinical Psychologist",
-    "client_note": "Please note: Chiara offers Telehealth appointments only, with no in-person appointments available. Please take this into consideration when deciding whether Chiara will be the right practitioner for you, particularly if you prefer face-to-face sessions."
+    "client_note": "Please note: Chiara offers Telehealth appointments only, with no in-person appointments available. Please take this into consideration when deciding whether Chiara will be the right practitioner for you, particularly if you prefer face-to-face sessions.",
+    "upcoming_leave_client_notice": "",
+    "upcoming_leave_show_from": "",
+    "upcoming_leave_hide_after": ""
   },
   {
     "id": 20,
@@ -2653,7 +2695,10 @@ export const PRACTITIONERS_DATA = [
       "Non Binary",
       "Transgender"
     ],
-    "client_note": ""
+    "client_note": "",
+    "upcoming_leave_client_notice": "",
+    "upcoming_leave_show_from": "",
+    "upcoming_leave_hide_after": ""
   },
   {
     "id": 26,
@@ -2811,7 +2856,10 @@ export const PRACTITIONERS_DATA = [
       "Individual"
     ],
     "therapistType": "Registered Psychologist",
-    "client_note": "Please note: From January 2027 onwards, Ricki will be offering Telehealth appointments only, with no in-person appointments available. Please take this into consideration when deciding whether Ricki will be the right practitioner for you, particularly if you prefer face-to-face sessions."
+    "client_note": "Please note: From January 2027 onwards, Ricki will be offering Telehealth appointments only, with no in-person appointments available. Please take this into consideration when deciding whether Ricki will be the right practitioner for you, particularly if you prefer face-to-face sessions.",
+    "upcoming_leave_client_notice": "",
+    "upcoming_leave_show_from": "",
+    "upcoming_leave_hide_after": ""
   },
   {
     "id": 13,
@@ -2982,7 +3030,10 @@ export const PRACTITIONERS_DATA = [
       "Non Binary",
       "Transgender"
     ],
-    "client_note": "Please note: Josh Kugel will be offering Telehealth appointments only from 30 October to 5 December 2026. During this period, all sessions will be conducted online rather than in person. In-person appointments will resume following this period. Please take this into consideration when deciding whether Josh will be the right practitioner for you, particularly if you prefer face-to-face sessions."
+    "client_note": "Please note: Josh Kugel will be offering Telehealth appointments only from 30 October to 5 December 2026. During this period, all sessions will be conducted online rather than in person. In-person appointments will resume following this period. Please take this into consideration when deciding whether Josh will be the right practitioner for you, particularly if you prefer face-to-face sessions.",
+    "upcoming_leave_client_notice": "",
+    "upcoming_leave_show_from": "",
+    "upcoming_leave_hide_after": ""
   },
   {
     "id": 29,
@@ -3162,7 +3213,10 @@ export const PRACTITIONERS_DATA = [
       "Non Binary",
       "Transgender"
     ],
-    "client_note": ""
+    "client_note": "",
+    "upcoming_leave_client_notice": "",
+    "upcoming_leave_show_from": "",
+    "upcoming_leave_hide_after": ""
   },
   {
     "id": 4,
@@ -3347,7 +3401,10 @@ export const PRACTITIONERS_DATA = [
       "Non Binary",
       "Transgender"
     ],
-    "client_note": ""
+    "client_note": "",
+    "upcoming_leave_client_notice": "",
+    "upcoming_leave_show_from": "",
+    "upcoming_leave_hide_after": ""
   },
   {
     "id": 24,
@@ -3529,7 +3586,10 @@ export const PRACTITIONERS_DATA = [
       "Non Binary",
       "Transgender"
     ],
-    "client_note": ""
+    "client_note": "",
+    "upcoming_leave_client_notice": "",
+    "upcoming_leave_show_from": "",
+    "upcoming_leave_hide_after": ""
   },
   {
     "name": "Dr David Spektor",
@@ -3605,7 +3665,10 @@ export const PRACTITIONERS_DATA = [
       "Individual"
     ],
     "therapistType": "Clinical Psychologist",
-    "client_note": ""
+    "client_note": "",
+    "upcoming_leave_client_notice": "",
+    "upcoming_leave_show_from": "",
+    "upcoming_leave_hide_after": ""
   },
   {
     "id": 23,
@@ -3727,7 +3790,10 @@ export const PRACTITIONERS_DATA = [
       "Non Binary",
       "Transgender"
     ],
-    "client_note": ""
+    "client_note": "",
+    "upcoming_leave_client_notice": "",
+    "upcoming_leave_show_from": "",
+    "upcoming_leave_hide_after": ""
   },
   {
     "id": 8,
@@ -3830,7 +3896,10 @@ export const PRACTITIONERS_DATA = [
       "Individual"
     ],
     "therapistType": "Psychologist",
-    "client_note": ""
+    "client_note": "",
+    "upcoming_leave_client_notice": "",
+    "upcoming_leave_show_from": "",
+    "upcoming_leave_hide_after": ""
   },
   {
     "id": 10,
@@ -4051,7 +4120,10 @@ export const PRACTITIONERS_DATA = [
       "Male",
       "Non Binary"
     ],
-    "client_note": ""
+    "client_note": "",
+    "upcoming_leave_client_notice": "",
+    "upcoming_leave_show_from": "",
+    "upcoming_leave_hide_after": ""
   },
   {
     "id": 14,
@@ -4218,7 +4290,10 @@ export const PRACTITIONERS_DATA = [
       "Female",
       "Male"
     ],
-    "client_note": ""
+    "client_note": "",
+    "upcoming_leave_client_notice": "",
+    "upcoming_leave_show_from": "",
+    "upcoming_leave_hide_after": ""
   }
 ];
 export const practitionersData = PRACTITIONERS_DATA;

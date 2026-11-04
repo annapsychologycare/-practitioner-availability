@@ -14,6 +14,9 @@ export type Practitioner = {
   gender: string;
   alert: string;
   client_note?: string;
+  upcoming_leave_client_notice?: string;
+  upcoming_leave_show_from?: string;
+  upcoming_leave_hide_after?: string;
   presentations: string | string[];
   modalities: string | string[];
   client_types: string;

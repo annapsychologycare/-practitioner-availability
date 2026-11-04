@@ -1,0 +1,313 @@
+// Shared email HTML builder — used by SendClientModal and EmailTemplateTab preview.
+import { EmailTemplateConfig, DEFAULT_EMAIL_TEMPLATE_CONFIG } from "../emailTemplateConfig";
+import { suppressKristaIntake } from './practitionerIntakePause';
+import {UpcomingLeaveFields, upcomingLeaveEmailHtml} from './upcomingLeave';
+
+export interface PractitionerEmailData extends UpcomingLeaveFields {
+  name: string;
+  title: string;
+  fees: string;
+  medicare_rebate: string;
+  availabilityLocations: Array<{ location: string; availability: string | string[] }>;
+  link_to_bio: string;
+  short_bio?: string;
+  working_hours?: string;
+  client_note?: string;
+  location_notes?: Record<string, string>;
+  photo_url?: string;
+}
+
+export function parseAvailability(text: string | string[], includeMonthly = false): { weekly: string[]; fortnightly: string[]; monthly: string[] } {
+  const weekly: string[] = [];
+  const fortnightly: string[] = [];
+  const monthly: string[] = [];
+  if (!text) return { weekly, fortnightly, monthly };
+  const lines = Array.isArray(text)
+    ? text.map((l) => l.replace(/^\*\s*/, "").trim()).filter(Boolean)
+    : text.split("\n").map((l) => l.replace(/^\*\s*/, "").trim()).filter(Boolean);
+  for (const line of lines) {
+    if (/\(Monthly:/i.test(line)) {
+      if (!includeMonthly) continue;
+      const cleaned = line
+        .replace(/ at /i, " ")
+        .replace(/\s*\(Monthly: Starting ([^)]+)\)/i, " · from $1");
+      monthly.push(cleaned);
+      continue;
+    }
+    const cleaned = line
+      .replace(/ at /i, " ")
+      .replace(/\s*\((Weekly|Fortnightly): Starting ([^)]+)\)/i, " · from $2");
+    if (/\(Weekly:/i.test(line)) weekly.push(cleaned);
+    else if (/\(Fortnightly:/i.test(line)) fortnightly.push(cleaned);
+    else weekly.push(line); // plain lines (e.g. supervision slots) treated as weekly
+  }
+  return { weekly, fortnightly, monthly };
+}
+
+function renderSlotLine(slot: string, type: "weekly" | "fortnightly" | "monthly"): string {
+  const dotIdx = slot.indexOf(" · from ");
+  if (dotIdx > -1) {
+    const dayTime = slot.substring(0, dotIdx).trim();
+    const date = slot.substring(dotIdx + 8).trim();
+    const formatted = /\sat\s/.test(dayTime)
+      ? dayTime
+      : dayTime.replace(/^(\S+)\s+/, "$1 at ");
+    return `• ${formatted} (${type}) — from ${date}`;
+  }
+  return `• ${slot}`;
+}
+
+function buildAvailabilitySection(
+  locations: Array<{ location: string; availability: string | string[] }>,
+  config: EmailTemplateConfig,
+  locationNotes?: Record<string, string>,
+  includeMonthly = false
+): string {
+  const c = config.colors;
+  const activeLocs = locations.filter((l) => {
+    const { weekly, fortnightly, monthly } = parseAvailability(l.availability || "", includeMonthly);
+    return weekly.length > 0 || fortnightly.length > 0 || monthly.length > 0;
+  });
+  if (activeLocs.length === 0) {
+    return `
+      <div style="padding:16px 24px;">
+        <div style="font-size:11px;font-weight:700;color:${c.availability_heading};text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">Availability</div>
+        <div style="font-size:13px;color:#8D5273;font-style:italic;line-height:1.7;background:#fdf8fb;border-radius:6px;padding:10px 14px;">${config.no_availability_message}</div>
+      </div>`;
+  }
+  let html = "";
+  for (const loc of activeLocs) {
+    const { weekly, fortnightly, monthly } = parseAvailability(loc.availability, includeMonthly);
+    const locLabel = ` — ${loc.location}`;
+    const locNoteText = locationNotes?.[loc.location] || "";
+    const locChangeNote = locNoteText
+      ? `<div style="font-size:12px;color:#5a3060;background:#f5f0f9;border-left:3px solid ${c.availability_heading};border-radius:4px;padding:8px 12px;margin-bottom:10px;line-height:1.6;"><strong>Please Note:</strong> ${locNoteText.replace(/^Please Note:\s*/i, "")}</div>`
+      : "";
+    const weeklySlots = weekly.map((s) => renderSlotLine(s, "weekly"));
+    const fortnightlySlots = fortnightly.map((s) => renderSlotLine(s, "fortnightly"));
+    const monthlySlots = monthly.map((s) => renderSlotLine(s, "monthly"));
+    const allSlots = [...weeklySlots, ...fortnightlySlots, ...monthlySlots];
+    html += `
+      <div style="padding:16px 24px 0;">
+        <div style="font-size:11px;font-weight:700;color:${c.availability_heading};text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">Availability${locLabel}</div>
+        ${locChangeNote}
+        <div style="background:#f8f6fc;border-radius:8px;padding:12px 14px;">
+          <div style="font-size:13px;color:#333;line-height:2.0;">${allSlots.join("<br>")}</div>
+        </div>
+      </div>`;
+  }
+  return html;
+}
+
+function formatFeesInline(fees: string): string {
+  return fees
+    .replace(/B\/H:/g, "Business Hours:")
+    .replace(/A\/H:/g, "After Hours:")
+    .split("\n")
+    .map((l) => l.trim())
+    .filter(Boolean)
+    .join(" &nbsp;&middot;&nbsp; ");
+}
+
+function formatMedicareInline(rebate: string): string {
+  if (!rebate) return "";
+  const lines = rebate.split("\n").map((l) => l.trim()).filter(Boolean);
+  if (!lines.length) return "";
+  const first = lines[0];
+  const isAmount = /^[\$\d]/.test(first);
+  if (isAmount) {
+    const amt = first.startsWith("$") ? first : `$${first}`;
+    const extras = lines.slice(1);
+    let html = `${amt} per session`;
+    if (extras.length)
+      html += `<br><span style="font-size:12px;color:#888;font-style:italic;">${extras.join("<br>")}</span>`;
+    html += `<br><span style="font-size:12px;color:#888;font-style:italic;">Valid with an eligible Mental Health Treatment Plan and GP referral.</span>`;
+    return html;
+  }
+  return `<span style="font-size:13px;color:#888;font-style:italic;">${first}</span>`;
+}
+
+function buildPractitionerCard(original: PractitionerEmailData, config: EmailTemplateConfig, includeMonthly = false, now = new Date()): string {
+  const p=suppressKristaIntake(original);
+  const c = config.colors;
+  const availHtml = buildAvailabilitySection(p.availabilityLocations || [], config, p.location_notes, includeMonthly);
+  const feesInline = formatFeesInline(p.fees || "");
+  const medicareInline = formatMedicareInline(p.medicare_rebate || "");
+
+  // Photo circle in header — use embedded base64 (avoids Gmail image blocking)
+  const photoSrc = (p as any).photo_b64 || p.photo_url || null;
+  const photoHtml = photoSrc
+    ? `<td width="84" valign="middle" style="padding-right:16px;">
+        <img src="${photoSrc}" width="80" height="80"
+          style="border-radius:50%;border:3px solid rgba(255,255,255,0.35);display:block;object-fit:cover;width:80px;height:80px;" />
+      </td>`
+    : `<td width="84" valign="middle" style="padding-right:16px;">
+        <div style="width:80px;height:80px;border-radius:50%;background:rgba(255,255,255,0.2);border:3px solid rgba(255,255,255,0.35);display:flex;align-items:center;justify-content:center;">
+          <span style="font-size:28px;color:rgba(255,255,255,0.7);font-weight:700;">${p.name.charAt(0)}</span>
+        </div>
+      </td>`;
+
+  const profileLink = p.link_to_bio
+    ? `<div style="padding:12px 24px 16px;border-top:1px solid #ede9f5;background:#faf9fd;text-align:right;">
+        <a href="${p.link_to_bio}" style="font-size:13px;color:${c.title_color};font-weight:600;text-decoration:none;letter-spacing:0.01em;">View full profile →</a>
+      </div>`
+    : "";
+
+  return `
+    <div style="border:1px solid ${c.card_border};border-radius:12px;margin-bottom:24px;overflow:hidden;box-shadow:0 3px 14px rgba(44,36,76,0.10);">
+
+      <!-- Card header: gradient with photo -->
+      <div style="background:linear-gradient(135deg,#2C244C 0%,#8D5273 100%);padding:20px 24px;">
+        <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation">
+          <tr>
+            ${photoHtml}
+            <td valign="middle">
+              <div style="font-size:20px;font-weight:700;color:#ffffff;line-height:1.2;margin-bottom:4px;">${p.name}</div>
+              <div style="font-size:13px;color:#e8d4e4;line-height:1.5;">${p.title}</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- Bio + working hours -->
+      ${p.short_bio || p.working_hours ? `
+      <div style="padding:16px 24px;border-bottom:1px solid #ede9f5;">
+        ${p.short_bio ? `<div style="font-size:13px;color:#555;font-style:italic;line-height:1.8;margin-bottom:${p.working_hours ? "8px" : "0"};">${p.short_bio}</div>` : ""}
+        ${p.working_hours ? `<div style="font-size:12px;color:${c.title_color};line-height:1.6;">🕐 ${p.working_hours}</div>` : ""}
+      </div>` : ""}
+
+      <!-- Separate CRM client-facing note only; never include the internal field. -->
+      ${p.client_note ? `
+      <div style="padding:10px 24px;background:#fff8e1;border-bottom:1px solid #ffe082;">
+        <div style="font-size:12px;color:#7a5a00;line-height:1.6;white-space:pre-line;">⚠️ ${p.client_note.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')}</div>
+      </div>` : ""}
+
+      <!-- Availability -->
+      ${availHtml}
+      ${upcomingLeaveEmailHtml(p, now)}
+
+      <!-- Fees -->
+      ${feesInline || medicareInline ? `
+      <div style="padding:14px 24px 16px;border-top:1px solid #ede9f5;margin-top:16px;">
+        <table cellpadding="0" cellspacing="0" border="0" width="100%" style="border-collapse:collapse;">
+          ${feesInline ? `<tr>
+            <td style="font-size:13px;font-weight:700;color:${c.name_color};vertical-align:top;padding:0 10px 6px 0;white-space:nowrap;">Fees:</td>
+            <td style="font-size:13px;color:#444;vertical-align:top;padding:0 0 6px 0;line-height:1.8;">${feesInline}</td>
+          </tr>` : ""}
+          ${medicareInline ? `<tr>
+            <td style="font-size:13px;font-weight:700;color:${c.name_color};vertical-align:top;padding:0 10px 0 0;white-space:nowrap;">Medicare Rebate:</td>
+            <td style="font-size:13px;color:#444;vertical-align:top;padding:0;line-height:1.8;">${medicareInline}</td>
+          </tr>` : ""}
+        </table>
+      </div>` : ""}
+
+      ${profileLink}
+    </div>`;
+}
+
+export interface ClientAccessContext {
+  age60Plus?: boolean;
+}
+
+export function shouldShowPrahranStairsNotice(practitioners: PractitionerEmailData[], includeMonthly = false, access: ClientAccessContext = {}): boolean {
+  if (access.age60Plus !== true) return false;
+  // Use only the availability actually rendered in this email, not working hours,
+  // profile locations, hidden monthly slots or temporarily paused availability.
+  return practitioners.map(suppressKristaIntake).some(p => (p.availabilityLocations || []).some(loc => {
+    if (/telehealth|online/i.test(loc.location) || !/prahran|greville|183a|185a/i.test(loc.location)) return false;
+    const slots = parseAvailability(loc.availability || '', includeMonthly);
+    return slots.weekly.length + slots.fortnightly.length + slots.monthly.length > 0;
+  }));
+}
+
+export function buildEmailHtml(
+  clientName: string,
+  note: string,
+  senderName: string,
+  practitioners: PractitionerEmailData[],
+  config: EmailTemplateConfig = DEFAULT_EMAIL_TEMPLATE_CONFIG,
+  includeMonthly = false,
+  clientAccess: ClientAccessContext = {},
+  now = new Date()
+): string {
+  const c = config.colors;
+  const sig = config.signature;
+
+  const cards = practitioners.map((p) => buildPractitionerCard(p, config, includeMonthly, now)).join("");
+
+  const gk = config.good_to_know;
+  const goodToKnow = `
+    <div style="background:#faf9fd;padding:24px 28px;border-top:2px solid #ede9f5;">
+      <div style="font-size:12px;font-weight:700;color:${c.name_color};margin-bottom:16px;text-transform:uppercase;letter-spacing:0.08em;">Good to Know</div>
+      <div style="margin-bottom:14px;">
+        <div style="font-size:13px;font-weight:700;color:${c.name_color};margin-bottom:3px;">${gk.medicare.heading}</div>
+        <div style="font-size:13px;color:#555;line-height:1.7;">${gk.medicare.body}</div>
+      </div>
+      <div style="margin-bottom:14px;">
+        <div style="font-size:13px;font-weight:700;color:${c.name_color};margin-bottom:3px;">${gk.after_hours.heading}</div>
+        <div style="font-size:13px;color:#555;line-height:1.7;">${gk.after_hours.body}</div>
+      </div>
+      <div>
+        <div style="font-size:13px;font-weight:700;color:${c.name_color};margin-bottom:3px;">${gk.private_health.heading}</div>
+        <div style="font-size:13px;color:#555;line-height:1.7;">${gk.private_health.body}</div>
+      </div>
+    </div>`;
+
+  const closingHtml = config.closing_text.replace(/\n/g, "<br>");
+
+  const signature = `
+    <div style="border-top:1px solid #ede9f5;padding-top:16px;margin-top:20px;">
+      <div style="font-size:13px;font-weight:700;color:${c.name_color};margin-bottom:6px;">${sig.practice_name}</div>
+      <div style="font-size:12px;color:#666;margin:0;padding:0;line-height:1.8;">PH: ${sig.phone} &nbsp;&nbsp; Fax: ${sig.fax}</div>
+      <div style="font-size:12px;color:#666;margin:0;padding:0;line-height:1.8;">Email: <a href="mailto:${sig.email}" style="color:${c.title_color};text-decoration:none;">${sig.email}</a> &nbsp;&nbsp; Web: <a href="https://${sig.website}" style="color:${c.title_color};text-decoration:none;">${sig.website}</a></div>
+      <div style="font-size:12px;color:#666;margin:0;padding:0;line-height:1.8;">${sig.addresses}</div>
+      ${sig.footnote ? `<div style="font-size:11px;color:${c.title_color};font-style:italic;margin:4px 0 0 0;padding:0;">${sig.footnote}</div>` : ""}
+    </div>`;
+
+  const disclaimer = `
+    <div style="margin-top:20px;padding-top:16px;border-top:1px solid #ede9f5;">
+      <div style="font-size:11px;color:#aaa;line-height:1.7;">
+        ${config.disclaimer.replace(/\n\n/g, "<br><br>").replace(/\n/g, "<br>")}
+      </div>
+    </div>`;
+
+  return `
+    <div style="font-family:Arial,Helvetica,sans-serif;background:#f0eef7;padding:28px 12px;">
+      <div style="max-width:600px;margin:0 auto;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 4px 24px rgba(44,36,76,0.13);">
+
+        <!-- Top accent bar -->
+        <div style="height:5px;background:linear-gradient(90deg,${c.header_bar_start} 0%,${c.header_bar_mid} 60%,${c.header_bar_end} 100%);"></div>
+
+        <!-- Intro -->
+        <div style="padding:32px 28px 24px;">
+          <div style="font-size:16px;font-weight:700;color:${c.name_color};margin-bottom:10px;">Hi ${clientName},</div>
+          <p style="font-size:14px;line-height:1.85;color:#555;margin:0 0 24px;">${config.intro_text}</p>
+          ${note ? `<div style="background:#F0EEF7;border-left:4px solid ${c.title_color};padding:12px 16px;border-radius:6px;font-size:14px;font-style:italic;color:#555;margin-bottom:24px;">${note}</div>` : ""}
+          ${shouldShowPrahranStairsNotice(practitioners, includeMonthly, clientAccess) ? `
+          <!-- Conditional access notice: Prahran availability plus age/access needs -->
+          <div style="background:#fff8e1;border:1px solid #ffe082;border-left:4px solid #ffb300;border-radius:6px;padding:14px 16px;margin-bottom:24px;">
+            <div style="font-size:14px;font-weight:700;color:#7a5a00;margin-bottom:6px;">Please note: stairs at our Prahran clinics</div>
+            <div style="font-size:13px;color:#555;line-height:1.7;">Our Prahran clinics at <strong>183A and 185A Greville Street</strong> are located upstairs and require access via <strong>approximately 18 stairs</strong>. If stairs may be difficult for you, please let us know before booking so we can discuss suitable appointment options.</div>
+          </div>` : ""}
+          ${cards}
+        </div>
+
+        <!-- Good to Know -->
+        ${goodToKnow}
+
+        <!-- Closing + Signature -->
+        <div style="padding:28px 28px 24px;background:#fff;border-top:1px solid #ede9f5;">
+          <p style="font-size:14px;line-height:1.85;color:#555;margin:0 0 24px;">${closingHtml}</p>
+          <p style="font-size:14px;color:#555;margin:0 0 4px;">Warm regards,</p>
+          <p style="font-size:14px;font-weight:700;color:${c.name_color};margin:0 0 20px;">${senderName}</p>
+          ${signature}
+          ${disclaimer}
+        </div>
+
+        <!-- Footer -->
+        <div style="background:${c.footer_bg};padding:14px 28px;text-align:center;border-top:1px solid #ede9f5;">
+          <div style="font-size:12px;color:${c.footer_text};">${sig.practice_name} &nbsp;·&nbsp; ${sig.email}</div>
+        </div>
+      </div>
+    </div>`;
+}

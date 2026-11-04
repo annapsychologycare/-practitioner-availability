@@ -1,11 +1,14 @@
 import { invokeTool } from '@tasklet/tools/v2';
 import { isKristaIntakePaused, applyIntakePauses } from './practitioner_intake_pause';
+import {mapCrmUpcomingLeave} from './crm_upcoming_leave';
 
-export function mapCrmNotes(crm: any): {alert: string; client_note: string} {
-  if(isKristaIntakePaused(crm.Full_Name))return {alert:'',client_note:''};
+export function mapCrmNotes(crm: any): {alert: string; client_note: string; [key: string]: string} {
+  const leave = mapCrmUpcomingLeave(crm);
+  if(isKristaIntakePaused(crm.Full_Name))return {alert:'',client_note:'',upcoming_leave_client_notice:'',upcoming_leave_show_from:'',upcoming_leave_hide_after:''};
   // CRM is authoritative, including blank fields. Never retain local notes.
   if (!Object.hasOwn(crm, 'Intake_Alert_Notes') || !Object.hasOwn(crm, 'Intake_Alert_Notes_Internal')) throw new Error('CRM note fields missing from record');
   return {
+    ...leave,
     alert: typeof crm.Intake_Alert_Notes_Internal === 'string' ? crm.Intake_Alert_Notes_Internal.trim() : '',
     client_note: typeof crm.Intake_Alert_Notes === 'string' ? crm.Intake_Alert_Notes.trim() : '',
   };
@@ -36,7 +39,7 @@ export async function refreshCrmAlerts(practitioners: any[]): Promise<string[]> 
     if (matches.length > 1) throw new Error(`Ambiguous CRM alert match for ${p.name}`);
     if (!matches.length) throw new Error(`No CRM note match for ${p.name}`);
     const notes = mapCrmNotes(matches[0]);
-    if (notes.alert !== (p.alert || '') || notes.client_note !== (p.client_note || '')) changed.push(p.name);
+    if (Object.entries(notes).some(([key,value]) => value !== (p[key] || ''))) changed.push(p.name);
     Object.assign(p, notes);
   }
   return changed;

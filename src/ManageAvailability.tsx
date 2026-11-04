@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import {UpcomingLeave} from './components/UpcomingLeave';
 import { ChevronDown, ChevronRight } from "lucide-react";
 import { Practitioner, Location } from "./types";
 import MultiSelect from "./components/MultiSelect";
@@ -178,6 +179,8 @@ function PractitionerEditor({ p, onUpdate, onClose }: { p: Practitioner; onUpdat
             <strong>Client-facing — included in client emails</strong>
             <p style={{whiteSpace:'pre-line'}}>{p.client_note || 'No client-facing notes'}</p>
           </Section>
+
+          <UpcomingLeave practitioner={p} />
 
           {/* Basic Info */}
           <Section title="Basic Info" defaultOpen={false}>

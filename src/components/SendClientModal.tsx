@@ -4,6 +4,7 @@ import { Practitioner } from "../types";
 import { hasAfterHoursAvailability } from "../utils/afterHours";
 import { loadEmailTemplateConfig } from "../emailTemplateConfig";
 import { buildEmailHtml } from "../utils/emailBuilder";
+import {useNoticeClock} from '../utils/useNoticeClock';
 import {suppressKristaIntake} from '../utils/practitionerIntakePause';
 
 interface Props {
@@ -21,6 +22,7 @@ interface Props {
 const SendClientModal: React.FC<Props> = ({ selected, locationFilter, onClose, onSent, includeMonthly = false, sessionType = "Individual", clientAge60Plus = false }) => {
   // Load config from localStorage (reflects any edits made in Email Template tab)
   const config = useMemo(() => loadEmailTemplateConfig(), []);
+  const noticeNow = useNoticeClock();
 
   const [step, setStep] = useState<"form" | "preview">("form");
   const [copied, setCopied] = useState(false);
@@ -75,6 +77,9 @@ const SendClientModal: React.FC<Props> = ({ selected, locationFilter, onClose, o
           ),
           accepts_couples: p.accepts_couples,
           client_note: p.client_note,
+          upcoming_leave_client_notice: p.upcoming_leave_client_notice,
+          upcoming_leave_show_from: p.upcoming_leave_show_from,
+          upcoming_leave_hide_after: p.upcoming_leave_hide_after,
           short_bio: p.short_bio,
           working_hours: (p as any).working_hours,
           location_notes: (p as any).location_notes,
@@ -86,10 +91,11 @@ const SendClientModal: React.FC<Props> = ({ selected, locationFilter, onClose, o
 
   const previewHtml = useMemo(
     () => buildEmailHtml(clientName || "Client", note, senderName, practitionerData, { ...config, intro_text: openingParagraph }, includeMonthly, { age60Plus: clientAge60Plus }),
-    [clientName, note, senderName, practitionerData, config, openingParagraph, includeMonthly, clientAge60Plus]
+    [clientName, note, senderName, practitionerData, config, openingParagraph, includeMonthly, clientAge60Plus, noticeNow]
   );
 
   const handleCopyEmail = async () => {
+    const previewHtml = buildEmailHtml(clientName || 'Client', note, senderName, practitionerData, {...config, intro_text: openingParagraph}, includeMonthly, {age60Plus: clientAge60Plus});
     if(!reviewReady){setError('Review and confirm Krista’s live diary before copying or offering appointments.');return;}
     try {
       // Copy as rich HTML so it pastes correctly into email clients
@@ -143,7 +149,8 @@ const SendClientModal: React.FC<Props> = ({ selected, locationFilter, onClose, o
         clientEmail: clientEmail.trim(),
         cc: ccList,
         senderName,
-        emailHtml: previewHtml,
+        // Rebuild at send time; never send a stale memoized notice after expiry.
+        emailHtml: buildEmailHtml(clientName || 'Client', note, senderName, practitionerData, {...config, intro_text: openingParagraph}, includeMonthly, {age60Plus: clientAge60Plus}),
       };
 
       // Send via serverless function (keeps webhook URL server-side)

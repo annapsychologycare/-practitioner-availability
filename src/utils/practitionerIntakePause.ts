@@ -7,6 +7,7 @@ export function isKristaIntakePaused(name?:string): boolean {
 }
 export function suppressKristaIntake<T extends Record<string,any>>(original:T):T {
   if(!isKristaIntakePaused(original.name??original.Full_Name))return original;
+  original={...original,upcoming_leave_client_notice:'',upcoming_leave_show_from:'',upcoming_leave_hide_after:''};
   const p:any={...original,alert:'',client_note:'',working_hours:'',location_notes:{},availability:[],weekly_availability:[],fortnightly_availability:[],confirmed_slots:[],requires_diary_verification:false,intake_availability_notes_paused:true,availability_source:'PAUSED BY ANNA — app availability and notes withheld; CRM preserved (14 October 2026)'};
   if(Array.isArray(original.locations))p.locations=original.locations.map((l:any)=>({...l,availability:'',weekly_availability:[],fortnightly_availability:[],...(Object.hasOwn(l,'notes')?{notes:''}:{})}));
   if(Array.isArray(original.availabilityLocations))p.availabilityLocations=original.availabilityLocations.map((l:any)=>({...l,availability:''}));

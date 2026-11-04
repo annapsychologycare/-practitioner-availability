@@ -1,8 +1,9 @@
 // Shared email HTML builder — used by SendClientModal and EmailTemplateTab preview.
 import { EmailTemplateConfig, DEFAULT_EMAIL_TEMPLATE_CONFIG } from "../emailTemplateConfig";
 import { suppressKristaIntake } from './practitionerIntakePause';
+import {UpcomingLeaveFields, upcomingLeaveEmailHtml} from './upcomingLeave';
 
-export interface PractitionerEmailData {
+export interface PractitionerEmailData extends UpcomingLeaveFields {
   name: string;
   title: string;
   fees: string;
@@ -126,7 +127,7 @@ function formatMedicareInline(rebate: string): string {
   return `<span style="font-size:13px;color:#888;font-style:italic;">${first}</span>`;
 }
 
-function buildPractitionerCard(original: PractitionerEmailData, config: EmailTemplateConfig, includeMonthly = false): string {
+function buildPractitionerCard(original: PractitionerEmailData, config: EmailTemplateConfig, includeMonthly = false, now = new Date()): string {
   const p=suppressKristaIntake(original);
   const c = config.colors;
   const availHtml = buildAvailabilitySection(p.availabilityLocations || [], config, p.location_notes, includeMonthly);
@@ -175,7 +176,7 @@ function buildPractitionerCard(original: PractitionerEmailData, config: EmailTem
         ${p.working_hours ? `<div style="font-size:12px;color:${c.title_color};line-height:1.6;">🕐 ${p.working_hours}</div>` : ""}
       </div>` : ""}
 
-      <!-- Alert note (client-facing: only text after | separator) -->
+      <!-- Separate CRM client-facing note only; never include the internal field. -->
       ${p.client_note ? `
       <div style="padding:10px 24px;background:#fff8e1;border-bottom:1px solid #ffe082;">
         <div style="font-size:12px;color:#7a5a00;line-height:1.6;white-space:pre-line;">⚠️ ${p.client_note.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')}</div>
@@ -183,6 +184,7 @@ function buildPractitionerCard(original: PractitionerEmailData, config: EmailTem
 
       <!-- Availability -->
       ${availHtml}
+      ${upcomingLeaveEmailHtml(p, now)}
 
       <!-- Fees -->
       ${feesInline || medicareInline ? `
@@ -225,12 +227,13 @@ export function buildEmailHtml(
   practitioners: PractitionerEmailData[],
   config: EmailTemplateConfig = DEFAULT_EMAIL_TEMPLATE_CONFIG,
   includeMonthly = false,
-  clientAccess: ClientAccessContext = {}
+  clientAccess: ClientAccessContext = {},
+  now = new Date()
 ): string {
   const c = config.colors;
   const sig = config.signature;
 
-  const cards = practitioners.map((p) => buildPractitionerCard(p, config, includeMonthly)).join("");
+  const cards = practitioners.map((p) => buildPractitionerCard(p, config, includeMonthly, now)).join("");
 
   const gk = config.good_to_know;
   const goodToKnow = `

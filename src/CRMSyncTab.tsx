@@ -4,6 +4,9 @@ import { PRACTITIONERS_DATA as practitioners } from "./practitionersData";
 const FIELD_SOURCES = [
   { field: "Internal Notes (staff only)", appKey: "alert", crmField: "Intake_Alert_Notes_Internal", source: "crm", note: "✅ CRM only — never included in client emails; blank clears note" },
   { field: "Client-Facing Notes", appKey: "client_note", crmField: "Intake_Alert_Notes", source: "crm", note: "✅ CRM only — included in client email; blank clears note" },
+  { field: "Upcoming leave — client notice", appKey: "upcoming_leave_client_notice", crmField: "Upcoming_leave_client_notice", source: "crm", note: "CRM only; blank clears. Separate staff/email section. No internal leave reasons or status." },
+  { field: "Show notice from", appKey: "upcoming_leave_show_from", crmField: "Show_notice_from", source: "crm", note: "Melbourne date inclusive; blank unbounded; invalid/reversed dates hide notice." },
+  { field: "Hide notice after", appKey: "upcoming_leave_hide_after", crmField: "Hide_notice_after", source: "crm", note: "Melbourne date inclusive; rechecked at render/copy/send time." },
   { field: "Presentations (Clinical Interests)", appKey: "presentations", crmField: "Clinical_Interests", source: "crm", note: "✅ Synced from CRM" },
   { field: "Modalities", appKey: "modalities", crmField: "Modalities", source: "crm", note: "✅ Synced from CRM" },
   { field: "Bio", appKey: "bio", crmField: "Bio_for_Website", source: "crm", note: "✅ Synced from CRM" },
