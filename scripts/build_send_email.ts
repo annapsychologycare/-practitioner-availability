@@ -1,7 +1,7 @@
 /** Canonical daily email. Email-only presentation; no app/profile mutations. */
 import {readFileSync,writeFileSync,existsSync} from 'node:fs';
 import {invokeTool} from '@tasklet/tools/v2';
-import {mainReview,phaseReview,esc} from './availability_email_review';
+import {mainReview,phaseReview,esc,renderMainRows} from './availability_email_review';
 const base='/tasklet/threads/a_cwa98xzh47ey9rcvmmh4/work';
 // Never prefer an old /tmp/import_result_clean.json over the successful current result.
 const input=process.env.IMPORT_RESULT_PATH??'/tmp/import_result.json';
@@ -12,8 +12,7 @@ if(raw.dateFrom!==result.dateRange.from||raw.dateTo!==result.dateRange.to)throw 
 const review=mainReview(result),phases=phaseReview(raw);
 const box=(s:string)=>`<div style="background:#f7f3f5;border-left:4px solid #8D5273;padding:16px;margin:16px 0;">${s}</div>`;
 const cell=(s:string)=>`<td style="padding:9px;border-bottom:1px solid #ddd;vertical-align:top;">${s}</td>`;
-let last='';
-const rows=review.rows.map(r=>{const name=r.name===last?'':r.name;last=r.name;return `<tr style="background:${r.frequency==='Weekly'?'#e8f5e9':'#f3e5f5'};">${cell(esc(name))}${cell(r.representations.map((p:any)=>`${esc(p.location)} — starting ${esc(p.start)}`).join('<br>'))}${cell(`${esc(r.time)} (${esc(r.frequency)})`)}</tr>`;}).join('');
+const rows=renderMainRows(review.rows);
 const evidence=(c:any)=>`${esc(c.name)} — ${esc(c.location)}, ${esc(c.start)}, ${c.duration} minutes; ${esc(c.frequency)} → potential ${esc(c.potential)}.<br>Phase A: ${esc(c.phaseDates[0].join(', '))}.<br>Phase B: ${esc(c.phaseDates[1].join(', '))}.<br><strong>${esc(c.scope)}</strong>. Observed uninterrupted alignment ${esc(c.observedInterval.from)}–${esc(c.observedInterval.to)}. Missing full-window dates: ${esc(c.missingDates.join(', ')||'none')}; active non-pending dates: ${esc(c.blockedDates.join(', ')||'none')}. ${c.excludedInactiveRecords} inactive historical records excluded, not treated as bookings. Type proxy: ${esc(c.type)}; clinical type unverified.`;
 const suggestions=(phases.candidates.length?phases.candidates.map(c=>box(evidence(c))).join(''):box('No complementary phase pairs passed the conservative checks. No recurrence changes suggested as confirmed capacity.'))+box(`${phases.candidates.filter(c=>c.frequency==='Monthly').length} Monthly → potential Fortnightly phase pairs found. Other single-phase patterns are nonmatches, not inferred free capacity.`);
 const rejected=phases.rejected.map(c=>box(evidence(c)+`<br><strong>Not suggested:</strong> ${esc(c.reason)}<br>Missing dates: ${esc(c.missingDates.join(', ')||'none')}. Non-pending/inactive: ${esc(c.blockedDates.join(', ')||'none')}.`)).join('');

@@ -1,5 +1,5 @@
 import {test,expect} from 'bun:test';
-import {mainReview,phaseReview} from './availability_email_review';
+import {mainReview,phaseReview,renderMainRows} from './availability_email_review';
 const slot=(name:string,location:string,freq='Fortnightly',start='10th Nov')=>`${name} | ${location} | Tuesdays at 1pm (${freq}: Starting ${start})`;
 test('Monthly never main; mirrored locations and dates one row and one count',()=>{
  const r=mainReview({slots:[slot('A Test','Clinic'),slot('A Test','Telehealth','Fortnightly','24th Nov'),slot('A Test','Clinic','Monthly')]});
@@ -34,4 +34,24 @@ test('28-day Monthly phases 14 days apart can suggest Fortnightly, never main',(
 test('single occurrence phases are not enough; suppressed Krista never suggested',()=>{
  expect(phaseReview(raw(dates.slice(0,2).map(d=>appt(d)))).candidates.length).toBe(0);
  expect(phaseReview(raw(dates.map(d=>appt(d,{practitioner:{id:2,name:'Krista De Castella'}})))).candidates.length).toBe(0);
+});
+test('one 16px white spacer between groups, none within/before/after groups',()=>{
+ const review=mainReview({slots:[slot('A Test','Clinic'),slot('A Test','Clinic','Weekly'),slot('B Young','Clinic')]});
+ const html=renderMainRows(review.rows);
+ expect((html.match(/colspan="3" height="16"/g)||[]).length).toBe(review.practitioners-1);
+ expect((html.match(/<strong /g)||[]).length).toBe(review.practitioners);
+ expect(html.startsWith('<tr bgcolor=')).toBe(true);
+ expect(html.endsWith('</td></tr>')).toBe(true);
+ expect(renderMainRows([])).toBe('');
+ expect(renderMainRows(review.rows.slice(0,1))).not.toContain('colspan');
+});
+test('email rows use inline styles and HTML height/background fallbacks, escaped names and three columns',()=>{
+ const html=renderMainRows(mainReview({slots:[slot('A <Test>','Clinic & Co'),slot('B Young','Telehealth','Weekly')]}).rows);
+ expect(html).toContain('height="16" bgcolor="#ffffff"');
+ expect(html).toContain('mso-line-height-rule:exactly');
+ expect(html).toContain('color:#8D5273;font-size:15px;font-weight:700;');
+ expect(html).toContain('A &lt;Test&gt;');expect(html).toContain('Clinic &amp; Co');
+ expect(html).toContain('bgcolor="#e8f5e9"');expect(html).toContain('bgcolor="#f3e5f5"');
+ expect(html).not.toMatch(/<style|class=|<script|display:flex|display:grid/);
+ expect((html.match(/<td style=/g)||[]).length).toBe(6);
 });

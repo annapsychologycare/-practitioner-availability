@@ -1,5 +1,18 @@
 /** Email-only review. Never writes practitioner data or infers free gaps. */
 export const esc = (v: unknown) => String(v ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]!));
+/** Email-safe table spacing: explicit white cell, not margin/CSS-class reliance. */
+export function renderMainRows(rows: any[]) {
+  const cell=(s:string)=>`<td style="padding:9px;border-bottom:1px solid #ddd;vertical-align:top;">${s}</td>`;
+  let last='';
+  return rows.map((r,index)=>{
+    const first=r.name!==last;
+    const spacer=first&&index>0?'<tr aria-hidden="true"><td colspan="3" height="16" bgcolor="#ffffff" style="height:16px;line-height:16px;font-size:0;padding:0;border:0;background:#ffffff;mso-line-height-rule:exactly;">&nbsp;</td></tr>':'';
+    const name=first?`<strong style="color:#8D5273;font-size:15px;font-weight:700;">${esc(r.name)}</strong>`:'';
+    last=r.name;
+    const color=r.frequency==='Weekly'?'#e8f5e9':'#f3e5f5';
+    return spacer+`<tr bgcolor="${color}" style="background:${color};">${cell(name)}${cell(r.representations.map((p:any)=>`${esc(p.location)} — starting ${esc(p.start)}`).join('<br>'))}${cell(`${esc(r.time)} (${esc(r.frequency)})`)}</tr>`;
+  }).join('');
+}
 const day = (d: string) => Math.floor(Date.parse(d.slice(0,10)+'T00:00:00Z')/86400000);
 const iso = (n: number) => new Date(n*86400000).toISOString().slice(0,10);
 export function mainReview(result: any) {
