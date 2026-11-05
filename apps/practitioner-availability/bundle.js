@@ -25,9 +25,9 @@
     mod
   ));
 
-  // ../../tmp/prac-build/node_modules/react/cjs/react.production.js
+  // ../../../../tmp/prac-build/node_modules/react/cjs/react.production.js
   var require_react_production = __commonJS({
-    "../../tmp/prac-build/node_modules/react/cjs/react.production.js"(exports) {
+    "../../../../tmp/prac-build/node_modules/react/cjs/react.production.js"(exports) {
       "use strict";
       var REACT_ELEMENT_TYPE = Symbol.for("react.transitional.element");
       var REACT_PORTAL_TYPE = Symbol.for("react.portal");
@@ -477,9 +477,9 @@
     }
   });
 
-  // ../../tmp/prac-build/node_modules/react/index.js
+  // ../../../../tmp/prac-build/node_modules/react/index.js
   var require_react = __commonJS({
-    "../../tmp/prac-build/node_modules/react/index.js"(exports, module) {
+    "../../../../tmp/prac-build/node_modules/react/index.js"(exports, module) {
       "use strict";
       if (true) {
         module.exports = require_react_production();
@@ -489,9 +489,9 @@
     }
   });
 
-  // ../../tmp/prac-build/node_modules/react/cjs/react-jsx-runtime.production.js
+  // ../../../../tmp/prac-build/node_modules/react/cjs/react-jsx-runtime.production.js
   var require_react_jsx_runtime_production = __commonJS({
-    "../../tmp/prac-build/node_modules/react/cjs/react-jsx-runtime.production.js"(exports) {
+    "../../../../tmp/prac-build/node_modules/react/cjs/react-jsx-runtime.production.js"(exports) {
       "use strict";
       var REACT_ELEMENT_TYPE = Symbol.for("react.transitional.element");
       var REACT_FRAGMENT_TYPE = Symbol.for("react.fragment");
@@ -519,9 +519,9 @@
     }
   });
 
-  // ../../tmp/prac-build/node_modules/react/jsx-runtime.js
+  // ../../../../tmp/prac-build/node_modules/react/jsx-runtime.js
   var require_jsx_runtime = __commonJS({
-    "../../tmp/prac-build/node_modules/react/jsx-runtime.js"(exports, module) {
+    "../../../../tmp/prac-build/node_modules/react/jsx-runtime.js"(exports, module) {
       "use strict";
       if (true) {
         module.exports = require_react_jsx_runtime_production();
@@ -531,9 +531,9 @@
     }
   });
 
-  // ../../tmp/prac-build/node_modules/scheduler/cjs/scheduler.production.js
+  // ../../../../tmp/prac-build/node_modules/scheduler/cjs/scheduler.production.js
   var require_scheduler_production = __commonJS({
-    "../../tmp/prac-build/node_modules/scheduler/cjs/scheduler.production.js"(exports) {
+    "../../../../tmp/prac-build/node_modules/scheduler/cjs/scheduler.production.js"(exports) {
       "use strict";
       function push(heap, node) {
         var index = heap.length;
@@ -804,9 +804,9 @@
     }
   });
 
-  // ../../tmp/prac-build/node_modules/scheduler/index.js
+  // ../../../../tmp/prac-build/node_modules/scheduler/index.js
   var require_scheduler = __commonJS({
-    "../../tmp/prac-build/node_modules/scheduler/index.js"(exports, module) {
+    "../../../../tmp/prac-build/node_modules/scheduler/index.js"(exports, module) {
       "use strict";
       if (true) {
         module.exports = require_scheduler_production();
@@ -816,9 +816,9 @@
     }
   });
 
-  // ../../tmp/prac-build/node_modules/react-dom/cjs/react-dom.production.js
+  // ../../../../tmp/prac-build/node_modules/react-dom/cjs/react-dom.production.js
   var require_react_dom_production = __commonJS({
-    "../../tmp/prac-build/node_modules/react-dom/cjs/react-dom.production.js"(exports) {
+    "../../../../tmp/prac-build/node_modules/react-dom/cjs/react-dom.production.js"(exports) {
       "use strict";
       var React17 = require_react();
       function formatProdErrorMessage(code) {
@@ -973,9 +973,9 @@
     }
   });
 
-  // ../../tmp/prac-build/node_modules/react-dom/index.js
+  // ../../../../tmp/prac-build/node_modules/react-dom/index.js
   var require_react_dom = __commonJS({
-    "../../tmp/prac-build/node_modules/react-dom/index.js"(exports, module) {
+    "../../../../tmp/prac-build/node_modules/react-dom/index.js"(exports, module) {
       "use strict";
       function checkDCE() {
         if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ === "undefined" || typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE !== "function") {
@@ -999,9 +999,9 @@
     }
   });
 
-  // ../../tmp/prac-build/node_modules/react-dom/cjs/react-dom-client.production.js
+  // ../../../../tmp/prac-build/node_modules/react-dom/cjs/react-dom-client.production.js
   var require_react_dom_client_production = __commonJS({
-    "../../tmp/prac-build/node_modules/react-dom/cjs/react-dom-client.production.js"(exports) {
+    "../../../../tmp/prac-build/node_modules/react-dom/cjs/react-dom-client.production.js"(exports) {
       "use strict";
       var Scheduler = require_scheduler();
       var React17 = require_react();
@@ -14545,9 +14545,9 @@
     }
   });
 
-  // ../../tmp/prac-build/node_modules/react-dom/client.js
+  // ../../../../tmp/prac-build/node_modules/react-dom/client.js
   var require_client = __commonJS({
-    "../../tmp/prac-build/node_modules/react-dom/client.js"(exports, module) {
+    "../../../../tmp/prac-build/node_modules/react-dom/client.js"(exports, module) {
       "use strict";
       function checkDCE() {
         if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ === "undefined" || typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE !== "function") {
@@ -14571,10 +14571,10 @@
     }
   });
 
-  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/apps/practitioner-availability/app.tsx
+  // apps/practitioner-availability/app.tsx
   var import_react19 = __toESM(require_react());
 
-  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/apps/practitioner-availability/utils/upcomingLeave.ts
+  // apps/practitioner-availability/utils/upcomingLeave.ts
   function melbourneDate(now = /* @__PURE__ */ new Date()) {
     const parts = new Intl.DateTimeFormat("en-AU", { timeZone: "Australia/Melbourne", year: "numeric", month: "2-digit", day: "2-digit" }).formatToParts(now);
     const part = (type) => parts.find((p) => p.type === type).value;
@@ -14613,7 +14613,7 @@
   </td></tr></table>`;
   }
 
-  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/apps/practitioner-availability/utils/useNoticeClock.ts
+  // apps/practitioner-availability/utils/useNoticeClock.ts
   var import_react = __toESM(require_react());
   function useNoticeClock() {
     const [now, setNow] = (0, import_react.useState)(Date.now());
@@ -14634,7 +14634,7 @@
     return now;
   }
 
-  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/apps/practitioner-availability/utils/practitionerIntakePause.ts
+  // apps/practitioner-availability/utils/practitionerIntakePause.ts
   var KRISTA_INTAKE_PAUSED = true;
   function isKristaIntakePaused(name) {
     return KRISTA_INTAKE_PAUSED && (name ?? "").replace(/^Dr\.?\s+/i, "").trim().toLowerCase() === "krista de castella";
@@ -14649,7 +14649,7 @@
     return p;
   }
 
-  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/apps/practitioner-availability/components/UpcomingLeave.tsx
+  // apps/practitioner-availability/components/UpcomingLeave.tsx
   var import_jsx_runtime = __toESM(require_jsx_runtime());
   var UpcomingLeave = ({ practitioner }) => {
     const now = useNoticeClock();
@@ -14660,7 +14660,7 @@
     ] }) : null;
   };
 
-  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/apps/practitioner-availability/components/PractitionerNotes.tsx
+  // apps/practitioner-availability/components/PractitionerNotes.tsx
   var import_jsx_runtime2 = __toESM(require_jsx_runtime());
   function PractitionerNotes({ practitioner: original }) {
     const p = suppressKristaIntake(original);
@@ -14677,7 +14677,7 @@
     ] });
   }
 
-  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/apps/practitioner-availability/components/StaffAccess.tsx
+  // apps/practitioner-availability/components/StaffAccess.tsx
   var import_react2 = __toESM(require_react());
   var import_jsx_runtime3 = __toESM(require_jsx_runtime());
   var ORIGIN = "https://pc-prac-availability.netlify.app";
@@ -14848,13 +14848,13 @@
     ] });
   };
 
-  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/apps/practitioner-availability/FindPractitioner.tsx
+  // apps/practitioner-availability/FindPractitioner.tsx
   var import_react7 = __toESM(require_react());
 
-  // ../../tmp/prac-build/node_modules/lucide-react/dist/esm/createLucideIcon.js
+  // ../../../../tmp/prac-build/node_modules/lucide-react/dist/esm/createLucideIcon.js
   var import_react4 = __toESM(require_react());
 
-  // ../../tmp/prac-build/node_modules/lucide-react/dist/esm/shared/src/utils.js
+  // ../../../../tmp/prac-build/node_modules/lucide-react/dist/esm/shared/src/utils.js
   var toKebabCase = (string) => string.replace(/([a-z0-9])([A-Z])/g, "$1-$2").toLowerCase();
   var toCamelCase = (string) => string.replace(
     /^([A-Z])|[\s-_]+(\w)/g,
@@ -14875,10 +14875,10 @@
     }
   };
 
-  // ../../tmp/prac-build/node_modules/lucide-react/dist/esm/Icon.js
+  // ../../../../tmp/prac-build/node_modules/lucide-react/dist/esm/Icon.js
   var import_react3 = __toESM(require_react());
 
-  // ../../tmp/prac-build/node_modules/lucide-react/dist/esm/defaultAttributes.js
+  // ../../../../tmp/prac-build/node_modules/lucide-react/dist/esm/defaultAttributes.js
   var defaultAttributes = {
     xmlns: "http://www.w3.org/2000/svg",
     width: 24,
@@ -14891,7 +14891,7 @@
     strokeLinejoin: "round"
   };
 
-  // ../../tmp/prac-build/node_modules/lucide-react/dist/esm/Icon.js
+  // ../../../../tmp/prac-build/node_modules/lucide-react/dist/esm/Icon.js
   var Icon = (0, import_react3.forwardRef)(
     ({
       color = "currentColor",
@@ -14922,7 +14922,7 @@
     )
   );
 
-  // ../../tmp/prac-build/node_modules/lucide-react/dist/esm/createLucideIcon.js
+  // ../../../../tmp/prac-build/node_modules/lucide-react/dist/esm/createLucideIcon.js
   var createLucideIcon = (iconName, iconNode) => {
     const Component = (0, import_react4.forwardRef)(
       ({ className, ...props }, ref) => (0, import_react4.createElement)(Icon, {
@@ -14940,22 +14940,22 @@
     return Component;
   };
 
-  // ../../tmp/prac-build/node_modules/lucide-react/dist/esm/icons/arrow-left.js
+  // ../../../../tmp/prac-build/node_modules/lucide-react/dist/esm/icons/arrow-left.js
   var __iconNode = [
     ["path", { d: "m12 19-7-7 7-7", key: "1l729n" }],
     ["path", { d: "M19 12H5", key: "x3x0zl" }]
   ];
   var ArrowLeft = createLucideIcon("arrow-left", __iconNode);
 
-  // ../../tmp/prac-build/node_modules/lucide-react/dist/esm/icons/chevron-down.js
+  // ../../../../tmp/prac-build/node_modules/lucide-react/dist/esm/icons/chevron-down.js
   var __iconNode2 = [["path", { d: "m6 9 6 6 6-6", key: "qrunsl" }]];
   var ChevronDown = createLucideIcon("chevron-down", __iconNode2);
 
-  // ../../tmp/prac-build/node_modules/lucide-react/dist/esm/icons/chevron-right.js
+  // ../../../../tmp/prac-build/node_modules/lucide-react/dist/esm/icons/chevron-right.js
   var __iconNode3 = [["path", { d: "m9 18 6-6-6-6", key: "mthhwq" }]];
   var ChevronRight = createLucideIcon("chevron-right", __iconNode3);
 
-  // ../../tmp/prac-build/node_modules/lucide-react/dist/esm/icons/clipboard-check.js
+  // ../../../../tmp/prac-build/node_modules/lucide-react/dist/esm/icons/clipboard-check.js
   var __iconNode4 = [
     ["rect", { width: "8", height: "4", x: "8", y: "2", rx: "1", ry: "1", key: "tgr4d6" }],
     [
@@ -14969,7 +14969,7 @@
   ];
   var ClipboardCheck = createLucideIcon("clipboard-check", __iconNode4);
 
-  // ../../tmp/prac-build/node_modules/lucide-react/dist/esm/icons/clipboard.js
+  // ../../../../tmp/prac-build/node_modules/lucide-react/dist/esm/icons/clipboard.js
   var __iconNode5 = [
     ["rect", { width: "8", height: "4", x: "8", y: "2", rx: "1", ry: "1", key: "tgr4d6" }],
     [
@@ -14982,7 +14982,7 @@
   ];
   var Clipboard = createLucideIcon("clipboard", __iconNode5);
 
-  // ../../tmp/prac-build/node_modules/lucide-react/dist/esm/icons/eye-off.js
+  // ../../../../tmp/prac-build/node_modules/lucide-react/dist/esm/icons/eye-off.js
   var __iconNode6 = [
     [
       "path",
@@ -15003,7 +15003,7 @@
   ];
   var EyeOff = createLucideIcon("eye-off", __iconNode6);
 
-  // ../../tmp/prac-build/node_modules/lucide-react/dist/esm/icons/eye.js
+  // ../../../../tmp/prac-build/node_modules/lucide-react/dist/esm/icons/eye.js
   var __iconNode7 = [
     [
       "path",
@@ -15016,21 +15016,21 @@
   ];
   var Eye = createLucideIcon("eye", __iconNode7);
 
-  // ../../tmp/prac-build/node_modules/lucide-react/dist/esm/icons/plus.js
+  // ../../../../tmp/prac-build/node_modules/lucide-react/dist/esm/icons/plus.js
   var __iconNode8 = [
     ["path", { d: "M5 12h14", key: "1ays0h" }],
     ["path", { d: "M12 5v14", key: "s699le" }]
   ];
   var Plus = createLucideIcon("plus", __iconNode8);
 
-  // ../../tmp/prac-build/node_modules/lucide-react/dist/esm/icons/rotate-ccw.js
+  // ../../../../tmp/prac-build/node_modules/lucide-react/dist/esm/icons/rotate-ccw.js
   var __iconNode9 = [
     ["path", { d: "M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8", key: "1357e3" }],
     ["path", { d: "M3 3v5h5", key: "1xhq8a" }]
   ];
   var RotateCcw = createLucideIcon("rotate-ccw", __iconNode9);
 
-  // ../../tmp/prac-build/node_modules/lucide-react/dist/esm/icons/save.js
+  // ../../../../tmp/prac-build/node_modules/lucide-react/dist/esm/icons/save.js
   var __iconNode10 = [
     [
       "path",
@@ -15044,7 +15044,7 @@
   ];
   var Save = createLucideIcon("save", __iconNode10);
 
-  // ../../tmp/prac-build/node_modules/lucide-react/dist/esm/icons/send.js
+  // ../../../../tmp/prac-build/node_modules/lucide-react/dist/esm/icons/send.js
   var __iconNode11 = [
     [
       "path",
@@ -15057,7 +15057,7 @@
   ];
   var Send = createLucideIcon("send", __iconNode11);
 
-  // ../../tmp/prac-build/node_modules/lucide-react/dist/esm/icons/square-check-big.js
+  // ../../../../tmp/prac-build/node_modules/lucide-react/dist/esm/icons/square-check-big.js
   var __iconNode12 = [
     [
       "path",
@@ -15067,7 +15067,7 @@
   ];
   var SquareCheckBig = createLucideIcon("square-check-big", __iconNode12);
 
-  // ../../tmp/prac-build/node_modules/lucide-react/dist/esm/icons/trash-2.js
+  // ../../../../tmp/prac-build/node_modules/lucide-react/dist/esm/icons/trash-2.js
   var __iconNode13 = [
     ["path", { d: "M3 6h18", key: "d0wm0j" }],
     ["path", { d: "M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6", key: "4alrt4" }],
@@ -15077,17 +15077,17 @@
   ];
   var Trash2 = createLucideIcon("trash-2", __iconNode13);
 
-  // ../../tmp/prac-build/node_modules/lucide-react/dist/esm/icons/x.js
+  // ../../../../tmp/prac-build/node_modules/lucide-react/dist/esm/icons/x.js
   var __iconNode14 = [
     ["path", { d: "M18 6 6 18", key: "1bl5f8" }],
     ["path", { d: "m6 6 12 12", key: "d8bk6v" }]
   ];
   var X = createLucideIcon("x", __iconNode14);
 
-  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/apps/practitioner-availability/components/SendClientModal.tsx
+  // apps/practitioner-availability/components/SendClientModal.tsx
   var import_react5 = __toESM(require_react());
 
-  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/apps/practitioner-availability/utils/afterHours.ts
+  // apps/practitioner-availability/utils/afterHours.ts
   var WEEKEND_DAYS = ["saturdays", "sundays"];
   var WEEKDAY_DAYS = ["mondays", "tuesdays", "wednesdays", "thursdays", "fridays"];
   function parseTimeMinutes(timeStr) {
@@ -15138,7 +15138,7 @@
     return false;
   }
 
-  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/apps/practitioner-availability/emailTemplateConfig.ts
+  // apps/practitioner-availability/emailTemplateConfig.ts
   var DEFAULT_EMAIL_TEMPLATE_CONFIG = {
     senders: ["Anna Donaldson", "Charlotte Davenport"],
     intro_text: "Thank you for reaching out to PsychologyCare. Based on your intake information, we've put together a list of practitioners we think could be a great fit for you.",
@@ -15210,7 +15210,7 @@
     localStorage.removeItem(STORAGE_KEY);
   }
 
-  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/apps/practitioner-availability/utils/emailBuilder.ts
+  // apps/practitioner-availability/utils/emailBuilder.ts
   function parseAvailability(text, includeMonthly = false) {
     const weekly = [];
     const fortnightly = [];
@@ -15449,7 +15449,7 @@
     </div>`;
   }
 
-  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/apps/practitioner-availability/components/SendClientModal.tsx
+  // apps/practitioner-availability/components/SendClientModal.tsx
   var import_jsx_runtime4 = __toESM(require_jsx_runtime());
   var SendClientModal = ({ selected, locationFilter, onClose, onSent, includeMonthly = false, sessionType = "Individual", clientAge60Plus = false }) => {
     const config = (0, import_react5.useMemo)(() => loadEmailTemplateConfig(), []);
@@ -15825,7 +15825,7 @@
   };
   var SendClientModal_default = SendClientModal;
 
-  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/apps/practitioner-availability/components/MultiSelectDropdown.tsx
+  // apps/practitioner-availability/components/MultiSelectDropdown.tsx
   var import_react6 = __toESM(require_react());
   var import_jsx_runtime5 = __toESM(require_jsx_runtime());
   function MultiSelectDropdown({ label, options, selected, onChange, placeholder }) {
@@ -15909,7 +15909,7 @@
     ] });
   }
 
-  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/apps/practitioner-availability/utils/kristaMatching.ts
+  // apps/practitioner-availability/utils/kristaMatching.ts
   var KRISTA_NAME = "Dr Krista De Castella";
   var INTEGRATION_PRESENTATION = "Difficult Psychedelic Experience / Bad-Trip Integration";
   function hasKristaClinicalSpecificity(modalities, presentations, nonComplexEmdrConfirmed, modalitiesMatchAll = false) {
@@ -15926,7 +15926,7 @@
     return p.name === KRISTA_NAME && !p.referral_only && sessionType === "Individual" && types.includes("Individual") && age !== null && age >= 16 && !(excludeFemaleOnly && p.client_gender_accepted === "Female Only");
   }
 
-  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/apps/practitioner-availability/utils/selectedCriteria.ts
+  // apps/practitioner-availability/utils/selectedCriteria.ts
   function matchesPresentation(value, selected) {
     const text = (value == null ? "" : typeof value === "string" ? value : Array.isArray(value) ? value.join(" ") : String(value)).toLowerCase();
     return text.includes(selected.toLowerCase());
@@ -15945,7 +15945,7 @@
     };
   }
 
-  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/apps/practitioner-availability/FindPractitioner.tsx
+  // apps/practitioner-availability/FindPractitioner.tsx
   var import_jsx_runtime6 = __toESM(require_jsx_runtime());
   var DAYS_OF_WEEK = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
   var PRESENTATION_OPTIONS = [
@@ -17148,7 +17148,7 @@
     ] });
   }
 
-  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/apps/practitioner-availability/Directory.tsx
+  // apps/practitioner-availability/Directory.tsx
   var import_react8 = __toESM(require_react());
   var import_jsx_runtime7 = __toESM(require_jsx_runtime());
   function Directory({ practitioners }) {
@@ -17335,7 +17335,7 @@
     ] });
   }
 
-  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/apps/practitioner-availability/AvailabilitySnapshot.tsx
+  // apps/practitioner-availability/AvailabilitySnapshot.tsx
   var import_react9 = __toESM(require_react());
   var import_jsx_runtime8 = __toESM(require_jsx_runtime());
   function getAvailabilityLines(text, type) {
@@ -17431,10 +17431,10 @@
   };
   var AvailabilitySnapshot_default = AvailabilitySnapshot;
 
-  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/apps/practitioner-availability/components/IntakeTab.tsx
+  // apps/practitioner-availability/components/IntakeTab.tsx
   var import_react10 = __toESM(require_react());
 
-  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/apps/practitioner-availability/practitionersData.ts
+  // apps/practitioner-availability/practitionersData.ts
   var PRACTITIONERS_DATA = [
     {
       "id": 1,
@@ -17504,14 +17504,14 @@
           "location": "Greville St, Prahran"
         },
         {
-          "availability": "Wednesdays at 1:30pm (Fortnightly: Starting 11th Nov)\nWednesdays at 1:30pm (Monthly: Starting 2nd Dec)",
+          "availability": "Wednesdays at 1:30pm (Monthly: Starting 2nd Dec)",
           "weekly_availability": [],
           "fortnightly_availability": [],
           "location": "Telehealth"
         },
         {
           "location": "Burke Rd, Camberwell",
-          "availability": "Fridays at 12pm (Fortnightly: Starting 13th Nov)\nMondays at 6:30pm (Fortnightly: Starting 7th Dec)\nFridays at 9am (Monthly: Starting 11th Dec)\nTuesdays at 5:30pm (Monthly: Starting 10th Nov)\nMondays at 4:30pm (Monthly: Starting 7th Dec)",
+          "availability": "Fridays at 12pm (Fortnightly: Starting 13th Nov)\nFridays at 9am (Monthly: Starting 11th Dec)\nTuesdays at 5:30pm (Monthly: Starting 10th Nov)\nMondays at 4:30pm (Monthly: Starting 7th Dec)",
           "weekly_availability": [],
           "fortnightly_availability": []
         }
@@ -17519,11 +17519,9 @@
       "last_updated": "2026-07-19",
       "availability": [
         "Fridays at 12pm (Fortnightly: Starting 13th Nov) \u2014 Burke Rd, Camberwell",
-        "Mondays at 6:30pm (Fortnightly: Starting 7th Dec) \u2014 Burke Rd, Camberwell",
         "Fridays at 9am (Monthly: Starting 11th Dec) \u2014 Burke Rd, Camberwell",
         "Tuesdays at 5:30pm (Monthly: Starting 10th Nov) \u2014 Burke Rd, Camberwell",
         "Mondays at 4:30pm (Monthly: Starting 7th Dec) \u2014 Burke Rd, Camberwell",
-        "Wednesdays at 1:30pm (Fortnightly: Starting 11th Nov) \u2014 Telehealth",
         "Wednesdays at 1:30pm (Monthly: Starting 2nd Dec) \u2014 Telehealth"
       ],
       "short_bio": "Trauma-informed psychologist supporting adults across sectors with integrative EMDR, CBT, schema, and somatic therapies in neuroaffirming, sex-positive, LGBTQIA+ inclusive practice.",
@@ -18008,7 +18006,7 @@
       "locations": [
         {
           "location": "Burke Rd, Camberwell",
-          "availability": "Fridays at 10am (Weekly: Starting 6th Nov)\nFridays at 1pm (Fortnightly: Starting 6th Nov)\nMondays at 9am (Fortnightly: Starting 16th Nov)\nMondays at 10am (Fortnightly: Starting 30th Nov)\nMondays at 8am (Monthly: Starting 7th Dec)\nMondays at 1pm (Monthly: Starting 23rd Nov)",
+          "availability": "Fridays at 10am (Weekly: Starting 13th Nov)\nFridays at 1pm (Fortnightly: Starting 20th Nov)\nMondays at 9am (Fortnightly: Starting 16th Nov)\nMondays at 10am (Fortnightly: Starting 30th Nov)\nMondays at 8am (Monthly: Starting 7th Dec)\nMondays at 1pm (Monthly: Starting 23rd Nov)",
           "weekly_availability": [],
           "fortnightly_availability": []
         },
@@ -18021,8 +18019,8 @@
       ],
       "last_updated": "2026-07-19",
       "availability": [
-        "Fridays at 10am (Weekly: Starting 6th Nov) \u2014 Burke Rd, Camberwell",
-        "Fridays at 1pm (Fortnightly: Starting 6th Nov) \u2014 Burke Rd, Camberwell",
+        "Fridays at 10am (Weekly: Starting 13th Nov) \u2014 Burke Rd, Camberwell",
+        "Fridays at 1pm (Fortnightly: Starting 20th Nov) \u2014 Burke Rd, Camberwell",
         "Mondays at 9am (Fortnightly: Starting 16th Nov) \u2014 Burke Rd, Camberwell",
         "Mondays at 10am (Fortnightly: Starting 30th Nov) \u2014 Burke Rd, Camberwell",
         "Mondays at 8am (Monthly: Starting 7th Dec) \u2014 Burke Rd, Camberwell",
@@ -20025,7 +20023,7 @@
         },
         {
           "location": "Burke Rd, Camberwell",
-          "availability": "Fridays at 2:30pm (Weekly: Starting 27th Nov)\nFridays at 12:30pm (Fortnightly: Starting 4th Dec)\nThursdays at 1:30pm (Fortnightly: Starting 10th Dec)\nThursdays at 12:30pm (Fortnightly: Starting 3rd Dec)\nFridays at 1:30pm (Fortnightly: Starting 4th Dec)\nFridays at 2:30pm (Fortnightly: Starting 13th Nov)\nThursdays at 8am (Fortnightly: Starting 3rd Dec)\nThursdays at 12:30pm (Monthly: Starting 12th Nov)",
+          "availability": "Fridays at 2:30pm (Weekly: Starting 27th Nov)\nWednesdays at 9am (Fortnightly: Starting 2nd Dec)\nFridays at 12:30pm (Fortnightly: Starting 4th Dec)\nThursdays at 1:30pm (Fortnightly: Starting 10th Dec)\nThursdays at 12:30pm (Fortnightly: Starting 3rd Dec)\nFridays at 1:30pm (Fortnightly: Starting 4th Dec)\nFridays at 2:30pm (Fortnightly: Starting 13th Nov)\nThursdays at 8am (Fortnightly: Starting 3rd Dec)\nThursdays at 12:30pm (Monthly: Starting 12th Nov)",
           "weekly_availability": [],
           "fortnightly_availability": []
         }
@@ -20036,6 +20034,7 @@
         "Tuesdays at 4pm (Monthly: Starting 10th Nov) \u2014 Greville St, Prahran",
         "Tuesdays at 9am (Monthly: Starting 24th Nov) \u2014 Greville St, Prahran",
         "Fridays at 2:30pm (Weekly: Starting 27th Nov) \u2014 Burke Rd, Camberwell",
+        "Wednesdays at 9am (Fortnightly: Starting 2nd Dec) \u2014 Burke Rd, Camberwell",
         "Fridays at 12:30pm (Fortnightly: Starting 4th Dec) \u2014 Burke Rd, Camberwell",
         "Thursdays at 1:30pm (Fortnightly: Starting 10th Dec) \u2014 Burke Rd, Camberwell",
         "Thursdays at 12:30pm (Fortnightly: Starting 3rd Dec) \u2014 Burke Rd, Camberwell",
@@ -21448,7 +21447,7 @@
       "link_to_bio": "https://psychologycare.com.au/elizabeth-white/",
       "locations": [
         {
-          "availability": "Fridays at 11am (Weekly: Starting 27th Nov)\nWednesdays at 9am (Weekly: Starting 18th Nov)\nThursdays at 9am (Weekly: Starting 26th Nov)\nFridays at 8am (Fortnightly: Starting 27th Nov)\nWednesdays at 10am (Fortnightly: Starting 25th Nov)",
+          "availability": "",
           "weekly_availability": [],
           "fortnightly_availability": [],
           "location": "Greville St, Prahran"
@@ -21461,13 +21460,7 @@
         }
       ],
       "last_updated": "2026-07-19",
-      "availability": [
-        "Fridays at 11am (Weekly: Starting 27th Nov) \u2014 Greville St, Prahran",
-        "Wednesdays at 9am (Weekly: Starting 18th Nov) \u2014 Greville St, Prahran",
-        "Thursdays at 9am (Weekly: Starting 26th Nov) \u2014 Greville St, Prahran",
-        "Fridays at 8am (Fortnightly: Starting 27th Nov) \u2014 Greville St, Prahran",
-        "Wednesdays at 10am (Fortnightly: Starting 25th Nov) \u2014 Greville St, Prahran"
-      ],
+      "availability": [],
       "short_bio": "A mature-age clinical psychologist using ISTDP, Conversational Model, ACT and CBT to support adults through chronic depression, stress-related symptoms and life transitions.",
       "weekly_availability": [
         {
@@ -21722,9 +21715,9 @@
       "upcoming_leave_hide_after": "2027-02-04"
     }
   ];
-  var AVAILABILITY_LAST_UPDATED = "5 Nov 2026 9:25am";
+  var AVAILABILITY_LAST_UPDATED = "6 Nov 2026 6:04am";
 
-  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/apps/practitioner-availability/components/IntakeTab.tsx
+  // apps/practitioner-availability/components/IntakeTab.tsx
   var import_jsx_runtime9 = __toESM(require_jsx_runtime());
   var COLORS = {
     darkPurple: "#2C244C",
@@ -22359,10 +22352,10 @@
     return lines.join("\n");
   }
 
-  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/apps/practitioner-availability/ManageAvailability.tsx
+  // apps/practitioner-availability/ManageAvailability.tsx
   var import_react12 = __toESM(require_react());
 
-  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/apps/practitioner-availability/components/MultiSelect.tsx
+  // apps/practitioner-availability/components/MultiSelect.tsx
   var import_react11 = __toESM(require_react());
   var import_jsx_runtime10 = __toESM(require_jsx_runtime());
   var MultiSelect = ({
@@ -22519,7 +22512,7 @@
   };
   var MultiSelect_default = MultiSelect;
 
-  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/apps/practitioner-availability/constants.ts
+  // apps/practitioner-availability/constants.ts
   var CANONICAL_PRESENTATIONS = [
     // Anxiety & Stress
     "Anxiety",
@@ -22763,7 +22756,7 @@
     "Trauma-Informed Care"
   ].sort();
 
-  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/apps/practitioner-availability/ManageAvailability.tsx
+  // apps/practitioner-availability/ManageAvailability.tsx
   var import_jsx_runtime11 = __toESM(require_jsx_runtime());
   function toEditableString(val, sep = "; ") {
     if (!val) return "";
@@ -23093,7 +23086,7 @@
   };
   var ManageAvailability_default = ManageAvailability;
 
-  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/apps/practitioner-availability/TaxonomyTab.tsx
+  // apps/practitioner-availability/TaxonomyTab.tsx
   var import_react13 = __toESM(require_react());
   var import_jsx_runtime12 = __toESM(require_jsx_runtime());
   var BRAND = {
@@ -23483,7 +23476,7 @@
   };
   var TaxonomyTab_default = TaxonomyTab;
 
-  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/apps/practitioner-availability/EmailTemplateTab.tsx
+  // apps/practitioner-availability/EmailTemplateTab.tsx
   var import_react14 = __toESM(require_react());
   var import_jsx_runtime13 = __toESM(require_jsx_runtime());
   var SECTION_LABELS = [
@@ -23842,7 +23835,7 @@
   };
   var EmailTemplateTab_default = EmailTemplateTab;
 
-  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/apps/practitioner-availability/ReferralNetwork.tsx
+  // apps/practitioner-availability/ReferralNetwork.tsx
   var import_react15 = __toESM(require_react());
   var import_jsx_runtime14 = __toESM(require_jsx_runtime());
   var BRAND2 = {
@@ -24503,7 +24496,7 @@
   };
   var ReferralNetwork_default = ReferralNetwork;
 
-  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/apps/practitioner-availability/AuditTab.tsx
+  // apps/practitioner-availability/AuditTab.tsx
   var import_react16 = __toESM(require_react());
   var import_jsx_runtime15 = __toESM(require_jsx_runtime());
   function formatTimestamp(iso) {
@@ -24720,7 +24713,7 @@
     ] });
   }
 
-  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/apps/practitioner-availability/CRMSyncTab.tsx
+  // apps/practitioner-availability/CRMSyncTab.tsx
   var import_react17 = __toESM(require_react());
   var import_jsx_runtime16 = __toESM(require_jsx_runtime());
   var FIELD_SOURCES = [
@@ -27167,7 +27160,7 @@
     ] });
   }
 
-  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/apps/practitioner-availability/AdHocAvailabilityTab.tsx
+  // apps/practitioner-availability/AdHocAvailabilityTab.tsx
   var import_react18 = __toESM(require_react());
   var import_jsx_runtime17 = __toESM(require_jsx_runtime());
   var BRAND3 = "#2C244C";
@@ -27527,7 +27520,7 @@
   };
   var AdHocAvailabilityTab_default = AdHocAvailabilityTab;
 
-  // ../threads/a_cwa98xzh47ey9rcvmmh4/work/apps/practitioner-availability/app.tsx
+  // apps/practitioner-availability/app.tsx
   var import_client = __toESM(require_client());
   var import_jsx_runtime18 = __toESM(require_jsx_runtime());
   var DATA_PATH = "/tasklet/threads/a_cwa98xzh47ey9rcvmmh4/work/practitioners_data.json";

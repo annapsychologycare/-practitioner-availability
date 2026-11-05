@@ -67,14 +67,14 @@
         "location": "Greville St, Prahran"
       },
       {
-        "availability": "Wednesdays at 1:30pm (Fortnightly: Starting 11th Nov)\nWednesdays at 1:30pm (Monthly: Starting 2nd Dec)",
+        "availability": "Wednesdays at 1:30pm (Monthly: Starting 2nd Dec)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Telehealth"
       },
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "Fridays at 12pm (Fortnightly: Starting 13th Nov)\nMondays at 6:30pm (Fortnightly: Starting 7th Dec)\nFridays at 9am (Monthly: Starting 11th Dec)\nTuesdays at 5:30pm (Monthly: Starting 10th Nov)\nMondays at 4:30pm (Monthly: Starting 7th Dec)",
+        "availability": "Fridays at 12pm (Fortnightly: Starting 13th Nov)\nFridays at 9am (Monthly: Starting 11th Dec)\nTuesdays at 5:30pm (Monthly: Starting 10th Nov)\nMondays at 4:30pm (Monthly: Starting 7th Dec)",
         "weekly_availability": [],
         "fortnightly_availability": []
       }
@@ -82,11 +82,9 @@
     "last_updated": "2026-07-19",
     "availability": [
       "Fridays at 12pm (Fortnightly: Starting 13th Nov) — Burke Rd, Camberwell",
-      "Mondays at 6:30pm (Fortnightly: Starting 7th Dec) — Burke Rd, Camberwell",
       "Fridays at 9am (Monthly: Starting 11th Dec) — Burke Rd, Camberwell",
       "Tuesdays at 5:30pm (Monthly: Starting 10th Nov) — Burke Rd, Camberwell",
       "Mondays at 4:30pm (Monthly: Starting 7th Dec) — Burke Rd, Camberwell",
-      "Wednesdays at 1:30pm (Fortnightly: Starting 11th Nov) — Telehealth",
       "Wednesdays at 1:30pm (Monthly: Starting 2nd Dec) — Telehealth"
     ],
     "short_bio": "Trauma-informed psychologist supporting adults across sectors with integrative EMDR, CBT, schema, and somatic therapies in neuroaffirming, sex-positive, LGBTQIA+ inclusive practice.",
@@ -571,7 +569,7 @@
     "locations": [
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "Fridays at 10am (Weekly: Starting 6th Nov)\nFridays at 1pm (Fortnightly: Starting 6th Nov)\nMondays at 9am (Fortnightly: Starting 16th Nov)\nMondays at 10am (Fortnightly: Starting 30th Nov)\nMondays at 8am (Monthly: Starting 7th Dec)\nMondays at 1pm (Monthly: Starting 23rd Nov)",
+        "availability": "Fridays at 10am (Weekly: Starting 13th Nov)\nFridays at 1pm (Fortnightly: Starting 20th Nov)\nMondays at 9am (Fortnightly: Starting 16th Nov)\nMondays at 10am (Fortnightly: Starting 30th Nov)\nMondays at 8am (Monthly: Starting 7th Dec)\nMondays at 1pm (Monthly: Starting 23rd Nov)",
         "weekly_availability": [],
         "fortnightly_availability": []
       },
@@ -584,8 +582,8 @@
     ],
     "last_updated": "2026-07-19",
     "availability": [
-      "Fridays at 10am (Weekly: Starting 6th Nov) — Burke Rd, Camberwell",
-      "Fridays at 1pm (Fortnightly: Starting 6th Nov) — Burke Rd, Camberwell",
+      "Fridays at 10am (Weekly: Starting 13th Nov) — Burke Rd, Camberwell",
+      "Fridays at 1pm (Fortnightly: Starting 20th Nov) — Burke Rd, Camberwell",
       "Mondays at 9am (Fortnightly: Starting 16th Nov) — Burke Rd, Camberwell",
       "Mondays at 10am (Fortnightly: Starting 30th Nov) — Burke Rd, Camberwell",
       "Mondays at 8am (Monthly: Starting 7th Dec) — Burke Rd, Camberwell",
@@ -2588,7 +2586,7 @@
       },
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "Fridays at 2:30pm (Weekly: Starting 27th Nov)\nFridays at 12:30pm (Fortnightly: Starting 4th Dec)\nThursdays at 1:30pm (Fortnightly: Starting 10th Dec)\nThursdays at 12:30pm (Fortnightly: Starting 3rd Dec)\nFridays at 1:30pm (Fortnightly: Starting 4th Dec)\nFridays at 2:30pm (Fortnightly: Starting 13th Nov)\nThursdays at 8am (Fortnightly: Starting 3rd Dec)\nThursdays at 12:30pm (Monthly: Starting 12th Nov)",
+        "availability": "Fridays at 2:30pm (Weekly: Starting 27th Nov)\nWednesdays at 9am (Fortnightly: Starting 2nd Dec)\nFridays at 12:30pm (Fortnightly: Starting 4th Dec)\nThursdays at 1:30pm (Fortnightly: Starting 10th Dec)\nThursdays at 12:30pm (Fortnightly: Starting 3rd Dec)\nFridays at 1:30pm (Fortnightly: Starting 4th Dec)\nFridays at 2:30pm (Fortnightly: Starting 13th Nov)\nThursdays at 8am (Fortnightly: Starting 3rd Dec)\nThursdays at 12:30pm (Monthly: Starting 12th Nov)",
         "weekly_availability": [],
         "fortnightly_availability": []
       }
@@ -2599,6 +2597,7 @@
       "Tuesdays at 4pm (Monthly: Starting 10th Nov) — Greville St, Prahran",
       "Tuesdays at 9am (Monthly: Starting 24th Nov) — Greville St, Prahran",
       "Fridays at 2:30pm (Weekly: Starting 27th Nov) — Burke Rd, Camberwell",
+      "Wednesdays at 9am (Fortnightly: Starting 2nd Dec) — Burke Rd, Camberwell",
       "Fridays at 12:30pm (Fortnightly: Starting 4th Dec) — Burke Rd, Camberwell",
       "Thursdays at 1:30pm (Fortnightly: Starting 10th Dec) — Burke Rd, Camberwell",
       "Thursdays at 12:30pm (Fortnightly: Starting 3rd Dec) — Burke Rd, Camberwell",
@@ -4011,7 +4010,7 @@
     "link_to_bio": "https://psychologycare.com.au/elizabeth-white/",
     "locations": [
       {
-        "availability": "Fridays at 11am (Weekly: Starting 27th Nov)\nWednesdays at 9am (Weekly: Starting 18th Nov)\nThursdays at 9am (Weekly: Starting 26th Nov)\nFridays at 8am (Fortnightly: Starting 27th Nov)\nWednesdays at 10am (Fortnightly: Starting 25th Nov)",
+        "availability": "",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
@@ -4024,13 +4023,7 @@
       }
     ],
     "last_updated": "2026-07-19",
-    "availability": [
-      "Fridays at 11am (Weekly: Starting 27th Nov) — Greville St, Prahran",
-      "Wednesdays at 9am (Weekly: Starting 18th Nov) — Greville St, Prahran",
-      "Thursdays at 9am (Weekly: Starting 26th Nov) — Greville St, Prahran",
-      "Fridays at 8am (Fortnightly: Starting 27th Nov) — Greville St, Prahran",
-      "Wednesdays at 10am (Fortnightly: Starting 25th Nov) — Greville St, Prahran"
-    ],
+    "availability": [],
     "short_bio": "A mature-age clinical psychologist using ISTDP, Conversational Model, ACT and CBT to support adults through chronic depression, stress-related symptoms and life transitions.",
     "weekly_availability": [
       {
