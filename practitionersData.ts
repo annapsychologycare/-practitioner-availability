@@ -74,13 +74,14 @@ export const PRACTITIONERS_DATA = [
       },
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "Fridays at 12pm (Fortnightly: Starting 13th Nov)\nFridays at 9am (Monthly: Starting 11th Dec)\nMondays at 4:30pm (Monthly: Starting 7th Dec)\nTuesdays at 5:30pm (Monthly: Starting 10th Nov)",
+        "availability": "Mondays at 7:30pm (Fortnightly: Starting 16th Nov)\nFridays at 12pm (Fortnightly: Starting 13th Nov)\nFridays at 9am (Monthly: Starting 11th Dec)\nMondays at 4:30pm (Monthly: Starting 7th Dec)\nTuesdays at 5:30pm (Monthly: Starting 10th Nov)",
         "weekly_availability": [],
         "fortnightly_availability": []
       }
     ],
     "last_updated": "2026-07-19",
     "availability": [
+      "Mondays at 7:30pm (Fortnightly: Starting 16th Nov) — Burke Rd, Camberwell",
       "Fridays at 12pm (Fortnightly: Starting 13th Nov) — Burke Rd, Camberwell",
       "Fridays at 9am (Monthly: Starting 11th Dec) — Burke Rd, Camberwell",
       "Mondays at 4:30pm (Monthly: Starting 7th Dec) — Burke Rd, Camberwell",
@@ -1003,7 +1004,7 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/dr-maddie-brygel-psychologist/",
     "locations": [
       {
-        "availability": "Fridays at 10am (Fortnightly: Starting 13th Nov)",
+        "availability": "",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
@@ -1048,9 +1049,7 @@ export const PRACTITIONERS_DATA = [
       }
     ],
     "last_updated": "2026-07-19",
-    "availability": [
-      "Fridays at 10am (Fortnightly: Starting 13th Nov) — Greville St, Prahran"
-    ],
+    "availability": [],
     "short_bio": "A psychologist trained in both clinical and forensic psychology, lecturer, and researcher supporting adults with anxiety, depression, trauma, grief, addiction and relationship issues",
     "weekly_availability": [
       {
@@ -4280,4 +4279,4 @@ export const PRACTITIONERS_DATA = [
   }
 ];
 export const practitionersData = PRACTITIONERS_DATA;
-export const AVAILABILITY_LAST_UPDATED = "9 Nov 2026 6:03am";
+export const AVAILABILITY_LAST_UPDATED = "9 Nov 2026 9:43am";

@@ -22974,7 +22974,8 @@ Alex is passionate about normalising the distress we may experience in response 
         },
         {
           location: "Burke Rd, Camberwell",
-          availability: `Fridays at 12pm (Fortnightly: Starting 13th Nov)
+          availability: `Mondays at 7:30pm (Fortnightly: Starting 16th Nov)
+Fridays at 12pm (Fortnightly: Starting 13th Nov)
 Fridays at 9am (Monthly: Starting 11th Dec)
 Mondays at 4:30pm (Monthly: Starting 7th Dec)
 Tuesdays at 5:30pm (Monthly: Starting 10th Nov)`,
@@ -22984,6 +22985,7 @@ Tuesdays at 5:30pm (Monthly: Starting 10th Nov)`,
       ],
       last_updated: "2026-07-19",
       availability: [
+        "Mondays at 7:30pm (Fortnightly: Starting 16th Nov) — Burke Rd, Camberwell",
         "Fridays at 12pm (Fortnightly: Starting 13th Nov) — Burke Rd, Camberwell",
         "Fridays at 9am (Monthly: Starting 11th Dec) — Burke Rd, Camberwell",
         "Mondays at 4:30pm (Monthly: Starting 7th Dec) — Burke Rd, Camberwell",
@@ -23975,7 +23977,7 @@ A/H: $275`,
       link_to_bio: "https://psychologycare.com.au/dr-maddie-brygel-psychologist/",
       locations: [
         {
-          availability: "Fridays at 10am (Fortnightly: Starting 13th Nov)",
+          availability: "",
           weekly_availability: [],
           fortnightly_availability: [],
           location: "Greville St, Prahran"
@@ -24020,9 +24022,7 @@ A/H: $275`,
         }
       ],
       last_updated: "2026-07-19",
-      availability: [
-        "Fridays at 10am (Fortnightly: Starting 13th Nov) — Greville St, Prahran"
-      ],
+      availability: [],
       short_bio: "A psychologist trained in both clinical and forensic psychology, lecturer, and researcher supporting adults with anxiety, depression, trauma, grief, addiction and relationship issues",
       weekly_availability: [
         {
@@ -27528,7 +27528,7 @@ Karen Pereira York will be on leave from 21 January 2027 to 4 February 2027 incl
       upcoming_leave_hide_after: "2027-02-04"
     }
   ];
-  var AVAILABILITY_LAST_UPDATED = "9 Nov 2026 6:03am";
+  var AVAILABILITY_LAST_UPDATED = "9 Nov 2026 9:43am";
 
   // components/IntakeTab.tsx
   var jsx_dev_runtime9 = __toESM(require_jsx_dev_runtime());
