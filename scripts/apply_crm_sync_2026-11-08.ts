@@ -1,3 +1,4 @@
+import {isInternalPractitioner,assertInternalAppMembership} from './internal_practitioner_guard';
 import {readFile,writeFile,mkdir,copyFile} from 'node:fs/promises';
 import path from 'node:path';
 import assert from 'node:assert/strict';
@@ -8,15 +9,15 @@ const root='/tasklet/threads/a_cwa98xzh47ey9rcvmmh4/work',dir=`${root}/sync_2026
 const load=async(f:string)=>JSON.parse(await readFile(f,'utf8')),unwrap=(x:any)=>x.result??x;
 const norm=(s:string)=>s.toLowerCase().replace(/^(dr\.?|mr\.?|ms\.?|mrs\.?)\s+/,'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').trim().replace(/^nicholas burden$/,'nick burden').replace(/^pete steele$/,'peter steele');
 const contacts=unwrap(await load(`${dir}/sources/contacts.json`)),feeResult=unwrap(await load(`${dir}/sources/fees.json`));assert(!contacts.info.more_records&&!feeResult.info.more_records);
-const records=contacts.data;
-for(const j of unwrap(await load(`${dir}/sources/josh.json`)).data)if(!records.some((x:any)=>x.id===j.id))records.push(j);
+const records=contacts.data.filter(isInternalPractitioner);
+for(const j of unwrap(await load(`${dir}/sources/josh.json`)).data)if(isInternalPractitioner(j)&&!records.some((x:any)=>x.id===j.id))records.push(j);
 const priorSource=unwrap(await load(`${root}/sync_2026-11-04/sources/contacts.json`));
 const priorRecords=priorSource.data;
 for(const j of unwrap(await load(`${root}/sync_2026-11-04/sources/josh.json`)).data)if(!priorRecords.some((x:any)=>x.id===j.id))priorRecords.push(j);
 const jsonFiles=['practitioners_data.json','deploy/practitioners_data.json','deploy/public/practitioners_data.json','deploy/src/practitioners_data.json','deploy/netlify/functions/practitioners-data.json'];
 const tsFiles=['apps/practitioner-availability/practitionersData.ts','deploy/src/practitionersData.ts'];
 for(const f of [...jsonFiles,...tsFiles,'apps/practitioner-availability/bundle.js','deploy/src/bundle.js','practitioners_photos.json']){await mkdir(path.dirname(`${backup}/${f}`),{recursive:true});await copyFile(`${root}/${f}`,`${backup}/${f}`,2);}
-const data=await load(`${root}/practitioners_data.json`),before=structuredClone(data);assert.equal(data.length,25);
+const data=await load(`${root}/practitioners_data.json`),before=structuredClone(data);assertInternalAppMembership(data);assert.equal(data.length,25);
 const changes:any[]=[],matched:any[]=[],warnings:any[]=[],review:any[]=[],feeChecks:any[]=[];
 const apply=(p:any,field:string,value:any,source:string)=>{assert(Object.hasOwn(p,field),`Missing actual app field ${field}`);if(JSON.stringify(p[field])!==JSON.stringify(value)){changes.push({name:p.name,field,old:p[field],new:value,source});p[field]=structuredClone(value);}};
 // Full reconciliation of verified fields. Preserve approved bios/service scope and existing field representation.

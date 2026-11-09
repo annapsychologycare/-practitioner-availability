@@ -1,3 +1,4 @@
+import {isInternalPractitioner} from './internal_practitioner_guard';
 import { invokeTool } from '@tasklet/tools/v2';
 import { readFile, writeFile } from 'node:fs/promises';
 import { mapCrmNotes } from './crm_alerts';
@@ -22,7 +23,7 @@ if (!searchResp.ok) {
 }
 
 const crmResult = await searchResp.json() as any;
-const crmContacts: any[] = crmResult?.result?.data || crmResult?.data || [];
+const crmContacts: any[] = (crmResult?.result?.data || crmResult?.data || []).filter(isInternalPractitioner);
 console.log(`Fetched ${crmContacts.length} CRM contacts`);
 
 // Save CRM snapshot

@@ -1,4 +1,4 @@
-import { invokeTool } from '@tasklet/tools/v2';
+import {fetchInternalPractitioners, assertInternalAppMembership} from './internal_practitioner_guard';
 import { isKristaIntakePaused, applyIntakePauses } from './practitioner_intake_pause';
 import {mapCrmUpcomingLeave} from './crm_upcoming_leave';
 
@@ -16,22 +16,8 @@ export function mapCrmNotes(crm: any): {alert: string; client_note: string; [key
 
 const normalize = (s: string) => s.toLowerCase().replace(/^(dr\.?|mr\.?|ms\.?|mrs\.?)\s+/, '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim().replace(/^nicholas burden$/, 'nick burden').replace(/^pete steele$/, 'peter steele');
 export async function refreshCrmAlerts(practitioners: any[]): Promise<string[]> {
-  const r = await invokeTool({connectionId:'conn_pdkvmnzjcqdeb3ha13wc',toolName:'zoho_crm-search-objects',args:{
-    module:'Contacts',criteria:'(Account_Name:equals:PsychologyCare)'
-  }});
-  if (!r.ok) throw new Error(`CRM alert refresh failed: ${r.error}`);
-  const raw: any = await r.json(); const data = raw.result ?? raw;
-  if (!Array.isArray(data.data) || data.info?.more_records === true) throw new Error('CRM alert search incomplete');
-  const records: any[] = data.data;
-  // Some account searches omit Josh; fetch his known practitioner record directly.
-  if (!records.some(r => r.id === '50438000007973001')) {
-    const j = await invokeTool({connectionId:'conn_pdkvmnzjcqdeb3ha13wc',toolName:'zoho_crm-get-object',args:{module:'Contacts',recordId:'50438000007973001'}});
-    if (!j.ok) throw new Error(`Josh CRM alert refresh failed: ${j.error}`);
-    const x: any = await j.json();
-    const rows = (x.result ?? x).data;
-    if (!Array.isArray(rows) || rows.length !== 1) throw new Error('Josh CRM record missing');
-    records.push(rows[0]);
-  }
+  assertInternalAppMembership(practitioners);
+  const records = await fetchInternalPractitioners();
   const changed: string[] = [];
   applyIntakePauses(practitioners);
   for (const p of practitioners) {
