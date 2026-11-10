@@ -74,7 +74,7 @@ export const PRACTITIONERS_DATA = [
       },
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "Mondays at 7:30pm (Fortnightly: Starting 16th Nov)\nFridays at 12pm (Fortnightly: Starting 13th Nov)\nFridays at 9am (Monthly: Starting 11th Dec)\nTuesdays at 5:30pm (Monthly: Starting 8th Dec)\nMondays at 4:30pm (Monthly: Starting 7th Dec)",
+        "availability": "Mondays at 7:30pm (Fortnightly: Starting 16th Nov)\nFridays at 12pm (Fortnightly: Starting 13th Nov)\nFridays at 12pm (Monthly: Starting 20th Nov)\nFridays at 9am (Monthly: Starting 11th Dec)\nTuesdays at 5:30pm (Monthly: Starting 8th Dec)\nMondays at 4:30pm (Monthly: Starting 7th Dec)",
         "weekly_availability": [],
         "fortnightly_availability": []
       }
@@ -83,6 +83,7 @@ export const PRACTITIONERS_DATA = [
     "availability": [
       "Mondays at 7:30pm (Fortnightly: Starting 16th Nov) — Burke Rd, Camberwell",
       "Fridays at 12pm (Fortnightly: Starting 13th Nov) — Burke Rd, Camberwell",
+      "Fridays at 12pm (Monthly: Starting 20th Nov) — Burke Rd, Camberwell",
       "Fridays at 9am (Monthly: Starting 11th Dec) — Burke Rd, Camberwell",
       "Tuesdays at 5:30pm (Monthly: Starting 8th Dec) — Burke Rd, Camberwell",
       "Mondays at 4:30pm (Monthly: Starting 7th Dec) — Burke Rd, Camberwell",
@@ -570,7 +571,7 @@ export const PRACTITIONERS_DATA = [
     "locations": [
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "Fridays at 10am (Weekly: Starting 13th Nov)\nFridays at 1pm (Fortnightly: Starting 20th Nov)\nMondays at 9am (Fortnightly: Starting 16th Nov)\nMondays at 10am (Fortnightly: Starting 30th Nov)\nMondays at 8am (Monthly: Starting 7th Dec)\nMondays at 1pm (Monthly: Starting 23rd Nov)",
+        "availability": "Fridays at 10am (Weekly: Starting 13th Nov)\nFridays at 1pm (Fortnightly: Starting 20th Nov)\nMondays at 9am (Fortnightly: Starting 16th Nov)\nMondays at 10am (Fortnightly: Starting 30th Nov)\nMondays at 1pm (Monthly: Starting 23rd Nov)",
         "weekly_availability": [],
         "fortnightly_availability": []
       },
@@ -587,7 +588,6 @@ export const PRACTITIONERS_DATA = [
       "Fridays at 1pm (Fortnightly: Starting 20th Nov) — Burke Rd, Camberwell",
       "Mondays at 9am (Fortnightly: Starting 16th Nov) — Burke Rd, Camberwell",
       "Mondays at 10am (Fortnightly: Starting 30th Nov) — Burke Rd, Camberwell",
-      "Mondays at 8am (Monthly: Starting 7th Dec) — Burke Rd, Camberwell",
       "Mondays at 1pm (Monthly: Starting 23rd Nov) — Burke Rd, Camberwell"
     ],
     "short_bio": "Amy is a warm, LGBTQIAP+ friendly clinical psychologist supporting clients 16+ with mood, relationship and eating difficulties using flexible, evidence-based therapies.",
@@ -1655,7 +1655,7 @@ export const PRACTITIONERS_DATA = [
         "location": "Telehealth"
       },
       {
-        "availability": "Thursdays at 1:30pm (Weekly: Starting 26th Nov)\nMondays at 9am (Fortnightly: Starting 23rd Nov)\nTuesdays at 2:30pm (Fortnightly: Starting 1st Dec)\nMondays at 1:30pm (Fortnightly: Starting 21st Dec)\nThursdays at 9am (Fortnightly: Starting 26th Nov)\nTuesdays at 2:30pm (Monthly: Starting 8th Dec)\nTuesdays at 4:30pm (Monthly: Starting 8th Dec)\nThursdays at 12:30pm (Monthly: Starting 17th Dec)",
+        "availability": "Thursdays at 1:30pm (Weekly: Starting 26th Nov)\nMondays at 11:30am (Fortnightly: Starting 4th Jan)\nMondays at 9am (Fortnightly: Starting 23rd Nov)\nTuesdays at 2:30pm (Fortnightly: Starting 1st Dec)\nMondays at 1:30pm (Fortnightly: Starting 21st Dec)\nThursdays at 9am (Fortnightly: Starting 26th Nov)\nTuesdays at 2:30pm (Monthly: Starting 8th Dec)\nTuesdays at 4:30pm (Monthly: Starting 8th Dec)\nThursdays at 12:30pm (Monthly: Starting 17th Dec)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Burke Rd, Camberwell"
@@ -1664,6 +1664,7 @@ export const PRACTITIONERS_DATA = [
     "last_updated": "2026-07-19",
     "availability": [
       "Thursdays at 1:30pm (Weekly: Starting 26th Nov) — Burke Rd, Camberwell",
+      "Mondays at 11:30am (Fortnightly: Starting 4th Jan) — Burke Rd, Camberwell",
       "Mondays at 9am (Fortnightly: Starting 23rd Nov) — Burke Rd, Camberwell",
       "Tuesdays at 2:30pm (Fortnightly: Starting 1st Dec) — Burke Rd, Camberwell",
       "Mondays at 1:30pm (Fortnightly: Starting 21st Dec) — Burke Rd, Camberwell",
@@ -2585,7 +2586,7 @@ export const PRACTITIONERS_DATA = [
       },
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "Fridays at 2:30pm (Weekly: Starting 27th Nov)\nWednesdays at 9am (Fortnightly: Starting 2nd Dec)\nFridays at 12:30pm (Fortnightly: Starting 4th Dec)\nThursdays at 1:30pm (Fortnightly: Starting 10th Dec)\nThursdays at 12:30pm (Fortnightly: Starting 3rd Dec)\nFridays at 1:30pm (Fortnightly: Starting 4th Dec)\nThursdays at 8am (Fortnightly: Starting 3rd Dec)\nFridays at 9am (Monthly: Starting 18th Dec)\nThursdays at 12:30pm (Monthly: Starting 12th Nov)",
+        "availability": "Fridays at 2:30pm (Weekly: Starting 27th Nov)\nWednesdays at 9am (Fortnightly: Starting 2nd Dec)\nThursdays at 1:30pm (Fortnightly: Starting 10th Dec)\nThursdays at 12:30pm (Fortnightly: Starting 3rd Dec)\nFridays at 1:30pm (Fortnightly: Starting 4th Dec)\nThursdays at 8am (Fortnightly: Starting 3rd Dec)\nFridays at 9am (Monthly: Starting 18th Dec)\nThursdays at 12:30pm (Monthly: Starting 12th Nov)",
         "weekly_availability": [],
         "fortnightly_availability": []
       }
@@ -2594,7 +2595,6 @@ export const PRACTITIONERS_DATA = [
     "availability": [
       "Fridays at 2:30pm (Weekly: Starting 27th Nov) — Burke Rd, Camberwell",
       "Wednesdays at 9am (Fortnightly: Starting 2nd Dec) — Burke Rd, Camberwell",
-      "Fridays at 12:30pm (Fortnightly: Starting 4th Dec) — Burke Rd, Camberwell",
       "Thursdays at 1:30pm (Fortnightly: Starting 10th Dec) — Burke Rd, Camberwell",
       "Thursdays at 12:30pm (Fortnightly: Starting 3rd Dec) — Burke Rd, Camberwell",
       "Fridays at 1:30pm (Fortnightly: Starting 4th Dec) — Burke Rd, Camberwell",
@@ -2958,7 +2958,7 @@ export const PRACTITIONERS_DATA = [
     "locations": [
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "Thursdays at 6:30pm (Weekly: Starting 10th Dec)\nTuesdays at 8pm (Weekly: Starting 8th Dec)\nTuesdays at 7pm (Weekly: Starting 8th Dec)\nThursdays at 7:30pm (Fortnightly: Starting 12th Nov)\nThursdays at 4:30pm (Fortnightly: Starting 17th Dec)\nWednesdays at 7:30pm (Fortnightly: Starting 9th Dec)",
+        "availability": "Tuesdays at 8pm (Weekly: Starting 8th Dec)\nTuesdays at 7pm (Weekly: Starting 8th Dec)\nThursdays at 7:30pm (Fortnightly: Starting 12th Nov)\nThursdays at 4:30pm (Fortnightly: Starting 17th Dec)\nWednesdays at 7:30pm (Fortnightly: Starting 9th Dec)",
         "weekly_availability": [],
         "fortnightly_availability": []
       },
@@ -2970,20 +2970,18 @@ export const PRACTITIONERS_DATA = [
       },
       {
         "location": "Telehealth",
-        "availability": "Wednesdays at 4:30pm (Weekly: Starting 11th Nov)\nThursdays at 6:30pm (Weekly: Starting 12th Nov)\nTuesdays at 8pm (Weekly: Starting 17th Nov)\nTuesdays at 7pm (Weekly: Starting 17th Nov)\nThursdays at 4:30pm (Fortnightly: Starting 19th Nov)\nWednesdays at 7:30pm (Fortnightly: Starting 11th Nov)\nWednesdays at 2:30pm (Monthly: Starting 25th Nov)"
+        "availability": "Wednesdays at 4:30pm (Weekly: Starting 11th Nov)\nTuesdays at 8pm (Weekly: Starting 17th Nov)\nTuesdays at 7pm (Weekly: Starting 17th Nov)\nThursdays at 4:30pm (Fortnightly: Starting 19th Nov)\nWednesdays at 7:30pm (Fortnightly: Starting 11th Nov)\nWednesdays at 2:30pm (Monthly: Starting 25th Nov)"
       }
     ],
     "last_updated": "2026-07-19",
     "short_bio": "Josh is a warm, research-active clinical psychologist supporting adolescents and adults with integrative, values-based therapy for trauma, neurodiversity and emotional difficulties.",
     "availability": [
       "Wednesdays at 4:30pm (Weekly: Starting 11th Nov) — Telehealth",
-      "Thursdays at 6:30pm (Weekly: Starting 12th Nov) — Telehealth",
       "Tuesdays at 8pm (Weekly: Starting 17th Nov) — Telehealth",
       "Tuesdays at 7pm (Weekly: Starting 17th Nov) — Telehealth",
       "Thursdays at 4:30pm (Fortnightly: Starting 19th Nov) — Telehealth",
       "Wednesdays at 7:30pm (Fortnightly: Starting 11th Nov) — Telehealth",
       "Wednesdays at 2:30pm (Monthly: Starting 25th Nov) — Telehealth",
-      "Thursdays at 6:30pm (Weekly: Starting 10th Dec) — Burke Rd, Camberwell",
       "Tuesdays at 8pm (Weekly: Starting 8th Dec) — Burke Rd, Camberwell",
       "Tuesdays at 7pm (Weekly: Starting 8th Dec) — Burke Rd, Camberwell",
       "Thursdays at 7:30pm (Fortnightly: Starting 12th Nov) — Burke Rd, Camberwell",
@@ -3317,7 +3315,7 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/belinda-pacella/",
     "locations": [
       {
-        "availability": "Thursdays at 10am (Fortnightly: Starting 3rd Dec)\nThursdays at 8am (Monthly: Starting 26th Nov)",
+        "availability": "Thursdays at 8am (Monthly: Starting 26th Nov)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
@@ -3325,7 +3323,6 @@ export const PRACTITIONERS_DATA = [
     ],
     "last_updated": "2026-07-19",
     "availability": [
-      "Thursdays at 10am (Fortnightly: Starting 3rd Dec) — Greville St, Prahran",
       "Thursdays at 8am (Monthly: Starting 26th Nov) — Greville St, Prahran"
     ],
     "short_bio": "Belinda is a collaborative clinical psychologist and supervisor using relational, emotion-focused ISTDP to foster deep self-understanding, emotional resilience and lasting change.",
@@ -4278,4 +4275,4 @@ export const PRACTITIONERS_DATA = [
   }
 ];
 export const practitionersData = PRACTITIONERS_DATA;
-export const AVAILABILITY_LAST_UPDATED = "10 Nov 2026 6:04am";
+export const AVAILABILITY_LAST_UPDATED = "10 Nov 2026 3:01pm";
