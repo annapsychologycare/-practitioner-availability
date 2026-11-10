@@ -24686,7 +24686,7 @@ Being a psychologist is a humbling role and a valued part of my life. I feel hon
         {
           availability: `Thursdays at 1:30pm (Weekly: Starting 26th Nov)
 Mondays at 11:30am (Fortnightly: Starting 4th Jan)
-Mondays at 9am (Fortnightly: Starting 23rd Nov)
+Mondays at 9am (Fortnightly: Starting 7th Dec)
 Tuesdays at 2:30pm (Fortnightly: Starting 1st Dec)
 Mondays at 1:30pm (Fortnightly: Starting 21st Dec)
 Thursdays at 9am (Fortnightly: Starting 26th Nov)
@@ -24702,7 +24702,7 @@ Thursdays at 12:30pm (Monthly: Starting 17th Dec)`,
       availability: [
         "Thursdays at 1:30pm (Weekly: Starting 26th Nov) — Burke Rd, Camberwell",
         "Mondays at 11:30am (Fortnightly: Starting 4th Jan) — Burke Rd, Camberwell",
-        "Mondays at 9am (Fortnightly: Starting 23rd Nov) — Burke Rd, Camberwell",
+        "Mondays at 9am (Fortnightly: Starting 7th Dec) — Burke Rd, Camberwell",
         "Tuesdays at 2:30pm (Fortnightly: Starting 1st Dec) — Burke Rd, Camberwell",
         "Mondays at 1:30pm (Fortnightly: Starting 21st Dec) — Burke Rd, Camberwell",
         "Thursdays at 9am (Fortnightly: Starting 26th Nov) — Burke Rd, Camberwell",
@@ -25028,7 +25028,7 @@ I am committed to providing best practice trauma informed care in a confidential
           location: "Greville St, Prahran",
           availability: `Saturdays at 4pm (Weekly: Starting 14th Nov)
 Saturdays at 2pm (Fortnightly: Starting 14th Nov)
-Wednesdays at 5:30pm (Fortnightly: Starting 11th Nov)
+Wednesdays at 5:30pm (Fortnightly: Starting 25th Nov)
 Tuesdays at 12pm (Monthly: Starting 8th Dec)
 Saturdays at 10am (Monthly: Starting 14th Nov)`,
           weekly_availability: [],
@@ -25039,7 +25039,7 @@ Saturdays at 10am (Monthly: Starting 14th Nov)`,
       availability: [
         "Saturdays at 4pm (Weekly: Starting 14th Nov) — Greville St, Prahran",
         "Saturdays at 2pm (Fortnightly: Starting 14th Nov) — Greville St, Prahran",
-        "Wednesdays at 5:30pm (Fortnightly: Starting 11th Nov) — Greville St, Prahran",
+        "Wednesdays at 5:30pm (Fortnightly: Starting 25th Nov) — Greville St, Prahran",
         "Tuesdays at 12pm (Monthly: Starting 8th Dec) — Greville St, Prahran",
         "Saturdays at 10am (Monthly: Starting 14th Nov) — Greville St, Prahran"
       ],
@@ -25686,6 +25686,7 @@ Outside of work, Nick spends his time in nature, surfing, learning Spanish, and 
       locations: [
         {
           availability: `Tuesdays at 11am (Fortnightly: Starting 8th Dec)
+Tuesdays at 3pm (Monthly: Starting 8th Dec)
 Tuesdays at 4pm (Monthly: Starting 8th Dec)
 Tuesdays at 9am (Monthly: Starting 24th Nov)`,
           weekly_availability: [],
@@ -25723,6 +25724,7 @@ Thursdays at 12:30pm (Monthly: Starting 12th Nov)`,
         "Fridays at 9am (Monthly: Starting 18th Dec) — Burke Rd, Camberwell",
         "Thursdays at 12:30pm (Monthly: Starting 12th Nov) — Burke Rd, Camberwell",
         "Tuesdays at 11am (Fortnightly: Starting 8th Dec) — Greville St, Prahran",
+        "Tuesdays at 3pm (Monthly: Starting 8th Dec) — Greville St, Prahran",
         "Tuesdays at 4pm (Monthly: Starting 8th Dec) — Greville St, Prahran",
         "Tuesdays at 9am (Monthly: Starting 24th Nov) — Greville St, Prahran"
       ],
@@ -26091,8 +26093,7 @@ Josh has worked in both public and private sectors, and has experience with trau
       locations: [
         {
           location: "Burke Rd, Camberwell",
-          availability: `Tuesdays at 8pm (Weekly: Starting 8th Dec)
-Tuesdays at 7pm (Weekly: Starting 8th Dec)
+          availability: `Tuesdays at 7pm (Weekly: Starting 8th Dec)
 Thursdays at 7:30pm (Fortnightly: Starting 12th Nov)
 Thursdays at 4:30pm (Fortnightly: Starting 17th Dec)
 Wednesdays at 7:30pm (Fortnightly: Starting 9th Dec)`,
@@ -26107,24 +26108,23 @@ Wednesdays at 7:30pm (Fortnightly: Starting 9th Dec)`,
         },
         {
           location: "Telehealth",
-          availability: `Wednesdays at 4:30pm (Weekly: Starting 11th Nov)
-Tuesdays at 8pm (Weekly: Starting 17th Nov)
-Tuesdays at 7pm (Weekly: Starting 17th Nov)
+          availability: `Tuesdays at 8pm (Weekly: Starting 17th Nov)
+Wednesdays at 4:30pm (Weekly: Starting 18th Nov)
+Tuesdays at 7pm (Weekly: Starting 24th Nov)
 Thursdays at 4:30pm (Fortnightly: Starting 19th Nov)
-Wednesdays at 7:30pm (Fortnightly: Starting 11th Nov)
+Wednesdays at 7:30pm (Fortnightly: Starting 25th Nov)
 Wednesdays at 2:30pm (Monthly: Starting 25th Nov)`
         }
       ],
       last_updated: "2026-07-19",
       short_bio: "Josh is a warm, research-active clinical psychologist supporting adolescents and adults with integrative, values-based therapy for trauma, neurodiversity and emotional difficulties.",
       availability: [
-        "Wednesdays at 4:30pm (Weekly: Starting 11th Nov) — Telehealth",
         "Tuesdays at 8pm (Weekly: Starting 17th Nov) — Telehealth",
-        "Tuesdays at 7pm (Weekly: Starting 17th Nov) — Telehealth",
+        "Wednesdays at 4:30pm (Weekly: Starting 18th Nov) — Telehealth",
+        "Tuesdays at 7pm (Weekly: Starting 24th Nov) — Telehealth",
         "Thursdays at 4:30pm (Fortnightly: Starting 19th Nov) — Telehealth",
-        "Wednesdays at 7:30pm (Fortnightly: Starting 11th Nov) — Telehealth",
+        "Wednesdays at 7:30pm (Fortnightly: Starting 25th Nov) — Telehealth",
         "Wednesdays at 2:30pm (Monthly: Starting 25th Nov) — Telehealth",
-        "Tuesdays at 8pm (Weekly: Starting 8th Dec) — Burke Rd, Camberwell",
         "Tuesdays at 7pm (Weekly: Starting 8th Dec) — Burke Rd, Camberwell",
         "Thursdays at 7:30pm (Fortnightly: Starting 12th Nov) — Burke Rd, Camberwell",
         "Thursdays at 4:30pm (Fortnightly: Starting 17th Dec) — Burke Rd, Camberwell",
@@ -27531,7 +27531,7 @@ Karen Pereira York will be on leave from 21 January 2027 to 4 February 2027 incl
       upcoming_leave_hide_after: "2027-02-04"
     }
   ];
-  var AVAILABILITY_LAST_UPDATED = "10 Nov 2026 3:01pm";
+  var AVAILABILITY_LAST_UPDATED = "11 Nov 2026 6:04am";
 
   // components/IntakeTab.tsx
   var jsx_runtime9 = __toESM(require_jsx_runtime());
