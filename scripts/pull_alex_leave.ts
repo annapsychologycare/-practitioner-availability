@@ -1,0 +1,17 @@
+import {invokeTool} from '@tasklet/tools/v2';
+import {readFile,writeFile,mkdir} from 'node:fs/promises';
+import assert from 'node:assert/strict';
+import members from './internal_practitioners.json';
+import {APPROVED_LEAVE} from './crm_leave_approvals';
+const root='/tasklet/threads/a_cwa98xzh47ey9rcvmmh4/work',dir=`${root}/alex_leave_targeted`;
+await mkdir(dir,{recursive:true});
+const member=members.filter(p=>p.name==='Alex Barry');assert.equal(member.length,1);
+const fields='id,First_Name,Last_Name,Account_Name,Directory_category,Upcoming_leave_client_notice,Show_notice_from,Hide_notice_after';
+const r=await invokeTool({connectionId:'conn_pdkvmnzjcqdeb3ha13wc',toolName:'zoho_crm-list-objects',args:{module:'Contacts',ids:member[0].id,fields,perPage:'200',page:'1'}});assert(r.ok);
+const raw:any=await r.json(),p=(raw.result??raw).data[0];assert.equal(p.id,member[0].id);assert.equal(`${p.First_Name} ${p.Last_Name}`.trim(),'Alex Barry');
+for(const k of fields.split(','))assert(Object.hasOwn(p,k),k);
+const data=JSON.parse(await readFile(`${root}/practitioners_data.json`,'utf8'));
+await writeFile(`${dir}/crm_client_fields.json`,JSON.stringify(p,null,2));
+await writeFile(`${dir}/data_before.json`,JSON.stringify(data,null,2));
+await writeFile(`${dir}/approval_before.ts`,await readFile(`${root}/scripts/crm_leave_approvals.ts`));
+console.log(JSON.stringify({crm:p,previousApproval:APPROVED_LEAVE[p.id]??null,local:data.filter((p:any)=>p.name==='Alex Barry').map(({name,upcoming_leave_client_notice,upcoming_leave_show_from,upcoming_leave_hide_after}:any)=>({name,upcoming_leave_client_notice,upcoming_leave_show_from,upcoming_leave_hide_after}))}));

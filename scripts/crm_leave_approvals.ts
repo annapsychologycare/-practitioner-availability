@@ -1,5 +1,6 @@
 // Exact approved client-field signatures. Sheet-confirmed baseline 4 November 2026.
-// Poorna updated by explicit Anna CRM-pull approval, 5 November 2026; do not restore old sheet wording.
+// Poorna and Alex updated/added by explicit Anna targeted CRM-pull authorization.
+// sheetRow 0 means explicit user approval, not a spreadsheet row. Ordinary CRM edits remain fail-closed.
 export const APPROVED_LEAVE: Record<string,{name:string;sheetRow:number;notice:string;show:string;hide:string}> = {
   "50438000000202029": {
     "name": "Allison Conyer",
@@ -119,5 +120,12 @@ export const APPROVED_LEAVE: Record<string,{name:string;sheetRow:number;notice:s
     "notice": "Kiira Gavralas will be on leave from 28 December 2026 to 15 January 2027 inclusive.",
     "show": "2026-11-04",
     "hide": "2027-01-15"
+  },
+  "50438000001693038": {
+    "name": "Alex Barry",
+    "sheetRow": 0,
+    "notice": "Alex will be on Annual Leave from Monday 21st Dec 2026 to Friday 1st Jan 2027 (Inclusive). Regular appointments will resume on Monday 4th Jan 2027",
+    "show": "2026-11-05",
+    "hide": "2027-01-02"
   }
 };

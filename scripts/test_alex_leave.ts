@@ -1,0 +1,32 @@
+import assert from 'node:assert/strict';
+import {readFile,writeFile} from 'node:fs/promises';
+import {APPROVED_LEAVE} from './crm_leave_approvals';
+import {mapCrmUpcomingLeave} from './crm_upcoming_leave';
+import {activeUpcomingLeave,escapeLeaveHtml} from '../apps/practitioner-availability/utils/upcomingLeave';
+import {buildEmailHtml} from '../apps/practitioner-availability/utils/emailBuilder';
+const root='/tasklet/threads/a_cwa98xzh47ey9rcvmmh4/work',dir=`${root}/alex_leave_targeted`;
+const read=async(p:string)=>JSON.parse(await readFile(`${root}/${p}`,'utf8'));
+const data=await read('practitioners_data.json'),before=await read('alex_leave_targeted/data_before.json'),crm=await read('alex_leave_targeted/crm_client_fields.json');
+let checks=0;const eq=(a:any,b:any)=>{assert.deepEqual(a,b);checks++};
+eq(data.length,25);eq(data.filter((p:any)=>p.upcoming_leave_client_notice).length,18);eq(Object.keys(APPROVED_LEAVE).length,18);
+for(let i=0;i<data.length;i++)for(const k of new Set([...Object.keys(data[i]),...Object.keys(before[i])]))if(!(data[i].name==='Alex Barry'&&k.startsWith('upcoming_leave_')))eq(data[i][k],before[i][k]);
+for(const f of ['deploy/practitioners_data.json','deploy/public/practitioners_data.json','deploy/src/practitioners_data.json','deploy/netlify/functions/practitioners-data.json'])eq(await read(f),data);
+for(const [a,b] of [['apps/practitioner-availability/practitionersData.ts','deploy/src/practitionersData.ts'],['scripts/crm_leave_approvals.ts','deploy/src/crm_leave_approvals.ts']])eq(await readFile(`${root}/${a}`,'utf8'),await readFile(`${root}/${b}`,'utf8'));
+for(const [id,a] of Object.entries(APPROVED_LEAVE)){
+ const c={id,Upcoming_leave_client_notice:a.notice,Show_notice_from:a.show,Hide_notice_after:a.hide};
+ eq(mapCrmUpcomingLeave(c),{upcoming_leave_client_notice:a.notice,upcoming_leave_show_from:a.show,upcoming_leave_hide_after:a.hide});
+ eq(mapCrmUpcomingLeave({...c,Upcoming_leave_client_notice:a.notice+' unapproved'}).upcoming_leave_client_notice,'');
+ eq(mapCrmUpcomingLeave({...c,Upcoming_leave_client_notice:''}).upcoming_leave_client_notice,'');
+}
+eq(mapCrmUpcomingLeave({...crm,id:'unapproved'}).upcoming_leave_client_notice,'');
+const p=data.find((p:any)=>p.name==='Alex Barry');eq(mapCrmUpcomingLeave(crm),{upcoming_leave_client_notice:p.upcoming_leave_client_notice,upcoming_leave_show_from:p.upcoming_leave_show_from,upcoming_leave_hide_after:p.upcoming_leave_hide_after});
+eq(activeUpcomingLeave(p,new Date('2026-11-04T12:59:59Z')),'');eq(activeUpcomingLeave(p,new Date('2026-11-04T13:00:00Z')),crm.Upcoming_leave_client_notice);
+eq(activeUpcomingLeave(p,new Date('2027-01-02T12:59:59Z')),crm.Upcoming_leave_client_notice);eq(activeUpcomingLeave(p,new Date('2027-01-02T13:00:00Z')),'');
+const now=new Date(),input={...p,availabilityLocations:p.locations,alert:'PRIVATE-INTERNAL-FIXTURE',Leave_Reason:'PRIVATE-HR-FIXTURE'};
+const html=buildEmailHtml('Client','','PsychologyCare Team',[input],undefined,false,{},now);
+assert(html.includes(escapeLeaveHtml(crm.Upcoming_leave_client_notice)));checks++;
+for(const s of ['PRIVATE-INTERNAL-FIXTURE','PRIVATE-HR-FIXTURE','data-staff-age']){assert(!html.includes(s));checks++};
+assert(html.includes('bgcolor="#FBF7F4"')&&html.includes('border-left:3px solid #B58AA0'));checks++;
+eq((html.match(/data-upcoming-leave="client"/g)||[]).length,1);
+await writeFile(`${dir}/alex_email_preview.html`,`<!doctype html><html><head><meta charset="utf-8"><title>Alex — unsent email preview</title></head><body>${html}</body></html>`);
+await writeFile(`${dir}/tests.json`,JSON.stringify({checks,passed:true,testedAt:now.toISOString()},null,2));console.log({checks,passed:true});

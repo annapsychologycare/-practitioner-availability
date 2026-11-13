@@ -159,9 +159,9 @@
       "Gender Queer"
     ],
     "client_note": "",
-    "upcoming_leave_client_notice": "",
-    "upcoming_leave_show_from": "",
-    "upcoming_leave_hide_after": ""
+    "upcoming_leave_client_notice": "Alex will be on Annual Leave from Monday 21st Dec 2026 to Friday 1st Jan 2027 (Inclusive). Regular appointments will resume on Monday 4th Jan 2027",
+    "upcoming_leave_show_from": "2026-11-05",
+    "upcoming_leave_hide_after": "2027-01-02"
   },
   {
     "id": 25,

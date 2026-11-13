@@ -1,5 +1,8 @@
 # Approved upcoming-leave notices — 4 November 2026
 
+## Targeted Alex authorization — current override
+Anna explicitly authorized pulling Alex Barry's existing CRM client-facing notice and dates after reporting it absent from the app. CRM `50438000001693038` is now the 18th exact approved signature; `sheetRow: 0` denotes explicit user authorization rather than a sheet row. Exact text is in the manifest and `alex_leave_targeted/crm_client_fields.json`. Show 2026-11-05; hide 2027-01-02, inclusive Melbourne dates, copied unchanged—not inferred from the absence end. All previous 17 signatures, including Poorna, remain unchanged. Root cause: Alex was absent from the exact-signature approval manifest, so ordinary daily/weekly sync correctly failed closed. Future additions or edits still require explicit approval and targeted signature refresh; CRM editing alone does not approve publication. Do not remove this safety gate. Current audit: `alex_leave_targeted/report.md`.
+
 ## Targeted CRM correction — Anna 5 November 08:04 request
 Poorna Selvaraja (CRM `50438000000207529`) has explicit user authorization to replace the approved signature with the current CRM client notice and display dates. This supersedes the old sheet wording for Poorna only. Preserve the exact approved CRM wording, including its explicitly stated telehealth period and in-person resume date; do not infer dates or use internal fields. Show/hide remain 2026-11-04 / 2027-01-11. Audit: `poorna_leave_2026-11-05/report.md`. All other 16 signatures unchanged; ordinary unapproved CRM edits still fail closed. This targeted pull does not re-read/import the spreadsheet or alter slots, availability timestamp, fees/hours/photos/auth/email policy.
 
