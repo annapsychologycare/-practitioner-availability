@@ -11491,6 +11491,9 @@
         "Low Self-Esteem",
         "Panic Disorder",
         "Perfectionism",
+        "Psychedelic Integration / Difficult Psychedelic Experiences/ Bad Trip Integration",
+        "Psychedelic Integration of Non-Ordinary States of Consciousness",
+        "Psychedelic Preparation and Integration Work",
         "Relationship Difficulties",
         "Rumination",
         "Sexual Difficulties & Dysfunction",
@@ -13215,6 +13218,9 @@
         "Phobias \u2014 Needle / Medical",
         "Phobias \u2014 Social",
         "Phobias \u2014 Specific (e.g. Heights, Animals, Flying)",
+        "Psychedelic Integration / Difficult Psychedelic Experiences/ Bad Trip Integration",
+        "Psychedelic Integration of Non-Ordinary States of Consciousness",
+        "Psychedelic Preparation and Integration Work",
         "Relationship Breakdown & Separation",
         "Relationship Difficulties",
         "Rumination",
@@ -14109,7 +14115,6 @@
       ],
       "modalities": [
         "Acceptance and Commitment Therapy (ACT)",
-        "Compassion-Focused Therapy (CFT)",
         "Mindfulness-Based Cognitive Therapy (MBCT)",
         "Schema Informed (not ISST - certified Schema Therapist)",
         "Solution-Focused Brief Therapy (SFBT)"
