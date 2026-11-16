@@ -1147,7 +1147,7 @@ export const PRACTITIONERS_DATA = [
       "Female",
       "Male"
     ],
-    "client_note": "Please note: Maddie's in-person appointments on Tuesdays and Thursdays are at Prahran before 11 January 2027 and will move to Camberwell from 11 January 2027. Monday and Friday in-person appointments will remain at Prahran. Telehealth appointments remain available.",
+    "client_note": "",
     "upcoming_leave_client_notice": "Maddie Brygel will be on leave from 3 December 2026 to 8 January 2027 inclusive.",
     "upcoming_leave_show_from": "2026-11-04",
     "upcoming_leave_hide_after": "2027-01-08"

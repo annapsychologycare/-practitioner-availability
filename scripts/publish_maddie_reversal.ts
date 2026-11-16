@@ -1,0 +1,16 @@
+import {invokeTool} from '@tasklet/tools/v2';
+import {readFile,writeFile} from 'node:fs/promises';
+import {createHash} from 'node:crypto';
+import assert from 'node:assert/strict';
+const root='/tasklet/threads/a_cwa98xzh47ey9rcvmmh4/work',dir=`${root}/maddie_january_reversal`,repo={owner:'annapsychologycare',repo:'-practitioner-availability'};
+const paths=[['src/practitioners_data.json','deploy/src/practitioners_data.json'],['practitioners_data.json','deploy/practitioners_data.json'],['public/practitioners_data.json','deploy/public/practitioners_data.json'],['netlify/functions/practitioners-data.json','deploy/netlify/functions/practitioners-data.json'],['src/practitionersData.ts','deploy/src/practitionersData.ts'],['practitionersData.ts','deploy/src/practitionersData.ts'],['apps/practitioner-availability/practitionersData.ts','apps/practitioner-availability/practitionersData.ts'],['bundle.js','deploy/src/bundle.js'],['src/bundle.js','deploy/src/bundle.js'],['public/bundle.js','deploy/src/bundle.js'],['apps/practitioner-availability/bundle.js','apps/practitioner-availability/bundle.js'],['scripts/apply_crm_sync_2026-11-08.ts','scripts/apply_crm_sync_2026-11-08.ts'],['scripts/apply_crm_sync_2026-11-15.ts','scripts/apply_crm_sync_2026-11-15.ts']];
+const get=async(repoPath:string,ref='main')=>{const r=await invokeTool({connectionId:'conn_nvshm6rz3kzncg0nh4vk',toolName:'github_get_file_content',args:{...repo,repoPath,ref}});assert(r.ok);return await r.json()as any;};
+const blob=(b:Buffer)=>createHash('sha1').update(`blob ${b.length}\0`).update(b).digest('hex');
+await Promise.all(paths.map(async([p,f])=>assert.equal((await get(p)).sha,blob(await readFile(`${dir}/before/${f}`)),`Remote concurrent change ${p}`)));
+const protectedPaths=['netlify.toml','src/App.tsx','src/utils/emailBuilder.ts','src/utils/upcomingLeave.ts','src/components/StaffAccess.tsx','netlify/functions/staff-session.ts','scripts/internal_practitioner_guard.ts','scripts/crm_alerts.ts','scripts/crm_leave_approvals.ts'];
+const protectedShas=await Promise.all(protectedPaths.map(async path=>({path,sha:(await get(path)).sha})));
+paths.push(['workflows/maddie_january_move_reversed.md','workflows/maddie_january_move_reversed.md'],['scripts/apply_maddie_reversal.ts','scripts/apply_maddie_reversal.ts'],['scripts/publish_maddie_reversal.ts','scripts/publish_maddie_reversal.ts']);
+const r=await invokeTool({connectionId:'conn_nvshm6rz3kzncg0nh4vk',toolName:'github_push_to_branch',args:{...repo,branch:'main',commitMessage:'fix: clear cancelled Maddie January move notice; retain approved hours and leave',files:paths.map(([repoPath,f])=>({repoPath,localPath:`${root}/${f}`}))}});assert(r.ok);const result:any=await r.json();await writeFile(`${dir}/github_push_result.json`,JSON.stringify(result,null,2));console.log(result);
+await Promise.all(paths.map(async([p,f])=>assert.equal((await get(p,result.commit.sha)).sha,blob(await readFile(`${root}/${f}`)),p)));
+await Promise.all(protectedShas.map(async x=>assert.equal((await get(x.path,result.commit.sha)).sha,x.sha,x.path)));
+await writeFile(`${dir}/github_verified.json`,JSON.stringify({paths:paths.map(p=>p[0]),protectedShas,commit:result.commit.sha},null,2));console.log('All published blobs verified; protected paths unchanged.');
