@@ -290,14 +290,14 @@ export const PRACTITIONERS_DATA = [
     "locations": [
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "Mondays at 10am (Fortnightly: Starting 30th Nov)\nMondays at 3pm (Monthly: Starting 30th Nov)\nSaturdays at 12pm (Monthly: Starting 19th Dec)",
+        "availability": "Mondays at 10am (Fortnightly: Starting 14th Dec)\nMondays at 3pm (Monthly: Starting 30th Nov)\nSaturdays at 12pm (Monthly: Starting 19th Dec)",
         "weekly_availability": [],
         "fortnightly_availability": []
       }
     ],
     "last_updated": "2026-07-19",
     "availability": [
-      "Mondays at 10am (Fortnightly: Starting 30th Nov) — Burke Rd, Camberwell",
+      "Mondays at 10am (Fortnightly: Starting 14th Dec) — Burke Rd, Camberwell",
       "Mondays at 3pm (Monthly: Starting 30th Nov) — Burke Rd, Camberwell",
       "Saturdays at 12pm (Monthly: Starting 19th Dec) — Burke Rd, Camberwell"
     ],
@@ -1966,14 +1966,13 @@ export const PRACTITIONERS_DATA = [
     "locations": [
       {
         "location": "Greville St, Prahran",
-        "availability": "Saturdays at 4pm (Weekly: Starting 21st Nov)\nWednesdays at 5:30pm (Fortnightly: Starting 25th Nov)\nTuesdays at 9am (Monthly: Starting 8th Dec)\nTuesdays at 12pm (Monthly: Starting 8th Dec)\nSaturdays at 10am (Monthly: Starting 12th Dec)",
+        "availability": "Wednesdays at 5:30pm (Fortnightly: Starting 25th Nov)\nTuesdays at 9am (Monthly: Starting 8th Dec)\nTuesdays at 12pm (Monthly: Starting 8th Dec)\nSaturdays at 10am (Monthly: Starting 12th Dec)",
         "weekly_availability": [],
         "fortnightly_availability": []
       }
     ],
     "last_updated": "2026-07-19",
     "availability": [
-      "Saturdays at 4pm (Weekly: Starting 21st Nov) — Greville St, Prahran",
       "Wednesdays at 5:30pm (Fortnightly: Starting 25th Nov) — Greville St, Prahran",
       "Tuesdays at 9am (Monthly: Starting 8th Dec) — Greville St, Prahran",
       "Tuesdays at 12pm (Monthly: Starting 8th Dec) — Greville St, Prahran",
@@ -4288,4 +4287,4 @@ export const PRACTITIONERS_DATA = [
   }
 ];
 export const practitionersData = PRACTITIONERS_DATA;
-export const AVAILABILITY_LAST_UPDATED = "17 Nov 2026 6:04am";
+export const AVAILABILITY_LAST_UPDATED = "17 Nov 2026 11:04am";
