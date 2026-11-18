@@ -1,4 +1,6 @@
 /** Email-only review. Never writes practitioner data or infers free gaps. */
+// Anna-authorized departure, 19 November 2026. Applies even to historical/raw input.
+const departed = (name:string) => name.toLowerCase().replace(/^dr\.?\s+/, '').trim()==='therese van maanen';
 export const esc = (v: unknown) => String(v ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]!));
 /** Email-safe table spacing: explicit white cell, not margin/CSS-class reliance. */
 export function renderMainRows(rows: any[]) {
@@ -19,6 +21,7 @@ export function mainReview(result: any) {
   const groups = new Map<string, any>();
   for (const s of result.slots) {
     const [name, location, slot] = s.trim().split(' | ');
+    if(departed(name))continue;
     const m = slot.match(/^(.*?) \((Weekly|Fortnightly|Monthly): Starting (.+)\)$/);
     if (!m) throw new Error('Unrecognized slot format');
     if (m[2] === 'Monthly') continue;
@@ -49,6 +52,7 @@ export function phaseReview(raw:any) {
   for(const a of raw.appointments){
     if(!['Fortnightly','Monthly'].includes(a._freqType)||day(a.date)<from||day(a.date)>to)continue;
     const name=a.practitioner?.name??'';
+    if(departed(name))continue;
     if(/Krista/i.test(name)||(/Spektor/i.test(name)&&a._freqType==='Monthly'))continue;
     const duration=(Date.parse('2000-01-01T'+a.endAt+'Z')-Date.parse('2000-01-01T'+a.startAt+'Z'))/60000;
     if(!Number.isFinite(duration)||duration<=0)continue;

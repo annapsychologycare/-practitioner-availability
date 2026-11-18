@@ -16,6 +16,7 @@ import { loadEmailTemplateConfig, saveEmailTemplateConfig, EmailTemplateConfig }
 import type { Practitioner } from "./types";
 import { suppressKristaIntake } from './utils/practitionerIntakePause';
 
+const ACTIVE_PRACTITIONER_NAMES = new Set(PRACTITIONERS_DATA.map(p => p.name));
 const DATA_PATH = "/tasklet/threads/a_cwa98xzh47ey9rcvmmh4/work/practitioners_data.json";
 
 // Error boundary wrapper - simple passthrough (Tasklet outer layer handles errors)
@@ -61,7 +62,7 @@ function AppMain() {
       // Strip photo_b64 before writing — photos are stored in a separate sidecar file
       // (practitioners_photos.json) and merged back by the import script at bundle time.
       // This keeps the save payload small enough for writeFileToDisk.
-      const stripped = updated.map(suppressKristaIntake).map(p => {
+      const stripped = updated.filter(p => ACTIVE_PRACTITIONER_NAMES.has(p.name)).map(suppressKristaIntake).map(p => {
         const { photo_b64, ...rest } = p as any;
         return rest;
       });
@@ -81,7 +82,7 @@ function AppMain() {
   }, [saveToDisk]);
 
   const handleBulkUpdate = useCallback((updated: Practitioner[]) => {
-    const safe=updated.map(suppressKristaIntake);
+    const safe=updated.filter(p => ACTIVE_PRACTITIONER_NAMES.has(p.name)).map(suppressKristaIntake);
     setPractitioners(safe);
     saveToDisk(safe);
   }, [saveToDisk]);

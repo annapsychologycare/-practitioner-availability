@@ -5,7 +5,7 @@ export const INTERNAL_ACCOUNT_ID='50438000000218064';
 export const INTERNAL_FIELDS='id,Full_Name,First_Name,Last_Name,Account_Name,Directory_category,Education,Religions_Groups_I_have_a_strong_understanding,Clinical_Interests,Modalities,Bio,Short_Bio,Pronouns,Client_Types,Ages,Languages_I_am_fluent_in,Style_of_Therapy,Modality,Intake_Alert_Notes_Internal,Intake_Alert_Notes,Upcoming_leave_client_notice,Show_notice_from,Hide_notice_after,Fee_Schedule';
 const ids=new Set(approved.map(p=>p.id));
 export function isInternalPractitioner(c:any):boolean {
- return ids.has(c?.id)&&Object.hasOwn(c,'Directory_category')&&!c.Directory_category&&(c.Account_Name?.id===INTERNAL_ACCOUNT_ID||c.id==='50438000007973001');
+ return c?.id!=='50438000000215045'&&ids.has(c?.id)&&Object.hasOwn(c,'Directory_category')&&!c.Directory_category&&(c.Account_Name?.id===INTERNAL_ACCOUNT_ID||c.id==='50438000007973001');
 }
 export function assertInternalAppMembership(data:any[]):void {
  if(data.length!==approved.length||new Set(data.map(p=>p.name)).size!==approved.length||!approved.every(p=>data.some(x=>x.name===p.name)))throw Error('Internal practitioner membership changed; explicit review required');

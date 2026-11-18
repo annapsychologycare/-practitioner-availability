@@ -44,7 +44,6 @@ const NAME_MAP: Record<string, string> = {
   'Niloofar': 'Niloo Danaei',
   'Niloo': 'Niloo Danaei',
   'Josh Kugel': 'Joshua Kugel',
-  'Therese van Maanen': 'Therese Van Maanen',
   'Megan Edelman': 'Meg Edelman',
   'Megan': 'Meg Edelman',
   'Rebekah': 'Rebekah Barson',
@@ -224,6 +223,8 @@ const pending = allAppointments.filter(a => {
   if (a.attendanceState !== 'Pending' || a.isActive === false) return false;
   // David Spektor: exclude Monthly availability
   const pracName = a.practitioner?.name ?? '';
+  // Anna 19 Nov 2026: departed practitioner, never restore from Zanda.
+  if(pracName.toLowerCase().replace(/^dr\.?\s+/, '').trim()==='therese van maanen') return false;
   if ((pracName === 'David Spektor' || pracName === 'Dr. David Spektor' || pracName === 'Dr David Spektor') && a._freqType === 'Monthly') return false;
   return true;
 });

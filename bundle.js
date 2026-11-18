@@ -22975,7 +22975,6 @@ Alex is passionate about normalising the distress we may experience in response 
         {
           location: "Burke Rd, Camberwell",
           availability: `Mondays at 7:30pm (Fortnightly: Starting 30th Nov)
-Fridays at 12pm (Fortnightly: Starting 27th Nov)
 Tuesdays at 2:30pm (Monthly: Starting 24th Nov)
 Fridays at 12pm (Monthly: Starting 20th Nov)
 Fridays at 9am (Monthly: Starting 11th Dec)
@@ -22988,7 +22987,6 @@ Mondays at 4:30pm (Monthly: Starting 4th Jan)`,
       last_updated: "2026-07-19",
       availability: [
         "Mondays at 7:30pm (Fortnightly: Starting 30th Nov) — Burke Rd, Camberwell",
-        "Fridays at 12pm (Fortnightly: Starting 27th Nov) — Burke Rd, Camberwell",
         "Tuesdays at 2:30pm (Monthly: Starting 24th Nov) — Burke Rd, Camberwell",
         "Fridays at 12pm (Monthly: Starting 20th Nov) — Burke Rd, Camberwell",
         "Fridays at 9am (Monthly: Starting 11th Dec) — Burke Rd, Camberwell",
@@ -23973,7 +23971,9 @@ A/H: $275`,
       locations: [
         {
           availability: `Tuesdays at 9am (Fortnightly: Starting 12th Jan)
-Tuesdays at 1pm (Fortnightly: Starting 12th Jan)`,
+Thursdays at 12pm (Fortnightly: Starting 14th Jan)
+Tuesdays at 1pm (Fortnightly: Starting 12th Jan)
+Thursdays at 10am (Fortnightly: Starting 14th Jan)`,
           weekly_availability: [],
           fortnightly_availability: [],
           location: "Greville St, Prahran"
@@ -24027,7 +24027,9 @@ Wednesdays at 2:30pm (Weekly: Starting 13th Jan)`,
         "Wednesdays at 3:30pm (Weekly: Starting 13th Jan) — Burke Rd, Camberwell",
         "Wednesdays at 2:30pm (Weekly: Starting 13th Jan) — Burke Rd, Camberwell",
         "Tuesdays at 9am (Fortnightly: Starting 12th Jan) — Greville St, Prahran",
-        "Tuesdays at 1pm (Fortnightly: Starting 12th Jan) — Greville St, Prahran"
+        "Thursdays at 12pm (Fortnightly: Starting 14th Jan) — Greville St, Prahran",
+        "Tuesdays at 1pm (Fortnightly: Starting 12th Jan) — Greville St, Prahran",
+        "Thursdays at 10am (Fortnightly: Starting 14th Jan) — Greville St, Prahran"
       ],
       short_bio: "A psychologist trained in both clinical and forensic psychology, lecturer, and researcher supporting adults with anxiety, depression, trauma, grief, addiction and relationship issues",
       weekly_availability: [
@@ -24684,16 +24686,16 @@ Being a psychologist is a humbling role and a valued part of my life. I feel hon
           location: "Telehealth"
         },
         {
-          availability: `Mondays at 11:30am (Fortnightly: Starting 30th Nov)
-Thursdays at 1:30pm (Fortnightly: Starting 3rd Dec)
+          availability: `Thursdays at 1:30pm (Fortnightly: Starting 3rd Dec)
+Mondays at 11:30am (Fortnightly: Starting 4th Jan)
 Mondays at 9am (Fortnightly: Starting 7th Dec)
 Tuesdays at 2:30pm (Fortnightly: Starting 1st Dec)
 Mondays at 1:30pm (Fortnightly: Starting 21st Dec)
 Mondays at 1:30pm (Monthly: Starting 30th Nov)
 Tuesdays at 2:30pm (Monthly: Starting 8th Dec)
 Tuesdays at 3:30pm (Monthly: Starting 12th Jan)
-Tuesdays at 4:30pm (Monthly: Starting 8th Dec)
-Thursdays at 12:30pm (Monthly: Starting 17th Dec)`,
+Thursdays at 12:30pm (Monthly: Starting 17th Dec)
+Tuesdays at 4:30pm (Monthly: Starting 8th Dec)`,
           weekly_availability: [],
           fortnightly_availability: [],
           location: "Burke Rd, Camberwell"
@@ -24701,16 +24703,16 @@ Thursdays at 12:30pm (Monthly: Starting 17th Dec)`,
       ],
       last_updated: "2026-07-19",
       availability: [
-        "Mondays at 11:30am (Fortnightly: Starting 30th Nov) — Burke Rd, Camberwell",
         "Thursdays at 1:30pm (Fortnightly: Starting 3rd Dec) — Burke Rd, Camberwell",
+        "Mondays at 11:30am (Fortnightly: Starting 4th Jan) — Burke Rd, Camberwell",
         "Mondays at 9am (Fortnightly: Starting 7th Dec) — Burke Rd, Camberwell",
         "Tuesdays at 2:30pm (Fortnightly: Starting 1st Dec) — Burke Rd, Camberwell",
         "Mondays at 1:30pm (Fortnightly: Starting 21st Dec) — Burke Rd, Camberwell",
         "Mondays at 1:30pm (Monthly: Starting 30th Nov) — Burke Rd, Camberwell",
         "Tuesdays at 2:30pm (Monthly: Starting 8th Dec) — Burke Rd, Camberwell",
         "Tuesdays at 3:30pm (Monthly: Starting 12th Jan) — Burke Rd, Camberwell",
-        "Tuesdays at 4:30pm (Monthly: Starting 8th Dec) — Burke Rd, Camberwell",
-        "Thursdays at 12:30pm (Monthly: Starting 17th Dec) — Burke Rd, Camberwell"
+        "Thursdays at 12:30pm (Monthly: Starting 17th Dec) — Burke Rd, Camberwell",
+        "Tuesdays at 4:30pm (Monthly: Starting 8th Dec) — Burke Rd, Camberwell"
       ],
       short_bio: "A trauma-informed clinical psychologist and social worker integrating IFS, ACT, DBT, CBT and mindfulness to support healing from trauma, intense emotions and life transitions.",
       weekly_availability: [
@@ -25700,6 +25702,7 @@ Tuesdays at 9am (Monthly: Starting 24th Nov)`,
         {
           location: "Burke Rd, Camberwell",
           availability: `Fridays at 2:30pm (Weekly: Starting 4th Dec)
+Thursdays at 10am (Fortnightly: Starting 14th Jan)
 Wednesdays at 1pm (Fortnightly: Starting 13th Jan)
 Thursdays at 1:30pm (Fortnightly: Starting 10th Dec)
 Thursdays at 12:30pm (Fortnightly: Starting 3rd Dec)
@@ -25714,6 +25717,7 @@ Thursdays at 12:30pm (Monthly: Starting 10th Dec)`,
       last_updated: "2026-07-19",
       availability: [
         "Fridays at 2:30pm (Weekly: Starting 4th Dec) — Burke Rd, Camberwell",
+        "Thursdays at 10am (Fortnightly: Starting 14th Jan) — Burke Rd, Camberwell",
         "Wednesdays at 1pm (Fortnightly: Starting 13th Jan) — Burke Rd, Camberwell",
         "Thursdays at 1:30pm (Fortnightly: Starting 10th Dec) — Burke Rd, Camberwell",
         "Thursdays at 12:30pm (Fortnightly: Starting 3rd Dec) — Burke Rd, Camberwell",
@@ -26106,8 +26110,7 @@ Josh has worked in both public and private sectors, and has experience with trau
           location: "Burke Rd, Camberwell",
           availability: `Tuesdays at 7pm (Fortnightly: Starting 12th Jan)
 Tuesdays at 4pm (Fortnightly: Starting 15th Dec)
-Thursdays at 7:30pm (Fortnightly: Starting 10th Dec)
-Wednesdays at 7:30pm (Fortnightly: Starting 9th Dec)`,
+Thursdays at 7:30pm (Fortnightly: Starting 10th Dec)`,
           weekly_availability: [],
           fortnightly_availability: []
         },
@@ -26124,7 +26127,6 @@ Tuesdays at 7pm (Fortnightly: Starting 1st Dec)
 Thursdays at 4:30pm (Fortnightly: Starting 26th Nov)
 Tuesdays at 4pm (Fortnightly: Starting 1st Dec)
 Thursdays at 7:30pm (Fortnightly: Starting 26th Nov)
-Wednesdays at 7:30pm (Fortnightly: Starting 25th Nov)
 Wednesdays at 2:30pm (Monthly: Starting 25th Nov)`
         }
       ],
@@ -26136,12 +26138,10 @@ Wednesdays at 2:30pm (Monthly: Starting 25th Nov)`
         "Thursdays at 4:30pm (Fortnightly: Starting 26th Nov) — Telehealth",
         "Tuesdays at 4pm (Fortnightly: Starting 1st Dec) — Telehealth",
         "Thursdays at 7:30pm (Fortnightly: Starting 26th Nov) — Telehealth",
-        "Wednesdays at 7:30pm (Fortnightly: Starting 25th Nov) — Telehealth",
         "Wednesdays at 2:30pm (Monthly: Starting 25th Nov) — Telehealth",
         "Tuesdays at 7pm (Fortnightly: Starting 12th Jan) — Burke Rd, Camberwell",
         "Tuesdays at 4pm (Fortnightly: Starting 15th Dec) — Burke Rd, Camberwell",
-        "Thursdays at 7:30pm (Fortnightly: Starting 10th Dec) — Burke Rd, Camberwell",
-        "Wednesdays at 7:30pm (Fortnightly: Starting 9th Dec) — Burke Rd, Camberwell"
+        "Thursdays at 7:30pm (Fortnightly: Starting 10th Dec) — Burke Rd, Camberwell"
       ],
       weekly_availability: [],
       fortnightly_availability: [],
@@ -26178,194 +26178,6 @@ Wednesdays at 2:30pm (Monthly: Starting 25th Nov)`
       upcoming_leave_client_notice: "Joshua Kugel will be on leave from 20 December 2026 to 10 January 2027 inclusive.",
       upcoming_leave_show_from: "2026-11-04",
       upcoming_leave_hide_after: "2027-01-10"
-    },
-    {
-      id: 29,
-      name: "Therese Van Maanen",
-      title: "Psychologist",
-      fees: `B/H: $235
-A/H: $275`,
-      medicare_rebate: "101.55",
-      gender: "Female",
-      alert: "Not seeing Individual Clients - Couples Only",
-      presentations: [
-        "Adjustment Disorder",
-        "Anger & Aggression",
-        "Anxiety - Anticipatory",
-        "Anxiety - Death",
-        "Anxiety - Exam & Academic",
-        "Anxiety - Financial Stress",
-        "Anxiety - Generalised (GAD)",
-        "Anxiety - Health (Illness Anxiety / Hypochondria)",
-        "Anxiety - Perinatal / Postnatal",
-        "Anxiety - Separation",
-        "Anxiety - Social Anxiety Disorder",
-        "Anxiety - Sports Performance",
-        "Attachment Difficulties",
-        "Body Image Concerns",
-        "Bullying & Peer Difficulties",
-        "Burnout — Carer / Family",
-        "Burnout — Work-Related",
-        "Chronic Illness — Adjustment & Psychological Support",
-        "Clinician & Therapist Wellbeing Support",
-        "Conduct Disorder",
-        "Coping Skills",
-        "Depersonalisation / Derealisation",
-        "Depression — Major Depressive Disorder",
-        "Depression — Persistent Depressive Disorder (Dysthymia)",
-        "Divorce / Post Divorce Adjustment/ Support",
-        "Domestic/ Family Violence",
-        "Emotional Dysregulation",
-        "Emotional Regulation & Behavioural Difficulties",
-        "Existential Concerns",
-        "Family Conflict",
-        "Fear of Failure",
-        "First Responder & Emergency Services Support",
-        "Grief & Loss - Complicated / Prolonged",
-        "Grief & Loss - Fertility & Pregnancy Loss",
-        "Grief & Loss - General Bereavement",
-        "Grief & Loss - Termination of Pregnancy",
-        "Identity Exploration — Gender / Sexual Orientation / Cultural / Spiritual",
-        "Identity Issues",
-        "Insomnia & Sleep Difficulties",
-        "Intimacy & Trust Difficulties",
-        "LGBTQIA+ Affirmative Support",
-        "LGBTQIA+ Identity & Queer Experiences",
-        "Life Transitions",
-        "Loneliness & Isolation",
-        "Low Confidence & Self-Worth",
-        "Low Mood",
-        "Low Self-Esteem",
-        "Non-Monogamy & Polyamory",
-        "Non-Suicidal Self-Injury (NSSI) — Not Current / In Recovery",
-        "Panic Disorder",
-        "Parental Separation — Child & Family Adjustment",
-        "Parenting Difficulties",
-        "Perfectionism",
-        "Perinatal / Postnatal Depression",
-        "Phobias — Social",
-        "Post-Traumatic Stress Disorder (PTSD)",
-        "Relationship Breakdown & Separation",
-        "Relationship Difficulties",
-        "Seasonal Affective Disorder (SAD)",
-        "Sexual Abuse/ Assault",
-        "Sexual Difficulties & Dysfunction - Female",
-        "Sex and Intimacy",
-        "Shame & Guilt",
-        "Somatic Symptom Disorder",
-        "Stress Management",
-        "Trauma — Complex",
-        "Women's Health — Birth Trauma",
-        "Women's Health — Endometriosis & Chronic Pelvic Pain",
-        "Women's Health — Infertility & Assisted Reproduction (IVF)",
-        "Women's Health — Menopause & Perimenopause",
-        "Women's Health — Perinatal Mental Health (General)",
-        "Women's Health — Polycystic Ovary Syndrome (PCOS)",
-        "Women's Health — Postpartum Anxiety",
-        "Women's Health — Postpartum Obsessive-Compulsive Disorder (OCD)",
-        "Women's Health — Premenstrual Dysphoric Disorder (PMDD)",
-        "Women's Health — Premenstrual Syndrome / Hormonal Mood Changes (PMS)",
-        "Work-Related Stress"
-      ],
-      modalities: [
-        "Acceptance-Based Couples Therapy",
-        "Circle of Security (COS)",
-        "Cognitive Behavioural Therapy (CBT)",
-        "Compassion-Focused Therapy (CFT)",
-        "Humanistic / Person-Centred Therapy",
-        "Interpersonal Therapy (IPT)",
-        "Psychodynamic Therapy"
-      ],
-      client_types: [
-        "Couples"
-      ],
-      age_range: [
-        "18 Yrs +"
-      ],
-      therapist_type: "Psycholoist",
-      additional_info: "",
-      qualifications: "BPsychSc, BPsychSc(Hons), MPP, MAPS",
-      bio: `To paraphrase the novelist Gabriel Garcia Marquez, our arrival in this world foreshadows the many opportunities life will afford us to reimagine ourselves. I  completed the long journey to become a registered psychologist, after an early career in architecture followed by one in the Internet industry when email was still a novelty and social media a twinkle in somebody’s eye.
-
-Life has become increasingly fast-paced, complex, and sometimes overwhelming. As a psychologist, I use my knowledge and expertise to understand and support my clients in making sense of their lived experiences. Doing so unlocks potential, for hope when it’s a struggle and for change when it may seem impossible. I aim to build a secure therapeutic alliance that provides the foundation to explore the barriers to potential, be that in intimate relationships, work, or private internal experiences.
-
-I have a particular interest in the role that our early attachment relationships have on our adult functioning and the intergenerational consequences of attachment styles. I have additional training in The Circle of Security® Parenting™ program which is based on decades of research about supporting and strengthening secure parent-child relationships, and I bring this reflective capacity into my individual therapy work. I work with teenagers, adults, new parents, and couples in both traditional and non-heteronormative relationships.`,
-      pronouns: "",
-      billing_types: "Medicare Rebate, NDIS, Self Funded, Third Party",
-      languages: "",
-      spare_time: "",
-      pap_clinician: "",
-      after_hours: "",
-      religions_groups: "",
-      link_to_bio: "https://psychologycare.com.au/therese-van-maanen/",
-      locations: [
-        {
-          availability: "",
-          weekly_availability: [],
-          fortnightly_availability: [],
-          location: "Victoria St, St Kilda"
-        }
-      ],
-      last_updated: "2026-07-19",
-      availability: [],
-      short_bio: "A reflective, attachment-focused psychologist drawing on Circle of Security to support teens, adults, new parents and diverse couples toward meaningful change.",
-      weekly_availability: [
-        {
-          location: "Victoria St, St Kilda",
-          days: [
-            {
-              day: "Thursday",
-              times: [
-                "12:45pm",
-                "3:15pm"
-              ],
-              from_date: "19 Mar"
-            }
-          ]
-        }
-      ],
-      fortnightly_availability: [
-        {
-          location: "Victoria St, St Kilda",
-          days: [
-            {
-              day: "Thursday",
-              times: [
-                "2pm",
-                "10:15am"
-              ],
-              from_date: "26 Mar"
-            }
-          ]
-        }
-      ],
-      style: "A parent",
-      working_hours: "Thursdays in St Kilda",
-      photo_url: "https://pc-prac-availability.netlify.app/photos/therese-van-maanen_thumb.jpg",
-      photo_b64: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQIAHAAcAAD/4QsEaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCI/PiA8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJBZG9iZSBYTVAgQ29yZSA5LjEtYzAwMiA3OS5hNmE2Mzk2OGEsIDIwMjQvMDMvMDYtMTE6NTI6MDUgICAgICAgICI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIiB4bWxuczpwaG90b3Nob3A9Imh0dHA6Ly9ucy5hZG9iZS5jb20vcGhvdG9zaG9wLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdEV2dD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlRXZlbnQjIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1sbnM6dGlmZj0iaHR0cDovL25zLmFkb2JlLmNvbS90aWZmLzEuMC8iIHhtbG5zOmV4aWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20vZXhpZi8xLjAvIiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBXZWIgKDIwMjQuMTAuMC4wIDU5M2MwODIzMTI1KSAoR29vZ2xlIENocm9tZSkiIHhtcDpDcmVhdGVEYXRlPSIyMDI0LTA1LTIzVDA5OjU2OjQ5KzEwOjAwIiB4bXA6TW9kaWZ5RGF0ZT0iMjAyNC0wNS0yM1QwOTo1ODowMCsxMDowMCIgeG1wOk1ldGFkYXRhRGF0ZT0iMjAyNC0wNS0yM1QwOTo1ODowMCsxMDowMCIgZGM6Zm9ybWF0PSJpbWFnZS9wbmciIHBob3Rvc2hvcDpDb2xvck1vZGU9IjMiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OGJmMjNjMDMtZmYyMS00MDYwLTllOTMtZGRkMzdlYTcxM2ZiIiB4bXBNTTpEb2N1bWVudElEPSJhZG9iZTpkb2NpZDpwaG90b3Nob3A6OWYxM2Y2ZTEtOTlkNi05ZjQ2LThmMTktZGQ3MTJiNWI4MGZmIiB4bXBNTTpPcmlnaW5hbERvY3VtZW50SUQ9InhtcC5kaWQ6MWZmNjUwMTUtZmU2Ny00ZWQ2LWE2NjQtNzRkNWMxYzg5YzBiIiB0aWZmOk9yaWVudGF0aW9uPSIxIiB0aWZmOlhSZXNvbHV0aW9uPSI3MjAwMDAvMTAwMDAiIHRpZmY6WVJlc29sdXRpb249IjcyMDAwMC8xMDAwMCIgdGlmZjpSZXNvbHV0aW9uVW5pdD0iMiIgZXhpZjpDb2xvclNwYWNlPSI2NTUzNSIgZXhpZjpQaXhlbFhEaW1lbnNpb249IjU0MCIgZXhpZjpQaXhlbFlEaW1lbnNpb249IjU0MCI+IDx4bXBNTTpIaXN0b3J5PiA8cmRmOlNlcT4gPHJkZjpsaSBzdEV2dDphY3Rpb249ImNyZWF0ZWQiIHN0RXZ0Omluc3RhbmNlSUQ9InhtcC5paWQ6MWZmNjUwMTUtZmU2Ny00ZWQ2LWE2NjQtNzRkNWMxYzg5YzBiIiBzdEV2dDp3aGVuPSIyMDI0LTA1LTIzVDA5OjU2OjQ5KzEwOjAwIiBzdEV2dDpzb2Z0d2FyZUFnZW50PSJBZG9iZSBQaG90b3Nob3AgV2ViICgyMDI0LjEwLjAuMCA1OTNjMDgyMzEyNSkgKEdvb2dsZSBDaHJvbWUpIi8+IDxyZGY6bGkgc3RFdnQ6YWN0aW9uPSJzYXZlZCIgc3RFdnQ6aW5zdGFuY2VJRD0ieG1wLmlpZDo0ZWVhMTNiMC1jMzdlLTQ0YjQtOGEzNy01N2VmZTQ4Y2YzMzciIHN0RXZ0OndoZW49IjIwMjQtMDUtMjNUMDk6NTc6NTkrMTA6MDAiIHN0RXZ0OnNvZnR3YXJlQWdlbnQ9IkFkb2JlIFBob3Rvc2hvcCBXZWIgKDIwMjQuMTAuMC4wIDU5M2MwODIzMTI1KSAoR29vZ2xlIENocm9tZSkiIHN0RXZ0OmNoYW5nZWQ9Ii8iLz4gPHJkZjpsaSBzdEV2dDphY3Rpb249InNhdmVkIiBzdEV2dDppbnN0YW5jZUlEPSJ4bXAuaWlkOjRjMzIxODBjLTFhNGYtNGE4Yi1hNjNmLTRjN2U0ZDk2NjY4ZiIgc3RFdnQ6d2hlbj0iMjAyNC0wNS0yM1QwOTo1ODowMCsxMDowMCIgc3RFdnQ6c29mdHdhcmVBZ2VudD0iQWRvYmUgUGhvdG9zaG9wIFdlYiAoMjAyNC4xMC4wLjAgNTkzYzA4MjMxMjUpIChHb29nbGUgQ2hyb21lKSIgc3RFdnQ6Y2hhbmdlZD0iLyIvPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0iY29udmVydGVkIiBzdEV2dDpwYXJhbWV0ZXJzPSJmcm9tIGRvY3VtZW50L3ZuZC5hZG9iZS5jcHNkK2RjeCB0byBpbWFnZS9wbmciLz4gPHJkZjpsaSBzdEV2dDphY3Rpb249ImRlcml2ZWQiIHN0RXZ0OnBhcmFtZXRlcnM9ImNvbnZlcnRlZCBmcm9tIGRvY3VtZW50L3ZuZC5hZG9iZS5jcHNkK2RjeCB0byBpbWFnZS9wbmciLz4gPHJkZjpsaSBzdEV2dDphY3Rpb249InNhdmVkIiBzdEV2dDppbnN0YW5jZUlEPSJ4bXAuaWlkOjhiZjIzYzAzLWZmMjEtNDA2MC05ZTkzLWRkZDM3ZWE3MTNmYiIgc3RFdnQ6d2hlbj0iMjAyNC0wNS0yM1QwOTo1ODowMCsxMDowMCIgc3RFdnQ6c29mdHdhcmVBZ2VudD0iQWRvYmUgUGhvdG9zaG9wIFdlYiAoMjAyNC4xMC4wLjAgNTkzYzA4MjMxMjUpIChHb29nbGUgQ2hyb21lKSIgc3RFdnQ6Y2hhbmdlZD0iLyIvPiA8L3JkZjpTZXE+IDwveG1wTU06SGlzdG9yeT4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NGMzMjE4MGMtMWE0Zi00YThiLWE2M2YtNGM3ZTRkOTY2NjhmIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjFmZjY1MDE1LWZlNjctNGVkNi1hNjY0LTc0ZDVjMWM4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",
-      client_gender_accepted: "Any",
-      shortBio: "A reflective, attachment-focused psychologist drawing on Circle of Security to support teens, adults, new parents and diverse couples toward meaningful change.",
-      ageGroups: [
-        "18 Yrs +"
-      ],
-      clientTypes: [
-        "Couples"
-      ],
-      therapistType: "Registered Psychologist",
-      genderOfClientsSeen: [
-        "Female",
-        "Gender Fluid",
-        "Gender Nonconforming",
-        "Gender Queer",
-        "Intersex",
-        "Male",
-        "Non Binary",
-        "Transgender"
-      ],
-      client_note: "",
-      upcoming_leave_client_notice: "",
-      upcoming_leave_show_from: "",
-      upcoming_leave_hide_after: ""
     },
     {
       id: 4,
@@ -27482,7 +27294,9 @@ Ages:
       link_to_bio: "https://psychologycare.com.au/karen-pereira-york/",
       locations: [
         {
-          availability: `Thursdays at 8:30am (Fortnightly: Starting 26th Nov)
+          availability: `Wednesdays at 2pm (Fortnightly: Starting 2nd Dec)
+Thursdays at 8:30am (Fortnightly: Starting 26th Nov)
+Thursdays at 9:30am (Fortnightly: Starting 14th Jan)
 Tuesdays at 2:30pm (Monthly: Starting 1st Dec)
 Mondays at 10:30am (Monthly: Starting 4th Jan)`,
           weekly_availability: [],
@@ -27492,7 +27306,9 @@ Mondays at 10:30am (Monthly: Starting 4th Jan)`,
       ],
       last_updated: "2026-07-19",
       availability: [
+        "Wednesdays at 2pm (Fortnightly: Starting 2nd Dec) — Greville St, Prahran",
         "Thursdays at 8:30am (Fortnightly: Starting 26th Nov) — Greville St, Prahran",
+        "Thursdays at 9:30am (Fortnightly: Starting 14th Jan) — Greville St, Prahran",
         "Tuesdays at 2:30pm (Monthly: Starting 1st Dec) — Greville St, Prahran",
         "Mondays at 10:30am (Monthly: Starting 4th Jan) — Greville St, Prahran"
       ],
@@ -27553,7 +27369,7 @@ Karen Pereira York will be on leave from 21 January 2027 to 4 February 2027 incl
       upcoming_leave_hide_after: "2027-02-04"
     }
   ];
-  var AVAILABILITY_LAST_UPDATED = "18 Nov 2026 6:04am";
+  var AVAILABILITY_LAST_UPDATED = "19 Nov 2026 7:31am";
 
   // components/IntakeTab.tsx
   var jsx_dev_runtime9 = __toESM(require_jsx_dev_runtime());
@@ -31877,115 +31693,6 @@ Spanish`,
         "Psychotherapist"
       ]
     },
-    "Therese Van Maanen": {
-      in_crm: true,
-      crm_presentations: [
-        "Adjustment Disorder",
-        "Anger & Aggression",
-        "Anxiety - Anticipatory",
-        "Anxiety - Death",
-        "Anxiety - Exam & Academic",
-        "Anxiety - Financial Stress",
-        "Anxiety - Generalised (GAD)",
-        "Anxiety - Health (Illness Anxiety / Hypochondria)",
-        "Anxiety - Perinatal / Postnatal",
-        "Anxiety - Separation",
-        "Anxiety - Social Anxiety Disorder",
-        "Anxiety - Sports Performance",
-        "Attachment Difficulties",
-        "Body Image Concerns",
-        "Bullying & Peer Difficulties",
-        "Burnout — Carer / Family",
-        "Burnout — Work-Related",
-        "Chronic Illness — Adjustment & Psychological Support",
-        "Clinician & Therapist Wellbeing Support",
-        "Conduct Disorder",
-        "Coping Skills",
-        "Depersonalisation / Derealisation",
-        "Depression — Major Depressive Disorder",
-        "Depression — Persistent Depressive Disorder (Dysthymia)",
-        "Divorce / Post Divorce Adjustment/ Support",
-        "Domestic/ Family Violence",
-        "Emotional Dysregulation",
-        "Emotional Regulation & Behavioural Difficulties",
-        "Existential Concerns",
-        "Family Conflict",
-        "Fear of Failure",
-        "First Responder & Emergency Services Support",
-        "Grief & Loss - Complicated / Prolonged",
-        "Grief & Loss - Fertility & Pregnancy Loss",
-        "Grief & Loss - General Bereavement",
-        "Grief & Loss - Termination of Pregnancy",
-        "Identity Exploration — Gender / Sexual Orientation / Cultural / Spiritual",
-        "Identity Issues",
-        "Insomnia & Sleep Difficulties",
-        "Intimacy & Trust Difficulties",
-        "LGBTQIA+ Affirmative Support",
-        "LGBTQIA+ Identity & Queer Experiences",
-        "Life Transitions",
-        "Loneliness & Isolation",
-        "Low Confidence & Self-Worth",
-        "Low Mood",
-        "Low Self-Esteem",
-        "Non-Monogamy & Polyamory",
-        "Non-Suicidal Self-Injury (NSSI) — Not Current / In Recovery",
-        "Panic Disorder",
-        "Parental Separation — Child & Family Adjustment",
-        "Parenting Difficulties",
-        "Perfectionism",
-        "Perinatal / Postnatal Depression",
-        "Phobias — Social",
-        "Post-Traumatic Stress Disorder (PTSD)",
-        "Relationship Breakdown & Separation",
-        "Relationship Difficulties",
-        "Seasonal Affective Disorder (SAD)",
-        "Sexual Abuse/ Assault",
-        "Sexual Difficulties & Dysfunction - Female",
-        "Sex and Intimacy",
-        "Shame & Guilt",
-        "Somatic Symptom Disorder",
-        "Stress Management",
-        "Trauma — Complex",
-        "Women's Health — Birth Trauma",
-        "Women's Health — Endometriosis & Chronic Pelvic Pain",
-        "Women's Health — Infertility & Assisted Reproduction (IVF)",
-        "Women's Health — Menopause & Perimenopause",
-        "Women's Health — Perinatal Mental Health (General)",
-        "Women's Health — Polycystic Ovary Syndrome (PCOS)",
-        "Women's Health — Postpartum Anxiety",
-        "Women's Health — Postpartum Obsessive-Compulsive Disorder (OCD)",
-        "Women's Health — Premenstrual Dysphoric Disorder (PMDD)",
-        "Women's Health — Premenstrual Syndrome / Hormonal Mood Changes (PMS)",
-        "Work-Related Stress"
-      ],
-      crm_modalities: [
-        "Acceptance-Based Couples Therapy",
-        "Circle of Security (COS)",
-        "Cognitive Behavioural Therapy (CBT)",
-        "Compassion-Focused Therapy (CFT)",
-        "Humanistic / Person-Centred Therapy",
-        "Interpersonal Therapy (IPT)",
-        "Psychodynamic Therapy"
-      ],
-      crm_bio: `To paraphrase the novelist Gabriel Garcia Marquez, our arrival in this world foreshadows the many opportunities life will afford us to reimagine ourselves. I  completed the long journey to become a registered psychologist, after an early career in architecture followed by one in the Internet industry when email was still a novelty and social media a twinkle in somebody’s eye.
-
-Life has become increasingly fast-paced, complex, and sometimes overwhelming. As a psychologist, I use my knowledge and expertise to understand and support my clients in making sense of their lived experiences. Doing so unlocks potential, for hope when it’s a struggle and for change when it may seem impossible. I aim to build a secure therapeutic alliance that provides the foundation to explore the barriers to potential, be that in intimate relationships, work, or private internal experiences.
-
-I have a particular interest in the role that our early attachment relationships have on our adult functioning and the intergenerational consequences of attachment styles. I have additional training in The Circle of Security® Parenting™ program which is based on decades of research about supporting and strengthening secure parent-child relationships, and I bring this reflective capacity into my individual therapy work. I work with teenagers, adults, new parents, and couples in both traditional and non-heteronormative relationships.`,
-      crm_short_bio: "A reflective, attachment-focused psychologist drawing on Circle of Security to support teens, adults, new parents and diverse couples toward meaningful change.",
-      crm_ages: [
-        "18 Yrs +"
-      ],
-      crm_client_types: [
-        "Couples"
-      ],
-      crm_languages: "",
-      crm_pronouns: "",
-      crm_email: "tvm@meravan.com.au",
-      crm_role: [
-        "Psycholoist"
-      ]
-    },
     "Allison Conyer": {
       in_crm: true,
       crm_presentations: [
@@ -34829,6 +34536,7 @@ Outside of clinical work, I'm an avid martial arts practitioner and have spent o
   var import_client = __toESM(require_client());
   var jsx_dev_runtime18 = __toESM(require_jsx_dev_runtime());
   var DATA_PATH = "/tasklet/threads/a_cwa98xzh47ey9rcvmmh4/work/practitioners_data.json";
+  var ACTIVE_PRACTITIONER_NAMES = new Set(PRACTITIONERS_DATA.map((p) => p.name));
   var ErrorBoundary = ({ children }) => /* @__PURE__ */ jsx_dev_runtime18.jsxDEV(jsx_dev_runtime18.Fragment, {
     children
   }, undefined, false, undefined, this);
@@ -34853,7 +34561,7 @@ Outside of clinical work, I'm an avid martial arts practitioner and have spent o
     };
     const saveToDisk = import_react19.useCallback(async (updated) => {
       try {
-        const stripped = updated.map(suppressKristaIntake).map((p) => {
+        const stripped = updated.filter((p) => ACTIVE_PRACTITIONER_NAMES.has(p.name)).map(suppressKristaIntake).map((p) => {
           const { photo_b64, ...rest } = p;
           return rest;
         });
@@ -34871,7 +34579,7 @@ Outside of clinical work, I'm an avid martial arts practitioner and have spent o
       });
     }, [saveToDisk]);
     const handleBulkUpdate = import_react19.useCallback((updated) => {
-      const safe = updated.map(suppressKristaIntake);
+      const safe = updated.filter((p) => ACTIVE_PRACTITIONER_NAMES.has(p.name)).map(suppressKristaIntake);
       setPractitioners(safe);
       saveToDisk(safe);
     }, [saveToDisk]);
