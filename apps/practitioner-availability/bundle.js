@@ -23518,10 +23518,10 @@ Broadly, Amy is obsessed with her new 6yo rescue kelpie x staffy, Naia; she love
       locations: [
         {
           location: "Burke Rd, Camberwell",
-          availability: `Fridays at 10am (Weekly: Starting 20th Nov)
+          availability: `Fridays at 10am (Weekly: Starting 27th Nov)
+Mondays at 10am (Fortnightly: Starting 30th Nov)
 Fridays at 1pm (Fortnightly: Starting 4th Dec)
 Mondays at 9am (Fortnightly: Starting 30th Nov)
-Mondays at 10am (Fortnightly: Starting 30th Nov)
 Mondays at 1pm (Monthly: Starting 23rd Nov)`,
           weekly_availability: [],
           fortnightly_availability: []
@@ -23535,10 +23535,10 @@ Mondays at 1pm (Monthly: Starting 23rd Nov)`,
       ],
       last_updated: "2026-07-19",
       availability: [
-        "Fridays at 10am (Weekly: Starting 20th Nov) — Burke Rd, Camberwell",
+        "Fridays at 10am (Weekly: Starting 27th Nov) — Burke Rd, Camberwell",
+        "Mondays at 10am (Fortnightly: Starting 30th Nov) — Burke Rd, Camberwell",
         "Fridays at 1pm (Fortnightly: Starting 4th Dec) — Burke Rd, Camberwell",
         "Mondays at 9am (Fortnightly: Starting 30th Nov) — Burke Rd, Camberwell",
-        "Mondays at 10am (Fortnightly: Starting 30th Nov) — Burke Rd, Camberwell",
         "Mondays at 1pm (Monthly: Starting 23rd Nov) — Burke Rd, Camberwell"
       ],
       short_bio: "Amy is a warm, LGBTQIAP+ friendly clinical psychologist supporting clients 16+ with mood, relationship and eating difficulties using flexible, evidence-based therapies.",
@@ -24236,8 +24236,7 @@ I have a developing interest and training in the new research around psychedelic
         {
           location: "Burke Rd, Camberwell",
           availability: `Tuesdays at 8am (Fortnightly: Starting 8th Dec)
-Wednesdays at 12pm (Fortnightly: Starting 16th Dec)
-Wednesdays at 1pm (Fortnightly: Starting 2nd Dec)`,
+Wednesdays at 12pm (Fortnightly: Starting 16th Dec)`,
           weekly_availability: [],
           fortnightly_availability: []
         }
@@ -24245,8 +24244,7 @@ Wednesdays at 1pm (Fortnightly: Starting 2nd Dec)`,
       last_updated: "2026-07-19",
       availability: [
         "Tuesdays at 8am (Fortnightly: Starting 8th Dec) — Burke Rd, Camberwell",
-        "Wednesdays at 12pm (Fortnightly: Starting 16th Dec) — Burke Rd, Camberwell",
-        "Wednesdays at 1pm (Fortnightly: Starting 2nd Dec) — Burke Rd, Camberwell"
+        "Wednesdays at 12pm (Fortnightly: Starting 16th Dec) — Burke Rd, Camberwell"
       ],
       short_bio: "An integrative ISTDP, and CBT therapist helping clients face painful feelings, heal relational wounds and integrate difficult psychedelic experiences.",
       weekly_availability: [],
@@ -26108,7 +26106,8 @@ Josh has worked in both public and private sectors, and has experience with trau
       locations: [
         {
           location: "Burke Rd, Camberwell",
-          availability: `Tuesdays at 7pm (Fortnightly: Starting 12th Jan)
+          availability: `Wednesdays at 4:30pm (Fortnightly: Starting 9th Dec)
+Tuesdays at 7pm (Fortnightly: Starting 12th Jan)
 Tuesdays at 4pm (Fortnightly: Starting 15th Dec)
 Thursdays at 7:30pm (Fortnightly: Starting 10th Dec)`,
           weekly_availability: [],
@@ -26123,6 +26122,7 @@ Thursdays at 7:30pm (Fortnightly: Starting 10th Dec)`,
         {
           location: "Telehealth",
           availability: `Tuesdays at 8pm (Weekly: Starting 24th Nov)
+Wednesdays at 4:30pm (Fortnightly: Starting 25th Nov)
 Tuesdays at 7pm (Fortnightly: Starting 1st Dec)
 Thursdays at 4:30pm (Fortnightly: Starting 26th Nov)
 Tuesdays at 4pm (Fortnightly: Starting 1st Dec)
@@ -26134,11 +26134,13 @@ Wednesdays at 2:30pm (Monthly: Starting 25th Nov)`
       short_bio: "Josh is a warm, research-active clinical psychologist supporting adolescents and adults with integrative, values-based therapy for trauma, neurodiversity and emotional difficulties.",
       availability: [
         "Tuesdays at 8pm (Weekly: Starting 24th Nov) — Telehealth",
+        "Wednesdays at 4:30pm (Fortnightly: Starting 25th Nov) — Telehealth",
         "Tuesdays at 7pm (Fortnightly: Starting 1st Dec) — Telehealth",
         "Thursdays at 4:30pm (Fortnightly: Starting 26th Nov) — Telehealth",
         "Tuesdays at 4pm (Fortnightly: Starting 1st Dec) — Telehealth",
         "Thursdays at 7:30pm (Fortnightly: Starting 26th Nov) — Telehealth",
         "Wednesdays at 2:30pm (Monthly: Starting 25th Nov) — Telehealth",
+        "Wednesdays at 4:30pm (Fortnightly: Starting 9th Dec) — Burke Rd, Camberwell",
         "Tuesdays at 7pm (Fortnightly: Starting 12th Jan) — Burke Rd, Camberwell",
         "Tuesdays at 4pm (Fortnightly: Starting 15th Dec) — Burke Rd, Camberwell",
         "Thursdays at 7:30pm (Fortnightly: Starting 10th Dec) — Burke Rd, Camberwell"
@@ -26487,8 +26489,7 @@ Poorna greatly values the therapeutic alliance between client and therapist. The
       link_to_bio: "https://psychologycare.com.au/poorna-selvaraja/",
       locations: [
         {
-          availability: `Tuesdays at 11:30am (Fortnightly: Starting 12th Jan)
-Tuesdays at 9:30am (Monthly: Starting 1st Dec)
+          availability: `Tuesdays at 9:30am (Monthly: Starting 1st Dec)
 Tuesdays at 10:30am (Monthly: Starting 8th Dec)
 Tuesdays at 8:30am (Monthly: Starting 8th Dec)`,
           weekly_availability: [],
@@ -26498,7 +26499,6 @@ Tuesdays at 8:30am (Monthly: Starting 8th Dec)`,
       ],
       last_updated: "2026-07-19",
       availability: [
-        "Tuesdays at 11:30am (Fortnightly: Starting 12th Jan) — Greville St, Prahran",
         "Tuesdays at 9:30am (Monthly: Starting 1st Dec) — Greville St, Prahran",
         "Tuesdays at 10:30am (Monthly: Starting 8th Dec) — Greville St, Prahran",
         "Tuesdays at 8:30am (Monthly: Starting 8th Dec) — Greville St, Prahran"
@@ -26731,7 +26731,7 @@ Pete practices using Cognitive Behaviour Therapy (CBT) and Acceptance and Commit
       link_to_bio: "https://psychologycare.com.au/pete-steele/",
       locations: [
         {
-          availability: `Tuesdays at 8am (Fortnightly: Starting 24th Nov)
+          availability: `Tuesdays at 8am (Fortnightly: Starting 8th Dec)
 Tuesdays at 2pm (Monthly: Starting 24th Nov)
 Wednesdays at 8am (Monthly: Starting 16th Dec)
 Tuesdays at 1pm (Monthly: Starting 1st Dec)`,
@@ -26748,7 +26748,7 @@ Tuesdays at 1pm (Monthly: Starting 1st Dec)`,
       ],
       last_updated: "2026-07-19",
       availability: [
-        "Tuesdays at 8am (Fortnightly: Starting 24th Nov) — Greville St, Prahran",
+        "Tuesdays at 8am (Fortnightly: Starting 8th Dec) — Greville St, Prahran",
         "Tuesdays at 2pm (Monthly: Starting 24th Nov) — Greville St, Prahran",
         "Wednesdays at 8am (Monthly: Starting 16th Dec) — Greville St, Prahran",
         "Tuesdays at 1pm (Monthly: Starting 1st Dec) — Greville St, Prahran"
@@ -26858,7 +26858,6 @@ Clare has experience working with clients facing a variety of difficulties, incl
       locations: [
         {
           availability: `Mondays at 2:30pm (Fortnightly: Starting 21st Dec)
-Tuesdays at 5:30pm (Fortnightly: Starting 1st Dec)
 Mondays at 3:30pm (Fortnightly: Starting 30th Nov)
 Tuesdays at 2:30pm (Fortnightly: Starting 1st Dec)
 Tuesdays at 5:30pm (Monthly: Starting 22nd Dec)
@@ -26886,7 +26885,6 @@ Tuesdays at 11am (Monthly: Starting 24th Nov)`,
       last_updated: "2026-07-19",
       availability: [
         "Mondays at 2:30pm (Fortnightly: Starting 21st Dec) — Greville St, Prahran",
-        "Tuesdays at 5:30pm (Fortnightly: Starting 1st Dec) — Greville St, Prahran",
         "Mondays at 3:30pm (Fortnightly: Starting 30th Nov) — Greville St, Prahran",
         "Tuesdays at 2:30pm (Fortnightly: Starting 1st Dec) — Greville St, Prahran",
         "Tuesdays at 5:30pm (Monthly: Starting 22nd Dec) — Greville St, Prahran",
@@ -27295,7 +27293,6 @@ Ages:
       locations: [
         {
           availability: `Wednesdays at 2pm (Fortnightly: Starting 2nd Dec)
-Thursdays at 8:30am (Fortnightly: Starting 26th Nov)
 Thursdays at 9:30am (Fortnightly: Starting 14th Jan)
 Tuesdays at 2:30pm (Monthly: Starting 1st Dec)
 Mondays at 10:30am (Monthly: Starting 4th Jan)`,
@@ -27307,7 +27304,6 @@ Mondays at 10:30am (Monthly: Starting 4th Jan)`,
       last_updated: "2026-07-19",
       availability: [
         "Wednesdays at 2pm (Fortnightly: Starting 2nd Dec) — Greville St, Prahran",
-        "Thursdays at 8:30am (Fortnightly: Starting 26th Nov) — Greville St, Prahran",
         "Thursdays at 9:30am (Fortnightly: Starting 14th Jan) — Greville St, Prahran",
         "Tuesdays at 2:30pm (Monthly: Starting 1st Dec) — Greville St, Prahran",
         "Mondays at 10:30am (Monthly: Starting 4th Jan) — Greville St, Prahran"
@@ -27369,7 +27365,7 @@ Karen Pereira York will be on leave from 21 January 2027 to 4 February 2027 incl
       upcoming_leave_hide_after: "2027-02-04"
     }
   ];
-  var AVAILABILITY_LAST_UPDATED = "19 Nov 2026 7:31am";
+  var AVAILABILITY_LAST_UPDATED = "19 Nov 2026 10:23am";
 
   // components/IntakeTab.tsx
   var jsx_dev_runtime9 = __toESM(require_jsx_dev_runtime());
