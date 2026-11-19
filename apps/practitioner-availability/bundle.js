@@ -22974,9 +22974,8 @@ Alex is passionate about normalising the distress we may experience in response 
         },
         {
           location: "Burke Rd, Camberwell",
-          availability: `Mondays at 7:30pm (Fortnightly: Starting 30th Nov)
-Tuesdays at 2:30pm (Monthly: Starting 24th Nov)
-Fridays at 12pm (Monthly: Starting 20th Nov)
+          availability: `Tuesdays at 2:30pm (Monthly: Starting 24th Nov)
+Fridays at 12pm (Monthly: Starting 15th Jan)
 Fridays at 9am (Monthly: Starting 11th Dec)
 Tuesdays at 5:30pm (Monthly: Starting 8th Dec)
 Mondays at 4:30pm (Monthly: Starting 4th Jan)`,
@@ -22986,9 +22985,8 @@ Mondays at 4:30pm (Monthly: Starting 4th Jan)`,
       ],
       last_updated: "2026-07-19",
       availability: [
-        "Mondays at 7:30pm (Fortnightly: Starting 30th Nov) — Burke Rd, Camberwell",
         "Tuesdays at 2:30pm (Monthly: Starting 24th Nov) — Burke Rd, Camberwell",
-        "Fridays at 12pm (Monthly: Starting 20th Nov) — Burke Rd, Camberwell",
+        "Fridays at 12pm (Monthly: Starting 15th Jan) — Burke Rd, Camberwell",
         "Fridays at 9am (Monthly: Starting 11th Dec) — Burke Rd, Camberwell",
         "Tuesdays at 5:30pm (Monthly: Starting 8th Dec) — Burke Rd, Camberwell",
         "Mondays at 4:30pm (Monthly: Starting 4th Jan) — Burke Rd, Camberwell"
@@ -23217,16 +23215,14 @@ Rebekah has a compassionate and thoughtful approach to the emotional care and su
       locations: [
         {
           location: "Burke Rd, Camberwell",
-          availability: `Mondays at 10am (Fortnightly: Starting 14th Dec)
-Saturdays at 12pm (Monthly: Starting 19th Dec)`,
+          availability: "Mondays at 10am (Fortnightly: Starting 14th Dec)",
           weekly_availability: [],
           fortnightly_availability: []
         }
       ],
       last_updated: "2026-07-19",
       availability: [
-        "Mondays at 10am (Fortnightly: Starting 14th Dec) — Burke Rd, Camberwell",
-        "Saturdays at 12pm (Monthly: Starting 19th Dec) — Burke Rd, Camberwell"
+        "Mondays at 10am (Fortnightly: Starting 14th Dec) — Burke Rd, Camberwell"
       ],
       short_bio: "Rebekah is a relationship-focused mental health social worker using counselling, psychotherapy and ACT to help individuals and couples strengthen connection and wellbeing.",
       weekly_availability: [],
@@ -23969,7 +23965,6 @@ A/H: $275`,
       locations: [
         {
           availability: `Tuesdays at 9am (Fortnightly: Starting 12th Jan)
-Thursdays at 12pm (Fortnightly: Starting 14th Jan)
 Tuesdays at 1pm (Fortnightly: Starting 12th Jan)
 Thursdays at 10am (Fortnightly: Starting 14th Jan)`,
           weekly_availability: [],
@@ -24018,7 +24013,6 @@ Thursdays at 10am (Fortnightly: Starting 14th Jan)`,
       last_updated: "2026-07-19",
       availability: [
         "Tuesdays at 9am (Fortnightly: Starting 12th Jan) — Greville St, Prahran",
-        "Thursdays at 12pm (Fortnightly: Starting 14th Jan) — Greville St, Prahran",
         "Tuesdays at 1pm (Fortnightly: Starting 12th Jan) — Greville St, Prahran",
         "Thursdays at 10am (Fortnightly: Starting 14th Jan) — Greville St, Prahran"
       ],
@@ -24482,7 +24476,7 @@ Allison employs an integrative approach to therapy, drawing upon a wide-range of
       link_to_bio: "https://psychologycare.com.au/allison-conyer/",
       locations: [
         {
-          availability: "Thursdays at 12pm (Monthly: Starting 3rd Dec)",
+          availability: "Thursdays at 12pm (Monthly: Starting 31st Dec)",
           weekly_availability: [],
           fortnightly_availability: [
             {
@@ -24502,7 +24496,7 @@ Allison employs an integrative approach to therapy, drawing upon a wide-range of
       ],
       last_updated: "2026-07-19",
       availability: [
-        "Thursdays at 12pm (Monthly: Starting 3rd Dec) — Greville St, Prahran"
+        "Thursdays at 12pm (Monthly: Starting 31st Dec) — Greville St, Prahran"
       ],
       short_bio: "Allison is a warm, culturally aware psychologist supporting all ages with anxiety, trauma, life transitions and family relationships using integrative evidence-based therapies.",
       weekly_availability: [],
@@ -24677,10 +24671,8 @@ Being a psychologist is a humbling role and a valued part of my life. I feel hon
         {
           availability: `Thursdays at 1:30pm (Fortnightly: Starting 3rd Dec)
 Mondays at 11:30am (Fortnightly: Starting 4th Jan)
-Mondays at 9am (Fortnightly: Starting 7th Dec)
 Tuesdays at 2:30pm (Fortnightly: Starting 1st Dec)
 Mondays at 1:30pm (Fortnightly: Starting 21st Dec)
-Mondays at 1:30pm (Monthly: Starting 30th Nov)
 Tuesdays at 2:30pm (Monthly: Starting 8th Dec)
 Tuesdays at 3:30pm (Monthly: Starting 12th Jan)
 Thursdays at 12:30pm (Monthly: Starting 17th Dec)
@@ -24694,10 +24686,8 @@ Tuesdays at 4:30pm (Monthly: Starting 8th Dec)`,
       availability: [
         "Thursdays at 1:30pm (Fortnightly: Starting 3rd Dec) — Burke Rd, Camberwell",
         "Mondays at 11:30am (Fortnightly: Starting 4th Jan) — Burke Rd, Camberwell",
-        "Mondays at 9am (Fortnightly: Starting 7th Dec) — Burke Rd, Camberwell",
         "Tuesdays at 2:30pm (Fortnightly: Starting 1st Dec) — Burke Rd, Camberwell",
         "Mondays at 1:30pm (Fortnightly: Starting 21st Dec) — Burke Rd, Camberwell",
-        "Mondays at 1:30pm (Monthly: Starting 30th Nov) — Burke Rd, Camberwell",
         "Tuesdays at 2:30pm (Monthly: Starting 8th Dec) — Burke Rd, Camberwell",
         "Tuesdays at 3:30pm (Monthly: Starting 12th Jan) — Burke Rd, Camberwell",
         "Thursdays at 12:30pm (Monthly: Starting 17th Dec) — Burke Rd, Camberwell",
@@ -25020,7 +25010,8 @@ I am committed to providing best practice trauma informed care in a confidential
         {
           location: "Greville St, Prahran",
           availability: `Wednesdays at 5:30pm (Fortnightly: Starting 25th Nov)
-Wednesdays at 4:30pm (Monthly: Starting 6th Jan)
+Mondays at 12pm (Monthly: Starting 7th Dec)
+Tuesdays at 10am (Monthly: Starting 24th Nov)
 Tuesdays at 9am (Monthly: Starting 8th Dec)
 Tuesdays at 12pm (Monthly: Starting 8th Dec)
 Saturdays at 10am (Monthly: Starting 12th Dec)`,
@@ -25031,7 +25022,8 @@ Saturdays at 10am (Monthly: Starting 12th Dec)`,
       last_updated: "2026-07-19",
       availability: [
         "Wednesdays at 5:30pm (Fortnightly: Starting 25th Nov) — Greville St, Prahran",
-        "Wednesdays at 4:30pm (Monthly: Starting 6th Jan) — Greville St, Prahran",
+        "Mondays at 12pm (Monthly: Starting 7th Dec) — Greville St, Prahran",
+        "Tuesdays at 10am (Monthly: Starting 24th Nov) — Greville St, Prahran",
         "Tuesdays at 9am (Monthly: Starting 8th Dec) — Greville St, Prahran",
         "Tuesdays at 12pm (Monthly: Starting 8th Dec) — Greville St, Prahran",
         "Saturdays at 10am (Monthly: Starting 12th Dec) — Greville St, Prahran"
@@ -26286,7 +26278,8 @@ Belinda aims to work collaboratively with her clients to help them develop a dee
       link_to_bio: "https://psychologycare.com.au/belinda-pacella/",
       locations: [
         {
-          availability: "Thursdays at 8am (Monthly: Starting 26th Nov)",
+          availability: `Thursdays at 11am (Fortnightly: Starting 24th Dec)
+Thursdays at 8am (Monthly: Starting 26th Nov)`,
           weekly_availability: [],
           fortnightly_availability: [],
           location: "Greville St, Prahran"
@@ -26294,6 +26287,7 @@ Belinda aims to work collaboratively with her clients to help them develop a dee
       ],
       last_updated: "2026-07-19",
       availability: [
+        "Thursdays at 11am (Fortnightly: Starting 24th Dec) — Greville St, Prahran",
         "Thursdays at 8am (Monthly: Starting 26th Nov) — Greville St, Prahran"
       ],
       short_bio: "Belinda is a collaborative clinical psychologist and supervisor using relational, emotion-focused ISTDP to foster deep self-understanding, emotional resilience and lasting change.",
@@ -27358,7 +27352,7 @@ Karen Pereira York will be on leave from 21 January 2027 to 4 February 2027 incl
       upcoming_leave_hide_after: "2027-02-04"
     }
   ];
-  var AVAILABILITY_LAST_UPDATED = "19 Nov 2026 1:28pm";
+  var AVAILABILITY_LAST_UPDATED = "20 Nov 2026 6:04am";
 
   // components/IntakeTab.tsx
   var jsx_dev_runtime9 = __toESM(require_jsx_dev_runtime());
