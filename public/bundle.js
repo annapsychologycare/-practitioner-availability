@@ -23218,7 +23218,6 @@ Rebekah has a compassionate and thoughtful approach to the emotional care and su
         {
           location: "Burke Rd, Camberwell",
           availability: `Mondays at 10am (Fortnightly: Starting 14th Dec)
-Mondays at 3pm (Monthly: Starting 30th Nov)
 Saturdays at 12pm (Monthly: Starting 19th Dec)`,
           weekly_availability: [],
           fortnightly_availability: []
@@ -23227,7 +23226,6 @@ Saturdays at 12pm (Monthly: Starting 19th Dec)`,
       last_updated: "2026-07-19",
       availability: [
         "Mondays at 10am (Fortnightly: Starting 14th Dec) — Burke Rd, Camberwell",
-        "Mondays at 3pm (Monthly: Starting 30th Nov) — Burke Rd, Camberwell",
         "Saturdays at 12pm (Monthly: Starting 19th Dec) — Burke Rd, Camberwell"
       ],
       short_bio: "Rebekah is a relationship-focused mental health social worker using counselling, psychotherapy and ACT to help individuals and couples strengthen connection and wellbeing.",
@@ -23980,10 +23978,7 @@ Thursdays at 10am (Fortnightly: Starting 14th Jan)`,
         },
         {
           location: "Burke Rd, Camberwell",
-          availability: `Wednesdays at 5:30pm (Weekly: Starting 13th Jan)
-Wednesdays at 4:30pm (Weekly: Starting 13th Jan)
-Wednesdays at 3:30pm (Weekly: Starting 13th Jan)
-Wednesdays at 2:30pm (Weekly: Starting 13th Jan)`,
+          availability: "",
           weekly_availability: [
             {
               day: "Tuesday",
@@ -24022,10 +24017,6 @@ Wednesdays at 2:30pm (Weekly: Starting 13th Jan)`,
       ],
       last_updated: "2026-07-19",
       availability: [
-        "Wednesdays at 5:30pm (Weekly: Starting 13th Jan) — Burke Rd, Camberwell",
-        "Wednesdays at 4:30pm (Weekly: Starting 13th Jan) — Burke Rd, Camberwell",
-        "Wednesdays at 3:30pm (Weekly: Starting 13th Jan) — Burke Rd, Camberwell",
-        "Wednesdays at 2:30pm (Weekly: Starting 13th Jan) — Burke Rd, Camberwell",
         "Tuesdays at 9am (Fortnightly: Starting 12th Jan) — Greville St, Prahran",
         "Thursdays at 12pm (Fortnightly: Starting 14th Jan) — Greville St, Prahran",
         "Tuesdays at 1pm (Fortnightly: Starting 12th Jan) — Greville St, Prahran",
@@ -25029,6 +25020,7 @@ I am committed to providing best practice trauma informed care in a confidential
         {
           location: "Greville St, Prahran",
           availability: `Wednesdays at 5:30pm (Fortnightly: Starting 25th Nov)
+Wednesdays at 4:30pm (Monthly: Starting 6th Jan)
 Tuesdays at 9am (Monthly: Starting 8th Dec)
 Tuesdays at 12pm (Monthly: Starting 8th Dec)
 Saturdays at 10am (Monthly: Starting 12th Dec)`,
@@ -25039,6 +25031,7 @@ Saturdays at 10am (Monthly: Starting 12th Dec)`,
       last_updated: "2026-07-19",
       availability: [
         "Wednesdays at 5:30pm (Fortnightly: Starting 25th Nov) — Greville St, Prahran",
+        "Wednesdays at 4:30pm (Monthly: Starting 6th Jan) — Greville St, Prahran",
         "Tuesdays at 9am (Monthly: Starting 8th Dec) — Greville St, Prahran",
         "Tuesdays at 12pm (Monthly: Starting 8th Dec) — Greville St, Prahran",
         "Saturdays at 10am (Monthly: Starting 12th Dec) — Greville St, Prahran"
@@ -26733,7 +26726,7 @@ Pete practices using Cognitive Behaviour Therapy (CBT) and Acceptance and Commit
         {
           availability: `Tuesdays at 8am (Fortnightly: Starting 8th Dec)
 Tuesdays at 2pm (Monthly: Starting 24th Nov)
-Wednesdays at 8am (Monthly: Starting 16th Dec)
+Wednesdays at 8am (Monthly: Starting 13th Jan)
 Tuesdays at 1pm (Monthly: Starting 1st Dec)`,
           weekly_availability: [],
           fortnightly_availability: [],
@@ -26750,7 +26743,7 @@ Tuesdays at 1pm (Monthly: Starting 1st Dec)`,
       availability: [
         "Tuesdays at 8am (Fortnightly: Starting 8th Dec) — Greville St, Prahran",
         "Tuesdays at 2pm (Monthly: Starting 24th Nov) — Greville St, Prahran",
-        "Wednesdays at 8am (Monthly: Starting 16th Dec) — Greville St, Prahran",
+        "Wednesdays at 8am (Monthly: Starting 13th Jan) — Greville St, Prahran",
         "Tuesdays at 1pm (Monthly: Starting 1st Dec) — Greville St, Prahran"
       ],
       short_bio: "Pete is a warm, trauma-informed clinical psychologist using CBT and ACT to support diverse adults and adolescents, including LGBTIQ+ and CALD communities.",
@@ -27365,7 +27358,7 @@ Karen Pereira York will be on leave from 21 January 2027 to 4 February 2027 incl
       upcoming_leave_hide_after: "2027-02-04"
     }
   ];
-  var AVAILABILITY_LAST_UPDATED = "19 Nov 2026 10:23am";
+  var AVAILABILITY_LAST_UPDATED = "19 Nov 2026 1:28pm";
 
   // components/IntakeTab.tsx
   var jsx_dev_runtime9 = __toESM(require_jsx_dev_runtime());

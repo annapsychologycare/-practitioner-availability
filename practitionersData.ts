@@ -289,7 +289,7 @@ export const PRACTITIONERS_DATA = [
     "locations": [
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "Mondays at 10am (Fortnightly: Starting 14th Dec)\nMondays at 3pm (Monthly: Starting 30th Nov)\nSaturdays at 12pm (Monthly: Starting 19th Dec)",
+        "availability": "Mondays at 10am (Fortnightly: Starting 14th Dec)\nSaturdays at 12pm (Monthly: Starting 19th Dec)",
         "weekly_availability": [],
         "fortnightly_availability": []
       }
@@ -297,7 +297,6 @@ export const PRACTITIONERS_DATA = [
     "last_updated": "2026-07-19",
     "availability": [
       "Mondays at 10am (Fortnightly: Starting 14th Dec) — Burke Rd, Camberwell",
-      "Mondays at 3pm (Monthly: Starting 30th Nov) — Burke Rd, Camberwell",
       "Saturdays at 12pm (Monthly: Starting 19th Dec) — Burke Rd, Camberwell"
     ],
     "short_bio": "Rebekah is a relationship-focused mental health social worker using counselling, psychotherapy and ACT to help individuals and couples strengthen connection and wellbeing.",
@@ -1007,7 +1006,7 @@ export const PRACTITIONERS_DATA = [
       },
       {
         "location": "Burke Rd, Camberwell",
-        "availability": "Wednesdays at 5:30pm (Weekly: Starting 13th Jan)\nWednesdays at 4:30pm (Weekly: Starting 13th Jan)\nWednesdays at 3:30pm (Weekly: Starting 13th Jan)\nWednesdays at 2:30pm (Weekly: Starting 13th Jan)",
+        "availability": "",
         "weekly_availability": [
           {
             "day": "Tuesday",
@@ -1046,10 +1045,6 @@ export const PRACTITIONERS_DATA = [
     ],
     "last_updated": "2026-07-19",
     "availability": [
-      "Wednesdays at 5:30pm (Weekly: Starting 13th Jan) — Burke Rd, Camberwell",
-      "Wednesdays at 4:30pm (Weekly: Starting 13th Jan) — Burke Rd, Camberwell",
-      "Wednesdays at 3:30pm (Weekly: Starting 13th Jan) — Burke Rd, Camberwell",
-      "Wednesdays at 2:30pm (Weekly: Starting 13th Jan) — Burke Rd, Camberwell",
       "Tuesdays at 9am (Fortnightly: Starting 12th Jan) — Greville St, Prahran",
       "Thursdays at 12pm (Fortnightly: Starting 14th Jan) — Greville St, Prahran",
       "Tuesdays at 1pm (Fortnightly: Starting 12th Jan) — Greville St, Prahran",
@@ -1969,7 +1964,7 @@ export const PRACTITIONERS_DATA = [
     "locations": [
       {
         "location": "Greville St, Prahran",
-        "availability": "Wednesdays at 5:30pm (Fortnightly: Starting 25th Nov)\nTuesdays at 9am (Monthly: Starting 8th Dec)\nTuesdays at 12pm (Monthly: Starting 8th Dec)\nSaturdays at 10am (Monthly: Starting 12th Dec)",
+        "availability": "Wednesdays at 5:30pm (Fortnightly: Starting 25th Nov)\nWednesdays at 4:30pm (Monthly: Starting 6th Jan)\nTuesdays at 9am (Monthly: Starting 8th Dec)\nTuesdays at 12pm (Monthly: Starting 8th Dec)\nSaturdays at 10am (Monthly: Starting 12th Dec)",
         "weekly_availability": [],
         "fortnightly_availability": []
       }
@@ -1977,6 +1972,7 @@ export const PRACTITIONERS_DATA = [
     "last_updated": "2026-07-19",
     "availability": [
       "Wednesdays at 5:30pm (Fortnightly: Starting 25th Nov) — Greville St, Prahran",
+      "Wednesdays at 4:30pm (Monthly: Starting 6th Jan) — Greville St, Prahran",
       "Tuesdays at 9am (Monthly: Starting 8th Dec) — Greville St, Prahran",
       "Tuesdays at 12pm (Monthly: Starting 8th Dec) — Greville St, Prahran",
       "Saturdays at 10am (Monthly: Starting 12th Dec) — Greville St, Prahran"
@@ -3553,7 +3549,7 @@ export const PRACTITIONERS_DATA = [
     "link_to_bio": "https://psychologycare.com.au/pete-steele/",
     "locations": [
       {
-        "availability": "Tuesdays at 8am (Fortnightly: Starting 8th Dec)\nTuesdays at 2pm (Monthly: Starting 24th Nov)\nWednesdays at 8am (Monthly: Starting 16th Dec)\nTuesdays at 1pm (Monthly: Starting 1st Dec)",
+        "availability": "Tuesdays at 8am (Fortnightly: Starting 8th Dec)\nTuesdays at 2pm (Monthly: Starting 24th Nov)\nWednesdays at 8am (Monthly: Starting 13th Jan)\nTuesdays at 1pm (Monthly: Starting 1st Dec)",
         "weekly_availability": [],
         "fortnightly_availability": [],
         "location": "Greville St, Prahran"
@@ -3569,7 +3565,7 @@ export const PRACTITIONERS_DATA = [
     "availability": [
       "Tuesdays at 8am (Fortnightly: Starting 8th Dec) — Greville St, Prahran",
       "Tuesdays at 2pm (Monthly: Starting 24th Nov) — Greville St, Prahran",
-      "Wednesdays at 8am (Monthly: Starting 16th Dec) — Greville St, Prahran",
+      "Wednesdays at 8am (Monthly: Starting 13th Jan) — Greville St, Prahran",
       "Tuesdays at 1pm (Monthly: Starting 1st Dec) — Greville St, Prahran"
     ],
     "short_bio": "Pete is a warm, trauma-informed clinical psychologist using CBT and ACT to support diverse adults and adolescents, including LGBTIQ+ and CALD communities.",
@@ -4109,4 +4105,4 @@ export const PRACTITIONERS_DATA = [
   }
 ];
 export const practitionersData = PRACTITIONERS_DATA;
-export const AVAILABILITY_LAST_UPDATED = "19 Nov 2026 10:23am";
+export const AVAILABILITY_LAST_UPDATED = "19 Nov 2026 1:28pm";
