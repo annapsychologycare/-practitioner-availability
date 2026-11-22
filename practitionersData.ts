@@ -447,9 +447,9 @@ export const PRACTITIONERS_DATA = [
       "Male"
     ],
     "client_note": "",
-    "upcoming_leave_client_notice": "Brigid Blanckenberg will be on leave from 2 December 2026 to 2 December 2026 inclusive.\nBrigid Blanckenberg will be on leave from 24 December 2026 to 11 January 2027 inclusive.",
-    "upcoming_leave_show_from": "2026-11-04",
-    "upcoming_leave_hide_after": "2027-01-11"
+    "upcoming_leave_client_notice": "",
+    "upcoming_leave_show_from": "",
+    "upcoming_leave_hide_after": ""
   },
   {
     "id": 3,
@@ -2033,9 +2033,9 @@ export const PRACTITIONERS_DATA = [
     ],
     "therapistType": "Accredited Mental Health Social Worker",
     "client_note": "Please note: Christine is an Accredited Mental Health Social Worker (AMHSW) with the AASW, rather than a psychologist. She is an eligible Medicare provider under a Mental Health Treatment Plan. If you intend to use private health insurance, please check with your insurer prior to booking, as not all funds provide rebates for Mental Health Social Work services.",
-    "upcoming_leave_client_notice": "Christine Deftereos will be on leave from 24 December 2026 to 3 January 2027 inclusive.",
-    "upcoming_leave_show_from": "2026-11-04",
-    "upcoming_leave_hide_after": "2027-01-03"
+    "upcoming_leave_client_notice": "",
+    "upcoming_leave_show_from": "",
+    "upcoming_leave_hide_after": ""
   },
   {
     "id": 18,
@@ -2945,7 +2945,7 @@ export const PRACTITIONERS_DATA = [
       "Individuals"
     ],
     "age_range": [
-      "10 yrs +"
+      "12 Yrs +"
     ],
     "therapist_type": "Psychologist",
     "additional_info": "",
@@ -3006,7 +3006,7 @@ export const PRACTITIONERS_DATA = [
     "client_gender_accepted": "Any",
     "shortBio": "Josh is a warm, research-active clinical psychologist supporting adolescents and adults with integrative, values-based therapy for trauma, neurodiversity and emotional difficulties.",
     "ageGroups": [
-      "10 yrs +"
+      "12 Yrs +"
     ],
     "clientTypes": [
       "Individuals"
