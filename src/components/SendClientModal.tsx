@@ -213,7 +213,7 @@ const SendClientModal: React.FC<Props> = ({ selected, locationFilter, onClose, o
         </div>}
 
         {step === "client-preview" ? (
-          <ClientPagePreview practitioners={practitionerData} includeMonthly={includeMonthly} age60Plus={clientAge60Plus} now={noticeNow} onBack={()=>setStep('form')}/>
+          <ClientPagePreview practitioners={practitionerData} includeMonthly={includeMonthly} age60Plus={clientAge60Plus} now={new Date(noticeNow)} onBack={()=>setStep('form')}/>
         ) : step === "form" ? (
           <>
             {/* Selected practitioners summary */}
