@@ -1,4 +1,5 @@
 import {assertAvailabilityWindow} from './availability_horizon';
+import {assertAvailabilityLocations} from './availability_profile_guard';
 import { invokeTool } from '@tasklet/tools/v2';
 import { readFileSync, writeFileSync } from 'node:fs';
 const base = '/tasklet/threads/a_cwa98xzh47ey9rcvmmh4/work';
@@ -7,12 +8,15 @@ assertAvailabilityWindow(result.dateRange);
 if (!result.ok || !result.totalSlots) throw new Error('Invalid or empty import; refusing to publish');
 const before = JSON.parse(readFileSync('/tmp/practitioners_before_import.json', 'utf8'));
 const after = JSON.parse(readFileSync(`${base}/practitioners_data.json`, 'utf8'));
-const strip = (p:any) => { const {availability, confirmed_slots, locations, alert, client_note, upcoming_leave_client_notice, upcoming_leave_show_from, upcoming_leave_hide_after, ...rest} = p; return {...rest, locations: (locations ?? []).map((l:any)=>{const {availability,...r}=l;return r;})}; };
+assertAvailabilityLocations(before,after,result.slots);
+const strip = (p:any) => { const {availability, confirmed_slots, locations, alert, client_note, upcoming_leave_client_notice, upcoming_leave_show_from, upcoming_leave_hide_after, ...rest} = p; return rest; };
 if (JSON.stringify(before.map(strip)) !== JSON.stringify(after.map(strip))) throw new Error('Unexpected non-availability changes');
 const r = await invokeTool({toolName:'github_push_to_branch',connectionId:'conn_nvshm6rz3kzncg0nh4vk',args:{
   owner:'annapsychologycare',repo:'-practitioner-availability',branch:'main',
   commitMessage:`Availability update via Zanda API — ${result.timestamp}`,
   files:[
+    {repoPath:'scripts/availability_profile_guard.ts',localPath:`${base}/scripts/availability_profile_guard.ts`},
+    {repoPath:'scripts/test_availability_profile_guard.ts',localPath:`${base}/scripts/test_availability_profile_guard.ts`},
     {repoPath:'scripts/test_horizon_integration.ts',localPath:`${base}/scripts/test_horizon_integration.ts`},
     {repoPath:'src/utils/emailBuilder.ts',localPath:`${base}/deploy/src/utils/emailBuilder.ts`},
     {repoPath:'apps/practitioner-availability/utils/emailBuilder.ts',localPath:`${base}/apps/practitioner-availability/utils/emailBuilder.ts`},

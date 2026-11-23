@@ -1,4 +1,5 @@
 import {availabilityHorizon} from './availability_horizon';
+import {assertAvailabilityLocations} from './availability_profile_guard';
 import assert from 'node:assert/strict';
 import {readFileSync,writeFileSync} from 'node:fs';
 import {PRACTITIONERS_DATA,AVAILABILITY_LAST_UPDATED} from '../apps/practitioner-availability/practitionersData';
@@ -10,7 +11,8 @@ const before=JSON.parse(readFileSync('/tmp/practitioners_before_import.json','ut
 const after=JSON.parse(readFileSync(`${b}/practitioners_data.json`,'utf8'));
 const result=JSON.parse(readFileSync('/tmp/import_result.json','utf8'));
 const raw=JSON.parse(readFileSync(`${b}/availability_raw_latest.json`,'utf8'));
-const strip=(p:any)=>{const {availability,confirmed_slots,locations,alert,client_note,...rest}=p;return {...rest,locations:(locations??[]).map((l:any)=>{const {availability,...r}=l;return r;})};};
+assertAvailabilityLocations(before,after,result.slots);
+const strip=(p:any)=>{const {availability,confirmed_slots,locations,alert,client_note,...rest}=p;return rest;};
 assert.deepEqual(after.map(strip),before.map(strip),'Unrelated profiles changed');
 const melbourneToday=new Date().toLocaleDateString('en-CA',{timeZone:'Australia/Melbourne'});
 const dateOffset=(n:number)=>{const d=new Date(melbourneToday+'T00:00:00Z');d.setUTCDate(d.getUTCDate()+n);return d.toISOString().slice(0,10);};

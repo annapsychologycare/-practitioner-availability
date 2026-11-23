@@ -1,11 +1,13 @@
 import {assertAvailabilityWindow} from './availability_horizon';
+import {assertAvailabilityLocations} from './availability_profile_guard';
 import {readFileSync,writeFileSync} from 'node:fs';
 import assert from 'node:assert/strict';
 const b='/tasklet/threads/a_cwa98xzh47ey9rcvmmh4/work';
 const read=(p:string)=>JSON.parse(readFileSync(p,'utf8'));
 const result=read('/tmp/import_result.json'), data=read(`${b}/practitioners_data.json`), before=read('/tmp/practitioners_before_import.json');
 assertAvailabilityWindow(result.dateRange);
-const strip=(p:any)=>{const {availability,confirmed_slots,locations,alert,client_note,...rest}=p;return {...rest,locations:locations.map(({availability,...l}:any)=>l)};};
+assertAvailabilityLocations(before,data,result.slots);
+const strip=(p:any)=>{const {availability,confirmed_slots,locations,alert,client_note,...rest}=p;return rest;};
 assert.deepEqual(data.map(strip),before.map(strip));
 const projection=(ps:any[])=>ps.map(p=>({name:p.name,availability:p.availability,alert:p.alert,client_note:p.client_note,locations:p.locations.map((l:any)=>({location:l.location??l.name,availability:l.availability}))}));
 for(const path of ['deploy/src/practitioners_data.json','deploy/netlify/functions/practitioners-data.json','deploy/practitioners_data.json','deploy/public/practitioners_data.json'])assert.deepEqual(projection(read(`${b}/${path}`)),projection(data),path);
