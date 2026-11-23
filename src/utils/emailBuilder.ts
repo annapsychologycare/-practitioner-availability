@@ -1,3 +1,5 @@
+import {applyCachedHorizon} from './availabilityHorizon';
+import {AVAILABILITY_IMPORT_WINDOW} from '../practitionersData';
 // Shared email HTML builder — used by SendClientModal and EmailTemplateTab preview.
 import { EmailTemplateConfig, DEFAULT_EMAIL_TEMPLATE_CONFIG } from "../emailTemplateConfig";
 import { suppressKristaIntake } from './practitionerIntakePause';
@@ -128,7 +130,7 @@ function formatMedicareInline(rebate: string): string {
 }
 
 function buildPractitionerCard(original: PractitionerEmailData, config: EmailTemplateConfig, includeMonthly = false, now = new Date()): string {
-  const p=suppressKristaIntake(original);
+  const p=applyCachedHorizon(suppressKristaIntake(original),AVAILABILITY_IMPORT_WINDOW,now);
   const c = config.colors;
   const availHtml = buildAvailabilitySection(p.availabilityLocations || [], config, p.location_notes, includeMonthly);
   const feesInline = formatFeesInline(p.fees || "");
@@ -230,6 +232,7 @@ export function buildEmailHtml(
   clientAccess: ClientAccessContext = {},
   now = new Date()
 ): string {
+  practitioners=practitioners.map(p=>applyCachedHorizon(p,AVAILABILITY_IMPORT_WINDOW,now));
   const c = config.colors;
   const sig = config.signature;
 

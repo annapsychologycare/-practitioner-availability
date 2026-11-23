@@ -1,3 +1,4 @@
+import {availabilityHorizon} from './utils/availabilityHorizon';
 import PractitionerNotes from './components/PractitionerNotes';
 import { StaffAge } from './components/StaffAccess';
 import React, { useState, useMemo, useEffect } from "react";
@@ -566,7 +567,7 @@ const PractitionerCard: React.FC<CardProps> = ({ p, locationFilter, isSelected, 
         <PractitionerNotes practitioner={p} />
         {p.requires_diary_verification && <div className="border rounded p-3 mt-2 text-sm" style={{borderColor:'#8D5273'}}>
           <strong>STAFF ONLY: Confirmed recurring options — not checked live diary availability.</strong>
-          <p>Before offering either slot, check every relevant fortnightly occurrence over the next 8 weeks against booked appointments and diary/PAP/room blocks. Review Pending, Confirmed and Completed appointments and the full 90-minute appointment plus 15-minute break (8:30–10:15am / 12–1:45pm). A booked occurrence requires review; it does not automatically remove the recurring option. No automatic overlap check has been performed.</p>
+          <p>Before offering either slot, check every relevant fortnightly occurrence over the next {availabilityHorizon().weeks} weeks against booked appointments and diary/PAP/room blocks. Review Pending, Confirmed and Completed appointments and the full 90-minute appointment plus 15-minute break (8:30–10:15am / 12–1:45pm). A booked occurrence requires review; it does not automatically remove the recurring option. No automatic overlap check has been performed.</p>
           <label className="flex gap-2 mt-2"><input type="checkbox" checked={diaryVerified} onChange={e=>onDiaryVerify?.(e.target.checked)} />I have checked Krista’s Zanda diary and room availability for these recurring appointments, including relevant occurrences and buffers, and confirmed the options for this client.</label>
         </div>}
 

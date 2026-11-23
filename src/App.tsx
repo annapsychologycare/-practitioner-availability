@@ -1,3 +1,6 @@
+import {applyCachedHorizon} from './utils/availabilityHorizon';
+import {useAvailabilityPolicy} from './utils/useAvailabilityPolicy';
+import {AVAILABILITY_IMPORT_WINDOW} from './practitionersData';
 import React, { Component, ErrorInfo, ReactNode, useState } from "react";
 import FindPractitioner from "./FindPractitioner";
 import Directory from "./Directory";
@@ -10,7 +13,7 @@ import { PRACTITIONERS_DATA, AVAILABILITY_LAST_UPDATED } from "./practitionersDa
 import "./index.css";
 import { suppressKristaIntake } from './utils/practitionerIntakePause';
 import { StaffAccess } from './components/StaffAccess';
-const INTAKE_PRACTITIONERS=PRACTITIONERS_DATA.map(suppressKristaIntake);
+
 
 // Error boundary
 class ErrorBoundary extends Component<{ children: ReactNode }, { error: Error | null }> {
@@ -56,6 +59,8 @@ function getCompareNames(): string[] | null {
 type Tab = "find" | "directory" | "snapshot" | "intake" | "referral";
 
 function AppMain() {
+  const policy=useAvailabilityPolicy();
+  const INTAKE_PRACTITIONERS=PRACTITIONERS_DATA.map(suppressKristaIntake).map(p=>applyCachedHorizon(p,AVAILABILITY_IMPORT_WINDOW,policy.now));
   const [tab, setTab] = useState<Tab>("find");
 
   const tabs = [
@@ -81,6 +86,7 @@ function AppMain() {
         </div>
       </div>
 
+      <p role="status" style={{padding:12,fontSize:12}}>{policy.description}</p>
       {/* Tab Navigation */}
       <div className="bg-white border-b sticky top-0 z-40 shadow-sm" style={{ borderColor: "#e8e4f0" }}>
         <div className="max-w-7xl mx-auto px-4 flex gap-4 items-center">
@@ -104,7 +110,7 @@ function AppMain() {
       </div>
 
       {/* Content */}
-      <div className="max-w-7xl mx-auto px-4 py-8">
+      <div key={policy.today} className="max-w-7xl mx-auto px-4 py-8">
         <ErrorBoundary>
           {tab === "find" && <FindPractitioner practitioners={INTAKE_PRACTITIONERS} />}
           {tab === "directory" && <Directory practitioners={INTAKE_PRACTITIONERS} />}

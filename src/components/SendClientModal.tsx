@@ -1,3 +1,4 @@
+import {availabilityHorizon} from '../utils/availabilityHorizon';
 import React, { useState, useMemo, useEffect } from "react";
 import { Send, X, ArrowLeft, Eye, Clipboard, ClipboardCheck } from "lucide-react";
 import { Practitioner } from "../types";
@@ -205,7 +206,7 @@ const SendClientModal: React.FC<Props> = ({ selected, locationFilter, onClose, o
 
         {needsDiaryReview && <div className="border rounded p-3 mb-3 text-sm" style={{borderColor:'#8D5273'}}>
           <strong>Staff-only diary revalidation required — Krista</strong>
-          <p>These are confirmed recurring options, not automatically checked live availability. Verify each relevant fortnightly occurrence over the next 8 weeks against Pending/Confirmed/Completed appointments and diary/PAP/room blocks, including 90 minutes plus a 15-minute break (8:30–10:15am / 12–1:45pm). Resolve any booked/blocked occurrence before offering. No automated overlap checking has occurred.</p>
+          <p>These are confirmed recurring options, not automatically checked live availability. Verify each relevant fortnightly occurrence over the next {availabilityHorizon().weeks} weeks against Pending/Confirmed/Completed appointments and diary/PAP/room blocks, including 90 minutes plus a 15-minute break (8:30–10:15am / 12–1:45pm). Resolve any booked/blocked occurrence before offering. No automated overlap checking has occurred.</p>
           <label className="flex gap-2 mt-2"><input type="checkbox" checked={diaryVerified} onChange={e=>{setDiaryVerified(e.target.checked);if(!e.target.checked)setStep('form');}} />I have checked Krista’s Zanda diary and room availability for these recurring appointments and confirmed the options in this email for this client. No unconfirmed times will be offered.</label>
         </div>}
 

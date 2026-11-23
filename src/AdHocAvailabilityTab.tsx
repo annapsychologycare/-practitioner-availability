@@ -1,3 +1,5 @@
+import {availabilityHorizon} from './utils/availabilityHorizon';
+import {useAvailabilityPolicy} from './utils/useAvailabilityPolicy';
 import PractitionerNotes from './components/PractitionerNotes';
 /**
  * AdHocAvailabilityTab.tsx
@@ -144,6 +146,7 @@ const AdHocAvailabilityTab: React.FC<Props> = ({ practitioners }) => {
   const [slots, setSlots] = useState<AvailableSlot[] | null>(null);
   const [lastRun, setLastRun] = useState<string | null>(null);
 
+  const policy = useAvailabilityPolicy();
   const prac = practitioners.find(p => p.name === selectedPrac) ?? null;
 
   const run = useCallback(async () => {
@@ -153,10 +156,7 @@ const AdHocAvailabilityTab: React.FC<Props> = ({ practitioners }) => {
     setSlots(null);
 
     try {
-      const today = new Date();
-      const melbToday = toMelbDate(today);
-      const dateFrom = toMelbDate(addDays(today, 1));          // tomorrow 00:00:00
-      const dateTo   = toMelbDate(addDays(today, 56), true);  // 8 weeks out 23:59:59
+      const {from: dateFrom,to: dateTo} = availabilityHorizon();
 
       // ── 1. Fetch all recurring availability appointments ───────────────
 
@@ -277,24 +277,25 @@ const AdHocAvailabilityTab: React.FC<Props> = ({ practitioners }) => {
     }
   }, [selectedPrac, includeMonthly]);
 
-  // Copy slots as plain text
+  const visibleSlots=slots?.filter(s=>s.date>=policy.from.slice(0,10)&&s.date<=policy.to.slice(0,10))??null;
+  // Copy visibleSlots as plain text
   const copyText = () => {
-    if (!slots) return;
-    const lines = slots.map(s => `${s.dateLabel}  ${s.time}  ${s.location}  [${s.kind}]`);
+    if (!visibleSlots) return;
+    const lines = visibleSlots.map(s => `${s.dateLabel}  ${s.time}  ${s.location}  [${s.kind}]`);
     navigator.clipboard.writeText(lines.join("\n"));
   };
 
   // Group by date for display
-  const grouped = slots ? slots.reduce<Record<string, AvailableSlot[]>>((acc, s) => {
+  const grouped = visibleSlots ? visibleSlots.reduce<Record<string, AvailableSlot[]>>((acc, s) => {
     if (!acc[s.date]) acc[s.date] = [];
     acc[s.date].push(s);
     return acc;
   }, {}) : {};
 
-  const weeklyCount     = slots?.filter(s => s.kind === "Weekly").length ?? 0;
-  const fortnightlyCount= slots?.filter(s => s.kind === "Fortnightly").length ?? 0;
-  const monthlyCount    = slots?.filter(s => s.kind === "Monthly").length ?? 0;
-  const cancelledCount  = slots?.filter(s => s.kind === "Cancelled").length ?? 0;
+  const weeklyCount     = visibleSlots?.filter(s => s.kind === "Weekly").length ?? 0;
+  const fortnightlyCount= visibleSlots?.filter(s => s.kind === "Fortnightly").length ?? 0;
+  const monthlyCount    = visibleSlots?.filter(s => s.kind === "Monthly").length ?? 0;
+  const cancelledCount  = visibleSlots?.filter(s => s.kind === "Cancelled").length ?? 0;
 
   return (
     <div style={{ fontFamily: "'Poppins', sans-serif" }}>
@@ -373,7 +374,7 @@ const AdHocAvailabilityTab: React.FC<Props> = ({ practitioners }) => {
       )}
 
       {/* Results */}
-      {slots && !loading && (
+      {visibleSlots && !loading && (
         <>
           {/* Summary bar */}
           <div style={{
@@ -382,7 +383,7 @@ const AdHocAvailabilityTab: React.FC<Props> = ({ practitioners }) => {
             display: "flex", gap: 24, alignItems: "center", flexWrap: "wrap",
           }}>
             <span style={{ fontWeight: 700, color: BRAND, fontSize: 15 }}>
-              {slots.length} available slot{slots.length !== 1 ? "s" : ""}
+              {visibleSlots.length} available slot{visibleSlots.length !== 1 ? "s" : ""}
             </span>
             {weeklyCount > 0 && <span style={{ fontSize: 13, background: "#d1fae5", color: "#065f46", borderRadius: 12, padding: "2px 10px" }}>🟢 {weeklyCount} weekly</span>}
             {fortnightlyCount > 0 && <span style={{ fontSize: 13, background: "#ede9fe", color: "#4c1d95", borderRadius: 12, padding: "2px 10px" }}>🟣 {fortnightlyCount} fortnightly</span>}
@@ -397,9 +398,9 @@ const AdHocAvailabilityTab: React.FC<Props> = ({ practitioners }) => {
             </button>
           </div>
 
-          {slots.length === 0 ? (
+          {visibleSlots.length === 0 ? (
             <div style={{ textAlign: "center", padding: 40, color: "#888", fontSize: 14 }}>
-              No available slots found in the next 8 weeks.
+              No available visibleSlots found in the next {policy.weeks} weeks.
             </div>
           ) : (
             <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>

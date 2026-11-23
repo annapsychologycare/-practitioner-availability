@@ -1,3 +1,6 @@
+import {applyCachedHorizon} from './utils/availabilityHorizon';
+import {useAvailabilityPolicy} from './utils/useAvailabilityPolicy';
+import {AVAILABILITY_IMPORT_WINDOW} from './practitionersData';
 import React, { useMemo } from "react";
 import { PRACTITIONERS_DATA } from "./practitionersData";
 import { Practitioner } from "./types";
@@ -154,15 +157,16 @@ interface CompareProps {
 }
 
 export const Compare: React.FC<CompareProps> = ({ names }) => {
+  const policy=useAvailabilityPolicy();
   const practitioners = useMemo(() => {
     return names
       .map((name) =>
-        PRACTITIONERS_DATA.find(
+        PRACTITIONERS_DATA.map(p=>applyCachedHorizon(p,AVAILABILITY_IMPORT_WINDOW,policy.now)).find(
           (p) => p.name.toLowerCase().trim() === name.toLowerCase().trim()
         )
       )
       .filter(Boolean) as Practitioner[];
-  }, [names]);
+  }, [names, policy.today]);
 
   if (!practitioners.length) {
     return (

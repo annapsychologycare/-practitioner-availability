@@ -1,6 +1,7 @@
+import {availabilityHorizon} from './availability_horizon';
 /**
  * Zanda API Availability Importer
- * Fetches pending availability appointments from tomorrow through 8 weeks out (Melbourne time)
+ * Fetches pending availability appointments from tomorrow through the date-aware policy horizon (Melbourne time)
  * and updates practitioners_data.json + practitionersData.ts
  *
  * Usage: bun -i import_availability_api.ts
@@ -184,14 +185,9 @@ async function fetchAllForClient(clientId: number, dateFrom: string, dateTo: str
 
 // ─── Main ───────────────────────────────────────────────────────────────────
 const now = new Date();
-// Use Melbourne date as base so "tomorrow" means tomorrow in Melbourne time
-const melbDateStr = new Date().toLocaleDateString('en-CA', { timeZone: MELB_TZ }); // YYYY-MM-DD
-const tomorrowDate = new Date(melbDateStr + 'T00:00:00Z');
-tomorrowDate.setUTCDate(tomorrowDate.getUTCDate() + 1); // start from next day (exclude today)
-const dateFrom = `${tomorrowDate.toISOString().slice(0, 10)}T00:00:00`;
-const eightWeeksOut = new Date(melbDateStr + 'T00:00:00Z');
-eightWeeksOut.setUTCDate(eightWeeksOut.getUTCDate() + 56); // 8 weeks from today (Melbourne)
-const dateTo = `${eightWeeksOut.toISOString().slice(0, 10)}T23:59:59`;
+const horizon = availabilityHorizon(now);
+const dateFrom = horizon.from;
+const dateTo = horizon.to;
 
 console.error(`Fetching appointments from ${dateFrom} to ${dateTo} (Melbourne time)...`);
 
@@ -403,6 +399,7 @@ const practitionersWithPhotos = practitioners.map((p: any) => ({
 
 const tsContent =
   `export const PRACTITIONERS_DATA = ${JSON.stringify(practitionersWithPhotos, null, 2)};\n` +
+  `export const AVAILABILITY_IMPORT_WINDOW = ${JSON.stringify(horizon)};\n` +
   `export const practitionersData = PRACTITIONERS_DATA;\n` +
   `export const AVAILABILITY_LAST_UPDATED = "${melbNowStr}";\n`;
 
@@ -429,6 +426,7 @@ const summary = {
   ok: true,
   timestamp: melbNowStr,
   dateRange: { from: dateFrom, to: dateTo },
+  horizon,
   totalAppointmentsFetched: allAppointments.length,
   pendingFiltered: pending.length,
   matched: [...matched].sort(),

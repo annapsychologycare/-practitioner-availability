@@ -1,7 +1,10 @@
+## Availability horizon metadata preservation — 23 November 2026
+CRM-only regeneration must preserve the exact existing `AVAILABILITY_IMPORT_WINDOW` export, never stamp a current policy over stale cached source dates. Current guarded generators retain it and fail closed if missing. Include it in every generated/root TS mirror. Shared availability policy expands to 84 days on 23 November–31 December 2026 Melbourne, reverts to 56 from 1 January 2027 automatically. Do not schedule manual revert. App hides incompatible cached horizon until refreshed.
+
 # Zoho CRM → Practitioner App workflow
 
 ## Authorized departure — 19 November 2026
-Therese Van Maanen (50438000000215045) has left; Anna authorized removal from matching. Current app/internal manifest is 24 practitioners. Never readmit her from stale snapshots, upload, CRM or Zanda. All 18 approved leave notices remain; she had none. Historical reports remain evidence, not reusable membership baselines. No CRM record deletion or calendar/Slack/Zanda changes authorized. See daily workflow and therese_departure_2026-11-19/README.md.
+Therese Van Maanen (50438000000215045) has left; Anna authorized removal from matching. Current app/internal manifest is 24 practitioners. Never readmit her from stale snapshots, upload, CRM or Zanda. 18 approval signatures retained; 16 notices currently published (Brigid/Christine edits held since 22 November; already notified, do not autoapprove or repeat alert). Therese had none. Historical reports remain evidence, not reusable membership baselines. No CRM record deletion or calendar/Slack/Zanda changes authorized. See daily workflow and therese_departure_2026-11-19/README.md.
 
 ## Current Maddie reversal
 Anna has cancelled the January Tue/Thu Camberwell move. Follow `workflows/maddie_january_move_reversed.md`; cleared CRM notes must stay cleared. Preserve ongoing Mon/Tue/Thu/Fri 8am–2pm Prahran/Telehealth hours and separate actual leave. Historical Maddie move publication scripts are superseded and must not be replayed.

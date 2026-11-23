@@ -1,3 +1,6 @@
+import {applyCachedHorizon} from './utils/availabilityHorizon';
+import {useAvailabilityPolicy} from './utils/useAvailabilityPolicy';
+import {AVAILABILITY_IMPORT_WINDOW} from './practitionersData';
 import React, { ReactNode, useState, useCallback } from "react";
 import FindPractitioner from "./FindPractitioner";
 import Directory from "./Directory";
@@ -37,8 +40,10 @@ function getCompareNames(): string[] | null {
 type Tab = "find" | "directory" | "manage" | "snapshot" | "intake" | "referral" | "adhoc" | "taxonomy" | "email" | "audit" | "crm";
 
 function AppMain() {
+  const policy = useAvailabilityPolicy();
   const [tab, setTab] = useState<Tab>("find");
   const [practitioners, setPractitioners] = useState<Practitioner[]>((PRACTITIONERS_DATA as unknown as Practitioner[]).map(suppressKristaIntake));
+  const visiblePractitioners = practitioners.map(p=>applyCachedHorizon(p,AVAILABILITY_IMPORT_WINDOW,policy.now));
   const [emailConfig, setEmailConfig] = useState<EmailTemplateConfig>(loadEmailTemplateConfig);
   const [saveStatus, setSaveStatus] = useState<string | null>(null);
   const [availabilityDate, setAvailabilityDate] = useState<string>(AVAILABILITY_LAST_UPDATED_STATIC);
@@ -132,6 +137,7 @@ function AppMain() {
         </div>
       </div>
 
+      <p role="status" style={{padding:12,fontSize:12}}>{policy.description}</p>
       {/* Tab Navigation */}
       <div className="bg-white border-b sticky top-0 z-40 shadow-sm" style={{ borderColor: "#e8e4f0" }}>
         <div className="max-w-7xl mx-auto px-4 flex gap-4 items-center">
@@ -155,16 +161,16 @@ function AppMain() {
       </div>
 
       {/* Content */}
-      <div className="max-w-7xl mx-auto px-4 py-8">
+      <div key={policy.today} className="max-w-7xl mx-auto px-4 py-8">
         <ErrorBoundary>
-          {tab === "find" && <FindPractitioner practitioners={practitioners} />}
-          {tab === "directory" && <Directory practitioners={practitioners} />}
-          {tab === "manage" && <ManageAvailability practitioners={practitioners} onUpdate={handleUpdate} />}
-          {tab === "snapshot" && <AvailabilitySnapshot practitioners={practitioners} />}
+          {tab === "find" && <FindPractitioner practitioners={visiblePractitioners} />}
+          {tab === "directory" && <Directory practitioners={visiblePractitioners} />}
+          {tab === "manage" && <ManageAvailability practitioners={visiblePractitioners} onUpdate={handleUpdate} />}
+          {tab === "snapshot" && <AvailabilitySnapshot practitioners={visiblePractitioners} />}
           {tab === "intake" && <IntakeTab />}
-          {tab === "referral" && <ReferralNetwork practitioners={practitioners} />}
-          {tab === "adhoc" && <AdHocAvailabilityTab practitioners={practitioners} />}
-          {tab === "taxonomy" && <TaxonomyTab practitioners={practitioners} onBulkUpdate={handleBulkUpdate} />}
+          {tab === "referral" && <ReferralNetwork practitioners={visiblePractitioners} />}
+          {tab === "adhoc" && <AdHocAvailabilityTab practitioners={visiblePractitioners} />}
+          {tab === "taxonomy" && <TaxonomyTab practitioners={visiblePractitioners} onBulkUpdate={handleBulkUpdate} />}
           {tab === "email" && <EmailTemplateTab config={emailConfig} onConfigChange={handleConfigChange} />}
           {tab === "audit" && <AuditTab />}
           {tab === "crm" && (

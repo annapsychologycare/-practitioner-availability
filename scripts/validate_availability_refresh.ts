@@ -1,0 +1,23 @@
+import {assertAvailabilityWindow} from './availability_horizon';
+import {readFileSync,writeFileSync} from 'node:fs';
+import assert from 'node:assert/strict';
+const b='/tasklet/threads/a_cwa98xzh47ey9rcvmmh4/work';
+const read=(p:string)=>JSON.parse(readFileSync(p,'utf8'));
+const result=read('/tmp/import_result.json'), data=read(`${b}/practitioners_data.json`), before=read('/tmp/practitioners_before_import.json');
+assertAvailabilityWindow(result.dateRange);
+const strip=(p:any)=>{const {availability,confirmed_slots,locations,alert,client_note,...rest}=p;return {...rest,locations:locations.map(({availability,...l}:any)=>l)};};
+assert.deepEqual(data.map(strip),before.map(strip));
+const projection=(ps:any[])=>ps.map(p=>({name:p.name,availability:p.availability,alert:p.alert,client_note:p.client_note,locations:p.locations.map((l:any)=>({location:l.location??l.name,availability:l.availability}))}));
+for(const path of ['deploy/src/practitioners_data.json','deploy/netlify/functions/practitioners-data.json','deploy/practitioners_data.json','deploy/public/practitioners_data.json'])assert.deepEqual(projection(read(`${b}/${path}`)),projection(data),path);
+assert.equal(readFileSync(`${b}/apps/practitioner-availability/practitionersData.ts`,'utf8'),readFileSync(`${b}/deploy/src/practitionersData.ts`,'utf8'));
+assert.equal(data.reduce((n:number,p:any)=>n+p.availability.length,0),result.totalSlots);
+const rows=result.slots.map((s:string)=>{const [name,location,slot]=s.trim().split(' | ');return {name,location,slot};});
+const signatures=rows.map((r:any)=>`${r.name}|${r.slot.replace(/: Starting .+\)/,')')}`);
+const unique=new Set(signatures);
+const duplicateSignatures=[...new Set(signatures.filter((s:string,i:number)=>signatures.indexOf(s)!==i))];
+const counts=Object.fromEntries(['Weekly','Fortnightly','Monthly'].map(f=>[f,rows.filter((r:any)=>r.slot.includes(`(${f}:`)).length]));
+const k=data.find((p:any)=>p.name.includes('Krista'));assert.equal(k.availability.length,0);assert.equal(k.client_note,'');
+const d=data.find((p:any)=>p.name.includes('David Spektor'));assert(!d.availability.some((s:string)=>s.includes('(Monthly:')));
+for(const name of ['Kiira','Maddie','Joshua']){const p=data.find((p:any)=>p.name.includes(name)), old=before.find((p:any)=>p.name===p?.name);assert(p); console.log(JSON.stringify({name:p.name,working_hours:p.working_hours,client_note:p.client_note}));}
+const evidence={timestamp:result.timestamp,window:result.dateRange,totalFetched:result.totalAppointmentsFetched,eligible:result.pendingFiltered,matched:result.matched.length,unmatched:result.unmatched,listingRows:rows.length,uniqueSignatures:unique.size,counts,duplicateSignatures,mirrorsValidated:5,unrelatedProfilesUnchanged:true};
+writeFileSync(`${b}/availability_validation_latest.json`,JSON.stringify(evidence,null,2));console.log(JSON.stringify(evidence,null,2));
