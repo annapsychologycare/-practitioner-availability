@@ -4,6 +4,7 @@ import {AVAILABILITY_IMPORT_WINDOW} from '../apps/practitioner-availability/prac
 import {buildEmailHtml} from '../apps/practitioner-availability/utils/emailBuilder';
 const b='/tasklet/threads/a_cwa98xzh47ey9rcvmmh4/work',read=(p:string)=>readFileSync(`${b}/${p}`,'utf8');
 test('all shared policy mirrors byte-identical; consumed fetch and guard paths use policy',()=>{
+  for(const p of ['deploy/src/practitionersData.ts','deploy/practitionersData.ts','practitionersData.ts'])expect(read(p)).toBe(read('apps/practitioner-availability/practitionersData.ts'));
   for(const p of ['apps/practitioner-availability/utils/availabilityHorizon.ts','deploy/src/utils/availabilityHorizon.ts','deploy/src/availability_horizon.ts'])expect(read(p)).toBe(read('scripts/availability_horizon.ts'));
   expect(read('deploy/src/import_availability_api.ts')).toBe(read('scripts/import_availability_api.ts'));
   for(const p of ['scripts/import_availability_api.ts','apps/practitioner-availability/AdHocAvailabilityTab.tsx','deploy/src/AdHocAvailabilityTab.tsx']){

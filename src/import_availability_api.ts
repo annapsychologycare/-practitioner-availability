@@ -405,6 +405,9 @@ const tsContent =
 
 writeFileSync(TASKLET_TS, tsContent);
 writeFileSync(DEPLOY_TS, tsContent);
+// Keep both local root mirrors fresh for daily and CRM-only build consumers.
+writeFileSync('/tasklet/threads/a_cwa98xzh47ey9rcvmmh4/work/practitionersData.ts', tsContent);
+writeFileSync('/tasklet/threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/practitionersData.ts', tsContent);
 writeFileSync(META, JSON.stringify({ last_updated: melbNowStr }));
 
 // 8. Audit log

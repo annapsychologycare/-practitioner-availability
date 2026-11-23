@@ -16,7 +16,7 @@ const priorSource=unwrap(await load(`${root}/sync_2026-11-04/sources/contacts.js
 const priorRecords=priorSource.data;
 for(const j of unwrap(await load(`${root}/sync_2026-11-04/sources/josh.json`)).data)if(!priorRecords.some((x:any)=>x.id===j.id))priorRecords.push(j);
 const jsonFiles=['practitioners_data.json','deploy/practitioners_data.json','deploy/public/practitioners_data.json','deploy/src/practitioners_data.json','deploy/netlify/functions/practitioners-data.json'];
-const tsFiles=['apps/practitioner-availability/practitionersData.ts','deploy/src/practitionersData.ts'];
+const tsFiles=['apps/practitioner-availability/practitionersData.ts','deploy/src/practitionersData.ts','practitionersData.ts','deploy/practitionersData.ts'];
 for(const f of [...jsonFiles,...tsFiles,'apps/practitioner-availability/bundle.js','deploy/src/bundle.js','practitioners_photos.json']){await mkdir(path.dirname(`${backup}/${f}`),{recursive:true});await copyFile(`${root}/${f}`,`${backup}/${f}`,2);}
 const data=await load(`${root}/practitioners_data.json`),before=structuredClone(data);assertInternalAppMembership(data);assert.equal(data.length,approvedMembership.length);
 const changes:any[]=[],matched:any[]=[],warnings:any[]=[],review:any[]=[],feeChecks:any[]=[];
