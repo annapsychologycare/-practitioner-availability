@@ -8,6 +8,8 @@ import { buildEmailHtml } from "../utils/emailBuilder";
 import {useNoticeClock} from '../utils/useNoticeClock';
 import {suppressKristaIntake} from '../utils/practitionerIntakePause';
 
+import {ClientPagePreview} from './ClientPagePreview';
+
 interface Props {
   selected: Practitioner[];
   locationFilter: string;
@@ -25,7 +27,7 @@ const SendClientModal: React.FC<Props> = ({ selected, locationFilter, onClose, o
   const config = useMemo(() => loadEmailTemplateConfig(), []);
   const noticeNow = useNoticeClock();
 
-  const [step, setStep] = useState<"form" | "preview">("form");
+  const [step, setStep] = useState<"form" | "preview" | "client-preview">("form");
   const [copied, setCopied] = useState(false);
   const [clientName, setClientName] = useState("");
   const [clientEmail, setClientEmail] = useState("");
@@ -184,19 +186,19 @@ const SendClientModal: React.FC<Props> = ({ selected, locationFilter, onClose, o
   return (
     <div className="modal modal-open">
       <div
-        className={`modal-box ${step === "preview" ? "max-w-3xl" : "max-w-lg"}`}
+        className={`modal-box ${step === "client-preview" ? "max-w-6xl" : step === "preview" ? "max-w-3xl" : "max-w-lg"}`}
         style={{ maxHeight: "90vh", overflow: "hidden", display: "flex", flexDirection: "column" }}
       >
         {/* Header */}
         <div className="flex items-center justify-between mb-4 flex-shrink-0">
           <div className="flex items-center gap-2">
-            {step === "preview" && (
+            {step !== "form" && (
               <button onClick={() => setStep("form")} className="btn btn-ghost btn-sm btn-circle">
                 <ArrowLeft size={16} />
               </button>
             )}
             <h3 className="font-bold text-lg">
-              {step === "form" ? "Send to Client" : "Preview Email"}
+              {step === "client-preview" ? "Client page · staff test preview" : step === "form" ? "Send to Client" : "Preview Email"}
             </h3>
           </div>
           <button onClick={onClose} className="btn btn-ghost btn-sm btn-circle">
@@ -210,7 +212,9 @@ const SendClientModal: React.FC<Props> = ({ selected, locationFilter, onClose, o
           <label className="flex gap-2 mt-2"><input type="checkbox" checked={diaryVerified} onChange={e=>{setDiaryVerified(e.target.checked);if(!e.target.checked)setStep('form');}} />I have checked Krista’s Zanda diary and room availability for these recurring appointments and confirmed the options in this email for this client. No unconfirmed times will be offered.</label>
         </div>}
 
-        {step === "form" ? (
+        {step === "client-preview" ? (
+          <ClientPagePreview practitioners={practitionerData} includeMonthly={includeMonthly} age60Plus={clientAge60Plus} now={noticeNow} onBack={()=>setStep('form')}/>
+        ) : step === "form" ? (
           <>
             {/* Selected practitioners summary */}
             <div className="mb-4 p-3 bg-base-200 rounded-lg flex-shrink-0">
@@ -331,6 +335,9 @@ const SendClientModal: React.FC<Props> = ({ selected, locationFilter, onClose, o
 
             <div className="modal-action mt-4 flex-shrink-0">
               <button onClick={onClose} className="btn btn-ghost">Cancel</button>
+              <button type="button" className="btn btn-outline" disabled={!reviewReady || !selected.length} onClick={()=>{setError('');setStep('client-preview');}}>
+                <Eye size={16}/> Preview client page
+              </button>
               <button onClick={handlePreview} className="btn btn-primary">
                 <Eye size={16} /> Preview Email →
               </button>
