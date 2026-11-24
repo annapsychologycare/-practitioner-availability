@@ -9,8 +9,29 @@ export const ClientPagePreview:React.FC<Props>=({practitioners,includeMonthly,ag
  const current=profiles.find(p=>p.key===chosen);
  const slots=current?.locations.flatMap(loc=>loc.lines.filter(l=>l.selectable).map(l=>({...l,label:`${loc.name} · ${l.text} (${l.frequency})`})))||[];
  function choose(key:string){setChosen(key);setSlot('');setTested(false);}
- return <div className="overflow-y-auto flex-1 min-h-0 space-y-5 p-1">
+ return <div className="pc-client-page overflow-y-auto flex-1 min-h-0 space-y-5 p-1">
   <style>{`
+   /* Colours sampled from Anna's supplied brand artwork. Scoped to this view. */
+   .pc-client-page {color:#36454f;background:#fff; color-scheme:light;}
+   .pc-client-page .pc-brand-hero {background:#f0ecf5;border-color:#ded6e8;border-top:4px solid #2b244c;}
+   .pc-brand-logo {display:block;width:260px;max-width:75%;height:auto;object-fit:contain;margin:0 0 22px;}
+   .pc-client-page h2,.pc-client-page h3 {color:#2b244c;}
+   .pc-client-page h4 {color:#665779;}
+   .pc-client-page .bg-base-100 {background:#fff;color:#36454f;}
+   .pc-client-page .bg-base-200 {background:#f0ecf5;color:#36454f;}
+   .pc-client-page .border-base-300 {border-color:#e1dce7;}
+   .pc-client-page .text-base-content\\/60 {color:#65717a;}
+   .pc-client-page .text-base-content\\/70 {color:#596771;}
+   .pc-client-page .btn-primary {background:#2b244c;border-color:#2b244c;color:#fff;box-shadow:none;}
+   .pc-client-page .btn-primary:hover {background:#433860;border-color:#433860;}
+   .pc-client-page .btn-outline {color:#2b244c;border-color:#8d5273;background:#fff;}
+   .pc-client-page .btn-outline:hover {background:#f0ecf5;}
+   .pc-client-page .link {color:#76516c;text-underline-offset:3px;}
+   .pc-client-page .badge {background:#f0ecf5;color:#514565;border-color:#d7ccdf;}
+   .pc-client-page .alert {background:#f7f4f8;color:#36454f;border:1px solid #e1dce7;}
+   .pc-client-page .select,.pc-client-page .textarea {background:#fff;color:#36454f;border-color:#c7bdcf;}
+   .pc-client-page :is(button,a,select,textarea):focus-visible {outline:3px solid #8d5273;outline-offset:3px;}
+   .pc-client-page .btn:disabled {background:#ece8ef;color:#706778;border-color:#ddd5e3;}
    .pc-options-grid {display:grid;grid-template-columns:minmax(0,1fr);gap:20px;}
    .pc-option-card {display:grid;grid-template-rows:auto auto auto auto 1fr auto auto;gap:18px;padding:24px;min-width:0;}
    .pc-option-card p {margin:0;}
@@ -21,7 +42,7 @@ export const ClientPagePreview:React.FC<Props>=({practitioners,includeMonthly,ag
    @media(max-width:540px){.pc-option-card {padding:18px;}}
   `}</style>
   <div className="alert text-sm"><span><strong>Staff test preview · real practitioner details.</strong> No private client link has been created. Test entries stay on this screen only; nothing is sent, saved, reserved or booked. Do not enter real client information.</span></div>
-  <section className="rounded-2xl border border-base-300 bg-base-200 p-6 space-y-3"><span className="text-xs font-semibold uppercase tracking-widest text-base-content/60">PsychologyCare</span><h2 className="text-3xl font-semibold leading-tight">Your practitioner options</h2><p className="text-sm leading-relaxed max-w-3xl">Compare your options, request a preferred appointment or ask our team a question. Our team checks availability before confirming.</p><div className="flex flex-wrap gap-2"><span className="badge badge-outline">{profiles.length} practitioner{profiles.length===1?'':'s'} selected</span><span className="badge badge-outline">Requests only · not confirmed bookings</span></div><p className="text-xs text-base-content/60 leading-relaxed max-w-3xl">Times are Melbourne local time. These options come from the availability app, not a fresh live-diary check. Selecting a recurring option expresses a preference for that series; it does not book its individual dates.</p></section>
+  <section className="pc-brand-hero rounded-2xl border border-base-300 p-6 space-y-3"><img src="/brand/psychologycare-logo.svg" alt="PsychologyCare" className="pc-brand-logo"/><h2 className="text-3xl font-semibold leading-tight">Your practitioner options</h2><p className="text-sm leading-relaxed max-w-3xl">Compare your options, request a preferred appointment or ask our team a question. Our team checks availability before confirming.</p><div className="flex flex-wrap gap-2"><span className="badge badge-outline">{profiles.length} practitioner{profiles.length===1?'':'s'} selected</span><span className="badge badge-outline">Requests only · not confirmed bookings</span></div><p className="text-xs text-base-content/60 leading-relaxed max-w-3xl">Times are Melbourne local time. These options come from the availability app, not a fresh live-diary check. Selecting a recurring option expresses a preference for that series; it does not book its individual dates.</p></section>
   {age60Plus&&profiles.some(p=>p.locations.some(l=>l.lines.length>0&&!/telehealth|online/i.test(l.name)&&/prahran|greville|183a|185a/i.test(l.name)))&&<div className="alert text-sm"><span>Our Prahran clinics at 183A and 185A Greville Street are upstairs, with approximately 18 stairs. Please let us know if stairs may be difficult so we can discuss suitable options.</span></div>}
   <div className="pc-options-grid">{profiles.map(p=><ClientPagePractitionerCard key={p.key} profile={p} onSelect={choose}/>)}</div>
   {!profiles.length&&<p>No practitioners selected. Go back and choose your shortlist.</p>}
