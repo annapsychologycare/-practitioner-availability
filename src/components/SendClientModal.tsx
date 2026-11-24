@@ -8,6 +8,9 @@ import { buildEmailHtml } from "../utils/emailBuilder";
 import {useNoticeClock} from '../utils/useNoticeClock';
 import {suppressKristaIntake} from '../utils/practitionerIntakePause';
 
+import {ClientPagePreview} from './ClientPagePreview';
+import {buildClientInvitationEmail} from '../utils/clientInvitationEmail';
+
 interface Props {
   selected: Practitioner[];
   locationFilter: string;
@@ -25,8 +28,9 @@ const SendClientModal: React.FC<Props> = ({ selected, locationFilter, onClose, o
   const config = useMemo(() => loadEmailTemplateConfig(), []);
   const noticeNow = useNoticeClock();
 
-  const [step, setStep] = useState<"form" | "preview">("form");
+  const [step, setStep] = useState<"form" | "preview" | "client-preview">("form");
   const [copied, setCopied] = useState(false);
+  const [emailFormat,setEmailFormat]=useState<'invitation'|'original'>('invitation');
   const [clientName, setClientName] = useState("");
   const [clientEmail, setClientEmail] = useState("");
   const [ccEmails, setCcEmails] = useState("anna@psychologycare.com.au");
@@ -91,11 +95,14 @@ const SendClientModal: React.FC<Props> = ({ selected, locationFilter, onClose, o
   );
 
   const previewHtml = useMemo(
-    () => buildEmailHtml(clientName || "Client", note, senderName, practitionerData, { ...config, intro_text: openingParagraph }, includeMonthly, { age60Plus: clientAge60Plus }),
-    [clientName, note, senderName, practitionerData, config, openingParagraph, includeMonthly, clientAge60Plus, noticeNow]
+    () => emailFormat==='invitation'
+      ? buildClientInvitationEmail(clientName,note,senderName,practitionerData,config,openingParagraph)
+      : buildEmailHtml(clientName || "Client", note, senderName, practitionerData, { ...config, intro_text: openingParagraph }, includeMonthly, { age60Plus: clientAge60Plus }),
+    [emailFormat,clientName, note, senderName, practitionerData, config, openingParagraph, includeMonthly, clientAge60Plus, noticeNow]
   );
 
   const handleCopyEmail = async () => {
+    if(emailFormat==='invitation'){setError('Test only: private client links are not connected. This invitation cannot be copied or sent yet.');return;}
     const previewHtml = buildEmailHtml(clientName || 'Client', note, senderName, practitionerData, {...config, intro_text: openingParagraph}, includeMonthly, {age60Plus: clientAge60Plus});
     if(!reviewReady){setError('Review and confirm Krista’s live diary before copying or offering appointments.');return;}
     try {
@@ -136,6 +143,7 @@ const SendClientModal: React.FC<Props> = ({ selected, locationFilter, onClose, o
   };
 
   const handleSend = async () => {
+    if(emailFormat==='invitation'){setError('Test only: this invitation cannot be sent until private client links are connected.');return;}
     if(!reviewReady){setError('Review and confirm Krista’s live diary before sending appointment options.');setStep('form');return;}
     setSending(true);
     try {
@@ -184,19 +192,19 @@ const SendClientModal: React.FC<Props> = ({ selected, locationFilter, onClose, o
   return (
     <div className="modal modal-open">
       <div
-        className={`modal-box ${step === "preview" ? "max-w-3xl" : "max-w-lg"}`}
-        style={{ maxHeight: "90vh", overflow: "hidden", display: "flex", flexDirection: "column" }}
+        className={`modal-box ${step === "client-preview" ? "max-w-6xl" : step === "preview" ? "max-w-3xl" : "max-w-lg"}`}
+        style={{ maxHeight: "90vh", height: step === "preview" ? "90vh" : undefined, overflow: "hidden", display: "flex", flexDirection: "column" }}
       >
         {/* Header */}
         <div className="flex items-center justify-between mb-4 flex-shrink-0">
           <div className="flex items-center gap-2">
-            {step === "preview" && (
+            {step !== "form" && (
               <button onClick={() => setStep("form")} className="btn btn-ghost btn-sm btn-circle">
                 <ArrowLeft size={16} />
               </button>
             )}
             <h3 className="font-bold text-lg">
-              {step === "form" ? "Send to Client" : "Preview Email"}
+              {step === "client-preview" ? "Client page · staff test preview" : step === "form" ? "Send to Client" : "Preview Email"}
             </h3>
           </div>
           <button onClick={onClose} className="btn btn-ghost btn-sm btn-circle">
@@ -210,7 +218,9 @@ const SendClientModal: React.FC<Props> = ({ selected, locationFilter, onClose, o
           <label className="flex gap-2 mt-2"><input type="checkbox" checked={diaryVerified} onChange={e=>{setDiaryVerified(e.target.checked);if(!e.target.checked)setStep('form');}} />I have checked Krista’s Zanda diary and room availability for these recurring appointments and confirmed the options in this email for this client. No unconfirmed times will be offered.</label>
         </div>}
 
-        {step === "form" ? (
+        {step === "client-preview" ? (
+          <ClientPagePreview practitioners={practitionerData} includeMonthly={includeMonthly} age60Plus={clientAge60Plus} now={new Date(noticeNow)} clientName={clientName} onBack={()=>setStep('form')}/>
+        ) : step === "form" ? (
           <>
             {/* Selected practitioners summary */}
             <div className="mb-4 p-3 bg-base-200 rounded-lg flex-shrink-0">
@@ -331,6 +341,9 @@ const SendClientModal: React.FC<Props> = ({ selected, locationFilter, onClose, o
 
             <div className="modal-action mt-4 flex-shrink-0">
               <button onClick={onClose} className="btn btn-ghost">Cancel</button>
+              <button type="button" className="btn btn-outline" disabled={!reviewReady || !selected.length} onClick={()=>{setError('');setStep('client-preview');}}>
+                <Eye size={16}/> Preview client page
+              </button>
               <button onClick={handlePreview} className="btn btn-primary">
                 <Eye size={16} /> Preview Email →
               </button>
@@ -338,7 +351,16 @@ const SendClientModal: React.FC<Props> = ({ selected, locationFilter, onClose, o
           </>
         ) : (
           <>
-            <div className="text-sm text-base-content/60 mb-3 flex-shrink-0 space-y-0.5">
+            <div className="flex-shrink-0 mb-3 space-y-2 rounded-xl border p-3" style={{background:'#f7f5fa',borderColor:'#e5deed',color:'#36454f'}}>
+              <label className="block text-xs font-semibold">Email format
+                <select className="select select-bordered select-sm w-full mt-1" value={emailFormat} onChange={e=>{setEmailFormat(e.target.value as 'invitation'|'original');setError('');}}>
+                  <option value="invitation">New client-page invitation · test only</option>
+                  <option value="original">Original full availability email</option>
+                </select>
+              </label>
+              {emailFormat==='invitation'&&<p className="text-xs leading-relaxed"><strong>Staff preview only.</strong> Try the email button to view your selected practitioners. Copying and sending stay disabled until private client links are ready.</p>}
+            </div>
+            <div className="text-xs text-base-content/60 mb-3 px-1 flex-shrink-0 flex flex-wrap gap-x-5 gap-y-1">
               {clientEmail.trim() && <div>To: <strong>{clientEmail}</strong></div>}
               {ccDisplay && <div>CC: <strong>{ccDisplay}</strong></div>}
               <div>From: <strong>{senderName}</strong></div>
@@ -346,11 +368,15 @@ const SendClientModal: React.FC<Props> = ({ selected, locationFilter, onClose, o
 
             <div
               className="flex-1 overflow-hidden rounded-lg border border-base-300"
-              style={{ minHeight: 0 }}
+              style={{ minHeight: 120, background:'#f3f0f7' }}
             >
               <iframe
                 srcDoc={previewHtml}
-                style={{ width: "100%", height: "100%", border: "none", minHeight: "450px" }}
+                onLoad={e=>{
+                  const doc=e.currentTarget.contentDocument;
+                  doc?.querySelector('[data-client-options-preview]')?.addEventListener('click',event=>{event.preventDefault();if(reviewReady)setStep('client-preview');});
+                }}
+                style={{ display:"block", width: "100%", height: "100%", border: "none", minHeight: 0 }}
                 title="Email Preview"
               />
             </div>
@@ -367,13 +393,14 @@ const SendClientModal: React.FC<Props> = ({ selected, locationFilter, onClose, o
               </button>
               <button
                 onClick={handleCopyEmail}
+                disabled={emailFormat==='invitation'}
                 className="btn btn-outline"
                 style={{ borderColor: "#8D5273", color: copied ? "#47B2AE" : "#8D5273" }}
                 title="Copy email to paste into your PMS"
               >
                 {copied ? <><ClipboardCheck size={16} /> Copied!</> : <><Clipboard size={16} /> Copy Email</>}
               </button>
-              <button onClick={handleSend} className="btn btn-success" disabled={sending}>
+              <button onClick={handleSend} className="btn btn-success" disabled={sending || emailFormat==='invitation'}>
                 {sending ? (
                   <><span className="loading loading-spinner loading-sm" /> Sending...</>
                 ) : (
