@@ -1,6 +1,7 @@
 import {fetchInternalPractitioners, assertInternalAppMembership} from './internal_practitioner_guard';
 import { isKristaIntakePaused, applyIntakePauses } from './practitioner_intake_pause';
 import {mapCrmUpcomingLeave} from './crm_upcoming_leave';
+import {applyCrmWorkingHours} from './crm_working_hours';
 
 export function mapCrmNotes(crm: any): {alert: string; client_note: string; [key: string]: string} {
   const leave = mapCrmUpcomingLeave(crm);
@@ -28,5 +29,7 @@ export async function refreshCrmAlerts(practitioners: any[]): Promise<string[]> 
     if (Object.entries(notes).some(([key,value]) => value !== (p[key] || ''))) changed.push(p.name);
     Object.assign(p, notes);
   }
+  const hours=applyCrmWorkingHours(practitioners,records);
+  for(const h of hours)if(h.before!==h.after&&!changed.includes(h.name))changed.push(h.name);
   return changed;
 }

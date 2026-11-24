@@ -53,3 +53,6 @@ For an email-only policy update, use latest successful dated import/raw evidence
 - Deployment not verified: do not claim live success; report exact blocker.
 - Preserve import-generated `AVAILABILITY_LAST_UPDATED`; email-only review does not change it.
 - Never use `node_bundler = "esbuild"` or global timeout in `netlify.toml`.
+# CRM hours authority — 24 November 2026
+Daily importer `refreshCrmAlerts` also uses shared `crm_working_hours.ts` for CRM-authoritative populated location hours. Missing/invalid fields fail; all-blank retains existing hours for review; Krista pause wins. Daily publisher/validator independently verify hours against fresh allowlisted CRM records. Do not restore hard-coded hours or infer slots from hours. Preserve exact cached import window/AVAILABILITY_LAST_UPDATED on CRM-only runs. Supersedes old app-managed-hours claims; see `crm-hours-2026-11-24/README.md`.
+

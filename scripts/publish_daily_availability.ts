@@ -1,3 +1,5 @@
+import {fetchInternalPractitioners} from './internal_practitioner_guard';
+import {applyCrmWorkingHours} from './crm_working_hours';
 import {assertAvailabilityWindow} from './availability_horizon';
 import {assertAvailabilityLocations} from './availability_profile_guard';
 import { invokeTool } from '@tasklet/tools/v2';
@@ -9,8 +11,9 @@ if (!result.ok || !result.totalSlots) throw new Error('Invalid or empty import; 
 const before = JSON.parse(readFileSync('/tmp/practitioners_before_import.json', 'utf8'));
 const after = JSON.parse(readFileSync(`${base}/practitioners_data.json`, 'utf8'));
 assertAvailabilityLocations(before,after,result.slots);
-const strip = (p:any) => { const {availability, confirmed_slots, locations, alert, client_note, upcoming_leave_client_notice, upcoming_leave_show_from, upcoming_leave_hide_after, ...rest} = p; return rest; };
+const strip = (p:any) => { const {working_hours,availability, confirmed_slots, locations, alert, client_note, upcoming_leave_client_notice, upcoming_leave_show_from, upcoming_leave_hide_after, ...rest} = p; return rest; };
 if (JSON.stringify(before.map(strip)) !== JSON.stringify(after.map(strip))) throw new Error('Unexpected non-availability changes');
+const hoursCheck=structuredClone(before);applyCrmWorkingHours(hoursCheck,await fetchInternalPractitioners());for(const p of after)if(p.working_hours!==hoursCheck.find((x:any)=>x.name===p.name)?.working_hours)throw Error('CRM working-hours verification failed: '+p.name);
 const r = await invokeTool({toolName:'github_push_to_branch',connectionId:'conn_nvshm6rz3kzncg0nh4vk',args:{
   owner:'annapsychologycare',repo:'-practitioner-availability',branch:'main',
   commitMessage:`Availability update via Zanda API — ${result.timestamp}`,

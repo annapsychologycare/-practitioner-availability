@@ -18,9 +18,12 @@ import { PRACTITIONERS_DATA, AVAILABILITY_LAST_UPDATED as AVAILABILITY_LAST_UPDA
 import { loadEmailTemplateConfig, saveEmailTemplateConfig, EmailTemplateConfig } from "./emailTemplateConfig";
 import type { Practitioner } from "./types";
 import { suppressKristaIntake } from './utils/practitionerIntakePause';
+import { StaffAccess } from './components/StaffAccess';
 
-const ACTIVE_PRACTITIONER_NAMES = new Set(PRACTITIONERS_DATA.map(p => p.name));
 const DATA_PATH = "/tasklet/threads/a_cwa98xzh47ey9rcvmmh4/work/practitioners_data.json";
+// Only the reviewed compiled membership may be persisted; stale uploads cannot
+// restore a departed practitioner. Membership changes require a reviewed rebuild.
+const ACTIVE_PRACTITIONER_NAMES = new Set(PRACTITIONERS_DATA.map(p => p.name));
 
 // Error boundary wrapper - simple passthrough (Tasklet outer layer handles errors)
 const ErrorBoundary: React.FC<{ children: ReactNode }> = ({ children }) => <>{children}</>;
@@ -80,17 +83,17 @@ function AppMain() {
 
   const handleUpdate = useCallback((updated: Practitioner) => {
     setPractitioners(prev => {
-      const next = prev.map(p => p.name === updated.name ? suppressKristaIntake(updated) : p);
+      const next = prev.map(p => p.name === updated.name ? suppressKristaIntake({...updated, working_hours:(p as any).working_hours}) : p);
       saveToDisk(next);
       return next;
     });
   }, [saveToDisk]);
 
   const handleBulkUpdate = useCallback((updated: Practitioner[]) => {
-    const safe=updated.filter(p => ACTIVE_PRACTITIONER_NAMES.has(p.name)).map(suppressKristaIntake);
+    const safe=updated.filter(p => ACTIVE_PRACTITIONER_NAMES.has(p.name)).map(p=>suppressKristaIntake({...p,working_hours:(practitioners.find(x=>x.name===p.name) as any)?.working_hours}));
     setPractitioners(safe);
     saveToDisk(safe);
-  }, [saveToDisk]);
+  }, [saveToDisk, practitioners]);
 
   const handleConfigChange = useCallback((config: EmailTemplateConfig) => {
     setEmailConfig(config);
@@ -203,7 +206,7 @@ function AppMain() {
 function AppContent() {
   return (
     <ErrorBoundary>
-      <AppMain />
+      <StaffAccess><AppMain /></StaffAccess>
     </ErrorBoundary>
   );
 }

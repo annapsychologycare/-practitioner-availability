@@ -1,3 +1,5 @@
+import {fetchInternalPractitioners} from './internal_practitioner_guard';
+import {applyCrmWorkingHours} from './crm_working_hours';
 import {assertAvailabilityWindow} from './availability_horizon';
 import {assertAvailabilityLocations} from './availability_profile_guard';
 import {readFileSync,writeFileSync} from 'node:fs';
@@ -7,9 +9,10 @@ const read=(p:string)=>JSON.parse(readFileSync(p,'utf8'));
 const result=read('/tmp/import_result.json'), data=read(`${b}/practitioners_data.json`), before=read('/tmp/practitioners_before_import.json');
 assertAvailabilityWindow(result.dateRange);
 assertAvailabilityLocations(before,data,result.slots);
-const strip=(p:any)=>{const {availability,confirmed_slots,locations,alert,client_note,...rest}=p;return rest;};
+const strip=(p:any)=>{const {working_hours,availability,confirmed_slots,locations,alert,client_note,upcoming_leave_client_notice,upcoming_leave_show_from,upcoming_leave_hide_after,...rest}=p;return rest;};
 assert.deepEqual(data.map(strip),before.map(strip));
-const projection=(ps:any[])=>ps.map(p=>({name:p.name,availability:p.availability,alert:p.alert,client_note:p.client_note,locations:p.locations.map((l:any)=>({location:l.location??l.name,availability:l.availability}))}));
+const hoursCheck=structuredClone(before);applyCrmWorkingHours(hoursCheck,await fetchInternalPractitioners());for(const p of data)if(p.working_hours!==hoursCheck.find((x:any)=>x.name===p.name)?.working_hours)throw Error('CRM working-hours verification failed: '+p.name);
+const projection=(ps:any[])=>ps.map(p=>({name:p.name,working_hours:p.working_hours,availability:p.availability,alert:p.alert,client_note:p.client_note,upcoming_leave_client_notice:p.upcoming_leave_client_notice,upcoming_leave_show_from:p.upcoming_leave_show_from,upcoming_leave_hide_after:p.upcoming_leave_hide_after,locations:p.locations.map((l:any)=>({location:l.location??l.name,availability:l.availability}))}));
 for(const path of ['deploy/src/practitioners_data.json','deploy/netlify/functions/practitioners-data.json','deploy/practitioners_data.json','deploy/public/practitioners_data.json'])assert.deepEqual(projection(read(`${b}/${path}`)),projection(data),path);
 assert.equal(readFileSync(`${b}/apps/practitioner-availability/practitionersData.ts`,'utf8'),readFileSync(`${b}/deploy/src/practitionersData.ts`,'utf8'));
 assert.equal(data.reduce((n:number,p:any)=>n+p.availability.length,0),result.totalSlots);

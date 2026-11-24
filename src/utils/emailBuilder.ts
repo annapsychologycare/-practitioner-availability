@@ -19,6 +19,8 @@ export interface PractitionerEmailData extends UpcomingLeaveFields {
   photo_url?: string;
 }
 
+const escapeWorkingHours=(value:string)=>value.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;').replace(/\r?\n/g,'<br />');
+
 export function parseAvailability(text: string | string[], includeMonthly = false): { weekly: string[]; fortnightly: string[]; monthly: string[] } {
   const weekly: string[] = [];
   const fortnightly: string[] = [];
@@ -175,7 +177,7 @@ function buildPractitionerCard(original: PractitionerEmailData, config: EmailTem
       ${p.short_bio || p.working_hours ? `
       <div style="padding:16px 24px;border-bottom:1px solid #ede9f5;">
         ${p.short_bio ? `<div style="font-size:13px;color:#555;font-style:italic;line-height:1.8;margin-bottom:${p.working_hours ? "8px" : "0"};">${p.short_bio}</div>` : ""}
-        ${p.working_hours ? `<div style="font-size:12px;color:${c.title_color};line-height:1.6;">🕐 ${p.working_hours}</div>` : ""}
+        ${p.working_hours ? `<div style="font-size:12px;color:${c.title_color};line-height:1.6;">🕐 ${escapeWorkingHours(p.working_hours)}</div>` : ""}
       </div>` : ""}
 
       <!-- Separate CRM client-facing note only; never include the internal field. -->

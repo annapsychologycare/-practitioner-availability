@@ -83,17 +83,17 @@ function AppMain() {
 
   const handleUpdate = useCallback((updated: Practitioner) => {
     setPractitioners(prev => {
-      const next = prev.map(p => p.name === updated.name ? suppressKristaIntake(updated) : p);
+      const next = prev.map(p => p.name === updated.name ? suppressKristaIntake({...updated, working_hours:(p as any).working_hours}) : p);
       saveToDisk(next);
       return next;
     });
   }, [saveToDisk]);
 
   const handleBulkUpdate = useCallback((updated: Practitioner[]) => {
-    const safe=updated.filter(p => ACTIVE_PRACTITIONER_NAMES.has(p.name)).map(suppressKristaIntake);
+    const safe=updated.filter(p => ACTIVE_PRACTITIONER_NAMES.has(p.name)).map(p=>suppressKristaIntake({...p,working_hours:(practitioners.find(x=>x.name===p.name) as any)?.working_hours}));
     setPractitioners(safe);
     saveToDisk(safe);
-  }, [saveToDisk]);
+  }, [saveToDisk, practitioners]);
 
   const handleConfigChange = useCallback((config: EmailTemplateConfig) => {
     setEmailConfig(config);

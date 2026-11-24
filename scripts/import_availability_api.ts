@@ -376,7 +376,7 @@ for (const path of ['/tasklet/threads/a_cwa98xzh47ey9rcvmmh4/work/deploy/practit
   for(const source of practitioners){
     const target=legacy.find((p:any)=>p.name===source.name);
     if(!target)throw new Error(`Practitioner missing from representation: ${source.name} in ${path}`);
-    for(const key of ['availability','alert','client_note'])target[key]=source[key];
+    for(const key of ['availability','alert','client_note','working_hours','upcoming_leave_client_notice','upcoming_leave_show_from','upcoming_leave_hide_after'])if(Object.hasOwn(source,key))target[key]=source[key];
     for(const location of target.locations??[])location.availability='';
     for(const location of source.locations??[]){
       let dest=(target.locations??[]).find((l:any)=>(l.location??l.name)===(location.location??location.name));

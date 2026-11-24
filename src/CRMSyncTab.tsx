@@ -9,15 +9,16 @@ const FIELD_SOURCES = [
   { field: "Hide notice after", appKey: "upcoming_leave_hide_after", crmField: "Hide_notice_after", source: "crm", note: "Melbourne date inclusive; rechecked at render/copy/send time." },
   { field: "Presentations (Clinical Interests)", appKey: "presentations", crmField: "Clinical_Interests", source: "crm", note: "✅ Synced from CRM" },
   { field: "Modalities", appKey: "modalities", crmField: "Modalities", source: "crm", note: "✅ Synced from CRM" },
-  { field: "Bio", appKey: "bio", crmField: "Bio_for_Website", source: "crm", note: "✅ Synced from CRM" },
+  { field: "Bio", appKey: "bio", crmField: "Bio", source: "crm", note: "✅ Synced from CRM" },
   { field: "Short Bio", appKey: "short_bio", crmField: "Short_Bio", source: "crm", note: "✅ Synced from CRM" },
-  { field: "Ages Accepted", appKey: "age_range", crmField: "Ages_of_Clients_I_like_to_see", source: "crm", note: "✅ Synced from CRM" },
-  { field: "Client Types", appKey: "client_types", crmField: "Client_Types_that_I_like_to_see", source: "crm", note: "✅ Synced from CRM" },
+  { field: "Ages Accepted", appKey: "age_range", crmField: "Ages", source: "crm", note: "✅ Synced from CRM" },
+  { field: "Client Types", appKey: "client_types", crmField: "Client_Types", source: "crm", note: "✅ Synced from CRM" },
   { field: "Languages", appKey: "languages", crmField: "Languages_I_am_fluent_in", source: "crm", note: "✅ Synced from CRM" },
   { field: "Pronouns", appKey: "pronouns", crmField: "Pronouns", source: "crm", note: "✅ Synced from CRM" },
+  { field: "Working days & hours", appKey: "working_hours", crmField: "Availability / Working_Days_and_Hours_185A_Greville_St / Working_Days_and_Hours_Telehealth", source: "crm", note: "CRM text copied by location; all blank held for review, not erased. Krista pause wins. Not opening slots." },
   { field: "Email", appKey: "email", crmField: "Email", source: "available", note: "🟡 Available in CRM — not yet synced" },
   { field: "Locations", appKey: "locations", crmField: "—", source: "manual", note: "🔵 Manual — set in app config" },
-  { field: "Availability", appKey: "availability", crmField: "—", source: "manual", note: "🔵 Manual — CSV import from Zanda" },
+  { field: "Availability", appKey: "availability", crmField: "—", source: "manual", note: "🔵 Zanda API — confirmed pending appointment patterns; separate from working hours" },
   { field: "Photo", appKey: "photo_url", crmField: "—", source: "manual", note: "🔵 Manual — uploaded directly" },
   { field: "Client Gender Accepted", appKey: "client_gender_accepted", crmField: "—", source: "manual", note: "🔵 Manual — set in app config" },
 ];
@@ -2266,7 +2267,7 @@ export default function CRMSyncTab() {
   return (
     <div style={{padding:"24px",maxWidth:1000,margin:"0 auto",color:"#e8e0ef"}}>
       <h2 style={{color:"#CDA8BA",marginBottom:4}}>🔗 CRM Sync</h2>
-      <p style={{color:"#aaa",marginBottom:24,fontSize:14}}>Shows which fields are synced from Zoho CRM and which are managed manually.</p>
+      <p style={{color:"#aaa",marginBottom:24,fontSize:14}}>Field API names are unaffected by display-label changes. This page documents sources; it does not itself fetch CRM.</p>
 
       {/* Field Sources Table */}
       <h3 style={{color:"#CDA8BA",marginBottom:12}}>📋 Field Sources</h3>
@@ -2293,8 +2294,8 @@ export default function CRMSyncTab() {
         </table>
       </div>
 
-      {/* Per-practitioner sync status */}
-      <h3 style={{color:"#CDA8BA",marginBottom:12}}>👥 Practitioner Sync Status</h3>
+      <p style={{fontSize:13,color:"#bbb"}}>The comparison below is a historical embedded snapshot, not a live CRM check. Use the latest dated sync audit for current values, hours coverage and approval holds.</p>
+      <h3 style={{color:"#CDA8BA",marginBottom:12}}>👥 Historical CRM comparison snapshot</h3>
       <div style={{overflowX:"auto"}}>
         <table style={{width:"100%",borderCollapse:"collapse",fontSize:13}}>
           <thead>
