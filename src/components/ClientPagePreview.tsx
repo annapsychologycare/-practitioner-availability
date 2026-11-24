@@ -10,10 +10,20 @@ export const ClientPagePreview:React.FC<Props>=({practitioners,includeMonthly,ag
  const slots=current?.locations.flatMap(loc=>loc.lines.filter(l=>l.selectable).map(l=>({...l,label:`${loc.name} · ${l.text} (${l.frequency})`})))||[];
  function choose(key:string){setChosen(key);setSlot('');setTested(false);}
  return <div className="overflow-y-auto flex-1 min-h-0 space-y-5 p-1">
+  <style>{`
+   .pc-options-grid {display:grid;grid-template-columns:minmax(0,1fr);gap:20px;}
+   .pc-option-card {display:grid;grid-template-rows:auto auto auto auto 1fr auto auto;gap:18px;padding:24px;min-width:0;}
+   .pc-option-card p {margin:0;}
+   @media(min-width:900px){
+    .pc-options-grid {grid-template-columns:repeat(2,minmax(0,1fr));column-gap:20px;row-gap:18px;}
+    @supports(grid-template-rows:subgrid){.pc-option-card {grid-template-rows:subgrid;grid-row:span 7;}}
+   }
+   @media(max-width:540px){.pc-option-card {padding:18px;}}
+  `}</style>
   <div className="alert text-sm"><span><strong>Staff test preview · real practitioner details.</strong> No private client link has been created. Test entries stay on this screen only; nothing is sent, saved, reserved or booked. Do not enter real client information.</span></div>
-  <section className="card bg-base-200"><div className="card-body gap-3"><span className="font-semibold tracking-wide">PsychologyCare</span><h2 className="text-2xl font-semibold">Your practitioner options</h2><p className="text-sm">Compare your options, request a preferred appointment or ask our team a question. Our team checks availability before confirming.</p><p className="text-xs opacity-70">Times are Melbourne local time. These options come from the availability app, not a fresh live-diary check. Selecting a recurring option expresses a preference for that series; it does not book its individual dates.</p></div></section>
+  <section className="rounded-2xl border border-base-300 bg-base-200 p-6 space-y-3"><span className="text-xs font-semibold uppercase tracking-widest text-base-content/60">PsychologyCare</span><h2 className="text-3xl font-semibold leading-tight">Your practitioner options</h2><p className="text-sm leading-relaxed max-w-3xl">Compare your options, request a preferred appointment or ask our team a question. Our team checks availability before confirming.</p><div className="flex flex-wrap gap-2"><span className="badge badge-outline">{profiles.length} practitioner{profiles.length===1?'':'s'} selected</span><span className="badge badge-outline">Requests only · not confirmed bookings</span></div><p className="text-xs text-base-content/60 leading-relaxed max-w-3xl">Times are Melbourne local time. These options come from the availability app, not a fresh live-diary check. Selecting a recurring option expresses a preference for that series; it does not book its individual dates.</p></section>
   {age60Plus&&profiles.some(p=>p.locations.some(l=>l.lines.length>0&&!/telehealth|online/i.test(l.name)&&/prahran|greville|183a|185a/i.test(l.name)))&&<div className="alert text-sm"><span>Our Prahran clinics at 183A and 185A Greville Street are upstairs, with approximately 18 stairs. Please let us know if stairs may be difficult so we can discuss suitable options.</span></div>}
-  <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">{profiles.map(p=><ClientPagePractitionerCard key={p.key} profile={p} onSelect={choose}/>)}</div>
+  <div className="pc-options-grid">{profiles.map(p=><ClientPagePractitionerCard key={p.key} profile={p} onSelect={choose}/>)}</div>
   {!profiles.length&&<p>No practitioners selected. Go back and choose your shortlist.</p>}
   <form className="card bg-base-100 border border-base-300" onSubmit={e=>{e.preventDefault();setTested(true);}}><div className="card-body gap-4">
    <h3 className="font-semibold text-lg">Tell us your preference or ask a question</h3>
