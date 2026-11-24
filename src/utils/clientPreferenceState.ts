@@ -1,12 +1,14 @@
+export interface WaitlistPreference {days:string;times:string;}
 export interface PreferenceState {
- selected:string[]; slots:Record<string,string[]>; differentTime:Record<string,boolean>; questions:Record<string,string>;
+ selected:string[]; slots:Record<string,string[]>; differentTime:Record<string,boolean>; waitlist:Record<string,WaitlistPreference>; questions:Record<string,string>;
  ranked:boolean; support:string[]; contact:string; callback:string; days:string; timeOfDay:string; location:string; message:string;
 }
-export const emptyPreferences=():PreferenceState=>({selected:[],slots:{},differentTime:{},questions:{},ranked:true,support:[],contact:'',callback:'',days:'',timeOfDay:'',location:'',message:''});
+export const emptyPreferences=():PreferenceState=>({selected:[],slots:{},differentTime:{},waitlist:{},questions:{},ranked:true,support:[],contact:'',callback:'',days:'',timeOfDay:'',location:'',message:''});
 export type PreferenceAction=
  |{type:'select'|'remove';key:string}
  |{type:'slot';key:string;slot:string}
  |{type:'different';key:string;value:boolean}
+ |{type:'waitlist';key:string;field:'days'|'times';value:string}
  |{type:'question';key:string;value:string}
  |{type:'move';key:string;direction:number}
  |{type:'rank';value:boolean}
@@ -16,9 +18,10 @@ export function preferenceReducer(s:PreferenceState,a:PreferenceAction):Preferen
  const add=(key:string)=>s.selected.includes(key)?s.selected:[...s.selected,key];
  switch(a.type){
  case 'select':return {...s,selected:add(a.key)};
- case 'remove':return {...s,selected:s.selected.filter(k=>k!==a.key),slots:{...s.slots,[a.key]:[]},differentTime:{...s.differentTime,[a.key]:false}};
+ case 'remove':return {...s,selected:s.selected.filter(k=>k!==a.key),slots:{...s.slots,[a.key]:[]},differentTime:{...s.differentTime,[a.key]:false},waitlist:{...s.waitlist,[a.key]:{days:'',times:''}}};
  case 'slot':{const values=s.slots[a.key]||[];return {...s,selected:add(a.key),slots:{...s.slots,[a.key]:values.includes(a.slot)?values.filter(k=>k!==a.slot):[...values,a.slot]}};}
  case 'different':return {...s,selected:a.value?add(a.key):s.selected,differentTime:{...s.differentTime,[a.key]:a.value}};
+ case 'waitlist':return {...s,waitlist:{...s.waitlist,[a.key]:{days:'',times:'',...s.waitlist[a.key],[a.field]:a.value}}};
  case 'question':return {...s,questions:{...s.questions,[a.key]:a.value}};
  case 'move':{const i=s.selected.indexOf(a.key),j=i+a.direction;if(i<0||j<0||j>=s.selected.length)return s;const next=[...s.selected];[next[i],next[j]]=[next[j],next[i]];return {...s,selected:next};}
  case 'rank':return {...s,ranked:a.value};
