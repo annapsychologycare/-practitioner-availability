@@ -193,7 +193,7 @@ const SendClientModal: React.FC<Props> = ({ selected, locationFilter, onClose, o
     <div className="modal modal-open">
       <div
         className={`modal-box ${step === "client-preview" ? "max-w-6xl" : step === "preview" ? "max-w-3xl" : "max-w-lg"}`}
-        style={{ maxHeight: "90vh", overflow: "hidden", display: "flex", flexDirection: "column" }}
+        style={{ maxHeight: "90vh", height: step === "preview" ? "90vh" : undefined, overflow: "hidden", display: "flex", flexDirection: "column" }}
       >
         {/* Header */}
         <div className="flex items-center justify-between mb-4 flex-shrink-0">
@@ -219,7 +219,7 @@ const SendClientModal: React.FC<Props> = ({ selected, locationFilter, onClose, o
         </div>}
 
         {step === "client-preview" ? (
-          <ClientPagePreview practitioners={practitionerData} includeMonthly={includeMonthly} age60Plus={clientAge60Plus} now={new Date(noticeNow)} onBack={()=>setStep('form')}/>
+          <ClientPagePreview practitioners={practitionerData} includeMonthly={includeMonthly} age60Plus={clientAge60Plus} now={new Date(noticeNow)} clientName={clientName} onBack={()=>setStep('form')}/>
         ) : step === "form" ? (
           <>
             {/* Selected practitioners summary */}
@@ -351,16 +351,16 @@ const SendClientModal: React.FC<Props> = ({ selected, locationFilter, onClose, o
           </>
         ) : (
           <>
-            <div className="flex-shrink-0 mb-3 space-y-2">
-              <label className="text-sm font-semibold">Email format
-                <select className="select select-bordered select-sm w-full" value={emailFormat} onChange={e=>{setEmailFormat(e.target.value as 'invitation'|'original');setError('');}}>
+            <div className="flex-shrink-0 mb-3 space-y-2 rounded-xl border p-3" style={{background:'#f7f5fa',borderColor:'#e5deed',color:'#36454f'}}>
+              <label className="block text-xs font-semibold">Email format
+                <select className="select select-bordered select-sm w-full mt-1" value={emailFormat} onChange={e=>{setEmailFormat(e.target.value as 'invitation'|'original');setError('');}}>
                   <option value="invitation">New client-page invitation · test only</option>
                   <option value="original">Original full availability email</option>
                 </select>
               </label>
-              {emailFormat==='invitation'&&<p className="text-sm">Click the button in the email below to open your selected practitioners’ page. This invitation is a staff-only preview; copying and sending are disabled until private links are connected.</p>}
+              {emailFormat==='invitation'&&<p className="text-xs leading-relaxed"><strong>Staff preview only.</strong> Try the email button to view your selected practitioners. Copying and sending stay disabled until private client links are ready.</p>}
             </div>
-            <div className="text-sm text-base-content/60 mb-3 flex-shrink-0 space-y-0.5">
+            <div className="text-xs text-base-content/60 mb-3 px-1 flex-shrink-0 flex flex-wrap gap-x-5 gap-y-1">
               {clientEmail.trim() && <div>To: <strong>{clientEmail}</strong></div>}
               {ccDisplay && <div>CC: <strong>{ccDisplay}</strong></div>}
               <div>From: <strong>{senderName}</strong></div>
@@ -368,7 +368,7 @@ const SendClientModal: React.FC<Props> = ({ selected, locationFilter, onClose, o
 
             <div
               className="flex-1 overflow-hidden rounded-lg border border-base-300"
-              style={{ minHeight: 0 }}
+              style={{ minHeight: 120, background:'#f3f0f7' }}
             >
               <iframe
                 srcDoc={previewHtml}
@@ -376,7 +376,7 @@ const SendClientModal: React.FC<Props> = ({ selected, locationFilter, onClose, o
                   const doc=e.currentTarget.contentDocument;
                   doc?.querySelector('[data-client-options-preview]')?.addEventListener('click',event=>{event.preventDefault();if(reviewReady)setStep('client-preview');});
                 }}
-                style={{ width: "100%", height: "100%", border: "none", minHeight: "450px" }}
+                style={{ display:"block", width: "100%", height: "100%", border: "none", minHeight: 0 }}
                 title="Email Preview"
               />
             </div>

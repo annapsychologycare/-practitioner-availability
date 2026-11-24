@@ -2,8 +2,8 @@ import React,{useMemo,useState,useRef} from 'react';
 import {type PractitionerEmailData} from '../utils/emailBuilder';
 import {clientPreviewProfiles} from '../utils/clientPagePreview';
 import {ClientPagePractitionerCard} from './ClientPagePractitionerCard';
-interface Props {practitioners:PractitionerEmailData[];includeMonthly:boolean;age60Plus:boolean;now:Date;onBack:()=>void;}
-export const ClientPagePreview:React.FC<Props>=({practitioners,includeMonthly,age60Plus,now,onBack})=>{
+interface Props {practitioners:PractitionerEmailData[];includeMonthly:boolean;age60Plus:boolean;now:Date;onBack:()=>void;clientName?:string;}
+export const ClientPagePreview:React.FC<Props>=({practitioners,includeMonthly,age60Plus,now,onBack,clientName=''})=>{
  const profiles=useMemo(()=>clientPreviewProfiles(practitioners,includeMonthly,now),[practitioners,includeMonthly,now]);
  const [chosen,setChosen]=useState<string[]>([]);const [times,setTimes]=useState<Record<string,string>>({});const [message,setMessage]=useState('');const [tested,setTested]=useState(false);
  const formRef=useRef<HTMLFormElement>(null);const messageRef=useRef<HTMLTextAreaElement>(null);
@@ -17,6 +17,7 @@ export const ClientPagePreview:React.FC<Props>=({practitioners,includeMonthly,ag
    .pc-client-page {color:#36454f;background:linear-gradient(145deg,#f6f3fa 0%,#fff 58%);color-scheme:light;}
    .pc-client-page .pc-brand-hero {background:linear-gradient(120deg,#fff 0%,#f0ecf5 100%);border-color:#e1dbea;padding:32px;}
    .pc-brand-hero .pc-welcome-title {font-size:clamp(26px,3.2vw,34px);line-height:1.2;margin:0 0 14px;max-width:24ch;text-wrap:balance;}
+   .pc-welcome-greeting {margin:0 0 10px;color:#645379;font-size:16px;line-height:1.6;font-weight:600;overflow-wrap:anywhere;}
    .pc-welcome-intro {font-size:15px;line-height:1.75;max-width:66ch;margin:0;}
    .pc-welcome-steps {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;list-style:none;padding:0;margin:24px 0 18px;counter-reset:welcome-step;}
    .pc-welcome-steps li {background:rgba(255,255,255,.8);border:1px solid #e7e1ee;border-radius:14px;padding:16px;counter-increment:welcome-step;}
@@ -74,8 +75,9 @@ export const ClientPagePreview:React.FC<Props>=({practitioners,includeMonthly,ag
   <div className="pc-test-note alert"><span><strong>Staff test preview.</strong> No private client link exists. Entries stay on this screen only—nothing is saved, sent or booked. Please use fictional client information.</span></div>
   <section className="pc-brand-hero rounded-2xl border border-base-300" aria-labelledby="pc-welcome-heading">
    <img src="/brand/psychologycare-logo.svg" alt="PsychologyCare" className="pc-brand-logo"/>
+   {clientName.trim()&&<p className="pc-welcome-greeting">Hi {clientName.trim()},</p>}
    <h2 id="pc-welcome-heading" className="pc-welcome-title font-semibold">Let’s find the right support for you</h2>
-   <p className="pc-welcome-intro">Feeling comfortable with your practitioner matters. We’ve put together these options for you to explore at your own pace.</p>
+   <p className="pc-welcome-intro">Feeling comfortable with your practitioner matters. We’ve selected these options based on the information you’ve shared with us, for you to explore at your own pace.</p>
    <ol className="pc-welcome-steps">
     <li><strong>Explore your options</strong><p>Get to know each practitioner and compare their approach, fees and appointment options.</p></li>
     <li><strong>Share your preferences</strong><p>Choose one or more practitioners and let us know which days and times suit you.</p></li>
