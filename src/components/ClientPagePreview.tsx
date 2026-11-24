@@ -13,49 +13,56 @@ export const ClientPagePreview:React.FC<Props>=({practitioners,includeMonthly,ag
  function ask(key:string){setChosen(previous=>previous.includes(key)?previous:[...previous,key]);setTested(false);formRef.current?.scrollIntoView({behavior:'smooth',block:'start'});messageRef.current?.focus({preventScroll:true});}
  return <div className="pc-client-page overflow-y-auto flex-1 min-h-0 space-y-5 p-1">
   <style>{`
-   /* Green-and-cream direction requested by Anna; original logo remains unaltered. */
-   .pc-client-page {color:#263b31;background:#fcfbf8;color-scheme:light;}
-   .pc-client-page .pc-brand-hero {background:#f1f2ea;border-color:#dce1d4;border-left:4px solid #496c40;}
+   /* GP-site-inspired lilac/white with restrained sage selection accents. */
+   .pc-client-page {color:#36454f;background:linear-gradient(145deg,#f6f3fa 0%,#fff 58%);color-scheme:light;}
+   .pc-client-page .pc-brand-hero {background:linear-gradient(120deg,#fff 0%,#f0ecf5 100%);border-color:#e1dbea;}
    .pc-brand-logo {display:block;width:180px;max-width:65%;height:auto;object-fit:contain;margin:0 0 14px;}
-   .pc-client-page h2,.pc-client-page h3 {color:#173b27;font-family:Georgia,'Times New Roman',serif;}
-   .pc-client-page h4 {color:#3c5b38;}
-   .pc-client-page .bg-base-100 {background:#fffefa;color:#263b31;}
-   .pc-client-page .bg-base-200 {background:#eff2e9;color:#263b31;}
-   .pc-client-page .border-base-300 {border-color:#dce1d4;}
-   .pc-client-page .text-base-content\\/60 {color:#5c695f;}
-   .pc-client-page .text-base-content\\/70 {color:#4e6053;}
-   .pc-client-page .btn-primary {background:#496c40;border-color:#496c40;color:#fff;box-shadow:none;}
-   .pc-client-page .btn-primary:hover {background:#35542d;border-color:#35542d;}
-   .pc-client-page .btn-outline {color:#35542d;border-color:#739069;background:#fffefa;}
-   .pc-client-page .btn-outline:hover {background:#edf1e7;}
-   .pc-client-page .link {color:#3e6336;text-underline-offset:3px;}
-   .pc-client-page .badge {background:#e8eddf;color:#35542d;border-color:#d6dfcd;}
-   .pc-client-page .alert {background:#f0f2ea;color:#364b3d;border:1px solid #dce1d4;}
-   .pc-client-page .select,.pc-client-page .textarea {background:#fffefa;color:#263b31;border-color:#aebea6;}
-   .pc-client-page :is(button,a,select,textarea,input):focus-visible {outline:3px solid #739069;outline-offset:3px;}
-   .pc-client-page .btn:disabled {background:#e8ebdf;color:#64715e;border-color:#d4dbc9;}
+   .pc-client-page h2,.pc-client-page h3 {color:#2b244c;font-family:Arial,Helvetica,sans-serif;letter-spacing:-.025em;}
+   .pc-client-page h4 {color:#6c617c;}
+   .pc-client-page .bg-base-100 {background:#fff;color:#36454f;}
+   .pc-client-page .bg-base-200 {background:#f5f3f8;color:#36454f;}
+   .pc-client-page .border-base-300 {border-color:#e4dfeb;}
+   .pc-client-page .text-base-content\\/60 {color:#69717b;}
+   .pc-client-page .text-base-content\\/70 {color:#59636f;}
+   .pc-client-page .btn-primary {background:#51416e;border-color:#51416e;color:#fff;box-shadow:none;border-radius:22px;}
+   .pc-client-page .btn-primary:hover {background:#392c53;border-color:#392c53;}
+   .pc-client-page .btn-outline {color:#51416e;border-color:#b2a2c4;background:#fff;border-radius:22px;}
+   .pc-client-page .btn-outline:hover {background:#f0ecf5;}
+   .pc-client-page .link {color:#665080;text-underline-offset:3px;}
+   .pc-client-page .badge {background:#f0ecf5;color:#5e4b75;border-color:#ddd3e9;}
+   .pc-client-page .alert {background:#f7f6f9;color:#59636f;border:1px solid #e4dfeb;}
+   .pc-client-page .select,.pc-client-page .textarea {background:#fff;color:#36454f;border-color:#b8acc8;}
+   .pc-client-page :is(button,a,select,textarea,input):focus-visible {outline:3px solid #9a82b6;outline-offset:3px;}
+   .pc-client-page .btn:disabled {background:#eeebf2;color:#756d81;border-color:#e0d9e8;}
+   .pc-client-page .checkbox {accent-color:#665080;}
    .pc-client-page .pc-test-note {padding:9px 12px;font-size:11px;line-height:1.5;border-radius:10px;}
-   .pc-client-page .pc-practitioner-note {font-size:12px;line-height:1.55;color:#4e6053;border-left:2px solid #a3b596;padding:5px 0 5px 10px;background:transparent;}
-   .pc-client-page .pc-profession {display:inline-block;border-radius:20px;background:#e8eddf;padding:3px 10px;margin-top:7px;line-height:1.4;font-size:12px;}
-   .pc-client-page .pc-option-selected {border-color:#496c40;box-shadow:0 0 0 1px #496c40;}
+   .pc-client-page .pc-practitioner-note {font-size:12px;line-height:1.55;color:#59636f;border-left:2px solid #c0b3d1;padding:5px 0 5px 10px;background:transparent;}
+   .pc-client-page .pc-profession {display:inline-block;border-radius:20px;background:#f0ecf5;color:#645379;padding:4px 10px;margin-top:8px;line-height:1.4;font-size:12px;}
+   .pc-client-page .pc-option-selected {border-color:#9b86b4;box-shadow:0 0 0 1px #9b86b4;}
+   .pc-client-page .pc-portrait {width:100px;height:120px;border-radius:16px;object-fit:cover;object-position:center 25%;flex-shrink:0;}
+   .pc-client-page .pc-selection-status {display:inline-block;font-size:11px;color:#45613c;background:#edf2e8;border-radius:20px;padding:3px 9px;margin-top:8px;}
+   .pc-preferences-bar {position:sticky;top:0;z-index:5;background:rgba(255,255,255,.97);border:1px solid #ded5e8;border-radius:12px;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;gap:16px;box-shadow:0 5px 18px rgba(43,36,76,.07);}
+   .pc-preferences-bar .btn {flex-shrink:0;}
+   .pc-client-page form {scroll-margin-top:110px;}
    .pc-fee-columns {display:grid;grid-template-columns:1fr 1fr;gap:18px;}
-   .pc-fee-columns>div+div {border-left:1px solid #dce1d4;padding-left:18px;}
-   .pc-fee-section {border-block:1px solid #e1e5da;padding-block:14px;}
-   .pc-location-heading {background:#e8eddf;border-radius:5px;padding:5px 8px;}
+   .pc-fee-columns>div+div {border-left:1px solid #e4dfeb;padding-left:18px;}
+   .pc-fee-section {border-block:1px solid #e4dfeb;padding-block:14px;}
+   .pc-location-heading {background:#f3f0f7;color:#51416e;border-radius:5px;padding:5px 8px;}
    .pc-card-actions {display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:10px;}
    .pc-card-actions .btn {height:auto;min-height:40px;font-size:12px;line-height:1.4;padding:9px 10px;white-space:normal;}
    .pc-options-grid {display:grid;grid-template-columns:minmax(0,1fr);gap:20px;}
-   .pc-option-card {display:grid;grid-template-rows:auto auto auto auto 1fr auto auto;gap:14px;padding:22px;min-width:0;}
+   .pc-option-card {display:grid;grid-template-rows:auto auto auto auto 1fr auto auto;gap:14px;padding:22px;min-width:0;border-radius:20px;box-shadow:0 5px 18px rgba(43,36,76,.05);}
    .pc-option-card p {margin:0;}
    @media(min-width:900px){
     .pc-options-grid {grid-template-columns:repeat(2,minmax(0,1fr));column-gap:20px;row-gap:18px;}
     @supports(grid-template-rows:subgrid){.pc-option-card {grid-template-rows:subgrid;grid-row:span 7;}}
    }
-   @media(max-width:540px){.pc-option-card {padding:18px;}.pc-fee-columns {grid-template-columns:1fr;gap:12px;}.pc-fee-columns>div+div {border-left:0;border-top:1px solid #dce1d4;padding:12px 0 0;}.pc-card-actions {grid-template-columns:1fr;}}
+   @media(max-width:540px){.pc-option-card {padding:18px;}.pc-client-page .pc-portrait {width:80px;height:96px;}.pc-fee-columns {grid-template-columns:1fr;gap:12px;}.pc-fee-columns>div+div {border-left:0;border-top:1px solid #e4dfeb;padding:12px 0 0;}.pc-card-actions {grid-template-columns:1fr;}.pc-preferences-bar {align-items:flex-start;flex-wrap:wrap;}}
   `}</style>
   <div className="pc-test-note alert"><span><strong>Staff test preview.</strong> No private client link exists. Entries stay on this screen only—nothing is saved, sent or booked. Please use fictional client information.</span></div>
   <section className="pc-brand-hero rounded-2xl border border-base-300 p-5 space-y-3"><img src="/brand/psychologycare-logo.svg" alt="PsychologyCare" className="pc-brand-logo"/><h2 className="text-3xl font-semibold leading-tight">Let’s find the right support for you</h2><p className="text-sm leading-relaxed max-w-3xl">Finding someone you feel comfortable with is an important first step. We’ve brought together these practitioner options for you to explore at your own pace.</p><p className="text-sm leading-relaxed max-w-3xl">Choose one or more practitioners you’d like to see, share your preferred times, or ask us a question. If you’re unsure, our team is here to help you decide.</p><div className="flex flex-wrap gap-2"><span className="badge badge-outline">{profiles.length} option{profiles.length===1?'':'s'} to explore</span><span className="badge badge-outline">You can choose more than one</span></div><p className="text-xs text-base-content/60 leading-relaxed max-w-3xl">All times are Melbourne time. Preferences are requests only, not reserved or confirmed bookings. Our team checks current availability before confirming.</p></section>
   {age60Plus&&profiles.some(p=>p.locations.some(l=>l.lines.length>0&&!/telehealth|online/i.test(l.name)&&/prahran|greville|183a|185a/i.test(l.name)))&&<div className="alert text-sm"><span>Our Prahran clinics at 183A and 185A Greville Street are upstairs, with approximately 18 stairs. Please let us know if stairs may be difficult so we can discuss suitable options.</span></div>}
+  {!!chosen.length&&<div className="pc-preferences-bar"><div className="min-w-0 text-sm" aria-live="polite"><strong>{chosen.length} practitioner{chosen.length===1?'':'s'} in your preferences</strong><p className="text-xs text-base-content/60 pt-1">{chosenProfiles.map(p=>p.name).join(' · ')}</p></div><button type="button" className="btn btn-primary btn-sm" onClick={()=>formRef.current?.scrollIntoView({behavior:'smooth',block:'start'})}>Review preferences ↓</button></div>}
   <div className="pc-options-grid">{profiles.map(p=><ClientPagePractitionerCard key={p.key} profile={p} selected={chosen.includes(p.key)} onSelect={choose} onAsk={ask}/>)}</div>
   {!profiles.length&&<p>No practitioners selected. Go back and choose your shortlist.</p>}
   <form ref={formRef} className="card bg-base-100 border border-base-300" onSubmit={e=>{e.preventDefault();setTested(true);}}><div className="card-body gap-4">

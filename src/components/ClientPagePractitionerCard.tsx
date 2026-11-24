@@ -7,8 +7,8 @@ function money(value:string):string {
 function feeLabel(value:string):string {return value.replace(/\bB\/H:/g,'Business hours:').replace(/\bA\/H:/g,'After hours:');}
 export const ClientPagePractitionerCard:React.FC<Props>=({profile:p,selected=false,onSelect,onAsk})=><article className={`pc-option-card card bg-base-100 border border-base-300 shadow-sm ${selected?'pc-option-selected':''}`}>
  <header className="flex items-center gap-4 border-b border-base-300 pb-4">
-  {p.photo?<img src={p.photo} alt="" className="w-16 h-16 rounded-full object-cover border border-base-300 flex-shrink-0" referrerPolicy="no-referrer"/>:<span aria-hidden="true" className="w-16 h-16 rounded-full bg-base-200 flex items-center justify-center text-xl font-semibold flex-shrink-0">{p.name.charAt(0)}</span>}
-  <div className="min-w-0"><h3 className="font-semibold text-xl leading-tight">{p.name}</h3><p className="pc-profession text-sm text-base-content/70 pt-1">{p.title}</p></div>
+  {p.photo?<img src={p.photo} alt="" className="pc-portrait border border-base-300" referrerPolicy="no-referrer"/>:<span aria-hidden="true" className="pc-portrait bg-base-200 flex items-center justify-center text-xl font-semibold">{p.name.charAt(0)}</span>}
+  <div className="min-w-0"><h3 className="font-semibold text-xl leading-tight">{p.name}</h3><p className="pc-profession text-sm text-base-content/70 pt-1">{p.title}</p>{selected&&<div><span className="pc-selection-status">✓ In your preferences</span></div>}</div>
  </header>
  <section className="space-y-3 text-sm leading-relaxed" aria-label={`About ${p.name}`}>
   <h4 className="text-xs font-semibold uppercase tracking-widest text-base-content/60">About</h4>
