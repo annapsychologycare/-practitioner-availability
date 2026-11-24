@@ -1,43 +1,25 @@
 import React from 'react';
+import {MapPin,Video,CalendarDays,Check,MessageCircle,Users} from 'lucide-react';
 import type {ClientPreviewProfile} from '../utils/clientPagePreview';
-interface Props {profile:ClientPreviewProfile;selected?:boolean;onSelect:(key:string)=>void;onAsk?:(key:string)=>void;}
-function money(value:string):string {
- return value.split(/\r?\n/).map(line=>/^\s*\$?\d+(?:\.\d{1,2})?\s*$/.test(line)?new Intl.NumberFormat('en-AU',{style:'currency',currency:'AUD'}).format(Number(line.replace('$',''))):line).join('\n');
+export const money=(n:number)=>new Intl.NumberFormat('en-AU',{style:'currency',currency:'AUD'}).format(n);
+export const firstName=(name:string)=>name.replace(/^(Dr\.?|Ms\.?|Mr\.?)\s+/i,'').split(' ')[0];
+export type AppointmentLine=ClientPreviewProfile['locations'][number]['lines'][number];
+export function AppointmentDescription({line}:{line:AppointmentLine}){
+ return <span className="pc-slot-description"><strong>{line.day&&line.time?`${line.day} · ${line.time}`:line.text}</strong><span>{line.location}</span>{line.commencementLabel&&<span>Commencing {line.commencementLabel}</span>}<span className="pc-small">{line.frequency.charAt(0).toUpperCase()+line.frequency.slice(1)} appointments{line.fee?` · ${money(line.fee.amount)} per session`:''}</span>{!line.commencementLabel&&<span className="pc-small">Commencement date to be confirmed by intake</span>}</span>;
 }
-function feeLabel(value:string):string {return value.replace(/\bB\/H:/g,'Business hours:').replace(/\bA\/H:/g,'After hours:');}
-export const ClientPagePractitionerCard:React.FC<Props>=({profile:p,selected=false,onSelect,onAsk})=><article className={`pc-option-card card bg-base-100 border border-base-300 shadow-sm ${selected?'pc-option-selected':''}`}>
- <header className="flex items-center gap-4 border-b border-base-300 pb-4">
-  {p.photo?<img src={p.photo} alt="" className="pc-portrait border border-base-300" referrerPolicy="no-referrer"/>:<span aria-hidden="true" className="pc-portrait bg-base-200 flex items-center justify-center text-xl font-semibold">{p.name.charAt(0)}</span>}
-  <div className="min-w-0"><h3 className="font-semibold text-xl leading-tight">{p.name}</h3><p className="pc-profession text-sm text-base-content/70 pt-1">{p.title}</p>{selected&&<div><span className="pc-selection-status">✓ In your preferences</span></div>}</div>
- </header>
- <section className="space-y-3 text-sm leading-relaxed" aria-label={`About ${p.name}`}>
-  <h4 className="text-xs font-semibold uppercase tracking-widest text-base-content/60">About</h4>
-  <p className="whitespace-pre-line">{p.bio||'Please view the full profile or ask our team for more information.'}</p>
-  {p.note&&<div className="pc-practitioner-note whitespace-pre-line"><strong className="block pb-1">Please note</strong>{p.note}</div>}
- </section>
- <section className="pc-fee-section text-sm" aria-label={`Fees for ${p.name}`}>
-  <dl className="pc-fee-columns">
-   <div><dt className="font-semibold pb-1">Session fees</dt><dd className="whitespace-pre-line leading-relaxed">{p.fees?feeLabel(p.fees):'Please ask our team to confirm fees.'}</dd></div>
-   <div><dt className="font-semibold pb-1">Medicare rebate information</dt><dd className="whitespace-pre-line">{p.rebate?money(p.rebate):'Please ask our team about eligibility.'}</dd><dd className="text-xs text-base-content/60 pt-1 leading-relaxed">Eligibility and referral requirements apply; payment is not guaranteed.</dd></div>
-  </dl>
- </section>
- <section className="text-sm space-y-2 leading-relaxed">
-  <h4 className="text-xs font-semibold uppercase tracking-widest text-base-content/60">Usual working hours</h4>
-  <p className="whitespace-pre-line">{p.hours||'Please ask our team about usual working hours.'}</p>
-  <p className="text-xs text-base-content/60">Working hours are not available appointment times.</p>
- </section>
- <section className="space-y-3 text-sm">
-  <div className="space-y-1"><h4 className="text-xs font-semibold uppercase tracking-widest text-base-content/60">Appointment options</h4><p className="text-xs text-base-content/60">Melbourne time · subject to team confirmation</p></div>
-  {p.locations.map((loc,i)=><div key={i} className="border border-base-300 rounded-lg p-3 space-y-2">
-   <h5 className="pc-location-heading font-semibold">{loc.name}</h5>
-   {loc.note&&<p className="whitespace-pre-line leading-relaxed">{loc.note}</p>}
-   {loc.lines.length?<ul className="space-y-2">{loc.lines.map(line=><li key={line.id} className="flex flex-wrap items-baseline gap-x-2 gap-y-1 border-t border-base-300 pt-2"><span className="flex-1 min-w-0 leading-relaxed">{line.text}</span><span className="badge badge-ghost badge-sm capitalize flex-shrink-0">{line.frequency}</span></li>)}</ul>:<p className="text-xs text-base-content/60 leading-relaxed">No appointment options listed. Ask our team about availability.</p>}
-  </div>)}
-  {!p.locations.length&&<p className="text-base-content/60">Ask our team about availability.</p>}
- </section>
- <div>{p.leave&&<aside className="bg-base-200 rounded-lg p-3 text-sm leading-relaxed"><strong className="block pb-1">Upcoming leave</strong><p className="whitespace-pre-line">{p.leave}</p></aside>}</div>
- <footer className="flex flex-col gap-3 border-t border-base-300 pt-4">
-  <div className="pc-card-actions"><button type="button" className="btn btn-primary" aria-pressed={selected} onClick={()=>onSelect(p.key)}>{selected?'✓ Added to preferences':'Add to my preferences'}</button><button type="button" className="btn btn-outline" onClick={()=>onAsk?.(p.key)}>Ask a question</button></div>
-  {p.profile&&<a href={p.profile} target="_blank" rel="noopener noreferrer" className="link text-sm text-center">View full profile ↗</a>}
- </footer>
-</article>;
+interface Props {profile:ClientPreviewProfile;selected:boolean;selectedSlots:string[];differentTime:boolean;question?:string;questionOpen:boolean;reason?:string;onSelect:(key:string)=>void;onRemove:(key:string)=>void;onSlot:(key:string,slot:string)=>void;onDifferent:(key:string,value:boolean)=>void;onAsk:(key:string)=>void;onQuestion:(key:string,value:string)=>void;}
+export const ClientPagePractitionerCard:React.FC<Props>=({profile:p,selected,selectedSlots,differentTime,question='',questionOpen,reason='',onSelect,onRemove,onSlot,onDifferent,onAsk,onQuestion})=>{
+ const first=firstName(p.name);
+ return <article id={`practitioner-${p.key}`} className={`pc-option-card${selected?' pc-option-selected':''}`} aria-label={p.name}>
+  <header className="pc-card-header">{p.photo?<img src={p.photo} alt={p.name} className="pc-portrait" referrerPolicy="no-referrer"/>:<span className="pc-portrait pc-initial" aria-hidden="true">{first.charAt(0)}</span>}<div><h3>{p.name}</h3><p className="pc-profession">{p.title}</p>{selected&&<span className="pc-selected-status"><Check size={14}/> In your preferences</span>}</div></header>
+  {!!p.displayAttributes?.length&&<ul className="pc-attributes" aria-label="Practitioner information">{p.displayAttributes.map((a:string)=><li key={a}>{/telehealth/i.test(a)?<Video size={15}/>: /saturday/i.test(a)?<CalendarDays size={15}/>: /client|adult|age/i.test(a)?<Users size={15}/>:<MapPin size={15}/>}<span>{a}</span></li>)}</ul>}
+  {p.note&&<aside className="pc-practitioner-note"><strong>Please note</strong><p>{p.note}</p></aside>}
+  {reason.trim()&&<section className="pc-recommendation"><h4>Why we've included {first}</h4><p>{reason}</p></section>}
+  <section><h4>Get to know {first}</h4>{p.bio&&<p className="pc-preserve">{p.bio}</p>}{!!p.areasOfFocus?.length&&<ul className="pc-tags" aria-label="Areas of practice">{p.areasOfFocus.map((area:string)=><li key={area}>{area}</li>)}</ul>}{!!p.approaches?.length&&<><h5>Therapeutic approaches</h5><ul className="pc-tags">{p.approaches.map((a:string)=><li key={a}>{a}</li>)}</ul></>}</section>
+  <section className="pc-fees"><h4>Session fees and Medicare</h4>{p.feeSummary.rates.length?<div className="pc-fee-grid">{p.feeSummary.rates.map(r=><div key={r.label}><h5>{r.label}</h5><p>Full session fee: <strong>{money(r.fee)}</strong></p>{r.outOfPocket!==null&&<p>Estimated out-of-pocket cost after Medicare: <strong>{money(r.outOfPocket)}</strong></p>}</div>)}</div>:<p className="pc-preserve">{p.fees||'Our intake team will confirm the applicable session fee.'}</p>}{p.feeSummary.rates.length>0&&p.feeSummary.notes.some(n=>/additional|original fee/i.test(n))&&<p className="pc-small pc-preserve">{p.fees}</p>}{p.feeSummary.rebate!==null&&p.feeSummary.rebate>0?<p>Medicare rebate: <strong>{money(p.feeSummary.rebate)}</strong></p>:<p className="pc-preserve">{p.rebate||'Please ask intake whether a Medicare rebate applies.'}</p>}{p.feeSummary.notes.map((note:string)=><p key={note} className="pc-small">{note}</p>)}<p className="pc-small"><em>Medicare rebates are subject to eligibility and referral requirements. The full session fee is payable, with eligible Medicare rebates processed separately.</em></p></section>
+  {p.hours.trim()&&<section><h4>Usual consulting days</h4><p className="pc-preserve">{p.hours}</p><p className="pc-small"><em>Usual consulting days do not indicate current appointment availability.</em></p></section>}
+  <section><h4>Appointment options</h4>{p.locations.map((loc,li)=><div key={`${loc.name}-${li}`} className="pc-location-group"><h5><MapPin size={15}/>{loc.name}</h5>{loc.note&&<p className="pc-small pc-preserve">{loc.note}</p>}{loc.lines.some(l=>l.selectable)?<div className="pc-slot-list">{loc.lines.map(line=>line.selectable?<label key={line.id} className={`pc-slot${selectedSlots.includes(line.id)?' is-selected':''}`}><input type="checkbox" checked={selectedSlots.includes(line.id)} onChange={()=>onSlot(p.key,line.id)} aria-label={`${p.name}: ${line.text}, ${loc.name}, ${line.frequency}`}/><AppointmentDescription line={line}/></label>:<p className="pc-small pc-preserve" key={line.id}>{line.text}</p>)}</div>:<p className="pc-small">No current appointment options listed here. You can ask about future availability; no unlisted times are confirmed.</p>}</div>)}{!p.locations.length&&<p>No current appointment options listed. You can still express interest and ask about future availability.</p>}<label className={`pc-different-time${differentTime?' is-selected':''}`}><input type="checkbox" checked={differentTime} onChange={e=>onDifferent(p.key,e.target.checked)}/><span>I'm interested in this practitioner, but need a different appointment time.</span></label><p className="pc-small"><em>All appointment options are subject to confirmation by our intake team. All times are displayed in Melbourne local time.</em></p></section>
+  {p.leave&&<aside className="pc-leave"><CalendarDays size={18}/><div><h4>Upcoming leave</h4><p className="pc-preserve">{p.leave}</p></div></aside>}
+  <footer><div className="pc-card-actions"><button type="button" className="btn btn-primary" aria-pressed={selected} onClick={()=>onSelect(p.key)}>{selected?<><Check size={16}/> Added to my preferences</>:'Add to my preferences'}</button><button type="button" className="btn btn-outline" onClick={()=>onAsk(p.key)}><MessageCircle size={16}/>Ask a question</button></div>{selected&&<button type="button" className="pc-text-button" onClick={()=>onRemove(p.key)}>Remove from preferences</button>}{questionOpen&&<label className="pc-field">Question about {p.name}<textarea id={`question-${p.key}`} rows={3} maxLength={1500} value={question} onChange={e=>onQuestion(p.key,e.target.value)} placeholder={`What would you like to ask about ${first}?`}/><span className="pc-small">You don't need to select this practitioner to ask a question. Please avoid repeating sensitive intake information.</span></label>}{p.profile&&<a href={p.profile} target="_blank" rel="noopener noreferrer" className="pc-profile-link">View full profile ↗</a>}</footer>
+ </article>;
+};

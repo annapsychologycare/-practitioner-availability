@@ -32,6 +32,8 @@ const SendClientModal: React.FC<Props> = ({ selected, locationFilter, onClose, o
   const [copied, setCopied] = useState(false);
   const [emailFormat,setEmailFormat]=useState<'invitation'|'original'>('invitation');
   const [clientName, setClientName] = useState("");
+  const [recommendationNotes,setRecommendationNotes]=useState<Record<string,string>>({});
+ const [feeArrangements,setFeeArrangements]=useState<Record<string,{businessHours?:number;afterHours?:number;standard?:number;approved:boolean}>>({});
   const [clientEmail, setClientEmail] = useState("");
   const [ccEmails, setCcEmails] = useState("anna@psychologycare.com.au");
   const [senderName, setSenderName] = useState(config.senders[0] || "Anna Donaldson");
@@ -143,48 +145,7 @@ const SendClientModal: React.FC<Props> = ({ selected, locationFilter, onClose, o
   };
 
   const handleSend = async () => {
-    if(emailFormat==='invitation'){setError('Test only: this invitation cannot be sent until private client links are connected.');return;}
-    if(!reviewReady){setError('Review and confirm Krista’s live diary before sending appointment options.');setStep('form');return;}
-    setSending(true);
-    try {
-      const ccList = ccEmails
-        .split(",")
-        .map((e) => e.trim())
-        .filter((e) => e.includes("@"));
-
-      const payload = {
-        action: "SEND_PRACTITIONER_EMAIL",
-        clientName: clientName.trim(),
-        clientEmail: clientEmail.trim(),
-        cc: ccList,
-        senderName,
-        // Rebuild at send time; never send a stale memoized notice after expiry.
-        emailHtml: buildEmailHtml(clientName || 'Client', note, senderName, practitionerData, {...config, intro_text: openingParagraph}, includeMonthly, {age60Plus: clientAge60Plus}),
-      };
-
-      // Send via serverless function (keeps webhook URL server-side)
-      const response = await fetch("/.netlify/functions/send-email", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
-
-      if (!response.ok) {
-        const errData = await response.json().catch(() => ({}));
-        if (errData.error?.includes("Webhook URL not configured")) {
-          throw new Error("Email service not configured. Please contact Anna.");
-        }
-        throw new Error(`Send failed (${response.status})`);
-      }
-
-      onSent();
-    } catch (e) {
-      console.error("Failed to send:", e);
-      setError("Something went wrong. Please try again.");
-      setStep("form");
-    } finally {
-      setSending(false);
-    }
+    setError('Test mode: live emails and client notifications are disabled. No message has been sent.');
   };
 
   const ccDisplay = ccEmails.split(",").map((e) => e.trim()).filter(Boolean).join(", ");
@@ -219,7 +180,7 @@ const SendClientModal: React.FC<Props> = ({ selected, locationFilter, onClose, o
         </div>}
 
         {step === "client-preview" ? (
-          <ClientPagePreview practitioners={practitionerData} includeMonthly={includeMonthly} age60Plus={clientAge60Plus} now={new Date(noticeNow)} clientName={clientName} onBack={()=>setStep('form')}/>
+          <ClientPagePreview practitioners={practitionerData} includeMonthly={includeMonthly} age60Plus={clientAge60Plus} now={new Date(noticeNow)} clientName={clientName} recommendationNotes={recommendationNotes} feeArrangements={feeArrangements} onBack={()=>setStep('form')}/>
         ) : step === "form" ? (
           <>
             {/* Selected practitioners summary */}
@@ -317,6 +278,9 @@ const SendClientModal: React.FC<Props> = ({ selected, locationFilter, onClose, o
                 />
               </div>
 
+              {/* Client-appropriate recommendation notes are local to this preview, never inferred. */}
+              <fieldset className="space-y-3"><legend className="font-semibold text-sm">Why these practitioners? · optional client-facing notes</legend><p className="text-xs leading-relaxed">Only include information appropriate for this client. Avoid diagnoses, sensitive intake details or guarantees of suitability. Notes stay in this test session only.</p>{selected.map(p=><label className="block text-sm" key={p.name}>Why we've included {p.name}<textarea className="textarea textarea-bordered w-full mt-1" rows={2} maxLength={600} value={recommendationNotes[p.name]||''} onChange={e=>setRecommendationNotes(previous=>({...previous,[p.name]:e.target.value}))} placeholder="Optional personalised explanation for this client"/></label>)}</fieldset>
+              <details className="text-sm"><summary className="font-semibold cursor-pointer">Approved individual fee arrangements · optional test preview</summary><p className="text-xs my-2">Only enter arrangements already approved for this client. Leave unchanged categories empty. This does not update practitioner fees, CRM or Zanda, and is not copied into the original email. Preview only; verify source documentation before any future live use.</p>{selected.map(p=><fieldset key={p.name} className="border rounded-xl p-3 my-3 space-y-2"><legend>{p.name}</legend>{([['standard','Standard fee'],['businessHours','Business-hours fee'],['afterHours','After-hours fee']] as const).map(([key,label])=><label key={key} className="block text-xs">{label} · AUD<input className="input input-bordered input-sm w-full" type="number" min="0.01" step="0.01" value={feeArrangements[p.name]?.[key]??''} onChange={e=>{const value=e.target.value;setFeeArrangements(previous=>({...previous,[p.name]:{...previous[p.name],approved:false,[key]:value===''?undefined:Number(value)}}));}}/></label>)}<label className="flex gap-2 text-xs"><input type="checkbox" checked={!!feeArrangements[p.name]?.approved} onChange={e=>setFeeArrangements(previous=>({...previous,[p.name]:{...previous[p.name],approved:e.target.checked}}))}/>I have verified these individual fees are approved for this client.</label></fieldset>)}</details>
               {/* Personal Note */}
               <div>
                 <label className="label label-text font-semibold pb-1">
@@ -342,7 +306,7 @@ const SendClientModal: React.FC<Props> = ({ selected, locationFilter, onClose, o
             <div className="modal-action mt-4 flex-shrink-0">
               <button onClick={onClose} className="btn btn-ghost">Cancel</button>
               <button type="button" className="btn btn-outline" disabled={!reviewReady || !selected.length} onClick={()=>{setError('');setStep('client-preview');}}>
-                <Eye size={16}/> Preview client page
+                <Eye size={16}/> Preview as client
               </button>
               <button onClick={handlePreview} className="btn btn-primary">
                 <Eye size={16} /> Preview Email →
@@ -400,11 +364,11 @@ const SendClientModal: React.FC<Props> = ({ selected, locationFilter, onClose, o
               >
                 {copied ? <><ClipboardCheck size={16} /> Copied!</> : <><Clipboard size={16} /> Copy Email</>}
               </button>
-              <button onClick={handleSend} className="btn btn-success" disabled={sending || emailFormat==='invitation'}>
+              <button onClick={handleSend} className="btn btn-success" disabled={true}>
                 {sending ? (
                   <><span className="loading loading-spinner loading-sm" /> Sending...</>
                 ) : (
-                  <><Send size={16} /> Confirm & Send</>
+                  <><Send size={16} /> Sending disabled · test only</>
                 )}
               </button>
             </div>
