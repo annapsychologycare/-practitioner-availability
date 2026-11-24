@@ -6,6 +6,8 @@ interface Props {practitioners:PractitionerEmailData[];includeMonthly:boolean;ag
 export const ClientPagePreview:React.FC<Props>=({practitioners,includeMonthly,age60Plus,now,onBack,clientName=''})=>{
  const profiles=useMemo(()=>clientPreviewProfiles(practitioners,includeMonthly,now),[practitioners,includeMonthly,now]);
  const [chosen,setChosen]=useState<string[]>([]);const [times,setTimes]=useState<Record<string,string>>({});const [message,setMessage]=useState('');const [tested,setTested]=useState(false);
+ const supportChoices=["I'm interested, but need a different appointment time","I'm unsure and would appreciate further guidance","None of these options quite suit me","I'd prefer a phone call to discuss my options"];
+ const [support,setSupport]=useState<string[]>([]);
  const formRef=useRef<HTMLFormElement>(null);const messageRef=useRef<HTMLTextAreaElement>(null);
  const chosenProfiles=chosen.flatMap(key=>profiles.filter(p=>p.key===key));
  const preferenceLabel=(index:number)=>['First preference','Second preference','Third preference'][index]||`Preference ${index+1}`;
@@ -59,6 +61,26 @@ export const ClientPagePreview:React.FC<Props>=({practitioners,includeMonthly,ag
    .pc-preferences-bar {position:sticky;top:0;z-index:5;background:rgba(255,255,255,.97);border:1px solid #ded5e8;border-radius:12px;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;gap:16px;box-shadow:0 5px 18px rgba(43,36,76,.07);}
    .pc-preferences-bar .btn {flex-shrink:0;}
    .pc-client-page form {scroll-margin-top:110px;}
+   .pc-next-step {padding:24px;display:flex;flex-direction:column;gap:20px;}
+   .pc-next-step h3 {font-size:22px;font-weight:600;margin:0;}
+   .pc-next-step p {margin:0;}
+   .pc-form-intro {font-size:14px;line-height:1.75;}
+   .pc-choice-list {display:grid;gap:12px;min-width:0;margin:0;padding:0;border:0;}
+   .pc-choice-card {border:1px solid #e4dfeb;border-radius:16px;padding:16px;min-width:0;background:#fff;}
+   .pc-choice-card.is-selected {border-color:#b7a6ca;}
+   .pc-choice-name {display:flex;align-items:center;gap:10px;font-size:14px;font-weight:600;line-height:1.5;cursor:pointer;}
+   .pc-choice-card .select {border-radius:24px;height:auto;min-height:42px;font-size:13px;max-width:100%;}
+   .pc-preference-heading {display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin:12px 0;color:#645379;font-size:12px;}
+   .pc-guidance-options {display:grid;gap:10px;margin-top:12px;}
+   .pc-guidance-option {display:flex;align-items:flex-start;gap:10px;border:1px solid #e4dfeb;border-radius:12px;padding:12px;font-size:13px;line-height:1.6;cursor:pointer;}
+   .pc-guidance-option input {flex-shrink:0;margin-top:2px;}
+   .pc-next-step .pc-form-hint {font-size:12px;color:#69717b;line-height:1.6;margin:6px 0 12px;}
+   .pc-next-steps-note {background:#f3f0f7;border-radius:14px;padding:16px;font-size:13px;line-height:1.7;}
+   .pc-next-steps-note strong {display:block;color:#51416e;margin-bottom:6px;}
+   .pc-next-step .pc-request-submit {width:100%;min-height:46px;height:auto;padding:12px;white-space:normal;}
+   .pc-crisis-footer {font-size:12px;line-height:1.7;color:#69717b;border-top:1px solid #e4dfeb;padding-top:16px;}
+   .pc-crisis-footer a {color:#51416e;text-decoration:underline;}
+   @media(max-width:540px){.pc-next-step {padding:18px;}.pc-choice-card {padding:14px;}}
    .pc-fee-columns {display:grid;grid-template-columns:1fr 1fr;gap:18px;}
    .pc-fee-columns>div+div {border-left:1px solid #e4dfeb;padding-left:18px;}
    .pc-fee-section {border-block:1px solid #e4dfeb;padding-block:14px;}
@@ -99,15 +121,22 @@ export const ClientPagePreview:React.FC<Props>=({practitioners,includeMonthly,ag
   {!!chosen.length&&<div className="pc-preferences-bar"><div className="min-w-0 text-sm" aria-live="polite"><strong>{chosen.length} practitioner{chosen.length===1?'':'s'} in your preferences</strong><p className="text-xs text-base-content/60 pt-1">{chosenProfiles.map(p=>p.name).join(' · ')}</p></div><button type="button" className="btn btn-primary btn-sm" onClick={()=>formRef.current?.scrollIntoView({behavior:'smooth',block:'start'})}>Review preferences ↓</button></div>}
   <div className="pc-options-grid">{profiles.map(p=><ClientPagePractitionerCard key={p.key} profile={p} selected={chosen.includes(p.key)} onSelect={choose} onAsk={ask}/>)}</div>
   {!profiles.length&&<p>No practitioners selected. Go back and choose your shortlist.</p>}
-  <form ref={formRef} className="card bg-base-100 border border-base-300" onSubmit={e=>{e.preventDefault();setTested(true);}}><div className="card-body gap-4">
-   <h3 className="font-semibold text-2xl">Your preferences &amp; questions</h3>
-   <p className="text-sm leading-relaxed">You don’t need to have everything decided. Select any practitioners you’re interested in, then put them in your preferred order. You can choose a different time for each practitioner.</p>
-   <fieldset className="space-y-2"><legend className="font-semibold text-sm pb-2">Who would you like to see? <span className="font-normal">Choose one or more</span></legend>{profiles.map(p=><label key={p.key} className="flex items-center gap-3 border border-base-300 rounded-lg p-3 text-sm"><input type="checkbox" className="checkbox checkbox-sm" checked={chosen.includes(p.key)} onChange={()=>choose(p.key)}/><span>{p.name}</span></label>)}</fieldset>
-   {chosenProfiles.map((p,index)=><div key={p.key} className="border border-base-300 rounded-xl p-4 space-y-3"><div className="flex items-center justify-between gap-3 flex-wrap"><strong className="text-sm">{preferenceLabel(index)} · {p.name}</strong><div className="flex gap-2"><button type="button" className="btn btn-outline btn-xs" aria-label={`Move ${p.name} up`} disabled={index===0} onClick={()=>movePreference(index,-1)}>↑ Move up</button><button type="button" className="btn btn-outline btn-xs" aria-label={`Move ${p.name} down`} disabled={index===chosenProfiles.length-1} onClick={()=>movePreference(index,1)}>↓ Move down</button></div></div><label className="flex flex-col gap-2 text-sm"><span className="font-semibold">Preferred time for {p.name}</span><select className="select select-bordered w-full" value={times[p.key]||''} onChange={e=>{const value=e.target.value;setTimes(previous=>({...previous,[p.key]:value}));setTested(false);}}><option value="">Not sure yet / please help me find a time</option>{options(p).map(s=><option key={s.id} value={s.id}>{s.label}</option>)}</select></label></div>)}
-   <label className="flex flex-col gap-2 text-sm font-semibold">What would you like us to know?<textarea ref={messageRef} className="textarea textarea-bordered w-full font-normal" maxLength={1500} rows={3} placeholder="Sample text only—ask a question or share alternative preferences" value={message} onChange={e=>{setMessage(e.target.value);setTested(false);}}/></label>
-   <p className="text-xs text-base-content/60 leading-relaxed">These options come from cached availability, not a live diary check. A recurring option is a preference for that series, not a booking for individual dates. Staff check Zanda and room availability where relevant before confirming. This is not a live or continuously monitored chat.</p>
-   <button className="btn btn-primary self-start" disabled={!chosen.length&&!message.trim()}>Test request · do not send</button>
-   {tested&&<div role="status" className="alert text-sm"><div><strong>Test only—nothing sent.</strong>{chosenProfiles.length?<ul className="space-y-2 pt-2">{chosenProfiles.map((p,index)=><li key={p.key}><strong>{preferenceLabel(index)} · {p.name}</strong><br/>{options(p).find(s=>s.id===times[p.key])?.label||'Please help me find a time'}</li>)}</ul>:<p>General question · no practitioner selected</p>}{message.trim()&&<p className="pt-2 whitespace-pre-wrap">Question: {message}</p>}</div></div>}
+  <form ref={formRef} className="card bg-base-100 border border-base-300" onSubmit={e=>{e.preventDefault();if(chosen.length||support.length||message.trim())setTested(true);}}><div className="pc-next-step">
+   <h3>Let's take the next step</h3>
+   <p className="pc-form-intro">Let us know which practitioners and appointment options appeal to you. You don't need to have everything decided — our intake team is here to help.</p>
+   <fieldset className="pc-choice-list"><legend className="font-semibold text-sm">Which practitioners are you interested in?</legend><p className="pc-form-hint">You can select more than one. Put your selections in your preferred order and choose a separate appointment option for each.</p>
+   {[...chosenProfiles,...profiles.filter(p=>!chosen.includes(p.key))].map(p=>{const index=chosen.indexOf(p.key);const selected=index>=0;return <div key={p.key} className={`pc-choice-card${selected?' is-selected':''}`}>
+    <label className="pc-choice-name"><input type="checkbox" className="checkbox checkbox-sm" checked={selected} onChange={()=>choose(p.key)}/><span>{p.name}</span></label>
+    {selected&&<><div className="pc-preference-heading"><strong>{preferenceLabel(index)} · {p.name}</strong><div className="flex gap-2"><button type="button" className="btn btn-outline btn-xs" aria-label={`Move ${p.name} up`} disabled={index===0} onClick={()=>movePreference(index,-1)}>↑ Move up</button><button type="button" className="btn btn-outline btn-xs" aria-label={`Move ${p.name} down`} disabled={index===chosenProfiles.length-1} onClick={()=>movePreference(index,1)}>↓ Move down</button></div></div>
+    <label className="flex flex-col gap-2 text-sm"><span>Preferred appointment option for {p.name}</span><select className="select select-bordered w-full" value={times[p.key]||''} onChange={e=>{const value=e.target.value;setTimes(previous=>({...previous,[p.key]:value}));setTested(false);}}><option value="">Not sure yet / please help me find a time</option>{options(p).map(s=><option key={s.id} value={s.id}>{s.label}</option>)}<option value="different-time">I'm interested, but need a different appointment time</option></select></label></>}
+   </div>})}</fieldset>
+   <fieldset className="pc-choice-list"><legend className="font-semibold text-sm">Would you like some help with your options?</legend><p className="pc-form-hint">Choose any that apply — you can ask for help without selecting a practitioner.</p><div className="pc-guidance-options">{supportChoices.map(choice=><label className="pc-guidance-option" key={choice}><input type="checkbox" className="checkbox checkbox-sm" checked={support.includes(choice)} onChange={()=>{setSupport(previous=>previous.includes(choice)?previous.filter(item=>item!==choice):[...previous,choice]);setTested(false);}}/><span>{choice}</span></label>)}</div></fieldset>
+   <label className="flex flex-col text-sm font-semibold">Is there anything else you'd like us to know?<span className="pc-form-hint font-normal">Optional — we're happy to answer any questions, discuss alternative appointment times or help you decide which practitioner may be the best fit. If you'd like a phone call, you can include your preferred contact number and a suitable time.</span><textarea ref={messageRef} className="textarea textarea-bordered w-full font-normal" maxLength={1500} rows={4} placeholder="Share any questions, preferences or additional information here…" value={message} onChange={e=>{setMessage(e.target.value);setTested(false);}}/></label>
+   <div className="pc-next-steps-note"><strong>What happens next?</strong><p>Our intake team will review your preferences, check current appointment availability and be in touch to help arrange your next steps.</p><p className="pc-form-hint">Please note that submitting your preferences does not reserve or confirm an appointment.</p></div>
+   <p className="pc-form-hint">Staff test only: these options use cached availability, not a live diary check. Staff check Zanda and room availability where relevant before confirming. All times shown are Melbourne time.</p>
+   <button className="btn btn-primary pc-request-submit" disabled={!chosen.length&&!support.length&&!message.trim()}>Test request · do not send</button>
+   {tested&&<div role="status" className="alert text-sm"><div><strong>Test only—nothing sent.</strong>{chosenProfiles.length?<ul className="space-y-2 pt-2">{chosenProfiles.map((p,index)=><li key={p.key}><strong>{preferenceLabel(index)} · {p.name}</strong><br/>{times[p.key]==='different-time'?"I'm interested, but need a different appointment time":options(p).find(s=>s.id===times[p.key])?.label||'Please help me find a time'}</li>)}</ul>:<p>Guidance or question · no practitioner selected</p>}{!!support.length&&<ul className="space-y-2 pt-2">{support.map(choice=><li key={choice}>{choice}</li>)}</ul>}{message.trim()&&<p className="pt-2 whitespace-pre-wrap">Question: {message}</p>}</div></div>}
+   <p className="pc-crisis-footer">This form is not monitored in real time and is not intended for urgent or crisis support. If you require immediate assistance, please call <a href="tel:000">000</a> or Lifeline on <a href="tel:131114">13 11 14</a>.</p>
   </div></form>
   <button className="btn btn-outline" type="button" onClick={onBack}>Back to email setup</button>
  </div>;
