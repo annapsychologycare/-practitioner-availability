@@ -19130,8 +19130,7 @@ Rebekah has a compassionate and thoughtful approach to the emotional care and su
       locations: [
         {
           location: "Burke Rd, Camberwell",
-          availability: `Mondays at 10am (Fortnightly: Starting 8th Feb)
-Mondays at 1pm (Monthly: Starting 25th Jan)
+          availability: `Mondays at 1pm (Monthly: Starting 25th Jan)
 Mondays at 3pm (Monthly: Starting 25th Jan)`,
           weekly_availability: [],
           fortnightly_availability: []
@@ -19139,7 +19138,6 @@ Mondays at 3pm (Monthly: Starting 25th Jan)`,
       ],
       last_updated: "2026-07-19",
       availability: [
-        "Mondays at 10am (Fortnightly: Starting 8th Feb) — Burke Rd, Camberwell",
         "Mondays at 1pm (Monthly: Starting 25th Jan) — Burke Rd, Camberwell",
         "Mondays at 3pm (Monthly: Starting 25th Jan) — Burke Rd, Camberwell"
       ],
@@ -20607,7 +20605,7 @@ Mondays at 1:30pm (Fortnightly: Starting 21st Dec)
 Mondays at 1:30pm (Monthly: Starting 25th Jan)
 Tuesdays at 2:30pm (Monthly: Starting 8th Dec)
 Tuesdays at 3:30pm (Monthly: Starting 12th Jan)
-Thursdays at 12:30pm (Monthly: Starting 17th Dec)
+Thursdays at 12:30pm (Monthly: Starting 14th Jan)
 Tuesdays at 4:30pm (Monthly: Starting 8th Dec)`,
           weekly_availability: [],
           fortnightly_availability: [],
@@ -20622,7 +20620,7 @@ Tuesdays at 4:30pm (Monthly: Starting 8th Dec)`,
         "Mondays at 1:30pm (Monthly: Starting 25th Jan) — Burke Rd, Camberwell",
         "Tuesdays at 2:30pm (Monthly: Starting 8th Dec) — Burke Rd, Camberwell",
         "Tuesdays at 3:30pm (Monthly: Starting 12th Jan) — Burke Rd, Camberwell",
-        "Thursdays at 12:30pm (Monthly: Starting 17th Dec) — Burke Rd, Camberwell",
+        "Thursdays at 12:30pm (Monthly: Starting 14th Jan) — Burke Rd, Camberwell",
         "Tuesdays at 4:30pm (Monthly: Starting 8th Dec) — Burke Rd, Camberwell"
       ],
       short_bio: "A trauma-informed clinical psychologist and social worker integrating IFS, ACT, DBT, CBT and mindfulness to support healing from trauma, intense emotions and life transitions.",
@@ -20941,8 +20939,8 @@ I am committed to providing best practice trauma informed care in a confidential
       locations: [
         {
           location: "Greville St, Prahran",
-          availability: `Saturdays at 4pm (Fortnightly: Starting 30th Jan)
-Mondays at 4pm (Fortnightly: Starting 7th Dec)
+          availability: `Mondays at 4pm (Fortnightly: Starting 14th Dec)
+Saturdays at 4pm (Fortnightly: Starting 30th Jan)
 Wednesdays at 5:30pm (Fortnightly: Starting 3rd Feb)
 Mondays at 12pm (Monthly: Starting 7th Dec)
 Tuesdays at 10am (Monthly: Starting 22nd Dec)
@@ -20955,8 +20953,8 @@ Saturdays at 10am (Monthly: Starting 12th Dec)`,
       ],
       last_updated: "2026-07-19",
       availability: [
+        "Mondays at 4pm (Fortnightly: Starting 14th Dec) — Greville St, Prahran",
         "Saturdays at 4pm (Fortnightly: Starting 30th Jan) — Greville St, Prahran",
-        "Mondays at 4pm (Fortnightly: Starting 7th Dec) — Greville St, Prahran",
         "Wednesdays at 5:30pm (Fortnightly: Starting 3rd Feb) — Greville St, Prahran",
         "Mondays at 12pm (Monthly: Starting 7th Dec) — Greville St, Prahran",
         "Tuesdays at 10am (Monthly: Starting 22nd Dec) — Greville St, Prahran",
@@ -21184,7 +21182,7 @@ Above all, I believe that the therapeutic relationship is central to the healing
 A/H: $315`,
       medicare_rebate: "149.05",
       gender: "Female",
-      alert: "⚠️ Please note: Kiira offers Telehealth only appointments until the end of 2026. As of mid Jan 2027, Kiira will be offering in person appointments on Tuesdays and Wednesdays between 8am and 2PM at the Camberwell Clinic. Please take this into consideration when deciding whether Kiira will be the right practitioner for you, particularly if you prefer face-to-face sessions.",
+      alert: "",
       presentations: [
         "Anger & Aggression",
         "Anxiety - Generalised (GAD)",
@@ -21263,18 +21261,31 @@ I have worked consistently across both public and private settings in my career,
       link_to_bio: "https://psychologycare.com.au/kiira-gavralas/",
       locations: [
         {
-          availability: `Tuesdays at 10:30am (Fortnightly: Starting 1st Dec)
-Tuesdays at 9:15am (Monthly: Starting 22nd Dec)`,
+          availability: `Tuesdays at 9:15am (Fortnightly: Starting 26th Jan)
+Tuesdays at 10:30am (Fortnightly: Starting 26th Jan)`,
           weekly_availability: [],
           fortnightly_availability: [],
           location: "Telehealth"
+        },
+        {
+          location: "Burke Rd, Camberwell",
+          availability: `Wednesdays at 1pm (Weekly: Starting 20th Jan)
+Wednesdays at 12pm (Weekly: Starting 20th Jan)
+Wednesdays at 10am (Weekly: Starting 20th Jan)
+Wednesdays at 9am (Weekly: Starting 20th Jan)
+Wednesdays at 8am (Weekly: Starting 20th Jan)`
         }
       ],
       last_updated: "2026-07-19",
       short_bio: "A genuine, relational psychologist using psychodynamic, attachment-informed ISTDP to help clients understand emotional patterns, ease distress and navigate parenthood transitions.",
       availability: [
-        "Tuesdays at 10:30am (Fortnightly: Starting 1st Dec) — Telehealth",
-        "Tuesdays at 9:15am (Monthly: Starting 22nd Dec) — Telehealth"
+        "Wednesdays at 1pm (Weekly: Starting 20th Jan) — Burke Rd, Camberwell",
+        "Wednesdays at 12pm (Weekly: Starting 20th Jan) — Burke Rd, Camberwell",
+        "Wednesdays at 10am (Weekly: Starting 20th Jan) — Burke Rd, Camberwell",
+        "Wednesdays at 9am (Weekly: Starting 20th Jan) — Burke Rd, Camberwell",
+        "Wednesdays at 8am (Weekly: Starting 20th Jan) — Burke Rd, Camberwell",
+        "Tuesdays at 9:15am (Fortnightly: Starting 26th Jan) — Telehealth",
+        "Tuesdays at 10:30am (Fortnightly: Starting 26th Jan) — Telehealth"
       ],
       weekly_availability: [],
       fortnightly_availability: [],
@@ -21295,7 +21306,7 @@ Tuesdays at 9:15am (Monthly: Starting 22nd Dec)`,
         "Female",
         "Male"
       ],
-      client_note: "⚠️ Please note: Kiira offers Telehealth only appointments until the end of 2026. As of mid Jan 2027, Kiira will be offering in person appointments on Tuesdays and Wednesdays between 8am and 2PM at the Camberwell Clinic. Please take this into consideration when deciding whether Kiira will be the right practitioner for you, particularly if you prefer face-to-face sessions.",
+      client_note: "",
       upcoming_leave_client_notice: "Kiira Gavralas will be on leave from 28 December 2026 to 15 January 2027 inclusive.",
       upcoming_leave_show_from: "2026-11-04",
       upcoming_leave_hide_after: "2027-01-15"
@@ -21748,7 +21759,7 @@ Thursdays at 12:30pm (Monthly: Starting 10th Dec)`,
 A/H: $275`,
       medicare_rebate: "101.55",
       gender: "Female",
-      alert: "Telehealth Only from Jan 2027. Be sure to discuss with Clients. ?Real Full Name - Ms Elizabeth Maria Knoetze",
+      alert: "Telehealth Only from Jan 2027. Be sure to discuss with Clients. Real Full Name - Ms Elizabeth Maria Knoetze",
       presentations: [
         "Adjustment Disorder",
         "Anxiety - Anticipatory",
@@ -21833,16 +21844,14 @@ Bachelor of Arts with Honours in the Field of Psychology, University of Queensla
       link_to_bio: "https://psychologycare.com.au/ricki-knoetze/",
       locations: [
         {
-          availability: `Mondays at 3:30pm (Fortnightly: Starting 30th Nov)
-Mondays at 2:30pm (Fortnightly: Starting 30th Nov)`,
+          availability: "",
           weekly_availability: [],
           fortnightly_availability: [],
           location: "Greville St, Prahran"
         },
         {
           availability: `Wednesdays at 1pm (Weekly: Starting 25th Nov)
-Mondays at 3:30pm (Fortnightly: Starting 11th Jan)
-Mondays at 2:30pm (Fortnightly: Starting 11th Jan)
+Mondays at 2:30pm (Fortnightly: Starting 25th Jan)
 Wednesdays at 12pm (Fortnightly: Starting 2nd Dec)`,
           weekly_availability: [],
           fortnightly_availability: [],
@@ -21864,11 +21873,8 @@ Wednesdays at 12pm (Fortnightly: Starting 2nd Dec)`,
       last_updated: "2026-07-19",
       availability: [
         "Wednesdays at 1pm (Weekly: Starting 25th Nov) — Telehealth",
-        "Mondays at 3:30pm (Fortnightly: Starting 11th Jan) — Telehealth",
-        "Mondays at 2:30pm (Fortnightly: Starting 11th Jan) — Telehealth",
-        "Wednesdays at 12pm (Fortnightly: Starting 2nd Dec) — Telehealth",
-        "Mondays at 3:30pm (Fortnightly: Starting 30th Nov) — Greville St, Prahran",
-        "Mondays at 2:30pm (Fortnightly: Starting 30th Nov) — Greville St, Prahran"
+        "Mondays at 2:30pm (Fortnightly: Starting 25th Jan) — Telehealth",
+        "Wednesdays at 12pm (Fortnightly: Starting 2nd Dec) — Telehealth"
       ],
       short_bio: "Ricki is a warm, non-judgemental psychologist using CBT, ACT and psychodynamic therapies to support adolescents and adults with anxiety, depression, trauma and ADHD.",
       weekly_availability: [],
@@ -21904,7 +21910,7 @@ Wednesdays at 12pm (Fortnightly: Starting 2nd Dec)`,
         "Individual"
       ],
       therapistType: "Registered Psychologist",
-      client_note: "Please note: From January 2027 onwards, Ricki will be offering Telehealth appointments only, with no in-person appointments available. Please take this into consideration when deciding whether Ricki will be the right practitioner for you, particularly if you prefer face-to-face sessions.",
+      client_note: "Please note: Ricki offers Telehealth appointments only, with no in-person appointments available. Please take this into consideration when deciding whether Ricki will be the right practitioner for you, particularly if you prefer face-to-face sessions.",
       upcoming_leave_client_notice: "",
       upcoming_leave_show_from: "",
       upcoming_leave_hide_after: ""
@@ -23313,7 +23319,7 @@ Karen Pereira York will be on leave from 21 January 2027 to 4 February 2027 incl
     }
   ];
   var AVAILABILITY_IMPORT_WINDOW = { today: "2026-11-24", days: 84, weeks: 12, label: "12-week", from: "2026-11-25T00:00:00", to: "2027-02-16T23:59:59" };
-  var AVAILABILITY_LAST_UPDATED = "24 Nov 2026 6:05am";
+  var AVAILABILITY_LAST_UPDATED = "24 Nov 2026 10:59am";
 
   // utils/useAvailabilityPolicy.ts
   function useAvailabilityPolicy() {
