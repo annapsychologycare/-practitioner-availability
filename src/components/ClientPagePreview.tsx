@@ -15,7 +15,19 @@ export const ClientPagePreview:React.FC<Props>=({practitioners,includeMonthly,ag
   <style>{`
    /* GP-site-inspired lilac/white with restrained sage selection accents. */
    .pc-client-page {color:#36454f;background:linear-gradient(145deg,#f6f3fa 0%,#fff 58%);color-scheme:light;}
-   .pc-client-page .pc-brand-hero {background:linear-gradient(120deg,#fff 0%,#f0ecf5 100%);border-color:#e1dbea;}
+   .pc-client-page .pc-brand-hero {background:linear-gradient(120deg,#fff 0%,#f0ecf5 100%);border-color:#e1dbea;padding:32px;}
+   .pc-brand-hero .pc-welcome-title {font-size:clamp(26px,3.2vw,34px);line-height:1.2;margin:0 0 14px;max-width:24ch;text-wrap:balance;}
+   .pc-welcome-intro {font-size:15px;line-height:1.75;max-width:66ch;margin:0;}
+   .pc-welcome-steps {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;list-style:none;padding:0;margin:24px 0 18px;counter-reset:welcome-step;}
+   .pc-welcome-steps li {background:rgba(255,255,255,.8);border:1px solid #e7e1ee;border-radius:14px;padding:16px;counter-increment:welcome-step;}
+   .pc-welcome-steps li::before {content:counter(welcome-step);display:flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:#ede7f4;color:#51416e;font-size:12px;font-weight:700;margin-bottom:10px;}
+   .pc-welcome-steps strong {display:block;color:#2b244c;font-size:14px;line-height:1.4;margin-bottom:6px;}
+   .pc-welcome-steps p {font-size:13px;line-height:1.65;margin:0;}
+   .pc-welcome-help {font-size:14px;line-height:1.65;margin:0 0 20px;}
+   .pc-welcome-footer {display:flex;flex-wrap:wrap;align-items:flex-start;gap:12px 24px;border-top:1px solid #e1dbea;padding-top:16px;}
+   .pc-welcome-count {flex-shrink:0;color:#51416e;font-size:13px;font-weight:600;line-height:1.7;}
+   .pc-welcome-booking-note {flex:1 1 300px;font-size:12px;line-height:1.7;color:#59636f;margin:0;max-width:70ch;}
+   @media(max-width:640px){.pc-client-page .pc-brand-hero {padding:24px 20px;}.pc-welcome-steps {grid-template-columns:1fr;gap:10px;margin-top:20px;}.pc-welcome-steps li {position:relative;padding:14px 14px 14px 54px;}.pc-welcome-steps li::before {position:absolute;left:14px;top:14px;margin:0;}}
    .pc-brand-logo {display:block;width:180px;max-width:65%;height:auto;object-fit:contain;margin:0 0 14px;}
    .pc-client-page h2,.pc-client-page h3 {color:#2b244c;font-family:Arial,Helvetica,sans-serif;letter-spacing:-.025em;}
    .pc-client-page h4 {color:#6c617c;}
@@ -60,7 +72,21 @@ export const ClientPagePreview:React.FC<Props>=({practitioners,includeMonthly,ag
    @media(max-width:540px){.pc-option-card {padding:18px;}.pc-client-page .pc-portrait {width:80px;height:96px;}.pc-fee-columns {grid-template-columns:1fr;gap:12px;}.pc-fee-columns>div+div {border-left:0;border-top:1px solid #e4dfeb;padding:12px 0 0;}.pc-card-actions {grid-template-columns:1fr;}.pc-preferences-bar {align-items:flex-start;flex-wrap:wrap;}}
   `}</style>
   <div className="pc-test-note alert"><span><strong>Staff test preview.</strong> No private client link exists. Entries stay on this screen only—nothing is saved, sent or booked. Please use fictional client information.</span></div>
-  <section className="pc-brand-hero rounded-2xl border border-base-300 p-5 space-y-3"><img src="/brand/psychologycare-logo.svg" alt="PsychologyCare" className="pc-brand-logo"/><h2 className="text-3xl font-semibold leading-tight">Let’s find the right support for you</h2><p className="text-sm leading-relaxed max-w-3xl">Finding someone you feel comfortable with is an important first step. We’ve brought together these practitioner options for you to explore at your own pace.</p><p className="text-sm leading-relaxed max-w-3xl">Choose one or more practitioners you’d like to see, share your preferred times, or ask us a question. If you’re unsure, our team is here to help you decide.</p><div className="flex flex-wrap gap-2"><span className="badge badge-outline">{profiles.length} option{profiles.length===1?'':'s'} to explore</span><span className="badge badge-outline">You can choose more than one</span></div><p className="text-xs text-base-content/60 leading-relaxed max-w-3xl">All times are Melbourne time. Preferences are requests only, not reserved or confirmed bookings. Our team checks current availability before confirming.</p></section>
+  <section className="pc-brand-hero rounded-2xl border border-base-300" aria-labelledby="pc-welcome-heading">
+   <img src="/brand/psychologycare-logo.svg" alt="PsychologyCare" className="pc-brand-logo"/>
+   <h2 id="pc-welcome-heading" className="pc-welcome-title font-semibold">Let’s find the right support for you</h2>
+   <p className="pc-welcome-intro">Feeling comfortable with your practitioner matters. We’ve put together these options for you to explore at your own pace.</p>
+   <ol className="pc-welcome-steps">
+    <li><strong>Explore your options</strong><p>Get to know each practitioner and compare their approach, fees and appointment options.</p></li>
+    <li><strong>Share your preferences</strong><p>Choose one or more practitioners and let us know which days and times suit you.</p></li>
+    <li><strong>Ask us a question</strong><p>Tell us what you’d like to know or if you need help choosing.</p></li>
+   </ol>
+   <p className="pc-welcome-help">You don’t need to have everything decided — our team is here to help with the next step.</p>
+   <div className="pc-welcome-footer">
+    <span className="pc-welcome-count">{profiles.length} practitioner{profiles.length===1?'':'s'} to explore</span>
+    <p className="pc-welcome-booking-note"><strong>What happens next?</strong> Our team will check current availability and confirm the details with you. Selecting a preference does not reserve or confirm an appointment. All times shown are Melbourne time.</p>
+   </div>
+  </section>
   {age60Plus&&profiles.some(p=>p.locations.some(l=>l.lines.length>0&&!/telehealth|online/i.test(l.name)&&/prahran|greville|183a|185a/i.test(l.name)))&&<div className="alert text-sm"><span>Our Prahran clinics at 183A and 185A Greville Street are upstairs, with approximately 18 stairs. Please let us know if stairs may be difficult so we can discuss suitable options.</span></div>}
   {!!chosen.length&&<div className="pc-preferences-bar"><div className="min-w-0 text-sm" aria-live="polite"><strong>{chosen.length} practitioner{chosen.length===1?'':'s'} in your preferences</strong><p className="text-xs text-base-content/60 pt-1">{chosenProfiles.map(p=>p.name).join(' · ')}</p></div><button type="button" className="btn btn-primary btn-sm" onClick={()=>formRef.current?.scrollIntoView({behavior:'smooth',block:'start'})}>Review preferences ↓</button></div>}
   <div className="pc-options-grid">{profiles.map(p=><ClientPagePractitionerCard key={p.key} profile={p} selected={chosen.includes(p.key)} onSelect={choose} onAsk={ask}/>)}</div>
