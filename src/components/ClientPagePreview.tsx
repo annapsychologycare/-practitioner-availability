@@ -20,7 +20,7 @@ export const ClientPagePreview:React.FC<Props>=({practitioners,includeMonthly,ag
    .pc-client-page .pc-brand-hero {background:#fff;border-color:#e1dbea;padding:28px;}
    .pc-brand-hero .pc-welcome-title {font-size:clamp(22px,2.6vw,28px);line-height:1.3;margin:0 0 18px;text-wrap:balance;}
    .pc-welcome-greeting {margin:0 0 10px;color:#645379;font-size:16px;line-height:1.6;font-weight:600;overflow-wrap:anywhere;}
-   .pc-welcome-intro {font-size:15px;line-height:1.75;max-width:80ch;margin:0 0 14px;}
+   .pc-welcome-intro {font-size:15px;line-height:1.75;width:100%;max-width:none;white-space:normal;overflow-wrap:break-word;margin:0 0 14px;}
    .pc-welcome-steps {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;list-style:none;padding:0;margin:24px 0 18px;}
    .pc-welcome-steps li {background:rgba(255,255,255,.8);border:1px solid #e7e1ee;border-radius:14px;padding:16px;}
    .pc-welcome-icon {display:block;width:20px;height:20px;color:#668574;margin-bottom:12px;}
@@ -29,7 +29,7 @@ export const ClientPagePreview:React.FC<Props>=({practitioners,includeMonthly,ag
    .pc-welcome-help {font-size:13px;line-height:1.65;margin:0 0 22px;font-style:italic;color:#69717b;}
    .pc-welcome-footer {display:block;border-top:1px solid #e4dfeb;padding-top:22px;}
    .pc-welcome-count {display:block;color:#69717b;font-size:13px;font-weight:400;line-height:1.7;margin:10px 0 18px;}
-   .pc-welcome-booking-note {font-size:14px;line-height:1.75;color:#36454f;margin:0;max-width:80ch;}
+   .pc-welcome-booking-note {font-size:14px;line-height:1.75;color:#36454f;margin:0;width:100%;max-width:none;white-space:normal;overflow-wrap:break-word;}
    @media(max-width:640px){.pc-client-page .pc-brand-hero {padding:24px 20px;}.pc-welcome-steps {grid-template-columns:1fr;gap:10px;margin-top:20px;}.pc-welcome-steps li {padding:16px;}}
    .pc-brand-logo {display:block;width:180px;max-width:65%;height:auto;object-fit:contain;margin:0 0 14px;}
    .pc-client-page h2,.pc-client-page h3 {color:#2b244c;font-family:Arial,Helvetica,sans-serif;letter-spacing:-.025em;}
