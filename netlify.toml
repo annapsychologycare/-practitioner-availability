@@ -14,3 +14,15 @@
 
 [context.production.environment]
   REACT_APP_TASKLET_WEBHOOK_URL = "${TASKLET_WEBHOOK_URL}"
+
+# Client-only external test: no public caching or indexing. Access data remains token-gated.
+[[headers]]
+  for = "/client-test*"
+  [headers.values]
+    Cache-Control = "private, no-store, max-age=0"
+    Referrer-Policy = "no-referrer"
+    X-Robots-Tag = "noindex, nofollow, noarchive"
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    Content-Security-Policy = "default-src 'none'; script-src 'self'; style-src 'self'; img-src https:; connect-src 'self'; font-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'; object-src 'none'"
